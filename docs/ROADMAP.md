@@ -12,6 +12,7 @@ Four more builds before a public v1.0: harden for release, deepen the learning, 
 - **v0.7 Closed beta:** real players tune difficulty, session length and the Crypt curve.
 - **v0.8 Palace and polish:** walkable palace room, keyboard and controller, install prompt.
 - **v0.9 The Year of Keeping:** after-the-year mode and epilogue, words from friends after gates, late-year seals, furniture picks, boss trials, new modifiers, deeper tablets, run card.
+- **Next (planned, not built): the Keeper's Field Guide.** The conclusion teaches how to use the year's methods on anything (languages, speeches, poems, names, study). See `docs/BEYOND.md`.
 - **v1.0 Public release:** GitHub Pages, trademark cleared, licences shipped, after owner approval.
 
 Already fixed: the shared pixel engine (`src/pixel/core.js`) was split into `raster.js` (plain JS) and `components.jsx` (React), so every module imports it normally.

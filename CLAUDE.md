@@ -2,7 +2,7 @@
 
 Free, open-source, local-first memory-training RPG. 365-day curriculum, about 30 minutes a day, wrapped in an original pixel-art story. Owner: Ayaan (does not code; explain changes in plain language). Current version: 0.9.0 (see CHANGELOG.md).
 
-Read first: `docs/ROADMAP.md` (what to build next and release requirements) and `docs/PRODUCT_DOSSIER.md` (research, curriculum, adaptive rules, scoring, story bible, UX spec, architecture, IP register).
+Read first: `docs/ROADMAP.md`, `docs/BEYOND.md` (planned Field Guide: using the methods on real-life material) (what to build next and release requirements) and `docs/PRODUCT_DOSSIER.md` (research, curriculum, adaptive rules, scoring, story bible, UX spec, architecture, IP register).
 
 ## Commands
 ```
