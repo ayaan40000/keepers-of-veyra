@@ -27,6 +27,7 @@ node scripts/licenses.mjs             # regenerate licence list after dependency
 - Item ids, side-quest ids, achievement ids and profile field names are permanent once released (they key saved data). Add migrations in `src/store.js` for any schema change.
 - Keep accessible names and CSS classes that `tests/e2e.mjs` relies on, or update the test in the same change.
 - Story and UI text: plain, warm language; no em dashes.
+- Owner decision, Nov 2, 2026 (what is real and what is invented): the STORY stays invented (Veyra, its people, places and lore). TRIALS, competitions, Echo battles, the Undercroft and the Field Guide MAY use real-world people, places, brands, events and facts as memory material (famous names and faces, real capitals and dates, real vocabulary, real quotations). Rules for real material: it must be true and checked before it ships (no invented "facts" about real people or places); public information only, never private individuals or anyone's private data; no passwords, PINs, credentials, medical advice or anything that could harm someone; nothing may imply that a real person or company endorses Mnemos; no copied characters, art or long copyrighted passages from other works (short quotations and factual names are fine). All art stays original.
 
 ## Architecture
 - React 18 + Vite, plain JS/JSX, ES modules. `vite-plugin-singlefile` for the review build.

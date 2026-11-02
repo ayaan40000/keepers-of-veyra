@@ -19,7 +19,7 @@ Binding input: `docs/CHAMPIONS.md` and the hard rules in `CLAUDE.md`. Where an o
 | Guilds and a shared 10,000 HP raid | Defer | No network or accounts. Adapted as the Keepers' Circle, NPC coaches who speak only before and after a battle. |
 | 10 to 15 minute cap | Adapt | Mnemos stays about 30 minutes; a battle is 5 to 8 minutes and can be left. |
 | Dominic System, season rewrite | Refuse | Mnemos teaches Major and PAO; the 12-module year stays. |
-| Weekly bosses (Gala, Supermarket, Archive, Championship) | Adapt | They become battle scenes with invented material. |
+| Weekly bosses (Gala, Supermarket, Archive, Championship) | Adapt | They become battle scenes. Material may be real or invented (owner decision, Nov 2, 2026). |
 
 ## RPG structure
 
@@ -46,11 +46,11 @@ Binding input: `docs/CHAMPIONS.md` and the hard rules in `CLAUDE.md`. Where an o
 - Resolve at 0 is a gentle **rest**: answers shown, items queued to appear first next time. No lost progress.
 - **Results never touch skill estimates, review sets or results**, like the Crypt.
 - **Rewards only for old items that held**: first try, no hint, no lantern retry, item at least 7 days old. Lumen: 2 each (3 at 30 days or more), max 20 a battle, and inside the 50 a day free practice cap. Held counts also unlock story and cosmetic charms.
-- Honest line shown to the player: battles practise the methods on made-up material and do not make memory better in general.
+- Honest line shown to the player: battles practise the methods on practice material and do not make memory better in general.
 
 ## Scenes (practice only, no reward)
 
-Networking Gala (names and faces), Packing Bay (a list with a distracting sum midway), Speech Hall (five points on a route), Crossroads (six turns), Night Market (prices). Material is invented. A coach asks what the material is made of, and the player picks Link, Palace, Major or Keyword. A good fit gives 25 percent more study time; a poor fit gives a tip and no penalty. Fresh material earns nothing, by rule.
+Networking Gala (names and faces), Packing Bay (a list with a distracting sum midway), Speech Hall (five points on a route), Crossroads (six turns), Night Market (prices). Material may be real (real names, places, prices, dates, checked for accuracy) or invented; the story around it stays invented. A coach asks what the material is made of, and the player picks Link, Palace, Major or Keyword. A good fit gives 25 percent more study time; a poor fit gives a tip and no penalty. Fresh material earns nothing, by rule.
 
 ## Mapping onto existing systems
 

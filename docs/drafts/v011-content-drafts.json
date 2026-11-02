@@ -1,0 +1,388 @@
+{
+ "_note": "Qwen drafts for v0.11 to v0.13, filtered in code, NOT reviewed by hand yet. Not shipped.",
+ "voices": [
+  {
+   "skill": "Imagery",
+   "voice": "Bramble Finch",
+   "line_hint": "Make the picture so big and bright it fills your mind.",
+   "line_after": "Your mental colours are lovely today.",
+   "line_quiet": "A quick peek at those scenes would keep them fresh."
+  },
+  {
+   "skill": "Linking",
+   "voice": "Elara Voss",
+   "line_hint": "Imagine a rope tying every image to the one before it.",
+   "line_after": "Your chain of pictures feels strong and steady today.",
+   "line_quiet": "The link thread is loose, so let us gently pull it tight again."
+  },
+  {
+   "skill": "Palace",
+   "voice": "Elara Vane",
+   "line_hint": "Walk your mental path slowly to keep each spot distinct.",
+   "line_after": "Your memory home feels so much brighter now. Well done.",
+   "line_quiet": "Shall we take a quick stroll through that familiar route?"
+  },
+  {
+   "skill": "Vocabulary",
+   "voice": "Mara Vance",
+   "line_hint": "Find a word that sounds alike and build a small, silly picture in your mind.",
+   "line_after": "You linked those new words with such gentle imagination today.",
+   "line_quiet": "A quick look back would keep these fresh pictures clear."
+  },
+  {
+   "skill": "Structure",
+   "voice": "Bramble Finch",
+   "line_hint": "Give each fact its own small space to rest.",
+   "line_after": "Your mind now holds the whole shape so well. Well done.",
+   "line_quiet": "Shall we peek at those outlines again for a moment?"
+  }
+ ],
+ "wren": [
+  {
+   "id": "tea-leaves",
+   "told": "I always stir my tea three times before I drink it. If you count wrong the whole afternoon feels off.",
+   "ask_later": "How many stirs do I need in my cup?",
+   "answer": "Three",
+   "scene_if_held": "You counted for me, and now the taste is just right."
+  },
+  {
+   "id": "cat-name",
+   "told": "My cat has a patch of white fur on her left ear that looks like a tiny moon. We call her Pip.",
+   "ask_later": "What did I name my little grey cat?",
+   "answer": "Pip",
+   "scene_if_held": "Pip purred when you said it, which she rarely does for strangers."
+  },
+  {
+   "id": "honey-oats",
+   "told": "I cannot start the morning without a spoonful of wild honey in warm oats. It is very important to me.",
+   "ask_later": "What do I stir into my oatmeal?",
+   "answer": "Wild honey",
+   "scene_if_held": "It smells like autumn, just as you remembered it."
+  },
+  {
+   "id": "blue-door",
+   "told": "I grew up in a cottage with the strangest blue door. The paint was always flaking off.",
+   "ask_later": "What colour was the front door of my childhood home?",
+   "answer": "Blue",
+   "scene_if_held": "That specific shade of blue is safe again now."
+  },
+  {
+   "id": "fear-dark-attic",
+   "told": "I get very nervous in dark attics. I am sure something is watching from up there.",
+   "ask_later": "Where do I feel most afraid to go alone?",
+   "answer": "Dark attic",
+   "scene_if_held": "You did not laugh at my fear, and that helped a great deal."
+  },
+  {
+   "id": "sister-name",
+   "told": "My sister Elowen always hummed while she cooked. She is gone now but the melody stays with me.",
+   "ask_later": "What was my older sister's name?",
+   "answer": "Elowen",
+   "scene_if_held": "I can almost hear her humming that old tune again."
+  },
+  {
+   "id": "lost-button",
+   "told": "I keep a single red button in my pocket. It used to be on my favourite coat and I never let it go.",
+   "ask_later": "What small item do I carry for comfort?",
+   "answer": "Red button",
+   "scene_if_held": "It is still warm against your palm, just as you described."
+  },
+  {
+   "id": "grandma-garden",
+   "told": "My grandmother grew the sweetest white roses in a garden by the river. The scent used to follow me home.",
+   "ask_later": "What flower did my grandmother grow?",
+   "answer": "White roses",
+   "scene_if_held": "The air feels lighter, as if I can smell them again."
+  },
+  {
+   "id": "night-night-ritual",
+   "told": "I always whisper 'good night' to the moon before sleeping. It is a promise that tomorrow will be kind.",
+   "ask_later": "What do I whisper to the moon each evening?",
+   "answer": "Good night",
+   "scene_if_held": "The sky feels like it listened, which makes me feel less alone."
+  },
+  {
+   "id": "favourite-song-lyric",
+   "told": "There is an old song with a line about 'river stones and light' that gets stuck in my head. I cannot shake it.",
+   "ask_later": "What phrase from the old song do I hum?",
+   "answer": "River stones and light",
+   "scene_if_held": "The melody finally stops feeling like a ghost."
+  },
+  {
+   "id": "cousin-name",
+   "told": "My cousin Bram is very tall and always smells of sawdust. He built me my first shelf.",
+   "ask_later": "What was the name of the tall cousin who helped me?",
+   "answer": "Bram",
+   "scene_if_held": "It feels good to remember he was there for me."
+  },
+  {
+   "id": "comfort-tea-name",
+   "told": "I only drink a blend called 'Mist and Mint'. Anything else tastes like forgetting.",
+   "ask_later": "What is the specific name of my tea?",
+   "answer": "Mist and Mint",
+   "scene_if_held": "The cup feels full again, not just with liquid."
+  }
+ ],
+ "dim": [
+  "a quiet pause before we remember",
+  "the mist waits gently here",
+  "this relic rests in soft light",
+  "time drifts like river water now",
+  "a gentle nap for old thoughts",
+  "it sleeps until you return soon",
+  "bright again, warm as morning suns",
+  "your care has cleared the haze well",
+  "here it glows with fond recall",
+  "the palace hums a happy tune once more",
+  "shines steady beside your memory lamp",
+  "this place feels safe and known now"
+ ],
+ "tablets": [
+  {
+   "title": "Wick Trimming Rule",
+   "lines": [
+    "Clip the cotton fringe low",
+    "Dip not past the knot line",
+    "Smoke rises when oil runs dry",
+    "The fox sleeps by warm glass panes",
+    "River barges carry amber jars"
+   ]
+  },
+  {
+   "title": "The River Ferry Rule",
+   "lines": [
+    "Gulls circle above the mast",
+    "Boats drift through amber mist",
+    "Oars dip into dark water",
+    "Lanterns glow on stone quay walls",
+    "Sleeping fish beneath the hulls"
+   ]
+  },
+  {
+   "title": "The Salted Loaf Rule",
+   "lines": [
+    "Knead the flour with river water first",
+    "Crack three eggs into clay bowl centre",
+    "Let the fox smell your warm bread crusts",
+    "Sprinkle sea salt before it rises high",
+    "Pour wild honey over golden, waiting loaves"
+   ]
+  },
+  {
+   "title": "The Wet Stone Keeper",
+   "lines": [
+    "Rain falls on the high wall",
+    "Moss softens every sharp edge",
+    "Puddle holds the grey sky small",
+    "Toad waits by the mossy step",
+    "Stone drinks deep of summer’s end"
+   ]
+  }
+ ],
+ "statues": [
+  {
+   "feature": "Curly stone hair with a small braid looped behind left ear",
+   "name": "Mara of the River Lanterns",
+   "note": "Hair looks soft even in rain weather today."
+  },
+  {
+   "feature": "Smooth head shaved close to pale marble scalp line",
+   "name": "Elowen of the Copper Bells",
+   "note": "Shiny top catches lamplight beautifully at dusk now."
+  },
+  {
+   "feature": "Wavy grey locks tucked neatly under round spectacles frame edges",
+   "name": "Tomas of the Paper Boats",
+   "note": "Spectacles sit firmly on stone nose bridge always."
+  },
+  {
+   "feature": "High bun with a single loose curl falling down neck side",
+   "name": "Amara of the Quiet Steps",
+   "note": "Curl bounces gently when she turns around slowly."
+  },
+  {
+   "feature": "Small upturned nose",
+   "name": "Elara of the Paper Boats",
+   "note": "Nose tilts skyward when she hums old tunes"
+  },
+  {
+   "feature": "Wide gentle mouth",
+   "name": "Kofi of the Clay Pottery",
+   "note": "Mouth holds a permanent soft welcoming smile"
+  },
+  {
+   "feature": "Square sturdy chin",
+   "name": "Anya of the Iron Anvils",
+   "note": "Chin shows strong lines from years smiling"
+  },
+  {
+   "feature": "Carved pearl earrings dangling low",
+   "name": "Elara of the Gilded Locket",
+   "note": "The chisel slipped slightly on her left earlobe today."
+  },
+  {
+   "feature": "Wide brimmed straw hat with a ribbon bow",
+   "name": "Kofi of the Braided Bracelet",
+   "note": "Dust settles in the folds of his collar each dawn."
+  },
+  {
+   "feature": "Small tight curls tucked beneath velvet caps",
+   "name": "Amara of the Copper Ring Set",
+   "note": "She hums softly when she polishes the silver chain."
+  },
+  {
+   "feature": "scar over left cheek",
+   "name": "Kofi of the Salted Wind",
+   "note": "Weathered mark catches dawn light softly"
+  },
+  {
+   "feature": "freckles across nose bridge",
+   "name": "Anouk of the Paper Lanterns",
+   "note": "Dusty motes settle on granite skin"
+  },
+  {
+   "feature": "thick braided beard curls down chest",
+   "name": "Elias of the Copper Compass Ties",
+   "note": "Carved rings frame a gentle smile"
+  }
+ ],
+ "oldtongue": [
+  {
+   "word": "Gurthak",
+   "meaning": "A grey cat curled up on a cold roof ledge",
+   "sound_like": "Gurtchack"
+  },
+  {
+   "word": "Mivranek",
+   "meaning": "An owl with wide yellow eyes watching from the dark",
+   "sound_like": "Meevrahnuck"
+  },
+  {
+   "word": "Ploshik",
+   "meaning": "A small brown mouse scurrying under floorboards",
+   "sound_like": "Plushic"
+  },
+  {
+   "word": "Glumthar",
+   "meaning": "a crusty round loaf of bread with dark seeds baked into the top side",
+   "sound_like": "glomming together"
+  },
+  {
+   "word": "Piffraan",
+   "meaning": "small sweet puffs of dough fried in hot oil for late night snacking",
+   "sound_like": "puffing away"
+  },
+  {
+   "word": "Thrumblee",
+   "meaning": "thick black tea mixed with cream and sugar served in wide clay bowls",
+   "sound_like": "crumbling down"
+  },
+  {
+   "word": "Vexmull",
+   "meaning": "A heavy iron latch that secures the outer gate of a courtyard house",
+   "sound_like": "vexful"
+  },
+  {
+   "word": "Krolthorn",
+   "meaning": "The rough stone lintel above a workshop entrance, worn smooth by years of carrying goods in and out",
+   "sound_like": "cruller horn"
+  },
+  {
+   "word": "Tarnpuck",
+   "meaning": "A small clay pot used to hold wet mortar for masonry work, kept on a belt at the waist of stonemasons",
+   "sound_like": "turn up"
+  },
+  {
+   "word": "Gloomthar",
+   "meaning": "thick grey mist rising off black water",
+   "sound_like": "gloaming"
+  },
+  {
+   "word": "Purrashel",
+   "meaning": "sudden sharp gusts rattling loose shingles",
+   "sound_like": "parseling"
+  },
+  {
+   "word": "Dripvane",
+   "meaning": "heavy rain slanting sideways against a windowpane",
+   "sound_like": "draping veine"
+  }
+ ],
+ "timelines": [
+  {
+   "title": "The Year Without Light",
+   "events": [
+    "Year 104: The great lanterns dimmed as the moon vanished from the sky.",
+    "Year 105: Fishermen sang loud songs to keep fear away on dark waters.",
+    "Year 106: Children traded bright glass beads for safe passage through streets.",
+    "Year 107: Bakers baked golden cakes shaped like tiny suns for everyone.",
+    "Year 108: The river glowed softly with bioluminescent moss along its banks.",
+    "Year 109: A painter sketched the darkness using only silver and indigo ink.",
+    "Year 110: The moon returned gently, watched by a quiet and happy crowd."
+   ]
+  },
+  {
+   "title": "Title: The Weaving of Tongues Bridge",
+   "events": [
+    "Year 304: Surveyors walked the muddy banks at dawn.",
+    "Year 305: Stonecutters quarried pale riverbed marble blocks slowly.",
+    "Year 312: Lanterns glowed softly along the first stone arches.",
+    "Year 318: Merchants carried carts across without fear of rain.",
+    "Year 329: Painters added gold leaf to every iron railing carefully.",
+    "Year 340: The bridge was officially opened with great joy and song."
+   ]
+  }
+ ],
+ "gears": [
+  {
+   "stall": "The Brass Bellhop & Co.",
+   "part": "Escapement Anchor",
+   "picture": "A copper beak biting sparks from the air every second"
+  },
+  {
+   "stall": "Luna's Loom & Lanterns",
+   "part": "Mainspring Barrel",
+   "picture": "A coiled storm of silver silk humming in a glass jar"
+  },
+  {
+   "stall": "Old Fenwick's Ratchet Shop",
+   "part": "Pallet Forks",
+   "picture": "Two velvet jaws snatching time with a soft click and snap"
+  },
+  {
+   "stall": "The Gilded Pendulum Parlour",
+   "part": "Balance Wheel Rim",
+   "picture": "A breathing ring of hammered gold trembling on its axis"
+  },
+  {
+   "stall": "Misty's Minute Merchant Stall",
+   "part": "Cam Lever Tip",
+   "picture": "A polished ivory nose nudging the second hand awake"
+  },
+  {
+   "stall": "Saffron & Sprocket Stand",
+   "part": "Escapement Anchor",
+   "picture": "A brass beak with two velvet jaws ticking softly in the gloom."
+  },
+  {
+   "stall": "Gilded Wren Market",
+   "part": "Mainspring Barrel",
+   "picture": "A coiled copper dragon sleeping inside a glass jar of mist."
+  },
+  {
+   "stall": "Copper Kettle Corner",
+   "part": "Pendulum Rods",
+   "picture": "Twin silver ribbons swaying like slow, shimmering waterfalls from eaves."
+  },
+  {
+   "stall": "Lantern Light Emporium",
+   "part": "Click Wheel Teeth",
+   "picture": "Tiny iron thorns arranged in perfect circles to catch the dark."
+  },
+  {
+   "stall": "Brass Bell Bottom Shoplet",
+   "part": "Governor Weights",
+   "picture": "Two heavy velvet plummets dancing gently above a pool of oil."
+  }
+ ]
+}

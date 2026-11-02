@@ -55,9 +55,9 @@ Self-reported real-life use gives **no Lumen, streak, relic or skill credit** (u
 - **Telegraph ambushes:** "A Memory Echo stirs" before the room. At most one per run, fewer for new players, skippable once, no penalty.
 - **Battle results never change skill estimates** (same as the Crypt). Rewards only from old items that held: story, cosmetics, small capped Lumen. Winning on easy fresh items earns nothing.
 - **Technique choice (M10):** show the material, a coach asks "what is this made of?", then a menu of 3 or 4 moves (Link, Palace, Major, Keyword). A poor fit gives a small tip and a harder recall, not a penalty; a good fit gives more study time.
-- **Real-life scenes with invented, non-sensitive material:** Networking Gala (names and faces, "ask again" once per guest), Packing Bay (a list with a mid-way distractor), Speech Hall (five points along a route), Crossroads (six turns), Night Market (prices), Recipe stall, Library (four key ideas).
+- **Real-life scenes with non-sensitive material (real or invented, owner decision of Nov 2, 2026; real material must be accurate and public, with no private data):** Networking Gala (names and faces, "ask again" once per guest), Packing Bay (a list with a mid-way distractor), Speech Hall (five points along a route), Crossroads (six turns), Night Market (prices), Recipe stall, Library (four key ideas).
 - **Items support, never replace, memory:** a Scroll of Order shows how many items (not what), a Lantern shows the first letter after you commit an answer, a Palace Map shows empty stops. Nothing shows an answer before recall. Companions are coaches who speak before and after, never during recall.
-- Battle length 5 to 8 minutes, can be left. Study and recall screens stay still and quiet; battle flair goes between turns and on the result screen. Honest line for the player: "Battles practise the methods on made-up material. They are not a test of real-life memory, and they do not make memory better in general."
+- Battle length 5 to 8 minutes, can be left. Study and recall screens stay still and quiet; battle flair goes between turns and on the result screen. Honest line for the player: "Battles practise the methods on practice material. They are not a test of real-life memory, and they do not make memory better in general."
 
 ## Outside retention advice: verdicts
 
