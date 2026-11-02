@@ -13,7 +13,7 @@ Roadmap gate to leave v0.7: **crash-free, and session length measured.** We also
 
 ## What to send them
 
-1. The file `builds/mnemos-v0.7.html` (works offline, open in Chrome, Edge, Firefox or Safari). Or, once you approve hosting, a link.
+1. The link https://ayaan40000.github.io/keepers-of-veyra/ (works offline after the first visit; on a phone, "Add to Home Screen" keeps Safari from clearing data). Or the file `builds/mnemos-v0.7.html` for anyone who prefers a file.
 2. This short note:
    - Play the daily session on as many days as you can for 4 weeks. About 20 to 30 minutes.
    - Once a week: Keeper > Closed beta > **Save beta report**, and send the file to the beta email.

@@ -17,7 +17,7 @@ node scripts/licenses.mjs             # regenerate licence list after dependency
 ```
 
 ## Hard rules
-- Never publish, push to GitHub or deploy without the owner's explicit approval.
+- Never publish, push to GitHub or deploy without the owner's explicit approval. Repo: github.com/ayaan40000/keepers-of-veyra; every push to main runs the tests and redeploys https://ayaan40000.github.io/keepers-of-veyra/ (bump `version` in package.json for each release so the offline cache refreshes).
 - No runtime network calls, no trackers, no accounts. All data lives in the browser (IndexedDB + localStorage) with JSON export/import.
 - All art is original and drawn in code. No image files from other games; no copying of Undertale, Stardew Valley or other assets, fonts or characters. Only OFL fonts via @fontsource (Pixelify Sans, Silkscreen, VT323).
 - Study and recall screens: no animation and no sound except one soft submit sound.

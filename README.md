@@ -1,7 +1,7 @@
 # Mnemos: Keepers of Veyra
 
 A free, open-source, local-first memory training RPG. 365 days, about 20 to 30 minutes a day.
-Version 0.7 (closed beta build). Not published. See `CHANGELOG.md`, `docs/ROADMAP.md` and `docs/BETA.md`.
+Version 0.7 (closed beta build). Play it at https://ayaan40000.github.io/keepers-of-veyra/ (closed beta). See `CHANGELOG.md`, `docs/ROADMAP.md` and `docs/BETA.md`.
 
 Scores measure performance on Mnemos tasks only. Mnemos is not an IQ test or a clinical test.
 

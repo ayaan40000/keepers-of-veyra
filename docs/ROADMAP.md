@@ -130,4 +130,4 @@ Study and recall screens stay still and quiet in every phase.
 5. Map as home screen: optional first.
 6. Approve three story choices from the relics build (Gallery key, Warden ring, page 12 text).
 7. Beta recruitment: owner recruits 20+ adults.
-8. GitHub account and repository name.
+8. GitHub account and repository name. Decided Nov 1, 2026: ayaan40000/keepers-of-veyra, hosted on GitHub Pages for the closed beta.
