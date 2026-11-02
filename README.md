@@ -49,6 +49,6 @@ Layout: `src/data` (curriculum, story, content), `src/engine` (pure game logic),
 
 ## Licences
 
-Code: MIT ([LICENSE](LICENSE)). Story text: CC BY 4.0. Fonts: SIL Open Font License 1.1 (Pixelify Sans, Silkscreen, VT323), full texts in [THIRD_PARTY_LICENSES.md](THIRD_PARTY_LICENSES.md) and in the app (Keeper > About).
+Code: MIT ([LICENSE](LICENSE)). Story text and art: CC BY 4.0. Fonts: SIL Open Font License 1.1 (Pixelify Sans, Silkscreen, VT323), full texts in [THIRD_PARTY_LICENSES.md](THIRD_PARTY_LICENSES.md) and in the app (Keeper > About).
 
-Art: much of the pixel art is drawn in code. The painted pictures were made on the project's own computer with the Qwen-Image 2.1 model and are used with the licensor's permission (see [docs/ART.md](docs/ART.md)); they are not covered by CC BY, so please ask before reusing them outside Mnemos. All characters and art are original; nothing is copied from other games.
+Art: much of the pixel art is drawn in code. The painted pictures were made on the project's own computer with the Qwen-Image 2.1 model; the project owner holds the licensor's permission to publish them and to allow open reuse, so they are shared under CC BY 4.0 like the rest of the art (credit "Mnemos: Keepers of Veyra"; see [docs/ART.md](docs/ART.md)). All characters and art are original; nothing is copied from other games.

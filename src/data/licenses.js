@@ -47,6 +47,6 @@ export const LICENSES = [
   "label": "Qwen-Image 2.1 (image model that painted the pictures in src/assets/art)",
   "version": "2.1",
   "license": "Used under permission from the licensor",
-  "text": "The pictures in src/assets/art were painted with Qwen-Image 2.1 (Alibaba Qwen team), then reduced to small pixel-art files by tools/asset-studio/ship.py. Qwen-Image 2.1 is released under the Qwen Research License. The project owner holds the licensor's approval to use and publish these outputs (recorded Nov 1, 2026). The model itself is not bundled. See docs/ART.md."
+  "text": "The pictures in src/assets/art were painted with Qwen-Image 2.1 (Alibaba Qwen team), then reduced to small pixel-art files by tools/asset-studio/ship.py. Qwen-Image 2.1 is released under the Qwen Research License. The project owner holds the licensor's approval to use and publish these outputs and to allow open reuse (recorded Nov 1 and Nov 2, 2026); they are shared under CC BY 4.0. The model itself is not bundled. See docs/ART.md."
  }
 ];

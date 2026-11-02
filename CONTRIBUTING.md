@@ -46,4 +46,4 @@ node tests/e2e.mjs     # must end with "errors: none"
 
 Small and focused is best. Describe what changed and why, how you tested it, and include a screenshot for anything visible. Every push to `main` is tested and deployed, so `main` must always be playable.
 
-By contributing you agree that your code is released under the MIT licence and your story text under CC BY 4.0.
+By contributing you agree that your code is released under the MIT licence and your story text and art under CC BY 4.0.
