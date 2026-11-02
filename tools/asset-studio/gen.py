@@ -27,6 +27,8 @@ LOOK = ("16-bit pixel art game illustration, crisp square pixels, dark outlines,
 SCENE_TAIL = " Wide cinematic composition, atmospheric depth, no text, no letters, no people in the foreground."
 BEAST_TAIL = (" A single creature, centred, full body, facing slightly left, on a completely plain flat very dark navy background, "
               "no ground, no floor, no shadow, no scenery, no text. Gentle, a little sad and curious, not frightening, never gory.")
+OBJECT_TAIL = (" A single small object, centred, seen from slightly above, on a completely plain flat very dark navy background, "
+               "no table, no shadow, no scenery, no hands, no text, no letters or numbers written on it.")
 NEG = ("text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, smooth gradients, anti-aliasing, "
        "gore, blood, skull, scary horror face, characters or art from existing games or films")
 
@@ -87,9 +89,48 @@ add("scene", "event_", [
 ])
 
 
+# v0.11 District Trials and vaults: one scene per trial, one object per prize (traced into 24x24 item icons).
+add("scene", "trial_", [
+    ("catacombs", "the Catacombs of the Unnamed: a low vaulted crypt lined with pale marble statues of ordinary townsfolk in niches, their faces softly worn, smooth blank plaques beneath each, an open logbook on a stone lectern lit by one amber lamp, white mist on the floor"),
+    ("scriptorium", "the Sunken Scriptorium: the lower floor of a round library half flooded with still grey water, reading desks and shelves standing in the water, scrolls floating, a copper dome above, warm candles on the high shelves"),
+    ("salt_vault", "the Broken Vault of the Salt Guild: a huge round iron vault door set in a brick cellar wall, covered in a grid of small brass dials, salt crystals on the floor, a green-shaded lamp hanging above, an open ledger on a crate"),
+    ("bridge", "the Bridge of Tongues: a long stone bridge over a deep misty chasm, gentle stone gargoyles with friendly faces perched on the railings, carved patterns on the stones, lanterns, moonlight"),
+    ("gears", "the Clockwork Market at a standstill: a market square under a stopped brass clock tower, brass gears and cogs of many sizes laid out on fifteen small stalls with striped awnings, amber lamps, light steam"),
+    ("vault", "a sealed vault in the river wall of Veyra: a small round stone door with a carved lamp symbol and an empty stone niche for a tablet beside it, moss, a lamp on a hook, still dark water below"),
+])
+add("object", "prize_", [
+    ("ledger_fragment", "a torn page of an old leather logbook with a brass corner and a ribbon bookmark"),
+    ("dry_scroll", "a rolled parchment scroll tied with a blue ribbon and sealed with a small amber wax drop"),
+    ("brass_dial", "a round brass combination dial with a knurled edge and a small pointer"),
+    ("tongue_stone", "a small smooth grey river stone carved with a tiny friendly gargoyle face"),
+    ("mainspring", "a coiled brass clock mainspring inside an open round brass barrel"),
+    ("vault_hook", "an iron lamp hook with a small glowing amber lamp hanging from it"),
+    ("vault_tablet", "a small square clay tablet with a carved lamp symbol in the centre"),
+    ("vault_key", "an ornate bronze key with a round bow shaped like a lamp"),
+])
+
+# Face samples for review (Nov 2, 2026): the same 8 people as scripts/face-samples.mjs, painted by the image model. Not shipped.
+FACE_TAIL = (" Head and shoulders portrait of one ordinary adult, facing the viewer, calm neutral expression, centred, "
+             "simple plain muted background, clear readable facial features, no text, no frame.")
+add("face", "face_", [
+    ("101", "a young woman with tan skin wearing a blue headscarf, almond brown eyes, thin brows, a small button nose, full lips, a small mole on her jaw"),
+    ("2024", "an older man with very pale skin, bald on top with a ring of blond hair at the sides, monolid dark brown eyes, a broad nose, a blond goatee, deep lines on his face, a gentle smile"),
+    ("377", "a middle-aged woman with tan skin wearing a rust-red headscarf, large brown eyes, angled brows, a strong roman nose, thin lips"),
+    ("9001", "a middle-aged man with light golden skin, short grey hair, round dark brown eyes, angled brows, a small button nose, freckles"),
+    ("4242", "a young person with pale skin, a dark brown ponytail, upturned grey eyes, straight brows, a wide nose, a small mouth, a long face"),
+    ("77", "an older man with tan skin, salt-and-pepper hair in a side part, almond brown eyes, a wide nose, a wide mouth, deeply lined face"),
+    ("31337", "a young man with warm brown skin, a purple knit cap, round dark brown eyes, a short black beard, a small upturned nose"),
+    ("555", "a young woman with fair skin, a light brown ponytail, monolid brown eyes, arched brows, a button nose, thin lips, freckles and a small mole on her temple"),
+])
+
+
 def prompt_for(kind, desc):
     if kind == "scene":
         return f"{LOOK} {desc.capitalize() if not desc[0].isupper() else desc}.{SCENE_TAIL}"
+    if kind == "face":
+        return f"{LOOK} {desc}.{FACE_TAIL}"
+    if kind == "object":
+        return f"{LOOK} {desc}.{OBJECT_TAIL}"
     return f"{LOOK} {desc}.{BEAST_TAIL}"
 
 
@@ -124,7 +165,8 @@ def run(only, seeds):
     NEW.mkdir(parents=True, exist_ok=True)
     todo = [j for j in JOBS if not only or any(j[0].startswith(o) for o in only.split(","))]
     for s in range(seeds):
-        for n, (jid, kind, desc) in enumerate(todo):
+        for jid, kind, desc in todo:
+            n = next(i for i, j in enumerate(JOBS) if j[0] == jid)  # same seed as recorded in art-jobs.json
             dest = NEW / f"{jid}_s{s}.png"
             if dest.exists():
                 continue

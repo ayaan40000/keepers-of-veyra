@@ -14,6 +14,8 @@ export const KINDS = [
   { id: 'document', name: 'Old Documents', blurb: "Papers from Veyra's past, found as each district comes back. Each one can be read." },
   { id: 'found', name: 'Lost and Found', blurb: 'Odd things people lost, turned up while you polished your relics.' },
   { id: 'gear', name: "Keeper's Gear", blurb: 'What a Keeper carries, earned as your skills grow.' },
+  // v0.11
+  { id: 'prize', name: 'Trial Prizes', blurb: 'Found behind the District Trials and the sealed vaults, for what you could still recall.' },
 ];
 
 export const RARITY = {
@@ -157,8 +159,21 @@ const MILESTONES = [
   M('keepers_year', "Seal of the Keeper's Year", 'legendary', 'Pressed on the morning after the Night of No Moon: all twelve districts restored and sixty delayed recalls passed. There is a lamp on it, and under the lamp, very small, your own name.'),
 ];
 
+// v0.11 District Trials and vaults: earned only by a trial or vault check that passed (p.trials[id].passed).
+const PZ = (id, name, rarity, trial, lore) => ({ id, name, kind: 'prize', rarity, source: { type: 'trial', id: trial }, lore });
+const PRIZES = [
+  PZ('tr_ledger_fragment', "The Warden's Ledger Fragment", 'rare', 'catacombs', 'A torn page from the logbook under the Hall of Faces, with a brass corner and a frayed ribbon. Ten names in a neat hand, and one more in the margin, crossed out and written again.'),
+  PZ('tr_salt_dial', 'A Salt Guild Dial', 'rare', 'salt_vault', 'One brass dial from the Salt Guild vault, its knurled edge worn smooth by clerks who carried the code home in their heads. Isolde unscrewed it with a hairpin.'),
+  PZ('tr_mainspring', 'The Market Mainspring', 'epic', 'gears', 'The old mainspring of the market clock, coiled in its brass barrel. It was replaced long ago, but Mosk kept it in a drawer. He says a spring remembers how it was wound.'),
+  PZ('tr_tongue_stone', "The Gargoyle's Stone", 'epic', 'bridge', 'A smooth grey river stone with a small friendly face carved on it. The eldest gargoyle of the Tongues Bridge gives one to every traveller who still knows the old words a week later.'),
+  PZ('tr_dry_scroll', 'The Saved Scroll', 'epic', 'scriptorium', 'A scroll from the high chest of the Sunken Scriptorium, tied with blue ribbon and sealed with a drop of amber wax. It stayed dry because you held its timeline for a day.'),
+  PZ('vt_lamp_hook', 'The Quay Vault Lamp', 'rare', 'vault_quay', 'A small lamp on an iron hook from the vault in the Quay wall. Its flame is the size of a fingernail and has not gone out since the Wardens lit it.'),
+  PZ('vt_clay_tablet', 'The Cellar Tablet', 'epic', 'vault_cellar', 'A square clay tablet stamped with a lamp, found in the cellar vault under the clock tower. It is the key to its own door, which the Wardens thought was a good joke.'),
+  PZ('vt_lamp_key', 'The Mirror Key', 'legendary', 'vault_mirror', 'A bronze key with a bow shaped like a lamp, from behind the dark mirror. It was waiting for someone who could keep a tablet for a whole month.'),
+];
+
 // v0.9.1 deep treasures share the crypt's data; the rest are new kinds (see traced-items.js).
 const DEEP = DEEP_TREASURES.map((t, i) => C(t.id, t.name, t.depth, i < 4 ? 'epic' : 'legendary', t.desc));
-export const ITEMS = [...ARTIFACTS, ...PAGES, ...TRINKETS, ...TREASURES, ...DEEP, ...SEALS, ...MILESTONES, ...TRACED_ITEMS];
+export const ITEMS = [...ARTIFACTS, ...PAGES, ...TRINKETS, ...TREASURES, ...DEEP, ...SEALS, ...MILESTONES, ...TRACED_ITEMS, ...PRIZES];
 export const ITEM_BY_ID = Object.fromEntries(ITEMS.map((it) => [it.id, it]));
 export const GATE_ARTIFACT = Object.fromEntries(ARTIFACTS.filter((a) => a.source.type === 'gate').map((a) => [a.source.id, a.id]));

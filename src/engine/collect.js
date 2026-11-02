@@ -2,7 +2,7 @@
 import { ITEMS, KINDS, ITEM_BY_ID } from '../data/items.js';
 import { MODULES } from '../data/curriculum.js';
 import { CONCRETE } from '../data/content.js';
-import { hashStr, matches } from './util.js';
+import { hashStr, matches, daysBetween } from './util.js';
 
 export function earnedItems(p) {
   const gates = new Set(p?.progress?.gates || []);
@@ -21,6 +21,7 @@ export function earnedItems(p) {
                 : s.type === 'held' ? heldCount(p) >= s.n
                   : s.type === 'polish' ? Object.keys(p?.relics?.polish || {}).length >= s.n
                     : s.type === 'levels' ? levelsGained(p) >= s.n
+                      : s.type === 'trial' ? !!p?.trials?.[s.id]?.passed
                 : false;
     if (own) out.push(it.id);
   }
@@ -64,7 +65,8 @@ export function collectionStats(p) {
 
 // ---------- v0.5: fading relics and recall cards ----------
 // A district's artifact fades while the latest delayed recall for that district's skill is below 60%.
-// It brightens again when a later delayed recall passes. Only real recall changes it.
+// It brightens again when a later delayed recall passes, or (v0.11) after a calm repair finished after that recall.
+// Only real recall changes it. A dim relic means a review is due, not that something was done wrong.
 export const FADE_BELOW = 0.6;
 export function fadedRelics(p) {
   const out = [];
@@ -73,22 +75,32 @@ export function fadedRelics(p) {
     const mod = MODULES.find((m) => m.id === it.source.id);
     const probes = p?.skills?.[mod?.skill]?.probes || [];
     const last = probes[probes.length - 1];
-    if (last && last.score < FADE_BELOW) out.push(it.id);
+    const fixed = p?.relics?.repair?.[it.id]?.done;
+    if (last && last.score < FADE_BELOW && !(fixed && (!last.date || fixed >= last.date))) out.push(it.id);
   }
   return out;
 }
 
 // A recall card asks for one word from a relic's story, which the player read when they earned it.
-// Polishing is cosmetic and never changes skill estimates.
-export function recallCard(id) {
-  const item = ITEM_BY_ID[id];
-  const lore = item?.lore || '';
+// Polishing is cosmetic and never changes skill estimates. n > 0 picks another word (the repair re-test uses a different cue).
+function cardPool(lore) {
   const words = lore.match(/[A-Za-z']+/g) || [];
   const concrete = new Set(CONCRETE);
-  let pool = [...new Set(words.filter((w) => concrete.has(w.toLowerCase()) && w.length >= 4))];
-  if (!pool.length) pool = [...new Set(words.filter((w) => w.length >= 6 && /^[a-z]/.test(w)))];
-  if (!pool.length) return null;
-  const answer = pool[hashStr(id) % pool.length];
+  const pool = [...new Set(words.filter((w) => concrete.has(w.toLowerCase()) && w.length >= 4))];
+  return pool.length ? pool : [...new Set(words.filter((w) => w.length >= 6 && /^[a-z]/.test(w)))];
+}
+export function recallCard(id, n = 0) {
+  const item = ITEM_BY_ID[id];
+  const lore = item?.lore || '';
+  const base = cardPool(lore);
+  if (!base.length) return null;
+  let answer = base[hashStr(id) % base.length];
+  if (n > 0) {
+    // another word from the same story: first the other concrete words, then longer plain words
+    const rest = [...new Set([...base, ...(lore.match(/[A-Za-z']+/g) || []).filter((w) => w.length >= 6 && /^[a-z]/.test(w))])].filter((w) => w.toLowerCase() !== answer.toLowerCase());
+    if (rest.length < n) return null;
+    answer = rest[(hashStr(id) + n - 1) % rest.length];
+  }
   const re = new RegExp(`\\b${answer}\\b`);
   return { id, answer, text: lore.replace(re, '_____'), hint: `${answer.length} letters, starts with "${answer[0].toUpperCase()}"` };
 }
@@ -108,6 +120,41 @@ export function answerCard(p, id, answer, day) {
   if (ok) p.relics.polish[id] = day;
   else p.relics.tried = { ...(p.relics.tried || {}), [id]: day };
   return ok;
+}
+
+// ---------- v0.11 calm relic repair ----------
+// A faded relic is repaired by its recall card now, then a re-test with a different word 1 to 3 days later.
+// No timer, no penalty: a wrong answer simply waits until the next day. Never changes skill estimates.
+export function repairState(p, id, day) {
+  if (!fadedRelics(p).includes(id)) return 'none';
+  const r = p?.relics?.repair?.[id] || {};
+  if (r.tried === day) return 'rest';
+  if (!r.first) return 'first';
+  const gap = daysBetween(r.first, day);
+  if (gap < 1) return 'wait';
+  if (gap > 3) return 'first'; // too long ago: begin the repair again
+  return 'second';
+}
+export const repairCard = (p, id, day) => {
+  const st = repairState(p, id, day);
+  if (st !== 'first' && st !== 'second') return null;
+  const c0 = recallCard(id, 0);
+  const c1 = st === 'second' ? recallCard(id, 1) : null;
+  return c1 && c1.answer !== c0?.answer ? c1 : c0;
+};
+export function answerRepair(p, id, answer, day) {
+  const st = repairState(p, id, day);
+  const card = repairCard(p, id, day);
+  if (!card) return null;
+  p.relics = p.relics || { polish: {} };
+  const all = p.relics.repair = { ...(p.relics.repair || {}) };
+  const cur = { ...(all[id] || {}) };
+  const ok = matches(answer, card.answer.toLowerCase());
+  if (!ok) cur.tried = day;
+  else if (st === 'first') { cur.first = day; delete cur.done; }
+  else { cur.done = day; delete cur.first; }
+  all[id] = cur;
+  return { ok, stage: st, answer: card.answer };
 }
 
 // Most recently earned first (collectionSeen keeps the order items were first shown).

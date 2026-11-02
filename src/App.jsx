@@ -15,6 +15,7 @@ import Relics from './ui/Relics.jsx';
 import Crypt from './ui/Crypt.jsx';
 import Character from './ui/Character.jsx';
 import Battle from './ui/Battle.jsx';
+import TrialRun from './ui/Trials.jsx';
 import { ItemIcon } from './ui/ItemIcon.jsx';
 import { UnlockToast } from './ui/game/UnlockToast.jsx';
 import { earnedItems, collectionStats } from './engine/collect.js';
@@ -44,6 +45,7 @@ export default function App() {
   const [inSession, setInSession] = useState(false);
   const [inCrypt, setInCrypt] = useState(false);
   const [battle, setBattle] = useState(null);
+  const [trial, setTrial] = useState(null);
   const [menu, setMenu] = useState(false);
   const ref = useRef(null);
   const importRef = useRef(null);
@@ -118,6 +120,7 @@ export default function App() {
   const replace = (p) => { if (!p.collectionSeen) p.collectionSeen = earnedItems(p); ref.current = p; setProfile(p); saveProfile(p); setInSession(false); setTab('today'); window.scrollTo(0, 0); };
 
   const fight = (mode) => { setBattle({ mode, n: Date.now() }); window.scrollTo(0, 0); };
+  const openTrial = (id) => { setTrial({ id, n: Date.now() }); window.scrollTo(0, 0); };
 
   function start(type, opts) {
     if (type === 'discard') { update((p) => abandonSession(p)); return; }
@@ -142,7 +145,7 @@ export default function App() {
     );
   }
 
-  const fresh = profile.inProgress || inCrypt || battle ? [] : earnedItems(profile).filter((id) => !(profile.collectionSeen || []).includes(id));
+  const fresh = profile.inProgress || inCrypt || battle || trial ? [] : earnedItems(profile).filter((id) => !(profile.collectionSeen || []).includes(id));
   // One grouped unlock moment (v0.6): two or more new relics at once get a single screen instead of a stream of toasts.
   const seeAll = () => update((p) => { p.collectionSeen = [...new Set([...(p.collectionSeen || []), ...fresh])]; });
   const grouped = fresh.length >= 2 && (
@@ -170,6 +173,10 @@ export default function App() {
     return <Battle key={battle.n} profile={profile} update={update} mode={battle.mode} onExit={() => { setBattle(null); window.scrollTo(0, 0); }} />;
   }
 
+  if (trial) {
+    return <TrialRun key={trial.n} profile={profile} update={update} id={trial.id} onExit={() => { setTrial(null); window.scrollTo(0, 0); }} />;
+  }
+
   if (inCrypt) {
     return <Crypt profile={profile} update={update} onExit={() => { setInCrypt(false); window.scrollTo(0, 0); }} treasureIcon={(id, size) => <ItemIcon id={id} scale={Math.max(1, Math.round((size || 48) / 28))} />} />;
   }
@@ -179,9 +186,9 @@ export default function App() {
   }
 
   const pages = {
-    today: <Today profile={profile} start={start} update={update} onEnterCrypt={() => setInCrypt(true)} onFight={fight} />,
+    today: <Today profile={profile} start={start} update={update} onEnterCrypt={() => setInCrypt(true)} onFight={fight} onTrial={openTrial} />,
     relics: <Relics profile={profile} update={update} onEnterCrypt={() => setInCrypt(true)} />,
-    veyra: <Veyra profile={profile} update={update} onFight={fight} />,
+    veyra: <Veyra profile={profile} update={update} onFight={fight} onTrial={openTrial} />,
     character: <Character profile={profile} update={update} />,
     palaces: <Palaces profile={profile} update={update} />,
     progress: <Progress profile={profile} update={update} />,

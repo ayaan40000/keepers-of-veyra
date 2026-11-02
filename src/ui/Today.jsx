@@ -16,6 +16,7 @@ import { BackupReminder, SafariNotice, InstallCard, downloadBackup } from './Not
 import { buildExport } from '../store.js';
 import { RealLifeCard } from './FieldGuide.jsx';
 import { EchoCard } from './Battle.jsx';
+import { TrialDueCard } from './Trials.jsx';
 import { pendingNudge } from '../engine/guide.js';
 import { today } from '../engine/core.js';
 
@@ -25,7 +26,7 @@ const FREE = [
   { t: 'digits', n: 12, s: 80, w: 18 }, { t: 'vocab', n: 8, s: 90, w: 22 }, { t: 'facts', n: 8, s: 90, w: 27 },
 ];
 
-export default function Today({ profile, start, onEnterCrypt, update, onFight }) {
+export default function Today({ profile, start, onEnterCrypt, update, onFight, onTrial }) {
   const st = sessionStatus(profile);
   const g = profile.progress.gates.length;
   const stage = wrenStage(g);
@@ -79,6 +80,8 @@ export default function Today({ profile, start, onEnterCrypt, update, onFight })
       {st.doneToday && !resume && nudge && <RealLifeCard profile={profile} update={update} task={nudge} />}
 
       {st.doneToday && !resume && onFight && <EchoCard profile={profile} update={update} onFight={onFight} />}
+
+      {st.doneToday && !resume && onTrial && <TrialDueCard profile={profile} onTrial={onTrial} />}
 
       {!resume && <BackupReminder profile={profile} update={update} onExport={() => downloadBackup(profile, update, buildExport)} />}
       {!resume && <SafariNotice profile={profile} update={update} />}

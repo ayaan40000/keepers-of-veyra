@@ -33,7 +33,7 @@ export function newProfile(alias, avatar, prefs = {}) {
     progress: { day: 1, startDate: todayISO(0), trainingDates: [], fullDates: [], minutes: 0, lumen: 0, gates: [], gateRetry: {}, longest: 0, lastSessionDate: null, freeXp: { date: null, xp: 0 }, dayOffset: 0, baselineDone: false, reviewerUnlock: false },
     skills: Object.fromEntries(Object.keys(SKILLS).map((k) => [k, newSkill()])),
     results: [], sets: [], palaces: [], major: {}, achievements: {}, story: { seen: [] }, reflections: 0, baseline: null, inProgress: null,
-    tips: { seen: [] }, relics: { polish: {} }, stats: { sessions: [] },
+    tips: { seen: [] }, relics: { polish: {} }, stats: { sessions: [] }, trials: {},
     guide: { tried: {}, later: {} },
     keeper: { equip: { lantern: null, cloak: null, charm: null, tool: null } },
     battles: { done: 0, held: 0, rests: 0, last: null, skipped: null, queue: [], history: [] },

@@ -58,6 +58,7 @@ export function codexUnlocked(p, entry) {
   if (u === 'start') return true;
   if (u.startsWith('gate:')) return p.progress.gates.includes(u.slice(5));
   if (u.startsWith('side:')) return !!p.story.sideDone?.[u.slice(5)];
+  if (u.startsWith('trial:')) return !!p.trials?.[u.slice(6)]?.passed;
   return false;
 }
 

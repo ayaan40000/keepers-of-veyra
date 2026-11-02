@@ -10,10 +10,11 @@ import { sideQuestState, codexFor, charactersFor, mainQuests } from '../engine/q
 import { Portrait } from '../pixel/Faces.jsx';
 import WorldMap from './pixel/WorldMap.jsx';
 import { EchoHall } from './Battle.jsx';
+import { TrialHall } from './Trials.jsx';
 
 // District positions along the river, isometric map (original art).
 const POS = [[70, 330], [150, 300], [235, 320], [300, 260], [220, 230], [130, 210], [70, 150], [160, 120], [250, 140], [320, 90], [230, 60], [130, 40]];
-const VIEWS = [['map', 'Map'], ['journal', 'Quests'], ['chapters', 'Chapters'], ['people', 'People'], ['codex', 'Lore']];
+const VIEWS = [['map', 'Map'], ['journal', 'Quests'], ['trials', 'Trials'], ['chapters', 'Chapters'], ['people', 'People'], ['codex', 'Lore']];
 
 function Journal({ profile }) {
   const mq = mainQuests(profile);
@@ -138,10 +139,13 @@ function DistrictList({ profile, current, onSelect }) {
   );
 }
 
-export default function Veyra({ profile, update, onFight }) {
+// The last view stays open after a trial or battle returns here (memory only, not saved).
+let lastView = 'map';
+export default function Veyra({ profile, update, onFight, onTrial }) {
   const st = sessionStatus(profile);
   const gates = profile.progress.gates;
-  const [view, setView] = useState('map');
+  const [view, setViewState] = useState(lastView);
+  const setView = (v) => { lastView = v; setViewState(v); };
   const [sel, setSel] = useState(st.mod.id);
   const m = MODULES.find((x) => x.id === sel);
   const restored = gates.includes(sel);
@@ -180,6 +184,7 @@ export default function Veyra({ profile, update, onFight }) {
         </>
       )}
       {view === 'journal' && <Journal profile={profile} />}
+      {view === 'trials' && <TrialHall profile={profile} onTrial={onTrial || (() => {})} />}
       {view === 'chapters' && <Chapters profile={profile} />}
       {view === 'people' && <People profile={profile} />}
       {view === 'codex' && <Codex profile={profile} />}

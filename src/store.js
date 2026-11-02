@@ -6,6 +6,7 @@ import { hashStr } from './engine/util.js';
 import { FURNITURE_KINDS } from './engine/room.js';
 import { GEAR, SLOTS } from './data/gear.js';
 import { ITEM_BY_ID } from './data/items.js';
+import { TRIALS } from './data/trials.js';
 
 
 export const MAX_IMPORT_BYTES = 5 * 1024 * 1024;
@@ -113,6 +114,8 @@ export function migrate(p) {
   for (const k of ['done', 'held', 'rests']) if (typeof p.battles[k] !== 'number') p.battles[k] = 0;
   if (!Array.isArray(p.battles.queue)) p.battles.queue = [];
   if (!Array.isArray(p.battles.history)) p.battles.history = [];
+  // v0.11 District Trials and vaults
+  if (!isObj(p.trials)) p.trials = {};
   p.meta.schema = SCHEMA;
   return p;
 }
@@ -210,6 +213,19 @@ function validateExtras(p) {
   }
   if (p.tips != null && (!isObj(p.tips) || !Array.isArray(p.tips.seen) || !p.tips.seen.every((x) => isStr(x, 60)))) return 'Tips record is invalid.';
   if (p.relics != null && (!isObj(p.relics) || (p.relics.polish != null && !datedMap(p.relics.polish)) || (p.relics.tried != null && !datedMap(p.relics.tried)))) return 'Relic record is invalid.';
+  if (p.relics?.repair != null) {
+    const rp = p.relics.repair;
+    if (!isObj(rp) || !Object.entries(rp).every(([k, v]) => !!ITEM_BY_ID[k] && isObj(v) && ['first', 'done', 'tried'].every((f) => v[f] == null || isDate(v[f])))) return 'Relic repair record is invalid.';
+  }
+  if (p.trials != null) {
+    if (!isObj(p.trials)) return 'Trial record is invalid.';
+    for (const [k, r] of Object.entries(p.trials)) {
+      if (!TRIALS[k] || !isObj(r)) return 'Trial record is invalid.';
+      if (['start', 'due', 'last', 'passed', 'retryOn'].some((f) => r[f] != null && !isDate(r[f]))) return 'Trial dates are invalid.';
+      if ((r.seed != null && !isInt(r.seed, 0, 1e10)) || (r.step != null && !isInt(r.step, 0, TRIALS[k].checks.length - 1)) || (r.tries != null && !isInt(r.tries, 0, 1e6)) || (r.best != null && !isInt(r.best, 0, 99))) return 'Trial record is invalid.';
+      if (r.recovering != null && typeof r.recovering !== 'boolean') return 'Trial record is invalid.';
+    }
+  }
   if (p.guide != null) {
     const okMap = (m) => m == null || (datedMap(m) && Object.keys(m).length <= 200 && Object.keys(m).every((k) => isStr(k, 40)));
     if (!isObj(p.guide) || !okMap(p.guide.tried) || !okMap(p.guide.later)) return 'Field Guide record is invalid.';

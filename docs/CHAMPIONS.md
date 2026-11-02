@@ -37,6 +37,10 @@ Not to copy: hours-a-day regimes, "train like a champion" pressure, any "become 
 - **Speed math:** pictures usually cost more time than holding a four-digit result. The guide says to calculate left to right and say partial results aloud, and keeps pictures for constants and formulas.
 - Physical skills: a palace stores the order of steps only; movement needs practice and a coach. Coding: syntax comes from writing code. Books: a picture is a label, not the argument; say the idea in your own words first.
 
+## Real material in v0.11 trials (checked Nov 2, 2026)
+
+Scriptorium timelines in `src/data/trials.js`, public facts only: Sputnik 1 (1957), Gagarin (1961), Tereshkova (1963), Leonov's spacewalk (1965), Apollo 8 around the Moon (1968), Apollo 11 landing (1969), Apollo 17 last crewed landing (1972); Montgolfier balloon, first crewed flight (1783), Wright brothers (1903), Lindbergh (1927), Earhart across the Atlantic (1932), Yeager and the sound barrier (1947), Concorde's first flight (1969), first Boeing 747 passenger service (1970); Jenner's smallpox vaccine test (1796), Roentgen's X-rays (1895), the Curies announce radium (1898), Fleming and penicillin (1928), DNA double helix published (1953), Salk's polio vaccine declared safe and effective (1955), WHO declares smallpox eradicated (1980). Clock parts in the Clockwork Market are real part names. No living person is shown, quoted or implied to endorse Mnemos.
+
 ## What the evidence supports (safe sentences)
 
 "Pictures and places help you remember lists, names and sequences when you use them on purpose." "It works best on things you must recall in order or exactly." "Checking yourself later is what makes it last." Never: general memory or IQ gains, protection from decline, exam or career guarantees, "learn a book in a day". Mnemos mnemonics store arbitrary items; they do not build understanding.

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { today } from '../engine/core.js';
 import { Tip } from './Tips.jsx';
 import { ITEMS, KINDS, RARITY } from '../data/items.js';
-import { earnedItems, collectionStats, fadedRelics, recentlyEarned, recallCard, canPolish, answerCard } from '../engine/collect.js';
+import { earnedItems, collectionStats, fadedRelics, recentlyEarned, recallCard, canPolish, answerCard, repairState, repairCard, answerRepair } from '../engine/collect.js';
 import { ItemIcon, ItemCard } from './ItemIcon.jsx';
 import { CryptCard } from './Crypt.jsx';
 import { PixelBar } from './game/PixelBar.jsx';
@@ -24,6 +24,30 @@ function RecallCard({ profile, update, id }) {
   return (
     <form className="recall-card" onSubmit={(e) => { e.preventDefault(); let ok = false; update((p) => { ok = answerCard(p, id, val, day); }); setRes(ok); }}>
       <p className="small">Fill the gap from this relic's story. ({card.hint})</p>
+      <p className="small story-text">{card.text}</p>
+      <label className="field">Missing word<input autoFocus autoComplete="off" value={val} onChange={(e) => setVal(e.target.value)} /></label>
+      <button className="btn primary small" disabled={!val.trim()}>Check</button>
+    </form>
+  );
+}
+
+// v0.11 calm repair: the recall card now, then a different word one to three days later. No timer, nothing lost.
+function RepairCard({ profile, update, id }) {
+  const [val, setVal] = useState('');
+  const [res, setRes] = useState(null);
+  const day = today(profile);
+  const st = repairState(profile, id, day);
+  const card = repairCard(profile, id, day);
+  if (res) {
+    if (!res.ok) return <p className="small" role="status">Not quite. The word was "{res.answer}". Read the relic's story again; you can try tomorrow.</p>;
+    return <p className="small relic-shine" role="status">{res.stage === 'first' ? `Right: "${res.answer}". Come back in a day or two for one more card with a different word, and the light comes back.` : `Right: "${res.answer}". The pedestal is bright again.`}</p>;
+  }
+  if (st === 'rest') return <p className="small muted">You can try the repair card again tomorrow.</p>;
+  if (st === 'wait') return <p className="small muted">The first card is done. The second card, with a different word, is ready tomorrow.</p>;
+  if (!card) return null;
+  return (
+    <form className="recall-card" onSubmit={(e) => { e.preventDefault(); let r = null; update((p) => { r = answerRepair(p, id, val, day); }); setRes(r); }}>
+      <p className="small">{st === 'first' ? 'Repair, step 1 of 2: fill the gap from this relic\'s story.' : 'Repair, step 2 of 2: a different word from the same story.'} ({card.hint})</p>
       <p className="small story-text">{card.text}</p>
       <label className="field">Missing word<input autoFocus autoComplete="off" value={val} onChange={(e) => setVal(e.target.value)} /></label>
       <button className="btn primary small" disabled={!val.trim()}>Check</button>
@@ -90,7 +114,7 @@ export default function Relics({ profile, onEnterCrypt, update }) {
       {faded.size > 0 && (
         <section className="card notice warn-card">
           <h3 className="panel-title"><PxIcon name="lumen" size={24} />{faded.size === 1 ? 'A relic is fading' : `${faded.size} relics are fading`}</h3>
-          <p className="small">A recent delayed recall slipped below 60%, so {faded.size === 1 ? 'its relic has' : 'their relics have'} dimmed. Pass the next delayed recall for that skill in your daily session and the light comes back.</p>
+          <p className="small">A recent delayed recall slipped below 60%, so {faded.size === 1 ? 'its relic has' : 'their relics have'} dimmed. A dim relic means a review is due, not that you did something wrong. Pass the next delayed recall for that skill, or open the relic and repair it with two calm recall cards a day or two apart.</p>
         </section>
       )}
 
@@ -123,8 +147,9 @@ export default function Relics({ profile, onEnterCrypt, update }) {
       {sel && (
         <section className="card parchment relic-detail">
           <ItemCard id={sel} owned={owned.has(sel)} />
-          {faded.has(sel) && <p className="small warn">Fading: the delayed recall for this district's skill slipped. Recall it well again to restore the light.</p>}
-          {owned.has(sel) && <RecallCard key={sel} profile={profile} update={update} id={sel} />}
+          {faded.has(sel) && <p className="small warn">Dim: the delayed recall for this district's skill slipped. A review is due; nothing is lost.</p>}
+          {owned.has(sel) && faded.has(sel) && <RepairCard key={'r' + sel} profile={profile} update={update} id={sel} />}
+          {owned.has(sel) && !faded.has(sel) && <RecallCard key={sel} profile={profile} update={update} id={sel} />}
         </section>
       )}
     </div>

@@ -863,3 +863,17 @@ kbd { font: .85rem/1 var(--f-num); padding: 2px 5px; background: #0b0f1c; color:
 @keyframes echo-shake { 25% { transform: translateX(-4px); } 75% { transform: translateX(4px); } }
 @keyframes echo-away { to { transform: translateY(-40px); opacity: 0; } }
 @media (max-width: 420px) { .attrs li { grid-template-columns: 6rem 1fr 1.8rem; } .battle-stage { min-height: 180px; } }
+
+/* v0.11 District Trials and vaults */
+.trial-art { display: block; width: 100%; height: auto; max-height: 260px; object-fit: cover; border: 2px solid var(--line); margin: 8px 0; }
+.trial-list { list-style: none; padding: 0; margin: 8px 0; display: grid; gap: 10px; }
+.trial-row { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 8px; padding: 8px; border: 2px solid var(--line); background: var(--tile); }
+.trial-row.locked { opacity: .7; }
+.trial-row.done { border-color: var(--gold); }
+.trial-row.due { border-style: double; border-width: 4px; }
+.trial-row-head { display: flex; gap: 10px; align-items: flex-start; min-width: 0; flex: 1 1 220px; }
+.trial-row-head p { margin: 2px 0 0; }
+.trial-items { padding-left: 1.4rem; display: grid; gap: 10px; }
+.trial-items li { display: grid; gap: 6px; }
+.tablet-lines { padding-left: 1.4rem; display: grid; gap: 8px; }
+.tablet-lines li.slipped > span { text-decoration: underline wavy var(--amber); }

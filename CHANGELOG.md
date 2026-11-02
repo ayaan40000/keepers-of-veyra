@@ -2,7 +2,21 @@
 
 All notable changes to Mnemos: Keepers of Veyra. Saved data from every earlier version loads in this one.
 
-## Unreleased (v0.10 work): Character, gear and Echo battles
+## 0.11.0: District Trials, sealed vaults and calm relic repair (2026-11-02)
+
+Built and tested on the owner's computer; not pushed or deployed.
+
+- **District Trials** (Veyra > Trials): five optional trials, each in a restored district, each using a method you were already taught on fresh material. The Catacombs of the Unnamed (names and faces, 8 of 10), the Broken Vault of the Salt Guild (a 12-digit code with the Major System, after a short interruption), the Disordered Gears (15 clock parts on 15 market stalls, put back from the last stall to the first, 14 of 15), the Bridge of Tongues (10 old-tongue words, asked now and again after 7 days, 8 of 10) and the Sunken Scriptorium (a 7-date timeline, asked again the next day, 6 of 7).
+- **Sealed vaults**: three vaults (Quay, Market Cellar, Mirror) with a short tablet you read once. A quiet check-in after a day, then the door opens on a recall after 7 days (30 for the Mirror Vault). Small typos are forgiven; numbers and names must be exact. A hint ladder (first letter, then first word) costs only that line's Lumen.
+- **Rules**: trials never change skill estimates. Only a check that passed wins the prize. A miss costs nothing: fresh material the next day (two days for a vault), and the Bridge gives one gentle second ask after a review of the words that slipped. The story never waits for a trial. Study and recall screens stay still and quiet.
+- **Prizes and lore**: 8 new prizes in a new Trial Prizes group and 6 new Lore entries. A check that is due shows on Today after the day's session.
+- **Real material**: the Scriptorium includes three real timelines (the race to the Moon, the history of flight, medicine and discovery), checked before shipping. Clock parts are real names. Everything else is invented.
+- **Calm relic repair**: a dim district relic can be repaired in the Reliquary with two recall cards, a day or more apart, each asking a different word from its story. No timer and nothing lost; a later slipped recall can dim it again.
+- **Art**: six new pictures painted by the local image model (one per trial and the vault door), and eight prize icons traced from painted objects. The art folder is now 913 KB (budget raised from 1200 KB to 5 MB the same day, for image-model faces).
+- Saved data: new `trials` record and `relics.repair`, with migration, checks and tests. Older saves load unchanged. 221 unit tests.
+- Not built yet: relics on pedestals in the walkable palace room (repair lives in the Reliquary for now) and the optional 90 and 180 day "long echo" vault bonuses.
+
+## 0.10.0 (was "Unreleased (v0.10 work)"): Character, gear and Echo battles
 
 Built and tested, not yet released. The version number has not been bumped.
 

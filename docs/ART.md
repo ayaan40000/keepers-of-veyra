@@ -12,7 +12,7 @@ Every manifest entry carries `model: 'qwen-image-2.1'`, so a future model swap c
 
 ## What shipped (v0.9.x art pass)
 
-124 files, about 815 KB in `src/assets/art/` (budget 1200 KB; the single-file build is about 2.3 MB because it inlines every picture as base64).
+124 files, about 815 KB in `src/assets/art/` (budget 1200 KB at the time; raised to 5 MB on Nov 2, 2026 by owner decision, mostly for the image-model faces. The single-file build is about 2.3 MB because it inlines every picture as base64).
 
 | Category | Files | KB | Grid | Colours | Notes |
 | --- | --- | --- | --- | --- | --- |
@@ -26,6 +26,7 @@ Every manifest entry carries `model: 'qwen-image-2.1'`, so a future model swap c
 | relic, inventory, lore, quest | 9, 9, 7, 9 | 21 | 48x48 | 24 | icons |
 | furniture | 8 | 5 | 48x48 | 24 | palace room pieces |
 | crypt | 10 | 9 | 64x64 | 24 | Undercroft bosses and props |
+| trial | 6 | 99 | 320x180 | 32 | v0.11 District Trials and the vault door (night only) |
 
 Sprites (everything below the scenes) have the plain background keyed to transparency. Pictures were rejected when they showed readable text (for example name plates and a note) or a skull.
 
@@ -45,6 +46,10 @@ Sprites (everything below the scenes) have the plain background keyed to transpa
 
 The manifest works in both builds: pictures are imported as normal Vite assets. The single-file build inlines all of them (no network request); the normal build emits them as files, which the service worker precaches.
 
+### v0.11 additions
+
+`trial_catacombs`, `trial_scriptorium`, `trial_salt_vault`, `trial_bridge`, `trial_gears`, `trial_vault` (jobs `trial_*` in `gen.py`, rows in `ship.py`). The eight trial prize icons were painted as single objects (jobs `prize_*`, kind `object`) and traced into 24x24 code sprites by `tools/asset-studio/prizes.py`, which writes `src/pixel/trial-icons.js` and a review sheet `out/prize-icons.png`. These 14 jobs were painted with `gen.py --only trial_,prize_` before a seed-numbering fix, so their real seeds are 91000 + 1000 x seed index + their position in that run (trial_catacombs 0 to prize_vault_key 13), not the seeds listed in `art-jobs.json`; seed index 0 shipped for all of them. Later runs use the recorded seeds.
+
 ## How it was made
 
 1. `tools/asset-studio/studio.py` (older drafts) and `tools/asset-studio/gen.py` (new scenes and creatures) paint with ComfyUI. All prompts, seeds, sizes and steps are in `tools/asset-studio/art-jobs.json` (new set) or `out/<category>/plan.json` (older drafts).
@@ -57,7 +62,7 @@ Contact sheets: `tools/asset-studio/out/shipped-sheet.png` (everything shipped) 
 
 1. New picture: add a job to `JOBS` in `gen.py` (or a row in `DAYS` in `day.py`), run `python tools/asset-studio/gen.py --only <prefix>`. Only one heavy model may run at a time: unload LM Studio first (about 20 GB of RAM).
 2. Add one row to `SHIP` or `NEWROWS` in `ship.py` (id, source, category, alt text). Set the seed you prefer in `PICK`.
-3. `python tools/asset-studio/ship.py --sheet`. The script prints per-category sizes and warns when the 1200 KB budget is exceeded.
+3. `python tools/asset-studio/ship.py --sheet`. The script prints per-category sizes and warns when the 5 MB budget (5120 KB) is exceeded.
 4. `npm run build:single` and check the picture appears.
 
 Alt text is plain language, no em dashes. Item, quest and achievement ids are permanent, but art ids are not saved data, so they can change with the code that uses them.
@@ -65,3 +70,30 @@ Alt text is plain language, no em dashes. Item, quest and achievement ids are pe
 ## Redo the whole set with a different model
 
 Only the model file names in the ComfyUI workflow (`comfy_qwen_workflow.json`: `UNETLoader`, `CLIPLoader`, `VAELoader`) need swapping, plus the text encoder node type if the new model does not use `TextEncodeQwenImage21`. Move the old PNGs in `out/new/` and `out/day/` aside, run `gen.py`, pick seeds in `ship.PICK`, run `day.py` (it needs a model that accepts reference images; otherwise set `METHOD = "img2img"` with a denoise near 0.6), run `ship.py`, and change the `model` string in `ship.py`.
+
+## Faces for the Names-and-Faces drills (owner chose image-model faces, Nov 2, 2026)
+
+Pipeline (`tools/asset-studio/`): `people.py` builds a balanced cast from a recipe (heritage, skin tone, age band, build, height, features,
+marks, asymmetries, piercings, accessories, clothes). `people_llm.py` has the local Qwen write each description; a code check keeps every
+trait and rejects invented accessories. `faces.py --cast` paints each original, a look-alike stranger (painted fresh from the same recipe with
+new eyes, shape and colour, plus one more feature, and a different seed) and a new look (an edit of the original: new hair or headwear plus
+glasses, piercings or clothes). `facecheck.py` has Qwen check gender, age band, a complete face and that a new look is the same person;
+`--reject` deletes failures so the next `faces.py --cast` repaints them. `face_sheet.py --cast` makes the review sheet. Speed settings were
+timed and compared by eye (`docs/review/face-speed-compare.png`): an original about 11 s, an edit about 40 s, no visible loss at 96 px.
+
+Rules for release: a look-alike must have a clearly different face (never the same eyes) and must not be told apart by clothes, so it wears
+the same outfit only about half the time; clothes and hair are changeable features in both directions.
+
+### Idea, not built: face templates (parts that combine)
+
+Asked by the owner: paint sets of parts (eyes, noses, mouths, ears, brows, face shapes) with Qwen and combine them into new faces.
+- For: thousands of faces from a small library, a few KB per part; exact control for the drills (a look-alike swaps exactly the eyes
+  and one more part, nothing else); every face is reproducible from its list of parts.
+- Against: pasted pixel-art parts tend to look stuck on unless pose, scale, lighting and skin tone match exactly. Skin tone and age change
+  how every part should look, so each part needs recolouring per skin ramp and ageing variants; heritage changes face structure, not just parts.
+- A workable version: (1) paint one neutral front-facing "base head" per face shape, skin tone and age band with a fixed camera and light,
+  (2) paint parts on the same base with Qwen edits ("change only the eyes to ...") so they share pose and light, (3) cut each part with a
+  mask from the base-versus-edit difference, (4) store parts as palette-indexed sprites recoloured to the base's skin ramp, (5) composite at
+  96 px and blend seams with one shading pass. Hair, headwear and clothes stay whole layers.
+- Suggested test before committing: 2 base heads x 6 eye sets x 6 noses x 6 mouths, judged on a sheet against whole paintings. If the
+  composites read as natural, they can grow the pool and generate look-alikes exactly; if not, whole paintings stay the release method.

@@ -265,7 +265,7 @@ describe('v0.2 story and quests', async () => {
     expect(wren.visible.length).toBe(1);
     expect(charactersFor(p).some((c) => c.id === 'sevrin')).toBe(false);
     p.progress.gates = MODULES.map((m) => m.id);
-    expect(codexFor(p).filter((e) => e.open).length).toBe(CODEX.filter((e) => !e.unlock.startsWith('side:')).length);
+    expect(codexFor(p).filter((e) => e.open).length).toBe(CODEX.filter((e) => !e.unlock.startsWith('side:') && !e.unlock.startsWith('trial:')).length);
     expect(tell('Hello {name}', p)).toBe('Hello Ayaan');
   });
 });

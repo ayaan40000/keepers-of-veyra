@@ -103,28 +103,34 @@ import a98 from '../assets/art/event/event_gate_trial.png';
 import a99 from '../assets/art/event/event_archive_lamp.png';
 import a100 from '../assets/art/event/event_vigil_dawn.png';
 import a101 from '../assets/art/event/event_palace_corridor.webp';
-import a102 from '../assets/art/backdrop/backdrop_gala-day.webp';
-import a103 from '../assets/art/backdrop/backdrop_packing_bay-day.png';
-import a104 from '../assets/art/backdrop/backdrop_speech_hall-day.png';
-import a105 from '../assets/art/backdrop/backdrop_crossroads-day.png';
-import a106 from '../assets/art/backdrop/backdrop_night_market-day.png';
-import a107 from '../assets/art/backdrop/backdrop_tide_shore-day.png';
-import a108 from '../assets/art/district/district_M1-day.webp';
-import a109 from '../assets/art/district/district_M2-day.webp';
-import a110 from '../assets/art/district/district_M3-day.png';
-import a111 from '../assets/art/district/district_M4-day.png';
-import a112 from '../assets/art/district/district_M5-day.webp';
-import a113 from '../assets/art/district/district_M6-day.png';
-import a114 from '../assets/art/district/district_M7-day.png';
-import a115 from '../assets/art/district/district_M8-day.png';
-import a116 from '../assets/art/district/district_M9-day.webp';
-import a117 from '../assets/art/district/district_M10-day.png';
-import a118 from '../assets/art/district/district_M11-day.webp';
-import a119 from '../assets/art/district/district_M12-day.png';
-import a120 from '../assets/art/event/event_undercroft_entrance-day.webp';
-import a121 from '../assets/art/event/event_tide_rising-day.webp';
-import a122 from '../assets/art/event/event_lethe_gate_vigil-day.png';
-import a123 from '../assets/art/event/event_year_of_keeping-day.png';
+import a102 from '../assets/art/trial/trial_catacombs.webp';
+import a103 from '../assets/art/trial/trial_scriptorium.png';
+import a104 from '../assets/art/trial/trial_salt_vault.png';
+import a105 from '../assets/art/trial/trial_bridge.png';
+import a106 from '../assets/art/trial/trial_gears.png';
+import a107 from '../assets/art/trial/trial_vault.png';
+import a108 from '../assets/art/backdrop/backdrop_gala-day.webp';
+import a109 from '../assets/art/backdrop/backdrop_packing_bay-day.png';
+import a110 from '../assets/art/backdrop/backdrop_speech_hall-day.png';
+import a111 from '../assets/art/backdrop/backdrop_crossroads-day.png';
+import a112 from '../assets/art/backdrop/backdrop_night_market-day.png';
+import a113 from '../assets/art/backdrop/backdrop_tide_shore-day.png';
+import a114 from '../assets/art/district/district_M1-day.webp';
+import a115 from '../assets/art/district/district_M2-day.webp';
+import a116 from '../assets/art/district/district_M3-day.png';
+import a117 from '../assets/art/district/district_M4-day.png';
+import a118 from '../assets/art/district/district_M5-day.webp';
+import a119 from '../assets/art/district/district_M6-day.png';
+import a120 from '../assets/art/district/district_M7-day.png';
+import a121 from '../assets/art/district/district_M8-day.png';
+import a122 from '../assets/art/district/district_M9-day.webp';
+import a123 from '../assets/art/district/district_M10-day.png';
+import a124 from '../assets/art/district/district_M11-day.webp';
+import a125 from '../assets/art/district/district_M12-day.png';
+import a126 from '../assets/art/event/event_undercroft_entrance-day.webp';
+import a127 from '../assets/art/event/event_tide_rising-day.webp';
+import a128 from '../assets/art/event/event_lethe_gate_vigil-day.png';
+import a129 from '../assets/art/event/event_year_of_keeping-day.png';
 
 export const ART = {
  'cutscene_hask_ammerhold_pass': { src: a0, w: 320, h: 180, category: 'cutscene', model: 'qwen-image-2.1', time: 'night', alt: "A lone road-warden with a lantern walks a high mountain pass above clouds, the lit city far below." },
@@ -229,28 +235,34 @@ export const ART = {
  'event_archive_lamp': { src: a99, w: 320, h: 180, category: 'event', model: 'qwen-image-2.1', time: 'night', alt: "The Archive under its copper dome, lit by one great hanging lantern." },
  'event_vigil_dawn': { src: a100, w: 320, h: 180, category: 'event', model: 'qwen-image-2.1', time: 'dawn', alt: "Dawn over the river after the Night of No Moon, the mist glowing gold." },
  'event_palace_corridor': { src: a101, w: 320, h: 180, category: 'event', model: 'qwen-image-2.1', time: 'night', alt: "A long memory palace corridor with glowing doors on each side." },
- 'backdrop_gala-day': { src: a102, w: 288, h: 162, category: 'backdrop', model: 'qwen-image-2.1', time: 'day', alt: "A grand lamplit ballroom of Veyra with long chandeliers and misty windows. Shown by day." },
- 'backdrop_packing_bay-day': { src: a103, w: 288, h: 162, category: 'backdrop', model: 'qwen-image-2.1', time: 'day', alt: "A stone quay at night with crates, barrels and lanterns beside misty water. Shown by day." },
- 'backdrop_speech_hall-day': { src: a104, w: 288, h: 162, category: 'backdrop', model: 'qwen-image-2.1', time: 'day', alt: "A hushed round lecture hall with tiered seats and a lamp on a lectern. Shown by day." },
- 'backdrop_crossroads-day': { src: a105, w: 288, h: 162, category: 'backdrop', model: 'qwen-image-2.1', time: 'day', alt: "A lonely road junction at dusk with signposts and a lantern. Shown by day." },
- 'backdrop_night_market-day': { src: a106, w: 288, h: 162, category: 'backdrop', model: 'qwen-image-2.1', time: 'day', alt: "A narrow lane of market stalls with paper lanterns and strings of lamps. Shown by day." },
- 'backdrop_tide_shore-day': { src: a107, w: 288, h: 162, category: 'backdrop', model: 'qwen-image-2.1', time: 'dawn', alt: "A misty pebble shore of the river Lethe with a small lamp and white mist. Shown at dawn." },
- 'district_M1-day': { src: a108, w: 288, h: 162, category: 'district', model: 'qwen-image-2.1', time: 'day', alt: "Lamplighters' Quay: lamp posts being lit beside the river. Shown by day." },
- 'district_M2-day': { src: a109, w: 288, h: 162, category: 'district', model: 'qwen-image-2.1', time: 'day', alt: "The Long Gallery: an endless arched corridor with paintings and lamps. Shown by day." },
- 'district_M3-day': { src: a110, w: 288, h: 162, category: 'district', model: 'qwen-image-2.1', time: 'day', alt: "The Hall of Faces: a vaulted hall with rows of carved portrait niches. Shown by day." },
- 'district_M4-day': { src: a111, w: 288, h: 162, category: 'district', model: 'qwen-image-2.1', time: 'day', alt: "The Counting House: ledger desks, brass abacuses and walls of drawers. Shown by day." },
- 'district_M5-day': { src: a112, w: 288, h: 162, category: 'district', model: 'qwen-image-2.1', time: 'day', alt: "The Clockwork Market: a market square beneath a great brass clock tower. Shown by day." },
- 'district_M6-day': { src: a113, w: 288, h: 162, category: 'district', model: 'qwen-image-2.1', time: 'day', alt: "The Tongues Bridge: a bridge carved with inscriptions in many scripts. Shown by day." },
- 'district_M7-day': { src: a114, w: 288, h: 162, category: 'district', model: 'qwen-image-2.1', time: 'day', alt: "The Scriptorium: a round library under a copper dome. Shown by day." },
- 'district_M8-day': { src: a115, w: 288, h: 162, category: 'district', model: 'qwen-image-2.1', time: 'day', alt: "The Tidal Stair: a wet stone staircase descending into rising mist. Shown by day." },
- 'district_M9-day': { src: a116, w: 288, h: 162, category: 'district', model: 'qwen-image-2.1', time: 'day', alt: "The Mirror Wards: a courtyard of tall standing mirrors. Shown by day." },
- 'district_M10-day': { src: a117, w: 288, h: 162, category: 'district', model: 'qwen-image-2.1', time: 'day', alt: "The Open Roads: a road winding over green hills at dawn. Shown by day." },
- 'district_M11-day': { src: a118, w: 288, h: 162, category: 'district', model: 'qwen-image-2.1', time: 'day', alt: "The Amphitheatre of Echoes: a curved stone theatre lit by lamps. Shown by day." },
- 'district_M12-day': { src: a119, w: 288, h: 162, category: 'district', model: 'qwen-image-2.1', time: 'day', alt: "The Lethe Gate: a colossal stone gate opening onto white mist under thirteen lamps. Shown by day." },
- 'event_undercroft_entrance-day': { src: a120, w: 288, h: 162, category: 'event', model: 'qwen-image-2.1', time: 'day', alt: "A stone stair spiralling down into the dark Undercroft with one lantern on the first step. Shown by day." },
- 'event_tide_rising-day': { src: a121, w: 288, h: 162, category: 'event', model: 'qwen-image-2.1', time: 'dawn', alt: "A wall of white mist rising over the rooftops of Veyra at night. Shown at dawn." },
- 'event_lethe_gate_vigil-day': { src: a122, w: 288, h: 162, category: 'event', model: 'qwen-image-2.1', time: 'dawn', alt: "Thirteen lamps held up in front of the Lethe Gate while the Tide is held back. Shown at dawn." },
- 'event_year_of_keeping-day': { src: a123, w: 288, h: 162, category: 'event', model: 'qwen-image-2.1', time: 'day', alt: "The whole city of Veyra glowing with lamps seen from a hill at night. Shown by day." },
+ 'trial_catacombs': { src: a102, w: 320, h: 180, category: 'trial', model: 'qwen-image-2.1', time: 'night', alt: "A misty crypt lined with pale marble busts in niches, an open logbook on a stone lectern beside an amber lamp." },
+ 'trial_scriptorium': { src: a103, w: 320, h: 180, category: 'trial', model: 'qwen-image-2.1', time: 'night', alt: "A library floor flooded with still grey water, desks and scrolls floating, a copper dome above." },
+ 'trial_salt_vault': { src: a104, w: 320, h: 180, category: 'trial', model: 'qwen-image-2.1', time: 'night', alt: "A round brass vault door covered in small dials in a brick cellar, a green lamp above and salt crystals below." },
+ 'trial_bridge': { src: a105, w: 320, h: 180, category: 'trial', model: 'qwen-image-2.1', time: 'night', alt: "A long stone bridge over a misty chasm with small stone gargoyles on the railings and lanterns." },
+ 'trial_gears': { src: a106, w: 320, h: 180, category: 'trial', model: 'qwen-image-2.1', time: 'night', alt: "A market square of small striped stalls with brass gears laid out on them, under a stopped clock tower." },
+ 'trial_vault': { src: a107, w: 320, h: 180, category: 'trial', model: 'qwen-image-2.1', time: 'night', alt: "A small round stone door with a lamp symbol in the river wall, an empty niche beside it and a lamp on a hook." },
+ 'backdrop_gala-day': { src: a108, w: 288, h: 162, category: 'backdrop', model: 'qwen-image-2.1', time: 'day', alt: "A grand lamplit ballroom of Veyra with long chandeliers and misty windows. Shown by day." },
+ 'backdrop_packing_bay-day': { src: a109, w: 288, h: 162, category: 'backdrop', model: 'qwen-image-2.1', time: 'day', alt: "A stone quay at night with crates, barrels and lanterns beside misty water. Shown by day." },
+ 'backdrop_speech_hall-day': { src: a110, w: 288, h: 162, category: 'backdrop', model: 'qwen-image-2.1', time: 'day', alt: "A hushed round lecture hall with tiered seats and a lamp on a lectern. Shown by day." },
+ 'backdrop_crossroads-day': { src: a111, w: 288, h: 162, category: 'backdrop', model: 'qwen-image-2.1', time: 'day', alt: "A lonely road junction at dusk with signposts and a lantern. Shown by day." },
+ 'backdrop_night_market-day': { src: a112, w: 288, h: 162, category: 'backdrop', model: 'qwen-image-2.1', time: 'day', alt: "A narrow lane of market stalls with paper lanterns and strings of lamps. Shown by day." },
+ 'backdrop_tide_shore-day': { src: a113, w: 288, h: 162, category: 'backdrop', model: 'qwen-image-2.1', time: 'dawn', alt: "A misty pebble shore of the river Lethe with a small lamp and white mist. Shown at dawn." },
+ 'district_M1-day': { src: a114, w: 288, h: 162, category: 'district', model: 'qwen-image-2.1', time: 'day', alt: "Lamplighters' Quay: lamp posts being lit beside the river. Shown by day." },
+ 'district_M2-day': { src: a115, w: 288, h: 162, category: 'district', model: 'qwen-image-2.1', time: 'day', alt: "The Long Gallery: an endless arched corridor with paintings and lamps. Shown by day." },
+ 'district_M3-day': { src: a116, w: 288, h: 162, category: 'district', model: 'qwen-image-2.1', time: 'day', alt: "The Hall of Faces: a vaulted hall with rows of carved portrait niches. Shown by day." },
+ 'district_M4-day': { src: a117, w: 288, h: 162, category: 'district', model: 'qwen-image-2.1', time: 'day', alt: "The Counting House: ledger desks, brass abacuses and walls of drawers. Shown by day." },
+ 'district_M5-day': { src: a118, w: 288, h: 162, category: 'district', model: 'qwen-image-2.1', time: 'day', alt: "The Clockwork Market: a market square beneath a great brass clock tower. Shown by day." },
+ 'district_M6-day': { src: a119, w: 288, h: 162, category: 'district', model: 'qwen-image-2.1', time: 'day', alt: "The Tongues Bridge: a bridge carved with inscriptions in many scripts. Shown by day." },
+ 'district_M7-day': { src: a120, w: 288, h: 162, category: 'district', model: 'qwen-image-2.1', time: 'day', alt: "The Scriptorium: a round library under a copper dome. Shown by day." },
+ 'district_M8-day': { src: a121, w: 288, h: 162, category: 'district', model: 'qwen-image-2.1', time: 'day', alt: "The Tidal Stair: a wet stone staircase descending into rising mist. Shown by day." },
+ 'district_M9-day': { src: a122, w: 288, h: 162, category: 'district', model: 'qwen-image-2.1', time: 'day', alt: "The Mirror Wards: a courtyard of tall standing mirrors. Shown by day." },
+ 'district_M10-day': { src: a123, w: 288, h: 162, category: 'district', model: 'qwen-image-2.1', time: 'day', alt: "The Open Roads: a road winding over green hills at dawn. Shown by day." },
+ 'district_M11-day': { src: a124, w: 288, h: 162, category: 'district', model: 'qwen-image-2.1', time: 'day', alt: "The Amphitheatre of Echoes: a curved stone theatre lit by lamps. Shown by day." },
+ 'district_M12-day': { src: a125, w: 288, h: 162, category: 'district', model: 'qwen-image-2.1', time: 'day', alt: "The Lethe Gate: a colossal stone gate opening onto white mist under thirteen lamps. Shown by day." },
+ 'event_undercroft_entrance-day': { src: a126, w: 288, h: 162, category: 'event', model: 'qwen-image-2.1', time: 'day', alt: "A stone stair spiralling down into the dark Undercroft with one lantern on the first step. Shown by day." },
+ 'event_tide_rising-day': { src: a127, w: 288, h: 162, category: 'event', model: 'qwen-image-2.1', time: 'dawn', alt: "A wall of white mist rising over the rooftops of Veyra at night. Shown at dawn." },
+ 'event_lethe_gate_vigil-day': { src: a128, w: 288, h: 162, category: 'event', model: 'qwen-image-2.1', time: 'dawn', alt: "Thirteen lamps held up in front of the Lethe Gate while the Tide is held back. Shown at dawn." },
+ 'event_year_of_keeping-day': { src: a129, w: 288, h: 162, category: 'event', model: 'qwen-image-2.1', time: 'day', alt: "The whole city of Veyra glowing with lamps seen from a hill at night. Shown by day." },
 };
 
 export const ART_IDS = Object.keys(ART);

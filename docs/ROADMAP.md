@@ -2,7 +2,9 @@
 
 Nov 1, 2026 · Ayaan. Source: the Claude Doc "Mnemos Roadmap to Public Release" (ROADMAP.pdf in this folder includes the roadmap diagram).
 
-## v0.11: District Trials (accepted Nov 2, 2026, not built)
+## v0.11: District Trials (accepted Nov 2, 2026; built Nov 2, 2026 as v0.11.0)
+
+**Built (v0.11.0, not pushed):** the generic trial screen and `trials` record (`src/engine/trials.js`, `src/ui/Trials.jsx`, `src/data/trials.js`), the five trials, three tablet vaults (Quay, Market Cellar, Mirror), calm relic repair in the Reliquary, 8 prizes, 6 Lore entries, 6 pictures and 8 traced icons from the local image model, tests in `tests/trials.test.js`. Decisions made while building: the Bridge's "Recovery Descent" is a review of the slipped words on the result screen and one more ask of the same words 3 days later, then fresh words; vault lines held without a hint earn 2 Lumen each inside the daily practice cap, hinted lines earn nothing but still open the door; a missed vault waits 2 days for a fresh tablet; the Salt Guild code is 12 digits after a short interruption. **Still to do:** pedestals in the walkable palace room (repair lives in the Reliquary for now), the optional 90 and 180 day "long echo" vault bonuses, more vault tablets and timelines (Qwen drafts, checked by hand).
 
 Five optional memory trials, one in each of five districts, proposed by the idea agents and accepted by the owner. Each one sits on top of a technique the player has already been taught, so nothing new is taught here: a trial is a story scene that asks the player to use a method on fresh material and rewards only what they can recall. Build them on the existing pieces (drill templates, delayed probes, side quests, boss trials, Echo scenes); they need new content and one small trial screen, not new engines.
 
@@ -99,7 +101,7 @@ Four more builds before a public v1.0: harden for release, deepen the learning, 
 - **v0.8 Palace and polish:** walkable palace room, keyboard and controller, install prompt.
 - **v0.9 The Year of Keeping:** after-the-year mode and epilogue, words from friends after gates, late-year seals, furniture picks, boss trials, new modifiers, deeper tablets, run card.
 - **v0.10 Field Guide and Echo battles (released):** the Keeper's Field Guide, Masters' Notes, character and gear, Echo battles, shipped pixel art. See `docs/BEYOND.md`, `docs/CHAMPIONS.md`.
-- **v0.11 District Trials (accepted, not built):** five optional memory trials in the Hall of Faces, Scriptorium, Counting House, Tongues Bridge and Clockwork Market, plus tablet-gated optional vaults and calm relic repair.
+- **v0.11 District Trials (built, v0.11.0):** five optional memory trials in the Hall of Faces, Scriptorium, Counting House, Tongues Bridge and Clockwork Market, plus tablet-gated optional vaults and calm relic repair.
 - **v0.12 The Living World (accepted, not built):** Phantom Limb attributes, Lethe Brambles on the map, the weekly Long Vigil, Wren's Audit, and the Cabinet of Voices as coach hints.
 - **v0.13 Wren's Story Memory (accepted, not built):** a delayed recall of Wren's details with a story reward, a rest pass and an accessibility check.
 - **v1.0 Public release:** GitHub Pages, trademark cleared, licences shipped, after owner approval.

@@ -56,6 +56,10 @@ Networking Gala (names and faces), Packing Bay (a list with a distracting sum mi
 
 Pool: `profile.sets`, `PROBE_INTERVALS`, `daysBetween`. Matcher: `matches` and `majorDecode`. Lumen: `FREE_XP_CAP` pool. Gear: relics from `collect.js`. Profile: `keeper` and `battles`, with migration and validation in `store.js`. Codex unlock: existing `gate:` rule.
 
+## District Trials and vaults (v0.11)
+
+Same rules as battles: free typing with the forgiving matcher (vault lines: numbers and names exact), no timer on recall, no random rewards, results never touch skill estimates, review sets or results. A trial pays only when a check passes; delayed checks use the 1 and 7 day spacing (30 for the Mirror Vault). The coach who speaks before and after is the district's member of the Keepers' Circle. See `docs/ROADMAP.md` v0.11.
+
 ## Deferred
 
 Guilds and any shared HP; ask-again-once-per-guest at the Gala; sound design for battles; full-scene art per district; battles from Crypt items; delayed self-tests on the player's own material.

@@ -26,7 +26,7 @@ OUT = HERE / "out"
 ROOT = HERE.parents[1]
 ART_DIR = ROOT / "src" / "assets" / "art"
 MANIFEST = ROOT / "src" / "data" / "art.js"
-BUDGET_KB = 1200
+BUDGET_KB = 5120  # owner decision, Nov 2 2026: 5 MB, mostly for image-model faces
 
 # category: (width, height, colours, kind)   kind: scene = opaque picture, sprite = background removed
 SPEC = {
@@ -34,6 +34,7 @@ SPEC = {
     "backdrop": (320, 180, 32, "scene"),
     "district": (320, 180, 32, "scene"),
     "event": (320, 180, 32, "scene"),
+    "trial": (320, 180, 32, "scene"),
     "portrait": (96, 96, 24, "sprite"),
     "enemy": (96, 96, 20, "sprite"),
     "boss": (128, 128, 24, "sprite"),
@@ -178,6 +179,14 @@ NEWROWS = [
     ("archive_lamp", "The Archive under its copper dome, lit by one great hanging lantern."),
     ("vigil_dawn", "Dawn over the river after the Night of No Moon, the mist glowing gold."),
     ("palace_corridor", "A long memory palace corridor with glowing doors on each side."),
+]] + [(f"trial_{e}", f"trial_{e}", "trial", a) for e, a in [
+    # v0.11 District Trials and vaults (alt text checked against each picture)
+    ("catacombs", "A misty crypt lined with pale marble busts in niches, an open logbook on a stone lectern beside an amber lamp."),
+    ("scriptorium", "A library floor flooded with still grey water, desks and scrolls floating, a copper dome above."),
+    ("salt_vault", "A round brass vault door covered in small dials in a brick cellar, a green lamp above and salt crystals below."),
+    ("bridge", "A long stone bridge over a misty chasm with small stone gargoyles on the railings and lanterns."),
+    ("gears", "A market square of small striped stalls with brass gears laid out on them, under a stopped clock tower."),
+    ("vault", "A small round stone door with a lamp symbol in the river wall, an empty niche beside it and a lamp on a hook."),
 ]]
 for sid, job, cat, alt in NEWROWS:
     pass  # resolved in resolve()

@@ -201,10 +201,11 @@ for (const t of ['Progress', 'Veyra', 'Palaces', 'Relics', 'Keeper']) {
   await snap('tab-' + t.toLowerCase()); await overflowCheck(t);
 }
 await nav('Veyra');
-for (const v of ['Quests', 'Chapters', 'People', 'Lore']) {
+for (const v of ['Quests', 'Trials', 'Chapters', 'People', 'Lore']) {
   await page.getByRole('tab', { name: v }).click();
   await page.waitForTimeout(100);
   if (v === 'Chapters') { await page.locator('details.chapter-read summary').first().click(); }
+  if (v === 'Trials' && !(await page.getByTestId('trial-hall').count())) throw new Error('trial hall missing');
   await snap('veyra-' + v.toLowerCase()); await overflowCheck('veyra ' + v);
 }
 log('veyra journal tabs: OK', await page.locator('.card').count());
