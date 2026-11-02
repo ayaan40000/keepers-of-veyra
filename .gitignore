@@ -8,3 +8,6 @@ PLAY-Mnemos.html
 # local asset studio output (reference pictures are never shipped)
 tools/asset-studio/out/
 .claude/launch.json
+
+# review sheets for art (regenerate with tools/asset-studio/face_sheet.py)
+docs/review/

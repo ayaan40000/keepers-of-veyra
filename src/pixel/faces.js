@@ -12,6 +12,7 @@
 //   renderFaceSpec(spec, size)  -> raw sprite (used by portraits.js)
 //   SKIN_TONES, HAIR_COLORS, HAIR_STYLES, ... (catalogues, read-only)
 import { makeBuffer } from './core.js';
+import { drawEyesHD, drawBrowsHD, drawNoseHD, drawMouthHD } from './faces-hd.js';
 
 // ------------------------------------------------------------------ RNG (local, deterministic)
 function rng(seed) {
@@ -259,7 +260,7 @@ function makeCanvas(S) {
 }
 
 // ------------------------------------------------------------------ the renderer
-export function renderFaceSpec(sp, size = 48) {
+export function renderFaceSpec(sp, size = 48, opts = {}) {
   const S = Math.max(32, Math.round(size));
   const k = S / 48;
   const C = makeCanvas(S);
@@ -416,13 +417,11 @@ export function renderFaceSpec(sp, size = 48) {
   }
 
   // ---------------- facial features
-  const featCtx = { G, sp, skinPut, shade, skinTo, put, isSkin, inB, idx, tint, SK, HR, BR, col, lab, tone, mood };
+  const featCtx = { G, sp, skinPut, shade, skinTo, put, isSkin, inB, idx, tint, SK, HR, BR, col, lab, tone, mood, LAB: LABELS };
   // age: under-eye, nasolabial, forehead, crow's feet
   drawAge(featCtx);
-  drawNose(featCtx);
-  drawEyes(featCtx);
-  drawBrows(featCtx);
-  drawMouth(featCtx);
+  if (opts.hd) { drawNoseHD(featCtx); drawEyesHD(featCtx); drawBrowsHD(featCtx); drawMouthHD(featCtx); }
+  else { drawNose(featCtx); drawEyes(featCtx); drawBrows(featCtx); drawMouth(featCtx); }
   drawMarks(featCtx);
   if (sp.blush) {
     const blushC = H(skinT.lip);
@@ -1272,6 +1271,21 @@ export function faceSprite(seed, { size = 48 } = {}) {
   return spr;
 }
 // Uncached render (for benchmarks/tests).
+// Detailed head-and-shoulders portrait (review samples): features drawn at their true size, cropped so the face
+// fills most of the frame. The 48-unit window x 5..43, y 2..40 is cut out of a larger render.
+export function faceSpriteHD(seed, { size = 96, look = null } = {}) {
+  const sp = look ? { ...faceParams(seed), ...look } : faceParams(seed);
+  const S = Math.round(size * 48 / 38);
+  const full = renderFaceSpec(sp, S, { hd: true });
+  const k = S / 48, ox = Math.round(5 * k), oy = Math.round(2 * k);
+  const out = makeBuffer(size, size);
+  for (let y = 0; y < size; y++) for (let x = 0; x < size; x++) {
+    const si = ((y + oy) * S + x + ox) * 4, di = (y * size + x) * 4;
+    for (let c = 0; c < 4; c++) out.rgba[di + c] = full.rgba[si + c];
+    if (x === 0 || y === 0 || x === size - 1 || y === size - 1) { out.rgba[di] = 27; out.rgba[di + 1] = 18; out.rgba[di + 2] = 34; out.rgba[di + 3] = 255; }
+  }
+  return out.toSprite();
+}
 export function renderFace(seed, size = 48) { return renderFaceSpec(faceParams(seed), size); }
 
 // ------------------------------------------------------------------ three-quarter view (v0.8)
