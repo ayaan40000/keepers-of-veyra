@@ -131,6 +131,6 @@ Study and recall screens stay still and quiet in every phase.
 3. No leaderboards for v1.0.
 4. Walkable palace in v0.8, after the beta.
 5. Map as home screen: optional first.
-6. Approve three story choices from the relics build (Gallery key, Warden ring, page 12 text).
+6. Three story choices from the relics build (Gallery key, Warden ring, page 12 text). Approved by the owner on Nov 1, 2026.
 7. Beta recruitment: owner recruits 20+ adults.
 8. GitHub account and repository name. Decided Nov 1, 2026: ayaan40000/keepers-of-veyra, hosted on GitHub Pages for the closed beta.
