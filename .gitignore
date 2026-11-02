@@ -1,0 +1,6 @@
+node_modules
+dist
+dist-single
+# Release files are built from source; share them outside the repo.
+builds/
+PLAY-Mnemos.html
