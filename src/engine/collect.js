@@ -18,11 +18,18 @@ export function earnedItems(p) {
           : s.type === 'ach' ? !!ach[s.id]
             : s.type === 'crypt' ? !!treasures[it.id]
               : s.type === 'milestone' ? milestoneMet(p, s.id)
+                : s.type === 'held' ? heldCount(p) >= s.n
+                  : s.type === 'polish' ? Object.keys(p?.relics?.polish || {}).length >= s.n
+                    : s.type === 'levels' ? levelsGained(p) >= s.n
                 : false;
     if (own) out.push(it.id);
   }
   return out;
 }
+
+// v0.9.1 learning counters: delayed recalls that held, and skill levels gained.
+export const heldCount = (p) => Object.values(p?.skills || {}).reduce((a, s) => a + (s?.probes || []).filter((x) => x.score >= 0.7).length, 0);
+export const levelsGained = (p) => Object.values(p?.skills || {}).reduce((a, s) => a + Math.max(0, (s?.level || 1) - 1), 0);
 
 // Mid-year milestones (v0.6), all from delayed recall that held at 70% or better.
 export function milestoneMet(p, id) {

@@ -1,3 +1,5 @@
+import { SKETCHES } from '../pixel/traced.js';
+import { Sprite } from '../pixel/core.js';
 import { EPILOGUE, GATE_TALK } from '../data/afteryear.js';
 import React, { useState } from 'react';
 import { PxIcon } from './game/PxIcon.jsx';
@@ -85,6 +87,11 @@ function People({ profile }) {
             <div><span className="tag">{c.role}</span><h3>{c.name}</h3></div>
           </div>
           {c.visible.map((t, i) => <p key={i} className="story-text">{tell(t, profile)}</p>)}
+          {SKETCHES[c.id] && (
+            <div className="sketches" aria-label={`Sketches of ${c.name}`}>
+              {SKETCHES[c.id].map((s) => <figure key={s.id}><Sprite sprite={s.sprite} scale={3} label={s.name} /><figcaption>{s.name}</figcaption></figure>)}
+            </div>
+          )}
         </section>
       ))}
       <p className="muted small center">More people, and more about these ones, are revealed as the story unfolds.</p>

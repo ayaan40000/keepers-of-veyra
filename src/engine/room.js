@@ -1,5 +1,6 @@
 // Walkable palace rooms (v0.8). Pure layout and movement rules; drawing lives in ui/PalaceRoom.jsx.
 // A palace's stops are laid out in rooms of up to 8, clockwise around the walls, in walking order.
+import { TRACED_FURNITURE } from '../pixel/traced.js';
 
 export const ROOM_W = 11, ROOM_H = 8, TILE = 16;
 export const PER_ROOM = 8;
@@ -22,7 +23,7 @@ const KINDS = [
   ['bath', /bath|shower|toilet/], ['clock', /clock|calendar|picture|painting|photo|frame/], ['stairs', /stair|step|landing|hall/],
 ];
 // Every kind a player can pick by hand (v0.9), in menu order.
-export const FURNITURE_KINDS = [...KINDS.map(([k]) => k), 'chest'];
+export const FURNITURE_KINDS = [...KINDS.map(([k]) => k), 'chest', ...Object.keys(TRACED_FURNITURE)];
 
 export function furnitureFor(name) {
   const n = String(name || '').toLowerCase();

@@ -1,6 +1,7 @@
 // Item icons for the collection: one original 24x24 string sprite per item id, drawn in code.
 // Conventions: light from the top-left, 4-tone ramps (0 = lightest), 1px dark outline added last.
 // Self-contained on purpose: pixel/core.js contains JSX in a .js file, which plain JS modules and tests cannot import.
+import { TRACED_ICONS } from './traced.js';
 
 // Seeded RNG (same algorithm as pixel/core.js prng) for deterministic texture.
 function prng(seed) {
@@ -1097,6 +1098,9 @@ SEAL_STYLE.half_year = ['violet', 'parch'];
 SEAL_STYLE.long_road = ['green', 'gold'];
 SEAL_STYLE.keepers_year = ['gold', 'red'];
 for (const id of Object.keys(EMB)) D[`seal_${id}`] = () => seal(id);
+
+// v0.9.1 icons traced from local image-model pictures (owner decision, Nov 1 2026)
+for (const [id, s] of Object.entries(TRACED_ICONS)) if (!id.startsWith('boss_')) D[id] = () => s;
 
 // ---------- build ----------
 export const ICONS = Object.fromEntries(Object.entries(D).map(([id, fn]) => [id, fn()]));

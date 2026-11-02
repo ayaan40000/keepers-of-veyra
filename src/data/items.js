@@ -1,6 +1,7 @@
 // Collectibles of Veyra: artifacts, Calder's ledger pages, side-quest trinkets, Crypt treasures and achievement seals.
 // Ownership is never stored; it is derived from profile state in engine/collect.js.
 // Icons for every id live in pixel/icons.js.
+import { TRACED_ITEMS, DEEP_TREASURES } from './traced-items.js';
 
 export const KINDS = [
   { id: 'artifact', name: 'Artifacts', blurb: 'Things the city gave back to you, one for every district restored.' },
@@ -8,6 +9,11 @@ export const KINDS = [
   { id: 'trinket', name: 'Trinkets', blurb: 'Keepsakes from the people of Veyra, for favours done.' },
   { id: 'treasure', name: 'Lost Treasures', blurb: 'Relics of the Drowned Years, brought up from the Crypt.' },
   { id: 'seal', name: 'Seals', blurb: 'Wax seals pressed for deeds worth remembering.' },
+  // v0.9.1
+  { id: 'keepsake', name: 'Keepsakes', blurb: 'Small precious things, one for each stretch of memories that held.' },
+  { id: 'document', name: 'Old Documents', blurb: "Papers from Veyra's past, found as each district comes back. Each one can be read." },
+  { id: 'found', name: 'Lost and Found', blurb: 'Odd things people lost, turned up while you polished your relics.' },
+  { id: 'gear', name: "Keeper's Gear", blurb: 'What a Keeper carries, earned as your skills grow.' },
 ];
 
 export const RARITY = {
@@ -150,6 +156,8 @@ const MILESTONES = [
   M('keepers_year', "Seal of the Keeper's Year", 'legendary', 'Pressed on the morning after the Night of No Moon: all twelve districts restored and sixty delayed recalls passed. There is a lamp on it, and under the lamp, very small, your own name.'),
 ];
 
-export const ITEMS = [...ARTIFACTS, ...PAGES, ...TRINKETS, ...TREASURES, ...SEALS, ...MILESTONES];
+// v0.9.1 deep treasures share the crypt's data; the rest are new kinds (see traced-items.js).
+const DEEP = DEEP_TREASURES.map((t, i) => C(t.id, t.name, t.depth, i < 4 ? 'epic' : 'legendary', t.desc));
+export const ITEMS = [...ARTIFACTS, ...PAGES, ...TRINKETS, ...TREASURES, ...DEEP, ...SEALS, ...MILESTONES, ...TRACED_ITEMS];
 export const ITEM_BY_ID = Object.fromEntries(ITEMS.map((it) => [it.id, it]));
 export const GATE_ARTIFACT = Object.fromEntries(ARTIFACTS.filter((a) => a.source.type === 'gate').map((a) => [a.source.id, a.id]));

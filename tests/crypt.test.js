@@ -15,8 +15,10 @@ const fresh = (opts = {}) => {
 const descendTo = (p, floor) => { while (p.crypt.run.floor < floor) applyFloorResult(p, 1); };
 
 describe('crypt data', () => {
-  it('has the 12 treasures at the specified depths', () => {
-    expect(TREASURES.map((t) => [t.id, t.depth])).toEqual([
+  it('has the 12 original treasures at the specified depths, then deeper v0.9.1 ones', () => {
+    expect(TREASURES.length).toBe(19);
+    expect(TREASURES.slice(12).every((t, i, a) => t.depth > 40 && (i === 0 || t.depth > a[i - 1].depth))).toBe(true);
+    expect(TREASURES.slice(0, 12).map((t) => [t.id, t.depth])).toEqual([
       ['ct_bone_dice', 3], ['ct_silver_mirror', 5], ['ct_wardens_compass', 7], ['ct_nameless_crown', 9], ['ct_ysolde_wick', 11], ['ct_tide_pearl', 13],
       ['ct_hollow_mask', 15], ['ct_iron_key', 18], ['ct_star_chart', 21], ['ct_grey_phial', 25], ['ct_heart_stone', 30], ['ct_lamp_of_ages', 40],
     ]);
@@ -175,7 +177,7 @@ describe('runs', () => {
     climbOut(p);
     startRun(p, 2);
     for (let f = 1; f <= 71; f++) { const r = applyFloorResult(p, 1); expect(r.rewards.treasures).toEqual([]); expect(r.rewards.tablets).toEqual([]); }
-    expect(Object.keys(p.crypt.treasures).length).toBe(12);
+    expect(Object.keys(p.crypt.treasures).length).toBe(19);
     expect(Object.keys(p.crypt.tablets).length).toBe(19);
   });
   it('a chest refills one lamp flask when one is missing', () => {

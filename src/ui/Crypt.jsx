@@ -1,5 +1,6 @@
 // The Undercroft: an endless memory crypt beneath the Archive.
 // All art is original and drawn in code. Scenes animate only outside the drill's study and recall phases.
+import { BOSS_ART, TRACED_ICONS, PANELS } from '../pixel/traced.js';
 import { Tip } from './Tips.jsx';
 import React, { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import Drill from './Drill.jsx';
@@ -889,6 +890,7 @@ export default function Crypt({ profile, update, onExit, treasureIcon }) {
           <RunMap run={run} />
           {preview?.boss ? (
             <>
+              {BOSS_ART[preview.bossName] && <Sprite sprite={TRACED_ICONS[BOSS_ART[preview.bossName]]} scale={4} className="boss-art" label={preview.bossName} />}
               <h2 className="crypt-band">{preview.bossName}</h2>
               <p className="crypt-line">{bossFor(run.floor).line}</p>
               <p className="crypt-note">A boss floor: more to hold than usual{preview.trial ? `, and its trial: ${variantLabel[preview.trial]}` : ''}. Beat it and every flask of oil is refilled.</p>
@@ -1063,7 +1065,9 @@ function TabletView({ id, onDone, doneLabel }) {
   const idx = TABLETS.findIndex((x) => x.id === id) + 1;
   return (
     <>
-      <Scene h={TH} draw={(x, t) => drawTablet(x, t, { hue: bandFor(tb.depth).hue })} deps={[id]} label="A carved stone tablet in an alcove, lit by two candles" />
+      {id === 'tab_lamp_left_burning' && PANELS.undercroft_ysole_lamp
+        ? <Sprite sprite={PANELS.undercroft_ysole_lamp} scale={4} className="story-banner panel-art" label="Ysolde's lamp burning on a ledge at the bottom of the Undercroft" />
+        : <Scene h={TH} draw={(x, t) => drawTablet(x, t, { hue: bandFor(tb.depth).hue })} deps={[id]} label="A carved stone tablet in an alcove, lit by two candles" />}
       <article className="crypt-tablet">
         <p className="crypt-kicker">Tablet {idx} of {TABLETS.length} · floor {tb.depth}</p>
         <h2>{tb.title}</h2>

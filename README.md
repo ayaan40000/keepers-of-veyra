@@ -13,7 +13,7 @@ Data is stored in that browser only. Use Keeper > Export backup to keep a copy.
 ```
 npm install
 npm run dev            # local dev server
-npm test               # 167 unit tests (Vitest)
+npm test               # 169 unit tests (Vitest)
 npm run build:single   # one self-contained HTML file in dist-single/
 npm run build          # static folder in dist/ for GitHub Pages (with service worker)
 node tests/e2e.mjs     # end-to-end journey at 390px and desktop (Playwright)

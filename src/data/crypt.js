@@ -1,5 +1,6 @@
 // The Undercroft: an endless memory crypt beneath the Archive.
 // Data only: tuning constants, depth bands, treasures and the crypt-only Lore Tablets.
+import { DEEP_TREASURES } from './traced-items.js';
 
 // ---------- tuning ----------
 export const CRYPT_TUNING = {
@@ -117,6 +118,7 @@ export const TREASURES = [
   { id: 'ct_grey_phial', depth: 25, name: 'Grey Phial', hue: '#8090ad', desc: 'Lethewater sealed on the first night of the Tide. Do not open it.' },
   { id: 'ct_heart_stone', depth: 30, name: 'Heart Stone', hue: '#c46a2a', desc: "A stone from the seventh step, where Hesper's mother waited for her every night." },
   { id: 'ct_lamp_of_ages', depth: 40, name: 'Lamp of Ages', hue: '#f0c75e', desc: 'The clay lamp of a cross, stubborn girl. It has never gone out.' },
+  ...DEEP_TREASURES, // v0.9.1, depths 47 to 66 (data in traced-items.js)
 ];
 
 // ---------- lore tablets (crypt-only story) ----------

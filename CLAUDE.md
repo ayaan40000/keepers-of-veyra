@@ -1,6 +1,6 @@
 # Mnemos: Keepers of Veyra
 
-Free, open-source, local-first memory-training RPG. 365-day curriculum, about 30 minutes a day, wrapped in an original pixel-art story. Owner: Ayaan (does not code; explain changes in plain language). Current version: 0.9.0 (see CHANGELOG.md).
+Free, open-source, local-first memory-training RPG. 365-day curriculum, about 30 minutes a day, wrapped in an original pixel-art story. Owner: Ayaan (does not code; explain changes in plain language). Current version: 0.9.1 (see CHANGELOG.md).
 
 Read first: `docs/ROADMAP.md`, `docs/BEYOND.md` (planned Field Guide: using the methods on real-life material) (what to build next and release requirements) and `docs/PRODUCT_DOSSIER.md` (research, curriculum, adaptive rules, scoring, story bible, UX spec, architecture, IP register).
 
@@ -8,7 +8,7 @@ Read first: `docs/ROADMAP.md`, `docs/BEYOND.md` (planned Field Guide: using the 
 ```
 npm install
 npm run dev              # Vite dev server
-npm test                 # Vitest: all unit tests must pass (167 at v0.9)
+npm test                 # Vitest: all unit tests must pass (169 at v0.9.1)
 npm run build:single     # one offline HTML file -> dist-single/index.html (the review build)
 npm run build            # static site for GitHub Pages -> dist/
 node tests/e2e.mjs       # Playwright journey at 390px + desktop; must print "errors: none" (run build:single first; playwright 1.63 matches the cached Chromium)
@@ -20,6 +20,7 @@ node scripts/licenses.mjs             # regenerate licence list after dependency
 - Never publish, push to GitHub or deploy without the owner's explicit approval. Repo: github.com/ayaan40000/keepers-of-veyra; every push to main runs the tests and redeploys https://ayaan40000.github.io/keepers-of-veyra/ (bump `version` in package.json for each release so the offline cache refreshes).
 - No runtime network calls, no trackers, no accounts. All data lives in the browser (IndexedDB + localStorage) with JSON export/import.
 - All art is original and drawn in code. No image files from other games; no copying of Undertale, Stardew Valley or other assets, fonts or characters. Only OFL fonts via @fontsource (Pixelify Sans, Silkscreen, VT323).
+- Owner decision, Nov 1, 2026: pictures from the local image model (ComfyUI) are never shipped as image files, but sprites may be traced from them into the app's code sprite format ({w, h, pal, px}) by `tools/asset-studio/studio.py` (stage `trace`). Drafts live in `tools/asset-studio/out/` (not committed); only owner-approved ones go into `src/pixel/`.
 - Study and recall screens: no animation and no sound except one soft submit sound.
 - Rewards come only from demonstrated learning (accuracy, delayed recall, gates). Never reward time spent or repetition of easy drills. Crypt results never change skill estimates.
 - Honest claims only: scores measure performance on Mnemos tasks; not an IQ or clinical test.

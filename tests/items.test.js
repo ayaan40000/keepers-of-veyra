@@ -40,9 +40,9 @@ describe('item data', () => {
     for (const q of SIDE_QUESTS) expect(ITEM_BY_ID[`trinket_${q.id}`]?.source).toEqual({ type: 'side', id: q.id });
     for (const a of ACHIEVEMENTS) expect(ITEM_BY_ID[`seal_${a.id}`]?.source).toEqual({ type: 'ach', id: a.id });
   });
-  it('has the twelve Crypt treasures at their fixed depths', () => {
+  it('has the Crypt treasures at their fixed depths (12, plus 7 deeper from v0.9.1)', () => {
     for (const [id, depth] of CRYPT) expect(ITEM_BY_ID[id]?.source).toEqual({ type: 'crypt', depth });
-    expect(ITEMS.filter((i) => i.kind === 'treasure').length).toBe(12);
+    expect(ITEMS.filter((i) => i.kind === 'treasure').length).toBe(19);
   });
   it('has the expected counts by kind', () => {
     const n = (k) => ITEMS.filter((i) => i.kind === k).length;
@@ -105,7 +105,7 @@ describe('earned items', () => {
     const st = collectionStats(p);
     expect(st.owned).toBe(after.length);
     expect(st.byKind.page).toEqual({ owned: 2, total: 12 });
-    expect(st.byKind.treasure).toEqual({ owned: 2, total: 12 });
+    expect(st.byKind.treasure).toEqual({ owned: 2, total: 19 });
     expect(st.byKind.seal.owned).toBe(2);
     expect(st.byKind.trinket.owned).toBe(2);
   });

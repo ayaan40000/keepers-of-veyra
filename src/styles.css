@@ -814,3 +814,9 @@ kbd { font: .85rem/1 var(--f-num); padding: 2px 5px; background: #0b0f1c; color:
 .room-pick select { max-width: 220px; }
 .run-card { margin-top: 14px; display: grid; gap: 10px; }
 .run-card-canvas { width: 100%; max-width: 480px; height: auto; image-rendering: pixelated; border: 2px solid #0008; }
+/* v0.9.1 traced art */
+.panel-art { width: 100%; height: auto; image-rendering: pixelated; display: block; }
+.boss-art { display: block; margin: 0 auto 8px; image-rendering: pixelated; }
+.sketches { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 8px; }
+.sketches figure { margin: 0; text-align: center; font-size: .85em; opacity: .9; }
+.sketches canvas { image-rendering: pixelated; }

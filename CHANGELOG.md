@@ -2,6 +2,16 @@
 
 All notable changes to Mnemos: Keepers of Veyra. Saved data from every earlier version loads in this one.
 
+## 0.9.1: New art from local models (2026-11-01)
+
+All new art in this release was made on the owner's computer: the image model painted pixel-art pictures, which were traced into the game's own code sprites (the pictures themselves are not shipped). Names and texts were drafted by a local model. Weak pieces can be replaced later by re-running `tools/asset-studio/`.
+
+- 37 new collectibles in four new groups, all earned by learning: Keepsakes (delayed recalls that held), Old Documents with readable texts (gates 1 to 8), Lost and Found (relics polished with recall cards) and Keeper's Gear (skill levels gained).
+- 7 new Undercroft treasures between floors 47 and 66, and art for three bosses.
+- 10 new objects to choose for palace stops.
+- Story panels for every page of the Epilogue, two pages of Chapter 12 and the last Undercroft tablet.
+- Character sketches on the People page.
+
 ## 0.9.0: The Year of Keeping (2026-11-01)
 
 - The Year of Keeping: after the last gate, the app no longer repeats day 365. Each day revisits one week of the year in turn, at your current level, with a check-up every 7th day. The first keeping day opens with a new five-page Epilogue (also readable under Veyra > Chapters).

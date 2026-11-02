@@ -1,6 +1,8 @@
 // Furniture for the walkable palace rooms (v0.8), 16x16 string sprites.
 // First drafts by a local model, normalised in code and reviewed. All original.
-export const FURNITURE = {
+import { TRACED_FURNITURE } from './traced.js';
+
+const BASE = {
  "bath": { "w": 16, "h": 16, "pal": {
    "a": "#2c2c2c",
    "b": "#e8f4f8",
@@ -499,3 +501,5 @@ export const FURNITURE = {
   ]
  }
 };
+// v0.9.1: traced objects the player can pick for a stop.
+export const FURNITURE = { ...BASE, ...TRACED_FURNITURE };

@@ -63,6 +63,9 @@ export function itemHint(item) {
   if (s.type === 'ach') { const a = ACHIEVEMENTS.find((x) => x.id === s.id); return a ? `Pressed for the deed "${a.name}": ${a.desc}` : 'Pressed for a deed worth remembering.'; }
   if (s.type === 'crypt') return `Lies ${s.depth} levels down in the Crypt.`;
   if (s.type === 'milestone') return 'Pressed for delayed recall that held for weeks and months.';
+  if (s.type === 'held') return `Yours when ${s.n} delayed recalls have held.`;
+  if (s.type === 'polish') return `Turns up once you have polished ${s.n} relic${s.n > 1 ? 's' : ''} with recall cards.`;
+  if (s.type === 'levels') return `Earned when your skills have gained ${s.n} level${s.n > 1 ? 's' : ''} in all.`;
   return '';
 }
 

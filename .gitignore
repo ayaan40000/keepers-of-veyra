@@ -4,3 +4,7 @@ dist-single
 # Release files are built from source; share them outside the repo.
 builds/
 PLAY-Mnemos.html
+
+# local asset studio output (reference pictures are never shipped)
+tools/asset-studio/out/
+.claude/launch.json

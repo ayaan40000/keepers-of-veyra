@@ -114,3 +114,24 @@ describe('v0.9 story text', () => {
     expect(Object.keys(GATE_TALK)).toEqual(MODULES.slice(0, 11).map((m) => m.id));
   });
 });
+
+describe('v0.9.1 traced collectibles', () => {
+  it('are earned only by learning: recalls that held, relics polished, levels gained', async () => {
+    const { ITEMS } = await import('../src/data/items.js');
+    const p = fresh();
+    const kinds = ['keepsake', 'found', 'gear'];
+    const own = () => new Set(earnedItems(p));
+    expect(ITEMS.filter((i) => kinds.includes(i.kind)).some((i) => own().has(i.id))).toBe(false);
+    const sk = Object.keys(p.skills)[0];
+    p.skills[sk].probes = Array.from({ length: 40 }, () => ({ score: 0.9, delay: 7 }));
+    p.skills[sk].level = 27;
+    p.relics = { polish: Object.fromEntries(Array.from({ length: 15 }, (_, i) => [`x${i}`, '2026-01-01'])) };
+    for (const i of ITEMS.filter((x) => kinds.includes(x.kind))) expect(own().has(i.id)).toBe(true);
+  });
+  it('documents come with readable text and no dashes', async () => {
+    const { ITEMS } = await import('../src/data/items.js');
+    const docs = ITEMS.filter((i) => i.kind === 'document');
+    expect(docs.length).toBe(8);
+    for (const d of docs) { expect(d.lore.split(/\s+/).length).toBeGreaterThan(40); expect(d.lore).not.toMatch(/[–—]/); }
+  });
+});

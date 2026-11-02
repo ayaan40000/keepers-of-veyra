@@ -1,3 +1,5 @@
+import { Sprite } from '../pixel/core.js';
+import { PANELS } from '../pixel/traced.js';
 import { EPILOGUE } from '../data/afteryear.js';
 import React, { useEffect, useRef, useState } from 'react';
 import { MODULES, SKILLS, TEMPLATE_NAME, GATES } from '../data/curriculum.js';
@@ -145,6 +147,13 @@ export default function Session({ profile, update, onExit }) {
   );
 }
 
+// v0.9.1 traced story panels: the epilogue, and two pages of chapter 12.
+const STORY_PANELS = {
+  epilogue: ['long_vigil_street_lamps', 'wren_archivist_copper_dome', 'hask_ammerhold_pass', 'sevrin_tansy_last_lamp', 'wren_quay_one_year_later'],
+  M12: { 4: 'lamp_of_ysole_relit', 5: 'tide_stopping_bridge' },
+};
+const panelFor = (ch, i) => { const id = STORY_PANELS[ch]?.[i]; return id && PANELS[id] ? id : null; };
+
 // [pan x, pan y, zoom] per panel.
 const CAMERA = [['0%', '0%', 1], ['-12%', '4%', 1.35], ['10%', '-4%', 1.3], ['0%', '8%', 1.5], ['-8%', '-6%', 1.2], ['12%', '6%', 1.4]];
 
@@ -173,7 +182,7 @@ function Story({ profile, chapterId, beat, onDone }) {
     <section className="card parchment story book">
       <figure className="cutscene" aria-label={`Panel ${i + 1} of ${ch.text.length}`}>
         <div className="cut-art" style={{ '--cx': cam[0], '--cy': cam[1], '--cz': cam[2] }}>
-          <DistrictBanner id={chapterId === 'prologue' || chapterId === 'epilogue' ? 'archive' : chapterId} restored={chapterId === 'prologue' || chapterId === 'epilogue' || i >= ch.text.length - 2} className="story-banner" />
+          {panelFor(chapterId, i) ? <Sprite sprite={PANELS[panelFor(chapterId, i)]} scale={4} className="story-banner panel-art" label="" /> : <DistrictBanner id={chapterId === 'prologue' || chapterId === 'epilogue' ? 'archive' : chapterId} restored={chapterId === 'prologue' || chapterId === 'epilogue' || i >= ch.text.length - 2} className="story-banner" />}
         </div>
         {who && <Portrait id={who} mood={moodFor(page, PORTRAIT_MOODS[who])} scale={2} className="cut-face" />}
       </figure>
