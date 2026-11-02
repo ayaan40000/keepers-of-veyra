@@ -69,6 +69,38 @@ export function SafariNotice({ profile, update }) {
   );
 }
 
+// Install prompt (v0.8): offered once the player has trained on 3 or more days, never before.
+export const INSTALL_AFTER_DAYS = 3;
+export function installOffer(p, { standalone = false, canPrompt = false, safari = false } = {}) {
+  if (standalone || p?.tips?.seen?.includes('install')) return null;
+  if ((p?.progress?.trainingDates?.length || 0) < INSTALL_AFTER_DAYS) return null;
+  return canPrompt ? 'prompt' : safari ? 'safari' : null;
+}
+
+export function InstallCard({ profile, update }) {
+  const [canPrompt, setCanPrompt] = useState(() => typeof window !== 'undefined' && !!window.__mnemosInstall);
+  useEffect(() => {
+    const on = () => setCanPrompt(true);
+    window.addEventListener('mnemos-installable', on);
+    return () => window.removeEventListener('mnemos-installable', on);
+  }, []);
+  const standalone = typeof matchMedia !== 'undefined' && matchMedia('(display-mode: standalone)').matches || navigator.standalone === true;
+  const kind = installOffer(profile, { standalone, canPrompt, safari: isSafariTab() });
+  if (!kind) return null;
+  const dismiss = () => update((p) => { p.tips.seen = [...new Set([...(p.tips.seen || []), 'install'])]; });
+  return (
+    <section className="card notice" role="region" aria-label="Install Mnemos">
+      <h3 className="panel-title"><PxIcon name="lumen" size={28} />Keep Mnemos on your device</h3>
+      <p className="small">Three days of training: you are making a habit. Install Mnemos so it opens like an app, works offline and keeps your progress safer from browser clean-ups.</p>
+      {kind === 'safari' && <p className="small">In Safari, tap the Share button, then <b>Add to Home Screen</b>.</p>}
+      <div className="row wrap">
+        {kind === 'prompt' && <button className="btn primary" onClick={async () => { const ev = window.__mnemosInstall; window.__mnemosInstall = null; try { await ev.prompt(); await ev.userChoice; } catch { /* ignore */ } dismiss(); }}>Install</button>}
+        <button className="btn ghost" onClick={dismiss}>{kind === 'safari' ? 'Got it' : 'Not now'}</button>
+      </div>
+    </section>
+  );
+}
+
 // Shown when a newer version has been downloaded by the offline cache (hosted build only).
 export function UpdatePrompt() {
   const [worker, setWorker] = useState(null);

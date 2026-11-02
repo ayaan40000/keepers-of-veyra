@@ -11,7 +11,7 @@ import { PixelBar } from './game/PixelBar.jsx';
 import { Portrait } from '../pixel/Faces.jsx';
 import { CryptCard } from './Crypt.jsx';
 import { DistrictBanner } from './pixel/Scenes.jsx';
-import { BackupReminder, SafariNotice, downloadBackup } from './Notices.jsx';
+import { BackupReminder, SafariNotice, InstallCard, downloadBackup } from './Notices.jsx';
 import { buildExport } from '../store.js';
 
 const FREE = [
@@ -71,6 +71,7 @@ export default function Today({ profile, start, onEnterCrypt, update }) {
 
       {!resume && <BackupReminder profile={profile} update={update} onExport={() => downloadBackup(profile, update, buildExport)} />}
       {!resume && <SafariNotice profile={profile} update={update} />}
+      {!resume && <InstallCard profile={profile} update={update} />}
 
       {!resume && profile.progress.baselineDone && <CryptCard profile={profile} onEnter={onEnterCrypt} />}
 

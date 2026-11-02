@@ -11,7 +11,7 @@ function serviceWorker(version) {
     name: 'mnemos-sw',
     apply: 'build',
     generateBundle(_, bundle) {
-      const files = ['./', ...Object.keys(bundle).map((f) => './' + f)];
+      const files = ['./', './manifest.webmanifest', './icon-192.png', './icon-512.png', ...Object.keys(bundle).map((f) => './' + f)];
       const src = `// Generated at build time by vite.config.js. Do not edit.
 const CACHE = 'mnemos-${version}';
 const FILES = ${JSON.stringify(files)};

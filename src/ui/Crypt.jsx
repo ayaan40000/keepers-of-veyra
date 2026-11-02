@@ -623,7 +623,7 @@ function Hud({ floor, lamps, deepest }) {
   );
 }
 
-const variantLabel = { interference: 'interference', reverse: 'reverse', timed: 'timed', abstract: 'abstract', lures: 'look-alike strangers', restyle: 'changed looks' };
+const variantLabel = { interference: 'interference', reverse: 'reverse', timed: 'timed', abstract: 'abstract', lures: 'look-alike strangers', restyle: 'changed looks', turn: 'turned heads' };
 function describeStep(step) {
   if (!step) return '';
   if (step.echo) return `Echo of floor ${step.echoFrom} · ${TEMPLATE_NAME[step.spec.t]} · ${step.items.length} items · no study`;

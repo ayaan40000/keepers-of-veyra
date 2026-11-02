@@ -43,3 +43,18 @@ describe('no network', () => {
     expect(bad).toEqual([]);
   });
 });
+
+describe('v0.8 install offer', async () => {
+  const { installOffer } = await import('../src/ui/Notices.jsx');
+  it('waits for 3 training days and respects installed and dismissed', () => {
+    const p = newProfile('t', 'key');
+    p.progress.trainingDates = ['2026-10-01', '2026-10-02'];
+    expect(installOffer(p, { canPrompt: true })).toBe(null);
+    p.progress.trainingDates.push('2026-10-03');
+    expect(installOffer(p, { canPrompt: true })).toBe('prompt');
+    expect(installOffer(p, { safari: true })).toBe('safari');
+    expect(installOffer(p, { canPrompt: true, standalone: true })).toBe(null);
+    p.tips.seen.push('install');
+    expect(installOffer(p, { canPrompt: true })).toBe(null);
+  });
+});

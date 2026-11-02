@@ -10,9 +10,14 @@ import './styles.css';
 import './ui/crypt.css';
 import { installFrames } from './ui/game/frames.js';
 import { installUiSounds } from './audio/sfx.js';
+import { startGamepads } from './ui/gamepad.js';
+
+// Install prompt (v0.8): keep the browser's offer until the player has trained on 3 days (see ui/Notices.jsx).
+window.addEventListener('beforeinstallprompt', (e) => { e.preventDefault(); window.__mnemosInstall = e; window.dispatchEvent(new Event('mnemos-installable')); });
 
 installFrames();
 installUiSounds();
+startGamepads();
 
 import { LS_KEY, deleteProfile } from './store.js';
 import { logError } from './engine/beta.js';
@@ -45,7 +50,10 @@ class Boundary extends React.Component {
 
 createRoot(document.getElementById('root')).render(<React.StrictMode><Boundary><App /></Boundary></React.StrictMode>);
 
-if (location.protocol.startsWith('http')) { const l = document.createElement('link'); l.rel = 'manifest'; l.href = './manifest.webmanifest'; document.head.appendChild(l); }
+if (location.protocol.startsWith('http') && !__SINGLE__) {
+  const l = document.createElement('link'); l.rel = 'manifest'; l.href = './manifest.webmanifest'; document.head.appendChild(l);
+  const i = document.createElement('link'); i.rel = 'apple-touch-icon'; i.href = './icon-192.png'; document.head.appendChild(i);
+}
 // Hosted build only: offline cache with an "update available" prompt (see vite.config.js and ui/Notices.jsx).
 if ('serviceWorker' in navigator && location.protocol.startsWith('http') && !import.meta.env.DEV && !__SINGLE__) {
   navigator.serviceWorker.register('./sw.js').then((reg) => {

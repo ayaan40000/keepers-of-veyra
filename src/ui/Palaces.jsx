@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { PxIcon } from './game/PxIcon.jsx';
 import { SUGGESTED_LOCI, MAJOR_CODE, MAJOR_PAIRS, MAJOR_SINGLE } from '../data/content.js';
 import { uid, majorDecode } from '../engine/util.js';
+import PalaceRoom from './PalaceRoom.jsx';
 
 export function PalaceEditor({ initial, minLoci = 5, onSave, onCancel }) {
   const [name, setName] = useState(initial?.name || 'My home');
@@ -30,6 +31,8 @@ export function PalaceEditor({ initial, minLoci = 5, onSave, onCancel }) {
 export default function Palaces({ profile, update }) {
   const [editing, setEditing] = useState(null);
   const [showMajor, setShowMajor] = useState(false);
+  const [walking, setWalking] = useState(null);
+  const walkPal = profile.palaces.find((x) => x.id === walking);
   const save = (pal) => update((p) => {
     const i = p.palaces.findIndex((x) => x.id === pal.id);
     if (i >= 0) p.palaces[i] = pal; else p.palaces.push(pal);
@@ -40,7 +43,7 @@ export default function Palaces({ profile, update }) {
       <h1 className="page-title"><PxIcon name="palace" size={36} />Palaces</h1>
       <Tip profile={profile} update={update} id="palaces">A palace is a route through a place you know well, like your home. Pick stops in the order you would walk past them. Ten clear stops beat thirty vague ones.</Tip>
       <p className="lead">Your memory palaces are real routes through places you know. Rest a palace for a day before reusing it, so old images fade.</p>
-      {editing ? (
+      {walkPal && !editing ? <PalaceRoom palace={walkPal} onClose={() => setWalking(null)} /> : editing ? (
         <section className="card parchment"><PalaceEditor initial={editing === 'new' ? null : editing} onSave={(pal) => { save(pal); setEditing(null); }} onCancel={() => setEditing(null)} /></section>
       ) : (
         <>
@@ -50,6 +53,7 @@ export default function Palaces({ profile, update }) {
               <div className="row between wrap"><h3 className="panel-title"><PxIcon name="palace" size={28} />{pl.name}</h3><span className="muted small">{pl.loci.length} stops{pl.lastUsed ? ` · used ${pl.lastUsed.slice(0, 10)}` : ''}</span></div>
               <ol className="loci-list">{pl.loci.map((l, i) => <li key={i}>{l}</li>)}</ol>
               <div className="row">
+                <button className="btn small primary" onClick={() => { setWalking(pl.id); window.scrollTo(0, 0); }}>Walk this palace</button>
                 <button className="btn small" onClick={() => setEditing(pl)}>Edit</button>
                 <button className="btn small ghost" onClick={() => { if (confirm(`Delete palace "${pl.name}"?`)) update((p) => { p.palaces = p.palaces.filter((x) => x.id !== pl.id); }); }}>Delete</button>
               </div>

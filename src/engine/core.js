@@ -13,7 +13,7 @@ import { rng, sample, shuffle, clamp, mean, matches, majorDecode, todayISO, addD
 setKnownWords([...CONCRETE, ...ABSTRACT, ...NAMES, ...VOCAB.map((v) => v[1])]);
 
 export const SCHEMA = 2;
-export const CURRICULUM_VERSION = '2026.11-v0.7';
+export const CURRICULUM_VERSION = '2026.11-v0.8';
 export const PROBE_INTERVALS = [1, 7, 30];
 export const GATE_PROBE_INTERVALS = [1, 7, 30, 90, 180];
 export const EWMA_ALPHA = 0.35;
@@ -23,7 +23,7 @@ export function newSkill() {
 }
 
 // Sound starts off (v0.4): players opt in. Dialogue blips have their own switch.
-export const DEFAULT_PREFS = { theme: 'dark', reducedMotion: false, timerMult: 1, sound: false, blips: true, volume: 0.6, textSize: 1 };
+export const DEFAULT_PREFS = { theme: 'dark', reducedMotion: false, timerMult: 1, sound: false, blips: true, volume: 0.6, textSize: 1, home: 'today' };
 
 export function newProfile(alias, avatar, prefs = {}) {
   const now = new Date().toISOString();
@@ -52,6 +52,7 @@ export function scaledSpec(spec, level, mode = 'practice', timerMult = 1) {
   if (spec.t === 'faces' && mode === 'practice') {
     if (level >= 3 && spec.lures == null) spec = { ...spec, lures: level >= 6 ? 2 : 1 };
     if (level >= 5 && spec.restyle == null) spec = { ...spec, restyle: true };
+    if (level >= 7 && spec.turn == null) spec = { ...spec, turn: true }; // v0.8: met face-on, recalled at three-quarter view
   }
   if (spec.s && (mode === 'guided' || mode === 'remedial')) s = Math.max(s, spec.s);
   return { ...spec, n, s: Math.round(s * timerMult) };
@@ -92,9 +93,10 @@ export function genItems(spec, seed, p) {
       const lures = Math.min(spec.lures || 0, Math.max(0, n - 3));
       const real = sample(NAMES, n - lures, r).map((name) => ({ face: faceFor(name, r), answer: name }));
       if (spec.restyle) for (const it of real) it.look = restyle(it.face, r);
+      if (spec.turn) for (const it of real) it.turn = r() < 0.5 ? -1 : 1;
       const fakes = Array.from({ length: lures }, (_, i) => {
         const base = real[Math.floor(r() * real.length)];
-        return { face: base.face, alter: lookAlike(base.face, r), answer: LURE_ANSWER, lure: true, ...(base.look ? { look: base.look } : {}) };
+        return { face: base.face, alter: lookAlike(base.face, r), answer: LURE_ANSWER, lure: true, ...(base.look ? { look: base.look } : {}), ...(base.turn ? { turn: -base.turn } : {}) };
       });
       return { items: [...real, ...fakes] };
     }

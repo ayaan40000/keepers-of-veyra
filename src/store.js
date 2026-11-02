@@ -162,6 +162,7 @@ function validateExtras(p) {
     for (const k of ['sound', 'blips', 'reducedMotion', 'readableFont']) if (pr[k] != null && typeof pr[k] !== 'boolean') return `Setting "${k}" is invalid.`;
     if (pr.volume != null && !isNum(pr.volume, 0, 1)) return 'Volume setting is invalid.';
     if (pr.textSize != null && !isNum(pr.textSize, 1, 1.5)) return 'Text size setting is invalid.';
+    if (pr.home != null && !['today', 'veyra'].includes(pr.home)) return 'Home page setting is invalid.';
   }
   if (!p.palaces.every((x) => isStr(x.name, 100) && isStr(x.id, 64) && x.loci.length <= 200 && x.loci.every((l) => isStr(l, 120)))) return 'A palace name or stop is too long.';
   if (p.results.length > 20000 || p.sets.length > 5000) return 'The training record is too large.';

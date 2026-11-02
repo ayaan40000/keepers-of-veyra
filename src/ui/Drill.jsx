@@ -17,6 +17,7 @@ const BRIEF = {
   major: 'Each number has a sound code. For each number shown, type the picture word you use for it, as quickly as you can, then press Enter. Any word whose consonant sounds spell out the number counts as correct.',
   faces: 'You will meet some people. For each one, pick a feature that won\'t change, turn their name into a picture, and stick the picture onto that feature. Later the faces come back in a different order, and you write each name.',
   facesLures: 'Careful: when the faces come back, one or two will be strangers who look like someone you met. Check the feature you chose. If you have not met them, press "Not met".',
+  facesTurn: 'You meet everyone face-on, but at recall they will be turned a little to one side, the way you see people across a room. Anchor names on features that still show from an angle.',
   facesRestyle: 'People change their hair, glasses and clothes. At recall they may look different, so anchor each name on the face itself: the nose, the eyes, the shape of the jaw.',
   vocab: 'You will see words in Swahili with their meanings. For each one, find something it sounds like in English and make that picture act on the meaning. Later you will see the Swahili word and type what it means.',
   facts: 'You will see questions with their answers. Make a picture for the question and a picture for the answer, and make them interact. Later you will see each question and type the answer.',
@@ -169,6 +170,7 @@ export default function Drill({ step, isProbe, profile, update, onResult, onCont
         ) : <p>{BRIEF[t]}</p>}
         {t === 'faces' && spec.lures > 0 && !isProbe && <p className="note">{BRIEF.facesLures}</p>}
         {t === 'faces' && spec.restyle && !isProbe && <p className="note">{BRIEF.facesRestyle}</p>}
+        {t === 'faces' && spec.turn && !isProbe && <p className="note">{BRIEF.facesTurn}</p>}
         {spec.interference && !isProbe && <p className="note">Tricky one: after the first list, you will see a second list too. But you will only be asked for the first one. Try to keep them in separate places in your mind.</p>}
         {!isProbe && studySecs > 0 && t !== 'major' && !guided && <p className="muted small">You have {studySecs} seconds to study. If you are ready sooner, you can finish early.</p>}
         {guided && <p className="note">Guided practice: the items come one at a time, with no clock running. If you like, type a few words describing the picture you made. It is optional, but people who do it tend to remember more.</p>}
@@ -281,7 +283,7 @@ export default function Drill({ step, isProbe, profile, update, onResult, onCont
             const anyLures = items.some((x) => x.lure);
             return (
               <figure key={i}>
-                <PixelFace seed={it.face} look={look} size={48} scale={3} label={`Face ${k + 1}`} />
+                <PixelFace seed={it.face} look={look} turn={it.turn || 0} size={48} scale={3} label={`Face ${k + 1}`} />
                 <input data-slot {...inputProps} aria-label={`Name for face ${k + 1}`} value={resp[i]} onChange={(e) => set(i, e.target.value)} onKeyDown={focusNext} />
                 {anyLures && <button type="button" className={`btn tiny${resp[i] === LURE_ANSWER ? ' on' : ''}`} aria-pressed={resp[i] === LURE_ANSWER} aria-label={`Not met face ${k + 1}`} onClick={() => set(i, resp[i] === LURE_ANSWER ? '' : LURE_ANSWER)}>Not met</button>}
               </figure>

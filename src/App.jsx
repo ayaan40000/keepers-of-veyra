@@ -46,6 +46,7 @@ export default function App() {
     loadProfile().then((p) => {
       if (p) { p.meta.lastOpened = new Date().toISOString(); if (!p.collectionSeen) p.collectionSeen = earnedItems(p); saveProfile(p); }
       ref.current = p || null; setProfile(p || null);
+      if (p?.user?.prefs?.home === 'veyra') setTab('veyra');
     });
     requestPersistence();
     // Cross-tab safety: adopt newer saves (and deletions) made in another tab.
@@ -76,6 +77,21 @@ export default function App() {
     root.style.setProperty('--ts', String(textSize));
   }, [theme, reduced, readable, textSize]);
   useEffect(() => { setSoundEnabled(sound); setBlipsEnabled(prefs.blips !== false); setVolume(prefs.volume ?? 0.6); }, [sound, prefs.blips, prefs.volume]);
+  // Keyboard play (v0.8): 1 to 7 jump between pages and ? lists the keys, whenever you are not typing.
+  const [keysHelp, setKeysHelp] = useState(false);
+  useEffect(() => {
+    const onKey = (e) => {
+      if (e.ctrlKey || e.metaKey || e.altKey || /^(INPUT|TEXTAREA|SELECT)$/.test(e.target?.tagName) || e.target?.isContentEditable) return;
+      if (e.target?.closest?.('.room-stage')) return;
+      if (e.key === '?') { setKeysHelp((v) => !v); return; }
+      const i = +e.key;
+      if (i >= 1 && i <= TABS.length && !inSession && ref.current) { e.preventDefault(); goRef.current?.(TABS[i - 1][0]); }
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [inSession]);
+  const goRef = useRef(null);
+
   useEffect(() => {
     if (!menu) return undefined;
     const esc = (e) => { if (e.key === 'Escape') setMenu(false); };
@@ -163,6 +179,7 @@ export default function App() {
     if (id === 'crypt') { setInCrypt(true); window.scrollTo(0, 0); return; }
     setTab(id); window.scrollTo(0, 0);
   };
+  goRef.current = go;
   const inMenu = TABS.filter((t) => !t[3]).some((t) => t[0] === tab);
 
   const toggleSound = () => {
@@ -199,6 +216,22 @@ export default function App() {
             ))}
             <button className="menu-row" onClick={() => setMenu(false)}><PxIcon name="back" size={32} /><span>Close menu</span></button>
           </div>
+        </div>
+      )}
+      {keysHelp && (
+        <div className="menu-sheet-wrap unlock-wrap" onClick={(e) => { if (e.target === e.currentTarget) setKeysHelp(false); }}>
+          <section className="card keys-help" role="dialog" aria-label="Keyboard keys">
+            <h2>Keyboard and controller</h2>
+            <ul className="small">
+              {TABS.map(([id, label], i) => <li key={id}><kbd>{i + 1}</kbd> {label}</li>)}
+              <li><kbd>Tab</kbd> next button or field, <kbd>Enter</kbd> press it, <kbd>Esc</kbd> close a menu</li>
+              <li>In drills, <kbd>Enter</kbd> moves to the next answer box</li>
+              <li>In a palace room: arrow keys or <kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> to walk, <kbd>[</kbd> <kbd>]</kbd> previous and next stop</li>
+              <li>Game controller: d-pad or stick moves between buttons, A presses, B closes menus; in a palace room it walks, and the shoulder buttons jump between stops</li>
+              <li><kbd>?</kbd> shows or hides this list</li>
+            </ul>
+            <button className="btn primary" autoFocus onClick={() => setKeysHelp(false)}>Close</button>
+          </section>
         </div>
       )}
       <UpdatePrompt />

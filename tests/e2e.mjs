@@ -253,6 +253,33 @@ if (!(await page.getByRole('button', { name: 'Save beta report' }).count())) err
 await page.getByLabel('Text size').selectOption('1');
 log('phone menu, crypt slot, 150% text: OK');
 
+// 7c. v0.8: walk a palace, route check, keyboard shortcuts
+await nav('Palaces');
+const walk = page.getByRole('button', { name: 'Walk this palace' }).first();
+if (await walk.count()) {
+  await walk.click();
+  const stage = page.locator('.room-stage');
+  await stage.focus();
+  const first = (await page.locator('.room-here').textContent()).trim();
+  await page.getByRole('button', { name: 'Next stop', exact: true }).click();
+  const second = (await page.locator('.room-here').textContent()).trim();
+  if (first === second) errors.push('next stop did not move the keeper');
+  await stage.focus(); await page.keyboard.press('ArrowDown'); await page.keyboard.press('ArrowUp');
+  await page.getByLabel('Route check').check();
+  await page.locator('.room-quiz .btn').first().click();
+  if (!(await page.locator('.room-quiz [role=status]').count())) errors.push('route check gave no answer');
+  await snap('palace-room'); await overflowCheck('palace room');
+  await page.getByRole('button', { name: 'Leave the palace', exact: true }).click();
+  log('palace walk:', first, '->', second);
+} else errors.push('no palace to walk');
+await page.locator('body').click({ position: { x: 5, y: 300 } });
+await page.keyboard.press('?');
+if (!(await page.getByRole('dialog', { name: 'Keyboard keys' }).count())) errors.push('keyboard help did not open');
+await page.getByRole('button', { name: 'Close', exact: true }).click();
+await page.keyboard.press('5');
+if (!(await page.locator('h1', { hasText: 'Reliquary' }).count())) errors.push('key 5 did not open Relics');
+log('keyboard shortcuts: OK');
+
 // 8. Desktop layout
 await page.setViewportSize({ width: 1280, height: 860 });
 await nav('Today');

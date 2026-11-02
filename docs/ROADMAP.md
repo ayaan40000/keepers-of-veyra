@@ -22,6 +22,7 @@ Already fixed: the shared pixel engine (`src/pixel/core.js`) was split into `ras
 | v0.4 Release hardening | Built. All backlog items in. Audit re-run still to do. |
 | v0.5 Learning depth | Built. All backlog items in; 147 unit tests pass. |
 | v0.6 World and story | Built. Layered depth effect left for v0.8 (day, dusk and dawn light done). Map as optional home view not done. |
+| v0.8 Palace and polish | Built (v0.8.0): walkable palace rooms, keyboard and controller, install prompt after day 3, three-quarter faces, map depth, map as home. Beta skipped by owner decision. |
 | v0.7 Closed beta | Software built (session-length measurement, beta report, problem report, Crypt end tally, simulated retune). The beta itself needs 20+ testers for 4 weeks: see `docs/BETA.md`. |
 
 Not done in code, needs people: WCAG 2.2 AA check with NVDA and VoiceOver, device testing on real phones, 500-face representation review, trademark search, beta recruitment.

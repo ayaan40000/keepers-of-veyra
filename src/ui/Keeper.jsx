@@ -103,6 +103,9 @@ export default function Keeper({ profile, update, replaceProfile, wipe }) {
           <label className="field">Theme
             <select value={prefs.theme} onChange={(e) => setPref('theme', e.target.value)}><option value="dark">Night (dark)</option><option value="light">Parchment (light)</option><option value="system">Follow device</option></select>
           </label>
+          <label className="field">Open the app on
+            <select value={prefs.home || 'today'} onChange={(e) => setPref('home', e.target.value)}><option value="today">Today (quest board)</option><option value="veyra">The map of Veyra</option></select>
+          </label>
           <label className="field">Text size
             <select value={prefs.textSize || 1} onChange={(e) => setPref('textSize', +e.target.value)}><option value={1}>100%</option><option value={1.15}>115%</option><option value={1.3}>130%</option><option value={1.5}>150%</option></select>
           </label>

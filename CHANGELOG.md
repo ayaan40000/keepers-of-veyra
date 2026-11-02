@@ -2,6 +2,16 @@
 
 All notable changes to Mnemos: Keepers of Veyra. Saved data from every earlier version loads in this one.
 
+## 0.8.0: Palace and polish (2026-11-01)
+
+The closed beta was skipped at the owner's request; its tools stay in the app for anyone who wants to send a report.
+
+- Walk your memory palaces: Palaces > Walk this palace turns any palace into pixel rooms, eight stops to a room, with furniture picked from each stop's name (a mirror for "Hallway mirror", a sofa for "Sofa"). Walk with the arrow keys, WASD, a game controller or the on-screen pad. "Route check" asks which stop comes next; it is practice only and changes no scores. Furniture sprites were first drafted by a local model and checked by eye.
+- Keyboard play: keys 1 to 7 open each page, ? lists every key. Game controllers work everywhere: the d-pad moves between buttons, A presses, B closes menus.
+- Install prompt: after 3 training days, Today offers to install Mnemos (Chrome, Edge, Android), or explains Add to Home Screen on Safari. New app icons drawn from the Brass Lantern.
+- Three-quarter view faces: from level 7, Names and Faces shows people face-on when you meet them and turned to one side at recall. Deep Undercroft face floors can roll "turned heads".
+- The map has a layered depth effect (it shifts gently with the pointer; off with reduced motion), and Settings > Display can open the app on the map instead of Today.
+
 ## 0.7.0: Closed beta build (2026-11-01)
 
 Ready for the closed beta. The beta itself (20 or more adults for 4 weeks, two usability rounds) is run by people, not code: see `docs/BETA.md`.

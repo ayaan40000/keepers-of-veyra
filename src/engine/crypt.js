@@ -170,6 +170,7 @@ export function floorSpec(p, floor, seed, attempt = 0) {
   if (t === 'major') { spec.range = majorRange(floor); delete spec.s; }
   for (const v of variants) spec[v] = true;
   if (spec.lures === true) spec.lures = floor >= 15 ? 2 : 1;
+  if (spec.turn && !variants.includes('turn')) delete spec.turn;
   if (spec.interference) spec.s = Math.round(s * 1.1); // a little extra for the second list's cost
   const mult = (p?.user?.prefs?.timerMult || 1) * (p?.crypt?.run?.mods?.includes('swift') ? 0.75 : 1); // extended timers apply here too
   if (spec.s && mult !== 1) spec.s = Math.max(T.minStudy, Math.round(spec.s * mult));

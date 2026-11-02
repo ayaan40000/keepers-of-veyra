@@ -127,12 +127,21 @@ export default function WorldMap({ gates = [], current = 'M1', selected, onSelec
   useEffect(() => { ref.current?._redraw?.(); }, [selected]);
 
   const states = layer?.states || {};
+  // Layered depth (v0.8): the city shifts a few pixels with the pointer while the mist layer drifts the other way.
+  const depth = (e) => {
+    if (reducedMotion()) return;
+    const el = e.currentTarget, b = el.getBoundingClientRect();
+    el.style.setProperty('--dx', (((e.clientX - b.left) / b.width) - 0.5).toFixed(3));
+    el.style.setProperty('--dy', (((e.clientY - b.top) / b.height) - 0.5).toFixed(3));
+  };
+  const flat = (e) => { e.currentTarget.style.setProperty('--dx', '0'); e.currentTarget.style.setProperty('--dy', '0'); };
   return (
-    <div className={`worldmap ${className}`} data-time={timeOfDay()} style={{ position: 'relative', width: '100%', maxWidth: 720, margin: '0 auto', aspectRatio: `${MAP_W} / ${MAP_H}`, background: css(K.sky0), overflow: 'hidden' }}>
+    <div className={`worldmap ${className}`} data-time={timeOfDay()} onPointerMove={depth} onPointerLeave={flat} style={{ position: 'relative', width: '100%', maxWidth: 720, margin: '0 auto', aspectRatio: `${MAP_W} / ${MAP_H}`, background: css(K.sky0), overflow: 'hidden' }}>
       <style>{`.worldmap .wm-hit{position:absolute;background:transparent;border:0;padding:0;margin:0;cursor:pointer;border-radius:4px;outline:none;-webkit-tap-highlight-color:transparent}
 .worldmap .wm-hit:focus-visible{box-shadow:0 0 0 2px ${css(K.ink)},0 0 0 4px ${css(K.am4)}}
 .worldmap .wm-label{position:absolute;transform:translate(-50%,0);white-space:nowrap;pointer-events:none;font:12px/1.1 'Silkscreen','VT323',monospace;color:${css(K.am5)};background:${css(K.ink, 0.86)};border:1px solid ${css(K.am2)};padding:3px 6px 2px;letter-spacing:.02em;image-rendering:pixelated}
 .worldmap canvas{display:block;width:100%;height:100%;image-rendering:pixelated;image-rendering:crisp-edges}`}</style>
+      <div className="wm-mist" aria-hidden="true" />
       <canvas ref={ref} role="img" aria-label={`Map of Veyra. ${DISTRICT_IDS.filter((id) => states[id] === 'restored').length} of 12 districts restored.`} />
       <nav aria-label="Districts of Veyra" style={{ position: 'absolute', inset: 0 }}>
         {DISTRICT_IDS.map((id) => {

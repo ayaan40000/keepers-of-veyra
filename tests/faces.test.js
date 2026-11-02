@@ -135,3 +135,21 @@ describe('v0.5 harder faces', async () => {
     expect(probeItems(set).items.length).toBe(1);
   });
 });
+
+describe('v0.8 three-quarter faces', async () => {
+  const { scaledSpec, genItems, newProfile } = await import('../src/engine/core.js');
+  const { renderFace, turnSprite } = await import('../src/pixel/faces.js');
+  it('from level 7 practice faces are recalled turned to one side', () => {
+    expect(scaledSpec({ t: 'faces', n: 6, s: 60 }, 6).turn).toBeUndefined();
+    const spec = scaledSpec({ t: 'faces', n: 6, s: 60 }, 7);
+    expect(spec.turn).toBe(true);
+    const { items } = genItems(spec, 9, newProfile('t', 'key'));
+    for (const it of items) expect([-1, 1]).toContain(it.turn);
+  });
+  it('turning keeps the sprite size, changes the face and leaves the corners alone', () => {
+    const a = renderFace(4242, 48), b = turnSprite(a, 0.38);
+    expect(b.w).toBe(48); expect(b.rgba.length).toBe(a.rgba.length);
+    expect(Buffer.from(b.rgba).equals(Buffer.from(a.rgba))).toBe(false);
+    expect([...b.rgba.slice(0, 4)]).toEqual([...a.rgba.slice(0, 4)]);
+  });
+});

@@ -1273,3 +1273,32 @@ export function faceSprite(seed, { size = 48 } = {}) {
 }
 // Uncached render (for benchmarks/tests).
 export function renderFace(seed, size = 48) { return renderFaceSpec(faceParams(seed), size); }
+
+// ------------------------------------------------------------------ three-quarter view (v0.8)
+// Turns a front-view face as if the head were a cylinder rotating by `angle` radians (positive: turns to the
+// viewer's left). The far side compresses, the near side widens and the features slide across, while the
+// background and shoulders stay put. Works on any raw sprite from renderFaceSpec.
+export function turnSprite(spr, angle = 0.38) {
+  const { w, h, rgba } = spr;
+  const out = new Uint8ClampedArray(rgba.length);
+  const cx = w / 2, R = w * 0.36, top = Math.round(h * 0.06), neck = Math.round(h * 0.78);
+  for (let y = 0; y < h; y++) {
+    // full turn across the head, easing out toward the shoulders
+    const k = y < neck ? 1 : Math.max(0, 1 - (y - neck) / (h * 0.12));
+    const a = y < top ? angle * 0.8 : angle * k;
+    for (let x = 0; x < w; x++) {
+      const u = (x + 0.5 - cx) / R;
+      let sx = x;
+      if (Math.abs(u) < 1) {
+        const v = Math.sin(Math.asin(u) + a);
+        sx = Math.round(cx + v * R - 0.5);
+      } else if (a) {
+        sx = x + Math.round(Math.sign(u) * 0); // outside the head: unchanged
+      }
+      sx = Math.max(0, Math.min(w - 1, sx));
+      const si = (y * w + sx) * 4, di = (y * w + x) * 4;
+      out[di] = rgba[si]; out[di + 1] = rgba[si + 1]; out[di + 2] = rgba[si + 2]; out[di + 3] = rgba[si + 3];
+    }
+  }
+  return { w, h, rgba: out };
+}

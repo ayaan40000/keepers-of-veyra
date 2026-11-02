@@ -64,7 +64,7 @@ export const CRYPT_VARIANTS = {
   pairs: ['abstract', 'timed'],
   chain: ['timed'],
   palace: ['reverse', 'timed'],
-  faces: ['timed', 'lures', 'restyle'],
+  faces: ['timed', 'lures', 'restyle', 'turn'],
   major: [],
   digits: ['timed'],
   vocab: ['timed'],
