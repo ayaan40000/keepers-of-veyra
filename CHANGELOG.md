@@ -2,6 +2,16 @@
 
 All notable changes to Mnemos: Keepers of Veyra. Saved data from every earlier version loads in this one.
 
+## 0.9.0: The Year of Keeping (2026-11-01)
+
+- The Year of Keeping: after the last gate, the app no longer repeats day 365. Each day revisits one week of the year in turn, at your current level, with a check-up every 7th day. The first keeping day opens with a new five-page Epilogue (also readable under Veyra > Chapters).
+- Friends speak after each gate: restored districts on the map show a few words from Tansy, Fennick, Wren, Isolde, Mosk, Ennick or Hask.
+- Four late-year seals (Whole City, Half Year, Long Road, Keeper's Year), earned only by delayed recall that held, so months 7 to 12 have rewards of their own.
+- Palace rooms: choose the furniture for any stop while you walk it (Palaces > Walk this palace). Your choices are saved in backups.
+- Undercroft: every boss now brings a trial (a fixed twist such as reversed order or turned heads), a new boss from floor 50 (Ysolde's Shadow), a new depth band (The Warm Water) and four new tablets below floor 45, in Ysolde's own words. Two new optional modifiers: Thick mist (a twist on every floor) and Loud echoes (an echo every 3rd floor). Modifiers still add no rewards.
+- Undercroft run card: a picture of your deepest descent to save, or share with your device's share button. It is made on the device and never uploaded.
+- Story drafts in this release were written first by a local model and edited by hand.
+
 ## 0.8.0: Palace and polish (2026-11-01)
 
 The closed beta was skipped at the owner's request; its tools stay in the app for anyone who wants to send a report.

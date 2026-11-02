@@ -1,3 +1,4 @@
+import { KEEPING_LINES } from '../data/afteryear.js';
 import React from 'react';
 import { Tip } from './Tips.jsx';
 import { moodFor } from '../engine/moods.js';
@@ -29,7 +30,8 @@ export default function Today({ profile, start, onEnterCrypt, update }) {
   const cons = consistency(profile);
   const resume = profile.inProgress;
   const line = st.away >= 3 ? wrenLine('returnAfter', g, st.day) : wrenLine('welcome', g, st.day);
-  const typeLabel = { baseline: 'Day 1: baseline and first lesson', full: `Day ${st.day}: ${st.week.title}`, assessment: `Day ${st.day}: week ${st.week.w} assessment`, gate: `Day ${st.day}: gate of ${st.mod.district}` }[st.type];
+  const dayLabel = st.keeping ? `Year of Keeping, day ${st.keeping}` : `Day ${st.day}`;
+  const typeLabel = st.keeping ? { full: `${dayLabel}: ${st.week.title}`, assessment: `${dayLabel}: check-up on week ${st.week.w}` }[st.type] || dayLabel : { baseline: 'Day 1: baseline and first lesson', full: `Day ${st.day}: ${st.week.title}`, assessment: `Day ${st.day}: week ${st.week.w} assessment`, gate: `Day ${st.day}: gate of ${st.mod.district}` }[st.type];
   return (
     <div className="page today">
       <DialogueBox speaker={`Wren · ${stage.name}`} portrait={<Portrait id="wren" mood={moodFor(line, ['neutral', 'smile', 'worried'])} scale={2} />} lines={[line]} />
@@ -52,7 +54,7 @@ export default function Today({ profile, start, onEnterCrypt, update }) {
         <section className="card gold cta quest-card">
           <span className="tag"><PxIcon name="star" size={14} />Quest complete</span>
           <h2>Today's training is done</h2>
-          <p className="muted">Day {st.day - 1} complete. Rest is part of the method: sleep consolidates what you encoded. {st.due ? `${st.due} delayed recall set${st.due > 1 ? 's are' : ' is'} due if you want a short review.` : ''}</p>
+          <p className="muted">{st.keeping ? 'Kept for another day.' : `Day ${st.day - 1} complete.`} Rest is part of the method: sleep consolidates what you encoded. {st.due ? `${st.due} delayed recall set${st.due > 1 ? 's are' : ' is'} due if you want a short review.` : ''}</p>
           {st.due > 0 && <button className="btn" onClick={() => start('review')}>Review session (10 min)</button>}
         </section>
       ) : (
@@ -61,9 +63,9 @@ export default function Today({ profile, start, onEnterCrypt, update }) {
           <DistrictBanner id={st.mod.id} restored={profile.progress.gates.includes(st.mod.id)} className="quest-banner" />
           <span className="tag">Module {st.mod.id.slice(1)} · {st.mod.district}</span>
           <h2>{typeLabel}</h2>
-          <p className="muted">{st.type === 'baseline' ? 'About 20 minutes: three short measurements, then your first lesson.' : `Goal this week: ${st.week.obj}`}</p>
+          <p className="muted">{st.type === 'baseline' ? 'About 20 minutes: three short measurements, then your first lesson.' : st.keeping ? `${KEEPING_LINES[st.keeping % KEEPING_LINES.length]} Today revisits week ${st.week.w}: ${st.week.obj}` : `Goal this week: ${st.week.obj}`}</p>
           {st.type !== 'baseline' && <p className="quest-meta"><span><PxIcon name="sun" size={20} />Estimated length: about {estimateMinutes(buildSession(profile, st.type))} minutes.</span></p>}
-          <button className="btn primary big" onClick={() => start(st.type)}>{st.type === 'baseline' ? 'Begin' : `Begin day ${st.day}`}</button>
+          <button className="btn primary big" onClick={() => start(st.type)}>{st.type === 'baseline' ? 'Begin' : st.keeping ? 'Begin' : `Begin day ${st.day}`}</button>
           {st.away >= 2 && st.type !== 'baseline' && <button className="btn" onClick={() => start('recovery')}>Short recovery session (10 min)</button>}
           {st.due > 0 && <p className="muted small">{st.due} delayed recall set{st.due > 1 ? 's' : ''} due; the session opens with them.</p>}
         </section>

@@ -1,6 +1,6 @@
 // The Undercroft: pure run logic. Never touches p.skills, p.progress or p.results.
 import { WEEKS, TEMPLATE_SKILL } from '../data/curriculum.js';
-import { CRYPT_MODIFIERS, bossFor, CRYPT_TUNING as T, CRYPT_BASE, CRYPT_GROWTH, CRYPT_SQUEEZE, CRYPT_SQUEEZE_FLOOR, CRYPT_VARIANTS, TREASURES, TABLETS, CHEST_LINES, bandFor } from '../data/crypt.js';
+import { CRYPT_MODIFIERS, BOSS_TRIALS, bossFor, CRYPT_TUNING as T, CRYPT_BASE, CRYPT_GROWTH, CRYPT_SQUEEZE, CRYPT_SQUEEZE_FLOOR, CRYPT_VARIANTS, TREASURES, TABLETS, CHEST_LINES, bandFor } from '../data/crypt.js';
 import { genItems } from './core.js';
 import { rng } from './util.js';
 
@@ -141,9 +141,11 @@ export function floorTemplate(p, floor, seed) {
 
 // Echo floors (v0.5): every echoEvery-th floor re-asks, without study, what was held echoBack floors above.
 // A retry on an echo floor is an ordinary floor (the same items twice would be a free answer).
-export const isEchoFloor = (floor) => floor >= T.echoEvery && floor % T.echoEvery === 0 && floor % T.bossEvery !== 0;
+// mods: the run's modifiers; 'echoes' brings an echo every 3rd floor (v0.9).
+export const echoEvery = (mods) => (Array.isArray(mods) && mods.includes('echoes') ? 3 : T.echoEvery);
+export const isEchoFloor = (floor, mods) => floor >= echoEvery(mods) && floor % echoEvery(mods) === 0 && floor % T.bossEvery !== 0;
 function echoStep(p, floor, attempt) {
-  if (!isEchoFloor(floor) || attempt > 0) return null;
+  if (!isEchoFloor(floor, p?.crypt?.run?.mods) || attempt > 0) return null;
   const mem = p?.crypt?.run?.mem?.[floor - T.echoBack];
   if (!mem || !Array.isArray(mem.items) || !mem.items.length) return null;
   const items = mem.items.filter((x) => !x.lure);
@@ -162,6 +164,11 @@ export function floorSpec(p, floor, seed, attempt = 0) {
   const variants = floorVariants(t, floor, seed);
   let n = shape.n;
   const boss = isBossFloor(floor);
+  const pool = CRYPT_VARIANTS[t] || [];
+  // v0.9: Thick mist gives every floor a twist; a boss always brings its trial when the task allows one.
+  if (p?.crypt?.run?.mods?.includes('mist') && !variants.length && pool.length) variants.push(pool[(seed + floor) % pool.length]);
+  const trial = boss ? (BOSS_TRIALS[bossFor(floor).name] || []).find((v) => pool.includes(v)) : null;
+  if (trial && !variants.includes(trial)) variants.push(trial);
   if (boss) n = Math.min(CRYPT_BASE[t].cap + 4, Math.round(n * T.bossGrowth));
   if (t === 'digits' && n % 2) n += 1;
   if (t === 'palace') n = Math.min(n, longestPalace(p));
@@ -178,7 +185,7 @@ export function floorSpec(p, floor, seed, attempt = 0) {
   const g = genItems(spec, itemSeed, p);
   return {
     kind: 'drill', role: 'crypt', spec, skill: TEMPLATE_SKILL[t], level: undefined,
-    items: g.items, extra: g.extra || null, floor, attempt, variants, ...(boss ? { boss: true, bossName: bossFor(floor).name } : {}),
+    items: g.items, extra: g.extra || null, floor, attempt, variants, ...(boss ? { boss: true, bossName: bossFor(floor).name, ...(trial ? { trial } : {}) } : {}),
   };
 }
 

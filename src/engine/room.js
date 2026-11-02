@@ -21,18 +21,22 @@ const KINDS = [
   ['desk', /desk|computer|laptop|office/], ['tv', /tv|television|screen|radio|speaker/], ['rug', /rug|mat|carpet|floor/],
   ['bath', /bath|shower|toilet/], ['clock', /clock|calendar|picture|painting|photo|frame/], ['stairs', /stair|step|landing|hall/],
 ];
+// Every kind a player can pick by hand (v0.9), in menu order.
+export const FURNITURE_KINDS = [...KINDS.map(([k]) => k), 'chest'];
+
 export function furnitureFor(name) {
   const n = String(name || '').toLowerCase();
   for (const [k, re] of KINDS) if (re.test(n)) return k;
   return 'chest';
 }
 
-export function layoutPalace(loci = []) {
+// chosen: the player's own picks per stop (palace.furniture), null or missing means "guess from the name".
+export function layoutPalace(loci = [], chosen = []) {
   const rooms = [];
   for (let i = 0; i < loci.length; i += PER_ROOM) {
     rooms.push({
       index: rooms.length,
-      stops: loci.slice(i, i + PER_ROOM).map((name, k) => ({ n: i + k, name, kind: furnitureFor(name), ...SLOTS[k] })),
+      stops: loci.slice(i, i + PER_ROOM).map((name, k) => ({ n: i + k, name, kind: FURNITURE_KINDS.includes(chosen?.[i + k]) ? chosen[i + k] : furnitureFor(name), ...SLOTS[k] })),
     });
   }
   return rooms;

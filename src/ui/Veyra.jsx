@@ -1,3 +1,4 @@
+import { EPILOGUE, GATE_TALK } from '../data/afteryear.js';
 import React, { useState } from 'react';
 import { PxIcon } from './game/PxIcon.jsx';
 import { MODULES } from '../data/curriculum.js';
@@ -48,16 +49,16 @@ function Journal({ profile }) {
 
 function Chapters({ profile }) {
   const seenBeats = Object.keys(BEATS).map(Number).filter((w) => (profile.story.seen || []).includes('w' + w));
-  const list = ['prologue', ...MODULES.map((m) => m.id)].filter((k) => k === 'prologue' ? profile.story.seen.includes('prologue') : profile.progress.gates.includes(k));
+  const list = ['prologue', ...MODULES.map((m) => m.id), 'epilogue'].filter((k) => k === 'prologue' || k === 'epilogue' ? profile.story.seen.includes(k) : profile.progress.gates.includes(k));
   return (
     <>
       {list.map((k) => (
         <details key={k} className="card parchment chapter-read">
-          <summary><h3>{CHAPTERS[k].title}</h3></summary>
-          {CHAPTERS[k].text.map((t, i) => <p key={i} className={`story-text ${i === 0 ? 'drop' : ''}`}>{tell(t, profile)}</p>)}
+          <summary><h3>{(k === 'epilogue' ? EPILOGUE : CHAPTERS[k]).title}</h3></summary>
+          {(k === 'epilogue' ? EPILOGUE : CHAPTERS[k]).text.map((t, i) => <p key={i} className={`story-text ${i === 0 ? 'drop' : ''}`}>{tell(t, profile)}</p>)}
         </details>
       ))}
-      {list.length < 13 && <section className="card"><p className="muted">{13 - list.length} chapters are still hidden in the fog. Each one opens when you pass the gate of its district.</p></section>}
+      {list.filter((k) => k !== 'epilogue').length < 13 && <section className="card"><p className="muted">{13 - list.filter((k) => k !== 'epilogue').length} chapters are still hidden in the fog. Each one opens when you pass the gate of its district.</p></section>}
       {seenBeats.length > 0 && (
         <details className="card chapter-read">
           <summary><h3>Weekly tales ({seenBeats.length})</h3></summary>
@@ -109,6 +110,7 @@ function Codex({ profile }) {
 }
 
 // Text version of the map: every district with its state, shown as a word and a shape, not colour alone.
+const TALK_NAME = { tansy: 'Old Tansy', fennick: 'Fennick', wren: 'Wren', isolde: 'Isolde Varre', mosk: 'Mosk the ferryman', ennick: 'Brother Ennick', hask: 'Joss Hask' };
 const STATE_MARK = { restored: ['✓', 'Restored'], current: ['◆', 'Current quest'], lost: ['○', 'In the fog'] };
 function DistrictList({ profile, current, onSelect }) {
   return (
@@ -155,6 +157,12 @@ export default function Veyra({ profile, update }) {
             <h2>{m.district}</h2>
             <p className="objective">{restored || m.id === st.mod.id ? CHAPTERS[m.id].quest : 'Not yet reached'}</p>
             <p className="muted">{m.title}. {m.objective}</p>
+            {restored && GATE_TALK[m.id] && (
+              <figure className="gate-talk">
+                <Portrait id={GATE_TALK[m.id][0]} mood="smile" scale={2} />
+                <blockquote><p>{tell(GATE_TALK[m.id][1], profile)}</p><cite>{TALK_NAME[GATE_TALK[m.id][0]]}</cite></blockquote>
+              </figure>
+            )}
             {restored ? <p className="muted small">This district's chapter is open. Read it under Chapters.</p> : <p className="muted small">The story of this district opens when you pass its gate.</p>}
           </section>
           {profile.story.seen.includes('w' + st.week.w) && beat && (

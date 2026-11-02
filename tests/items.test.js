@@ -49,7 +49,7 @@ describe('item data', () => {
     expect(n('artifact')).toBe(14);
     expect(n('page')).toBe(12);
     expect(n('trinket')).toBe(SIDE_QUESTS.length);
-    expect(n('seal')).toBe(ACHIEVEMENTS.length + 3); // + three v0.6 mid-year milestone seals
+    expect(n('seal')).toBe(ACHIEVEMENTS.length + 7); // + three v0.6 mid-year and four v0.9 late-year milestone seals
   });
 });
 

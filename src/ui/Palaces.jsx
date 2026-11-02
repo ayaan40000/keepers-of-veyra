@@ -43,7 +43,7 @@ export default function Palaces({ profile, update }) {
       <h1 className="page-title"><PxIcon name="palace" size={36} />Palaces</h1>
       <Tip profile={profile} update={update} id="palaces">A palace is a route through a place you know well, like your home. Pick stops in the order you would walk past them. Ten clear stops beat thirty vague ones.</Tip>
       <p className="lead">Your memory palaces are real routes through places you know. Rest a palace for a day before reusing it, so old images fade.</p>
-      {walkPal && !editing ? <PalaceRoom palace={walkPal} onClose={() => setWalking(null)} /> : editing ? (
+      {walkPal && !editing ? <PalaceRoom palace={walkPal} onClose={() => setWalking(null)} onFurniture={(n, kind) => update((p) => { const pl = p.palaces.find((x) => x.id === walkPal.id); if (!pl) return; const f = [...(pl.furniture || [])]; while (f.length <= n) f.push(null); f[n] = kind; if (f.some(Boolean)) pl.furniture = f; else delete pl.furniture; })} /> : editing ? (
         <section className="card parchment"><PalaceEditor initial={editing === 'new' ? null : editing} onSave={(pal) => { save(pal); setEditing(null); }} onCancel={() => setEditing(null)} /></section>
       ) : (
         <>

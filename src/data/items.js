@@ -143,6 +143,11 @@ const MILESTONES = [
   M('month_holder', 'Seal of the Month Holder', 'rare', 'Pressed for three delayed recalls passed a full month after learning. Wren says most of the city forgets a thing in a week. You held three of them for thirty days.'),
   M('long_memory', 'Seal of the Long Memory', 'epic', 'Pressed for a gate recalled at 70% or better three months after you passed it. The Tide came up ninety times over those streets, and still they stood.'),
   M('midsummer', 'Midsummer Seal', 'epic', 'Pressed at the turn of your year: six districts restored and twenty delayed recalls passed. Calder kept one like it on her desk, and never once explained it.'),
+  // v0.9 late-year rewards, months 7 to 12. Also earned only by delayed recall that held.
+  M('whole_city', 'Seal of the Whole City', 'rare', 'Pressed for holding what you learned for a month or more in six different skills. Pictures, routes, faces, numbers, words: the city does not run on one trick, and neither do you.'),
+  M('half_year', 'Seal of the Half Year', 'epic', 'Pressed for a gate recalled at 70% or better six months after you passed it. Mosk says nothing on the river lasts half a year. He has been wrong before, though he would not like you to say so.'),
+  M('long_road', 'Seal of the Long Road', 'epic', 'Pressed at the far end of the Open Roads: nine districts restored and forty delayed recalls passed. Hask looked at it for a long time and said it was a good, plain seal.'),
+  M('keepers_year', "Seal of the Keeper's Year", 'legendary', 'Pressed on the morning after the Night of No Moon: all twelve districts restored and sixty delayed recalls passed. There is a lamp on it, and under the lamp, very small, your own name.'),
 ];
 
 export const ITEMS = [...ARTIFACTS, ...PAGES, ...TRINKETS, ...TREASURES, ...SEALS, ...MILESTONES];

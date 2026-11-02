@@ -2,7 +2,7 @@
 // in walking order. Arrow keys, WASD, a game controller or the on-screen buttons move the Keeper.
 // This is a rehearsal space for the route itself; drills still happen on the plain, still study screens.
 import React, { useEffect, useMemo, useRef, useState } from 'react';
-import { ROOM_W, ROOM_H, TILE, PER_ROOM, layoutPalace, step, stopAt, standAt, nextStopQuestion, DOOR_IN, DOOR_OUT } from '../engine/room.js';
+import { ROOM_W, ROOM_H, TILE, PER_ROOM, layoutPalace, FURNITURE_KINDS, furnitureFor, step, stopAt, standAt, nextStopQuestion, DOOR_IN, DOOR_OUT } from '../engine/room.js';
 import { FURNITURE } from '../pixel/furniture.js';
 import { drawSprite, reducedMotion, PAL } from '../pixel/raster.js';
 import { onPad } from './gamepad.js';
@@ -65,8 +65,8 @@ function useRoomCanvas(ref, rooms, pos, lit) {
   }, [rooms, pos.room, pos.x, pos.y, pos.face, lit]);
 }
 
-export default function PalaceRoom({ palace, onClose }) {
-  const rooms = useMemo(() => layoutPalace(palace.loci), [palace.loci.join('\n')]);
+export default function PalaceRoom({ palace, onClose, onFurniture }) {
+  const rooms = useMemo(() => layoutPalace(palace.loci, palace.furniture), [palace.loci.join('\n'), (palace.furniture || []).join()]);
   const [pos, setPos] = useState(() => standAt(rooms, 0));
   const [quiz, setQuiz] = useState(false);
   const [score, setScore] = useState({ right: 0, asked: 0 });
@@ -113,6 +113,13 @@ export default function PalaceRoom({ palace, onClose }) {
         <canvas ref={ref} className="px room-canvas" aria-hidden="true" />
       </div>
       <p className="room-here" role="status" aria-live="polite">{here ? <><b>Stop {here.n + 1}:</b> {here.name}</> : <span className="muted">Walk up to a piece of furniture to see its stop.</span>}</p>
+      {here && onFurniture && (
+        <label className="field small room-pick">Furniture at this stop
+          <select value={here.kind} onChange={(e) => onFurniture(here.n, e.target.value === furnitureFor(here.name) ? null : e.target.value)}>
+            {FURNITURE_KINDS.map((k) => <option key={k} value={k}>{k === furnitureFor(here.name) ? `${k} (guessed)` : k}</option>)}
+          </select>
+        </label>
+      )}
       <div className="room-pad" aria-label="Movement">
         <button className="btn small" aria-label="Walk up" onClick={() => move(0, -1)}>▲</button>
         <div className="row">

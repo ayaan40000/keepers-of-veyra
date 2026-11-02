@@ -3,6 +3,7 @@
 import { Tip } from './Tips.jsx';
 import React, { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import Drill from './Drill.jsx';
+import RunCard from './RunCard.jsx';
 import { PixelCanvas, Sprite, makeBuffer, prng, reducedMotion } from '../pixel/core.js';
 import { TEMPLATE_NAME } from '../data/curriculum.js';
 import { CRYPT_TUNING, BANDS, TREASURES, TABLETS, bandFor } from '../data/crypt.js';
@@ -635,7 +636,7 @@ function describeStep(step) {
 function RunMap({ run }) {
   const from = Math.max(1, run.floor - 5), to = run.floor + 5;
   const floors = Array.from({ length: to - from + 1 }, (_, i) => from + i);
-  const kind = (f) => (f < run.floor ? 'cleared' : f === run.floor ? 'here' : isBossFloor(f) ? 'boss' : isEchoFloor(f) ? 'echo' : 'ahead');
+  const kind = (f) => (f < run.floor ? 'cleared' : f === run.floor ? 'here' : isBossFloor(f) ? 'boss' : isEchoFloor(f, run.mods) ? 'echo' : 'ahead');
   const mark = { cleared: '✓', here: '◆', boss: 'B', echo: 'E', ahead: '·' };
   const word = { cleared: 'cleared', here: 'you are here', boss: 'boss floor', echo: 'echo floor', ahead: 'below' };
   return (
@@ -757,6 +758,7 @@ export default function Crypt({ profile, update, onExit, treasureIcon }) {
   const [nonce, setNonce] = useState(0);
   const [weekly, setWeekly] = useState(false);
   const [mods, setMods] = useState([]);
+  const [card, setCard] = useState(false);
 
   const go = (v) => { setView(v); if (typeof window !== 'undefined') window.scrollTo(0, 0); };
   const preview = useMemo(() => (run ? floorSpec(profile, run.floor, run.seed, run.attempt) : null), [run?.floor, run?.attempt, run?.seed]);
@@ -853,8 +855,10 @@ export default function Crypt({ profile, update, onExit, treasureIcon }) {
           )}
           <div className="crypt-row">
             <button className="btn crypt-btn-ghost" onClick={() => go('reliquary')}>Reliquary · {tCount}/{TREASURES.length} relics · {lCount}/{TABLETS.length} tablets</button>
+            {crypt.deepest > 0 && <button className="btn crypt-btn-ghost" onClick={() => setCard(!card)}>Run card</button>}
             {onExit && <button className="btn crypt-btn-ghost" onClick={onExit}>Back to Veyra</button>}
           </div>
+          {card && <RunCard profile={profile} onClose={() => setCard(false)} />}
           {crypt.history?.length > 0 && (
             <div className="crypt-history">
               <h3>Recent descents</h3>
@@ -887,7 +891,7 @@ export default function Crypt({ profile, update, onExit, treasureIcon }) {
             <>
               <h2 className="crypt-band">{preview.bossName}</h2>
               <p className="crypt-line">{bossFor(run.floor).line}</p>
-              <p className="crypt-note">A boss floor: more to hold than usual. Beat it and every flask of oil is refilled.</p>
+              <p className="crypt-note">A boss floor: more to hold than usual{preview.trial ? `, and its trial: ${variantLabel[preview.trial]}` : ''}. Beat it and every flask of oil is refilled.</p>
             </>
           ) : (
             <>

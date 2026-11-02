@@ -24,6 +24,8 @@ export const CRYPT_TUNING = {
 export const CRYPT_MODIFIERS = [
   { id: 'dim', name: 'Dim lamps', desc: 'Two flasks of oil instead of three.' },
   { id: 'swift', name: 'Swift water', desc: 'A quarter less study time on every floor.' },
+  { id: 'mist', name: 'Thick mist', desc: 'Every floor has a twist from the first floor down (reversed order, look-alikes, a timer and so on).' },
+  { id: 'echoes', name: 'Loud echoes', desc: 'Echo floors come every 3rd floor instead of every 5th.' },
 ];
 
 // Boss of each depth band: the thing that waits on every 10th floor.
@@ -32,7 +34,16 @@ export const BOSSES = [
   { from: 20, name: 'The Cistern Choir', line: 'The whispering in the water gathers into one voice, and it wants to sing you its forgetting.' },
   { from: 30, name: 'The Root Warden', line: 'The pale roots knot into the shape of a mason, and it will not let you pass unless you hold what it holds.' },
   { from: 40, name: 'The Listening Spring', line: 'The warm silver water stands up like a person. It has every face it ever took.' },
+  { from: 50, name: "Ysolde's Shadow", line: 'Your own lamp throws a shadow on the wall, and the shadow is holding a clay lamp of its own. It walks your route a step ahead of you.' },
 ];
+// v0.9 boss trials: each boss always brings one twist (if the floor's task has one), shown before the floor starts.
+export const BOSS_TRIALS = {
+  'The Crowned Echo': ['reverse', 'interference'],
+  'The Cistern Choir': ['timed'],
+  'The Root Warden': ['abstract', 'reverse'],
+  'The Listening Spring': ['lures', 'restyle', 'turn'],
+  "Ysolde's Shadow": ['reverse', 'timed', 'turn'],
+};
 export function bossFor(floor) {
   let b = BOSSES[0];
   for (const x of BOSSES) if (floor >= x.from) b = x;
@@ -84,6 +95,7 @@ export const BANDS = [
   { from: 26, name: 'The Root of the Ammerhold', decor: 'roots', hue: 'moss', line: 'Roots as thick as a man push through the vault, pale and cold and very old.' },
   { from: 33, name: 'The Hungry Springs', decor: 'springs', hue: 'tide', line: 'Silver water wells up from the floor. It is warm, and it is listening.' },
   { from: 40, name: 'The Unlit Deep', decor: 'springs', hue: 'void', line: 'Below every map. Your lamp is the only light that has ever been here.' },
+  { from: 48, name: 'The Warm Water', decor: 'springs', hue: 'tide', line: 'No mason cut these walls. They are smooth, and warm, and very faintly someone is singing.' },
 ];
 export function bandFor(floor) {
   let b = BANDS[0];
@@ -139,6 +151,15 @@ export const TABLETS = [
     text: 'Everything the Tide takes goes somewhere. Hesper believed it sinks, the way silt sinks, through the riverbed and the roots of the Ammerhold, down into the cold places under the world where water runs without light. She believed the springs at the bottom of these halls were where it settled, and she would not drink from them, nor let Ysolde drink from them, nor even let her look into them for long. If you have come this far, you have heard the springs. You may have heard voices in them. Do not answer the voices.' },
   { id: 'tab_last_stone', depth: 45, title: 'The Last Stone',
     text: 'This is the last stone I cut, and I broke the thirteenth oath to cut it. I have come as far down as a living body can come and still climb back, and I have seen the place where the Lethe truly rises, long before it ever reaches the Morrowfen. It is not cold. It is warm, like breath. The river does not forget, keeper. That is what the kings buried and the Wardens sealed. It remembers every name and song and face it has ever taken, and it keeps them here, and it is patient, and it is waiting for the Night of No Moon.' },
+  // v0.9: below the last stone. Scratched by Ysolde herself, in old age (first drafts by a local model, edited).
+  { id: 'tab_ysolde_came_down', depth: 50, title: 'Ysolde Came Down',
+    text: 'I came down alone, with my clay lamp and a stick for my bad knee. Hesper\'s last stone stood at the bottom of her stair like a door left open, and I did not stop to read it again. I knew it by heart. Below it nobody ever cut the rock. It is smooth here, worn by water, and every step down it grows warmer. I am old enough now to go where she told me not to.' },
+  { id: 'tab_warm_water', depth: 55, title: 'The Warm Water',
+    text: 'It is silver and warm, like breath held too long in a closed room. I waded in to my waist, and I heard them: the river-folk, singing under the surface, all of them at once. Their geese songs, their reed songs, the names of their children. They are not angry with us for forgetting. They are only waiting, with a patience that frightened me more than anything Hesper ever said.' },
+  { id: 'tab_what_is_kept', depth: 60, title: 'What Is Kept Here',
+    text: 'I understand it now. The river can only keep what nobody up above is keeping. Every name a living person still carries is a name the water cannot have. That is why the Tide comes up at night, when we sleep and let go. That is why it rose in the Drowned Years, when people stopped trying. Whoever reads this: it is not a war. It is a weighing. Each thing you hold is one thing it cannot.' },
+  { id: 'tab_lamp_left_burning', depth: 70, title: 'The Lamp Left Burning',
+    text: 'I have set my lamp on this ledge with all the oil I could carry. Let it burn as long as it can, so that whoever comes after knows somebody remembered the way down. Now go back up. Do not stay here listening to the singing. Go up into the light and keep things: names, faces, songs, the way home. That is all that ever pushed the Tide back, and it is enough.' },
 ];
 
 // Small celebration lines for sealed chests.

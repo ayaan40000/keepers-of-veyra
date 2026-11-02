@@ -11,6 +11,7 @@ Four more builds before a public v1.0: harden for release, deepen the learning, 
 - **v0.6 World and story:** gate restoration animations, chapter cutscenes, Crypt boss floors and weekly challenges.
 - **v0.7 Closed beta:** real players tune difficulty, session length and the Crypt curve.
 - **v0.8 Palace and polish:** walkable palace room, keyboard and controller, install prompt.
+- **v0.9 The Year of Keeping:** after-the-year mode and epilogue, words from friends after gates, late-year seals, furniture picks, boss trials, new modifiers, deeper tablets, run card.
 - **v1.0 Public release:** GitHub Pages, trademark cleared, licences shipped, after owner approval.
 
 Already fixed: the shared pixel engine (`src/pixel/core.js`) was split into `raster.js` (plain JS) and `components.jsx` (React), so every module imports it normally.
@@ -22,6 +23,7 @@ Already fixed: the shared pixel engine (`src/pixel/core.js`) was split into `ras
 | v0.4 Release hardening | Built. All backlog items in. Audit re-run still to do. |
 | v0.5 Learning depth | Built. All backlog items in; 147 unit tests pass. |
 | v0.6 World and story | Built. Layered depth effect left for v0.8 (day, dusk and dawn light done). Map as optional home view not done. |
+| v0.9 The Year of Keeping | Built (v0.9.0): Year of Keeping and epilogue, gate talk, four late-year seals, palace furniture picks, boss trials, Thick mist and Loud echoes, tablets to floor 70, run card. |
 | v0.8 Palace and polish | Built (v0.8.0): walkable palace rooms, keyboard and controller, install prompt after day 3, three-quarter faces, map depth, map as home. Beta skipped by owner decision. |
 | v0.7 Closed beta | Software built (session-length measurement, beta report, problem report, Crypt end tally, simulated retune). The beta itself needs 20+ testers for 4 weeks: see `docs/BETA.md`. |
 

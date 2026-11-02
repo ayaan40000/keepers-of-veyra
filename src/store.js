@@ -1,8 +1,10 @@
 import { SCHEMA, newProfile, DEFAULT_PREFS } from './engine/core.js';
 import { SKILLS, MODULES } from './data/curriculum.js';
-import { TREASURES, TABLETS } from './data/crypt.js';
+import { TREASURES, TABLETS, CRYPT_MODIFIERS } from './data/crypt.js';
 import { SIDE_QUESTS } from './data/quests.js';
 import { hashStr } from './engine/util.js';
+import { FURNITURE_KINDS } from './engine/room.js';
+
 
 export const MAX_IMPORT_BYTES = 5 * 1024 * 1024;
 
@@ -164,6 +166,7 @@ function validateExtras(p) {
     if (pr.textSize != null && !isNum(pr.textSize, 1, 1.5)) return 'Text size setting is invalid.';
     if (pr.home != null && !['today', 'veyra'].includes(pr.home)) return 'Home page setting is invalid.';
   }
+  if (!p.palaces.every((x) => x.furniture == null || (Array.isArray(x.furniture) && x.furniture.length <= 200 && x.furniture.every((k) => k == null || FURNITURE_KINDS.includes(k))))) return 'Palace furniture is invalid.';
   if (!p.palaces.every((x) => isStr(x.name, 100) && isStr(x.id, 64) && x.loci.length <= 200 && x.loci.every((l) => isStr(l, 120)))) return 'A palace name or stop is too long.';
   if (p.results.length > 20000 || p.sets.length > 5000) return 'The training record is too large.';
   if (p.achievements != null && !datedMap(p.achievements)) return 'Achievements are invalid.';
@@ -185,7 +188,7 @@ function validateExtras(p) {
     const r = c.run;
     if (r != null) {
       if (!isObj(r) || !isInt(r.floor, 1, 9999) || !isInt(r.lamps, 0, 9) || !isNum(r.seed, 0) || !isInt(r.attempt ?? 0, 0, 999)) return 'Crypt descent is invalid.';
-      if (r.mods != null && (!Array.isArray(r.mods) || !r.mods.every((m) => ['dim', 'swift'].includes(m)))) return 'Crypt modifiers are invalid.';
+      if (r.mods != null && (!Array.isArray(r.mods) || !r.mods.every((m) => CRYPT_MODIFIERS.some((x) => x.id === m)))) return 'Crypt modifiers are invalid.';
       if (r.mem != null && !isObj(r.mem)) return 'Crypt descent memory is invalid.';
       if (r.log != null && (!Array.isArray(r.log) || !r.log.every((x) => isObj(x) && isNum(x.acc, 0, 1)))) return 'Crypt descent log is invalid.';
       if (r.found != null && (!isObj(r.found) || !(r.found.treasures || []).every((x) => TREASURE_IDS.has(x)) || !(r.found.tablets || []).every((x) => TABLET_IDS.has(x)))) return 'Crypt finds are invalid.';

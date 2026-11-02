@@ -9,22 +9,28 @@ const COACH = {
   timeout: { title: 'Out of time', text: 'Time ran out before you finished. Speed comes from familiar images. Accuracy first: the app will give back study time if needed.' },
 };
 
+// The Year of Keeping (v0.9): after the last gate, each day revisits one week of the year in turn,
+// at the player's current level, so what was learned keeps getting used.
+export const yearComplete = (p) => (p?.progress?.day || 0) >= 365 && (p?.progress?.gates || []).includes('M12');
+export const keepingDay = (p) => Math.max(1, (p?.progress?.fullDates?.length || 0) - 364);
+
 export function sessionStatus(p) {
   const t = today(p);
   const pr = p.progress;
   const doneToday = pr.fullDates.includes(t);
   const away = pr.lastSessionDate ? daysBetween(pr.lastSessionDate, t) : 0;
   const day = Math.min(365, pr.day);
-  const week = weekForDay(day);
+  const keeping = yearComplete(p) ? keepingDay(p) : 0;
+  const week = keeping ? WEEKS[(keeping - 1) % WEEKS.length] : weekForDay(day);
   const mod = moduleForWeek(week.w);
-  const isWeekEnd = day % 7 === 0;
+  const isWeekEnd = keeping ? keeping % 7 === 0 : day % 7 === 0;
   const gateDay = moduleGateDay(mod);
   const pendingGate = MODULES.find((m) => pr.day > moduleGateDay(m) && !pr.gates.includes(m.id) && GATES[m.id].threshold > 0 && (!pr.gateRetry[m.id] || pr.gateRetry[m.id] <= t));
   let type = 'full';
   if (!pr.baselineDone) type = 'baseline';
-  else if (day === gateDay && !pr.gates.includes(mod.id) && !(pr.gateRetry[mod.id] > t)) type = 'gate';
+  else if (!keeping && day === gateDay && !pr.gates.includes(mod.id) && !(pr.gateRetry[mod.id] > t)) type = 'gate';
   else if (isWeekEnd) type = 'assessment';
-  return { t, doneToday, away, day, week, mod, type, pendingGate, due: dueSets(p, 50).length };
+  return { t, doneToday, away, day, week, mod, type, pendingGate, keeping, due: dueSets(p, 50).length };
 }
 
 function drillStep(p, spec, role, seedKey, mode) {
@@ -131,7 +137,7 @@ export function buildSession(p, kind, opts = {}) {
     const probes = probeSteps(p, 3);
     steps.push(...probes);
     if (!probes.length) steps.push(drillStep(p, { t: 'wordlist', n: 5, s: 25 }, 'warmup', seed('w'), 'warmup'));
-    const firstDay = (p.progress.day - 1) % 7 === 0;
+    const firstDay = st.keeping ? false : (p.progress.day - 1) % 7 === 0;
     steps.push(lessonStep(p, week, firstDay, skillsInWeek));
     steps.push(drillStep(p, week.drills[0], 'guided', seed('g')));
     week.drills.forEach((d, i) => {
@@ -149,11 +155,12 @@ export function buildSession(p, kind, opts = {}) {
   }
   // Weekly story beat, once per week, at the start of the first scored session that week.
   const beatKey = 'w' + week.w;
-  if (['full', 'assessment', 'gate'].includes(type) && !(p.story.seen || []).includes(beatKey)) steps.unshift({ kind: 'story', beat: week.w });
+  if (!st.keeping && ['full', 'assessment', 'gate'].includes(type) && !(p.story.seen || []).includes(beatKey)) steps.unshift({ kind: 'story', beat: week.w });
+  if (st.keeping && ['full', 'assessment'].includes(type) && !(p.story.seen || []).includes('epilogue')) steps.unshift({ kind: 'story', chapter: 'epilogue' });
   if (type !== 'free') steps.push({ kind: 'reflect' });
   steps.push({ kind: 'summary' });
   const repeatToday = p.progress.abandoned === st.t && type !== 'free';
-  return { id, type, repeatToday, day: st.day, week: week.w, module: (type === 'gateRetry' ? opts.mod : st.mod).id, steps, startedAt: Date.now() };
+  return { id, type, repeatToday, day: st.day, ...(st.keeping ? { keeping: st.keeping } : {}), week: week.w, module: (type === 'gateRetry' ? opts.mod : st.mod).id, steps, startedAt: Date.now() };
 }
 
 export { COACH };

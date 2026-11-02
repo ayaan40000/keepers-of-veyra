@@ -1,7 +1,7 @@
 # Mnemos: Keepers of Veyra
 
 A free, open-source, local-first memory training RPG. 365 days, about 20 to 30 minutes a day.
-Version 0.8 (palace and polish). Play it at https://ayaan40000.github.io/keepers-of-veyra/ (closed beta). See `CHANGELOG.md`, `docs/ROADMAP.md` and `docs/BETA.md`.
+Version 0.9 (the Year of Keeping). Play it at https://ayaan40000.github.io/keepers-of-veyra/ (closed beta). See `CHANGELOG.md`, `docs/ROADMAP.md` and `docs/BETA.md`.
 
 Scores measure performance on Mnemos tasks only. Mnemos is not an IQ test or a clinical test.
 
@@ -13,7 +13,7 @@ Data is stored in that browser only. Use Keeper > Export backup to keep a copy.
 ```
 npm install
 npm run dev            # local dev server
-npm test               # 155 unit tests (Vitest)
+npm test               # 167 unit tests (Vitest)
 npm run build:single   # one self-contained HTML file in dist-single/
 npm run build          # static folder in dist/ for GitHub Pages (with service worker)
 node tests/e2e.mjs     # end-to-end journey at 390px and desktop (Playwright)

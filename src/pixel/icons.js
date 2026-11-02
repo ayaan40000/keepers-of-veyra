@@ -1087,6 +1087,15 @@ EMB.midsummer = ['....x....', '.x..x..x.', '..xxxxx..', '.xxx.xxx.', '..xxxxx..'
 SEAL_STYLE.month_holder = ['blue', 'parch'];
 SEAL_STYLE.long_memory = ['iron', 'gold'];
 SEAL_STYLE.midsummer = ['amber', 'gold'];
+// v0.9 late-year seals
+EMB.whole_city = ['....x....', '...xxx...', '.x.x.x.x.', 'xxxxxxxxx', 'x.xx.xx.x', 'xxxxxxxxx', '.........', '.........', '.........'];
+EMB.half_year = ['...xxx...', '..xxx.x..', '.xxxx..x.', '.xxxx..x.', '.xxxx..x.', '..xxx.x..', '...xxx...', '.........', '.........'];
+EMB.long_road = ['.......xx', '......xx.', '....xxx..', '...xx....', '..xxx....', '.xx......', 'xx.......', '.........', '.........'];
+EMB.keepers_year = ['....x....', '...xxx...', '..x...x..', '..x.x.x..', '..x...x..', '...xxx...', '..xxxxx..', '.........', '.........'];
+SEAL_STYLE.whole_city = ['teal', 'gold'];
+SEAL_STYLE.half_year = ['violet', 'parch'];
+SEAL_STYLE.long_road = ['green', 'gold'];
+SEAL_STYLE.keepers_year = ['gold', 'red'];
 for (const id of Object.keys(EMB)) D[`seal_${id}`] = () => seal(id);
 
 // ---------- build ----------

@@ -1,6 +1,6 @@
 # Mnemos: Keepers of Veyra
 
-Free, open-source, local-first memory-training RPG. 365-day curriculum, about 30 minutes a day, wrapped in an original pixel-art story. Owner: Ayaan (does not code; explain changes in plain language). Current version: 0.8.0 (see CHANGELOG.md).
+Free, open-source, local-first memory-training RPG. 365-day curriculum, about 30 minutes a day, wrapped in an original pixel-art story. Owner: Ayaan (does not code; explain changes in plain language). Current version: 0.9.0 (see CHANGELOG.md).
 
 Read first: `docs/ROADMAP.md` (what to build next and release requirements) and `docs/PRODUCT_DOSSIER.md` (research, curriculum, adaptive rules, scoring, story bible, UX spec, architecture, IP register).
 
@@ -8,7 +8,7 @@ Read first: `docs/ROADMAP.md` (what to build next and release requirements) and 
 ```
 npm install
 npm run dev              # Vite dev server
-npm test                 # Vitest: all unit tests must pass (155 at v0.8)
+npm test                 # Vitest: all unit tests must pass (167 at v0.9)
 npm run build:single     # one offline HTML file -> dist-single/index.html (the review build)
 npm run build            # static site for GitHub Pages -> dist/
 node tests/e2e.mjs       # Playwright journey at 390px + desktop; must print "errors: none" (run build:single first; playwright 1.63 matches the cached Chromium)
@@ -38,4 +38,4 @@ node scripts/licenses.mjs             # regenerate licence list after dependency
 - `previews/` dev-only preview pages for art; not part of the app.
 
 ## Next work
-v0.4 to v0.8 are built; the owner chose to skip the closed beta. Next: v1.0 release requirements in `docs/ROADMAP.md` (trademark, accessibility audit, device testing need people). `scripts/icons.mjs` renders the app icons; `src/pixel/furniture.js` holds palace-room furniture. Local Qwen (LM Studio at http://127.0.0.1:1234) can draft content pools; filter and review its output. Re-run unit + e2e tests after every change and look at screenshots for visual changes.
+v0.4 to v0.9 are built; the owner chose to skip the closed beta. v0.9 added the Year of Keeping (`yearComplete` in `src/engine/session.js`), the epilogue and gate talk (`src/data/afteryear.js`), late-year seals, palace furniture picks (`palace.furniture`), boss trials, two modifiers and the run card (`src/ui/RunCard.jsx`). Next: v1.0 release requirements in `docs/ROADMAP.md` (trademark, accessibility audit, device testing need people). `scripts/icons.mjs` renders the app icons; `src/pixel/furniture.js` holds palace-room furniture. Local Qwen (LM Studio at http://127.0.0.1:1234) can draft content pools; filter and review its output. Re-run unit + e2e tests after every change and look at screenshots for visual changes.

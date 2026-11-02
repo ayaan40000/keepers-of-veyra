@@ -1,3 +1,4 @@
+import { EPILOGUE } from '../data/afteryear.js';
 import React, { useEffect, useRef, useState } from 'react';
 import { MODULES, SKILLS, TEMPLATE_NAME, GATES } from '../data/curriculum.js';
 import { CHAPTERS, ACHIEVEMENTS, BEATS, GATE_INTROS, SIDE_QUESTS, wrenLine, wrenStage, tell } from '../data/story.js';
@@ -162,7 +163,7 @@ function Story({ profile, chapterId, beat, onDone }) {
       </section>
     );
   }
-  const ch = CHAPTERS[chapterId];
+  const ch = chapterId === 'epilogue' ? EPILOGUE : CHAPTERS[chapterId];
   // Cutscene panels (v0.6): each page is a framed panel of the district, with the camera on a different part
   // of the scene, and the person the page is about shown with a mood that matches the words.
   const page = tell(ch.text[i], profile);
@@ -172,11 +173,11 @@ function Story({ profile, chapterId, beat, onDone }) {
     <section className="card parchment story book">
       <figure className="cutscene" aria-label={`Panel ${i + 1} of ${ch.text.length}`}>
         <div className="cut-art" style={{ '--cx': cam[0], '--cy': cam[1], '--cz': cam[2] }}>
-          <DistrictBanner id={chapterId === 'prologue' ? 'archive' : chapterId} restored={chapterId === 'prologue' || i >= ch.text.length - 2} className="story-banner" />
+          <DistrictBanner id={chapterId === 'prologue' || chapterId === 'epilogue' ? 'archive' : chapterId} restored={chapterId === 'prologue' || chapterId === 'epilogue' || i >= ch.text.length - 2} className="story-banner" />
         </div>
         {who && <Portrait id={who} mood={moodFor(page, PORTRAIT_MOODS[who])} scale={2} className="cut-face" />}
       </figure>
-      <span className="tag">{chapterId === 'prologue' ? 'Prologue' : 'Chapter'}</span>
+      <span className="tag">{chapterId === 'prologue' ? 'Prologue' : chapterId === 'epilogue' ? 'Epilogue' : 'Chapter'}</span>
       <h2>{ch.title}</h2>
       <span className="ornament" aria-hidden="true" />
       <p key={i} className="story-text drop page-turn">{page}</p>

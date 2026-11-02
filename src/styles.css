@@ -805,3 +805,12 @@ kbd { font: .85rem/1 var(--f-num); padding: 2px 5px; background: #0b0f1c; color:
   background: radial-gradient(60% 40% at 20% 85%, #b8c2d622, transparent 70%), radial-gradient(50% 30% at 80% 20%, #b8c2d618, transparent 70%), radial-gradient(120% 90% at 50% 50%, transparent 60%, #0a0d1688); }
 .worldmap nav { z-index: 2; }
 :root[data-motion="reduced"] .worldmap canvas, :root[data-motion="reduced"] .worldmap nav, :root[data-motion="reduced"] .wm-mist { transform: none; transition: none; }
+
+/* ---------- v0.9 ---------- */
+.gate-talk { display: flex; gap: 12px; align-items: flex-start; margin: 10px 0; }
+.gate-talk blockquote { margin: 0; }
+.gate-talk p { margin: 0 0 4px; }
+.gate-talk cite { font-size: .85em; opacity: .75; font-style: normal; }
+.room-pick select { max-width: 220px; }
+.run-card { margin-top: 14px; display: grid; gap: 10px; }
+.run-card-canvas { width: 100%; max-width: 480px; height: auto; image-rendering: pixelated; border: 2px solid #0008; }

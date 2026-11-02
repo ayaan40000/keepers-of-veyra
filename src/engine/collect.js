@@ -31,6 +31,11 @@ export function milestoneMet(p, id) {
   if (id === 'month_holder') return held.filter((x) => x.delay >= 30).length >= 3;
   if (id === 'long_memory') return held.some((x) => x.delay >= 90);
   if (id === 'midsummer') return (p?.progress?.gates || []).length >= 6 && held.length >= 20;
+  // v0.9 late-year milestones
+  if (id === 'whole_city') return Object.values(p?.skills || {}).filter((s) => (s?.probes || []).some((x) => x.score >= 0.7 && x.delay >= 30)).length >= 6;
+  if (id === 'half_year') return held.some((x) => x.delay >= 180);
+  if (id === 'long_road') return (p?.progress?.gates || []).length >= 9 && held.length >= 40;
+  if (id === 'keepers_year') return (p?.progress?.gates || []).length >= 12 && held.length >= 60;
   return false;
 }
 
