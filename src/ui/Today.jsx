@@ -11,9 +11,13 @@ import { PxIcon } from './game/PxIcon.jsx';
 import { PixelBar } from './game/PixelBar.jsx';
 import { Portrait } from '../pixel/Faces.jsx';
 import { CryptCard } from './Crypt.jsx';
-import { DistrictBanner } from './pixel/Scenes.jsx';
+import { DistrictScene } from './artLookup.jsx';
 import { BackupReminder, SafariNotice, InstallCard, downloadBackup } from './Notices.jsx';
 import { buildExport } from '../store.js';
+import { RealLifeCard } from './FieldGuide.jsx';
+import { EchoCard } from './Battle.jsx';
+import { pendingNudge } from '../engine/guide.js';
+import { today } from '../engine/core.js';
 
 const FREE = [
   { t: 'wordlist', n: 10, s: 60, w: 1 }, { t: 'pairs', n: 8, s: 70, w: 2 }, { t: 'chain', n: 10, s: 90, w: 3 },
@@ -21,7 +25,7 @@ const FREE = [
   { t: 'digits', n: 12, s: 80, w: 18 }, { t: 'vocab', n: 8, s: 90, w: 22 }, { t: 'facts', n: 8, s: 90, w: 27 },
 ];
 
-export default function Today({ profile, start, onEnterCrypt, update }) {
+export default function Today({ profile, start, onEnterCrypt, update, onFight }) {
   const st = sessionStatus(profile);
   const g = profile.progress.gates.length;
   const stage = wrenStage(g);
@@ -29,6 +33,7 @@ export default function Today({ profile, start, onEnterCrypt, update }) {
   const rank = rankOf(profile.progress.lumen);
   const cons = consistency(profile);
   const resume = profile.inProgress;
+  const nudge = pendingNudge(profile, today(profile));
   const line = st.away >= 3 ? wrenLine('returnAfter', g, st.day) : wrenLine('welcome', g, st.day);
   const dayLabel = st.keeping ? `Year of Keeping, day ${st.keeping}` : `Day ${st.day}`;
   const typeLabel = st.keeping ? { full: `${dayLabel}: ${st.week.title}`, assessment: `${dayLabel}: check-up on week ${st.week.w}` }[st.type] || dayLabel : { baseline: 'Day 1: baseline and first lesson', full: `Day ${st.day}: ${st.week.title}`, assessment: `Day ${st.day}: week ${st.week.w} assessment`, gate: `Day ${st.day}: gate of ${st.mod.district}` }[st.type];
@@ -60,7 +65,7 @@ export default function Today({ profile, start, onEnterCrypt, update }) {
       ) : (
         <section className="card parchment cta quest-card">
           <span className="pin" aria-hidden="true" />
-          <DistrictBanner id={st.mod.id} restored={profile.progress.gates.includes(st.mod.id)} className="quest-banner" />
+          <DistrictScene id={st.mod.id} restored={profile.progress.gates.includes(st.mod.id)} className="quest-banner" />
           <span className="tag">Module {st.mod.id.slice(1)} · {st.mod.district}</span>
           <h2>{typeLabel}</h2>
           <p className="muted">{st.type === 'baseline' ? 'About 20 minutes: three short measurements, then your first lesson.' : st.keeping ? `${KEEPING_LINES[st.keeping % KEEPING_LINES.length]} Today revisits week ${st.week.w}: ${st.week.obj}` : `Goal this week: ${st.week.obj}`}</p>
@@ -70,6 +75,10 @@ export default function Today({ profile, start, onEnterCrypt, update }) {
           {st.due > 0 && <p className="muted small">{st.due} delayed recall set{st.due > 1 ? 's' : ''} due; the session opens with them.</p>}
         </section>
       )}
+
+      {st.doneToday && !resume && nudge && <RealLifeCard profile={profile} update={update} task={nudge} />}
+
+      {st.doneToday && !resume && onFight && <EchoCard profile={profile} update={update} onFight={onFight} />}
 
       {!resume && <BackupReminder profile={profile} update={update} onExport={() => downloadBackup(profile, update, buildExport)} />}
       {!resume && <SafariNotice profile={profile} update={update} />}

@@ -1,6 +1,6 @@
 # Mnemos: Keepers of Veyra
 
-Free, open-source, local-first memory-training RPG. 365-day curriculum, about 30 minutes a day, wrapped in an original pixel-art story. Owner: Ayaan (does not code; explain changes in plain language). Current version: 0.9.1 (see CHANGELOG.md).
+Free, open-source, local-first memory-training RPG. 365-day curriculum, about 30 minutes a day, wrapped in an original pixel-art story. Owner: Ayaan (does not code; explain changes in plain language). Current version: 0.10.0 (see CHANGELOG.md).
 
 Read first: `docs/ROADMAP.md`, `docs/BEYOND.md` (planned Field Guide: using the methods on real-life material) (what to build next and release requirements) and `docs/PRODUCT_DOSSIER.md` (research, curriculum, adaptive rules, scoring, story bible, UX spec, architecture, IP register).
 
@@ -8,7 +8,7 @@ Read first: `docs/ROADMAP.md`, `docs/BEYOND.md` (planned Field Guide: using the 
 ```
 npm install
 npm run dev              # Vite dev server
-npm test                 # Vitest: all unit tests must pass (169 at v0.9.1)
+npm test                 # Vitest: all unit tests must pass (206 at v0.10.0)
 npm run build:single     # one offline HTML file -> dist-single/index.html (the review build)
 npm run build            # static site for GitHub Pages -> dist/
 node tests/e2e.mjs       # Playwright journey at 390px + desktop; must print "errors: none" (run build:single first; playwright 1.63 matches the cached Chromium)
@@ -20,7 +20,7 @@ node scripts/licenses.mjs             # regenerate licence list after dependency
 - Never publish, push to GitHub or deploy without the owner's explicit approval. Repo: github.com/ayaan40000/keepers-of-veyra; every push to main runs the tests and redeploys https://ayaan40000.github.io/keepers-of-veyra/ (bump `version` in package.json for each release so the offline cache refreshes).
 - No runtime network calls, no trackers, no accounts. All data lives in the browser (IndexedDB + localStorage) with JSON export/import.
 - All art is original and drawn in code. No image files from other games; no copying of Undertale, Stardew Valley or other assets, fonts or characters. Only OFL fonts via @fontsource (Pixelify Sans, Silkscreen, VT323).
-- Owner decision, Nov 1, 2026: pictures from the local image model (ComfyUI) are never shipped as image files, but sprites may be traced from them into the app's code sprite format ({w, h, pal, px}) by `tools/asset-studio/studio.py` (stage `trace`). Drafts live in `tools/asset-studio/out/` (not committed); only owner-approved ones go into `src/pixel/`.
+- Owner decision, Nov 1, 2026 (later that day, replaces the earlier "never ship pictures" rule): pictures from the local image model (ComfyUI, Qwen-Image workflow from the studio project) MAY ship as image files, as long as they fit the pixel-art style (palette in `tools/asset-studio/studio.py`), are reduced to a small pixel grid and a limited palette, kept small (the whole app must stay light on phones), shown with `image-rendering: pixelated`, and contain no copied characters, logos or text from other games. Sprites may still be traced into the code sprite format ({w, h, pal, px}) by `tools/asset-studio/studio.py`. Drafts live in `tools/asset-studio/out/` (not committed); shipped images go in `src/assets/art/` with a manifest in `src/data/art.js`. Check the image model's licence terms and list them in `src/data/licenses.js` before release. LICENCE HOLD RESOLVED (Nov 1, 2026): the installed model is Qwen-Image 2.1, which is under the Qwen Research License ("non-commercial" there means research or evaluation only, sections 1(i) and 2(a)). The owner stated in chat that they have approval from Qwen (Alibaba) to use the images, and approved publishing. Keep a copy of that written approval with the project records (not in the repo if it holds private details), and keep `model: 'qwen-image-2.1'` on every art manifest entry so the set can be re-rendered if the terms ever change.
 - Study and recall screens: no animation and no sound except one soft submit sound.
 - Rewards come only from demonstrated learning (accuracy, delayed recall, gates). Never reward time spent or repetition of easy drills. Crypt results never change skill estimates.
 - Honest claims only: scores measure performance on Mnemos tasks; not an IQ or clinical test.

@@ -172,4 +172,8 @@ export const SIDE_QUESTS = [
     hook: '"Three hundred days," Wren says. "That\'s what the old Wardens had to do to take the oath. Three hundred days of walking the routes. Nobody\'s done it in three centuries."',
     goal: 'Train on 300 days.', cond: { type: 'days', n: 300 },
     done: 'Wren swears you in as a Keeper of Veyra under the copper dome, with the Lamp of Ysolde burning above you both. Afterwards she gives you the notecard from her breast pocket. It has your name on it, and underneath, in her handwriting: In case I ever need reminding. I won\'t.' },
+  { id: 'm12_echoes', module: 'M12', title: "The Keepers' Circle", giver: 'Wren, Archivist of Veyra',
+    hook: '"The Tide leaves a few Forgettings every night," Wren says. "The Circle goes out to meet them. Each of us has helped by remembering. Will you hold twenty old memories for them?"',
+    goal: 'Hold 20 old memories in Echo battles (first try, no hint, learned at least a week before).', cond: { type: 'echo', n: 20 },
+    done: 'Wren puts a small brass lamp in your hands, its glass warm against your palm. "The Circle will always have a place for you," she says. Along the Quay Tansy pours the tea, Fennick jingles his keys, and the lamps burn on.' },
 ];

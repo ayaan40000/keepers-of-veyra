@@ -4,6 +4,8 @@ import { TREASURES, TABLETS, CRYPT_MODIFIERS } from './data/crypt.js';
 import { SIDE_QUESTS } from './data/quests.js';
 import { hashStr } from './engine/util.js';
 import { FURNITURE_KINDS } from './engine/room.js';
+import { GEAR, SLOTS } from './data/gear.js';
+import { ITEM_BY_ID } from './data/items.js';
 
 
 export const MAX_IMPORT_BYTES = 5 * 1024 * 1024;
@@ -99,6 +101,18 @@ export function migrate(p) {
   if (!isObj(p.tips) || !Array.isArray(p.tips.seen)) p.tips = { seen: [] };
   if (!isObj(p.relics) || !isObj(p.relics.polish)) p.relics = { polish: {} };
   if (!isObj(p.stats) || !Array.isArray(p.stats.sessions)) p.stats = { sessions: [] };
+  // v0.10 Field Guide: dates the player said they tried a real-life task, and dates they chose "not now"
+  if (!isObj(p.guide)) p.guide = { tried: {}, later: {} };
+  if (!isObj(p.guide.tried)) p.guide.tried = {};
+  if (!isObj(p.guide.later)) p.guide.later = {};
+  // v0.10 Keeper gear and Echo battle record
+  if (!isObj(p.keeper)) p.keeper = {};
+  if (!isObj(p.keeper.equip)) p.keeper.equip = {};
+  for (const sl of SLOTS) if (p.keeper.equip[sl.id] === undefined) p.keeper.equip[sl.id] = null;
+  if (!isObj(p.battles)) p.battles = { done: 0, held: 0, rests: 0, last: null, skipped: null, queue: [], history: [] };
+  for (const k of ['done', 'held', 'rests']) if (typeof p.battles[k] !== 'number') p.battles[k] = 0;
+  if (!Array.isArray(p.battles.queue)) p.battles.queue = [];
+  if (!Array.isArray(p.battles.history)) p.battles.history = [];
   p.meta.schema = SCHEMA;
   return p;
 }
@@ -196,6 +210,27 @@ function validateExtras(p) {
   }
   if (p.tips != null && (!isObj(p.tips) || !Array.isArray(p.tips.seen) || !p.tips.seen.every((x) => isStr(x, 60)))) return 'Tips record is invalid.';
   if (p.relics != null && (!isObj(p.relics) || (p.relics.polish != null && !datedMap(p.relics.polish)) || (p.relics.tried != null && !datedMap(p.relics.tried)))) return 'Relic record is invalid.';
+  if (p.guide != null) {
+    const okMap = (m) => m == null || (datedMap(m) && Object.keys(m).length <= 200 && Object.keys(m).every((k) => isStr(k, 40)));
+    if (!isObj(p.guide) || !okMap(p.guide.tried) || !okMap(p.guide.later)) return 'Field Guide record is invalid.';
+  }
+  if (p.keeper != null) {
+    const eq = isObj(p.keeper) ? p.keeper.equip : null;
+    if (!isObj(eq)) return 'Keeper gear is invalid.';
+    for (const [slot, id] of Object.entries(eq)) {
+      if (!SLOTS.some((x) => x.id === slot)) return 'Keeper gear is invalid.';
+      if (id == null) continue;
+      const ok = slot === 'charm' ? typeof id === 'string' && !!ITEM_BY_ID[id] : GEAR.some((g) => g.id === id && g.slot === slot);
+      if (!ok) return 'Keeper gear is invalid.';
+    }
+  }
+  if (p.battles != null) {
+    const b = p.battles;
+    if (!isObj(b) || !isInt(b.done ?? 0, 0, 1e6) || !isInt(b.held ?? 0, 0, 1e6) || !isInt(b.rests ?? 0, 0, 1e6)) return 'Battle record is invalid.';
+    if ((b.last != null && !isDate(b.last)) || (b.skipped != null && !isDate(b.skipped))) return 'Battle record is invalid.';
+    if (b.queue != null && (!Array.isArray(b.queue) || b.queue.length > 60 || !b.queue.every((q) => isObj(q) && isStr(q.set, 40) && isInt(q.i, 0, 999) && isDate(q.date)))) return 'Battle queue is invalid.';
+    if (b.history != null && (!Array.isArray(b.history) || b.history.length > 100 || !b.history.every((h) => isObj(h) && isDate(h.date) && isStr(h.mode, 20) && isStr(h.outcome, 12) && isInt(h.items, 0, 99) && isInt(h.held, 0, 99) && isInt(h.relearned ?? 0, 0, 99) && isInt(h.queued ?? 0, 0, 99) && isInt(h.lumen ?? 0, 0, 999)))) return 'Battle history is invalid.';
+  }
   if (p.stats != null && (!isObj(p.stats) || (p.stats.sessions != null && (!Array.isArray(p.stats.sessions) || p.stats.sessions.length > 2000 || !p.stats.sessions.every((x) => isObj(x) && isDate(x.date) && isNum(x.minutes, 0, 600)))))) return 'Session statistics are invalid.';
   return null;
 }

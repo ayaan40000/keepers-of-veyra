@@ -2,6 +2,14 @@
 
 Nov 1, 2026 · Ayaan. Source: the Claude Doc "Mnemos Roadmap to Public Release" (ROADMAP.pdf in this folder includes the roadmap diagram).
 
+## v0.10: Character, gear and Echo battles (built, not released)
+
+Design: `docs/RPG_DEPTH.md`. Built: character sheet and paper doll, four gear slots, Echo battles with five practice scenes, Forgettings story, Keepers' Circle coaches and a closing side quest. Tests in `tests/echo.test.js`.
+
+Still to do before release: bump the version, play-test the battle length (target 5 to 8 minutes) with real review sets, check pixel art from the art agent in the battle stage and the character page (ids starting with `battle`, `enemy`, `character` are picked up automatically), accessibility pass on the battle screens.
+
+Deferred: guilds and shared raid HP (no network), ask-again-once-per-guest at the Gala, battle sounds, delayed self-tests on the player's own material, a Great Forgetting boss.
+
 ## Summary
 
 Four more builds before a public v1.0: harden for release, deepen the learning, polish the world, then a closed beta of at least 20 adults for 4 weeks. The independent auditor rates v0.3 at 7/10 provisionally and lists 8 must-fix items, none large.

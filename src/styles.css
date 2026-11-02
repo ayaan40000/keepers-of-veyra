@@ -820,3 +820,46 @@ kbd { font: .85rem/1 var(--f-num); padding: 2px 5px; background: #0b0f1c; color:
 .sketches { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 8px; }
 .sketches figure { margin: 0; text-align: center; font-size: .85em; opacity: .9; }
 .sketches canvas { image-rendering: pixelated; }
+
+/* ===== v0.10 Character and Echo battles ===== */
+.char-head { display: flex; gap: 16px; align-items: flex-start; flex-wrap: wrap; }
+.doll-frame { position: relative; flex: 0 0 auto; padding: 8px; background: var(--slot); box-shadow: inset 0 0 0 3px var(--slot-hi); line-height: 0; }
+.doll-frame .doll-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.doll-frame canvas { position: relative; image-rendering: pixelated; }
+.attrs { list-style: none; margin: 10px 0; padding: 0; display: grid; gap: 10px; }
+.attrs li { display: grid; grid-template-columns: 7.5rem 1fr 2rem; gap: 4px 10px; align-items: center; }
+.attrs .attr-why { grid-column: 2 / 4; margin-top: -4px; }
+.gear-grid { display: grid; gap: 4px 16px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+.gear-slot .field { margin: 8px 0 4px; }
+.gear-note { display: flex; gap: 8px; align-items: flex-start; min-height: 2.4em; }
+.battle-stage { position: relative; display: flex; justify-content: space-between; align-items: flex-end; gap: 8px; padding: 12px; margin: 8px 0; min-height: 200px; overflow: hidden;
+  background: linear-gradient(180deg, #121a32 0%, #26324f 62%, #3a4566 62%, #232b40 100%); box-shadow: inset 0 0 0 3px var(--panel-hi), 0 0 0 3px var(--edge); }
+.battle-stage .stage-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; }
+.battle-stage > * { position: relative; z-index: 1; }
+.stage-enemy { flex: 1 1 55%; display: flex; flex-direction: column; align-items: flex-end; gap: 6px; min-width: 0; order: 2; }
+.stage-enemy .pxbar { width: 100%; max-width: 220px; }
+.stage-name { margin: 0; text-align: right; font-size: .85rem; background: #0b101dcc; padding: 2px 6px; }
+.enemy-sprite { line-height: 0; } .enemy-art { width: 144px; height: auto; max-width: 100%; }
+.stage-keeper { flex: 0 0 auto; display: flex; flex-direction: column; align-items: center; gap: 4px; order: 1; line-height: 1; }
+.stage-keeper .small { background: #0b101dcc; padding: 0 4px; }
+.resolve { display: flex; gap: 4px; background: #0b101dcc; padding: 3px 5px; }
+.resolve i { width: 12px; height: 12px; background: #2a3350; box-shadow: inset 0 0 0 2px #0b101d; }
+.resolve i.on { background: var(--amber); box-shadow: inset 0 0 0 2px #fff0b0, 0 0 0 1px #0b101d; }
+.battle-stage canvas, .battle-stage img { image-rendering: pixelated; }
+.study-rows { list-style: none; padding: 0; margin: 10px 0; display: grid; gap: 8px; }
+.study-rows li { display: flex; gap: 12px; align-items: center; font-size: 1.15rem; }
+.tech-grid { display: grid; gap: 10px; margin: 12px 0; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
+.btn.tech { display: flex; flex-direction: column; align-items: flex-start; gap: 4px; text-align: left; height: auto; padding: 10px; }
+.btn.tech.on { outline: 3px solid var(--amber); }
+.battle-q { margin: 6px 0 10px; font-size: 1.45rem; overflow-wrap: anywhere; }
+.battle .note.good { border-color: var(--good); }
+/* flair: only between questions (intro, feedback, result), never on the still question or study screens */
+:root[data-motion="full"] .battle-stage.fx .enemy-sprite { animation: echo-float 3s ease-in-out infinite; }
+:root[data-motion="full"] .battle-stage.fx.hit .enemy-sprite { animation: echo-hit .5s steps(6) 1; }
+:root[data-motion="full"] .battle-stage.fx.miss .resolve { animation: echo-shake .4s steps(4) 1; }
+:root[data-motion="full"] .battle-stage.fx.win .enemy-sprite { animation: echo-away 1.8s ease-in forwards; }
+@keyframes echo-float { 50% { transform: translateY(-5px); } }
+@keyframes echo-hit { 25% { transform: translateX(-6px); filter: brightness(1.8); } 60% { transform: translateX(5px); } }
+@keyframes echo-shake { 25% { transform: translateX(-4px); } 75% { transform: translateX(4px); } }
+@keyframes echo-away { to { transform: translateY(-40px); opacity: 0; } }
+@media (max-width: 420px) { .attrs li { grid-template-columns: 6rem 1fr 1.8rem; } .battle-stage { min-height: 180px; } }

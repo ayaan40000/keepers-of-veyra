@@ -798,6 +798,18 @@ D.trinket_m12_kept = () => {
   return c.done();
 };
 
+D.trinket_m12_echoes = () => {
+  const c = cv();
+  c.ball(12, 12, 10, 10, 'brass');
+  c.ring(12, 12, 8.4, 7.4, 'brass', -0.7);
+  for (let i = 0; i < 6; i++) { const a = (i / 6) * Math.PI * 2 - Math.PI / 2; c.p(12 + Math.cos(a) * 6.2, 12 + Math.sin(a) * 6.2, 'brass0'); }
+  c.pts([[12, 8], [11, 9], [12, 9], [13, 9]], 'flame0');
+  c.rect(10, 10, 5, 1, 'brass3'); c.rect(11, 11, 3, 3, 'brass3'); c.rect(10, 14, 5, 1, 'brass3');
+  c.pts([[12, 12]], 'brass0');
+  c.outline();
+  return c.done();
+};
+
 D.trinket_m12_year = () => {
   const c = cv();
   // ribbon in a V

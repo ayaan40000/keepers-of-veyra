@@ -9,6 +9,7 @@ import { today, genItems } from '../engine/core.js';
 import Drill from './Drill.jsx';
 import { Portrait } from '../pixel/Faces.jsx';
 import { DistrictBanner } from './pixel/Scenes.jsx';
+import { DistrictScene } from './artLookup.jsx';
 import { moduleForWeek } from '../data/curriculum.js';
 import { DialogueBox } from './game/DialogueBox.jsx';
 import { PxIcon } from './game/PxIcon.jsx';
@@ -69,7 +70,7 @@ export default function Session({ profile, update, onExit }) {
     const drills = session.steps.filter((s) => s.kind === 'drill' || s.kind === 'probe');
     body = (
       <section className="intro">
-        {step.variant === 'gate' && <DistrictBanner id={mod.id} restored={false} className="story-banner" />}
+        {step.variant === 'gate' && <DistrictScene id={mod.id} restored={false} className="story-banner" />}
         <DialogueBox speaker={`Wren · ${stage.name}`} portrait={<Portrait id="wren" mood={step.variant === 'gate' ? 'worried' : step.variant === 'return' ? 'smile' : 'neutral'} scale={2} />} lines={[wrenLine(kinds[step.variant], gates, session.day)]} />
         <div className={`card ${step.variant === 'gate' ? 'gold' : 'parchment'}`}>
         <span className="tag">{step.variant === 'gate' ? 'Gate challenge' : 'Quest briefing'}</span>
@@ -163,7 +164,7 @@ function Story({ profile, chapterId, beat, onDone }) {
     const b = BEATS[beat];
     return (
       <section className="card parchment story beat book">
-        <DistrictBanner id={moduleForWeek(beat).id} restored={profile.progress.gates.includes(moduleForWeek(beat).id)} className="story-banner" />
+        <DistrictScene id={moduleForWeek(beat).id} restored={profile.progress.gates.includes(moduleForWeek(beat).id)} className="story-banner" />
         <span className="tag">This week in Veyra</span>
         <h2>{b.title}</h2>
         <span className="ornament" aria-hidden="true" />

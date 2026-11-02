@@ -105,6 +105,7 @@ const TRINKETS = [
   T('m11_pace', 'The Rite Coat', 'epic', 'Black wool lined with green silk, sent by Isolde with a note: For the Rite. Lose in this and I will have it back. She did not have it back.'),
   T('m11_song', 'Bundle of Rosemary', 'epic', 'Rosemary from Tansy\'s basket, tied with twine. She sang the last verse at last under the lamp and remembered, for one breath, that she had a brother.'),
   T('m12_kept', 'The Autumn Leaf', 'legendary', 'A leaf from the autumn, when you learned something you still hold three months on. That\'s yours now, Tansy said. Not the river, not the grey, not anybody. Remember that I said so.'),
+  T('m12_echoes', "The Circle's Lamp Token", 'legendary', 'A bronze token stamped with a small lamp, ringed by six dots, one for each friend who coaches by the Quay. Wren says it opens nothing. It only says that you are expected.'),
   T('m12_year', 'The Keeper\'s Oath Medal', 'legendary', 'Struck in bronze with the Lamp of Ysolde, given under the copper dome when Wren swore you in as a Keeper of Veyra. Nobody had walked the routes three hundred days in three centuries.'),
 ];
 

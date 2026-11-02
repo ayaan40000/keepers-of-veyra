@@ -2,6 +2,19 @@
 
 All notable changes to Mnemos: Keepers of Veyra. Saved data from every earlier version loads in this one.
 
+## Unreleased (v0.10 work): Character, gear and Echo battles
+
+Built and tested, not yet released. The version number has not been bumped.
+
+- **Character sheet** (Menu, or the Keeper page): seven attributes, one for each skill, worked out from your skill levels and mastery. Nothing new is earned: it is a new view of what you already learned. A class (such as Cartographer) comes from your strongest skill.
+- **Paper doll**: a pixel Keeper drawn in code. Every district gate adds a stitch of coloured trim to the cloak, with a clasp, a pin, a lantern glow and a gold lining at gates 3, 6, 9 and 12.
+- **Gear**: lantern, cloak, charm and tool slots. You can only wear relics you have earned. Lantern of Letters, Scroll of Order and Palace Map give small study aids used inside battles, and never show an answer before you recall it. The rest is cosmetic.
+- **Echo battles**: a gentle Forgetting holds old things you learned at least a day ago, pulled from your own review sets. You have 5 Resolve. Answers are typed. A hint halves damage, a miss shows the answer and you are asked again later, and you can skip once or leave at any time. Results never change skill estimates. Only old memories that held on the first try earn a small amount of Lumen, inside the same 50 a day cap as free practice.
+- **Practice scenes** with made-up material: Packing Bay, Speech Hall, Crossroads, Networking Gala and Night Market, each with a "which move fits" step. They earn nothing.
+- **Story**: a Forgettings lore entry (opens after the first gate), a first-meeting scene, coach lines from the Keepers' Circle (spoken only before and after a battle), and a new side quest, "The Keepers' Circle", with a closing scene for the Year of Keeping and a new trinket.
+- Saved data: new `keeper` and `battles` records, with migration, checks and tests. Older saves load unchanged.
+- Not built: guilds and any shared boss, ask-again-once-per-guest at the Gala, battle sounds. Shipped battle and enemy pictures are used automatically when the art manifest holds ids that start with battle or enemy; until then the code-drawn sprites are shown.
+
 ## 0.9.1: New art from local models (2026-11-01)
 
 All new art in this release was made on the owner's computer: the image model painted pixel-art pictures, which were traced into the game's own code sprites (the pictures themselves are not shipped). Names and texts were drafted by a local model. Weak pieces can be replaced later by re-running `tools/asset-studio/`.

@@ -27,6 +27,7 @@ export function condMet(p, c) {
         && (!c.flag || r[c.flag]) && (!c.timed || r.timed) && (c.speed == null || (r.speed ?? 0) >= c.speed));
     case 'skillsAtLevel': return Object.values(skills).filter((s) => s.level >= c.level).length >= c.count;
     case 'skillsAtMastery': return Object.values(skills).filter((s) => s.mastery >= c.state).length >= c.count;
+    case 'echo': return (p.battles?.held || 0) >= c.n;
     case 'battery': {
       const base = p.baseline?.results?.wordlist;
       if (base == null) return false;

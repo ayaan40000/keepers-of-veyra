@@ -34,4 +34,10 @@ export const KEEPING_LINES = [
   'A little each day. Not to win anything. Just to keep.',
   'Today we go back to an old district and make sure it still holds.',
   'The lamps are burning. Let\'s keep them that way.',
+  'Walk slowly down Lantern Street today. There is no hurry.',
+  'Keep a cup of tea warm for later. Some days are just for breathing out.',
+  'Let your shoulders drop as you walk. The route will still be there.',
+  'The lamps flicker over the water this evening. Shall we see how the old routes are holding?',
+  'Nothing to prove today. We are only checking that what you chose to keep is still kept.',
+  'Pick one thing you love and walk it once, slowly. That is plenty.',
 ];

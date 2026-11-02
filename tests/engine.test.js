@@ -244,7 +244,7 @@ describe('v0.2 story and quests', async () => {
     for (const ch of Object.values(CHAPTERS)) { expect(ch.text.length).toBeGreaterThanOrEqual(6); expect(ch.quest).toBeTruthy(); }
     expect(Object.keys(BEATS).length).toBe(52);
     expect(Object.keys(GATE_INTROS).length).toBe(12);
-    expect(new Set(SIDE_QUESTS.map((q) => q.id)).size).toBe(24);
+    expect(new Set(SIDE_QUESTS.map((q) => q.id)).size).toBe(25);
     for (const e of CODEX) if (e.unlock.startsWith('side:')) expect(SIDE_QUESTS.some((q) => q.id === e.unlock.slice(5))).toBe(true);
     for (const w of WEEKS) expect(w.lesson.length).toBeGreaterThanOrEqual(1);
   });

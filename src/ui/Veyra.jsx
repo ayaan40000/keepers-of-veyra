@@ -9,6 +9,7 @@ import { sessionStatus } from '../engine/session.js';
 import { sideQuestState, codexFor, charactersFor, mainQuests } from '../engine/quests.js';
 import { Portrait } from '../pixel/Faces.jsx';
 import WorldMap from './pixel/WorldMap.jsx';
+import { EchoHall } from './Battle.jsx';
 
 // District positions along the river, isometric map (original art).
 const POS = [[70, 330], [150, 300], [235, 320], [300, 260], [220, 230], [130, 210], [70, 150], [160, 120], [250, 140], [320, 90], [230, 60], [130, 40]];
@@ -137,7 +138,7 @@ function DistrictList({ profile, current, onSelect }) {
   );
 }
 
-export default function Veyra({ profile, update }) {
+export default function Veyra({ profile, update, onFight }) {
   const st = sessionStatus(profile);
   const gates = profile.progress.gates;
   const [view, setView] = useState('map');
@@ -159,6 +160,7 @@ export default function Veyra({ profile, update }) {
           <WorldMap gates={profile.progress.gates} current={st.mod.id} selected={restoring || sel} onSelect={setSel} restoring={restoring} onRestored={markSeen} className="veyra-map" />
           {restoring && <p className="note" role="status">{MODULES.find((x) => x.id === restoring)?.district} comes back out of the fog.</p>}
           <DistrictList profile={profile} current={st.mod.id} onSelect={setSel} />
+          {onFight && profile.progress.gates.length >= 1 && <EchoHall profile={profile} onFight={onFight} />}
           <section className={`card ${restored ? 'gold' : ''}`}>
             <span className="tag">Month {m.month} · {restored ? 'Restored' : m.id === st.mod.id ? 'Your current quest' : 'In the fog'}</span>
             <h2>{m.district}</h2>

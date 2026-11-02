@@ -35,6 +35,14 @@ export const CODEX = [
     ],
   },
   {
+    id: 'forgettings', title: 'The Forgettings', unlock: 'gate:M1',
+    text: [
+      'When the Tide loosens a memory, it does not destroy it. The memory drifts down into the streets and settles as a small grey shape, soft at the edges, like dust in a sunbeam. The old folk call these shapes Forgettings. They are not evil, and they have never hurt anyone. A Forgetting is simply what the Tide leaves behind.',
+      'Each one holds the lost thing carefully and waits to be remembered, rather like a shy dog that has wandered far from home. A Keeper does not drive a Forgetting away. A Keeper remembers the thing properly, and the grey shape grows light, sighs, and goes home. The Wardens called this an Echo, because the memory answers when it is called.',
+      'Forgettings come in kinds that match what was lost. Pictures leave a Smudge, stories a Tangle, places a Hollow, faces a Blank, numbers some Static, words a Murmur, and facts a Dustleaf. The oldest and largest of them, the Great Forgetting, is only the forgotten things of the whole city, gathered in one place and very tired.',
+    ],
+  },
+  {
     id: 'archive', title: 'The Archive and the Ledgers', unlock: 'gate:M1',
     text: [
       'The Archive crowns the highest tier of Veyra: a round hall of pale stone under a dome of green copper, with bronze doors that are never fully closed. Its shelves climb in rings to the roof, and on them stand the Ledgers, one for every year since the founding.',

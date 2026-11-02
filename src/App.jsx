@@ -10,8 +10,11 @@ import Veyra from './ui/Veyra.jsx';
 import Palaces from './ui/Palaces.jsx';
 import Progress from './ui/Progress.jsx';
 import Keeper from './ui/Keeper.jsx';
+import FieldGuide from './ui/FieldGuide.jsx';
 import Relics from './ui/Relics.jsx';
 import Crypt from './ui/Crypt.jsx';
+import Character from './ui/Character.jsx';
+import Battle from './ui/Battle.jsx';
 import { ItemIcon } from './ui/ItemIcon.jsx';
 import { UnlockToast } from './ui/game/UnlockToast.jsx';
 import { earnedItems, collectionStats } from './engine/collect.js';
@@ -30,7 +33,9 @@ const TABS = [
   ['palaces', 'Palaces', 'palace', false],
   ['relics', 'Relics', 'chest', false],
   ['progress', 'Progress', 'chart', true],
+  ['guide', 'Field Guide', 'scroll', false],
   ['keeper', 'Keeper', 'keeper', false],
+  ['character', 'Character', 'keeper', false],
 ];
 
 export default function App() {
@@ -38,6 +43,7 @@ export default function App() {
   const [tab, setTab] = useState('today');
   const [inSession, setInSession] = useState(false);
   const [inCrypt, setInCrypt] = useState(false);
+  const [battle, setBattle] = useState(null);
   const [menu, setMenu] = useState(false);
   const ref = useRef(null);
   const importRef = useRef(null);
@@ -111,6 +117,8 @@ export default function App() {
   };
   const replace = (p) => { if (!p.collectionSeen) p.collectionSeen = earnedItems(p); ref.current = p; setProfile(p); saveProfile(p); setInSession(false); setTab('today'); window.scrollTo(0, 0); };
 
+  const fight = (mode) => { setBattle({ mode, n: Date.now() }); window.scrollTo(0, 0); };
+
   function start(type, opts) {
     if (type === 'discard') { update((p) => abandonSession(p)); return; }
     if (type !== 'resume') update((p) => { p.inProgress = { session: buildSession(p, type, opts), idx: 0, results: [], events: [] }; });
@@ -134,7 +142,7 @@ export default function App() {
     );
   }
 
-  const fresh = profile.inProgress || inCrypt ? [] : earnedItems(profile).filter((id) => !(profile.collectionSeen || []).includes(id));
+  const fresh = profile.inProgress || inCrypt || battle ? [] : earnedItems(profile).filter((id) => !(profile.collectionSeen || []).includes(id));
   // One grouped unlock moment (v0.6): two or more new relics at once get a single screen instead of a stream of toasts.
   const seeAll = () => update((p) => { p.collectionSeen = [...new Set([...(p.collectionSeen || []), ...fresh])]; });
   const grouped = fresh.length >= 2 && (
@@ -158,6 +166,10 @@ export default function App() {
       onDone={() => update((p) => { p.collectionSeen = [...new Set([...(p.collectionSeen || []), ...fresh])]; })} />
   );
 
+  if (battle) {
+    return <Battle key={battle.n} profile={profile} update={update} mode={battle.mode} onExit={() => { setBattle(null); window.scrollTo(0, 0); }} />;
+  }
+
   if (inCrypt) {
     return <Crypt profile={profile} update={update} onExit={() => { setInCrypt(false); window.scrollTo(0, 0); }} treasureIcon={(id, size) => <ItemIcon id={id} scale={Math.max(1, Math.round((size || 48) / 28))} />} />;
   }
@@ -167,12 +179,14 @@ export default function App() {
   }
 
   const pages = {
-    today: <Today profile={profile} start={start} update={update} onEnterCrypt={() => setInCrypt(true)} />,
+    today: <Today profile={profile} start={start} update={update} onEnterCrypt={() => setInCrypt(true)} onFight={fight} />,
     relics: <Relics profile={profile} update={update} onEnterCrypt={() => setInCrypt(true)} />,
-    veyra: <Veyra profile={profile} update={update} />,
+    veyra: <Veyra profile={profile} update={update} onFight={fight} />,
+    character: <Character profile={profile} update={update} />,
     palaces: <Palaces profile={profile} update={update} />,
     progress: <Progress profile={profile} update={update} />,
-    keeper: <Keeper profile={profile} update={update} replaceProfile={replace} wipe={async () => { await deleteProfile(); ref.current = null; setProfile(null); }} />,
+    guide: <FieldGuide profile={profile} update={update} start={start} />,
+    keeper: <Keeper profile={profile} update={update} replaceProfile={replace} openCharacter={() => goRef.current?.('character')} wipe={async () => { await deleteProfile(); ref.current = null; setProfile(null); }} />,
   };
   const go = (id) => {
     setMenu(false);

@@ -40,7 +40,7 @@ function BetaTools({ profile }) {
   );
 }
 
-export default function Keeper({ profile, update, replaceProfile, wipe }) {
+export default function Keeper({ profile, update, replaceProfile, wipe, openCharacter }) {
   const [imp, setImp] = useState(null);
   const [confirmDel, setConfirmDel] = useState(false);
   const [msg, setMsg] = useState('');
@@ -72,6 +72,7 @@ export default function Keeper({ profile, update, replaceProfile, wipe }) {
         <div>
           <h2>{profile.user.alias}</h2>
           <p className="muted">{rank.title} · rank {rank.rank} · {profile.progress.lumen} Lumen · Wren is {wrenStage(profile.progress.gates.length).name}</p>
+          {openCharacter && <button className="btn small" onClick={openCharacter}>Open the character sheet</button>}
           <p className="muted small">Training since {profile.progress.startDate} · curriculum day {profile.progress.day} of 365 · {profile.meta.curriculum}</p>
         </div>
       </section>

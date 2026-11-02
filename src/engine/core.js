@@ -34,6 +34,9 @@ export function newProfile(alias, avatar, prefs = {}) {
     skills: Object.fromEntries(Object.keys(SKILLS).map((k) => [k, newSkill()])),
     results: [], sets: [], palaces: [], major: {}, achievements: {}, story: { seen: [] }, reflections: 0, baseline: null, inProgress: null,
     tips: { seen: [] }, relics: { polish: {} }, stats: { sessions: [] },
+    guide: { tried: {}, later: {} },
+    keeper: { equip: { lantern: null, cloak: null, charm: null, tool: null } },
+    battles: { done: 0, held: 0, rests: 0, last: null, skipped: null, queue: [], history: [] },
   };
 }
 
