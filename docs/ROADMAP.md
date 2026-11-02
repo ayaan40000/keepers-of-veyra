@@ -1,5 +1,9 @@
 # Mnemos Roadmap to Public Release
 
+## v1.0.0: released Nov 2, 2026 (owner decision)
+
+Mnemos 1.0 is public on GitHub Pages. The owner confirmed the trademark search for "Mnemos" is clear and decided to release with the remaining work open, and to ask the community for help with future builds. Release requirements that were **not** met before release, by owner decision, and are now open for contributors: the WCAG 2.2 AA audit with NVDA and VoiceOver, device testing on real phones (including a low-end Android), the 20-person closed beta, and the 500-face representation review. Everything planned below (v0.12, v0.13, the leftovers of v0.10 and v0.11, the painted face cast) continues after 1.0 as 1.x releases. Lore guide for the community: `docs/lore/`. How to help: `CONTRIBUTING.md`.
+
 Nov 1, 2026 · Ayaan. Source: the Claude Doc "Mnemos Roadmap to Public Release" (ROADMAP.pdf in this folder includes the roadmap diagram).
 
 ## v0.11: District Trials (accepted Nov 2, 2026; built Nov 2, 2026 as v0.11.0)
@@ -104,7 +108,7 @@ Four more builds before a public v1.0: harden for release, deepen the learning, 
 - **v0.11 District Trials (built, v0.11.0):** five optional memory trials in the Hall of Faces, Scriptorium, Counting House, Tongues Bridge and Clockwork Market, plus tablet-gated optional vaults and calm relic repair.
 - **v0.12 The Living World (accepted, not built):** Phantom Limb attributes, Lethe Brambles on the map, the weekly Long Vigil, Wren's Audit, and the Cabinet of Voices as coach hints.
 - **v0.13 Wren's Story Memory (accepted, not built):** a delayed recall of Wren's details with a story reward, a rest pass and an accessibility check.
-- **v1.0 Public release:** GitHub Pages, trademark cleared, licences shipped, after owner approval.
+- **v1.0 Public release (released Nov 2, 2026):** GitHub Pages, trademark cleared by the owner, licences shipped, lore guide and contributing guide. Accessibility audit, device testing and beta left open for the community.
 
 Already fixed: the shared pixel engine (`src/pixel/core.js`) was split into `raster.js` (plain JS) and `components.jsx` (React), so every module imports it normally.
 

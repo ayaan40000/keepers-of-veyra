@@ -250,7 +250,7 @@ await nav('Keeper');
 await page.getByLabel('Text size').selectOption('1.5');
 for (const t of ['Today', 'Veyra', 'Progress', 'Relics', 'Keeper']) { await nav(t); await page.waitForTimeout(100); await overflowCheck(`${t} at 150% text`); }
 await snap('keeper-150');
-if (!(await page.getByRole('button', { name: 'Save beta report' }).count())) errors.push('beta report button missing');
+if (!(await page.getByRole('button', { name: 'Save anonymous report' }).count())) errors.push('anonymous report button missing');
 await page.getByLabel('Text size').selectOption('1');
 log('phone menu, crypt slot, 150% text: OK');
 

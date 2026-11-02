@@ -1,14 +1,15 @@
 # Mnemos: Keepers of Veyra
 
-Free, open-source, local-first memory-training RPG. 365-day curriculum, about 30 minutes a day, wrapped in an original pixel-art story. Owner: Ayaan (does not code; explain changes in plain language). Current version: 0.11.0 (see CHANGELOG.md).
+Free, open-source, local-first memory-training RPG. 365-day curriculum, about 30 minutes a day, wrapped in an original pixel-art story. Owner: Ayaan (does not code; explain changes in plain language). Current version: 1.0.0, released publicly Nov 2, 2026 (see CHANGELOG.md). Releases after 1.0 are 1.x.
 
-Read first: `docs/ROADMAP.md`, `docs/BEYOND.md` (planned Field Guide: using the methods on real-life material) (what to build next and release requirements) and `docs/PRODUCT_DOSSIER.md` (research, curriculum, adaptive rules, scoring, story bible, UX spec, architecture, IP register).
+Read first: `docs/lore/README.md` (the world and the canon; `scripts/lore-doc.mjs` regenerates the other lore pages from `src/data`), `CONTRIBUTING.md` (house rules for contributors), `docs/ROADMAP.md`, `docs/BEYOND.md` (planned Field Guide: using the methods on real-life material) (what to build next and release requirements) and `docs/PRODUCT_DOSSIER.md` (research, curriculum, adaptive rules, scoring, story bible, UX spec, architecture, IP register).
 
 ## Commands
 ```
 npm install
 npm run dev              # Vite dev server
-npm test                 # Vitest: all unit tests must pass (221 at v0.11.0)
+npm test                 # Vitest: all unit tests must pass (221 at v1.0.0)
+npx vite-node scripts/lore-doc.mjs    # rebuild docs/lore/ after any story change
 npm run build:single     # one offline HTML file -> dist-single/index.html (the review build)
 npm run build            # static site for GitHub Pages -> dist/
 node tests/e2e.mjs       # Playwright journey at 390px + desktop; must print "errors: none" (run build:single first; playwright 1.63 matches the cached Chromium)

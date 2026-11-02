@@ -17,7 +17,7 @@ function saveText(name, text, type = 'text/plain') {
   setTimeout(() => URL.revokeObjectURL(a.href), 2000);
 }
 
-// Closed beta (v0.7): an anonymous report the tester saves and sends by hand, and a problem report.
+// Feedback (closed beta in v0.7, open to everyone from v1.0): an anonymous report the player saves and shares by hand, and a problem report.
 function BetaTools({ profile }) {
   const [what, setWhat] = useState('');
   const [copied, setCopied] = useState('');
@@ -25,10 +25,10 @@ function BetaTools({ profile }) {
   const problem = problemReport({ version: __APP_VERSION__, page: 'Keeper', what, env: envInfo() });
   return (
     <section className="card">
-      <h3 className="panel-title"><PxIcon name="scroll" size={28} />Closed beta</h3>
-      <p className="small">Taking part in the beta? Save this report once a week and send it to the beta team. It holds no name, no palace names and nothing you typed: only numbers about your training, session lengths and Undercroft depths. Look inside before you send it.</p>
+      <h3 className="panel-title"><PxIcon name="scroll" size={28} />Help improve Mnemos</h3>
+      <p className="small">Mnemos grows with its players. If you want to help tune it, save this anonymous report now and then and attach it to a GitHub issue. It holds no name, no palace names and nothing you typed: only numbers about your training, session lengths and Undercroft depths. Look inside before you share it.</p>
       <details className="about-more"><summary>What is in the report</summary><pre className="licence-text-pre">{JSON.stringify(report, null, 1)}</pre></details>
-      <button className="btn" onClick={() => saveText(`mnemos-beta-report-${today(profile)}.json`, JSON.stringify(report, null, 1), 'application/json')}>Save beta report</button>
+      <button className="btn" onClick={() => saveText(`mnemos-beta-report-${today(profile)}.json`, JSON.stringify(report, null, 1), 'application/json')}>Save anonymous report</button>
       <h4 className="set-sub">Report a problem</h4>
       <label className="field">What happened?<textarea rows={3} maxLength={2000} value={what} onChange={(e) => setWhat(e.target.value)} placeholder="What you did, what you expected, what happened instead" /></label>
       <div className="row wrap">

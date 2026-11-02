@@ -1,6 +1,6 @@
 """Builds the whole face cast unattended, using the local models only (owner, Nov 2 2026).
 
-  python tools/asset-studio/cast_run.py [N=300] [BATCH=50]
+  python tools/asset-studio/cast_run.py [N=300] [BATCH=50] [PAINT=N]   e.g. 300 50 150: describe all 300, paint the first 150
 
 1. Qwen (LM Studio) writes every description (people_llm.py; already-described people are skipped).
 2. For each batch of people: ComfyUI paints originals, look-alikes and new looks (faces.py --cast), Qwen checks them and deletes
@@ -32,10 +32,11 @@ def step(*args):
 def main():
     n = int(sys.argv[1]) if len(sys.argv) > 1 else 300
     batch = int(sys.argv[2]) if len(sys.argv) > 2 else 50
+    paint = int(sys.argv[3]) if len(sys.argv) > 3 else n  # paint only people below this number; the rest wait for a later session
     LOG.parent.mkdir(parents=True, exist_ok=True)
     step("people_llm.py", f"0:{n}")
-    for lo in range(0, n, batch):
-        sel = f"{lo}:{min(n, lo + batch)}"
+    for lo in range(0, paint, batch):
+        sel = f"{lo}:{min(paint, lo + batch)}"
         step("faces.py", "--cast", sel)
         step("facecheck.py", sel, "--reject")
         step("faces.py", "--cast", sel)

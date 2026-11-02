@@ -2,6 +2,14 @@
 
 All notable changes to Mnemos: Keepers of Veyra. Saved data from every earlier version loads in this one.
 
+## 1.0.0: Public release (2026-11-02)
+
+The first public release, free and open source, played in the browser at https://ayaan40000.github.io/keepers-of-veyra/. It holds everything from 0.4 to 0.11. The owner confirmed the trademark search is clear and chose to release now and invite the community to help with what is still planned.
+
+- **The Lore of Veyra** (`docs/lore/`): a guide to the world for players and contributors. A hand-written front page with the canon and a style guide, then pages generated from the game's own story files (the world, the twelve districts, the people, the full story, fifty-two weekly tales and twenty-five side quests, relics, the Undercroft, the trials), with spoilers marked. Rebuild it with `npx vite-node scripts/lore-doc.mjs`.
+- **Community**: a new README, `CONTRIBUTING.md` with the house rules, and the Keeper page's beta panel is now "Help improve Mnemos" (anonymous report and problem report, for everyone).
+- **Not done yet, and open for help**: a full WCAG 2.2 AA audit with screen readers, testing on more real phones, the painted face cast in the Names-and-Faces drills, v0.12 The Living World and v0.13 Wren's story memory. See `docs/ROADMAP.md`.
+
 ## 0.11.0: District Trials, sealed vaults and calm relic repair (2026-11-02)
 
 Built and tested on the owner's computer; not pushed or deployed.
