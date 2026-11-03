@@ -1,0 +1,957 @@
+{
+  "notes": "Draft. 24 harmless everyday procedures of 7 to 9 steps, written fresh. Nothing medical, electrical, chemical, fire-related or safety-critical. Each step has a \"key\", a concrete word that appears in the step text, unique within its procedure, for the V3 drill (study the sentence, recall one keyword per step in order). These procedures are for practice of order only; a palace stores the order of steps, not the physical skill.",
+  "procedures": [
+    {
+      "id": "proc-paper-plane",
+      "title": "Fold a paper plane",
+      "steps": [
+        {
+          "text": "Lay a sheet of paper flat with the long side facing you.",
+          "key": "sheet"
+        },
+        {
+          "text": "Fold it in half the long way, press the crease, then open it again.",
+          "key": "crease"
+        },
+        {
+          "text": "Fold the two top corners in so they meet at the crease.",
+          "key": "corners"
+        },
+        {
+          "text": "Fold the slanted edges in to the crease again to make a sharp tip.",
+          "key": "tip"
+        },
+        {
+          "text": "Fold the whole shape in half so the folds are outside, like a closed book.",
+          "key": "book"
+        },
+        {
+          "text": "Fold each side down to make a wing level with the bottom edge.",
+          "key": "wing"
+        },
+        {
+          "text": "Pinch the body underneath with your thumb on top.",
+          "key": "thumb"
+        },
+        {
+          "text": "Throw it gently forward at eye height.",
+          "key": "eye"
+        }
+      ]
+    },
+    {
+      "id": "proc-paper-boat",
+      "title": "Fold a paper boat",
+      "steps": [
+        {
+          "text": "Start with a rectangle of paper lying flat.",
+          "key": "rectangle"
+        },
+        {
+          "text": "Fold it in half so the short edges meet.",
+          "key": "edges"
+        },
+        {
+          "text": "Fold the top corners down to the middle to make a roof.",
+          "key": "roof"
+        },
+        {
+          "text": "Fold the bottom strip up on one side to make a brim.",
+          "key": "brim"
+        },
+        {
+          "text": "Turn the paper over and fold the other strip up as well.",
+          "key": "strip"
+        },
+        {
+          "text": "Open the middle and press it flat into a square.",
+          "key": "square"
+        },
+        {
+          "text": "Fold the lower corners up to the top point.",
+          "key": "point"
+        },
+        {
+          "text": "Open the middle once more and pull the sides apart into a hull.",
+          "key": "hull"
+        },
+        {
+          "text": "Float it in a bowl of water.",
+          "key": "bowl"
+        }
+      ]
+    },
+    {
+      "id": "proc-plant-seed",
+      "title": "Plant a seed in a pot",
+      "steps": [
+        {
+          "text": "Pick a clean pot with a hole in the bottom.",
+          "key": "pot"
+        },
+        {
+          "text": "Put a flat stone over the hole so the soil stays in.",
+          "key": "stone"
+        },
+        {
+          "text": "Fill the pot with soil up to two fingers below the rim.",
+          "key": "soil"
+        },
+        {
+          "text": "Press a small hole into the middle with your finger.",
+          "key": "finger"
+        },
+        {
+          "text": "Drop one seed into the hole.",
+          "key": "seed"
+        },
+        {
+          "text": "Cover it gently with a pinch of soil.",
+          "key": "pinch"
+        },
+        {
+          "text": "Water it with a small cup.",
+          "key": "cup"
+        },
+        {
+          "text": "Set the pot on a bright windowsill.",
+          "key": "windowsill"
+        },
+        {
+          "text": "Write the date on a stick and push it in.",
+          "key": "stick"
+        }
+      ]
+    },
+    {
+      "id": "proc-water-plant",
+      "title": "Water a houseplant",
+      "steps": [
+        {
+          "text": "Check the soil with a fingertip.",
+          "key": "fingertip"
+        },
+        {
+          "text": "Fill a jug with room-temperature water.",
+          "key": "jug"
+        },
+        {
+          "text": "Carry the plant to the sink.",
+          "key": "sink"
+        },
+        {
+          "text": "Pour slowly around the stem, not over the leaves.",
+          "key": "stem"
+        },
+        {
+          "text": "Wait while the extra water drips into the saucer.",
+          "key": "drips"
+        },
+        {
+          "text": "Empty the saucer into the sink.",
+          "key": "saucer"
+        },
+        {
+          "text": "Wipe the pot with a cloth.",
+          "key": "cloth"
+        },
+        {
+          "text": "Turn the pot a quarter turn toward the light.",
+          "key": "light"
+        }
+      ]
+    },
+    {
+      "id": "proc-make-bed",
+      "title": "Make a bed",
+      "steps": [
+        {
+          "text": "Pull the blanket off and fold it at the foot of the bed.",
+          "key": "blanket"
+        },
+        {
+          "text": "Smooth the bottom sheet flat with your hands.",
+          "key": "sheet"
+        },
+        {
+          "text": "Tuck the corners under the mattress.",
+          "key": "corners"
+        },
+        {
+          "text": "Lay the top sheet over, with the edge at the head.",
+          "key": "head"
+        },
+        {
+          "text": "Spread the blanket across the bed.",
+          "key": "bed"
+        },
+        {
+          "text": "Fold the top edge back over the blanket.",
+          "key": "fold"
+        },
+        {
+          "text": "Shake out each pillow.",
+          "key": "pillow"
+        },
+        {
+          "text": "Place the pillows against the headboard.",
+          "key": "headboard"
+        },
+        {
+          "text": "Smooth the cover one last time.",
+          "key": "cover"
+        }
+      ]
+    },
+    {
+      "id": "proc-set-table",
+      "title": "Set a dinner table",
+      "steps": [
+        {
+          "text": "Wipe the table with a damp cloth.",
+          "key": "cloth"
+        },
+        {
+          "text": "Lay a placemat at each seat.",
+          "key": "placemat"
+        },
+        {
+          "text": "Put a plate in the middle of each mat.",
+          "key": "plate"
+        },
+        {
+          "text": "Put the fork on the left of the plate.",
+          "key": "fork"
+        },
+        {
+          "text": "Put the knife and spoon on the right.",
+          "key": "spoon"
+        },
+        {
+          "text": "Place a napkin beside the fork.",
+          "key": "napkin"
+        },
+        {
+          "text": "Set a glass above the knife.",
+          "key": "glass"
+        },
+        {
+          "text": "Put a jug of water in the middle.",
+          "key": "jug"
+        },
+        {
+          "text": "Place a small vase of flowers beside the jug.",
+          "key": "vase"
+        }
+      ]
+    },
+    {
+      "id": "proc-wrap-gift",
+      "title": "Wrap a gift",
+      "steps": [
+        {
+          "text": "Roll out the wrapping paper and set the gift upside down on it.",
+          "key": "gift"
+        },
+        {
+          "text": "Measure enough paper with a ruler to go around the box.",
+          "key": "ruler"
+        },
+        {
+          "text": "Cut the paper straight across with scissors.",
+          "key": "scissors"
+        },
+        {
+          "text": "Fold one edge over and stick a piece of tape along it.",
+          "key": "tape"
+        },
+        {
+          "text": "Pull the paper snug over the box and tape the other edge.",
+          "key": "box"
+        },
+        {
+          "text": "Push in the sides of one end to make two flaps.",
+          "key": "flaps"
+        },
+        {
+          "text": "Fold the bottom flap up and tape it.",
+          "key": "bottom"
+        },
+        {
+          "text": "Repeat at the other end.",
+          "key": "end"
+        },
+        {
+          "text": "Tie a ribbon around the middle and add a bow.",
+          "key": "ribbon"
+        }
+      ]
+    },
+    {
+      "id": "proc-school-bag",
+      "title": "Pack a school bag",
+      "steps": [
+        {
+          "text": "Empty the bag onto a table.",
+          "key": "table"
+        },
+        {
+          "text": "Shake out the crumbs.",
+          "key": "crumbs"
+        },
+        {
+          "text": "Put the heavy books against the back.",
+          "key": "books"
+        },
+        {
+          "text": "Slide a notebook in the front pocket.",
+          "key": "notebook"
+        },
+        {
+          "text": "Put pens in a pencil case and zip it.",
+          "key": "pencil case"
+        },
+        {
+          "text": "Add a water bottle in the side pocket.",
+          "key": "bottle"
+        },
+        {
+          "text": "Place the lunch box on top.",
+          "key": "lunch box"
+        },
+        {
+          "text": "Hang a coat or hat on the strap.",
+          "key": "strap"
+        },
+        {
+          "text": "Zip the bag and stand it by the door.",
+          "key": "door"
+        }
+      ]
+    },
+    {
+      "id": "proc-picnic-basket",
+      "title": "Pack a picnic basket",
+      "steps": [
+        {
+          "text": "Line a basket with a checked cloth.",
+          "key": "basket"
+        },
+        {
+          "text": "Lay a blanket folded flat at the bottom.",
+          "key": "blanket"
+        },
+        {
+          "text": "Stand a bottle of juice upright in one corner.",
+          "key": "juice"
+        },
+        {
+          "text": "Pack sandwiches in a box with a lid.",
+          "key": "sandwiches"
+        },
+        {
+          "text": "Add a bag of grapes.",
+          "key": "grapes"
+        },
+        {
+          "text": "Tuck in paper plates and cups.",
+          "key": "cups"
+        },
+        {
+          "text": "Add a small jar of napkins.",
+          "key": "napkins"
+        },
+        {
+          "text": "Put a ball on top for later.",
+          "key": "ball"
+        },
+        {
+          "text": "Close the lid and carry it by the handle.",
+          "key": "handle"
+        }
+      ]
+    },
+    {
+      "id": "proc-weekend-suitcase",
+      "title": "Pack a suitcase for a weekend",
+      "steps": [
+        {
+          "text": "Open the suitcase flat on the bed.",
+          "key": "suitcase"
+        },
+        {
+          "text": "Roll two shirts tightly.",
+          "key": "shirts"
+        },
+        {
+          "text": "Pack a pair of trousers flat at the bottom.",
+          "key": "trousers"
+        },
+        {
+          "text": "Put shoes in a bag at the corner.",
+          "key": "shoes"
+        },
+        {
+          "text": "Add socks inside the shoes.",
+          "key": "socks"
+        },
+        {
+          "text": "Fold a sweater on top.",
+          "key": "sweater"
+        },
+        {
+          "text": "Slip a toothbrush bag into the side pocket.",
+          "key": "toothbrush"
+        },
+        {
+          "text": "Lay a rain jacket on the very top.",
+          "key": "jacket"
+        },
+        {
+          "text": "Close the lid and slide the zip around.",
+          "key": "zip"
+        }
+      ]
+    },
+    {
+      "id": "proc-tie-shoe",
+      "title": "Tie a shoelace",
+      "steps": [
+        {
+          "text": "Sit down and put your foot on the floor.",
+          "key": "floor"
+        },
+        {
+          "text": "Pull both laces tight.",
+          "key": "laces"
+        },
+        {
+          "text": "Cross one lace over the other.",
+          "key": "cross"
+        },
+        {
+          "text": "Tuck it under and pull to make a knot.",
+          "key": "knot"
+        },
+        {
+          "text": "Make a loop with one lace.",
+          "key": "loop"
+        },
+        {
+          "text": "Wrap the other lace around the loop.",
+          "key": "wrap"
+        },
+        {
+          "text": "Push it through the gap behind.",
+          "key": "gap"
+        },
+        {
+          "text": "Pull both loops tight.",
+          "key": "loops"
+        }
+      ]
+    },
+    {
+      "id": "proc-fold-shirt",
+      "title": "Fold a shirt",
+      "steps": [
+        {
+          "text": "Lay the shirt face down on a bed.",
+          "key": "bed"
+        },
+        {
+          "text": "Smooth out the wrinkles with your hand.",
+          "key": "wrinkles"
+        },
+        {
+          "text": "Fold one side in to the middle.",
+          "key": "side"
+        },
+        {
+          "text": "Fold the sleeve back along the edge.",
+          "key": "sleeve"
+        },
+        {
+          "text": "Repeat on the other side.",
+          "key": "other"
+        },
+        {
+          "text": "Fold the bottom hem up to the collar.",
+          "key": "hem"
+        },
+        {
+          "text": "Flip it over so the front shows.",
+          "key": "front"
+        },
+        {
+          "text": "Place it on the shelf.",
+          "key": "shelf"
+        }
+      ]
+    },
+    {
+      "id": "proc-mail-letter",
+      "title": "Mail a letter",
+      "steps": [
+        {
+          "text": "Write the letter on a sheet of paper.",
+          "key": "paper"
+        },
+        {
+          "text": "Fold it in three.",
+          "key": "three"
+        },
+        {
+          "text": "Slide it into an envelope.",
+          "key": "envelope"
+        },
+        {
+          "text": "Seal the flap with a damp sponge.",
+          "key": "flap"
+        },
+        {
+          "text": "Write the address on the front.",
+          "key": "address"
+        },
+        {
+          "text": "Stick a stamp in the corner.",
+          "key": "stamp"
+        },
+        {
+          "text": "Walk to the mailbox at the end of the street.",
+          "key": "mailbox"
+        },
+        {
+          "text": "Drop the letter in the slot.",
+          "key": "slot"
+        }
+      ]
+    },
+    {
+      "id": "proc-library-book",
+      "title": "Borrow a library book",
+      "steps": [
+        {
+          "text": "Take your library card out of your wallet.",
+          "key": "card"
+        },
+        {
+          "text": "Walk to the shelf with the right letter on its end.",
+          "key": "shelf"
+        },
+        {
+          "text": "Run your finger along the spines until you find the title.",
+          "key": "spines"
+        },
+        {
+          "text": "Pull the book out and check the cover.",
+          "key": "cover"
+        },
+        {
+          "text": "Carry it to the desk.",
+          "key": "desk"
+        },
+        {
+          "text": "Hand the card and the book to the librarian.",
+          "key": "librarian"
+        },
+        {
+          "text": "Wait for the beep of the scanner.",
+          "key": "scanner"
+        },
+        {
+          "text": "Take the slip with the return date.",
+          "key": "slip"
+        },
+        {
+          "text": "Tuck the book in your bag.",
+          "key": "bag"
+        }
+      ]
+    },
+    {
+      "id": "proc-recycling",
+      "title": "Sort the recycling at home",
+      "steps": [
+        {
+          "text": "Set three boxes in a row in the kitchen.",
+          "key": "boxes"
+        },
+        {
+          "text": "Label one box paper, one glass and one cans.",
+          "key": "label"
+        },
+        {
+          "text": "Rinse the empty cans in the sink.",
+          "key": "cans"
+        },
+        {
+          "text": "Drop clean bottles into the glass box.",
+          "key": "bottles"
+        },
+        {
+          "text": "Flatten the cardboard boxes.",
+          "key": "cardboard"
+        },
+        {
+          "text": "Put newspapers in the paper box.",
+          "key": "newspapers"
+        },
+        {
+          "text": "Take the full boxes out to the bin.",
+          "key": "bin"
+        },
+        {
+          "text": "Wash your hands and put the empty boxes back.",
+          "key": "hands"
+        }
+      ]
+    },
+    {
+      "id": "proc-jam-sandwich",
+      "title": "Make a jam sandwich",
+      "steps": [
+        {
+          "text": "Set out two slices of bread on a plate.",
+          "key": "bread"
+        },
+        {
+          "text": "Spread soft butter on one slice with a knife.",
+          "key": "butter"
+        },
+        {
+          "text": "Open the jar of jam.",
+          "key": "jar"
+        },
+        {
+          "text": "Scoop a spoonful of jam onto the other slice.",
+          "key": "jam"
+        },
+        {
+          "text": "Spread it to the edges.",
+          "key": "edges"
+        },
+        {
+          "text": "Put the slices together, jam inside.",
+          "key": "slices"
+        },
+        {
+          "text": "Cut the sandwich in half corner to corner.",
+          "key": "corner"
+        },
+        {
+          "text": "Put the lid back on the jar.",
+          "key": "lid"
+        }
+      ]
+    },
+    {
+      "id": "proc-yogurt-bowl",
+      "title": "Build a yogurt bowl",
+      "steps": [
+        {
+          "text": "Take a clean bowl from the shelf.",
+          "key": "bowl"
+        },
+        {
+          "text": "Spoon in a cup of plain yogurt.",
+          "key": "yogurt"
+        },
+        {
+          "text": "Smooth the top with the back of the spoon.",
+          "key": "spoon"
+        },
+        {
+          "text": "Add a handful of blueberries.",
+          "key": "blueberries"
+        },
+        {
+          "text": "Sprinkle on a spoonful of oats.",
+          "key": "oats"
+        },
+        {
+          "text": "Slice half a banana over the top.",
+          "key": "banana"
+        },
+        {
+          "text": "Drizzle a thin line of honey.",
+          "key": "honey"
+        },
+        {
+          "text": "Carry the bowl to the table.",
+          "key": "table"
+        }
+      ]
+    },
+    {
+      "id": "proc-sandcastle",
+      "title": "Build a sandcastle",
+      "steps": [
+        {
+          "text": "Choose a flat spot on damp sand.",
+          "key": "spot"
+        },
+        {
+          "text": "Fill a bucket with wet sand and pat it down.",
+          "key": "bucket"
+        },
+        {
+          "text": "Flip the bucket upside down and tap the bottom.",
+          "key": "tap"
+        },
+        {
+          "text": "Lift the bucket slowly to leave a tower.",
+          "key": "tower"
+        },
+        {
+          "text": "Make three more towers in a square.",
+          "key": "square"
+        },
+        {
+          "text": "Join the towers with walls made by hand.",
+          "key": "walls"
+        },
+        {
+          "text": "Dig a moat around the outside.",
+          "key": "moat"
+        },
+        {
+          "text": "Press shells into the walls as windows.",
+          "key": "shells"
+        },
+        {
+          "text": "Stick a paper flag on the tallest tower.",
+          "key": "flag"
+        }
+      ]
+    },
+    {
+      "id": "proc-fly-kite",
+      "title": "Fly a kite",
+      "steps": [
+        {
+          "text": "Find an open field with no trees or wires nearby.",
+          "key": "field"
+        },
+        {
+          "text": "Unroll the string and check the knot at the kite.",
+          "key": "string"
+        },
+        {
+          "text": "Stand with your back to the wind.",
+          "key": "wind"
+        },
+        {
+          "text": "Hold the kite up in one hand.",
+          "key": "hand"
+        },
+        {
+          "text": "Let a little string out as the wind pulls.",
+          "key": "pull"
+        },
+        {
+          "text": "Walk backward slowly as the kite rises.",
+          "key": "walk"
+        },
+        {
+          "text": "Keep the string tight with both hands.",
+          "key": "tight"
+        },
+        {
+          "text": "Wind it back on the spool when you are done.",
+          "key": "spool"
+        }
+      ]
+    },
+    {
+      "id": "proc-set-up-tent",
+      "title": "Set up a small tent",
+      "steps": [
+        {
+          "text": "Pick a flat patch of grass and clear away stones.",
+          "key": "grass"
+        },
+        {
+          "text": "Spread the ground sheet on the spot.",
+          "key": "ground sheet"
+        },
+        {
+          "text": "Lay the tent on top and unfold it.",
+          "key": "tent"
+        },
+        {
+          "text": "Slide the poles through the sleeves.",
+          "key": "poles"
+        },
+        {
+          "text": "Lift the tent and bend the poles into place.",
+          "key": "bend"
+        },
+        {
+          "text": "Push a peg through each corner loop into the ground.",
+          "key": "peg"
+        },
+        {
+          "text": "Zip the door and check the sides are tight.",
+          "key": "door"
+        },
+        {
+          "text": "Put the sleeping bags inside.",
+          "key": "sleeping bags"
+        }
+      ]
+    },
+    {
+      "id": "proc-friendship-bracelet",
+      "title": "Make a friendship bracelet",
+      "steps": [
+        {
+          "text": "Cut three strands of coloured thread, each as long as your arm.",
+          "key": "thread"
+        },
+        {
+          "text": "Knot them together at the top.",
+          "key": "knot"
+        },
+        {
+          "text": "Tape the knot to a table.",
+          "key": "table"
+        },
+        {
+          "text": "Braid the strands by crossing the right one over the middle.",
+          "key": "braid"
+        },
+        {
+          "text": "Cross the left one over the middle next.",
+          "key": "left"
+        },
+        {
+          "text": "Keep going until the braid reaches your wrist.",
+          "key": "wrist"
+        },
+        {
+          "text": "Tie the ends in a second knot.",
+          "key": "ends"
+        },
+        {
+          "text": "Trim the loose threads with scissors.",
+          "key": "scissors"
+        }
+      ]
+    },
+    {
+      "id": "proc-scrapbook-page",
+      "title": "Make a scrapbook page",
+      "steps": [
+        {
+          "text": "Lay a clean sheet of card on the table.",
+          "key": "card"
+        },
+        {
+          "text": "Pick three photos you like.",
+          "key": "photos"
+        },
+        {
+          "text": "Arrange them on the card before sticking.",
+          "key": "arrange"
+        },
+        {
+          "text": "Glue each photo down with a glue stick.",
+          "key": "glue"
+        },
+        {
+          "text": "Write a short caption under each photo.",
+          "key": "caption"
+        },
+        {
+          "text": "Add a sticker in the top corner.",
+          "key": "sticker"
+        },
+        {
+          "text": "Draw a border with a coloured pen.",
+          "key": "border"
+        },
+        {
+          "text": "Let it dry under a heavy book.",
+          "key": "dry"
+        }
+      ]
+    },
+    {
+      "id": "proc-board-game",
+      "title": "Set up a board game",
+      "steps": [
+        {
+          "text": "Clear the table and wipe it.",
+          "key": "table"
+        },
+        {
+          "text": "Unfold the board in the middle.",
+          "key": "board"
+        },
+        {
+          "text": "Give each player a coloured piece.",
+          "key": "piece"
+        },
+        {
+          "text": "Shuffle the cards and place them face down.",
+          "key": "cards"
+        },
+        {
+          "text": "Put the dice in a small cup.",
+          "key": "dice"
+        },
+        {
+          "text": "Hand out a pile of coins.",
+          "key": "coins"
+        },
+        {
+          "text": "Read the rule card aloud.",
+          "key": "rule"
+        },
+        {
+          "text": "Roll the dice to decide who goes first.",
+          "key": "roll"
+        }
+      ]
+    },
+    {
+      "id": "proc-lunch-box",
+      "title": "Pack a lunch box",
+      "steps": [
+        {
+          "text": "Wash your hands.",
+          "key": "hands"
+        },
+        {
+          "text": "Open the lunch box and set it on the counter.",
+          "key": "counter"
+        },
+        {
+          "text": "Put an ice pack in the lid.",
+          "key": "ice pack"
+        },
+        {
+          "text": "Add a sandwich in a small bag.",
+          "key": "sandwich"
+        },
+        {
+          "text": "Add an apple at the side.",
+          "key": "apple"
+        },
+        {
+          "text": "Add a bag of crackers.",
+          "key": "crackers"
+        },
+        {
+          "text": "Fill a small bottle with water.",
+          "key": "water"
+        },
+        {
+          "text": "Close the lid and click the latches.",
+          "key": "latches"
+        }
+      ]
+    }
+  ]
+}

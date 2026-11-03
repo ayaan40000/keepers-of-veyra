@@ -46,6 +46,22 @@ The lower floor of the Scriptorium is filling with grey Lethewater, and the scro
 
 **If it holds:** You read the timeline back from memory a whole day later. Ennick pulls the old drain chain, the grey water slides away, and the high chest on the top shelf is dry.
 
+## The Hall of Years
+
+*Scriptorium.*
+
+Beyond the flooded floor, a long hall of tall brass years has lost its labels. The Tide rubbed every date from the shelves, but the events are still carved above them.
+
+**If it holds:** You say all the years and the brass labels slide back into their frames, one after another. Ennick tilts a small year tablet out of the last frame and hands it to you.
+
+## The Counting House Reckoning
+
+*Counting House.*
+
+Isolde has found an old reckoning table in the Counting House. The merchants who used it never wrote down their sums. They said each step aloud and moved on. Three number facts are scratched on the side of the table.
+
+**If it holds:** The last answer lands and the table clicks. A drawer slides open with a small tally stick inside, notched with every sum you just solved.
+
 ## The Quay Vault
 
 *Lamplighters' Quay.*

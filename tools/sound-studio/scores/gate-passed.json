@@ -1,0 +1,29 @@
+{
+  "format": "mnemos-score/1",
+  "title": "Gate passed (stinger)",
+  "note": "Original composition for Mnemos. CC BY 4.0. Bright two-bar fanfare in D major, plays once.",
+  "bpm": 120,
+  "stepsPerBeat": 4,
+  "stepsPerBar": 16,
+  "loop": false,
+  "channels": {
+    "pulse1": {
+      "wave": "pulse", "duty": 0.5, "vol": 0.5, "gate": 0.9,
+      "env": { "a": 0.004, "d": 0.2, "s": 0.8, "r": 0.2 },
+      "notes": "D5:2 F#5:2 A5:2 D6:2 A5:2 D6:2 F#6:4 | A5:2 B5:2 A5:2 F#5:2 D6:8"
+    },
+    "pulse2": {
+      "wave": "pulse", "duty": 0.25, "vol": 0.3, "gate": 0.9,
+      "env": { "a": 0.004, "d": 0.2, "s": 0.7, "r": 0.2 },
+      "notes": "A4:2 D5:2 F#5:2 A5:2 F#5:2 A5:2 D6:4 | F#5:2 G5:2 F#5:2 D5:2 A5:8"
+    },
+    "triangle": {
+      "wave": "triangle", "vol": 0.7, "gate": 0.95,
+      "notes": "D3:8 A3:8 | G3:4 A3:4 D3:8"
+    },
+    "noise": {
+      "wave": "noise", "vol": 0.18,
+      "notes": "k:4 r:4 h:2 r:2 h:2 r:2 | k:4 r:4 s:2 r:2 s:4"
+    }
+  }
+}

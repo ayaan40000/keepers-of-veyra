@@ -1,3 +1,4 @@
+import { GATE_TALK_M12 } from './forgetting.js';
 // v0.9 story after the year: the epilogue, short words from friends after each gate, and the Year of Keeping.
 // First drafts by a local model, edited by hand. {name} is replaced with the player's alias.
 
@@ -41,3 +42,6 @@ export const KEEPING_LINES = [
   'Nothing to prove today. We are only checking that what you chose to keep is still kept.',
   'Pick one thing you love and walk it once, slowly. That is plenty.',
 ];
+
+// 1.1: a short word from Wren after the Month 12 gate (the only gate that had none). Additive; see forgetting.js.
+GATE_TALK.M12 = ['wren', GATE_TALK_M12.text];

@@ -44,6 +44,9 @@ SPEC = {
     "lore": (48, 48, 24, "sprite"),
     "quest": (48, 48, 24, "sprite"),
     "furniture": (48, 48, 24, "sprite"),
+    "overlay": (64, 64, 24, "sprite"),    # Lethe bramble pieces for the district map (v0.12)
+    "voice": (64, 64, 24, "sprite"),      # Cabinet of Voices lamp-spirits (v0.12)
+    "pedestal": (48, 64, 24, "sprite"),   # relic pedestals for the walkable palace room
 }
 
 
@@ -73,32 +76,32 @@ SHIP += rows("portrait", "portraits", "portrait", [
     ("wren_worried_portrait", "Wren, a worried young archivist with long dark hair clutching a torn map."),
 ])
 SHIP += rows("relic", "relics", "relic", [
-    ("clockwork_tog", "A bronze cogwheel with numbers around the rim and a tiny lit city inside."),
+    ("clockwork_tog", "A bronze cogwheel with a tiny lit city inside."),
     ("drowned_year_shell", "A spiral sea shell in bronze and brown."),
-    ("echo_stone_shard", "A pale crystal shard with a tiny lamplit stair inside."),
+    ("echo_stone_shard", "A pale crystal shard."),
     ("hushed_glass_vial", "A tall glass vial of milky white liquid with a cork."),
     ("lamp_warden_coin", "A round bronze coin stamped with a flame."),
     ("lethe_salt_vial", "A small clay pot full of white salt."),
     ("mirror_ward_lens", "A round dark mirror in a thin silver frame."),
-    ("tongues_bridge_pin", "A small model of a bridge with a blue banner and a bolt on top."),
-    ("wren_notecard_clip", "A folded paper boat on a brass clip."),
+    ("tongues_bridge_pin", "A small stone bridge pin."),
+    ("wren_notecard_clip", "A folded paper boat."),
 ])
 SHIP += rows("inventory", "inventory", "inventory", [
-    ("anchor_ribbon", "A red woven ribbon with a gold anchor clasp and tassel."),
+    ("anchor_ribbon", "A red woven ribbon tied in a loop."),
     ("brine_satchel", "A dark leather satchel with brass anchors."),
     ("ledger_pouch", "A ring-bound notebook with a leather strap and pen."),
     ("memory_vial_set", "Five small corked vials, two pale and three violet."),
-    ("river_glass_lamp", "A round glass lamp holding a tiny glowing river and city."),
+    ("river_glass_lamp", "A small glass lamp holding blue river light."),
     ("rosemary_tea_bag", "A cloth bag of dried rosemary tied with a cord."),
     ("salt_chalk_sticks", "Two sticks of salt chalk tied with a string of beads."),
     ("tide_map_case", "A round map case, open, showing a map of the river and the city."),
     ("wick_trimmer", "Wooden-handled wick trimming shears."),
 ])
 SHIP += rows("lore", "lore_docs", "lore", [
-    ("amphitheatre_echo_song_sheet", "A torn sheet of music beside a lamp."),
+    ("amphitheatre_echo_song_sheet", "A torn sheet of old music."),
     ("hespers_mason_stone_tablet", "A stone tablet carved with a lamp symbol."),
     ("hushed_grey_recipe_scroll", "A worn scroll with a single grey drop on it."),
-    ("long_gallery_framed_map", "A framed map of the Long Gallery with lamps at the corners."),
+    ("long_gallery_framed_map", "A framed grid map of the Long Gallery."),
     ("river_folk_salt_ledger", "A thick salt-stained ledger with a leather strap."),
     ("tongues_bridge_toll_receipts", "A bundle of coloured toll receipts tied with string."),
     ("ysoeldes_lamp_charter", "A rolled charter with a black wax seal and a ring of thirteen circles."),
@@ -106,11 +109,11 @@ SHIP += rows("lore", "lore_docs", "lore", [
 SHIP += rows("quest", "side_quest", "quest", [
     ("amber_glass_vial", "A round glass bottle of golden liquid with a cork."),
     ("brass_compass_shard", "A brass compass rose with a glowing centre."),
-    ("clay_lamp_shard", "A broken clay lamp carved with a pattern, beside a row of lights."),
+    ("clay_lamp_shard", "A broken clay lamp carved with a pattern."),
     ("iron_key_skeleton", "A black iron key with a winged top."),
     ("mossy_ferry_token", "An oval stone ferry token covered in moss."),
     ("paper_fan_fragment", "A torn paper fan painted with the river and the city."),
-    ("threadbare_glove", "A worn brown glove with glowing rings."),
+    ("threadbare_glove", "A worn brown glove."),
     ("wax_seal_stump", "A red wax candle stump on a stone."),
     ("wooden_doll_head", "A carved wooden doll head with a calm face and small flowers on top."),
 ])
@@ -126,15 +129,15 @@ SHIP += rows("furniture", "furniture", "furniture", [
 ])
 SHIP += rows("crypt", "undercroft", "crypt", [
     ("carved_tablet_compact_fragment", "A carved stone tablet showing a lamp over crossed hammers."),
-    ("carved_tablet_tide_count", "A flat carved stone slab marked with an eye and tally dots."),
+    ("carved_tablet_tide_count", "A flat carved stone slab."),
     ("chamber_prop_mirror_shard_pile", "A pile of mirror shards on a violet cloth."),
-    ("chamber_prop_root_warden_halo", "A ring of amber roots with red berries."),
+    ("chamber_prop_root_warden_halo", "A ring of amber roots."),
     ("crypt_boss_cistern_choir", "The Cistern Choir, five pale singing faces rising from dark water."),
     ("crypt_boss_crowned_echo", "The Crowned Echo, a tall pale cracked stone giant wearing a black crown."),
-    ("crypt_boss_listening_spring", "The Listening Spring, a black round pool in a stone rim with a lantern."),
+    ("crypt_boss_listening_spring", "The Listening Spring, a dark round pool in a stone rim."),
     ("deep_water_warm_silver_pool", "A silver-lit pool of deep water with two lamps."),
     ("sealed_chest_grey_bottle_case", "A wooden crate packed with grey bottles."),
-    ("sealed_chest_scriptorium_dust", "A sealed chest with a red wax seal and a parchment."),
+    ("sealed_chest_scriptorium_dust", "A sealed chest with a parchment on its lid."),
 ])
 
 # New art painted by gen.py: (ship id, job id in out/new, category, alt). The seed to use is in PICK (default 0).
@@ -153,7 +156,7 @@ NEWROWS = [
     ("enemy_linking", "forget_linking", "enemy", "A grey mist creature made of three loosely linked puffs: the Forgetting of Linking."),
     ("enemy_palace", "forget_palace", "enemy", "A grey mist creature shaped like a crumbling archway: the Forgetting of Palaces."),
     ("enemy_faces", "forget_faces", "enemy", "A grey mist creature with a smooth blank face and sad eyes: the Forgetting of Faces."),
-    ("enemy_numbers", "forget_numbers", "enemy", "A grey mist creature coiled like a ring-shaped snake: the Forgetting of Numbers."),
+    ("enemy_numbers", "forget_numbers", "enemy", "A pale coiling mist creature: the Forgetting of Numbers."),
     ("enemy_vocab", "forget_vocab", "enemy", "A wide flat grey mist creature with moth-like wings: the Forgetting of Words."),
     ("enemy_structure", "forget_structure", "enemy", "A grey mist creature of wobbling stacked cubes: the Forgetting of Structure."),
     ("boss_great_forgetting", "forget_boss", "boss", "The Great Forgetting, a towering hooded giant of grey mist with a pale glow for a face."),
@@ -161,13 +164,13 @@ NEWROWS = [
     ("M1", "Lamplighters' Quay: lamp posts being lit beside the river."),
     ("M2", "The Long Gallery: an endless arched corridor with paintings and lamps."),
     ("M3", "The Hall of Faces: a vaulted hall with rows of carved portrait niches."),
-    ("M4", "The Counting House: ledger desks, brass abacuses and walls of drawers."),
+    ("M4", "The Counting House district at night: tall buildings beside the river."),
     ("M5", "The Clockwork Market: a market square beneath a great brass clock tower."),
     ("M6", "The Tongues Bridge: a bridge carved with inscriptions in many scripts."),
     ("M7", "The Scriptorium: a round library under a copper dome."),
     ("M8", "The Tidal Stair: a wet stone staircase descending into rising mist."),
     ("M9", "The Mirror Wards: a courtyard of tall standing mirrors."),
-    ("M10", "The Open Roads: a road winding over green hills at dawn."),
+    ("M10", "The Open Roads: a road winding over the hills past stone mile markers."),
     ("M11", "The Amphitheatre of Echoes: a curved stone theatre lit by lamps."),
     ("M12", "The Lethe Gate: a colossal stone gate opening onto white mist under thirteen lamps."),
 ]] + [(f"event_{e}", f"event_{e}", "event", a) for e, a in [
@@ -188,12 +191,47 @@ NEWROWS = [
     ("gears", "A market square of small striped stalls with brass gears laid out on them, under a stopped clock tower."),
     ("vault", "A small round stone door with a lamp symbol in the river wall, an empty niche beside it and a lamp on a hook."),
 ]]
+# Nov 2, 2026 additions (painted by gen.py jobs vigil_, bramble_, mirror_, voice_, pedestal_, audit_, wrenmem_, longecho_).
+# Alt text is PROVISIONAL: check it against each picture (picreview.py helps) before shipping, and set the seed in PICK.
+NEWROWS += [
+    ("backdrop_long_vigil", "vigil_battlements", "backdrop", "The Quay battlements at dusk with a row of lit lanterns and soft faceless mist phantoms drifting toward them."),
+    ("event_mirror_room", "mirror_room", "event", "A quiet round room of tall old mirrors, each holding a remembered object."),
+    ("overlay_bramble_clump", "bramble_clump", "overlay", "A small clump of thorny silver-green bramble vines."),
+    ("overlay_bramble_vine", "bramble_vine", "overlay", "A long thorny silver-green bramble vine curling in an S shape."),
+    ("overlay_bramble_bud", "bramble_bud", "overlay", "A bramble stem with one thorn and a small glowing pale bud."),
+    ("overlay_bramble_burning", "bramble_burning", "overlay", "Bramble vines dissolving into golden light and floating sparks."),
+    ("voice_vision", "voice_vision", "voice", "Vision, a small lamp-spirit with an eye-shaped flame."),
+    ("voice_thread", "voice_thread", "voice", "Thread, a small lamp-spirit holding a spool of glowing thread."),
+    ("voice_place", "voice_place", "voice", "Place, a small lamp-spirit shaped like a tiny house lantern."),
+    ("voice_face", "voice_face", "voice", "Face, a small lamp-spirit with a masked mirror flame."),
+    ("voice_count", "voice_count", "voice", "Count, a small lamp-spirit shaped like an abacus lantern."),
+    ("voice_tongue", "voice_tongue", "voice", "Tongue, a small lamp-spirit trailing a ribbon of rune-like swirls."),
+    ("voice_frame", "voice_frame", "voice", "Frame, a small lamp-spirit shaped like a lantern bookcase."),
+    ("pedestal_lit", "pedestal_lit", "pedestal", "A lit stone pedestal with a warm glow and an empty top for a relic."),
+    ("pedestal_dim", "pedestal_dim", "pedestal", "A dim, faded stone pedestal with an empty top."),
+    ("event_wren_audit_route", "audit_route", "event", "A lamplit palace route with glowing stops, each beside a small object, and a notebook in front."),
+    ("event_wren_nook", "wrenmem_nook", "event", "Wren's cosy reading nook under a round window onto the river, with notecards and a teacup."),
+    ("trial_long_echo_vault", "longecho_vault", "trial", "An old round stone vault door in the river wall, ringed with moss and tiny lamp symbols."),
+]
+# Owner-approved story and trial additions (jobs story_, trialx_ in gen.py; alt text provisional). The two prize objects (prizex_) are NOT
+# shipped here: like prize_*, they are traced into 24x24 code icons by prizes.py.
+NEWROWS += [
+    ("portrait_ambrose_tallow", "story_ambrose", "portrait", "Ambrose Tallow, the Winder, a thin, faded old Warden in a dark coat with a pocket watch and kind, tired eyes."),
+    ("portrait_ottoline_gilt", "story_ottoline", "portrait", "Ottoline Gilt, a smug young woman in cream and gold silk with ribbons in her hair."),
+    ("portrait_edrin_halloway", "story_edrin", "portrait", "Edrin Halloway, a quiet old lamplighter in a worn blue coat with a lamplighter's pole."),
+    ("event_green_door", "story_green_door", "event", "A newly painted green door on Quay Row beside a lit street lamp."),
+    ("event_wren_mother_portrait", "story_mother_portrait", "event", "A softly painted portrait of a smiling woman with a yellow scarf on an easel in the Archive."),
+    ("event_lamp_cup", "story_lamp_cup", "event", "The Lamp Cup, a small brass lamp on a stand with a worn blank founder's plate."),
+    ("lore_winding_mark", "story_winding_mark", "lore", "A worn iron disc carved with a ring and a single clock hand."),
+    ("trial_year_hall", "trialx_year_hall", "trial", "A long stone hall of tall pillars with a glowing timeline in the floor and lit alcoves holding tablets."),
+    ("trial_reckoning", "trialx_reckoning", "trial", "A brick counting hall with a long table of brass calculating frames and tally sticks under green lamps."),
+]
 for sid, job, cat, alt in NEWROWS:
     pass  # resolved in resolve()
 
 
 DAY_SIZE = (288, 162, 24)  # day and dawn scenes are shipped smaller to keep the folder light
-DAWN = {"backdrop_tide_shore", "event_tide_rising", "event_lethe_gate_vigil"}
+DAWN = {"backdrop_tide_shore", "event_tide_rising", "event_lethe_gate_vigil", "backdrop_long_vigil"}
 SCENES = {c for c, v in SPEC.items() if v[3] == "scene"}
 
 
@@ -209,8 +247,35 @@ def resolve():
     for sid, job, cat, alt in NEWROWS:  # day versions: edits of the night pictures made by day.py
         if (OUT / "day" / f"{sid}-day.png").exists():
             t = "dawn" if sid in DAWN else "day"
-            out.append((f"{sid}-day", f"day/{sid}-day.png", cat, alt + (" Shown at dawn." if t == "dawn" else " Shown by day."), t, DAY_SIZE))
+            out.append((f"{sid}-day", f"day/{sid}-day.png", cat, DAY_ALT.get(sid) or alt + (" Shown at dawn." if t == "dawn" else " Shown by day."), t, DAY_SIZE))
     return out
+
+
+# Own descriptions for the day versions (the night alt text names lamps, dusk or mist that the day picture does not show)
+DAY_ALT = {
+    "backdrop_gala": "A grand ballroom of Veyra by daylight, with tall windows and polished floors.",
+    "backdrop_packing_bay": "A stone quay by day with crates and barrels beside the water.",
+    "backdrop_speech_hall": "A round lecture hall with tiered seats and a lectern, lit by daylight.",
+    "backdrop_crossroads": "A road junction with signposts on a bright day.",
+    "backdrop_night_market": "A narrow lane of market stalls and awnings by day.",
+    "backdrop_tide_shore": "A pebble shore of the river Lethe at dawn, with thin mist on the water.",
+    "district_M1": "Lamplighters' Quay by day: lamp posts beside the river.",
+    "district_M2": "The Long Gallery by day: a sunlit colonnade of arches.",
+    "district_M3": "The Hall of Faces by day: a vaulted hall with rows of carved portrait niches.",
+    "district_M4": "The Counting House district by day: tall buildings beside the river.",
+    "district_M5": "The Clockwork Market by day: a market square beneath a great brass clock tower.",
+    "district_M6": "The Tongues Bridge by day: a carved stone bridge over the river.",
+    "district_M7": "The Scriptorium by day: a round library under a copper dome.",
+    "district_M8": "The Tidal Stair by day: a wet stone staircase going down to the water.",
+    "district_M9": "The Mirror Wards by day: a courtyard of tall standing mirrors.",
+    "district_M10": "The Open Roads by day: a road winding over the hills past stone mile markers.",
+    "district_M11": "The Amphitheatre of Echoes by day: a curved stone theatre.",
+    "district_M12": "The Lethe Gate by day: a colossal stone gate above the river.",
+    "event_undercroft_entrance": "The city of Veyra seen from above on a bright day, over the way down to the Undercroft.",
+    "event_tide_rising": "Thin mist lifting off the rooftops of Veyra at dawn.",
+    "event_lethe_gate_vigil": "The Lethe Gate at dawn after the long night's watch.",
+    "event_year_of_keeping": "The whole city of Veyra seen from a hill on a bright day.",
+}
 
 
 def remove_bg(im: Image.Image, cut=24):

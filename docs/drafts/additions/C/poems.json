@@ -1,0 +1,873 @@
+{
+  "notes": "Original poems (15) are by invented poets and are new text. Public-domain poems were compared on Nov 2, 2026 against at least two editions (Project Gutenberg, Wikisource transcriptions of named editions) line by line by script, then corrected. 14 public-domain poems remain; four were dropped because editions disagree on the words or are unstable (Blake 'Eternity', Landor 'Dying Speech', Blake 'The Sick Rose', Carroll 'How Doth the Little Crocodile'). Every remaining entry has 'edition', 'sourceUrls', 'checked: true', and where editions differ a 'variants' field the strict scorer may accept. All authors died before 1900 and every text was published before 1930, so each is public domain in the US and in life+70 countries. The strict scorer must treat a quoted dash (The Swing, lines 8 and 10) as part of the text. Line counts: see README.",
+  "schemaNote": "Fields: id, title, author, lines[], lineCount, origin (original|public-domain), year, edition, difficulty 1 to 5, checked, pdStatus (public domain only), authorDied (public domain only), note. Added: sourceUrls, variants (alternative accepted wording by line), practiceOnly.",
+  "stringsSafe": "All lines are plain UTF-8. Straight apostrophes and straight double quotes are used on purpose so the strict scorer can compare exactly.",
+  "poems": [
+    {
+      "id": "po-lamp-song",
+      "title": "The Lamp Song",
+      "author": "Ilsabet Corrow",
+      "lines": [
+        "Light one lamp and name one thing,",
+        "Then light another, name it too.",
+        "The Tide goes by on a silver wing",
+        "And finds the whole street holding true."
+      ],
+      "lineCount": 4,
+      "origin": "original",
+      "year": 2026,
+      "edition": "Mnemos original, written for this project (2026)",
+      "difficulty": 1,
+      "checked": true,
+      "note": "Original poem under an invented poet name. The name was searched on the web on Nov 2, 2026 and matches no known poet or author."
+    },
+    {
+      "id": "po-small-door",
+      "title": "The Small Door",
+      "author": "Fennimore Dray",
+      "lines": [
+        "A small green door beside the stair",
+        "Keeps all the things I left in there.",
+        "I knock, I say each one aloud,",
+        "And out they come, a patient crowd."
+      ],
+      "lineCount": 4,
+      "origin": "original",
+      "year": 2026,
+      "edition": "Mnemos original, written for this project (2026)",
+      "difficulty": 1,
+      "checked": true,
+      "note": "Original poem under an invented poet name. The name was searched on the web on Nov 2, 2026 and matches no known poet or author."
+    },
+    {
+      "id": "po-morning-count",
+      "title": "Morning Count",
+      "author": "Tavish Lorn",
+      "lines": [
+        "One for the kettle, two for the bread,",
+        "Three for the lamp above my head,",
+        "Four for the window, five for the sun:",
+        "I counted my morning, and it was done."
+      ],
+      "lineCount": 4,
+      "origin": "original",
+      "year": 2026,
+      "edition": "Mnemos original, written for this project (2026)",
+      "difficulty": 1,
+      "checked": true,
+      "note": "Original poem under an invented poet name. The name was searched on the web on Nov 2, 2026 and matches no known poet or author."
+    },
+    {
+      "id": "po-boats-quay",
+      "title": "Boats at the Quay",
+      "author": "Odile Harrowmere",
+      "lines": [
+        "The Tide comes in at close of day",
+        "And sweeps the little things away.",
+        "But what I name, and what I see,",
+        "Stays tied like boats along the quay.",
+        "I tie one more, and then one more,",
+        "Until a fleet fills up the shore."
+      ],
+      "lineCount": 6,
+      "origin": "original",
+      "year": 2026,
+      "edition": "Mnemos original, written for this project (2026)",
+      "difficulty": 2,
+      "checked": true,
+      "note": "Original poem under an invented poet name. The name was searched on the web on Nov 2, 2026 and matches no known poet or author."
+    },
+    {
+      "id": "po-wrens-rule",
+      "title": "Wren's Rule",
+      "author": "Marit Ashvane",
+      "lines": [
+        "Write it small and say it plain,",
+        "Then walk it through your house again.",
+        "Close the book and tell it through,",
+        "Each stop in turn, from old to new.",
+        "If one has slipped, then look, and then",
+        "Close the book and try again."
+      ],
+      "lineCount": 6,
+      "origin": "original",
+      "year": 2026,
+      "edition": "Mnemos original, written for this project (2026)",
+      "difficulty": 2,
+      "checked": true,
+      "note": "Original poem under an invented poet name. The name was searched on the web on Nov 2, 2026 and matches no known poet or author."
+    },
+    {
+      "id": "po-archive-cat",
+      "title": "The Archive Cat",
+      "author": "Brannoc Pell",
+      "lines": [
+        "The Archive cat has read no book,",
+        "Yet knows each shelf and every nook.",
+        "She sleeps upon the oldest page",
+        "And does not mind the weight of age.",
+        "At dusk she walks the stacks, and I",
+        "Go with her, tail and lamp held high."
+      ],
+      "lineCount": 6,
+      "origin": "original",
+      "year": 2026,
+      "edition": "Mnemos original, written for this project (2026)",
+      "difficulty": 2,
+      "checked": true,
+      "note": "Original poem under an invented poet name. The name was searched on the web on Nov 2, 2026 and matches no known poet or author."
+    },
+    {
+      "id": "po-house-count",
+      "title": "The House Count",
+      "author": "Sorrel Wick",
+      "lines": [
+        "One for the lamp that burns by the door,",
+        "Two for the boots that wait on the floor.",
+        "Three for the cups on the kitchen shelf,",
+        "Four for the cat who has found herself.",
+        "Five for the window that frames the hill,",
+        "Six for the clock that is never still.",
+        "Seven for the stairs that creak at night,",
+        "Eight for the candle that lends its light."
+      ],
+      "lineCount": 8,
+      "origin": "original",
+      "year": 2026,
+      "edition": "Mnemos original, written for this project (2026)",
+      "difficulty": 2,
+      "checked": true,
+      "note": "Original poem under an invented poet name. The name was searched on the web on Nov 2, 2026 and matches no known poet or author."
+    },
+    {
+      "id": "po-twelve-gates",
+      "title": "Twelve Gates",
+      "author": "Sorrel Wick",
+      "lines": [
+        "Twelve gates stand along the river,",
+        "Each one hung with its own lamp.",
+        "Some are bright and some a-shiver,",
+        "Some are quiet, some are damp.",
+        "Walk them slowly, one by one,",
+        "Say what each one holds for you.",
+        "When the evening mist has come,",
+        "You will know the whole road through."
+      ],
+      "lineCount": 8,
+      "origin": "original",
+      "year": 2026,
+      "edition": "Mnemos original, written for this project (2026)",
+      "difficulty": 3,
+      "checked": true,
+      "note": "Original poem under an invented poet name. The name was searched on the web on Nov 2, 2026 and matches no known poet or author."
+    },
+    {
+      "id": "po-counting-stairs",
+      "title": "Counting Stairs",
+      "author": "Isaure Fenn",
+      "lines": [
+        "Down below the Archive floor",
+        "The stairs go on and on and on.",
+        "Every step has one thing more",
+        "To remember, and then it's gone,",
+        "Unless I set it in a place",
+        "And give it legs, a hat, a name.",
+        "Then when the mist comes round my face",
+        "It stands up straight and says, \"I came.\""
+      ],
+      "lineCount": 8,
+      "origin": "original",
+      "year": 2026,
+      "edition": "Mnemos original, written for this project (2026)",
+      "difficulty": 3,
+      "checked": true,
+      "note": "Original poem under an invented poet name. The name was searched on the web on Nov 2, 2026 and matches no known poet or author."
+    },
+    {
+      "id": "po-salt-lamp-oil",
+      "title": "Salt and Lamp Oil",
+      "author": "Brannoc Pell",
+      "lines": [
+        "Salt for the bread and oil for the lamp,",
+        "A coil of rope and a roll of twine,",
+        "Two bright coins and a postage stamp,",
+        "A pen, a shell, a sprig of pine.",
+        "I lay them down along the wall,",
+        "One at each stone, and I walk away.",
+        "Tomorrow I will find them all",
+        "Exactly where they lay today."
+      ],
+      "lineCount": 8,
+      "origin": "original",
+      "year": 2026,
+      "edition": "Mnemos original, written for this project (2026)",
+      "difficulty": 3,
+      "checked": true,
+      "note": "Original poem under an invented poet name. The name was searched on the web on Nov 2, 2026 and matches no known poet or author."
+    },
+    {
+      "id": "po-long-walk-home",
+      "title": "The Long Walk Home",
+      "author": "Ilsabet Corrow",
+      "lines": [
+        "When the evening lamps come on",
+        "I walk the road I know by heart:",
+        "The baker's door, the elm, the swan",
+        "Of stone, the fountain, and the cart.",
+        "Then comes the gate, the crooked house,",
+        "The leaning wall, the well, the stair.",
+        "I never hurry, and I rouse",
+        "Each one by name and leave it there.",
+        "At last I reach my own front door,",
+        "The key, the latch, the kitchen light.",
+        "And every place I passed before",
+        "Is waiting for me through the night."
+      ],
+      "lineCount": 12,
+      "origin": "original",
+      "year": 2026,
+      "edition": "Mnemos original, written for this project (2026)",
+      "difficulty": 3,
+      "checked": true,
+      "note": "Original poem under an invented poet name. The name was searched on the web on Nov 2, 2026 and matches no known poet or author."
+    },
+    {
+      "id": "po-forgiving-river",
+      "title": "The Forgiving River",
+      "author": "Tavish Lorn",
+      "lines": [
+        "The river takes what I forget,",
+        "And that is all right, and that is fair.",
+        "It does not scold me, does not fret,",
+        "It only wonders, \"Was it there?\"",
+        "So I go back and look again",
+        "And ask the lamp to light the place.",
+        "The river hums an old refrain:",
+        "\"There is no hurry in this race.\"",
+        "I hold it gently, not too tight,",
+        "And hand it over to the dawn.",
+        "Tomorrow it will still be light,",
+        "And I will find it. On and on."
+      ],
+      "lineCount": 12,
+      "origin": "original",
+      "year": 2026,
+      "edition": "Mnemos original, written for this project (2026)",
+      "difficulty": 3,
+      "checked": true,
+      "note": "Original poem under an invented poet name. The name was searched on the web on Nov 2, 2026 and matches no known poet or author."
+    },
+    {
+      "id": "po-three-wishes",
+      "title": "Three Wishes for a Keeper",
+      "author": "Marit Ashvane",
+      "lines": [
+        "May your pictures be absurd,",
+        "May they wobble, jump and sing,",
+        "May you hold each silly word",
+        "Like a coin upon a string.",
+        "May your places stay in line,",
+        "Door and window, shelf and chair,",
+        "May the thing you left be fine",
+        "When you come to find it there.",
+        "May you rest, and may you play,",
+        "May the lamp be always lit,",
+        "May you finish every day",
+        "Glad of what you did with it."
+      ],
+      "lineCount": 12,
+      "origin": "original",
+      "year": 2026,
+      "edition": "Mnemos original, written for this project (2026)",
+      "difficulty": 3,
+      "checked": true,
+      "note": "Original poem under an invented poet name. The name was searched on the web on Nov 2, 2026 and matches no known poet or author."
+    },
+    {
+      "id": "po-lamplighters-round",
+      "title": "The Lamplighter's Round",
+      "author": "Odile Harrowmere",
+      "lines": [
+        "The market closes, one by one",
+        "The shutters come down in the square.",
+        "The last of the light on the stones is gone,",
+        "And the lamplighter climbs her stair.",
+        "She lights the first above the well,",
+        "The second at the old bell tower,",
+        "The third where the river willows tell",
+        "Their secrets at this hour.",
+        "And I, who walk the evening round,",
+        "Say every name as I go past,",
+        "The well, the bell, the willow ground,",
+        "And keep them safe and fast.",
+        "Then home, and in my little room",
+        "I count them over, light by light,",
+        "And watch the last one's silver bloom",
+        "Dissolve into the night."
+      ],
+      "lineCount": 16,
+      "origin": "original",
+      "year": 2026,
+      "edition": "Mnemos original, written for this project (2026)",
+      "difficulty": 4,
+      "checked": true,
+      "note": "Original poem under an invented poet name. The name was searched on the web on Nov 2, 2026 and matches no known poet or author."
+    },
+    {
+      "id": "po-what-i-know-mist",
+      "title": "What I Know About Mist",
+      "author": "Brannoc Pell",
+      "lines": [
+        "Mist knows no door and no wall,",
+        "It comes in under all the sills.",
+        "It is not angry, not at all,",
+        "It only does what the river wills.",
+        "It takes the shape of what is near",
+        "And makes each hedge a sleeping beast.",
+        "It hides the road, it hides the pier,",
+        "It hides the greatest and the least.",
+        "But mist is only water, thin,",
+        "And thin things lift when morning comes.",
+        "The sun pulls gently, and the din",
+        "Of birds goes up like distant drums.",
+        "So when the mist is in your head",
+        "And every name goes soft and blurred,",
+        "Just set a lamp where you have led",
+        "Each picture, and say each word."
+      ],
+      "lineCount": 16,
+      "origin": "original",
+      "year": 2026,
+      "edition": "Mnemos original, written for this project (2026)",
+      "difficulty": 4,
+      "checked": true,
+      "note": "Original poem under an invented poet name. The name was searched on the web on Nov 2, 2026 and matches no known poet or author."
+    },
+    {
+      "id": "pd-the-rain",
+      "title": "Rain",
+      "author": "Robert Louis Stevenson",
+      "authorDied": 1894,
+      "lines": [
+        "The rain is raining all around,",
+        "It falls on field and tree,",
+        "It rains on the umbrellas here,",
+        "And on the ships at sea."
+      ],
+      "lineCount": 4,
+      "origin": "public-domain",
+      "year": 1885,
+      "edition": "A Child's Garden of Verses (1885)",
+      "difficulty": 1,
+      "checked": true,
+      "note": "Author died 1894, first published 1885, not a translation. Text compared on Nov 2, 2026 with Project Gutenberg 25609 and Wikisource: identical.",
+      "sourceUrls": [
+        "https://www.gutenberg.org/ebooks/25609",
+        "https://en.wikisource.org/wiki/A_Child's_Garden_of_Verses/Rain"
+      ],
+      "pdStatus": "clear"
+    },
+    {
+      "id": "pd-a-word-is-dead",
+      "title": "A word is dead",
+      "author": "Emily Dickinson",
+      "authorDied": 1886,
+      "lines": [
+        "A word is dead",
+        "When it is said,",
+        "Some say.",
+        "I say it just",
+        "Begins to live",
+        "That day."
+      ],
+      "lineCount": 6,
+      "origin": "public-domain",
+      "year": 1896,
+      "edition": "Poems, Third Series (1896), edited by Mabel Loomis Todd; text agrees with The Complete Poems of Emily Dickinson (1924)",
+      "difficulty": 2,
+      "checked": true,
+      "note": "Author died 1886; first published 1896 (not 1894 or 1891 as the first draft said). Matches both editions line for line. Modern scholarly editions (Johnson, Franklin) restore Dickinson's own dashes and capitals and read differently, so the player must be told the strict round uses the 1896 text.",
+      "sourceUrls": [
+        "https://en.wikisource.org/wiki/Poems:_Third_Series/A_Word",
+        "https://en.wikisource.org/wiki/The_Complete_Poems_of_Emily_Dickinson/A_word_is_dead"
+      ],
+      "pdStatus": "clear"
+    },
+    {
+      "id": "pd-who-has-seen-the-wind",
+      "title": "Who Has Seen the Wind?",
+      "author": "Christina Rossetti",
+      "authorDied": 1894,
+      "lines": [
+        "Who has seen the wind?",
+        "Neither I nor you:",
+        "But when the leaves hang trembling",
+        "The wind is passing thro'.",
+        "Who has seen the wind?",
+        "Neither you nor I:",
+        "But when the trees bow down their heads",
+        "The wind is passing by."
+      ],
+      "lineCount": 8,
+      "origin": "public-domain",
+      "year": 1872,
+      "edition": "Sing-Song: A Nursery Rhyme Book (1872), text of Project Gutenberg 76703",
+      "difficulty": 2,
+      "checked": true,
+      "note": "Author died 1894, first published 1872. Text matches Project Gutenberg 76703 (the 1872 book), which prints 'thro'.' and no comma after 'trembling' or 'heads'. Many later editions print 'through', so the strict scorer should accept the variant listed in 'variants'. Corrected from the first draft, which had a comma after 'trembling'.",
+      "sourceUrls": [
+        "https://www.gutenberg.org/ebooks/76703"
+      ],
+      "variants": {
+        "line 4": [
+          "The wind is passing through."
+        ]
+      },
+      "pdStatus": "clear"
+    },
+    {
+      "id": "pd-jenny-kissed-me",
+      "title": "Jenny Kiss'd Me",
+      "author": "Leigh Hunt",
+      "authorDied": 1859,
+      "lines": [
+        "Jenny kiss'd me when we met,",
+        "Jumping from the chair she sat in;",
+        "Time, you thief, who love to get",
+        "Sweets into your list, put that in!",
+        "Say I'm weary, say I'm sad,",
+        "Say that health and wealth have miss'd me,",
+        "Say I'm growing old, but add,",
+        "Jenny kiss'd me."
+      ],
+      "lineCount": 8,
+      "origin": "public-domain",
+      "year": 1838,
+      "edition": "Oxford Book of English Verse (ed. Quiller-Couch, 1900/1918), titled 'Jenny kiss'd me'; also called 'Rondeau'",
+      "difficulty": 3,
+      "checked": true,
+      "note": "Author died 1859. Written in 1838 (Wikipedia and the Oxford Book give 1838; the exact first printing was not independently confirmed). Matches the Oxford Book exactly; the 1923 Poetical Works prints a colon at the end of line 4, listed in 'variants'.",
+      "sourceUrls": [
+        "https://en.wikisource.org/wiki/Oxford_Book_of_English_Verse_1250-1918/Jenny_kiss'd_Me",
+        "https://en.wikisource.org/wiki/The_Poetical_Works_of_Leigh_Hunt/Rondeau"
+      ],
+      "variants": {
+        "line 4": [
+          "Sweets into your list, put that in:"
+        ]
+      },
+      "pdStatus": "clear"
+    },
+    {
+      "id": "pd-no-frigate",
+      "title": "There is no Frigate like a Book",
+      "author": "Emily Dickinson",
+      "authorDied": 1886,
+      "lines": [
+        "There is no frigate like a book",
+        "To take us lands away,",
+        "Nor any coursers like a page",
+        "Of prancing poetry.",
+        "This traverse may the poorest take",
+        "Without oppress of toll;",
+        "How frugal is the chariot",
+        "That bears a human soul!"
+      ],
+      "lineCount": 8,
+      "origin": "public-domain",
+      "year": 1896,
+      "edition": "Poems, Third Series (1896), titled 'A Book'; text agrees with The Complete Poems of Emily Dickinson (1924)",
+      "difficulty": 3,
+      "checked": true,
+      "note": "Author died 1886; first published 1896 (first draft said 1894). Matches both editions line for line. Modern scholarly editions differ, so the player must be told the strict round uses the 1896 text.",
+      "sourceUrls": [
+        "https://en.wikisource.org/wiki/Poems:_Third_Series/A_Book",
+        "https://en.wikisource.org/wiki/The_Complete_Poems_of_Emily_Dickinson/There_is_no_frigate_like_a_book"
+      ],
+      "pdStatus": "clear"
+    },
+    {
+      "id": "pd-the-swing",
+      "title": "The Swing",
+      "author": "Robert Louis Stevenson",
+      "authorDied": 1894,
+      "lines": [
+        "How do you like to go up in a swing,",
+        "Up in the air so blue?",
+        "Oh, I do think it the pleasantest thing",
+        "Ever a child can do!",
+        "Up in the air and over the wall,",
+        "Till I can see so wide,",
+        "Rivers and trees and cattle and all",
+        "Over the countryside—",
+        "Till I look down on the garden green,",
+        "Down on the roof so brown—",
+        "Up in the air I go flying again,",
+        "Up in the air and down!"
+      ],
+      "lineCount": 12,
+      "origin": "public-domain",
+      "year": 1885,
+      "edition": "A Child's Garden of Verses (1885)",
+      "difficulty": 3,
+      "checked": true,
+      "note": "Author died 1894. Corrected from the first draft: 'Rivers' (not 'River') and 'countryside' (one word). Project Gutenberg and Wikisource agree. The two dashes are the poet's own (Gutenberg prints them as two hyphens).",
+      "sourceUrls": [
+        "https://www.gutenberg.org/ebooks/25609",
+        "https://en.wikisource.org/wiki/A_Child's_Garden_of_Verses/The_Swing"
+      ],
+      "pdStatus": "clear"
+    },
+    {
+      "id": "pd-bed-in-summer",
+      "title": "Bed in Summer",
+      "author": "Robert Louis Stevenson",
+      "authorDied": 1894,
+      "lines": [
+        "In winter I get up at night",
+        "And dress by yellow candle-light.",
+        "In summer, quite the other way,",
+        "I have to go to bed by day.",
+        "I have to go to bed and see",
+        "The birds still hopping on the tree,",
+        "Or hear the grown-up people's feet",
+        "Still going past me in the street.",
+        "And does it not seem hard to you,",
+        "When all the sky is clear and blue,",
+        "And I should like so much to play,",
+        "To have to go to bed by day?"
+      ],
+      "lineCount": 12,
+      "origin": "public-domain",
+      "year": 1885,
+      "edition": "A Child's Garden of Verses (1885)",
+      "difficulty": 3,
+      "checked": true,
+      "note": "Author died 1894. Corrected from the first draft: a comma after 'In summer'. Project Gutenberg and Wikisource agree.",
+      "sourceUrls": [
+        "https://www.gutenberg.org/ebooks/25609",
+        "https://en.wikisource.org/wiki/A_Child's_Garden_of_Verses/Bed_in_Summer"
+      ],
+      "pdStatus": "clear"
+    },
+    {
+      "id": "pd-arrow-and-song",
+      "title": "The Arrow and the Song",
+      "author": "Henry Wadsworth Longfellow",
+      "authorDied": 1882,
+      "lines": [
+        "I shot an arrow into the air,",
+        "It fell to earth, I knew not where;",
+        "For, so swiftly it flew, the sight",
+        "Could not follow it in its flight.",
+        "I breathed a song into the air,",
+        "It fell to earth, I knew not where;",
+        "For who has sight so keen and strong,",
+        "That it can follow the flight of song?",
+        "Long, long afterward, in an oak",
+        "I found the arrow, still unbroke;",
+        "And the song, from beginning to end,",
+        "I found again in the heart of a friend."
+      ],
+      "lineCount": 12,
+      "origin": "public-domain",
+      "year": 1845,
+      "edition": "The Belfry of Bruges and Other Poems (1845)",
+      "difficulty": 3,
+      "checked": true,
+      "note": "Author died 1882. Matches the 1845 book exactly. An anthology (Poems That Every Child Should Know) drops the comma at the end of line 11.",
+      "sourceUrls": [
+        "https://en.wikisource.org/wiki/The_Belfry_of_Bruges_and_Other_Poems/The_Arrow_and_the_Song",
+        "https://en.wikisource.org/wiki/Poems_That_Every_Child_Should_Know/The_Arrow_and_the_Song"
+      ],
+      "pdStatus": "clear"
+    },
+    {
+      "id": "pd-gather-rosebuds",
+      "title": "To the Virgins, to Make Much of Time",
+      "author": "Robert Herrick",
+      "authorDied": 1674,
+      "lines": [
+        "Gather ye rosebuds while ye may,",
+        "Old Time is still a-flying:",
+        "And this same flower that smiles to-day",
+        "To-morrow will be dying.",
+        "The glorious lamp of heaven, the sun,",
+        "The higher he's a-getting,",
+        "The sooner will his race be run,",
+        "And nearer he's to setting.",
+        "That age is best which is the first,",
+        "When youth and blood are warmer;",
+        "But being spent, the worse, and worst",
+        "Times still succeed the former.",
+        "Then be not coy, but use your time,",
+        "And while ye may, go marry:",
+        "For having lost but once your prime,",
+        "You may for ever tarry."
+      ],
+      "lineCount": 16,
+      "origin": "public-domain",
+      "year": 1648,
+      "edition": "Oxford Book of English Verse (ed. Quiller-Couch), modernised spelling; original in Hesperides (1648)",
+      "difficulty": 4,
+      "checked": true,
+      "note": "Author died 1674. Corrected from the first draft: a colon (not a semicolon) at the end of line 2, as in the Oxford Book. The Hesperides text on Wikisource also lacks the comma in line 14 and the comma at the end of line 15; those variants are listed. Spelling of the 1648 original is old-style, so the strict round uses the modernised Oxford text.",
+      "sourceUrls": [
+        "https://en.wikisource.org/wiki/Oxford_Book_of_English_Verse_1250-1900/To_the_Virgins,_to_make_much_of_Time",
+        "https://en.wikisource.org/wiki/The_Hesperides_%26_Noble_Numbers/Hesperides/To_the_Virgins,_to_Make_Much_of_Time"
+      ],
+      "variants": {
+        "line 2": [
+          "Old Time is still a-flying;"
+        ],
+        "line 14": [
+          "And while ye may go marry:"
+        ],
+        "line 15": [
+          "For having lost but once your prime"
+        ]
+      },
+      "pdStatus": "clear"
+    },
+    {
+      "id": "pd-drink-to-me",
+      "title": "To Celia",
+      "author": "Ben Jonson",
+      "authorDied": 1637,
+      "lines": [
+        "Drink to me only with thine eyes,",
+        "And I will pledge with mine;",
+        "Or leave a kiss but in the cup",
+        "And I'll not look for wine.",
+        "The thirst that from the soul doth rise",
+        "Doth ask a drink divine;",
+        "But might I of Jove's nectar sup,",
+        "I would not change for thine.",
+        "I sent thee late a rosy wreath,",
+        "Not so much honouring thee",
+        "As giving it a hope that there",
+        "It could not wither'd be;",
+        "But thou thereon didst only breathe,",
+        "And sent'st it back to me;",
+        "Since when it grows, and smells, I swear,",
+        "Not of itself but thee!"
+      ],
+      "lineCount": 16,
+      "origin": "public-domain",
+      "year": 1616,
+      "edition": "Oxford Book of English Verse (ed. Quiller-Couch), titled 'To Celia'; original in The Forest (1616)",
+      "difficulty": 4,
+      "checked": true,
+      "note": "Author died 1637. Corrected to the Oxford Book text (first draft had a comma after 'cup', 'withered' and 'thee.'). Editions differ in these three places, listed in 'variants'. Title changed from 'Song: To Celia'.",
+      "sourceUrls": [
+        "https://en.wikisource.org/wiki/Oxford_Book_of_English_Verse_1250-1900/To_Celia"
+      ],
+      "variants": {
+        "line 3": [
+          "Or leave a kiss but in the cup,"
+        ],
+        "line 12": [
+          "It could not withered be;"
+        ],
+        "line 16": [
+          "Not of itself, but thee."
+        ]
+      },
+      "pdStatus": "clear"
+    },
+    {
+      "id": "pd-a-birthday",
+      "title": "A Birthday",
+      "author": "Christina Rossetti",
+      "authorDied": 1894,
+      "lines": [
+        "My heart is like a singing bird",
+        "Whose nest is in a watered shoot;",
+        "My heart is like an apple-tree",
+        "Whose boughs are bent with thickset fruit;",
+        "My heart is like a rainbow shell",
+        "That paddles in a halcyon sea;",
+        "My heart is gladder than all these",
+        "Because my love is come to me.",
+        "Raise me a dais of silk and down;",
+        "Hang it with vair and purple dyes;",
+        "Carve it in doves and pomegranates,",
+        "And peacocks with a hundred eyes;",
+        "Work it in gold and silver grapes,",
+        "In leaves and silver fleurs-de-lys;",
+        "Because the birthday of my life",
+        "Is come, my love is come to me."
+      ],
+      "lineCount": 16,
+      "origin": "public-domain",
+      "year": 1861,
+      "edition": "Poems (Macmillan, 1901), the standard collected edition; first printed 1861, collected in Goblin Market and Other Poems (1862)",
+      "difficulty": 4,
+      "checked": true,
+      "note": "Author died 1894. The text matches the 1901 Poems exactly. The 1862 first edition differs in hyphenation and commas in four places, listed in 'variants'.",
+      "sourceUrls": [
+        "https://en.wikisource.org/wiki/Poems_(Rossetti,_1901)/A_Birthday",
+        "https://en.wikisource.org/wiki/Goblin_Market_and_Other_Poems_(1862)/A_Birthday"
+      ],
+      "variants": {
+        "line 3": [
+          "My heart is like an appletree"
+        ],
+        "line 4": [
+          "Whose boughs are bent with thick-set fruit;"
+        ],
+        "line 11": [
+          "Carve it in doves, and pomegranates,"
+        ],
+        "line 14": [
+          "In leaves, and silver fleurs-de-lys;"
+        ]
+      },
+      "pdStatus": "clear"
+    },
+    {
+      "id": "pd-crossing-the-bar",
+      "title": "Crossing the Bar",
+      "author": "Alfred, Lord Tennyson",
+      "authorDied": 1892,
+      "lines": [
+        "Sunset and evening star,",
+        "And one clear call for me!",
+        "And may there be no moaning of the bar,",
+        "When I put out to sea,",
+        "But such a tide as moving seems asleep,",
+        "Too full for sound and foam,",
+        "When that which drew from out the boundless deep",
+        "Turns again home.",
+        "Twilight and evening bell,",
+        "And after that the dark!",
+        "And may there be no sadness of farewell,",
+        "When I embark;",
+        "For tho' from out our bourne of Time and Place",
+        "The flood may bear me far,",
+        "I hope to see my Pilot face to face",
+        "When I have crost the bar."
+      ],
+      "lineCount": 16,
+      "origin": "public-domain",
+      "year": 1889,
+      "edition": "Demeter and Other Poems (1889)",
+      "difficulty": 4,
+      "checked": true,
+      "note": "Author died 1892. Matches the 1889 book exactly ('crost'). One anthology prints 'cross'd'.",
+      "sourceUrls": [
+        "https://en.wikisource.org/wiki/Demeter_and_other_poems/Crossing_the_Bar",
+        "https://en.wikisource.org/wiki/Poems_That_Every_Child_Should_Know/Crossing_the_Bar"
+      ],
+      "variants": {
+        "line 16": [
+          "When I have cross'd the bar."
+        ]
+      },
+      "pdStatus": "clear"
+    },
+    {
+      "id": "pd-remember",
+      "title": "Remember",
+      "author": "Christina Rossetti",
+      "authorDied": 1894,
+      "lines": [
+        "Remember me when I am gone away,",
+        "Gone far away into the silent land;",
+        "When you can no more hold me by the hand,",
+        "Nor I half turn to go yet turning stay.",
+        "Remember me when no more day by day",
+        "You tell me of our future that you planned:",
+        "Only remember me; you understand",
+        "It will be late to counsel then or pray.",
+        "Yet if you should forget me for a while",
+        "And afterwards remember, do not grieve:",
+        "For if the darkness and corruption leave",
+        "A vestige of the thoughts that once I had,",
+        "Better by far you should forget and smile",
+        "Than that you should remember and be sad."
+      ],
+      "lineCount": 14,
+      "origin": "public-domain",
+      "year": 1862,
+      "edition": "Goblin Market and Other Poems (1862)",
+      "difficulty": 5,
+      "checked": true,
+      "note": "Author died 1894; written 1849, first printed 1862. Matches the 1862 first edition and the 1901 Poems line for line. 14 lines, so practice only (the Event Hall ladder uses 4, 6, 8, 12 and 16).",
+      "sourceUrls": [
+        "https://en.wikisource.org/wiki/Goblin_Market_and_Other_Poems_(1862)/Remember",
+        "https://en.wikisource.org/wiki/Poems_(Rossetti,_1901)/Remember"
+      ],
+      "pdStatus": "clear",
+      "practiceOnly": true
+    },
+    {
+      "id": "pd-sonnet-18",
+      "title": "Sonnet 18",
+      "author": "William Shakespeare",
+      "authorDied": 1616,
+      "lines": [
+        "Shall I compare thee to a summer's day?",
+        "Thou art more lovely and more temperate:",
+        "Rough winds do shake the darling buds of May,",
+        "And summer's lease hath all too short a date:",
+        "Sometime too hot the eye of heaven shines,",
+        "And often is his gold complexion dimm'd,",
+        "And every fair from fair sometime declines,",
+        "By chance, or nature's changing course untrimm'd:",
+        "But thy eternal summer shall not fade,",
+        "Nor lose possession of that fair thou ow'st,",
+        "Nor shall death brag thou wander'st in his shade,",
+        "When in eternal lines to time thou grow'st,",
+        "So long as men can breathe, or eyes can see,",
+        "So long lives this, and this gives life to thee."
+      ],
+      "lineCount": 14,
+      "origin": "public-domain",
+      "year": 1609,
+      "edition": "Shakespeare's Sonnets, text of Project Gutenberg 1041 (modernised spelling of the 1609 Quarto)",
+      "difficulty": 5,
+      "checked": true,
+      "note": "Author died 1616. Punctuation differs in at least five places between editions (the 1923 Yale text, for one, uses semicolons and 'man' in line 13). The first draft mixed editions. Now follows Project Gutenberg 1041 exactly with straight apostrophes. Use as a practice poem or accept variants; do not use for the strict Event Hall round.",
+      "sourceUrls": [
+        "https://www.gutenberg.org/ebooks/1041",
+        "https://en.wikisource.org/wiki/Shakespeare's_Sonnets_(1923)_Yale/Text/Sonnet_18"
+      ],
+      "practiceOnly": true,
+      "pdStatus": "clear"
+    }
+  ],
+  "learnExamples": {
+    "1": {
+      "poem": "po-small-door",
+      "level": "4 lines",
+      "text": "Make a tiny palace of four stops, such as the door, the hall mirror, the sofa and the kitchen sink. Line 1: a green door, with a stair beside it, stands at your first stop. Line 2: at the mirror, a crowd of your lost things are packed inside. Line 3: at the sofa, you knock and shout each one aloud. Line 4: at the sink, a patient crowd climbs out. Walk the four stops, say each line, close the page, and walk them again. Practise this once and the whole poem usually holds for the day."
+    },
+    "2": {
+      "poem": "po-boats-quay",
+      "level": "6 lines",
+      "text": "Take the three pairs of lines as three pictures and chain them. Pair 1: the Tide sweeps little things off a table. Pair 2: you tie each thing you name to a small boat at a quay. Pair 3: a whole fleet fills the shore. Link the pictures with one action each, then say the poem aloud while you move through them. Use the first word of every line as your cue when you check yourself: The, And, But, Stays, I, Until."
+    },
+    "3": {
+      "poem": "po-salt-lamp-oil",
+      "level": "8 lines",
+      "text": "Use a palace of four stops and two lines at each. Stop 1: a salt shaker pours bread and lamp oil (lines 1 and 2: salt, oil, rope, twine). Stop 2: two coins and a stamp are stuck to a pen, a shell and a pine sprig (lines 3 and 4). Stop 3: you lay everything out along a wall, one object at each stone (lines 5 and 6). Stop 4: tomorrow you find them all in the same place (lines 7 and 8). Pictures hold the ideas. The rhymes (lamp and stamp, twine and pine, wall and all, away and today) hold the exact words, so say the rhyming pairs aloud as you walk."
+    },
+    "4": {
+      "poem": "po-long-walk-home",
+      "level": "12 or 14 lines",
+      "text": "Treat each stanza as one room with four things in it. Stanza 1 is the front hall (baker, elm, stone swan, fountain, cart); stanza 2 is the garden (gate, crooked house, wall, well, stair); stanza 3 is the kitchen (key, latch, light). First learn only the first word of every line (When, I, The, Of, Then, The, I, Each, At, The, And, Is). Then add the rest, one room a night. Check before you look: say a stanza from memory, then compare, and only then re-read."
+    },
+    "5": {
+      "poem": "po-what-i-know-mist",
+      "level": "16 lines, or a sonnet",
+      "text": "Give each of the four stanzas its own room and put one strong picture on every line, so sixteen pictures in four rooms. Learn one stanza a night, then on the fifth night link the four rooms in order and recite the whole poem without stopping. Say it again after a day, after a week and after a month (the game schedules these checks). For a strict page, practise the capitals and the marks too: write the poem out line by line and compare, because only exact copies count."
+    }
+  },
+  "dropped": {
+    "pd-eternity": "Blake's 'Eternity' survives only as a pencil notebook draft with editors disagreeing on wording (bends or binds, punctuation, title).",
+    "pd-dying-speech": "Landor's poem (properly 'On His Seventy-fifth Birthday', also 'Epitaph') differs between editions in words (none was or were worth my strife) and punctuation.",
+    "pd-sick-rose": "Editions of Blake's 'The Sick Rose' differ in capitals and punctuation (O Rose or O rose, full stops or exclamation marks, colons).",
+    "pd-how-doth-crocodile": "Editions of Alice differ in the words themselves (the 1866 edition has 'How neatly spreads his claws' and 'welcomes little fishes in'; later editions have 'spread' and 'welcome')."
+  }
+}

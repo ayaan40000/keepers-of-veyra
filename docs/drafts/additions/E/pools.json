@@ -1,0 +1,1819 @@
+{
+  "notes": "Workstream E, extra study pools. Six pools: elements (45), word roots (40), atlas capitals (53), music theory (42), chess opening first moves (21), anatomy terms (20). Fact-check, Nov 2, 2026: elements and capitals were compared by script with Wikipedia lists; roots, music theory, chess openings and anatomy terms were read entry by entry against reference knowledge and the named lists; no entry was found wrong. One drill note was corrected (interval pegs: rhyme pegs stop at 10). Everything carries sourceUrls and verified true. Scoring and drill rules are unchanged.",
+  "where": {
+    "elements": {
+      "fieldGuide": "playbook \"exams\"",
+      "drill": "facts variant src \"elements\"",
+      "trial": "none",
+      "eventHall": "none",
+      "yourOwnText": "no",
+      "gate": "M7"
+    },
+    "roots": {
+      "fieldGuide": "playbook \"exams\"",
+      "drill": "vocab-style pairs drill src \"roots\"",
+      "trial": "none",
+      "eventHall": "none",
+      "yourOwnText": "no",
+      "gate": "M6 (after the keyword method)"
+    },
+    "atlas": {
+      "fieldGuide": "playbook \"study\" already exists; add a line in \"facts\"",
+      "drill": "facts variant src \"atlas\", one room a region",
+      "trial": "none (the Cartographer scene is optional later)",
+      "eventHall": "can feed Fact Round",
+      "yourOwnText": "no",
+      "gate": "M7"
+    },
+    "music": {
+      "fieldGuide": "playbook \"music\"",
+      "drill": "facts and ordered chain variant src \"music\"",
+      "trial": "none",
+      "eventHall": "none",
+      "yourOwnText": "a melody lyric or a score marking list can be typed in",
+      "gate": "M7"
+    },
+    "chess": {
+      "fieldGuide": "playbook \"chess\"",
+      "drill": "facts variant src \"chess\"",
+      "trial": "none",
+      "eventHall": "none",
+      "yourOwnText": "yes, for your own repertoire lines, one line a row",
+      "gate": "M7"
+    },
+    "body": {
+      "fieldGuide": "playbook \"exams\"",
+      "drill": "ordered palace drill src \"body\"",
+      "trial": "none",
+      "eventHall": "none",
+      "yourOwnText": "no",
+      "gate": "M7"
+    }
+  },
+  "scoring": "All six use existing recall modes: cued with the forgiving matcher for names and symbols, ordered for lists. Accuracy first. They give facts-skill credit like any other facts drill. Delayed probes at 1, 7 and 30 days. No new saved data, no migration. Chess moves need a small normaliser (remove dots, ignore case on piece letters and square letters) in the cued matcher.",
+  "elements": {
+    "count": 45,
+    "items": [
+      {
+        "number": 1,
+        "name": "Hydrogen",
+        "symbol": "H",
+        "majorWord": "seed",
+        "verified": true
+      },
+      {
+        "number": 2,
+        "name": "Helium",
+        "symbol": "He",
+        "majorWord": "sun",
+        "verified": true
+      },
+      {
+        "number": 3,
+        "name": "Lithium",
+        "symbol": "Li",
+        "majorWord": "sumo",
+        "verified": true
+      },
+      {
+        "number": 4,
+        "name": "Beryllium",
+        "symbol": "Be",
+        "majorWord": "zero",
+        "verified": true
+      },
+      {
+        "number": 5,
+        "name": "Boron",
+        "symbol": "B",
+        "majorWord": "sail",
+        "verified": true
+      },
+      {
+        "number": 6,
+        "name": "Carbon",
+        "symbol": "C",
+        "majorWord": "sash",
+        "verified": true
+      },
+      {
+        "number": 7,
+        "name": "Nitrogen",
+        "symbol": "N",
+        "majorWord": "sock",
+        "verified": true
+      },
+      {
+        "number": 8,
+        "name": "Oxygen",
+        "symbol": "O",
+        "majorWord": "sofa",
+        "verified": true
+      },
+      {
+        "number": 9,
+        "name": "Fluorine",
+        "symbol": "F",
+        "majorWord": "soap",
+        "verified": true
+      },
+      {
+        "number": 10,
+        "name": "Neon",
+        "symbol": "Ne",
+        "majorWord": "toes",
+        "verified": true
+      },
+      {
+        "number": 11,
+        "name": "Sodium",
+        "symbol": "Na",
+        "symbolFrom": "natrium",
+        "majorWord": "date",
+        "verified": true
+      },
+      {
+        "number": 12,
+        "name": "Magnesium",
+        "symbol": "Mg",
+        "majorWord": "tin",
+        "verified": true
+      },
+      {
+        "number": 13,
+        "name": "Aluminium",
+        "symbol": "Al",
+        "altNames": [
+          "aluminum"
+        ],
+        "majorWord": "tomb",
+        "verified": true
+      },
+      {
+        "number": 14,
+        "name": "Silicon",
+        "symbol": "Si",
+        "majorWord": "tire",
+        "verified": true
+      },
+      {
+        "number": 15,
+        "name": "Phosphorus",
+        "symbol": "P",
+        "majorWord": "tail",
+        "verified": true
+      },
+      {
+        "number": 16,
+        "name": "Sulfur",
+        "symbol": "S",
+        "altNames": [
+          "sulphur"
+        ],
+        "majorWord": "dish",
+        "verified": true
+      },
+      {
+        "number": 17,
+        "name": "Chlorine",
+        "symbol": "Cl",
+        "majorWord": "duck",
+        "verified": true
+      },
+      {
+        "number": 18,
+        "name": "Argon",
+        "symbol": "Ar",
+        "majorWord": "dove",
+        "verified": true
+      },
+      {
+        "number": 19,
+        "name": "Potassium",
+        "symbol": "K",
+        "symbolFrom": "kalium",
+        "majorWord": "tub",
+        "verified": true
+      },
+      {
+        "number": 20,
+        "name": "Calcium",
+        "symbol": "Ca",
+        "majorWord": "nose",
+        "verified": true
+      },
+      {
+        "number": 21,
+        "name": "Scandium",
+        "symbol": "Sc",
+        "majorWord": "net",
+        "verified": true
+      },
+      {
+        "number": 22,
+        "name": "Titanium",
+        "symbol": "Ti",
+        "majorWord": "nun",
+        "verified": true
+      },
+      {
+        "number": 23,
+        "name": "Vanadium",
+        "symbol": "V",
+        "majorWord": "gnome",
+        "verified": true
+      },
+      {
+        "number": 24,
+        "name": "Chromium",
+        "symbol": "Cr",
+        "majorWord": "nero",
+        "verified": true
+      },
+      {
+        "number": 25,
+        "name": "Manganese",
+        "symbol": "Mn",
+        "majorWord": "nail",
+        "verified": true
+      },
+      {
+        "number": 26,
+        "name": "Iron",
+        "symbol": "Fe",
+        "symbolFrom": "ferrum",
+        "majorWord": "notch",
+        "verified": true
+      },
+      {
+        "number": 27,
+        "name": "Cobalt",
+        "symbol": "Co",
+        "majorWord": "neck",
+        "verified": true
+      },
+      {
+        "number": 28,
+        "name": "Nickel",
+        "symbol": "Ni",
+        "majorWord": "knife",
+        "verified": true
+      },
+      {
+        "number": 29,
+        "name": "Copper",
+        "symbol": "Cu",
+        "symbolFrom": "cuprum",
+        "majorWord": "knob",
+        "verified": true
+      },
+      {
+        "number": 30,
+        "name": "Zinc",
+        "symbol": "Zn",
+        "majorWord": "mouse",
+        "verified": true
+      },
+      {
+        "number": 31,
+        "name": "Gallium",
+        "symbol": "Ga",
+        "majorWord": "mat",
+        "verified": true
+      },
+      {
+        "number": 32,
+        "name": "Germanium",
+        "symbol": "Ge",
+        "majorWord": "moon",
+        "verified": true
+      },
+      {
+        "number": 33,
+        "name": "Arsenic",
+        "symbol": "As",
+        "majorWord": "mummy",
+        "verified": true
+      },
+      {
+        "number": 34,
+        "name": "Selenium",
+        "symbol": "Se",
+        "majorWord": "mower",
+        "verified": true
+      },
+      {
+        "number": 35,
+        "name": "Bromine",
+        "symbol": "Br",
+        "majorWord": "mule",
+        "verified": true
+      },
+      {
+        "number": 36,
+        "name": "Krypton",
+        "symbol": "Kr",
+        "majorWord": "match",
+        "verified": true
+      },
+      {
+        "number": 47,
+        "name": "Silver",
+        "symbol": "Ag",
+        "symbolFrom": "argentum",
+        "majorWord": "rock",
+        "verified": true
+      },
+      {
+        "number": 50,
+        "name": "Tin",
+        "symbol": "Sn",
+        "symbolFrom": "stannum",
+        "majorWord": "lace",
+        "verified": true
+      },
+      {
+        "number": 53,
+        "name": "Iodine",
+        "symbol": "I",
+        "majorWord": "lime",
+        "verified": true
+      },
+      {
+        "number": 74,
+        "name": "Tungsten",
+        "symbol": "W",
+        "symbolFrom": "wolfram (German)",
+        "majorWord": "car",
+        "verified": true
+      },
+      {
+        "number": 78,
+        "name": "Platinum",
+        "symbol": "Pt",
+        "majorWord": "cave",
+        "verified": true
+      },
+      {
+        "number": 79,
+        "name": "Gold",
+        "symbol": "Au",
+        "symbolFrom": "aurum",
+        "majorWord": "cap",
+        "verified": true
+      },
+      {
+        "number": 80,
+        "name": "Mercury",
+        "symbol": "Hg",
+        "symbolFrom": "hydrargyrum",
+        "majorWord": "face",
+        "verified": true
+      },
+      {
+        "number": 82,
+        "name": "Lead",
+        "symbol": "Pb",
+        "symbolFrom": "plumbum",
+        "majorWord": "phone",
+        "verified": true
+      },
+      {
+        "number": 92,
+        "name": "Uranium",
+        "symbol": "U",
+        "majorWord": "bone",
+        "verified": true
+      }
+    ],
+    "groups": [
+      {
+        "name": "Noble gases, first four",
+        "members": [
+          "He",
+          "Ne",
+          "Ar",
+          "Kr"
+        ]
+      },
+      {
+        "name": "Halogens, first four",
+        "members": [
+          "F",
+          "Cl",
+          "Br",
+          "I"
+        ]
+      },
+      {
+        "name": "Alkali metals, first three",
+        "members": [
+          "Li",
+          "Na",
+          "K"
+        ]
+      },
+      {
+        "name": "Alkaline earth metals, first three",
+        "members": [
+          "Be",
+          "Mg",
+          "Ca"
+        ]
+      }
+    ],
+    "periodLengths": {
+      "values": [
+        2,
+        8,
+        8,
+        18,
+        18,
+        32,
+        32
+      ],
+      "note": "Elements in periods 1 to 7 of the standard table; they add up to 118."
+    },
+    "drillShapes": [
+      "{ cue: 'Element 26', answer: 'Iron' }",
+      "{ cue: 'Symbol of iron', answer: 'Fe' }",
+      "{ cue: 'Which element is Au?', answer: 'Gold' }",
+      "Order drill (existing ordered recall): the first 20 elements in order of atomic number. Palace: two elements a stop."
+    ],
+    "coachNote": "Atomic numbers are number facts. The game's own Major pictures (the \"majorWord\" field, from the default list) give each number a picture to join to the element picture: iron is 26, \"notch\", an iron nail in a notch. Use it for the numbers you keep losing. The pattern of the table (rows, groups) is learned by understanding, not by pictures.",
+    "honest": "This is memorising names and numbers for a class or for fun. It does not teach chemistry. Keep the table open next to it when you study the real subject.",
+    "source": "IUPAC periodic table of the elements",
+    "sourceUrls": [
+      "https://iupac.org/what-we-do/periodic-table-of-elements/",
+      "https://en.wikipedia.org/wiki/List_of_chemical_elements"
+    ],
+    "checkNote": "All 45 elements were compared by script with the English Wikipedia List of chemical elements (names, symbols, numbers): elements 8 to 92 matched; elements 1 to 7 could not be parsed from the table layout and were checked by eye (H, He, Li, Be, B, C, N)."
+  },
+  "roots": {
+    "count": 40,
+    "items": [
+      {
+        "root": "aqua",
+        "meaning": "water",
+        "language": "Latin",
+        "examples": [
+          "aquarium",
+          "aqueduct"
+        ],
+        "verified": true
+      },
+      {
+        "root": "terra",
+        "meaning": "earth, land",
+        "language": "Latin",
+        "examples": [
+          "terrain",
+          "territory"
+        ],
+        "verified": true
+      },
+      {
+        "root": "bene",
+        "meaning": "good, well",
+        "language": "Latin",
+        "examples": [
+          "benefit",
+          "benevolent"
+        ],
+        "verified": true
+      },
+      {
+        "root": "mal",
+        "meaning": "bad",
+        "language": "Latin",
+        "examples": [
+          "malfunction",
+          "malice"
+        ],
+        "verified": true
+      },
+      {
+        "root": "dict",
+        "meaning": "say",
+        "language": "Latin",
+        "examples": [
+          "predict",
+          "dictate"
+        ],
+        "verified": true
+      },
+      {
+        "root": "scrib, script",
+        "meaning": "write",
+        "language": "Latin",
+        "examples": [
+          "describe",
+          "manuscript"
+        ],
+        "verified": true
+      },
+      {
+        "root": "port",
+        "meaning": "carry",
+        "language": "Latin",
+        "examples": [
+          "transport",
+          "portable"
+        ],
+        "verified": true
+      },
+      {
+        "root": "spect",
+        "meaning": "look",
+        "language": "Latin",
+        "examples": [
+          "inspect",
+          "spectator"
+        ],
+        "verified": true
+      },
+      {
+        "root": "vid, vis",
+        "meaning": "see",
+        "language": "Latin",
+        "examples": [
+          "video",
+          "vision"
+        ],
+        "verified": true
+      },
+      {
+        "root": "aud",
+        "meaning": "hear",
+        "language": "Latin",
+        "examples": [
+          "audio",
+          "audience"
+        ],
+        "verified": true
+      },
+      {
+        "root": "manu",
+        "meaning": "hand",
+        "language": "Latin",
+        "examples": [
+          "manual",
+          "manufacture"
+        ],
+        "verified": true
+      },
+      {
+        "root": "pod",
+        "meaning": "foot",
+        "language": "Greek",
+        "examples": [
+          "tripod",
+          "podium"
+        ],
+        "verified": true
+      },
+      {
+        "root": "capt, cap",
+        "meaning": "take, hold",
+        "language": "Latin",
+        "examples": [
+          "capture",
+          "capable"
+        ],
+        "verified": true
+      },
+      {
+        "root": "duc, duct",
+        "meaning": "lead",
+        "language": "Latin",
+        "examples": [
+          "introduce",
+          "conduct"
+        ],
+        "verified": true
+      },
+      {
+        "root": "fer",
+        "meaning": "carry, bring",
+        "language": "Latin",
+        "examples": [
+          "transfer",
+          "refer"
+        ],
+        "verified": true
+      },
+      {
+        "root": "graph",
+        "meaning": "write, draw",
+        "language": "Greek",
+        "examples": [
+          "photograph",
+          "graphic"
+        ],
+        "verified": true
+      },
+      {
+        "root": "phon",
+        "meaning": "sound",
+        "language": "Greek",
+        "examples": [
+          "telephone",
+          "phonics"
+        ],
+        "verified": true
+      },
+      {
+        "root": "bio",
+        "meaning": "life",
+        "language": "Greek",
+        "examples": [
+          "biology",
+          "biography"
+        ],
+        "verified": true
+      },
+      {
+        "root": "geo",
+        "meaning": "earth",
+        "language": "Greek",
+        "examples": [
+          "geography",
+          "geology"
+        ],
+        "verified": true
+      },
+      {
+        "root": "chron",
+        "meaning": "time",
+        "language": "Greek",
+        "examples": [
+          "chronology",
+          "synchronise"
+        ],
+        "verified": true
+      },
+      {
+        "root": "photo",
+        "meaning": "light",
+        "language": "Greek",
+        "examples": [
+          "photograph",
+          "photosynthesis"
+        ],
+        "verified": true
+      },
+      {
+        "root": "tele",
+        "meaning": "far",
+        "language": "Greek",
+        "examples": [
+          "telephone",
+          "telescope"
+        ],
+        "verified": true
+      },
+      {
+        "root": "micro",
+        "meaning": "small",
+        "language": "Greek",
+        "examples": [
+          "microscope",
+          "microwave"
+        ],
+        "verified": true
+      },
+      {
+        "root": "mega",
+        "meaning": "large, great",
+        "language": "Greek",
+        "examples": [
+          "megaphone",
+          "megabyte"
+        ],
+        "verified": true
+      },
+      {
+        "root": "hydro",
+        "meaning": "water",
+        "language": "Greek",
+        "examples": [
+          "hydrate",
+          "hydrogen"
+        ],
+        "verified": true
+      },
+      {
+        "root": "auto",
+        "meaning": "self",
+        "language": "Greek",
+        "examples": [
+          "automatic",
+          "autograph"
+        ],
+        "verified": true
+      },
+      {
+        "root": "anthrop",
+        "meaning": "human",
+        "language": "Greek",
+        "examples": [
+          "anthropology",
+          "philanthropy"
+        ],
+        "verified": true
+      },
+      {
+        "root": "cred",
+        "meaning": "believe",
+        "language": "Latin",
+        "examples": [
+          "incredible",
+          "credit"
+        ],
+        "verified": true
+      },
+      {
+        "root": "mit, miss",
+        "meaning": "send",
+        "language": "Latin",
+        "examples": [
+          "transmit",
+          "mission"
+        ],
+        "verified": true
+      },
+      {
+        "root": "vert, vers",
+        "meaning": "turn",
+        "language": "Latin",
+        "examples": [
+          "convert",
+          "reverse"
+        ],
+        "verified": true
+      },
+      {
+        "root": "rupt",
+        "meaning": "break",
+        "language": "Latin",
+        "examples": [
+          "erupt",
+          "interrupt"
+        ],
+        "verified": true
+      },
+      {
+        "root": "struct",
+        "meaning": "build",
+        "language": "Latin",
+        "examples": [
+          "construct",
+          "structure"
+        ],
+        "verified": true
+      },
+      {
+        "root": "tract",
+        "meaning": "pull, drag",
+        "language": "Latin",
+        "examples": [
+          "attract",
+          "tractor"
+        ],
+        "verified": true
+      },
+      {
+        "root": "voc",
+        "meaning": "call, voice",
+        "language": "Latin",
+        "examples": [
+          "vocal",
+          "invoke"
+        ],
+        "verified": true
+      },
+      {
+        "root": "ject",
+        "meaning": "throw",
+        "language": "Latin",
+        "examples": [
+          "reject",
+          "inject"
+        ],
+        "verified": true
+      },
+      {
+        "root": "path",
+        "meaning": "feeling, suffering",
+        "language": "Greek",
+        "examples": [
+          "sympathy",
+          "empathy"
+        ],
+        "verified": true
+      },
+      {
+        "root": "psych",
+        "meaning": "mind, soul",
+        "language": "Greek",
+        "examples": [
+          "psychology",
+          "psychic"
+        ],
+        "verified": true
+      },
+      {
+        "root": "therm",
+        "meaning": "heat",
+        "language": "Greek",
+        "examples": [
+          "thermometer",
+          "thermal"
+        ],
+        "verified": true
+      },
+      {
+        "root": "astro",
+        "meaning": "star",
+        "language": "Greek",
+        "examples": [
+          "astronaut",
+          "astronomy"
+        ],
+        "verified": true
+      },
+      {
+        "root": "bi",
+        "meaning": "two",
+        "language": "Latin",
+        "examples": [
+          "bicycle",
+          "bilingual"
+        ],
+        "verified": true
+      }
+    ],
+    "drillShapes": [
+      "{ cue: 'aqua', answer: 'water' }",
+      "{ cue: 'a root meaning write', answer: 'scrib, script' } (accepts either form)",
+      "The keyword method (Week 22) on the root, then use it to guess the meaning of a new word before you look it up."
+    ],
+    "honest": "Roots help you make an educated guess about a new word, and guesses are sometimes wrong, because words drift from their roots. Use them to start, and check a dictionary. This is practice with word parts, not a way to learn a whole vocabulary quickly.",
+    "source": "Oxford English Dictionary etymologies; Merriam-Webster",
+    "sourceUrls": [
+      "https://en.wikipedia.org/wiki/List_of_Greek_and_Latin_roots_in_English"
+    ]
+  },
+  "atlas": {
+    "count": 53,
+    "regionCounts": {
+      "South America": 4,
+      "Africa": 11,
+      "Asia": 17,
+      "Europe": 14,
+      "North and Central America": 4,
+      "Oceania": 3
+    },
+    "items": [
+      {
+        "country": "Argentina",
+        "capital": "Buenos Aires",
+        "region": "South America",
+        "accepts": [],
+        "verified": true
+      },
+      {
+        "country": "Brazil",
+        "capital": "Brasilia",
+        "region": "South America",
+        "accepts": [
+          "brasília"
+        ],
+        "verified": true
+      },
+      {
+        "country": "Colombia",
+        "capital": "Bogota",
+        "region": "South America",
+        "accepts": [
+          "bogotá"
+        ],
+        "verified": true
+      },
+      {
+        "country": "Paraguay",
+        "capital": "Asuncion",
+        "region": "South America",
+        "accepts": [
+          "asunción"
+        ],
+        "verified": true
+      },
+      {
+        "country": "Tunisia",
+        "capital": "Tunis",
+        "region": "Africa",
+        "accepts": [],
+        "verified": true
+      },
+      {
+        "country": "Algeria",
+        "capital": "Algiers",
+        "region": "Africa",
+        "accepts": [
+          "alger"
+        ],
+        "verified": true
+      },
+      {
+        "country": "Tanzania",
+        "capital": "Dodoma",
+        "region": "Africa",
+        "accepts": [],
+        "verified": true
+      },
+      {
+        "country": "Uganda",
+        "capital": "Kampala",
+        "region": "Africa",
+        "accepts": [],
+        "verified": true
+      },
+      {
+        "country": "Rwanda",
+        "capital": "Kigali",
+        "region": "Africa",
+        "accepts": [],
+        "verified": true
+      },
+      {
+        "country": "Mozambique",
+        "capital": "Maputo",
+        "region": "Africa",
+        "accepts": [],
+        "verified": true
+      },
+      {
+        "country": "Namibia",
+        "capital": "Windhoek",
+        "region": "Africa",
+        "accepts": [],
+        "verified": true
+      },
+      {
+        "country": "Botswana",
+        "capital": "Gaborone",
+        "region": "Africa",
+        "accepts": [],
+        "verified": true
+      },
+      {
+        "country": "Somalia",
+        "capital": "Mogadishu",
+        "region": "Africa",
+        "accepts": [],
+        "verified": true
+      },
+      {
+        "country": "Sudan",
+        "capital": "Khartoum",
+        "region": "Africa",
+        "accepts": [],
+        "verified": true
+      },
+      {
+        "country": "Cameroon",
+        "capital": "Yaounde",
+        "region": "Africa",
+        "accepts": [
+          "yaoundé"
+        ],
+        "verified": true
+      },
+      {
+        "country": "Pakistan",
+        "capital": "Islamabad",
+        "region": "Asia",
+        "accepts": [],
+        "verified": true
+      },
+      {
+        "country": "Bangladesh",
+        "capital": "Dhaka",
+        "region": "Asia",
+        "accepts": [],
+        "verified": true
+      },
+      {
+        "country": "Myanmar",
+        "capital": "Naypyidaw",
+        "region": "Asia",
+        "accepts": [
+          "nay pyi taw",
+          "naypyitaw"
+        ],
+        "verified": true
+      },
+      {
+        "country": "Cambodia",
+        "capital": "Phnom Penh",
+        "region": "Asia",
+        "accepts": [],
+        "verified": true
+      },
+      {
+        "country": "Malaysia",
+        "capital": "Kuala Lumpur",
+        "region": "Asia",
+        "accepts": [],
+        "verified": true
+      },
+      {
+        "country": "Philippines",
+        "capital": "Manila",
+        "region": "Asia",
+        "accepts": [],
+        "verified": true
+      },
+      {
+        "country": "Afghanistan",
+        "capital": "Kabul",
+        "region": "Asia",
+        "accepts": [],
+        "verified": true
+      },
+      {
+        "country": "Iran",
+        "capital": "Tehran",
+        "region": "Asia",
+        "accepts": [],
+        "verified": true
+      },
+      {
+        "country": "Iraq",
+        "capital": "Baghdad",
+        "region": "Asia",
+        "accepts": [],
+        "verified": true
+      },
+      {
+        "country": "Saudi Arabia",
+        "capital": "Riyadh",
+        "region": "Asia",
+        "accepts": [],
+        "verified": true
+      },
+      {
+        "country": "Syria",
+        "capital": "Damascus",
+        "region": "Asia",
+        "accepts": [],
+        "verified": true
+      },
+      {
+        "country": "Lebanon",
+        "capital": "Beirut",
+        "region": "Asia",
+        "accepts": [],
+        "verified": true
+      },
+      {
+        "country": "Georgia (the country)",
+        "capital": "Tbilisi",
+        "region": "Asia",
+        "accepts": [],
+        "verified": true
+      },
+      {
+        "country": "Armenia",
+        "capital": "Yerevan",
+        "region": "Asia",
+        "accepts": [],
+        "verified": true
+      },
+      {
+        "country": "Azerbaijan",
+        "capital": "Baku",
+        "region": "Asia",
+        "accepts": [],
+        "verified": true
+      },
+      {
+        "country": "Uzbekistan",
+        "capital": "Tashkent",
+        "region": "Asia",
+        "accepts": [],
+        "verified": true
+      },
+      {
+        "country": "Kyrgyzstan",
+        "capital": "Bishkek",
+        "region": "Asia",
+        "accepts": [],
+        "verified": true
+      },
+      {
+        "country": "Poland",
+        "capital": "Warsaw",
+        "region": "Europe",
+        "accepts": [],
+        "verified": true
+      },
+      {
+        "country": "Hungary",
+        "capital": "Budapest",
+        "region": "Europe",
+        "accepts": [],
+        "verified": true
+      },
+      {
+        "country": "Romania",
+        "capital": "Bucharest",
+        "region": "Europe",
+        "accepts": [],
+        "verified": true
+      },
+      {
+        "country": "Bulgaria",
+        "capital": "Sofia",
+        "region": "Europe",
+        "accepts": [],
+        "verified": true
+      },
+      {
+        "country": "Serbia",
+        "capital": "Belgrade",
+        "region": "Europe",
+        "accepts": [],
+        "verified": true
+      },
+      {
+        "country": "Czechia",
+        "capital": "Prague",
+        "region": "Europe",
+        "accepts": [],
+        "verified": true
+      },
+      {
+        "country": "Austria",
+        "capital": "Vienna",
+        "region": "Europe",
+        "accepts": [],
+        "verified": true
+      },
+      {
+        "country": "Belgium",
+        "capital": "Brussels",
+        "region": "Europe",
+        "accepts": [],
+        "verified": true
+      },
+      {
+        "country": "Netherlands",
+        "capital": "Amsterdam",
+        "region": "Europe",
+        "accepts": [],
+        "verified": true
+      },
+      {
+        "country": "Portugal",
+        "capital": "Lisbon",
+        "region": "Europe",
+        "accepts": [],
+        "verified": true
+      },
+      {
+        "country": "Norway",
+        "capital": "Oslo",
+        "region": "Europe",
+        "accepts": [],
+        "verified": true
+      },
+      {
+        "country": "Sweden",
+        "capital": "Stockholm",
+        "region": "Europe",
+        "accepts": [],
+        "verified": true
+      },
+      {
+        "country": "Ireland",
+        "capital": "Dublin",
+        "region": "Europe",
+        "accepts": [],
+        "verified": true
+      },
+      {
+        "country": "Switzerland",
+        "capital": "Bern",
+        "region": "Europe",
+        "accepts": [
+          "berne"
+        ],
+        "verified": true
+      },
+      {
+        "country": "Jamaica",
+        "capital": "Kingston",
+        "region": "North and Central America",
+        "accepts": [],
+        "verified": true
+      },
+      {
+        "country": "Costa Rica",
+        "capital": "San Jose",
+        "region": "North and Central America",
+        "accepts": [
+          "san josé"
+        ],
+        "verified": true
+      },
+      {
+        "country": "Guatemala",
+        "capital": "Guatemala City",
+        "region": "North and Central America",
+        "accepts": [],
+        "verified": true
+      },
+      {
+        "country": "Panama",
+        "capital": "Panama City",
+        "region": "North and Central America",
+        "accepts": [],
+        "verified": true
+      },
+      {
+        "country": "Papua New Guinea",
+        "capital": "Port Moresby",
+        "region": "Oceania",
+        "accepts": [],
+        "verified": true
+      },
+      {
+        "country": "Samoa",
+        "capital": "Apia",
+        "region": "Oceania",
+        "accepts": [],
+        "verified": true
+      },
+      {
+        "country": "Tonga",
+        "capital": "Nukualofa",
+        "region": "Oceania",
+        "accepts": [
+          "nuku'alofa"
+        ],
+        "verified": true
+      }
+    ],
+    "notExistingInFACTS": "None of these repeats a capital already in FACTS in src/data/content.js (Bhutan, Mongolia, Kenya, Peru, Iceland, Vietnam, Morocco, New Zealand, Canada, Australia, Nigeria, Turkey, Bolivia, Ghana, Finland, Laos, Kazakhstan, Ethiopia, Ecuador, Uruguay, Jordan, Oman, Qatar, Nepal, Croatia, Slovenia, Slovakia, Latvia, Lithuania, Estonia, Albania, Senegal, Mali, Zambia, Zimbabwe, Angola, Madagascar, Fiji, Chile, Venezuela, Cuba). The builder should still run a duplicate check.",
+    "edgeCases": [
+      "Tanzania: Dodoma is the official capital. Dar es Salaam is the largest city and the seat of much government work.",
+      "Netherlands: Amsterdam is the capital by the constitution. The government sits in The Hague.",
+      "Switzerland: Bern is called the federal city. Accept \"Bern\" or \"Berne\".",
+      "Myanmar: the capital is Naypyidaw (moved from Yangon in 2006).",
+      "Kept out because the situation is disputed or changing and could not be checked: Israel, Palestine, Cyprus, Kosovo, Taiwan, Western Sahara, Indonesia (a new capital is planned), Bolivia was already in the pool with a note."
+    ],
+    "drillShapes": [
+      "{ cue: 'Capital of Hungary', answer: 'Budapest' } (the existing facts shape)",
+      "Palace use: one palace room per region, a country and its capital on each stop.",
+      "Reverse: { cue: 'Budapest is the capital of', answer: 'Hungary' } through the existing reverse option."
+    ],
+    "honest": "Capitals are a classic cue-and-answer fact set and a good first use of pictures and rooms. Learning them says nothing about a country. The list reflects the usual situation and may change; check a current atlas.",
+    "source": "United Nations geographic names; CIA World Factbook",
+    "sourceUrls": [
+      "https://en.wikipedia.org/wiki/List_of_national_capitals",
+      "https://www.cia.gov/the-world-factbook/"
+    ],
+    "checkNote": "All 53 capitals were found in the English Wikipedia List of national capitals (Tonga is written Nukuʻalofa there, with a modifier letter). Each country-capital pair was also read against reference knowledge. Disputed or changing cases were kept out, as noted."
+  },
+  "music": {
+    "count": 42,
+    "items": [
+      {
+        "cue": "Order of sharps in key signatures",
+        "answer": "F C G D A E B",
+        "kind": "order",
+        "verified": true
+      },
+      {
+        "cue": "Order of flats in key signatures",
+        "answer": "B E A D G C F",
+        "kind": "order",
+        "verified": true
+      },
+      {
+        "cue": "Lines of the treble clef, bottom to top",
+        "answer": "E G B D F",
+        "kind": "order",
+        "verified": true
+      },
+      {
+        "cue": "Spaces of the treble clef, bottom to top",
+        "answer": "F A C E",
+        "kind": "order",
+        "verified": true
+      },
+      {
+        "cue": "Lines of the bass clef, bottom to top",
+        "answer": "G B D F A",
+        "kind": "order",
+        "verified": true
+      },
+      {
+        "cue": "Spaces of the bass clef, bottom to top",
+        "answer": "A C E G",
+        "kind": "order",
+        "verified": true
+      },
+      {
+        "cue": "Open strings of a standard guitar, lowest to highest",
+        "answer": "E A D G B E",
+        "kind": "order",
+        "verified": true
+      },
+      {
+        "cue": "Open strings of a violin, lowest to highest",
+        "answer": "G D A E",
+        "kind": "order",
+        "verified": true
+      },
+      {
+        "cue": "Steps of a major scale, whole step or half step",
+        "answer": "whole whole half whole whole whole half",
+        "kind": "order",
+        "verified": true
+      },
+      {
+        "cue": "Semitones in a minor second",
+        "answer": "1",
+        "kind": "interval",
+        "verified": true
+      },
+      {
+        "cue": "Semitones in a major second",
+        "answer": "2",
+        "kind": "interval",
+        "verified": true
+      },
+      {
+        "cue": "Semitones in a minor third",
+        "answer": "3",
+        "kind": "interval",
+        "verified": true
+      },
+      {
+        "cue": "Semitones in a major third",
+        "answer": "4",
+        "kind": "interval",
+        "verified": true
+      },
+      {
+        "cue": "Semitones in a perfect fourth",
+        "answer": "5",
+        "kind": "interval",
+        "verified": true
+      },
+      {
+        "cue": "Semitones in a tritone",
+        "answer": "6",
+        "kind": "interval",
+        "verified": true
+      },
+      {
+        "cue": "Semitones in a perfect fifth",
+        "answer": "7",
+        "kind": "interval",
+        "verified": true
+      },
+      {
+        "cue": "Semitones in a minor sixth",
+        "answer": "8",
+        "kind": "interval",
+        "verified": true
+      },
+      {
+        "cue": "Semitones in a major sixth",
+        "answer": "9",
+        "kind": "interval",
+        "verified": true
+      },
+      {
+        "cue": "Semitones in a minor seventh",
+        "answer": "10",
+        "kind": "interval",
+        "verified": true
+      },
+      {
+        "cue": "Semitones in a major seventh",
+        "answer": "11",
+        "kind": "interval",
+        "verified": true
+      },
+      {
+        "cue": "Semitones in an octave",
+        "answer": "12",
+        "kind": "interval",
+        "verified": true
+      },
+      {
+        "cue": "Sharps in the key of G major",
+        "answer": "1 (F sharp)",
+        "kind": "key",
+        "verified": true
+      },
+      {
+        "cue": "Sharps in the key of D major",
+        "answer": "2 (F sharp, C sharp)",
+        "kind": "key",
+        "verified": true
+      },
+      {
+        "cue": "Sharps in the key of A major",
+        "answer": "3",
+        "kind": "key",
+        "verified": true
+      },
+      {
+        "cue": "Sharps in the key of E major",
+        "answer": "4",
+        "kind": "key",
+        "verified": true
+      },
+      {
+        "cue": "Sharps in the key of B major",
+        "answer": "5",
+        "kind": "key",
+        "verified": true
+      },
+      {
+        "cue": "Flats in the key of F major",
+        "answer": "1 (B flat)",
+        "kind": "key",
+        "verified": true
+      },
+      {
+        "cue": "Flats in the key of B flat major",
+        "answer": "2 (B flat, E flat)",
+        "kind": "key",
+        "verified": true
+      },
+      {
+        "cue": "Flats in the key of E flat major",
+        "answer": "3",
+        "kind": "key",
+        "verified": true
+      },
+      {
+        "cue": "Flats in the key of A flat major",
+        "answer": "4",
+        "kind": "key",
+        "verified": true
+      },
+      {
+        "cue": "Flats in the key of D flat major",
+        "answer": "5",
+        "kind": "key",
+        "verified": true
+      },
+      {
+        "cue": "Largo means",
+        "answer": "very slow, broad",
+        "kind": "term",
+        "verified": true
+      },
+      {
+        "cue": "Adagio means",
+        "answer": "slow",
+        "kind": "term",
+        "verified": true
+      },
+      {
+        "cue": "Andante means",
+        "answer": "at a walking pace",
+        "kind": "term",
+        "verified": true
+      },
+      {
+        "cue": "Moderato means",
+        "answer": "at a moderate speed",
+        "kind": "term",
+        "verified": true
+      },
+      {
+        "cue": "Allegro means",
+        "answer": "fast and lively",
+        "kind": "term",
+        "verified": true
+      },
+      {
+        "cue": "Presto means",
+        "answer": "very fast",
+        "kind": "term",
+        "verified": true
+      },
+      {
+        "cue": "Pianissimo means",
+        "answer": "very soft",
+        "kind": "term",
+        "verified": true
+      },
+      {
+        "cue": "Piano means",
+        "answer": "soft",
+        "kind": "term",
+        "verified": true
+      },
+      {
+        "cue": "Mezzo forte means",
+        "answer": "moderately loud",
+        "kind": "term",
+        "verified": true
+      },
+      {
+        "cue": "Forte means",
+        "answer": "loud",
+        "kind": "term",
+        "verified": true
+      },
+      {
+        "cue": "Fortissimo means",
+        "answer": "very loud",
+        "kind": "term",
+        "verified": true
+      }
+    ],
+    "keyNote": "Sharps and flats counts follow the circle of fifths: G, D, A, E, B for sharps and F, B flat, E flat, A flat, D flat for flats. The sharps order F C G D A E B is the order in which the sharps are added, and the flats order is its reverse.",
+    "drillShapes": [
+      "{ cue: 'Order of sharps', answer: 'F C G D A E B' } as a first-letter chain (one letter, one picture).",
+      "Interval table as pairs, number to name, through the pegs drill (numbers 1 to 10 map to the number-shape pegs; for 11 and 12 use two palace stops, because rhyme pegs stop at 10)."
+    ],
+    "honest": "Music is learned by ear and hands. Pictures hold the fixed lists in the theory: the order of sharps, the lines of a clef, the intervals. They do not make you play or hear better.",
+    "source": "Any music theory text (ABRSM, Open Music Theory)",
+    "sourceUrls": [
+      "https://en.wikipedia.org/wiki/Key_signature",
+      "https://en.wikipedia.org/wiki/Circle_of_fifths"
+    ]
+  },
+  "chess": {
+    "count": 21,
+    "items": [
+      {
+        "name": "Italian Game",
+        "moves": "1.e4 e5 2.Nf3 Nc6 3.Bc4",
+        "verified": true
+      },
+      {
+        "name": "Ruy Lopez",
+        "moves": "1.e4 e5 2.Nf3 Nc6 3.Bb5",
+        "verified": true
+      },
+      {
+        "name": "Scotch Game",
+        "moves": "1.e4 e5 2.Nf3 Nc6 3.d4",
+        "verified": true
+      },
+      {
+        "name": "Petrov Defence",
+        "moves": "1.e4 e5 2.Nf3 Nf6",
+        "verified": true
+      },
+      {
+        "name": "King's Gambit",
+        "moves": "1.e4 e5 2.f4",
+        "verified": true
+      },
+      {
+        "name": "Vienna Game",
+        "moves": "1.e4 e5 2.Nc3",
+        "verified": true
+      },
+      {
+        "name": "Sicilian Defence",
+        "moves": "1.e4 c5",
+        "verified": true
+      },
+      {
+        "name": "French Defence",
+        "moves": "1.e4 e6",
+        "verified": true
+      },
+      {
+        "name": "Caro-Kann Defence",
+        "moves": "1.e4 c6",
+        "verified": true
+      },
+      {
+        "name": "Scandinavian Defence",
+        "moves": "1.e4 d5",
+        "verified": true
+      },
+      {
+        "name": "Alekhine Defence",
+        "moves": "1.e4 Nf6",
+        "verified": true
+      },
+      {
+        "name": "Pirc Defence",
+        "moves": "1.e4 d6 2.d4 Nf6 3.Nc3 g6",
+        "verified": true
+      },
+      {
+        "name": "Queen's Gambit",
+        "moves": "1.d4 d5 2.c4",
+        "verified": true
+      },
+      {
+        "name": "Queen's Gambit Declined",
+        "moves": "1.d4 d5 2.c4 e6",
+        "verified": true
+      },
+      {
+        "name": "Slav Defence",
+        "moves": "1.d4 d5 2.c4 c6",
+        "verified": true
+      },
+      {
+        "name": "King's Indian Defence",
+        "moves": "1.d4 Nf6 2.c4 g6 3.Nc3 Bg7",
+        "verified": true
+      },
+      {
+        "name": "Grunfeld Defence",
+        "moves": "1.d4 Nf6 2.c4 g6 3.Nc3 d5",
+        "verified": true
+      },
+      {
+        "name": "Nimzo-Indian Defence",
+        "moves": "1.d4 Nf6 2.c4 e6 3.Nc3 Bb4",
+        "verified": true
+      },
+      {
+        "name": "Dutch Defence",
+        "moves": "1.d4 f5",
+        "verified": true
+      },
+      {
+        "name": "English Opening",
+        "moves": "1.c4",
+        "verified": true
+      },
+      {
+        "name": "Reti Opening",
+        "moves": "1.Nf3",
+        "verified": true
+      }
+    ],
+    "notation": "Algebraic notation: K king, Q queen, R rook, B bishop, N knight, no letter for a pawn, lower case letter and number for the square. 1.e4 means White moves a pawn to e4.",
+    "drillShapes": [
+      "{ cue: 'Ruy Lopez', answer: '1.e4 e5 2.Nf3 Nc6 3.Bb5' } with a forgiving move matcher that ignores the dots and spaces and accepts upper or lower case for the file letter. Use the Your Own Text tool for longer lines.",
+      "Optional picture rule: one picture per piece (king, queen, rook, bishop, knight, pawn), one stop per square on a board-shaped palace."
+    ],
+    "edgeNote": "The London System is left out because it is a setup, not one fixed set of first moves. Names are those in common use; some openings have more than one name.",
+    "honest": "Strong players learn openings through ideas and games, not by rote. Pictures help you hold the order of a line you chose to learn. They do not teach you why the moves are good and do not make you better at chess.",
+    "source": "Standard opening references and any large chess opening book",
+    "sourceUrls": [
+      "https://en.wikipedia.org/wiki/List_of_chess_openings"
+    ]
+  },
+  "body": {
+    "count": 20,
+    "cranialNerves": [
+      {
+        "number": 1,
+        "roman": "I",
+        "name": "Olfactory",
+        "verified": true
+      },
+      {
+        "number": 2,
+        "roman": "II",
+        "name": "Optic",
+        "verified": true
+      },
+      {
+        "number": 3,
+        "roman": "III",
+        "name": "Oculomotor",
+        "verified": true
+      },
+      {
+        "number": 4,
+        "roman": "IV",
+        "name": "Trochlear",
+        "verified": true
+      },
+      {
+        "number": 5,
+        "roman": "V",
+        "name": "Trigeminal",
+        "verified": true
+      },
+      {
+        "number": 6,
+        "roman": "VI",
+        "name": "Abducens",
+        "verified": true
+      },
+      {
+        "number": 7,
+        "roman": "VII",
+        "name": "Facial",
+        "verified": true
+      },
+      {
+        "number": 8,
+        "roman": "VIII",
+        "name": "Vestibulocochlear",
+        "verified": true
+      },
+      {
+        "number": 9,
+        "roman": "IX",
+        "name": "Glossopharyngeal",
+        "verified": true
+      },
+      {
+        "number": 10,
+        "roman": "X",
+        "name": "Vagus",
+        "verified": true
+      },
+      {
+        "number": 11,
+        "roman": "XI",
+        "name": "Accessory",
+        "verified": true
+      },
+      {
+        "number": 12,
+        "roman": "XII",
+        "name": "Hypoglossal",
+        "verified": true
+      }
+    ],
+    "carpalBones": [
+      {
+        "position": 1,
+        "name": "Scaphoid",
+        "verified": true,
+        "row": "proximal row, thumb side to little finger side"
+      },
+      {
+        "position": 2,
+        "name": "Lunate",
+        "verified": true,
+        "row": "proximal row, thumb side to little finger side"
+      },
+      {
+        "position": 3,
+        "name": "Triquetrum",
+        "verified": true,
+        "row": "proximal row, thumb side to little finger side"
+      },
+      {
+        "position": 4,
+        "name": "Pisiform",
+        "verified": true,
+        "row": "proximal row, thumb side to little finger side"
+      },
+      {
+        "position": 5,
+        "name": "Trapezium",
+        "verified": true,
+        "row": "distal row, thumb side to little finger side"
+      },
+      {
+        "position": 6,
+        "name": "Trapezoid",
+        "verified": true,
+        "row": "distal row, thumb side to little finger side"
+      },
+      {
+        "position": 7,
+        "name": "Capitate",
+        "verified": true,
+        "row": "distal row, thumb side to little finger side"
+      },
+      {
+        "position": 8,
+        "name": "Hamate",
+        "verified": true,
+        "row": "distal row, thumb side to little finger side"
+      }
+    ],
+    "drillShapes": [
+      "Ordered recall of the twelve cranial nerves (existing ordered mode), one stop per nerve in a short palace.",
+      "{ cue: 'Cranial nerve 10', answer: 'Vagus' }",
+      "Ordered recall of the eight carpal bones, four a row."
+    ],
+    "honest": "This is the vocabulary students are asked to learn in an anatomy course. It is study terminology only. It is not health information and it does not help anyone judge a symptom. See a health professional for any health question.",
+    "edge": "Some books call nerve XI the spinal accessory nerve, and some list carpal bones starting from a different side. Accept \"Accessory\" and \"Spinal accessory\".",
+    "source": "Gray's Anatomy; standard anatomy textbooks",
+    "sourceUrls": [
+      "https://en.wikipedia.org/wiki/Cranial_nerves",
+      "https://en.wikipedia.org/wiki/Carpal_bones",
+      "https://openstax.org/books/anatomy-and-physiology-2e/pages/1-introduction"
+    ]
+  }
+}

@@ -11,3 +11,6 @@ tools/asset-studio/out/
 
 # review sheets for art (regenerate with tools/asset-studio/face_sheet.py)
 docs/review/
+
+# sound studio drafts (WAV files made by tools/sound-studio/render.mjs)
+tools/sound-studio/out/

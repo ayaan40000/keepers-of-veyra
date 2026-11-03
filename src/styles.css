@@ -877,3 +877,125 @@ kbd { font: .85rem/1 var(--f-num); padding: 2px 5px; background: #0b0f1c; color:
 .trial-items li { display: grid; gap: 6px; }
 .tablet-lines { padding-left: 1.4rem; display: grid; gap: 8px; }
 .tablet-lines li.slipped > span { text-decoration: underline wavy var(--amber); }
+
+/* 1.1 Cabinet of Voices, pedestals, brambles, mirror room, audit */
+.attrs li.shrouded { opacity: .65; }
+.attrs li.shrouded .attr-val { color: var(--muted); }
+.mirror-art { width: 100%; max-width: 320px; image-rendering: pixelated; }
+.pedestal-row { display: flex; flex-wrap: wrap; gap: 10px; }
+.pedestal { display: flex; flex-direction: column; align-items: center; background: none; border: 2px solid transparent; padding: 4px; cursor: pointer; color: inherit; }
+.pedestal.sel { border-color: var(--amber); }
+.pedestal-relic { margin-bottom: -6px; position: relative; z-index: 1; }
+.pedestal-base { display: block; width: 48px; height: 16px; background: #5a5470; box-shadow: inset 0 3px 0 #7c7596, inset 0 -3px 0 #3a3550; }
+.pedestal.lit .pedestal-base { box-shadow: inset 0 3px 0 #ffd98a, inset 0 -3px 0 #3a3550, 0 0 10px #ffd98a77; }
+.pedestal.dim .pedestal-relic { opacity: .55; }
+.pedestal.dim .pedestal-base { background: #3a3648; box-shadow: inset 0 3px 0 #4e4a60, inset 0 -3px 0 #2a2738; }
+.pedestal-art { width: 48px; height: 64px; image-rendering: pixelated; }
+.bramble-art { width: 64px; height: 64px; image-rendering: pixelated; }
+.thorn-sheet { margin-top: 8px; }
+.audit-art { width: 100%; max-width: 320px; image-rendering: pixelated; }
+.voice-list { display: grid; gap: 10px; }
+.voice-line { display: flex; gap: 10px; align-items: flex-start; }
+.voice-line.quiet { opacity: .92; }
+.voice-line p { margin: 0 0 4px; }
+.voice-art { image-rendering: pixelated; flex: 0 0 auto; }
+.voice-lamp { flex: 0 0 auto; width: 48px; height: 48px; display: grid; place-items: center; }
+/* 1.1 The Long Vigil: lanterns along the battlements and one soft faceless phantom. Still when motion is reduced. */
+.vigil-stage { flex-direction: column; justify-content: flex-end; align-items: center; gap: 10px; background: #141a2e; }
+.vigil-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; background: #0b101dcc; padding: 6px 8px; }
+.lantern { display: block; width: 14px; height: 20px; background: #2a3350; box-shadow: inset 0 0 0 2px #0b101d; position: relative; }
+.lantern.lit { background: var(--amber); box-shadow: inset 0 0 0 2px #fff0b0, 0 0 8px 2px #ffd98a88; }
+.lantern.dim { background: #7a5a3a; box-shadow: inset 0 0 0 2px #0b101d; }
+.lantern.here { outline: 2px solid #cfd8ff; outline-offset: 2px; }
+.phantom { width: 44px; height: 56px; background: #cdd5ee55; border-radius: 22px 22px 6px 6px; box-shadow: 0 0 14px #cdd5ee44; }
+.phantom i { display: block; height: 100%; background: repeating-linear-gradient(0deg, transparent 0 6px, #cdd5ee22 6px 8px); }
+:root[data-motion="full"] .vigil-stage .phantom { animation: echo-float 4s ease-in-out infinite; }
+.vigil-line { font-style: italic; }
+
+/* 1.1 curriculum additions: step lists, digit rows, Mind Map, poems, Skim Pick Keep, Mental Reckoning, Cards, worksheets */
+.step-list { padding: 0 var(--u) 0 28px; margin: 0 0 14px; }
+.step-list li { padding: 7px 4px; font-size: 1.1rem; box-shadow: 0 var(--u) 0 var(--line); overflow-wrap: anywhere; }
+mark.key { background: var(--gold, #E8B04B); color: #1b1b1b; padding: 0 3px; font-weight: 700; }
+.digits.rows { display: block; }
+.digit-row { display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: baseline; margin-bottom: 8px; font-size: 1.6rem; }
+.digit-row .muted { min-width: 52px; font-family: var(--f-body); }
+.mm-visual { display: flex; flex-direction: column; align-items: stretch; gap: 10px; margin: 6px 0 14px; }
+.mm-centre { text-align: center; margin: 4px 0; }
+.mm-visual .mm-centre b, p.mm-centre b { display: inline-block; padding: 8px 16px; background: var(--tile); box-shadow: inset 0 var(--u) 0 var(--tile-hi), 0 0 0 calc(var(--u) * 2) var(--edge); font-family: var(--f-head); }
+.mm-branches { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; }
+.mm-visual .mm-branch { border-left: 4px solid var(--edge); padding: 2px 0 2px 10px; }
+.mm-label { display: block; font-family: var(--f-head); font-weight: 600; margin-bottom: 4px; }
+.mm-visual .mm-branch ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px; }
+.mm-visual .mm-branch li { background: var(--tile); padding: 4px 8px; box-shadow: 0 0 0 var(--u) var(--edge); font-size: 1rem; }
+.mm-recall { display: grid; gap: 12px; }
+fieldset.mm-branch { border: 0; border-left: 4px solid var(--edge); margin: 0; padding: 4px 0 4px 10px; display: grid; gap: 6px; min-width: 0; }
+fieldset.mm-branch legend { font-family: var(--f-head); font-weight: 600; padding: 0 4px; }
+.poem-card { margin: 6px var(--u) 14px; }
+.poem-lines { list-style: none; padding: 0; margin: 8px 0; counter-reset: pl; font-size: 1.15rem; line-height: 1.6; }
+.poem-lines li { counter-increment: pl; padding-left: 34px; position: relative; }
+.poem-lines li::before { content: counter(pl); position: absolute; left: 0; color: var(--muted); font-family: var(--f-num); }
+.skim-text h4 { margin: 12px 0 2px; font-family: var(--f-head); }
+.skim-text p { margin: 0 0 6px; line-height: 1.5; }
+.skim-first { font-weight: 700; }
+.pick-list { list-style: none; padding: 0; margin: 0 0 14px; }
+.pick-list li { padding: 8px 4px; box-shadow: 0 var(--u) 0 var(--line); }
+.pick-list label { display: flex; gap: 10px; align-items: flex-start; cursor: pointer; }
+.calc-steps { display: flex; flex-wrap: wrap; gap: 8px; margin: 8px 0; }
+.calc-steps input { width: 120px; }
+/* playing cards: rank and suit as letter and shape, never colour alone */
+.card-row { display: flex; flex-wrap: wrap; gap: 10px; margin: 10px 0 14px; }
+.pcard { display: inline-flex; flex-direction: column; align-items: center; justify-content: center; width: 64px; height: 90px; background: #f4efe2; color: #222; box-shadow: 0 0 0 var(--u) #222, inset 0 0 0 var(--u) #cfc6ad; font-family: var(--f-head); font-weight: 700; font-size: 1.5rem; line-height: 1.1; }
+.pcard .suit { font-size: 1.6rem; }
+.pcard small { font-size: .8rem; font-weight: 400; letter-spacing: .05em; }
+.pcard.red { color: #8d1c1c; }
+.card-slots { display: grid; grid-template-columns: repeat(auto-fill, minmax(70px, 1fr)); gap: 6px; margin: 10px 0; }
+.card-slots button { min-height: 44px; }
+.card-picker { display: grid; grid-template-columns: repeat(13, minmax(0, 1fr)); gap: 4px; margin: 8px 0; }
+.card-picker button { padding: 6px 0; min-height: 40px; font-size: .95rem; }
+@media (max-width: 520px) { .card-picker { grid-template-columns: repeat(7, minmax(0, 1fr)); } }
+.worksheet { white-space: pre-wrap; font-family: var(--f-num, monospace); font-size: .95rem; overflow-x: auto; background: var(--tile); padding: 10px; }
+.then-now td, .then-now th { text-align: left; }
+@media print {
+  body * { visibility: hidden; }
+  .printable, .printable * { visibility: visible; }
+  .printable { position: absolute; left: 0; top: 0; width: 100%; background: #fff; color: #000; }
+  .no-print { display: none !important; }
+}
+
+/* 1.1 Event Hall and the Say-Back Games */
+.events .digits { font-family: var(--f-dlg); letter-spacing: .06em; }
+.words-grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
+.ev-tier { list-style: none; padding: 0; margin: 10px 0; display: grid; gap: 10px; }
+.ev-tier li { padding: 8px; border: 2px solid var(--line); background: var(--tile); display: grid; gap: 4px; }
+.ev-ladder { padding-left: 1.2rem; }
+.rival-line { margin: 10px 0; display: flex; gap: 12px; align-items: flex-start; }
+.rival-line blockquote { margin: 0; padding-left: 10px; border-left: 4px solid var(--gold); }
+.rival-line cite { display: block; font-size: .85rem; color: var(--muted, inherit); }
+.rival-art { width: 64px; height: 64px; flex: none; }
+
+/* 1.1 Chapter 13 (the Seam) and Wren's story cards. Still, quiet screens: no animation. */
+.seam-art { display: block; max-width: 100%; height: auto; margin: 8px auto; image-rendering: pixelated; }
+.seam-portrait { width: 64px; height: 64px; image-rendering: pixelated; }
+.seam-page .story-text { margin: 0 0 .8em; }
+.seam-stage .enemy-art { width: 160px; }
+.stitch-slots { list-style: none; margin: 0 0 12px; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 8px; }
+.stitch-review li { margin: 0 0 6px; }
+.stitch-review li.ok b { color: var(--amber); }
+.portrait-card { margin: 8px 0 12px; }
+.portrait-details li { margin: 0 0 4px; }
+.tide-line { font-style: italic; margin: 4px 2px; }
+.wren-beat .wren-row, .wren-ask .wren-row { display: flex; gap: 12px; align-items: center; }
+.wren-beat .tag, .wren-ask .tag { white-space: normal; }
+.wren-beat .wren-row > div, .wren-ask .wren-row > div { min-width: 0; }
+.tide-line, .seam-card p, .wren-ask p, .wren-beat p { overflow-wrap: anywhere; }
+
+/* 1.1 Your Own Text. Still screens. The player's text uses the system font stack so the browser picks a face for every script. */
+.own-line, .own-input { font-family: system-ui, "Segoe UI", "Noto Sans", "Noto Sans Arabic", "Noto Sans Hebrew", "Noto Sans Devanagari", "Noto Sans CJK SC", sans-serif; line-height: 1.7; font-size: calc(1rem * var(--ts, 1)); white-space: pre-wrap; overflow-wrap: anywhere; }
+.own-input { width: 100%; }
+.own-cue { opacity: .85; }
+.own-ask { margin: 10px 0; }
+.own-split .btn { margin: 4px 0; }
+.own-results { list-style: none; padding: 0; }
+.own-results li { margin: 8px 0; }
+.own-results li b { margin-right: 6px; }
+.own-sections { list-style: none; padding: 0; }

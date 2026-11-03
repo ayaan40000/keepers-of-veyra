@@ -124,6 +124,92 @@ add("face", "face_", [
 ])
 
 
+# ---- Added Nov 2, 2026 for v0.12 and v0.13 (The Living World, Cabinet of Voices, Wren). APPEND ONLY: seeds depend on position in JOBS.
+# Run only these with: python tools/asset-studio/gen.py --only vigil_,bramble_,mirror_,voice_,pedestal_,audit_,wrenmem_,longecho_
+SPIRIT_TAIL = (" A single small friendly lamp-spirit, centred, front view, full body, on a completely plain flat very dark navy background, "
+               "no ground, no floor, no shadow, no scenery, no text, no letters, no numbers. Warm, kind and curious, never frightening.")
+PROP_TAIL = (" A single stone pedestal, centred, seen straight from the front, whole object in view, on a completely plain flat very dark navy background, "
+             "no floor, no shadow, no scenery, no text, no letters or carvings of words. The top is empty and flat.")
+OVERLAY_TAIL = (" A single plant piece, centred, on a completely plain flat very dark navy background, no ground, no scenery, no creatures, "
+                "no text. Thorny but gentle and a little sad, never frightening, never gory.")
+add("scene", "vigil_", [
+    ("battlements", "the Long Vigil on the Quay battlements at dusk: a wide stone battlement wall above the river of Veyra with a long row of lit amber lanterns set along the parapet, "
+                    "and soft faceless mist phantoms, pale grey shapes of fog like hooded figures with no faces, drifting gently toward the lanterns and fading in their light, "
+                    "violet and blue dusk sky, white mist over the water, gentle and sad, not scary"),
+])
+add("overlay", "bramble_", [
+    ("clump", "a small clump of thorny silver-green Lethe bramble vines with pale grey-blue leaves and sharp little thorns, tangled but tidy"),
+    ("vine", "one long thorny silver-green Lethe bramble vine curling across the whole picture in a wide S shape, with small pale leaves and sharp little thorns"),
+    ("bud", "a single curved silver-green bramble stem with one big sharp thorn and a small pale glowing bud at its tip, soft white glow"),
+    ("burning", "silver-green thorny bramble vines dissolving into warm golden light, the thorns turning into floating glowing sparks and petals, fading upward"),
+])
+add("scene", "mirror_", [
+    ("room", "the Phantom Limb mirror room: a quiet round stone room with seven tall old mirrors in carved dark wooden frames standing in a ring, each mirror holding one remembered object "
+             "in its glass (a brass key, a teacup, a small clock, a folded paper boat, a candle, a feather, a pair of spectacles), cool violet and silver light, dust in the air, still and calm, empty of people"),
+])
+add("spirit", "voice_", [
+    ("vision", "Vision, a lamp-spirit whose flame is shaped like an open eye, with a small round glass lamp body and gentle blue-gold light, tiny feet"),
+    ("thread", "Thread, a lamp-spirit holding a spool of glowing golden thread with a loose strand floating up and linking in a loop, a warm amber glow, tiny feet"),
+    ("place", "Place, a lamp-spirit shaped like a tiny house lantern with a pitched roof, a little door and glowing windows, warm green and amber light, tiny feet"),
+    ("face", "Face, a lamp-spirit with a masked mirror flame: a smooth blank oval mirror mask in front of its flame, soft violet and silver light, tiny feet"),
+    ("count", "Count, a lamp-spirit shaped like an abacus lantern with rows of glowing round beads on rods inside a brass frame, warm copper and orange light, tiny feet"),
+    ("tongue", "Tongue, a lamp-spirit trailing a flowing ribbon of invented rune-like swirls and curls that are not real letters, teal and soft white light, tiny feet"),
+    ("frame", "Frame, a lamp-spirit whose body is a small lantern shaped like a bookcase with three glowing shelves of blank books, deep red and gold light, tiny feet"),
+])
+add("prop", "pedestal_", [
+    ("lit", "a lit round stone pedestal of grey and violet stone with a warm amber glow around its flat empty top where a relic would rest, small glowing lamp rings on its sides, warm and welcoming"),
+    ("dim", "a dim faded round stone pedestal of cool grey-blue stone with a flat empty top, its lamp rings dark and dusty, a faint cold pale glow, quiet and forgotten but not scary"),
+])
+# Planned pictures found by scanning docs/ROADMAP.md, RPG_DEPTH.md and CHAMPIONS.md that were not yet made:
+add("scene", "audit_", [
+    ("route", "Wren's Audit: a long memory palace route seen as a lamplit hall of Veyra with small round glowing stops on the floor, each stop beside a different small object on a plinth, "
+              "a tidy notebook and a pencil on a stone ledge in the foreground, violet and amber light, calm, empty of people"),
+])
+add("scene", "wrenmem_", [
+    ("nook", "Wren's reading nook: a cosy small room at the top of the Archive with a round window onto the lamplit river of Veyra, a worn armchair, stacks of notecards, a steaming teacup and a hanging lamp, "
+             "a corkboard with blank cards pinned to it, warm amber light, quiet and safe, empty of people"),
+])
+add("scene", "longecho_", [
+    ("vault", "a deep old long-echo vault in the river wall of Veyra: a tall round stone door worn smooth by many years, ringed with moss and tiny lamp symbols, a single pale lantern, "
+              "a stone niche for an old tablet, dark still water and soft silver mist below"),
+])
+
+
+# ---- Added Nov 2, 2026 (owner-approved story and trial additions, docs/drafts/additions). APPEND ONLY.
+# Run with: python tools/asset-studio/gen.py --only story_,trialx_,prizex_   (after_faces2.py does this after after_faces.py finishes)
+CHARACTER_TAIL = (" Head and shoulders portrait of one character, facing slightly toward the viewer, centred, on a completely plain flat very dark navy background, "
+                  "no scenery, no frame, no text, no letters. Expressive and readable at small size.")
+add("character", "story_", [
+    ("ambrose", "Ambrose Tallow, called the Winder, the last Warden of the Hours: a thin, tidy, very old man in an old dark Warden's coat with a worn-smooth brass badge, a pocket watch on a long chain, "
+                "kind tired lonely eyes, faintly faded and pale like a figure held in one evening for three hundred years, gentle and sad, not scary, not evil"),
+    ("ottoline", "Ottoline Gilt, nicknamed Lantern, a nineteen-year-old rich young woman: tall and immaculate, chin lifted with a smug little half-smile, finely dressed in cream and deep gold silk with a high collar, "
+                 "a row of small coloured ribbons in her neatly pinned hair, a tiny gold lamp brooch"),
+    ("edrin", "Edrin Halloway, an older widowed lamplighter: a quiet, weathered, kind man with grey stubble and gentle tired eyes, a worn blue coat with brass buttons and a knitted scarf, "
+              "the tip of a lamplighter's long pole and a small flame visible by his shoulder"),
+])
+add("scene", "story_", [
+    ("green_door", "Quay Row at dusk: a narrow old stone terrace house beside the misty river with a freshly painted bright green wooden door with a brass lamp-shaped knocker, a few flecks of old flaking blue paint on the step, "
+                   "a lit iron street lamp beside it, cobbles and a low river wall, warm window light, hopeful and quiet, no readable numbers or writing"),
+    ("mother_portrait", "inside the Archive: a simple painted portrait on a wooden easel filling the centre of the picture, a woman with a small scar through her left eyebrow, a brass key pinned in her hair, "
+                        "a yellow scarf and a warm laughing smile, painted softly and a little roughly by an amateur hand, brushes and small paint pots on a stool beside it, one amber lamp, warm and tender"),
+    ("lamp_cup", "the Lamp Cup: a small old brass lamp on a stand on a velvet cushion on a stone plinth in a lamplit hall, a worn brass founder's plate on the stand polished completely smooth and blank with no writing, "
+                 "tall arched windows, a few small ribbons draped nearby, warm and proud and slightly sad"),
+])
+add("object", "story_", [
+    ("winding_mark", "a worn round iron disc with a ring carved into it and a single clock-like hand inside the ring pointing up, like a maker's mark worn into the base of an old lamp, rust and a little moss"),
+])
+add("scene", "trialx_", [
+    ("year_hall", "the Hall of Years: a very long vaulted stone hall of Veyra with rows of tall pillars each carved with a different small picture symbol, a glowing line of light inlaid along the floor like a timeline "
+                  "with small lamps set at seven spots along it, seven lit alcoves each holding a stone tablet, a great round window of blue glass at the far end, calm and solemn, no numbers, no writing"),
+    ("reckoning", "the Counting House Reckoning: a high brick counting hall at night with a long polished table of brass calculating frames and abacuses, bundles of wooden tally sticks in boxes, "
+                  "a wall of small drawers, green-shaded lamps in a row, a stone floor in a neat grid pattern, clean and quick and calm, no numbers, no writing"),
+])
+add("object", "prizex_", [
+    ("year_tablet", "a small square stone tablet carved with a row of seven small round dots along the top and a simple sun symbol below, edges worn smooth"),
+    ("tally_stick", "a wooden tally stick with a row of small notches along its edge, split lengthwise, tied with a blue ribbon"),
+])
+
+
 def prompt_for(kind, desc):
     if kind == "scene":
         return f"{LOOK} {desc.capitalize() if not desc[0].isupper() else desc}.{SCENE_TAIL}"
@@ -131,6 +217,14 @@ def prompt_for(kind, desc):
         return f"{LOOK} {desc}.{FACE_TAIL}"
     if kind == "object":
         return f"{LOOK} {desc}.{OBJECT_TAIL}"
+    if kind == "character":
+        return f"{LOOK} {desc}.{CHARACTER_TAIL}"
+    if kind == "spirit":
+        return f"{LOOK} {desc}.{SPIRIT_TAIL}"
+    if kind == "prop":
+        return f"{LOOK} {desc}.{PROP_TAIL}"
+    if kind == "overlay":
+        return f"{LOOK} {desc}.{OVERLAY_TAIL}"
     return f"{LOOK} {desc}.{BEAST_TAIL}"
 
 

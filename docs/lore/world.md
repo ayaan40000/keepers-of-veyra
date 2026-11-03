@@ -203,8 +203,107 @@ The gargoyles of the Tongues Bridge were carved in the year 333 to keep the old 
 
 The great clock of the Clockwork Market has stopped four times in its history. Each time, the stallholders put it back together from memory, walking the square from the tower steps back to the tea urn.
 
+## The Brass Years
+
+*Found after passing "The Hall of Years".*
+
+The Hall of Years was lined with brass labels, one for each year the Wardens thought worth keeping. The Tide rubbed the numbers off, and the events carved above them stayed. A scholar who knows the events can put the years back, one frame at a time.
+
+## The Reckoning Table
+
+*Found after passing "The Counting House Reckoning".*
+
+The old merchants of the Counting House worked their sums aloud and left nothing on paper. They said each step as they went, so that a sum was only ever as long as a breath. Isolde keeps the tally stick from the table drawer on her desk, and says every notch is a sum somebody got right.
+
 ## The Sealed Vaults
 
 *Found after passing "The Quay Vault".*
 
 The Wardens hid small vaults all over Veyra, each with a tablet beside its door. A vault opens only for someone who can say its tablet back after a long wait. The Wardens thought this was fair: anyone may read a tablet, but only someone who keeps it may open the door.
+
+## A Ring With One Hand
+
+*Found after the Lamplighters' Quay is restored (month 1).*
+
+Under the rust at the foot of the last lamp on the Quay, someone long ago worked a small mark into the iron: a ring with a single hand inside it, like a clock with nothing to say.
+
+Tansy says the lamplighters call it the winding mark, and rub it for luck on their way past. She does not know who made it. She rubs it anyway.
+
+## The Hour Nobody Wrote
+
+*Found after the The Clockwork Market is restored (month 5).*
+
+The Wardens' timetable for the Tide runs for nineteen years, every night of it, and there is no entry for nine minutes past eleven on the night of the great Tide. It simply is not there. The clocks stopped on a minute the Wardens never planned for.
+
+On the back plate of the Mother Clock is the ring with one hand. The winding key was left in the lock, and when you put your palm on it, it was warm.
+
+## The Oldest Stone
+
+*Found after the The Tongues Bridge is restored (month 6).*
+
+At the foot of the Tongues Bridge, below the waterline in a dry summer, is a block older than the rest. Beside it, cut small, is the ring with one hand, and one word of the old tongue. You can read it now. It says: Wait.
+
+Wren says it might be a builder's note. She says it quickly, and does not look at the stone again.
+
+## Someone Is Very Fond of Us
+
+*Found after the The Mirror Wards is restored (month 9).*
+
+In the Order's record room there is a standing order that has never been cancelled: oil for the lamps and wicks for the lamps, paid every month for eleven years from a purse stamped with a ring and a single hand. Nobody in the Order has ever met the person who pays.
+
+"Someone is very fond of us," Ennick said, and then, because he had been practising, he said what he actually thought: "I do not like it. A gift that never asks for anything is a kind of asking."
+
+## The Seam
+
+*Found when the Keeper first meets the Great Forgetting (Chapter 13).*
+
+Under the Undercroft, below the Last Stone, is the place where the Lethe truly rises. The Wardens never named it. Wren calls it the Seam, because it is where two edges of time were sewn badly and have been pulling at each other ever since.
+
+The Seam takes nothing away. It only tangles. A thing that is forgotten is gone, and the person is calm about it. A thing that is tangled is known but in the wrong place: loaves baked for the wrong day, one dog with three names, two brothers who each remember the other in a different year.
+
+The Seam cannot be closed by force, or by wishing, or by forgetting more. It can only be stitched, by remembering things in their true order. It gives back the days it snagged. It does not undo what the river takes in the ordinary way, and it does not undo what anyone chose to let go. The Tide still rises every evening. That is the river being the river.
+
+## The Great Forgetting
+
+*Found when the Seam is closed (Chapter 13).*
+
+The old songs say that every lost thing in Veyra went somewhere, and that for nine hundred years they all went to the same place. The Quay folk say that on the highest tide of the year you can see it: a giant of grey mist with a pale glow for a face, standing on the Lethe.
+
+What the songs did not know is that the giant was not made of lost things alone. It was made of days that had been tangled out of order on a thread, and held there by one lonely man who could not bear to let an evening end.
+
+The Wardens never fought it. They had a different idea. They said that the way to deal with a very large Forgetting is the way to deal with a very small one: say the thing back, kindly, one piece at a time, until it can rest. It turns out that the same is true of a Warden.
+
+## The Part the Quay Folk Only Hum
+
+*Found after Wren's story beat "The third verse".*
+
+The Lamplighter's Song has a third verse that people mostly hum. Tansy says it is the part for the very end of the evening.
+
+> Trim the wick and turn the key,
+> Tallow keeps the lamp for me.
+> By river stones and light, go home:
+> the last lamp waits, and none walk alone.
+
+Everyone on the Quay took "Tallow" to mean candle fat. Wren says her mother never said otherwise.
+
+## What Was Kept for Her Face
+
+*Found once the four details of Wren's mother's face are kept.*
+
+You have kept four things about Marit Halloway's face for Wren: the scar through the left eyebrow, the brass key in her hair, the yellow scarf and the laugh that began before the joke was over.
+
+Wren says she turns them over in the evenings like coins. "I still cannot see her. But I can see where she would be standing. That is something. That is a great deal."
+
+## The Last Lamp, Kept
+
+*Found once the tune and the lamps are kept.*
+
+You kept the tune. You also kept what Marit was doing while she hummed it: lighting the lamps along the Quay, one to twenty-two.
+
+Wren hummed it for you on the stairs of the Archive, once, all the way through. The lamp in the stairwell brightened a little, which Tansy says lamps do not do. Wren says they do for her.
+
+## Wren's Keepsakes
+
+*Found once the Keeper has kept a detail from Wren's story.*
+
+Small things Wren asks about once they have been kept: the stirs of her tea, the colour of the door, the name of her cat, the scar through her mother's eyebrow. Each held detail is kept here as a warm line from Wren. (This entry grows as the Keeper plays.)

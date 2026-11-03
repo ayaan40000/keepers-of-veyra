@@ -1,0 +1,213 @@
+{
+  "notes": "Workstream E Field Guide pages, in the existing playbook shape. Extra keys 'evidence', 'source', 'sourceUrls' and 'verified' are for the builder and are not shown to players. Fact-check, Nov 2, 2026: the Dunlosky and colleagues 2013 claims were checked (practice testing and distributed practice rated high utility; keyword mnemonic rated low). The 'treasured' page was cut back to minimal, neutral text: the six sentences about how particular faiths learn texts were removed because they could not be sourced or checked by a member of each tradition, and the 'traditions' array is now empty. What remains makes no claim about any tradition. Page ids do not overlap D or the existing ids ('poem' exists, so the long-verse page is 'longverse').",
+  "playbooks": [
+    {
+      "id": "ownText",
+      "unlock": "M1",
+      "title": "Keep your own text",
+      "months": "Months 1 and 8",
+      "intro": "Your Own Text is a tool for learning something word for word that you choose yourself: a verse, a poem, a speech, lines in a play. You paste it in. Mnemos cuts it into small pieces, hides it a little at a time, and asks you again after a day, a week, a month, three months and six months.",
+      "example": "You paste a four-verse poem. Mnemos makes four sections. You read the first, then see only the first letter of each word, then only the start of each line, then a blank card. Tomorrow it asks for that verse before it offers a new one. A week later it asks again. If a line slips, it returns tomorrow and you look at it again.",
+      "steps": [
+        "Copy your text from a source you trust, exactly as written. Mnemos cannot check it for you.",
+        "Learn one or two sections a day, working through Read, First letters, Line starts and Blank.",
+        "Come back when the app says a check is ready, and say or type the section from nothing."
+      ],
+      "review": "Checks come at 1, 7, 30, 90 and 180 days for each section you have learned. Slipped lines come back the next day.",
+      "caveat": "Your text stays on this device and is in your backup. Checks here do not earn Lumen or change your skills, because only you can tell whether your text was right. Pictures are optional. If you learn better by sound and repetition, skip them.",
+      "evidence": "Retrieval practice and spaced practice are rated high-utility by Dunlosky and colleagues 2013.",
+      "source": "Dunlosky, Rawson, Marsh, Nathan and Willingham 2013, Psychological Science in the Public Interest",
+      "verified": true,
+      "sourceUrls": [
+        "https://doi.org/10.1177/1529100612453266"
+      ]
+    },
+    {
+      "id": "treasured",
+      "unlock": "M1",
+      "title": "A text you treasure",
+      "months": "Months 1, 2 and 8",
+      "intro": "People learn texts by heart because they matter to them: a poem, a verse, a speech, a family saying, a vow. Many communities have their own long-established ways of doing it, usually with a teacher or a group. Mnemos does not replace any of that. It is a practice aid. It can keep your place, hide and show your text a little at a time, and remind you when to check yourself again.",
+      "traditions": [],
+      "example": "A learner copies two verses from an edition their teacher recommends into Your Own Text. They read the first verse aloud, then see only its first letters and say it again, then cover it and say it from nothing. Tomorrow the app asks for those verses before anything new. A week later it asks again. Then they say them to their teacher, who can hear what a screen cannot.",
+      "steps": [
+        "Copy your text word for word from a printed or trusted edition. Mnemos cannot tell whether it is right, so check it with your teacher or a source you trust before you start.",
+        "Let the tool cut it into small pieces. Say each piece aloud, then with only first letters, then from nothing. Skip pictures if you prefer to learn by sound.",
+        "Check yourself the next day, a week later and after a month, and ask your teacher or community to hear you."
+      ],
+      "review": "Mnemos schedules checks at 1, 7, 30, 90 and 180 days for the sections you have learned. A piece that slips comes back the next day.",
+      "caveat": "Mnemos is a practice aid, not religious or any other instruction. It takes no view on which text, translation, edition or manner of reciting is right: follow your teacher and your community. It cannot hear you, correct your pronunciation or melody, or check that what you typed is accurate. Communities differ on how written texts, including on a screen, should be handled. If you are unsure, ask your teacher.",
+      "evidence": "Spaced retrieval is rated high-utility (Dunlosky and colleagues 2013). The page makes no claim about any other effect of memorising a text and says nothing about any particular tradition.",
+      "source": "Dunlosky, Rawson, Marsh, Nathan and Willingham 2013, Psychological Science in the Public Interest 14(1), 4-58",
+      "verified": true,
+      "sourceUrls": [
+        "https://doi.org/10.1177/1529100612453266"
+      ]
+    },
+    {
+      "id": "longverse",
+      "unlock": "M2",
+      "title": "A long poem, stanza by stanza",
+      "months": "Months 2, 7 and 8",
+      "intro": "A long poem is too much for one evening and just right for a few weeks. Learn one stanza a day, and let each day start by checking the days before.",
+      "ladder": [
+        "Day 1: learn stanza 1. Read it, see first letters, cover it.",
+        "Day 2: say stanza 1 from nothing. Then learn stanza 2, then say 1 and 2 together.",
+        "Day 3: say 1 and 2 from nothing. Learn stanza 3. Say 1, 2 and 3 together.",
+        "Keep going like this. After about every fourth stanza, say the poem from the start.",
+        "When you reach the end, say the whole poem from the start. Then let checks come back at 1, 7 and 30 days, one stanza at a time."
+      ],
+      "example": "Give each stanza a room and each line one picture if you like pictures, and use first letters to check yourself. Keep the first line of each stanza very clear, because it is the doorway into the stanza.",
+      "steps": [
+        "Read the whole poem once for its meaning, so you know where it is going.",
+        "Learn one stanza a day, starting each day by saying the earlier stanzas from nothing.",
+        "Add the poem to Your Own Text so that the later checks are scheduled for you."
+      ],
+      "review": "Checks at 1, 7, 30, 90 and 180 days, one stanza at a time.",
+      "caveat": "Some learners go faster and some slower, and the right speed is the one where you can still say yesterday's stanza. Pictures hold the order of the lines. The exact words come from many checks over time.",
+      "evidence": "Practice testing and spacing are rated high-utility by Dunlosky and colleagues 2013. How best to split a long text into parts is less clear in the research, so the page says this is one way and not the only way.",
+      "source": "Dunlosky and colleagues 2013",
+      "verified": true,
+      "sourceUrls": [
+        "https://doi.org/10.1177/1529100612453266"
+      ]
+    },
+    {
+      "id": "reckoning",
+      "unlock": "M8",
+      "title": "Sums, squares and constants",
+      "months": "Months 4, 5 and 8",
+      "intro": "Pictures are for the numbers you need to have ready, not for the sum you are doing. For the sum, use a calculating strategy and say each partial result aloud.",
+      "example": "487 plus 356, left to right: 487 plus 300 is 787, plus 50 is 837, plus 6 is 843. For 17 squared, many people simply learn 289 by heart. For the speed of light, 299,792,458 metres a second, split it into 299, 792 and 458 and give each chunk a picture.",
+      "steps": [
+        "Work left to right and say the partial results aloud, so the biggest part of the answer comes first.",
+        "Learn the facts you use often: tables to 15 by 15, squares to 30, powers of two, a few constants.",
+        "Use a picture only for a fact that keeps slipping, and keep checking it until the picture is not needed."
+      ],
+      "review": "Check the fact tomorrow and again after a week. For sums, do a few a day in Mental Reckoning and look at the steps it shows.",
+      "caveat": "Turning a half-finished sum into pictures usually costs more time than it saves. Fast mental calculators rely mostly on calculation methods and number facts they know by heart, built over years. Mental Reckoning practises these steps on these sums. It does not make you faster at maths in general.",
+      "evidence": "No research claim is made. The page reflects the champion panel's finding in docs/CHAMPIONS.md.",
+      "source": "docs/CHAMPIONS.md",
+      "verified": true,
+      "sourceUrls": []
+    },
+    {
+      "id": "dates",
+      "unlock": "M4",
+      "title": "Dates and historical events",
+      "months": "Months 4, 7 and 8",
+      "intro": "A date is a number attached to an event. The Major System gives the number two pictures, and a timeline gives the event its place.",
+      "example": "1066 is 10 and 66: toes and judge. Picture a judge with ten toes pulling an arrow from a bright eye at the first desk of a hall. The next desk holds 1215, then 1337, and the order of the desks keeps the order of the years.",
+      "steps": [
+        "Pad the year to four digits and turn each pair into its Major picture.",
+        "Make one scene with the year pictures and one picture of the event, and put it on the next desk of a timeline.",
+        "Walk the desks in order, then give the year for each event from memory."
+      ],
+      "review": "Check the set the next day, after a week and after a month. Years you keep mixing up deserve a stranger picture.",
+      "caveat": "Pictures keep a bare year attached to an event. They do not explain why anything happened, and for years you half know already a plain check is faster. Learning dates is not the same as knowing history.",
+      "evidence": "No research claim is made.",
+      "source": "E/dates.json (each date checked against Wikipedia and standard references, Nov 2, 2026)",
+      "verified": true,
+      "sourceUrls": []
+    },
+    {
+      "id": "facts",
+      "unlock": "M7",
+      "title": "Facts you want to keep",
+      "months": "Months 7 and 10",
+      "intro": "Quiz facts are cue and answer pairs: a question and the answer to it. They are a good place to practise the loop of picture, place, check and come back.",
+      "example": "Question: who painted The Birth of Venus? Answer: Botticelli. Picture a bottle of cello music sitting in a seashell, as Venus does in the painting. Put it on a stop in your art room. Tomorrow, see if the room gives the answer before you look.",
+      "steps": [
+        "Skip what you already know. Choose the facts you missed the first time you were asked.",
+        "Make one picture for each answer, joined to the question, and put it in a room for that subject.",
+        "Check from the question alone, then fix only the ones that slipped."
+      ],
+      "review": "Day 1, day 7 and day 30, as for every set.",
+      "caveat": "A fact you already know does not need a picture. Keep the pictures for facts that do not stay. The game's facts are public and checked, and you can trust a fact only as far as its source, so keep an eye out for updates.",
+      "evidence": "Cue and answer retrieval practice is high-utility (Dunlosky and colleagues 2013). Keyword pictures alone fade without checks.",
+      "source": "Dunlosky and colleagues 2013",
+      "verified": true,
+      "sourceUrls": [
+        "https://doi.org/10.1177/1529100612453266"
+      ]
+    },
+    {
+      "id": "exams",
+      "unlock": "M7",
+      "title": "Terms, word roots and names for a course",
+      "months": "Months 6, 7 and 9",
+      "intro": "Courses ask you to learn long lists of terms: the parts of a word, the elements, the nerves of the head, the bones of the wrist. These are lists in a set order or sets of names, which is where pictures and places help.",
+      "example": "The element with number 26 is iron. The Major picture for 26 is a notch, so picture an iron nail cut into a notch. For word roots, scrib means write: picture a scribe writing on a long scroll, and then think of describe and manuscript.",
+      "steps": [
+        "Pick one small set: 10 roots, 10 elements, or the cranial nerves.",
+        "Make a picture for each term and put it in a room or on a stop, in order if the order matters.",
+        "Test yourself without the book, then check yourself again later."
+      ],
+      "review": "A short check at day 1, 7 and 30, and the week before the exam.",
+      "caveat": "These pictures help with names and orders. They do not teach chemistry, medicine or English. Anatomy terms here are for study and not health advice. Roots give a good first guess at a new word, and guesses are sometimes wrong, so check a dictionary. Nothing here promises an exam result.",
+      "evidence": "No research claim is made beyond the high rating of retrieval practice (Dunlosky and colleagues 2013).",
+      "source": "E/pools.json (checked Nov 2, 2026)",
+      "verified": true,
+      "sourceUrls": []
+    },
+    {
+      "id": "atlas",
+      "unlock": "M7",
+      "title": "Countries and capitals",
+      "months": "Months 2 and 7",
+      "intro": "A capital is a classic cue and answer. Give each region a room of your palace and each country one stop.",
+      "example": "Hungary: picture a hungry bug (a pest) eating a flower bud. That sounds like Budapest. Put it on the first stop of your Europe room. Later, when you see Hungary in the room, the bug is there.",
+      "steps": [
+        "Pick one region and about eight countries.",
+        "Make a sound-alike picture of each capital and join it to a picture of the country.",
+        "Walk the room and say each capital before you look."
+      ],
+      "review": "Day 1, day 7 and day 30. Mix the region with an older one so the rooms do not blur.",
+      "caveat": "Some capitals are in dispute or change, and the game keeps those out. Knowing a capital says very little about a country. Check a current atlas if it matters.",
+      "evidence": "The keyword method is rated low utility for lasting learning by Dunlosky and colleagues 2013 because its benefit fades; checks on day 1, 7 and 30 are the remedy this page insists on. Capitals are cue and answer facts.",
+      "source": "Dunlosky and colleagues 2013; pools.json",
+      "verified": true,
+      "sourceUrls": [
+        "https://doi.org/10.1177/1529100612453266"
+      ]
+    },
+    {
+      "id": "music",
+      "unlock": "M7",
+      "title": "Music theory lists",
+      "months": "Months 2 and 7",
+      "intro": "Theory has a few fixed lists: the order of sharps, the lines of a clef, the size of each interval. Pictures hold these lists. Your ears and hands do the music.",
+      "example": "The order of sharps is F C G D A E B. Make a sentence: Fat Cats Grin, Dogs Always Eat Bread. The flats come in the opposite order, B E A D G C F: Bad Eggs Are Dropped, Gently Carried, Fast. Your own sentence is stronger than mine.",
+      "steps": [
+        "Pick one list, such as the order of sharps or the twelve intervals.",
+        "Make a sentence or a chain of pictures, with one picture for each item.",
+        "Say the list, then check it against the book."
+      ],
+      "review": "Day 1, day 7 and day 30. Use the list at your instrument the same week.",
+      "caveat": "Music is learned by ear and hands. Pictures help the lists, and they do not help you play or hear better.",
+      "evidence": "No research claim is made.",
+      "source": "E/pools.json (checked Nov 2, 2026)",
+      "verified": true,
+      "sourceUrls": []
+    },
+    {
+      "id": "chess",
+      "unlock": "M7",
+      "title": "Chess openings",
+      "months": "Months 2 and 7",
+      "intro": "An opening is a line of first moves. You can hold the order with pictures, and you hold the reasons only by playing and understanding the ideas.",
+      "example": "The Ruy Lopez runs 1.e4 e5 2.Nf3 Nc6 3.Bb5. Picture a pawn jumping onto a tall e-door, a knight hopping after it, and a bishop pinning a note to a b-shaped board. One scene, five moves.",
+      "steps": [
+        "Pick one line you actually play, no more than six moves.",
+        "Give each move one picture, and put the line on a short route.",
+        "Check the line from the first move, then play it in a game."
+      ],
+      "review": "Day 1, day 7 and day 30, and after every game where you left the line.",
+      "caveat": "Strong players learn openings through ideas and real games. Pictures only help you hold the order of a line you chose to learn. They do not make you better at chess.",
+      "evidence": "No research claim is made.",
+      "source": "E/pools.json (checked Nov 2, 2026)",
+      "verified": true,
+      "sourceUrls": []
+    }
+  ]
+}

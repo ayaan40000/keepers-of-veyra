@@ -1,9 +1,11 @@
+import ADD from './add/fieldguide.json';
+
 // v0.10 The Keeper's Field Guide: using the year's methods on your own life.
 // First drafts by a local model, fact-checked and edited by hand (see docs/CHAMPIONS.md for the review).
 // Rules: only methods the game teaches (Major System, never the letter-based Dominic System), no secrets
 // (passwords, PINs, bank or medical details), honest limits on every page, no rewards for real-life use.
 
-export const GUIDE_CLAIM = 'The year trains specific skills: turning things into pictures, putting them in places, and checking yourself later. They help most with lists, names, orders and exact wording, when you choose to use them. They will not make everything easier to remember, and they do not build understanding. Mnemos scores describe how you did on Mnemos tasks, nothing more. The surest thing we know is that checking yourself after a gap is what makes a memory last. So choose a few things that matter, keep them well, and come back to them.';
+export const GUIDE_CLAIM = 'The year trains specific skills: turning things into pictures, putting them in places, and checking yourself later. They help most with lists, names, orders and exact wording, when you choose to use them. They will not make everything easier to remember, and they do not build understanding. Mnemos scores describe how you did on Mnemos tasks, nothing more. One of the best-supported things we know is that checking yourself after a gap helps a memory last. So choose a few things that matter, keep them well, and come back to them.';
 
 export const GUIDE_SAFETY = [
   'Passwords, PINs, bank and card numbers, door codes: use a password manager or keep them somewhere safe. Never make pictures of them.',
@@ -36,7 +38,7 @@ export const REAL_TRIES = [
 ];
 
 // Playbooks. unlock = the gate that opens the page. Each is a short, honest how-to.
-export const PLAYBOOKS = [
+const BASE_PLAYBOOKS = [
   {
     id: 'everyday', unlock: 'M1', title: 'Lists, errands and keys', months: 'Months 1 and 2',
     intro: 'Short lists and small jobs are where pictures earn their keep, especially when your hands are full and you cannot write.',
@@ -181,6 +183,14 @@ export const PLAYBOOKS = [
     review: 'Run it over several days, ideally with a partner to feed you cues.',
     caveat: 'Exact words need many spaced run-throughs. Pictures help with the order and the meaning, and repetition does the rest.',
   },
+];
+
+// 1.1 additions (docs/drafts/additions/D and E, built by scripts/additions-build.mjs). A page with a "replaces" key takes over the text of the
+// existing page with that id (the id and unlock gate never change); every other page is new and goes after the original ones.
+const strip = ({ replaces, ...page }) => page;
+export const PLAYBOOKS = [
+  ...BASE_PLAYBOOKS.map((b) => { const r = ADD.find((a) => a.replaces === b.id); return r ? strip(r) : b; }),
+  ...ADD.filter((a) => !a.replaces).map(strip),
 ];
 
 export const CALDER_LETTER = [

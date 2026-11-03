@@ -1,0 +1,304 @@
+{
+  "notes": "Workstream D draft. Playbooks use the existing shape (id, unlock, title, months, intro, example, steps, review, caveat). Extra keys 'evidence', 'source' and 'verified' are for the builder and are not shown to players. Citations were checked by the fact-check editor on Nov 2, 2026 against DOI, PubMed or publisher records (see FACTCHECK.md) and corrected where needed; 'sourceUrls' lists where to check. Sleep after learning is deliberately NOT mentioned anywhere, because its wording is not verified. The 'talk' entry REPLACES the text of the existing playbook with id 'talk' (same id, same unlock M2). The new ids are: lists, digits, senses, rhythm, interview, maps, reading, recall and the page 'toolbox'. Existing playbook ids and the twelve try-m ids are untouched. 'Mind Map' is the drill name everywhere (owner decision, Nov 2, 2026). No athlete or championship is named. All example people, talks and lists are invented. Nothing here concerns passwords, PINs, medicine or safety procedures.",
+  "playbooks": [
+    {
+      "id": "lists",
+      "unlock": "M2",
+      "title": "Lists in order: shopping, steps and talk points",
+      "months": "Months 1, 2 and 7",
+      "intro": "A list in order is the job pictures and places do best. The trick is the same for a shopping trip, the steps of a chore and the points of a talk: one picture for each item, one stop for each picture.",
+      "example": "Shopping: your stops are the front door, the hall table, the stairs, the sofa and the kitchen sink. Oranges are juggled by the door, bread sits like a pillow on the hall table, soap bubbles pour down the stairs, a tin of beans is wedged in the sofa and a fish is swimming in the sink. Steps of a chore, such as setting up a tent: one stop for each step, with a picture of the action, such as a giant peg hammered into the hall table. Talk points: one stop for each point, and one keyword for each picture, such as 'budget' for a coin jar on the stairs.",
+      "steps": [
+        "Pick a route you know well with as many stops as you have items, ideally 5 to 10.",
+        "Turn each item or step into one picture that is big, odd and moving. For a step, picture the action itself. For a talk point, picture one keyword.",
+        "Put the pictures on the stops, one for each. Walk the route once slowly, then once without stopping.",
+        "Close your eyes or look away, and say the list in order. Peek at your written copy only for the ones you lost, then make those pictures stranger or put them nearer to the stop.",
+        "Wipe the route in your mind when you are done so it is fresh for the next list."
+      ],
+      "review": "For a shopping list, check once on the way to the shop. For steps and talk points, check after ten minutes, the next day and a week later.",
+      "caveat": "Write the list down as well. The pictures are your second copy, not your only one. A short list with no time pressure is often best left on paper. The one study behind route methods tested one kind of list and does not show a better memory for everything.",
+      "evidence": "moderate for one kind of list in one study; weak for any claim beyond that",
+      "source": "Dresler et al. 2017, Mnemonic training reshapes brain networks to support superior memory, Neuron 93(5), 1227-1235 (51 men without mnemonic experience; 40 sessions of 30 minutes over six weeks raised word-list recall; it does not show a better memory for other things, nor any effect in women or older people)",
+      "verified": true,
+      "sourceUrls": [
+        "https://pubmed.ncbi.nlm.nih.gov/28279356/"
+      ]
+    },
+    {
+      "id": "digits",
+      "unlock": "M5",
+      "title": "Numbers: pictures, groups and your own image list",
+      "months": "Months 4 and 5",
+      "intro": "There are three ways to hold a number you have been given: a picture for each digit, a picture for each pair (the Major System), or a rhyme word for each digit. Try them on your own numbers and keep the one you like. First, cut the number into groups.",
+      "example": "A number given to you as 482915 becomes three groups of two: 48, 29 and 15. With the Major System you turn each pair into a word and a picture (the game's Week 14 to 17 lessons show how). With number-shape pictures, each single digit has a shape you can picture, such as a 2 that looks like a swan. With rhyme pegs, each number has a rhyming word, such as 'one is a bun'. Whichever you use, put the pictures on stops along a short route. Say the groups aloud in a beat when you rehearse: 48, 29, 15.",
+      "steps": [
+        "Cut the number into groups of 2 to 4 digits. Chunks are easier to hold than a long string.",
+        "Turn each group into a picture, using the method you like for this kind of number.",
+        "Place the pictures on stops or link them in a short story.",
+        "Say the groups aloud in a steady beat, then walk the route and say the number again without looking.",
+        "Check against the real number and fix any picture that slipped."
+      ],
+      "review": "Check after ten minutes, the next morning and a week later. Keep a written or saved copy of any number you really need.",
+      "caveat": "Use it for numbers you can share and need exactly, such as dates, house numbers and a friend's phone number. Never use it for PINs, passwords, bank or card details, or door codes.",
+      "evidence": "moderate: grouping items helps hold them (Miller 1956); Mnemos methods are fast to learn but need practice to be quick",
+      "source": "Miller 1956, The magical number seven, plus or minus two: Some limits on our capacity for processing information, Psychological Review 63(2), 81-97 (chunking)",
+      "verified": true,
+      "sourceUrls": [
+        "https://doi.org/10.1037/h0043158"
+      ]
+    },
+    {
+      "id": "senses",
+      "unlock": "M1",
+      "title": "Five senses: give the picture more to hold",
+      "months": "Months 1 and 2",
+      "intro": "A picture is easier to find again when it has more in it than how it looks. Add a sound, a feel, a smell, a taste or a movement. Each one is one more thing that can bring the picture back.",
+      "example": "Your item is 'lemon'. Do not just see a yellow lemon. Hear it squirt, feel the cold waxy skin, smell the sharp zest and feel your mouth pucker. Put that on your stop: the lemon bursts on the front door with a loud pop and a sour mist that makes you blink.",
+      "steps": [
+        "Make your picture of the item as usual.",
+        "Add two more senses to it: a sound, a feel, a smell, a taste or a movement. Pick the ones that come easily for this item.",
+        "Make it move or change, because a picture that does something is easier to hold than one that sits still.",
+        "Place it and check yourself later like any other picture."
+      ],
+      "review": "Check it the same way as any other list: after ten minutes, the next day and a week later.",
+      "caveat": "This is about giving each picture more ways to be found again. It does not mean you are a 'visual' or 'hearing' type. Use whichever sense gives the richest picture for each item, and see in your own scores whether it helps you.",
+      "evidence": "weak: extra cues are a plausible idea (encoding specificity), but richer sensory pictures have not been shown to help in a direct test; there is no good support for matching people to a style of learning",
+      "source": "Tulving and Thomson 1973, Psychological Review 80(5), 352-373 (cue idea); Pashler, McDaniel, Rohrer and Bjork 2008, Psychological Science in the Public Interest 9(3), 105-119 (no good evidence for learning styles)",
+      "verified": true,
+      "sourceUrls": [
+        "https://doi.org/10.1111/j.1539-6053.2009.01038.x",
+        "https://doi.org/10.1037/h0020071"
+      ]
+    },
+    {
+      "id": "rhythm",
+      "unlock": "M5",
+      "title": "Memory rhythms: say it in a beat",
+      "months": "Months 5 and 7",
+      "intro": "Saying something aloud, in a steady beat, gives you one more thing to hold on to. It is a small help for numbers and for exact wording, and it costs nothing.",
+      "example": "A number in groups of three or four, such as 482, 915, 603. Say it with a beat: 'four-eight-two (pause), nine-one-five (pause), six-oh-three (pause)'. Pause between the groups, and say the groups the same way every time. For a line of a poem, tap the beat of the words as you say it.",
+      "steps": [
+        "Cut the number or line into groups of 3 or 4.",
+        "Say it aloud in a steady beat with a short pause between groups.",
+        "Say it again with your eyes closed, in the same beat.",
+        "Then put the pictures on the route as usual. The beat is a second cue, not a replacement."
+      ],
+      "review": "Say it again after ten minutes, then the next day.",
+      "caveat": "Do this out loud on your own, away from the Mnemos study screens, which stay quiet. A beat helps with order and exact wording and does not unlock anything special. If you cannot say it aloud, say it silently in your head or tap it on a table.",
+      "evidence": "moderate for saying words aloud (the production effect, a modest effect); weak for rhythm as an extra cue, which is plausible but not shown",
+      "source": "MacLeod, Gopie, Hourihan, Neary and Ozubko 2010, Journal of Experimental Psychology: Learning, Memory, and Cognition 36(3), 671-685 (production effect)",
+      "verified": true,
+      "sourceUrls": [
+        "https://link.springer.com/article/10.3758/s13421-013-0374-x"
+      ]
+    },
+    {
+      "id": "interview",
+      "unlock": "M7",
+      "title": "A job interview",
+      "months": "Months 2, 3 and 7",
+      "intro": "Prepare three or four short stories from your own experience, learn the interviewer's name, and keep a few questions of your own. Pictures can hold these in order so you can think about what you are saying instead of what comes next.",
+      "example": "Your stories are 'the project I fixed', 'a time I helped a team member' and 'a time I learned something quickly'. Walk a route of five stops: front door, hall, kitchen, living room and bedroom. At the front door, a toolbox bursting open (the project I fixed). In the hall, two people carrying a heavy box together (helping). In the kitchen, a book cooking in a pan (learning quickly). At the living room, a sign with your first question on it, and at the bedroom, your second question. When you meet the interviewer, turn the name into a picture and join it to a feature in one scene, as you did in Month 3.",
+      "steps": [
+        "Write down three or four stories that show what you have done. Give each a short title.",
+        "Write two or three questions you want to ask them.",
+        "Give each story and question one picture and one stop on a route you know.",
+        "Practise telling each story aloud, using the picture as a reminder of its title and the first thing you say. Do not learn the words.",
+        "On the day, when you meet the interviewer, turn their name into a picture and say their name once in the conversation."
+      ],
+      "review": "Walk the route the evening before and once more an hour before. Keep a small card with the titles, in case you need it.",
+      "caveat": "Preparation can help you keep your points in order. It does not decide how an interview goes. Stay yourself, listen to the question, and answer what was asked, even if that means leaving a prepared story out.",
+      "evidence": "none claimed: this is organisation of your own prepared material, not an outcome claim",
+      "source": "Method only; no study cited",
+      "verified": true,
+      "sourceUrls": []
+    },
+    {
+      "id": "maps",
+      "unlock": "M7",
+      "title": "Mind Maps",
+      "months": "Months 7 and 8",
+      "intro": "A Mind Map shows how a topic fits together: the topic in the middle, a few branches around it and a few short leaves on each branch. Drawing one helps you see the shape. What helps memory most is closing it and rebuilding it from memory.",
+      "example": "The topic is 'Bread' in the middle. Branches: Ingredients, Steps, Tools, Problems. Under Ingredients, the leaves are flour, water, yeast, salt. Under Steps: mix, rise, shape, bake. Study the map for a few minutes. Then cover it and draw the middle and the four branch names from memory, and write the leaves you can, under the right branch. Look, and fix what you missed. This is the same shape as the Mind Map drill in Mnemos.",
+      "steps": [
+        "Write the topic in the middle of a blank page.",
+        "Draw three to six branches, one for each big part of the topic. Give each branch a short name of one or two words.",
+        "Add two to four leaves to each branch, one to three words each. Use keywords, not sentences.",
+        "Study it for a few minutes, then turn the page over.",
+        "Redraw it blank from memory: the middle, the branch names, then the leaves. Compare, circle what you missed, and try again later.",
+        "For something you want to keep in order, also put the branches on stops in a palace, one branch for each stop."
+      ],
+      "review": "Redraw it blank the next day, then a week later. Each blank redraw is a check, so you only need to look at the original when you get stuck.",
+      "caveat": "A map shows how a topic fits together, and studies of maps find a benefit on average, with large differences between studies. One experiment found that testing yourself helped more than making a map. So make the map, then test yourself by redrawing it blank, because that is the part that helps. A map is for structured facts, not for understanding an argument.",
+      "evidence": "mixed: a meta-analysis found maps helped on average with large differences between studies; one small trial found a mind-map advantage a week later; one experiment found retrieval practice beat map-making",
+      "source": "Nesbit and Adesope 2006, Review of Educational Research 76(3), 413-448; Karpicke and Blunt 2011, Science 331(6018), 772-775; Farrand, Hussain and Hennessy 2002, The efficacy of the 'mind map' study technique, Medical Education 36(5), 426-431 (50 medical students, one 600-word passage)",
+      "verified": true,
+      "sourceUrls": [
+        "https://doi.org/10.1126/science.1199327",
+        "https://doi.org/10.3102/00346543076003413",
+        "https://pubmed.ncbi.nlm.nih.gov/12028392/"
+      ]
+    },
+    {
+      "id": "reading",
+      "unlock": "M7",
+      "title": "Reading to find your key points: Skim, Pick, Keep",
+      "months": "Months 7 and 10",
+      "intro": "Skimming means looking quickly at the headings, the first lines and the last lines to see what a text is about. It is a reading step, not a memory method. It helps you pick your key points. Keeping them is a separate job.",
+      "example": "You have a five-page article about how bees make honey. Skim: spend two minutes on the headings and the first and last line of each section. Pick: choose five to nine key points, such as 'bees collect nectar', 'they pass it to hive bees', 'water is fanned off', 'cells are sealed with wax', 'honey is stored for winter'. Keep: one picture and one stop for each point, and one keyword (nectar, fan, wax). Check later without looking.",
+      "steps": [
+        "Skim: look at the title, the headings and the first and last line of each part, for a short time. Ask what this is about.",
+        "Pick: choose 5 to 9 points you want to keep. Write each as one short sentence, then underline one keyword in it.",
+        "Read closely where you need to understand something. Skimming does not replace careful reading.",
+        "Keep: give each keyword one picture and one stop.",
+        "Check: close the text and say the points in order, using the stops. Look only for what you lost."
+      ],
+      "review": "Check the next morning, then a week later. Retest yourself rather than reread: trying to recall tends to help more than looking at the text again.",
+      "caveat": "Skimming helps you find the key points. It does not store them, it does not make you understand them, and it is not a way to learn faster. When it matters that you understand, read carefully. Pictures hold the points; understanding comes from thinking about them.",
+      "evidence": "moderate for retrieval practice beating rereading; weak for any speed claim, because reading faster tends to cost understanding",
+      "source": "Roediger and Karpicke 2006, Psychological Science 17(3), 249-255 (testing beat restudying at delay); Rayner, Schotter, Masson, Potter and Treiman 2016, Psychological Science in the Public Interest 17(1), 4-34 (reading speed and comprehension)",
+      "verified": true,
+      "sourceUrls": [
+        "https://doi.org/10.1126/science.1199327",
+        "https://doi.org/10.1111/j.1467-9280.2006.01693.x",
+        "https://www.psychologicalscience.org/publications/speed_reading.html"
+      ]
+    },
+    {
+      "id": "recall",
+      "unlock": "M8",
+      "title": "Keeping it: retrieve first, then look",
+      "months": "Months 1, 8 and 12",
+      "intro": "What makes a memory last is trying to bring it back after a gap, and then checking. This page puts that into one habit: Check Before You Look.",
+      "example": "On Tuesday you made pictures for seven points. On Wednesday morning, before you open your notes, say the seven points aloud, from memory. Then look. Mark the ones you missed. On Sunday do it again, and a month from now do it a third time.",
+      "steps": [
+        "Before you reread or look anything up, try to say or write what you know.",
+        "Then look, and mark what you missed or got wrong.",
+        "Fix the weak pictures: make them stranger, bigger or nearer to the stop.",
+        "Check again after a gap: tomorrow, a week later, a month later. The gap is part of what makes it work.",
+        "Let go of things you no longer need. A few things kept well beat many things kept badly."
+      ],
+      "review": "Put the dates in your calendar when you learn something you really want to keep: day 1, day 7, day 30 and day 90.",
+      "caveat": "Practice testing and spacing are among the best-supported findings about memory, but this habit does not tell you what is worth keeping, and it does not mean you will never forget. Forgetting is normal. Write down what matters as well.",
+      "evidence": "strong for practice testing and spacing",
+      "source": "Dunlosky, Rawson, Marsh, Nathan and Willingham 2013, Psychological Science in the Public Interest 14(1), 4-58 (practice testing and distributed practice rated high utility); Cepeda, Pashler, Vul, Wixted and Rohrer 2006, Psychological Bulletin 132(3), 354-380 (spacing)",
+      "verified": true,
+      "sourceUrls": [
+        "https://doi.org/10.1111/j.1539-6053.2009.01038.x",
+        "https://doi.org/10.1177/1529100612453266",
+        "https://pubmed.ncbi.nlm.nih.gov/16719566/"
+      ]
+    },
+    {
+      "id": "talk",
+      "replaces": "talk",
+      "unlock": "M2",
+      "title": "A talk without notes",
+      "months": "Months 2, 7 and 8",
+      "intro": "A palace gives your main points a fixed order, so you can speak naturally while you walk through them in your head. For a work talk, a Roman Room is enough: one room, five points.",
+      "example": "A Roman Room is a single room you know well, with a fixed order of stops: the door, the window, the desk, the shelf and the lamp. Your talk has five points. Point one, 'where we are now', is the door: a signpost swings open in the doorway. Point two, 'what went well', is the window: a golden sun shines in. Point three, 'what did not', is the desk: a cracked cup spills on the papers. Point four, 'what we will do', is the shelf: a toolbox on the top shelf. Point five, 'what I need from you', is the lamp: a hand shaking a hand under the light. You do not memorise sentences. Each picture reminds you of the point, and your own words do the rest.",
+      "steps": [
+        "Decide on 5 points, or up to 9 for a longer talk. Write each as one short line with one keyword.",
+        "Choose one room or a short route, with one stop for each point, in a fixed order.",
+        "Make one strong picture for each keyword and put it on its stop.",
+        "Rehearse aloud while you walk the stops in your head. Say the points in your own words, in the same beat each time if it helps you keep the pace. Learn only your opening and closing lines word for word.",
+        "Keep a one-page Mind Map of the talk as a second copy: the title in the middle and one branch for each point.",
+        "On the day, walk the stops as you speak. If you lose your place, glance at the Mind Map or your card."
+      ],
+      "review": "Rehearse the walk aloud the day before and once more an hour before. If the talk is a regular one, wipe the room and use it for the next.",
+      "caveat": "This keeps your points in order. It does not make the content good, and it works best on points you understand. Keep a card in your pocket as a backup, and write your numbers and names down on it. The one study behind route methods tested one kind of list and does not show a better memory for everything.",
+      "evidence": "moderate for route methods on one kind of ordered list in one study; no claim about how well a talk goes",
+      "source": "Dresler et al. 2017, Neuron 93(5), 1227-1235 (route practice raised recall of one kind of list; it does not show a better memory for everything)",
+      "verified": true,
+      "sourceUrls": [
+        "https://pubmed.ncbi.nlm.nih.gov/28279356/"
+      ]
+    }
+  ],
+  "toolbox": {
+    "id": "toolbox",
+    "unlock": "M1",
+    "title": "What things are called",
+    "intro": "Memory methods have many names. Here are the common ones, in plain words, with where Mnemos teaches each. If you have heard a name before, this page tells you where to find it.",
+    "items": [
+      {
+        "name": "Image method",
+        "means": "Turning an item into one vivid picture, with sound, touch and motion as well as sight.",
+        "weeks": "Weeks 1 and 2"
+      },
+      {
+        "name": "Link method (story chain)",
+        "means": "Joining each picture to the next in one running story, so one item leads to the next.",
+        "weeks": "Weeks 3 and 4"
+      },
+      {
+        "name": "Palace (method of loci)",
+        "means": "Putting each picture at a fixed place in a building you know, and walking the places in order.",
+        "weeks": "Weeks 5 to 8"
+      },
+      {
+        "name": "Roman Room",
+        "means": "A palace of just one room. Walls and furniture in a fixed order give you 8 to 12 stops.",
+        "weeks": "Week 5"
+      },
+      {
+        "name": "Journey method",
+        "means": "A palace made of a walk or a commute, with landmarks as the stops.",
+        "weeks": "Week 8"
+      },
+      {
+        "name": "Major System",
+        "means": "A sound code that turns digits into consonant sounds, so a number becomes a word you can picture.",
+        "weeks": "Weeks 14 to 20"
+      },
+      {
+        "name": "Your own image list",
+        "means": "Your personal picture for each number from 00 to 99, which you choose and keep.",
+        "weeks": "Week 15"
+      },
+      {
+        "name": "Number-shape pegs",
+        "means": "A fixed picture for each digit, based on what the digit looks like, such as a 2 that looks like a swan.",
+        "weeks": "Week 24"
+      },
+      {
+        "name": "Rhyme pegs",
+        "means": "A fixed picture for each number, based on a word that rhymes with it, such as 'one is a bun'.",
+        "weeks": "Week 24"
+      },
+      {
+        "name": "Sound-alike (keyword) method",
+        "means": "Linking a new word to a picture of a word you already know that sounds like it. Fast to start, but fades without checks.",
+        "weeks": "Weeks 22 and 23"
+      },
+      {
+        "name": "Chunking",
+        "means": "Cutting a long string into groups of 2 to 4, or a talk into 5 to 9 points, so each group is easier to hold.",
+        "weeks": "Weeks 17 and 28"
+      },
+      {
+        "name": "Mind Map",
+        "means": "A topic drawn as a middle, branches and leaves, then rebuilt from memory.",
+        "weeks": "Weeks 27 and 29"
+      },
+      {
+        "name": "Memory rhythm",
+        "means": "Saying groups aloud in a steady beat, as one more cue.",
+        "weeks": "Week 20"
+      },
+      {
+        "name": "Skimming (Skim, Pick, Keep)",
+        "means": "A reading step: look quickly for the key points, pick them, then keep them with pictures and places. It finds points, it does not store them.",
+        "weeks": "Week 41"
+      },
+      {
+        "name": "Check Before You Look",
+        "means": "Trying to recall from memory first, then looking, and repeating after a gap.",
+        "weeks": "Weeks 30 and 49"
+      }
+    ],
+    "honest": "These are tools, not a cure. They help with lists, names, orders and exact wording, when you choose to use them. Try each one and keep the ones that work for you. Your own scores on Mnemos tasks will tell you.",
+    "verified": true,
+    "sourceUrls": []
+  }
+}

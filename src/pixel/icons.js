@@ -3,6 +3,8 @@
 // Self-contained on purpose: pixel/core.js contains JSX in a .js file, which plain JS modules and tests cannot import.
 import { TRACED_ICONS } from './traced.js';
 import { TRIAL_ICONS } from './trial-icons.js';
+import { VIGIL_ICON } from './vigil-icon.js';
+import { YEAR_TABLET_ICON, TALLY_STICK_ICON } from './event-icons.js';
 
 // Seeded RNG (same algorithm as pixel/core.js prng) for deterministic texture.
 function prng(seed) {
@@ -1115,6 +1117,9 @@ for (const id of Object.keys(EMB)) D[`seal_${id}`] = () => seal(id);
 // v0.9.1 icons traced from local image-model pictures (owner decision, Nov 1 2026)
 for (const [id, s] of Object.entries(TRACED_ICONS)) if (!id.startsWith('boss_')) D[id] = () => s;
 for (const [id, s] of Object.entries(TRIAL_ICONS)) D[id] = () => s;
+D.vg_watch_ledger = () => VIGIL_ICON;
+D.tr_year_tablet = () => YEAR_TABLET_ICON;
+D.tr_tally_stick = () => TALLY_STICK_ICON;
 
 // ---------- build ----------
 export const ICONS = Object.fromEntries(Object.entries(D).map(([id, fn]) => [id, fn()]));

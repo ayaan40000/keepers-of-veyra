@@ -15,4 +15,8 @@ export const MASTERS = [
   { id: 'm-sprint', unlock: 'M11', title: 'The Sprint Round', idea: 'Short, sharp, timed rounds with a hard stop and a score straight away.', tryIt: 'Set a timer for one minute. Recall as many items in order as you can. Score accuracy first, speed second. A fast wrong answer scores nothing.', why: 'A short round is easy to repeat and easy to score, and it practises staying calm with a clock running.', spec: { t: 'wordlist', n: 10, s: 40, timed: true }, drill: 'Word Recall (timed)' },
 ];
 
+// 1.1: four more notes (groups, pegs, a stanza a night, check before you look), after the existing eight.
+import ADD from './add/masters.json';
+MASTERS.push(...ADD);
+
 export const NOT_TO_COPY = 'Athletes train hours a day for years, on one narrow task, as a sport. You do not need to. What carries over to a normal life is the feedback, the spaced checks and fixing weak spots.';

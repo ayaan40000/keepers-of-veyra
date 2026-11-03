@@ -25,7 +25,7 @@ describe('trial data', () => {
       expect(t.checks[t.checks.length - 1].practice).toBeFalsy();
       for (const s of [t.setup, t.intro, t.pass, t.miss, t.title]) { expect(s.length).toBeGreaterThan(5); expect(s).not.toMatch(/[—–]/); }
     }
-    expect(ITEMS.filter((i) => i.kind === 'prize').length).toBe(Object.keys(TRIALS).length);
+    expect(ITEMS.filter((i) => i.kind === 'prize' && i.source.type === 'trial').length).toBe(Object.keys(TRIALS).length);
   });
   it('material pools are unique, sized and free of dashes', () => {
     expect(new Set(OLD_TONGUE.map((w) => w[0])).size).toBe(OLD_TONGUE.length);

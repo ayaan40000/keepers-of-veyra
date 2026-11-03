@@ -9,6 +9,9 @@ function faceFor(name, r) {
   return Math.floor(r() * 1e9);
 }
 import { rng, sample, shuffle, clamp, mean, matches, majorDecode, todayISO, addDays, daysBetween, uid, setKnownWords } from './util.js';
+import { blankEvents } from '../data/events.js';
+import { blankOwn } from './owntext.js';
+import { genAdded, scoreMap, scoreSurnames, poemLineOk, numericOk, normMoves, rowScore, mapProbe, surnameFor } from './additions.js';
 
 setKnownWords([...CONCRETE, ...ABSTRACT, ...NAMES, ...VOCAB.map((v) => v[1])]);
 
@@ -23,7 +26,7 @@ export function newSkill() {
 }
 
 // Sound starts off (v0.4): players opt in. Dialogue blips have their own switch.
-export const DEFAULT_PREFS = { theme: 'dark', reducedMotion: false, timerMult: 1, sound: false, blips: true, volume: 0.6, textSize: 1, home: 'today' };
+export const DEFAULT_PREFS = { theme: 'dark', reducedMotion: false, timerMult: 1, sound: false, blips: true, volume: 0.6, textSize: 1, home: 'today', brambles: true, voices: 'light', wrenMemory: true };
 
 export function newProfile(alias, avatar, prefs = {}) {
   const now = new Date().toISOString();
@@ -33,8 +36,9 @@ export function newProfile(alias, avatar, prefs = {}) {
     progress: { day: 1, startDate: todayISO(0), trainingDates: [], fullDates: [], minutes: 0, lumen: 0, gates: [], gateRetry: {}, longest: 0, lastSessionDate: null, freeXp: { date: null, xp: 0 }, dayOffset: 0, baselineDone: false, reviewerUnlock: false },
     skills: Object.fromEntries(Object.keys(SKILLS).map((k) => [k, newSkill()])),
     results: [], sets: [], palaces: [], major: {}, achievements: {}, story: { seen: [] }, reflections: 0, baseline: null, inProgress: null,
-    tips: { seen: [] }, relics: { polish: {} }, stats: { sessions: [] }, trials: {},
-    guide: { tried: {}, later: {} },
+    tips: { seen: [] }, relics: { polish: {} }, stats: { sessions: [] }, trials: {}, brambles: { thorns: {}, chests: {} }, mirror: { episode: null, lit: {} }, audit: { done: 0, last: null }, events: blankEvents(),
+    seam: { met: null, cleared: [], tries: 0, best: 0, rests: 0, last: null, used: [], closed: null, held: null, epilogue: null }, wren: { seen: {}, asked: {}, lastBeat: null, lastQ: null },
+    guide: { tried: {}, later: {} }, own: blankOwn(),
     keeper: { equip: { lantern: null, cloak: null, charm: null, tool: null } },
     battles: { done: 0, held: 0, rests: 0, last: null, skipped: null, queue: [], history: [] },
   };
@@ -44,6 +48,7 @@ export const today = (p) => todayISO(p?.progress?.dayOffset || 0);
 
 // ---------- difficulty scaling ----------
 export function scaledSpec(spec, level, mode = 'practice', timerMult = 1) {
+  if (spec.fixed) return { ...spec, s: Math.round((spec.s || 0) * timerMult) }; // a Unit Check keeps its exact length
   let n = Math.round(spec.n * (1 + 0.06 * (level - 1)));
   let s = spec.s ? spec.s * (1 - 0.03 * (level - 1)) : 0;
   if (mode === 'guided') n = Math.max(4, Math.round(n * 0.6));
@@ -52,7 +57,7 @@ export function scaledSpec(spec, level, mode = 'practice', timerMult = 1) {
   if (spec.t === 'digits' && n % 2) n += 1;
   // v0.5 harder faces in practice only (checks and gates keep the plain task they were calibrated on):
   // look-alike strangers from level 3, and the same people with a changed look at recall from level 5.
-  if (spec.t === 'faces' && mode === 'practice') {
+  if (spec.t === 'faces' && mode === 'practice' && !spec.surname) {
     if (level >= 3 && spec.lures == null) spec = { ...spec, lures: level >= 6 ? 2 : 1 };
     if (level >= 5 && spec.restyle == null) spec = { ...spec, restyle: true };
     if (level >= 7 && spec.turn == null) spec = { ...spec, turn: true }; // v0.8: met face-on, recalled at three-quarter view
@@ -71,6 +76,8 @@ export function majorWord(p, num) {
 export function genItems(spec, seed, p) {
   const r = rng(seed);
   const n = spec.n;
+  const added = genAdded(spec, r); // 1.1 variants, sources, Mind Map, Poem, Mental Reckoning, Unit Checks
+  if (added) return added;
   switch (spec.t) {
     case 'wordlist': {
       const words = sample(CONCRETE, n * (spec.interference ? 2 : 1), r);
@@ -93,6 +100,10 @@ export function genItems(spec, seed, p) {
       return { items: pick.map((x) => { const cue = range > 10 ? String(x).padStart(2, '0') : String(x); return { cue, answer: majorWord(p, cue) }; }) };
     }
     case 'faces': {
+      if (spec.surname) { // 1.1: first name and surname, one point each
+        const taken = new Set();
+        return { items: sample(NAMES, n, r).map((name) => { const last = surnameFor(name, taken, r); return { face: faceFor(name, r), answer: `${name} ${last}`, first: name, last }; }) };
+      }
       const lures = Math.min(spec.lures || 0, Math.max(0, n - 3));
       const real = sample(NAMES, n - lures, r).map((name) => ({ face: faceFor(name, r), answer: name }));
       if (spec.restyle) for (const it of real) it.look = restyle(it.face, r);
@@ -140,17 +151,24 @@ export function lookAlike(seed, r) {
 }
 export const isLureReply = (s) => /^\s*(|new|none|no|not met|stranger|-|\?|x)\s*$/i.test(String(s ?? ''));
 
-export const recallMode = (t, spec = {}) => (t === 'wordlist' && !spec.ordered ? 'free' : ['chain', 'palace', 'digits'].includes(t) ? 'ordered' : 'cued');
+export const recallMode = (t, spec = {}) => (t === 'map' ? 'branch' : t === 'calc' ? 'numeric' : t === 'poem' ? 'ordered' : t === 'wordlist' && spec.numbered ? 'cued' : t === 'wordlist' && !spec.ordered ? 'free' : ['chain', 'palace', 'digits'].includes(t) ? 'ordered' : 'cued');
 
 // ---------- scoring ----------
 // responses: free -> array of strings (any order); ordered/cued -> array aligned with items.
 export function scoreDrill(t, items, responses, opts = {}) {
+  const spec = opts.spec || {};
+  if (t === 'map') return scoreMap(items, responses);
+  if (t === 'faces' && spec.surname) return scoreSurnames(items, responses);
   const mode = recallMode(t, opts.spec);
   const errs = { omission: 0, substitution: 0, order: 0, timeout: 0 };
   const perItem = [];
   const ok = (resp, it) => {
     if (it.lure) return isLureReply(resp);
     if (t === 'digits') return String(resp ?? '').trim() === it.answer;
+    if (t === 'calc') return numericOk(resp, it.answer);
+    if (t === 'poem') return poemLineOk(resp, it.answer, it.alt);
+    if (spec.src === 'chess') return !!normMoves(resp) && normMoves(resp) === normMoves(it.answer);
+    if (it.alt && it.alt.some((a) => matches(resp, a))) return true;
     if (t === 'major') return matches(resp, it.answer) || majorDecode(resp) === it.cue;
     return matches(resp, it.answer);
   };
@@ -174,6 +192,10 @@ export function scoreDrill(t, items, responses, opts = {}) {
       errs[err]++;
       perItem.push({ target: it.answer, response: resp, ok: false, err });
     });
+  }
+  if (t === 'digits' && spec.rows) { // event mode: rows of 20, all or nothing, a blank row ends scoring
+    const marks = rowScore(items, responses || []);
+    perItem.forEach((x, i) => { x.ok = !!marks[i]; });
   }
   const correct = perItem.filter((x) => x.ok).length;
   return { n: items.length, correct, acc: items.length ? correct / items.length : 0, errs, perItem };
@@ -256,6 +278,7 @@ export function dueSets(p, max = 3) {
 
 // A probe shows a sample (up to 8 items; ordered sets keep order).
 export function probeItems(set) {
+  if (set.t === 'map') return { items: mapProbe(set.items), loci: null };
   const mode = recallMode(set.t, set.spec);
   if (mode === 'ordered' && set.t !== 'palace') return { items: set.items.slice(0, set.t === 'digits' ? 20 : 10), loci: null };
   if (mode === 'free') return { items: set.items.slice(0, 20), loci: null };

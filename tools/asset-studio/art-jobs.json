@@ -11,7 +11,8 @@
    "prompt": "16-bit pixel art game illustration, crisp square pixels, dark outlines, limited palette of deep navy night, warm amber lamp light, parchment cream, muted violet stone, river blue and soft white mist. Original fantasy setting: Veyra, a lamp-lit river city with white Tide mist. The networking gala: a grand lamplit ballroom hall of veyra with a long chandelier of amber lamps, round tables with parchment cards, tall arched windows onto the misty river, empty of people. Wide cinematic composition, atmospheric depth, no text, no letters, no people in the foreground.",
    "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, smooth gradients, anti-aliasing, gore, blood, skull, scary horror face, characters or art from existing games or films",
    "seeds": [
-    91000
+    91000,
+    92000
    ],
    "aspect_ratio": "16:9 (Widescreen)",
    "megapixels": 0.6,
@@ -23,7 +24,8 @@
    "prompt": "16-bit pixel art game illustration, crisp square pixels, dark outlines, limited palette of deep navy night, warm amber lamp light, parchment cream, muted violet stone, river blue and soft white mist. Original fantasy setting: Veyra, a lamp-lit river city with white Tide mist. The packing bay: a stone quay at night with stacked wooden crates, rope, barrels and hanging lanterns, a moored flat river barge, white mist over dark water. Wide cinematic composition, atmospheric depth, no text, no letters, no people in the foreground.",
    "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, smooth gradients, anti-aliasing, gore, blood, skull, scary horror face, characters or art from existing games or films",
    "seeds": [
-    91001
+    91001,
+    92001
    ],
    "aspect_ratio": "16:9 (Widescreen)",
    "megapixels": 0.6,
@@ -35,7 +37,8 @@
    "prompt": "16-bit pixel art game illustration, crisp square pixels, dark outlines, limited palette of deep navy night, warm amber lamp light, parchment cream, muted violet stone, river blue and soft white mist. Original fantasy setting: Veyra, a lamp-lit river city with white Tide mist. The speech hall: a hushed round lecture hall with tiered violet stone benches, a lectern with a single amber lamp on a small stage, a great arched window glowing blue. Wide cinematic composition, atmospheric depth, no text, no letters, no people in the foreground.",
    "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, smooth gradients, anti-aliasing, gore, blood, skull, scary horror face, characters or art from existing games or films",
    "seeds": [
-    91002
+    91002,
+    92002
    ],
    "aspect_ratio": "16:9 (Widescreen)",
    "megapixels": 0.6,
@@ -47,7 +50,8 @@
    "prompt": "16-bit pixel art game illustration, crisp square pixels, dark outlines, limited palette of deep navy night, warm amber lamp light, parchment cream, muted violet stone, river blue and soft white mist. Original fantasy setting: Veyra, a lamp-lit river city with white Tide mist. The crossroads: a lonely road junction at dusk with four stone signposts with blank arms, a lantern on a post, tall grass, distant lit city and hills, a moon behind clouds. Wide cinematic composition, atmospheric depth, no text, no letters, no people in the foreground.",
    "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, smooth gradients, anti-aliasing, gore, blood, skull, scary horror face, characters or art from existing games or films",
    "seeds": [
-    91003
+    91003,
+    92003
    ],
    "aspect_ratio": "16:9 (Widescreen)",
    "megapixels": 0.6,
@@ -59,7 +63,8 @@
    "prompt": "16-bit pixel art game illustration, crisp square pixels, dark outlines, limited palette of deep navy night, warm amber lamp light, parchment cream, muted violet stone, river blue and soft white mist. Original fantasy setting: Veyra, a lamp-lit river city with white Tide mist. The night market: a narrow cobbled lane of small stalls with striped awnings, paper lanterns and strings of amber lamps, shelves of jars and trinkets, wet cobbles reflecting light, no people. Wide cinematic composition, atmospheric depth, no text, no letters, no people in the foreground.",
    "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, smooth gradients, anti-aliasing, gore, blood, skull, scary horror face, characters or art from existing games or films",
    "seeds": [
-    91004
+    91004,
+    92004
    ],
    "aspect_ratio": "16:9 (Widescreen)",
    "megapixels": 0.6,
@@ -71,7 +76,8 @@
    "prompt": "16-bit pixel art game illustration, crisp square pixels, dark outlines, limited palette of deep navy night, warm amber lamp light, parchment cream, muted violet stone, river blue and soft white mist. Original fantasy setting: Veyra, a lamp-lit river city with white Tide mist. The tide shore: a misty pebble shore of the river lethe at night, low white mist rolling over grey water, a small old lamp on a mossy post, faint far lights of the city, quiet and eerie. Wide cinematic composition, atmospheric depth, no text, no letters, no people in the foreground.",
    "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, smooth gradients, anti-aliasing, gore, blood, skull, scary horror face, characters or art from existing games or films",
    "seeds": [
-    91005
+    91005,
+    92005
    ],
    "aspect_ratio": "16:9 (Widescreen)",
    "megapixels": 0.6,
@@ -83,7 +89,8 @@
    "prompt": "16-bit pixel art game illustration, crisp square pixels, dark outlines, limited palette of deep navy night, warm amber lamp light, parchment cream, muted violet stone, river blue and soft white mist. Original fantasy setting: Veyra, a lamp-lit river city with white Tide mist. a small soft grey mist creature shaped like a round floating blob with two big sleepy eyes and a wispy tail, drifting like a cloud of breath, fading at the edges. A single creature, centred, full body, facing slightly left, on a completely plain flat very dark navy background, no ground, no floor, no shadow, no scenery, no text. Gentle, a little sad and curious, not frightening, never gory.",
    "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, smooth gradients, anti-aliasing, gore, blood, skull, scary horror face, characters or art from existing games or films",
    "seeds": [
-    91006
+    91006,
+    92006
    ],
    "aspect_ratio": "1:1 (Square)",
    "megapixels": 0.45,
@@ -95,7 +102,8 @@
    "prompt": "16-bit pixel art game illustration, crisp square pixels, dark outlines, limited palette of deep navy night, warm amber lamp light, parchment cream, muted violet stone, river blue and soft white mist. Original fantasy setting: Veyra, a lamp-lit river city with white Tide mist. a long soft grey mist creature shaped like a chain of three linked puffs, each with a small sleepy eye, the links loosely coming apart. A single creature, centred, full body, facing slightly left, on a completely plain flat very dark navy background, no ground, no floor, no shadow, no scenery, no text. Gentle, a little sad and curious, not frightening, never gory.",
    "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, smooth gradients, anti-aliasing, gore, blood, skull, scary horror face, characters or art from existing games or films",
    "seeds": [
-    91007
+    91007,
+    92007
    ],
    "aspect_ratio": "1:1 (Square)",
    "megapixels": 0.45,
@@ -107,7 +115,8 @@
    "prompt": "16-bit pixel art game illustration, crisp square pixels, dark outlines, limited palette of deep navy night, warm amber lamp light, parchment cream, muted violet stone, river blue and soft white mist. Original fantasy setting: Veyra, a lamp-lit river city with white Tide mist. a soft grey mist creature shaped like a small crumbling archway or doorway made of fog, with two sleepy eyes in the keystone and wisps trailing from its pillars. A single creature, centred, full body, facing slightly left, on a completely plain flat very dark navy background, no ground, no floor, no shadow, no scenery, no text. Gentle, a little sad and curious, not frightening, never gory.",
    "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, smooth gradients, anti-aliasing, gore, blood, skull, scary horror face, characters or art from existing games or films",
    "seeds": [
-    91008
+    91008,
+    92008
    ],
    "aspect_ratio": "1:1 (Square)",
    "megapixels": 0.45,
@@ -119,7 +128,8 @@
    "prompt": "16-bit pixel art game illustration, crisp square pixels, dark outlines, limited palette of deep navy night, warm amber lamp light, parchment cream, muted violet stone, river blue and soft white mist. Original fantasy setting: Veyra, a lamp-lit river city with white Tide mist. a soft grey mist creature that is a smooth blank oval mask-like head of fog with no features except two faint sad eyes, hovering with wisps of fog for shoulders. A single creature, centred, full body, facing slightly left, on a completely plain flat very dark navy background, no ground, no floor, no shadow, no scenery, no text. Gentle, a little sad and curious, not frightening, never gory.",
    "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, smooth gradients, anti-aliasing, gore, blood, skull, scary horror face, characters or art from existing games or films",
    "seeds": [
-    91009
+    91009,
+    92009
    ],
    "aspect_ratio": "1:1 (Square)",
    "megapixels": 0.45,
@@ -131,7 +141,8 @@
    "prompt": "16-bit pixel art game illustration, crisp square pixels, dark outlines, limited palette of deep navy night, warm amber lamp light, parchment cream, muted violet stone, river blue and soft white mist. Original fantasy setting: Veyra, a lamp-lit river city with white Tide mist. a soft grey mist creature shaped like a tall thin cloud-snake with a ring-like loop for a body, with two sleepy eyes, digits-like swirls only suggested, fading tail. A single creature, centred, full body, facing slightly left, on a completely plain flat very dark navy background, no ground, no floor, no shadow, no scenery, no text. Gentle, a little sad and curious, not frightening, never gory.",
    "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, smooth gradients, anti-aliasing, gore, blood, skull, scary horror face, characters or art from existing games or films",
    "seeds": [
-    91010
+    91010,
+    92010
    ],
    "aspect_ratio": "1:1 (Square)",
    "megapixels": 0.45,
@@ -143,7 +154,8 @@
    "prompt": "16-bit pixel art game illustration, crisp square pixels, dark outlines, limited palette of deep navy night, warm amber lamp light, parchment cream, muted violet stone, river blue and soft white mist. Original fantasy setting: Veyra, a lamp-lit river city with white Tide mist. a soft grey mist creature shaped like a wide, flat, fluffy cloud with small wing-like wisps like a moth, two sleepy eyes, soft and floaty. A single creature, centred, full body, facing slightly left, on a completely plain flat very dark navy background, no ground, no floor, no shadow, no scenery, no text. Gentle, a little sad and curious, not frightening, never gory.",
    "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, smooth gradients, anti-aliasing, gore, blood, skull, scary horror face, characters or art from existing games or films",
    "seeds": [
-    91011
+    91011,
+    92011
    ],
    "aspect_ratio": "1:1 (Square)",
    "megapixels": 0.45,
@@ -155,7 +167,8 @@
    "prompt": "16-bit pixel art game illustration, crisp square pixels, dark outlines, limited palette of deep navy night, warm amber lamp light, parchment cream, muted violet stone, river blue and soft white mist. Original fantasy setting: Veyra, a lamp-lit river city with white Tide mist. a soft grey mist creature shaped like a pile of blocky fog cubes stacked unevenly and wobbling, with two sleepy eyes on the top cube, wisps leaking from the corners. A single creature, centred, full body, facing slightly left, on a completely plain flat very dark navy background, no ground, no floor, no shadow, no scenery, no text. Gentle, a little sad and curious, not frightening, never gory.",
    "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, smooth gradients, anti-aliasing, gore, blood, skull, scary horror face, characters or art from existing games or films",
    "seeds": [
-    91012
+    91012,
+    92012
    ],
    "aspect_ratio": "1:1 (Square)",
    "megapixels": 0.45,
@@ -167,7 +180,8 @@
    "prompt": "16-bit pixel art game illustration, crisp square pixels, dark outlines, limited palette of deep navy night, warm amber lamp light, parchment cream, muted violet stone, river blue and soft white mist. Original fantasy setting: Veyra, a lamp-lit river city with white Tide mist. the Great Forgetting: a huge gentle ancient grey mist giant shaped like a towering hooded figure of fog with long sleeves trailing into mist, a pale lantern glow where the face would be, two calm sad eyes, majestic and sorrowful, not evil. A single creature, centred, full body, facing slightly left, on a completely plain flat very dark navy background, no ground, no floor, no shadow, no scenery, no text. Gentle, a little sad and curious, not frightening, never gory.",
    "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, smooth gradients, anti-aliasing, gore, blood, skull, scary horror face, characters or art from existing games or films",
    "seeds": [
-    91013
+    91013,
+    92013
    ],
    "aspect_ratio": "1:1 (Square)",
    "megapixels": 0.45,
@@ -179,7 +193,8 @@
    "prompt": "16-bit pixel art game illustration, crisp square pixels, dark outlines, limited palette of deep navy night, warm amber lamp light, parchment cream, muted violet stone, river blue and soft white mist. Original fantasy setting: Veyra, a lamp-lit river city with white Tide mist. Lamplighters' Quay: a lamplit stone quay on the river at dusk, tall iron lamp posts being lit one by one, moored boats, a lamplighter's hut with a ladder, warm amber reflections on blue water. Wide cinematic composition, atmospheric depth, no text, no letters, no people in the foreground.",
    "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, smooth gradients, anti-aliasing, gore, blood, skull, scary horror face, characters or art from existing games or films",
    "seeds": [
-    91014
+    91014,
+    92014
    ],
    "aspect_ratio": "16:9 (Widescreen)",
    "megapixels": 0.6,
@@ -191,7 +206,8 @@
    "prompt": "16-bit pixel art game illustration, crisp square pixels, dark outlines, limited palette of deep navy night, warm amber lamp light, parchment cream, muted violet stone, river blue and soft white mist. Original fantasy setting: Veyra, a lamp-lit river city with white Tide mist. The long gallery: an endless arched gallery corridor of pale stone with framed paintings and alcoves, a polished floor with a long runner, lamps in each alcove, perspective vanishing into the distance. Wide cinematic composition, atmospheric depth, no text, no letters, no people in the foreground.",
    "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, smooth gradients, anti-aliasing, gore, blood, skull, scary horror face, characters or art from existing games or films",
    "seeds": [
-    91015
+    91015,
+    92015
    ],
    "aspect_ratio": "16:9 (Widescreen)",
    "megapixels": 0.6,
@@ -203,7 +219,8 @@
    "prompt": "16-bit pixel art game illustration, crisp square pixels, dark outlines, limited palette of deep navy night, warm amber lamp light, parchment cream, muted violet stone, river blue and soft white mist. Original fantasy setting: Veyra, a lamp-lit river city with white Tide mist. The hall of faces: a vaulted hall whose walls are lined with rows of carved stone portrait niches, each with a tiny lamp, a stone dais in the centre, soft violet light. Wide cinematic composition, atmospheric depth, no text, no letters, no people in the foreground.",
    "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, smooth gradients, anti-aliasing, gore, blood, skull, scary horror face, characters or art from existing games or films",
    "seeds": [
-    91016
+    91016,
+    92016
    ],
    "aspect_ratio": "16:9 (Widescreen)",
    "megapixels": 0.6,
@@ -215,7 +232,8 @@
    "prompt": "16-bit pixel art game illustration, crisp square pixels, dark outlines, limited palette of deep navy night, warm amber lamp light, parchment cream, muted violet stone, river blue and soft white mist. Original fantasy setting: Veyra, a lamp-lit river city with white Tide mist. The counting house: a high brick counting hall with tall ledger desks, brass abacus frames, ranks of small drawers, green-shaded lamps, a great wall of pigeonholes. Wide cinematic composition, atmospheric depth, no text, no letters, no people in the foreground.",
    "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, smooth gradients, anti-aliasing, gore, blood, skull, scary horror face, characters or art from existing games or films",
    "seeds": [
-    91017
+    91017,
+    92017
    ],
    "aspect_ratio": "16:9 (Widescreen)",
    "megapixels": 0.6,
@@ -227,7 +245,8 @@
    "prompt": "16-bit pixel art game illustration, crisp square pixels, dark outlines, limited palette of deep navy night, warm amber lamp light, parchment cream, muted violet stone, river blue and soft white mist. Original fantasy setting: Veyra, a lamp-lit river city with white Tide mist. The clockwork market: a busy market square with a huge brass clock tower, hanging gears and cogs, stalls with clocks and music boxes, copper and amber light, steam. Wide cinematic composition, atmospheric depth, no text, no letters, no people in the foreground.",
    "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, smooth gradients, anti-aliasing, gore, blood, skull, scary horror face, characters or art from existing games or films",
    "seeds": [
-    91018
+    91018,
+    92018
    ],
    "aspect_ratio": "16:9 (Widescreen)",
    "megapixels": 0.6,
@@ -239,7 +258,8 @@
    "prompt": "16-bit pixel art game illustration, crisp square pixels, dark outlines, limited palette of deep navy night, warm amber lamp light, parchment cream, muted violet stone, river blue and soft white mist. Original fantasy setting: Veyra, a lamp-lit river city with white Tide mist. The tongues bridge: a wide stone bridge over the river covered in carved inscriptions in many scripts, arches, lanterns, flags of different colours, mist below. Wide cinematic composition, atmospheric depth, no text, no letters, no people in the foreground.",
    "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, smooth gradients, anti-aliasing, gore, blood, skull, scary horror face, characters or art from existing games or films",
    "seeds": [
-    91019
+    91019,
+    92019
    ],
    "aspect_ratio": "16:9 (Widescreen)",
    "megapixels": 0.6,
@@ -251,7 +271,8 @@
    "prompt": "16-bit pixel art game illustration, crisp square pixels, dark outlines, limited palette of deep navy night, warm amber lamp light, parchment cream, muted violet stone, river blue and soft white mist. Original fantasy setting: Veyra, a lamp-lit river city with white Tide mist. The scriptorium: a tall round library under a copper dome, towers of books and scrolls, reading desks with candles, a spiral stair, dust in lamp light. Wide cinematic composition, atmospheric depth, no text, no letters, no people in the foreground.",
    "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, smooth gradients, anti-aliasing, gore, blood, skull, scary horror face, characters or art from existing games or films",
    "seeds": [
-    91020
+    91020,
+    92020
    ],
    "aspect_ratio": "16:9 (Widescreen)",
    "megapixels": 0.6,
@@ -263,7 +284,8 @@
    "prompt": "16-bit pixel art game illustration, crisp square pixels, dark outlines, limited palette of deep navy night, warm amber lamp light, parchment cream, muted violet stone, river blue and soft white mist. Original fantasy setting: Veyra, a lamp-lit river city with white Tide mist. The tidal stair: a great wet stone staircase descending into the river, steps disappearing into rising white mist, lamps on pillars at each landing, waves lapping. Wide cinematic composition, atmospheric depth, no text, no letters, no people in the foreground.",
    "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, smooth gradients, anti-aliasing, gore, blood, skull, scary horror face, characters or art from existing games or films",
    "seeds": [
-    91021
+    91021,
+    92021
    ],
    "aspect_ratio": "16:9 (Widescreen)",
    "megapixels": 0.6,
@@ -275,7 +297,8 @@
    "prompt": "16-bit pixel art game illustration, crisp square pixels, dark outlines, limited palette of deep navy night, warm amber lamp light, parchment cream, muted violet stone, river blue and soft white mist. Original fantasy setting: Veyra, a lamp-lit river city with white Tide mist. The mirror wards: a quiet courtyard of tall standing mirrors in carved stone frames reflecting lamps and mist, a tiled floor, a stone fountain, cool violet and silver light. Wide cinematic composition, atmospheric depth, no text, no letters, no people in the foreground.",
    "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, smooth gradients, anti-aliasing, gore, blood, skull, scary horror face, characters or art from existing games or films",
    "seeds": [
-    91022
+    91022,
+    92022
    ],
    "aspect_ratio": "16:9 (Widescreen)",
    "megapixels": 0.6,
@@ -287,7 +310,8 @@
    "prompt": "16-bit pixel art game illustration, crisp square pixels, dark outlines, limited palette of deep navy night, warm amber lamp light, parchment cream, muted violet stone, river blue and soft white mist. Original fantasy setting: Veyra, a lamp-lit river city with white Tide mist. The open roads: a long road winding over green hills at dawn toward distant mountains, waystation with a hanging lantern, stone mile markers, wide sky. Wide cinematic composition, atmospheric depth, no text, no letters, no people in the foreground.",
    "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, smooth gradients, anti-aliasing, gore, blood, skull, scary horror face, characters or art from existing games or films",
    "seeds": [
-    91023
+    91023,
+    92023
    ],
    "aspect_ratio": "16:9 (Widescreen)",
    "megapixels": 0.6,
@@ -299,7 +323,8 @@
    "prompt": "16-bit pixel art game illustration, crisp square pixels, dark outlines, limited palette of deep navy night, warm amber lamp light, parchment cream, muted violet stone, river blue and soft white mist. Original fantasy setting: Veyra, a lamp-lit river city with white Tide mist. The amphitheatre of echoes: a great curved stone amphitheatre at night with tiers of seats, a central stage lit by lamps, high walls that shimmer with sound like faint rings of light. Wide cinematic composition, atmospheric depth, no text, no letters, no people in the foreground.",
    "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, smooth gradients, anti-aliasing, gore, blood, skull, scary horror face, characters or art from existing games or films",
    "seeds": [
-    91024
+    91024,
+    92024
    ],
    "aspect_ratio": "16:9 (Widescreen)",
    "megapixels": 0.6,
@@ -311,7 +336,8 @@
    "prompt": "16-bit pixel art game illustration, crisp square pixels, dark outlines, limited palette of deep navy night, warm amber lamp light, parchment cream, muted violet stone, river blue and soft white mist. Original fantasy setting: Veyra, a lamp-lit river city with white Tide mist. The lethe gate: a colossal ancient stone gate in the river wall with huge doors partly open onto white mist, thirteen lamps in a row above it, black water, dramatic and quiet. Wide cinematic composition, atmospheric depth, no text, no letters, no people in the foreground.",
    "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, smooth gradients, anti-aliasing, gore, blood, skull, scary horror face, characters or art from existing games or films",
    "seeds": [
-    91025
+    91025,
+    92025
    ],
    "aspect_ratio": "16:9 (Widescreen)",
    "megapixels": 0.6,
@@ -323,7 +349,8 @@
    "prompt": "16-bit pixel art game illustration, crisp square pixels, dark outlines, limited palette of deep navy night, warm amber lamp light, parchment cream, muted violet stone, river blue and soft white mist. Original fantasy setting: Veyra, a lamp-lit river city with white Tide mist. The undercroft entrance: a heavy iron-bound stone trapdoor and a spiral of worn steps descending into darkness beneath a vaulted archive, a single amber lantern on the first step, cold blue glow from below. Wide cinematic composition, atmospheric depth, no text, no letters, no people in the foreground.",
    "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, smooth gradients, anti-aliasing, gore, blood, skull, scary horror face, characters or art from existing games or films",
    "seeds": [
-    91026
+    91026,
+    92026
    ],
    "aspect_ratio": "16:9 (Widescreen)",
    "megapixels": 0.6,
@@ -335,7 +362,8 @@
    "prompt": "16-bit pixel art game illustration, crisp square pixels, dark outlines, limited palette of deep navy night, warm amber lamp light, parchment cream, muted violet stone, river blue and soft white mist. Original fantasy setting: Veyra, a lamp-lit river city with white Tide mist. The tide rising: a wide view of white mist as a tall soft wall climbing over the city rooftops at night, small lit windows, a lamp-lit bridge in front, ominous but beautiful. Wide cinematic composition, atmospheric depth, no text, no letters, no people in the foreground.",
    "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, smooth gradients, anti-aliasing, gore, blood, skull, scary horror face, characters or art from existing games or films",
    "seeds": [
-    91027
+    91027,
+    92027
    ],
    "aspect_ratio": "16:9 (Widescreen)",
    "megapixels": 0.6,
@@ -347,7 +375,8 @@
    "prompt": "16-bit pixel art game illustration, crisp square pixels, dark outlines, limited palette of deep navy night, warm amber lamp light, parchment cream, muted violet stone, river blue and soft white mist. Original fantasy setting: Veyra, a lamp-lit river city with white Tide mist. The lethe gate at the long vigil: the great stone gate with a row of thirteen glowing lamps held up in the night, the white tide pressing but held back by their light. Wide cinematic composition, atmospheric depth, no text, no letters, no people in the foreground.",
    "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, smooth gradients, anti-aliasing, gore, blood, skull, scary horror face, characters or art from existing games or films",
    "seeds": [
-    91028
+    91028,
+    92028
    ],
    "aspect_ratio": "16:9 (Widescreen)",
    "megapixels": 0.6,
@@ -359,7 +388,8 @@
    "prompt": "16-bit pixel art game illustration, crisp square pixels, dark outlines, limited palette of deep navy night, warm amber lamp light, parchment cream, muted violet stone, river blue and soft white mist. Original fantasy setting: Veyra, a lamp-lit river city with white Tide mist. The year of keeping: the whole city of veyra seen from a hill at night with a lit lamp in every window and street, golden constellations of light over the river, peaceful and triumphant. Wide cinematic composition, atmospheric depth, no text, no letters, no people in the foreground.",
    "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, smooth gradients, anti-aliasing, gore, blood, skull, scary horror face, characters or art from existing games or films",
    "seeds": [
-    91029
+    91029,
+    92029
    ],
    "aspect_ratio": "16:9 (Widescreen)",
    "megapixels": 0.6,
@@ -371,7 +401,8 @@
    "prompt": "16-bit pixel art game illustration, crisp square pixels, dark outlines, limited palette of deep navy night, warm amber lamp light, parchment cream, muted violet stone, river blue and soft white mist. Original fantasy setting: Veyra, a lamp-lit river city with white Tide mist. A trial chamber before a gate: a round stone hall with a single lectern holding a glowing open book, thirteen empty lamp niches around the wall, violet stone, solemn. Wide cinematic composition, atmospheric depth, no text, no letters, no people in the foreground.",
    "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, smooth gradients, anti-aliasing, gore, blood, skull, scary horror face, characters or art from existing games or films",
    "seeds": [
-    91030
+    91030,
+    92030
    ],
    "aspect_ratio": "16:9 (Widescreen)",
    "megapixels": 0.6,
@@ -383,7 +414,8 @@
    "prompt": "16-bit pixel art game illustration, crisp square pixels, dark outlines, limited palette of deep navy night, warm amber lamp light, parchment cream, muted violet stone, river blue and soft white mist. Original fantasy setting: Veyra, a lamp-lit river city with white Tide mist. The archive at the heart of veyra: a quiet underground library hall under a copper dome with a great lantern hanging in the centre lighting the stacks of books, warm and safe. Wide cinematic composition, atmospheric depth, no text, no letters, no people in the foreground.",
    "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, smooth gradients, anti-aliasing, gore, blood, skull, scary horror face, characters or art from existing games or films",
    "seeds": [
-    91031
+    91031,
+    92031
    ],
    "aspect_ratio": "16:9 (Widescreen)",
    "megapixels": 0.6,
@@ -395,7 +427,8 @@
    "prompt": "16-bit pixel art game illustration, crisp square pixels, dark outlines, limited palette of deep navy night, warm amber lamp light, parchment cream, muted violet stone, river blue and soft white mist. Original fantasy setting: Veyra, a lamp-lit river city with white Tide mist. Dawn after the night of no moon: the river of veyra at sunrise, white mist thinning and glowing pink and gold, all the city lamps still lit, a lone boat on calm water, hopeful. Wide cinematic composition, atmospheric depth, no text, no letters, no people in the foreground.",
    "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, smooth gradients, anti-aliasing, gore, blood, skull, scary horror face, characters or art from existing games or films",
    "seeds": [
-    91032
+    91032,
+    92032
    ],
    "aspect_ratio": "16:9 (Widescreen)",
    "megapixels": 0.6,
@@ -407,7 +440,8 @@
    "prompt": "16-bit pixel art game illustration, crisp square pixels, dark outlines, limited palette of deep navy night, warm amber lamp light, parchment cream, muted violet stone, river blue and soft white mist. Original fantasy setting: Veyra, a lamp-lit river city with white Tide mist. A memory palace corridor: a long dreamy hall with doors on both sides each marked by a different small glowing symbol, a glowing path on the floor, violet and amber, mysterious and welcoming. Wide cinematic composition, atmospheric depth, no text, no letters, no people in the foreground.",
    "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, smooth gradients, anti-aliasing, gore, blood, skull, scary horror face, characters or art from existing games or films",
    "seeds": [
-    91033
+    91033,
+    92033
    ],
    "aspect_ratio": "16:9 (Widescreen)",
    "megapixels": 0.6,
@@ -419,7 +453,8 @@
    "prompt": "16-bit pixel art game illustration, crisp square pixels, dark outlines, limited palette of deep navy night, warm amber lamp light, parchment cream, muted violet stone, river blue and soft white mist. Original fantasy setting: Veyra, a lamp-lit river city with white Tide mist. The catacombs of the unnamed: a low vaulted crypt lined with pale marble statues of ordinary townsfolk in niches, their faces softly worn, smooth blank plaques beneath each, an open logbook on a stone lectern lit by one amber lamp, white mist on the floor. Wide cinematic composition, atmospheric depth, no text, no letters, no people in the foreground.",
    "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, smooth gradients, anti-aliasing, gore, blood, skull, scary horror face, characters or art from existing games or films",
    "seeds": [
-    91034
+    91034,
+    92034
    ],
    "aspect_ratio": "16:9 (Widescreen)",
    "megapixels": 0.6,
@@ -431,7 +466,8 @@
    "prompt": "16-bit pixel art game illustration, crisp square pixels, dark outlines, limited palette of deep navy night, warm amber lamp light, parchment cream, muted violet stone, river blue and soft white mist. Original fantasy setting: Veyra, a lamp-lit river city with white Tide mist. The sunken scriptorium: the lower floor of a round library half flooded with still grey water, reading desks and shelves standing in the water, scrolls floating, a copper dome above, warm candles on the high shelves. Wide cinematic composition, atmospheric depth, no text, no letters, no people in the foreground.",
    "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, smooth gradients, anti-aliasing, gore, blood, skull, scary horror face, characters or art from existing games or films",
    "seeds": [
-    91035
+    91035,
+    92035
    ],
    "aspect_ratio": "16:9 (Widescreen)",
    "megapixels": 0.6,
@@ -443,7 +479,8 @@
    "prompt": "16-bit pixel art game illustration, crisp square pixels, dark outlines, limited palette of deep navy night, warm amber lamp light, parchment cream, muted violet stone, river blue and soft white mist. Original fantasy setting: Veyra, a lamp-lit river city with white Tide mist. The broken vault of the salt guild: a huge round iron vault door set in a brick cellar wall, covered in a grid of small brass dials, salt crystals on the floor, a green-shaded lamp hanging above, an open ledger on a crate. Wide cinematic composition, atmospheric depth, no text, no letters, no people in the foreground.",
    "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, smooth gradients, anti-aliasing, gore, blood, skull, scary horror face, characters or art from existing games or films",
    "seeds": [
-    91036
+    91036,
+    92036
    ],
    "aspect_ratio": "16:9 (Widescreen)",
    "megapixels": 0.6,
@@ -455,7 +492,8 @@
    "prompt": "16-bit pixel art game illustration, crisp square pixels, dark outlines, limited palette of deep navy night, warm amber lamp light, parchment cream, muted violet stone, river blue and soft white mist. Original fantasy setting: Veyra, a lamp-lit river city with white Tide mist. The bridge of tongues: a long stone bridge over a deep misty chasm, gentle stone gargoyles with friendly faces perched on the railings, carved patterns on the stones, lanterns, moonlight. Wide cinematic composition, atmospheric depth, no text, no letters, no people in the foreground.",
    "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, smooth gradients, anti-aliasing, gore, blood, skull, scary horror face, characters or art from existing games or films",
    "seeds": [
-    91037
+    91037,
+    92037
    ],
    "aspect_ratio": "16:9 (Widescreen)",
    "megapixels": 0.6,
@@ -467,7 +505,8 @@
    "prompt": "16-bit pixel art game illustration, crisp square pixels, dark outlines, limited palette of deep navy night, warm amber lamp light, parchment cream, muted violet stone, river blue and soft white mist. Original fantasy setting: Veyra, a lamp-lit river city with white Tide mist. The clockwork market at a standstill: a market square under a stopped brass clock tower, brass gears and cogs of many sizes laid out on fifteen small stalls with striped awnings, amber lamps, light steam. Wide cinematic composition, atmospheric depth, no text, no letters, no people in the foreground.",
    "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, smooth gradients, anti-aliasing, gore, blood, skull, scary horror face, characters or art from existing games or films",
    "seeds": [
-    91038
+    91038,
+    92038
    ],
    "aspect_ratio": "16:9 (Widescreen)",
    "megapixels": 0.6,
@@ -479,7 +518,8 @@
    "prompt": "16-bit pixel art game illustration, crisp square pixels, dark outlines, limited palette of deep navy night, warm amber lamp light, parchment cream, muted violet stone, river blue and soft white mist. Original fantasy setting: Veyra, a lamp-lit river city with white Tide mist. A sealed vault in the river wall of veyra: a small round stone door with a carved lamp symbol and an empty stone niche for a tablet beside it, moss, a lamp on a hook, still dark water below. Wide cinematic composition, atmospheric depth, no text, no letters, no people in the foreground.",
    "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, smooth gradients, anti-aliasing, gore, blood, skull, scary horror face, characters or art from existing games or films",
    "seeds": [
-    91039
+    91039,
+    92039
    ],
    "aspect_ratio": "16:9 (Widescreen)",
    "megapixels": 0.6,
@@ -491,7 +531,8 @@
    "prompt": "16-bit pixel art game illustration, crisp square pixels, dark outlines, limited palette of deep navy night, warm amber lamp light, parchment cream, muted violet stone, river blue and soft white mist. Original fantasy setting: Veyra, a lamp-lit river city with white Tide mist. a torn page of an old leather logbook with a brass corner and a ribbon bookmark. A single small object, centred, seen from slightly above, on a completely plain flat very dark navy background, no table, no shadow, no scenery, no hands, no text, no letters or numbers written on it.",
    "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, smooth gradients, anti-aliasing, gore, blood, skull, scary horror face, characters or art from existing games or films",
    "seeds": [
-    91040
+    91040,
+    92040
    ],
    "aspect_ratio": "1:1 (Square)",
    "megapixels": 0.45,
@@ -503,7 +544,8 @@
    "prompt": "16-bit pixel art game illustration, crisp square pixels, dark outlines, limited palette of deep navy night, warm amber lamp light, parchment cream, muted violet stone, river blue and soft white mist. Original fantasy setting: Veyra, a lamp-lit river city with white Tide mist. a rolled parchment scroll tied with a blue ribbon and sealed with a small amber wax drop. A single small object, centred, seen from slightly above, on a completely plain flat very dark navy background, no table, no shadow, no scenery, no hands, no text, no letters or numbers written on it.",
    "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, smooth gradients, anti-aliasing, gore, blood, skull, scary horror face, characters or art from existing games or films",
    "seeds": [
-    91041
+    91041,
+    92041
    ],
    "aspect_ratio": "1:1 (Square)",
    "megapixels": 0.45,
@@ -515,7 +557,8 @@
    "prompt": "16-bit pixel art game illustration, crisp square pixels, dark outlines, limited palette of deep navy night, warm amber lamp light, parchment cream, muted violet stone, river blue and soft white mist. Original fantasy setting: Veyra, a lamp-lit river city with white Tide mist. a round brass combination dial with a knurled edge and a small pointer. A single small object, centred, seen from slightly above, on a completely plain flat very dark navy background, no table, no shadow, no scenery, no hands, no text, no letters or numbers written on it.",
    "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, smooth gradients, anti-aliasing, gore, blood, skull, scary horror face, characters or art from existing games or films",
    "seeds": [
-    91042
+    91042,
+    92042
    ],
    "aspect_ratio": "1:1 (Square)",
    "megapixels": 0.45,
@@ -527,7 +570,8 @@
    "prompt": "16-bit pixel art game illustration, crisp square pixels, dark outlines, limited palette of deep navy night, warm amber lamp light, parchment cream, muted violet stone, river blue and soft white mist. Original fantasy setting: Veyra, a lamp-lit river city with white Tide mist. a small smooth grey river stone carved with a tiny friendly gargoyle face. A single small object, centred, seen from slightly above, on a completely plain flat very dark navy background, no table, no shadow, no scenery, no hands, no text, no letters or numbers written on it.",
    "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, smooth gradients, anti-aliasing, gore, blood, skull, scary horror face, characters or art from existing games or films",
    "seeds": [
-    91043
+    91043,
+    92043
    ],
    "aspect_ratio": "1:1 (Square)",
    "megapixels": 0.45,
@@ -539,7 +583,8 @@
    "prompt": "16-bit pixel art game illustration, crisp square pixels, dark outlines, limited palette of deep navy night, warm amber lamp light, parchment cream, muted violet stone, river blue and soft white mist. Original fantasy setting: Veyra, a lamp-lit river city with white Tide mist. a coiled brass clock mainspring inside an open round brass barrel. A single small object, centred, seen from slightly above, on a completely plain flat very dark navy background, no table, no shadow, no scenery, no hands, no text, no letters or numbers written on it.",
    "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, smooth gradients, anti-aliasing, gore, blood, skull, scary horror face, characters or art from existing games or films",
    "seeds": [
-    91044
+    91044,
+    92044
    ],
    "aspect_ratio": "1:1 (Square)",
    "megapixels": 0.45,
@@ -551,7 +596,8 @@
    "prompt": "16-bit pixel art game illustration, crisp square pixels, dark outlines, limited palette of deep navy night, warm amber lamp light, parchment cream, muted violet stone, river blue and soft white mist. Original fantasy setting: Veyra, a lamp-lit river city with white Tide mist. an iron lamp hook with a small glowing amber lamp hanging from it. A single small object, centred, seen from slightly above, on a completely plain flat very dark navy background, no table, no shadow, no scenery, no hands, no text, no letters or numbers written on it.",
    "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, smooth gradients, anti-aliasing, gore, blood, skull, scary horror face, characters or art from existing games or films",
    "seeds": [
-    91045
+    91045,
+    92045
    ],
    "aspect_ratio": "1:1 (Square)",
    "megapixels": 0.45,
@@ -563,7 +609,8 @@
    "prompt": "16-bit pixel art game illustration, crisp square pixels, dark outlines, limited palette of deep navy night, warm amber lamp light, parchment cream, muted violet stone, river blue and soft white mist. Original fantasy setting: Veyra, a lamp-lit river city with white Tide mist. a small square clay tablet with a carved lamp symbol in the centre. A single small object, centred, seen from slightly above, on a completely plain flat very dark navy background, no table, no shadow, no scenery, no hands, no text, no letters or numbers written on it.",
    "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, smooth gradients, anti-aliasing, gore, blood, skull, scary horror face, characters or art from existing games or films",
    "seeds": [
-    91046
+    91046,
+    92046
    ],
    "aspect_ratio": "1:1 (Square)",
    "megapixels": 0.45,
@@ -575,7 +622,8 @@
    "prompt": "16-bit pixel art game illustration, crisp square pixels, dark outlines, limited palette of deep navy night, warm amber lamp light, parchment cream, muted violet stone, river blue and soft white mist. Original fantasy setting: Veyra, a lamp-lit river city with white Tide mist. an ornate bronze key with a round bow shaped like a lamp. A single small object, centred, seen from slightly above, on a completely plain flat very dark navy background, no table, no shadow, no scenery, no hands, no text, no letters or numbers written on it.",
    "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, smooth gradients, anti-aliasing, gore, blood, skull, scary horror face, characters or art from existing games or films",
    "seeds": [
-    91047
+    91047,
+    92047
    ],
    "aspect_ratio": "1:1 (Square)",
    "megapixels": 0.45,
@@ -587,7 +635,8 @@
    "prompt": "16-bit pixel art game illustration, crisp square pixels, dark outlines, limited palette of deep navy night, warm amber lamp light, parchment cream, muted violet stone, river blue and soft white mist. Original fantasy setting: Veyra, a lamp-lit river city with white Tide mist. a young woman with tan skin wearing a blue headscarf, almond brown eyes, thin brows, a small button nose, full lips, a small mole on her jaw. Head and shoulders portrait of one ordinary adult, facing the viewer, calm neutral expression, centred, simple plain muted background, clear readable facial features, no text, no frame.",
    "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, smooth gradients, anti-aliasing, gore, blood, skull, scary horror face, characters or art from existing games or films",
    "seeds": [
-    91048
+    91048,
+    92048
    ],
    "aspect_ratio": "1:1 (Square)",
    "megapixels": 0.45,
@@ -599,7 +648,8 @@
    "prompt": "16-bit pixel art game illustration, crisp square pixels, dark outlines, limited palette of deep navy night, warm amber lamp light, parchment cream, muted violet stone, river blue and soft white mist. Original fantasy setting: Veyra, a lamp-lit river city with white Tide mist. an older man with very pale skin, bald on top with a ring of blond hair at the sides, monolid dark brown eyes, a broad nose, a blond goatee, deep lines on his face, a gentle smile. Head and shoulders portrait of one ordinary adult, facing the viewer, calm neutral expression, centred, simple plain muted background, clear readable facial features, no text, no frame.",
    "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, smooth gradients, anti-aliasing, gore, blood, skull, scary horror face, characters or art from existing games or films",
    "seeds": [
-    91049
+    91049,
+    92049
    ],
    "aspect_ratio": "1:1 (Square)",
    "megapixels": 0.45,
@@ -611,7 +661,8 @@
    "prompt": "16-bit pixel art game illustration, crisp square pixels, dark outlines, limited palette of deep navy night, warm amber lamp light, parchment cream, muted violet stone, river blue and soft white mist. Original fantasy setting: Veyra, a lamp-lit river city with white Tide mist. a middle-aged woman with tan skin wearing a rust-red headscarf, large brown eyes, angled brows, a strong roman nose, thin lips. Head and shoulders portrait of one ordinary adult, facing the viewer, calm neutral expression, centred, simple plain muted background, clear readable facial features, no text, no frame.",
    "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, smooth gradients, anti-aliasing, gore, blood, skull, scary horror face, characters or art from existing games or films",
    "seeds": [
-    91050
+    91050,
+    92050
    ],
    "aspect_ratio": "1:1 (Square)",
    "megapixels": 0.45,
@@ -623,7 +674,8 @@
    "prompt": "16-bit pixel art game illustration, crisp square pixels, dark outlines, limited palette of deep navy night, warm amber lamp light, parchment cream, muted violet stone, river blue and soft white mist. Original fantasy setting: Veyra, a lamp-lit river city with white Tide mist. a middle-aged man with light golden skin, short grey hair, round dark brown eyes, angled brows, a small button nose, freckles. Head and shoulders portrait of one ordinary adult, facing the viewer, calm neutral expression, centred, simple plain muted background, clear readable facial features, no text, no frame.",
    "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, smooth gradients, anti-aliasing, gore, blood, skull, scary horror face, characters or art from existing games or films",
    "seeds": [
-    91051
+    91051,
+    92051
    ],
    "aspect_ratio": "1:1 (Square)",
    "megapixels": 0.45,
@@ -635,7 +687,8 @@
    "prompt": "16-bit pixel art game illustration, crisp square pixels, dark outlines, limited palette of deep navy night, warm amber lamp light, parchment cream, muted violet stone, river blue and soft white mist. Original fantasy setting: Veyra, a lamp-lit river city with white Tide mist. a young person with pale skin, a dark brown ponytail, upturned grey eyes, straight brows, a wide nose, a small mouth, a long face. Head and shoulders portrait of one ordinary adult, facing the viewer, calm neutral expression, centred, simple plain muted background, clear readable facial features, no text, no frame.",
    "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, smooth gradients, anti-aliasing, gore, blood, skull, scary horror face, characters or art from existing games or films",
    "seeds": [
-    91052
+    91052,
+    92052
    ],
    "aspect_ratio": "1:1 (Square)",
    "megapixels": 0.45,
@@ -647,7 +700,8 @@
    "prompt": "16-bit pixel art game illustration, crisp square pixels, dark outlines, limited palette of deep navy night, warm amber lamp light, parchment cream, muted violet stone, river blue and soft white mist. Original fantasy setting: Veyra, a lamp-lit river city with white Tide mist. an older man with tan skin, salt-and-pepper hair in a side part, almond brown eyes, a wide nose, a wide mouth, deeply lined face. Head and shoulders portrait of one ordinary adult, facing the viewer, calm neutral expression, centred, simple plain muted background, clear readable facial features, no text, no frame.",
    "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, smooth gradients, anti-aliasing, gore, blood, skull, scary horror face, characters or art from existing games or films",
    "seeds": [
-    91053
+    91053,
+    92053
    ],
    "aspect_ratio": "1:1 (Square)",
    "megapixels": 0.45,
@@ -659,7 +713,8 @@
    "prompt": "16-bit pixel art game illustration, crisp square pixels, dark outlines, limited palette of deep navy night, warm amber lamp light, parchment cream, muted violet stone, river blue and soft white mist. Original fantasy setting: Veyra, a lamp-lit river city with white Tide mist. a young man with warm brown skin, a purple knit cap, round dark brown eyes, a short black beard, a small upturned nose. Head and shoulders portrait of one ordinary adult, facing the viewer, calm neutral expression, centred, simple plain muted background, clear readable facial features, no text, no frame.",
    "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, smooth gradients, anti-aliasing, gore, blood, skull, scary horror face, characters or art from existing games or films",
    "seeds": [
-    91054
+    91054,
+    92054
    ],
    "aspect_ratio": "1:1 (Square)",
    "megapixels": 0.45,
@@ -671,7 +726,385 @@
    "prompt": "16-bit pixel art game illustration, crisp square pixels, dark outlines, limited palette of deep navy night, warm amber lamp light, parchment cream, muted violet stone, river blue and soft white mist. Original fantasy setting: Veyra, a lamp-lit river city with white Tide mist. a young woman with fair skin, a light brown ponytail, monolid brown eyes, arched brows, a button nose, thin lips, freckles and a small mole on her temple. Head and shoulders portrait of one ordinary adult, facing the viewer, calm neutral expression, centred, simple plain muted background, clear readable facial features, no text, no frame.",
    "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, smooth gradients, anti-aliasing, gore, blood, skull, scary horror face, characters or art from existing games or films",
    "seeds": [
-    91055
+    91055,
+    92055
+   ],
+   "aspect_ratio": "1:1 (Square)",
+   "megapixels": 0.45,
+   "steps": 24
+  },
+  {
+   "id": "vigil_battlements",
+   "kind": "scene",
+   "prompt": "16-bit pixel art game illustration, crisp square pixels, dark outlines, limited palette of deep navy night, warm amber lamp light, parchment cream, muted violet stone, river blue and soft white mist. Original fantasy setting: Veyra, a lamp-lit river city with white Tide mist. The long vigil on the quay battlements at dusk: a wide stone battlement wall above the river of veyra with a long row of lit amber lanterns set along the parapet, and soft faceless mist phantoms, pale grey shapes of fog like hooded figures with no faces, drifting gently toward the lanterns and fading in their light, violet and blue dusk sky, white mist over the water, gentle and sad, not scary. Wide cinematic composition, atmospheric depth, no text, no letters, no people in the foreground.",
+   "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, smooth gradients, anti-aliasing, gore, blood, skull, scary horror face, characters or art from existing games or films",
+   "seeds": [
+    91056,
+    92056
+   ],
+   "aspect_ratio": "16:9 (Widescreen)",
+   "megapixels": 0.6,
+   "steps": 24
+  },
+  {
+   "id": "bramble_clump",
+   "kind": "overlay",
+   "prompt": "16-bit pixel art game illustration, crisp square pixels, dark outlines, limited palette of deep navy night, warm amber lamp light, parchment cream, muted violet stone, river blue and soft white mist. Original fantasy setting: Veyra, a lamp-lit river city with white Tide mist. a small clump of thorny silver-green Lethe bramble vines with pale grey-blue leaves and sharp little thorns, tangled but tidy. A single plant piece, centred, on a completely plain flat very dark navy background, no ground, no scenery, no creatures, no text. Thorny but gentle and a little sad, never frightening, never gory.",
+   "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, smooth gradients, anti-aliasing, gore, blood, skull, scary horror face, characters or art from existing games or films",
+   "seeds": [
+    91057,
+    92057
+   ],
+   "aspect_ratio": "1:1 (Square)",
+   "megapixels": 0.45,
+   "steps": 24
+  },
+  {
+   "id": "bramble_vine",
+   "kind": "overlay",
+   "prompt": "16-bit pixel art game illustration, crisp square pixels, dark outlines, limited palette of deep navy night, warm amber lamp light, parchment cream, muted violet stone, river blue and soft white mist. Original fantasy setting: Veyra, a lamp-lit river city with white Tide mist. one long thorny silver-green Lethe bramble vine curling across the whole picture in a wide S shape, with small pale leaves and sharp little thorns. A single plant piece, centred, on a completely plain flat very dark navy background, no ground, no scenery, no creatures, no text. Thorny but gentle and a little sad, never frightening, never gory.",
+   "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, smooth gradients, anti-aliasing, gore, blood, skull, scary horror face, characters or art from existing games or films",
+   "seeds": [
+    91058,
+    92058
+   ],
+   "aspect_ratio": "1:1 (Square)",
+   "megapixels": 0.45,
+   "steps": 24
+  },
+  {
+   "id": "bramble_bud",
+   "kind": "overlay",
+   "prompt": "16-bit pixel art game illustration, crisp square pixels, dark outlines, limited palette of deep navy night, warm amber lamp light, parchment cream, muted violet stone, river blue and soft white mist. Original fantasy setting: Veyra, a lamp-lit river city with white Tide mist. a single curved silver-green bramble stem with one big sharp thorn and a small pale glowing bud at its tip, soft white glow. A single plant piece, centred, on a completely plain flat very dark navy background, no ground, no scenery, no creatures, no text. Thorny but gentle and a little sad, never frightening, never gory.",
+   "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, smooth gradients, anti-aliasing, gore, blood, skull, scary horror face, characters or art from existing games or films",
+   "seeds": [
+    91059,
+    92059
+   ],
+   "aspect_ratio": "1:1 (Square)",
+   "megapixels": 0.45,
+   "steps": 24
+  },
+  {
+   "id": "bramble_burning",
+   "kind": "overlay",
+   "prompt": "16-bit pixel art game illustration, crisp square pixels, dark outlines, limited palette of deep navy night, warm amber lamp light, parchment cream, muted violet stone, river blue and soft white mist. Original fantasy setting: Veyra, a lamp-lit river city with white Tide mist. silver-green thorny bramble vines dissolving into warm golden light, the thorns turning into floating glowing sparks and petals, fading upward. A single plant piece, centred, on a completely plain flat very dark navy background, no ground, no scenery, no creatures, no text. Thorny but gentle and a little sad, never frightening, never gory.",
+   "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, smooth gradients, anti-aliasing, gore, blood, skull, scary horror face, characters or art from existing games or films",
+   "seeds": [
+    91060,
+    92060
+   ],
+   "aspect_ratio": "1:1 (Square)",
+   "megapixels": 0.45,
+   "steps": 24
+  },
+  {
+   "id": "mirror_room",
+   "kind": "scene",
+   "prompt": "16-bit pixel art game illustration, crisp square pixels, dark outlines, limited palette of deep navy night, warm amber lamp light, parchment cream, muted violet stone, river blue and soft white mist. Original fantasy setting: Veyra, a lamp-lit river city with white Tide mist. The phantom limb mirror room: a quiet round stone room with seven tall old mirrors in carved dark wooden frames standing in a ring, each mirror holding one remembered object in its glass (a brass key, a teacup, a small clock, a folded paper boat, a candle, a feather, a pair of spectacles), cool violet and silver light, dust in the air, still and calm, empty of people. Wide cinematic composition, atmospheric depth, no text, no letters, no people in the foreground.",
+   "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, smooth gradients, anti-aliasing, gore, blood, skull, scary horror face, characters or art from existing games or films",
+   "seeds": [
+    91061,
+    92061
+   ],
+   "aspect_ratio": "16:9 (Widescreen)",
+   "megapixels": 0.6,
+   "steps": 24
+  },
+  {
+   "id": "voice_vision",
+   "kind": "spirit",
+   "prompt": "16-bit pixel art game illustration, crisp square pixels, dark outlines, limited palette of deep navy night, warm amber lamp light, parchment cream, muted violet stone, river blue and soft white mist. Original fantasy setting: Veyra, a lamp-lit river city with white Tide mist. Vision, a lamp-spirit whose flame is shaped like an open eye, with a small round glass lamp body and gentle blue-gold light, tiny feet. A single small friendly lamp-spirit, centred, front view, full body, on a completely plain flat very dark navy background, no ground, no floor, no shadow, no scenery, no text, no letters, no numbers. Warm, kind and curious, never frightening.",
+   "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, smooth gradients, anti-aliasing, gore, blood, skull, scary horror face, characters or art from existing games or films",
+   "seeds": [
+    91062,
+    92062
+   ],
+   "aspect_ratio": "1:1 (Square)",
+   "megapixels": 0.45,
+   "steps": 24
+  },
+  {
+   "id": "voice_thread",
+   "kind": "spirit",
+   "prompt": "16-bit pixel art game illustration, crisp square pixels, dark outlines, limited palette of deep navy night, warm amber lamp light, parchment cream, muted violet stone, river blue and soft white mist. Original fantasy setting: Veyra, a lamp-lit river city with white Tide mist. Thread, a lamp-spirit holding a spool of glowing golden thread with a loose strand floating up and linking in a loop, a warm amber glow, tiny feet. A single small friendly lamp-spirit, centred, front view, full body, on a completely plain flat very dark navy background, no ground, no floor, no shadow, no scenery, no text, no letters, no numbers. Warm, kind and curious, never frightening.",
+   "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, smooth gradients, anti-aliasing, gore, blood, skull, scary horror face, characters or art from existing games or films",
+   "seeds": [
+    91063,
+    92063
+   ],
+   "aspect_ratio": "1:1 (Square)",
+   "megapixels": 0.45,
+   "steps": 24
+  },
+  {
+   "id": "voice_place",
+   "kind": "spirit",
+   "prompt": "16-bit pixel art game illustration, crisp square pixels, dark outlines, limited palette of deep navy night, warm amber lamp light, parchment cream, muted violet stone, river blue and soft white mist. Original fantasy setting: Veyra, a lamp-lit river city with white Tide mist. Place, a lamp-spirit shaped like a tiny house lantern with a pitched roof, a little door and glowing windows, warm green and amber light, tiny feet. A single small friendly lamp-spirit, centred, front view, full body, on a completely plain flat very dark navy background, no ground, no floor, no shadow, no scenery, no text, no letters, no numbers. Warm, kind and curious, never frightening.",
+   "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, smooth gradients, anti-aliasing, gore, blood, skull, scary horror face, characters or art from existing games or films",
+   "seeds": [
+    91064,
+    92064
+   ],
+   "aspect_ratio": "1:1 (Square)",
+   "megapixels": 0.45,
+   "steps": 24
+  },
+  {
+   "id": "voice_face",
+   "kind": "spirit",
+   "prompt": "16-bit pixel art game illustration, crisp square pixels, dark outlines, limited palette of deep navy night, warm amber lamp light, parchment cream, muted violet stone, river blue and soft white mist. Original fantasy setting: Veyra, a lamp-lit river city with white Tide mist. Face, a lamp-spirit with a masked mirror flame: a smooth blank oval mirror mask in front of its flame, soft violet and silver light, tiny feet. A single small friendly lamp-spirit, centred, front view, full body, on a completely plain flat very dark navy background, no ground, no floor, no shadow, no scenery, no text, no letters, no numbers. Warm, kind and curious, never frightening.",
+   "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, smooth gradients, anti-aliasing, gore, blood, skull, scary horror face, characters or art from existing games or films",
+   "seeds": [
+    91065,
+    92065
+   ],
+   "aspect_ratio": "1:1 (Square)",
+   "megapixels": 0.45,
+   "steps": 24
+  },
+  {
+   "id": "voice_count",
+   "kind": "spirit",
+   "prompt": "16-bit pixel art game illustration, crisp square pixels, dark outlines, limited palette of deep navy night, warm amber lamp light, parchment cream, muted violet stone, river blue and soft white mist. Original fantasy setting: Veyra, a lamp-lit river city with white Tide mist. Count, a lamp-spirit shaped like an abacus lantern with rows of glowing round beads on rods inside a brass frame, warm copper and orange light, tiny feet. A single small friendly lamp-spirit, centred, front view, full body, on a completely plain flat very dark navy background, no ground, no floor, no shadow, no scenery, no text, no letters, no numbers. Warm, kind and curious, never frightening.",
+   "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, smooth gradients, anti-aliasing, gore, blood, skull, scary horror face, characters or art from existing games or films",
+   "seeds": [
+    91066,
+    92066
+   ],
+   "aspect_ratio": "1:1 (Square)",
+   "megapixels": 0.45,
+   "steps": 24
+  },
+  {
+   "id": "voice_tongue",
+   "kind": "spirit",
+   "prompt": "16-bit pixel art game illustration, crisp square pixels, dark outlines, limited palette of deep navy night, warm amber lamp light, parchment cream, muted violet stone, river blue and soft white mist. Original fantasy setting: Veyra, a lamp-lit river city with white Tide mist. Tongue, a lamp-spirit trailing a flowing ribbon of invented rune-like swirls and curls that are not real letters, teal and soft white light, tiny feet. A single small friendly lamp-spirit, centred, front view, full body, on a completely plain flat very dark navy background, no ground, no floor, no shadow, no scenery, no text, no letters, no numbers. Warm, kind and curious, never frightening.",
+   "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, smooth gradients, anti-aliasing, gore, blood, skull, scary horror face, characters or art from existing games or films",
+   "seeds": [
+    91067,
+    92067
+   ],
+   "aspect_ratio": "1:1 (Square)",
+   "megapixels": 0.45,
+   "steps": 24
+  },
+  {
+   "id": "voice_frame",
+   "kind": "spirit",
+   "prompt": "16-bit pixel art game illustration, crisp square pixels, dark outlines, limited palette of deep navy night, warm amber lamp light, parchment cream, muted violet stone, river blue and soft white mist. Original fantasy setting: Veyra, a lamp-lit river city with white Tide mist. Frame, a lamp-spirit whose body is a small lantern shaped like a bookcase with three glowing shelves of blank books, deep red and gold light, tiny feet. A single small friendly lamp-spirit, centred, front view, full body, on a completely plain flat very dark navy background, no ground, no floor, no shadow, no scenery, no text, no letters, no numbers. Warm, kind and curious, never frightening.",
+   "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, smooth gradients, anti-aliasing, gore, blood, skull, scary horror face, characters or art from existing games or films",
+   "seeds": [
+    91068,
+    92068
+   ],
+   "aspect_ratio": "1:1 (Square)",
+   "megapixels": 0.45,
+   "steps": 24
+  },
+  {
+   "id": "pedestal_lit",
+   "kind": "prop",
+   "prompt": "16-bit pixel art game illustration, crisp square pixels, dark outlines, limited palette of deep navy night, warm amber lamp light, parchment cream, muted violet stone, river blue and soft white mist. Original fantasy setting: Veyra, a lamp-lit river city with white Tide mist. a lit round stone pedestal of grey and violet stone with a warm amber glow around its flat empty top where a relic would rest, small glowing lamp rings on its sides, warm and welcoming. A single stone pedestal, centred, seen straight from the front, whole object in view, on a completely plain flat very dark navy background, no floor, no shadow, no scenery, no text, no letters or carvings of words. The top is empty and flat.",
+   "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, smooth gradients, anti-aliasing, gore, blood, skull, scary horror face, characters or art from existing games or films",
+   "seeds": [
+    91069,
+    92069
+   ],
+   "aspect_ratio": "1:1 (Square)",
+   "megapixels": 0.45,
+   "steps": 24
+  },
+  {
+   "id": "pedestal_dim",
+   "kind": "prop",
+   "prompt": "16-bit pixel art game illustration, crisp square pixels, dark outlines, limited palette of deep navy night, warm amber lamp light, parchment cream, muted violet stone, river blue and soft white mist. Original fantasy setting: Veyra, a lamp-lit river city with white Tide mist. a dim faded round stone pedestal of cool grey-blue stone with a flat empty top, its lamp rings dark and dusty, a faint cold pale glow, quiet and forgotten but not scary. A single stone pedestal, centred, seen straight from the front, whole object in view, on a completely plain flat very dark navy background, no floor, no shadow, no scenery, no text, no letters or carvings of words. The top is empty and flat.",
+   "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, smooth gradients, anti-aliasing, gore, blood, skull, scary horror face, characters or art from existing games or films",
+   "seeds": [
+    91070,
+    92070
+   ],
+   "aspect_ratio": "1:1 (Square)",
+   "megapixels": 0.45,
+   "steps": 24
+  },
+  {
+   "id": "audit_route",
+   "kind": "scene",
+   "prompt": "16-bit pixel art game illustration, crisp square pixels, dark outlines, limited palette of deep navy night, warm amber lamp light, parchment cream, muted violet stone, river blue and soft white mist. Original fantasy setting: Veyra, a lamp-lit river city with white Tide mist. Wren's Audit: a long memory palace route seen as a lamplit hall of Veyra with small round glowing stops on the floor, each stop beside a different small object on a plinth, a tidy notebook and a pencil on a stone ledge in the foreground, violet and amber light, calm, empty of people. Wide cinematic composition, atmospheric depth, no text, no letters, no people in the foreground.",
+   "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, smooth gradients, anti-aliasing, gore, blood, skull, scary horror face, characters or art from existing games or films",
+   "seeds": [
+    91071,
+    92071
+   ],
+   "aspect_ratio": "16:9 (Widescreen)",
+   "megapixels": 0.6,
+   "steps": 24
+  },
+  {
+   "id": "wrenmem_nook",
+   "kind": "scene",
+   "prompt": "16-bit pixel art game illustration, crisp square pixels, dark outlines, limited palette of deep navy night, warm amber lamp light, parchment cream, muted violet stone, river blue and soft white mist. Original fantasy setting: Veyra, a lamp-lit river city with white Tide mist. Wren's reading nook: a cosy small room at the top of the Archive with a round window onto the lamplit river of Veyra, a worn armchair, stacks of notecards, a steaming teacup and a hanging lamp, a corkboard with blank cards pinned to it, warm amber light, quiet and safe, empty of people. Wide cinematic composition, atmospheric depth, no text, no letters, no people in the foreground.",
+   "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, smooth gradients, anti-aliasing, gore, blood, skull, scary horror face, characters or art from existing games or films",
+   "seeds": [
+    91072,
+    92072
+   ],
+   "aspect_ratio": "16:9 (Widescreen)",
+   "megapixels": 0.6,
+   "steps": 24
+  },
+  {
+   "id": "longecho_vault",
+   "kind": "scene",
+   "prompt": "16-bit pixel art game illustration, crisp square pixels, dark outlines, limited palette of deep navy night, warm amber lamp light, parchment cream, muted violet stone, river blue and soft white mist. Original fantasy setting: Veyra, a lamp-lit river city with white Tide mist. A deep old long-echo vault in the river wall of veyra: a tall round stone door worn smooth by many years, ringed with moss and tiny lamp symbols, a single pale lantern, a stone niche for an old tablet, dark still water and soft silver mist below. Wide cinematic composition, atmospheric depth, no text, no letters, no people in the foreground.",
+   "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, smooth gradients, anti-aliasing, gore, blood, skull, scary horror face, characters or art from existing games or films",
+   "seeds": [
+    91073,
+    92073
+   ],
+   "aspect_ratio": "16:9 (Widescreen)",
+   "megapixels": 0.6,
+   "steps": 24
+  },
+  {
+   "id": "story_ambrose",
+   "kind": "character",
+   "prompt": "16-bit pixel art game illustration, crisp square pixels, dark outlines, limited palette of deep navy night, warm amber lamp light, parchment cream, muted violet stone, river blue and soft white mist. Original fantasy setting: Veyra, a lamp-lit river city with white Tide mist. Ambrose Tallow, called the Winder, the last Warden of the Hours: a thin, tidy, very old man in an old dark Warden's coat with a worn-smooth brass badge, a pocket watch on a long chain, kind tired lonely eyes, faintly faded and pale like a figure held in one evening for three hundred years, gentle and sad, not scary, not evil. Head and shoulders portrait of one character, facing slightly toward the viewer, centred, on a completely plain flat very dark navy background, no scenery, no frame, no text, no letters. Expressive and readable at small size.",
+   "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, smooth gradients, anti-aliasing, gore, blood, skull, scary horror face, characters or art from existing games or films",
+   "seeds": [
+    91074,
+    92074
+   ],
+   "aspect_ratio": "1:1 (Square)",
+   "megapixels": 0.45,
+   "steps": 24
+  },
+  {
+   "id": "story_ottoline",
+   "kind": "character",
+   "prompt": "16-bit pixel art game illustration, crisp square pixels, dark outlines, limited palette of deep navy night, warm amber lamp light, parchment cream, muted violet stone, river blue and soft white mist. Original fantasy setting: Veyra, a lamp-lit river city with white Tide mist. Ottoline Gilt, nicknamed Lantern, a nineteen-year-old rich young woman: tall and immaculate, chin lifted with a smug little half-smile, finely dressed in cream and deep gold silk with a high collar, a row of small coloured ribbons in her neatly pinned hair, a tiny gold lamp brooch. Head and shoulders portrait of one character, facing slightly toward the viewer, centred, on a completely plain flat very dark navy background, no scenery, no frame, no text, no letters. Expressive and readable at small size.",
+   "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, smooth gradients, anti-aliasing, gore, blood, skull, scary horror face, characters or art from existing games or films",
+   "seeds": [
+    91075,
+    92075
+   ],
+   "aspect_ratio": "1:1 (Square)",
+   "megapixels": 0.45,
+   "steps": 24
+  },
+  {
+   "id": "story_edrin",
+   "kind": "character",
+   "prompt": "16-bit pixel art game illustration, crisp square pixels, dark outlines, limited palette of deep navy night, warm amber lamp light, parchment cream, muted violet stone, river blue and soft white mist. Original fantasy setting: Veyra, a lamp-lit river city with white Tide mist. Edrin Halloway, an older widowed lamplighter: a quiet, weathered, kind man with grey stubble and gentle tired eyes, a worn blue coat with brass buttons and a knitted scarf, the tip of a lamplighter's long pole and a small flame visible by his shoulder. Head and shoulders portrait of one character, facing slightly toward the viewer, centred, on a completely plain flat very dark navy background, no scenery, no frame, no text, no letters. Expressive and readable at small size.",
+   "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, smooth gradients, anti-aliasing, gore, blood, skull, scary horror face, characters or art from existing games or films",
+   "seeds": [
+    91076,
+    92076
+   ],
+   "aspect_ratio": "1:1 (Square)",
+   "megapixels": 0.45,
+   "steps": 24
+  },
+  {
+   "id": "story_green_door",
+   "kind": "scene",
+   "prompt": "16-bit pixel art game illustration, crisp square pixels, dark outlines, limited palette of deep navy night, warm amber lamp light, parchment cream, muted violet stone, river blue and soft white mist. Original fantasy setting: Veyra, a lamp-lit river city with white Tide mist. Quay Row at dusk: a narrow old stone terrace house beside the misty river with a freshly painted bright green wooden door with a brass lamp-shaped knocker, a few flecks of old flaking blue paint on the step, a lit iron street lamp beside it, cobbles and a low river wall, warm window light, hopeful and quiet, no readable numbers or writing. Wide cinematic composition, atmospheric depth, no text, no letters, no people in the foreground.",
+   "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, smooth gradients, anti-aliasing, gore, blood, skull, scary horror face, characters or art from existing games or films",
+   "seeds": [
+    91077,
+    92077
+   ],
+   "aspect_ratio": "16:9 (Widescreen)",
+   "megapixels": 0.6,
+   "steps": 24
+  },
+  {
+   "id": "story_mother_portrait",
+   "kind": "scene",
+   "prompt": "16-bit pixel art game illustration, crisp square pixels, dark outlines, limited palette of deep navy night, warm amber lamp light, parchment cream, muted violet stone, river blue and soft white mist. Original fantasy setting: Veyra, a lamp-lit river city with white Tide mist. Inside the archive: a simple painted portrait on a wooden easel filling the centre of the picture, a woman with a small scar through her left eyebrow, a brass key pinned in her hair, a yellow scarf and a warm laughing smile, painted softly and a little roughly by an amateur hand, brushes and small paint pots on a stool beside it, one amber lamp, warm and tender. Wide cinematic composition, atmospheric depth, no text, no letters, no people in the foreground.",
+   "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, smooth gradients, anti-aliasing, gore, blood, skull, scary horror face, characters or art from existing games or films",
+   "seeds": [
+    91078,
+    92078
+   ],
+   "aspect_ratio": "16:9 (Widescreen)",
+   "megapixels": 0.6,
+   "steps": 24
+  },
+  {
+   "id": "story_lamp_cup",
+   "kind": "scene",
+   "prompt": "16-bit pixel art game illustration, crisp square pixels, dark outlines, limited palette of deep navy night, warm amber lamp light, parchment cream, muted violet stone, river blue and soft white mist. Original fantasy setting: Veyra, a lamp-lit river city with white Tide mist. The lamp cup: a small old brass lamp on a stand on a velvet cushion on a stone plinth in a lamplit hall, a worn brass founder's plate on the stand polished completely smooth and blank with no writing, tall arched windows, a few small ribbons draped nearby, warm and proud and slightly sad. Wide cinematic composition, atmospheric depth, no text, no letters, no people in the foreground.",
+   "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, smooth gradients, anti-aliasing, gore, blood, skull, scary horror face, characters or art from existing games or films",
+   "seeds": [
+    91079,
+    92079
+   ],
+   "aspect_ratio": "16:9 (Widescreen)",
+   "megapixels": 0.6,
+   "steps": 24
+  },
+  {
+   "id": "story_winding_mark",
+   "kind": "object",
+   "prompt": "16-bit pixel art game illustration, crisp square pixels, dark outlines, limited palette of deep navy night, warm amber lamp light, parchment cream, muted violet stone, river blue and soft white mist. Original fantasy setting: Veyra, a lamp-lit river city with white Tide mist. a worn round iron disc with a ring carved into it and a single clock-like hand inside the ring pointing up, like a maker's mark worn into the base of an old lamp, rust and a little moss. A single small object, centred, seen from slightly above, on a completely plain flat very dark navy background, no table, no shadow, no scenery, no hands, no text, no letters or numbers written on it.",
+   "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, smooth gradients, anti-aliasing, gore, blood, skull, scary horror face, characters or art from existing games or films",
+   "seeds": [
+    91080,
+    92080
+   ],
+   "aspect_ratio": "1:1 (Square)",
+   "megapixels": 0.45,
+   "steps": 24
+  },
+  {
+   "id": "trialx_year_hall",
+   "kind": "scene",
+   "prompt": "16-bit pixel art game illustration, crisp square pixels, dark outlines, limited palette of deep navy night, warm amber lamp light, parchment cream, muted violet stone, river blue and soft white mist. Original fantasy setting: Veyra, a lamp-lit river city with white Tide mist. The hall of years: a very long vaulted stone hall of veyra with rows of tall pillars each carved with a different small picture symbol, a glowing line of light inlaid along the floor like a timeline with small lamps set at seven spots along it, seven lit alcoves each holding a stone tablet, a great round window of blue glass at the far end, calm and solemn, no numbers, no writing. Wide cinematic composition, atmospheric depth, no text, no letters, no people in the foreground.",
+   "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, smooth gradients, anti-aliasing, gore, blood, skull, scary horror face, characters or art from existing games or films",
+   "seeds": [
+    91081,
+    92081
+   ],
+   "aspect_ratio": "16:9 (Widescreen)",
+   "megapixels": 0.6,
+   "steps": 24
+  },
+  {
+   "id": "trialx_reckoning",
+   "kind": "scene",
+   "prompt": "16-bit pixel art game illustration, crisp square pixels, dark outlines, limited palette of deep navy night, warm amber lamp light, parchment cream, muted violet stone, river blue and soft white mist. Original fantasy setting: Veyra, a lamp-lit river city with white Tide mist. The counting house reckoning: a high brick counting hall at night with a long polished table of brass calculating frames and abacuses, bundles of wooden tally sticks in boxes, a wall of small drawers, green-shaded lamps in a row, a stone floor in a neat grid pattern, clean and quick and calm, no numbers, no writing. Wide cinematic composition, atmospheric depth, no text, no letters, no people in the foreground.",
+   "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, smooth gradients, anti-aliasing, gore, blood, skull, scary horror face, characters or art from existing games or films",
+   "seeds": [
+    91082,
+    92082
+   ],
+   "aspect_ratio": "16:9 (Widescreen)",
+   "megapixels": 0.6,
+   "steps": 24
+  },
+  {
+   "id": "prizex_year_tablet",
+   "kind": "object",
+   "prompt": "16-bit pixel art game illustration, crisp square pixels, dark outlines, limited palette of deep navy night, warm amber lamp light, parchment cream, muted violet stone, river blue and soft white mist. Original fantasy setting: Veyra, a lamp-lit river city with white Tide mist. a small square stone tablet carved with a row of seven small round dots along the top and a simple sun symbol below, edges worn smooth. A single small object, centred, seen from slightly above, on a completely plain flat very dark navy background, no table, no shadow, no scenery, no hands, no text, no letters or numbers written on it.",
+   "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, smooth gradients, anti-aliasing, gore, blood, skull, scary horror face, characters or art from existing games or films",
+   "seeds": [
+    91083,
+    92083
+   ],
+   "aspect_ratio": "1:1 (Square)",
+   "megapixels": 0.45,
+   "steps": 24
+  },
+  {
+   "id": "prizex_tally_stick",
+   "kind": "object",
+   "prompt": "16-bit pixel art game illustration, crisp square pixels, dark outlines, limited palette of deep navy night, warm amber lamp light, parchment cream, muted violet stone, river blue and soft white mist. Original fantasy setting: Veyra, a lamp-lit river city with white Tide mist. a wooden tally stick with a row of small notches along its edge, split lengthwise, tied with a blue ribbon. A single small object, centred, seen from slightly above, on a completely plain flat very dark navy background, no table, no shadow, no scenery, no hands, no text, no letters or numbers written on it.",
+   "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, smooth gradients, anti-aliasing, gore, blood, skull, scary horror face, characters or art from existing games or films",
+   "seeds": [
+    91084,
+    92084
    ],
    "aspect_ratio": "1:1 (Square)",
    "megapixels": 0.45,

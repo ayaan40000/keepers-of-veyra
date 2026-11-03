@@ -167,9 +167,13 @@ const PRIZES = [
   PZ('tr_mainspring', 'The Market Mainspring', 'epic', 'gears', 'The old mainspring of the market clock, coiled in its brass barrel. It was replaced long ago, but Mosk kept it in a drawer. He says a spring remembers how it was wound.'),
   PZ('tr_tongue_stone', "The Gargoyle's Stone", 'epic', 'bridge', 'A smooth grey river stone with a small friendly face carved on it. The eldest gargoyle of the Tongues Bridge gives one to every traveller who still knows the old words a week later.'),
   PZ('tr_dry_scroll', 'The Saved Scroll', 'epic', 'scriptorium', 'A scroll from the high chest of the Sunken Scriptorium, tied with blue ribbon and sealed with a drop of amber wax. It stayed dry because you held its timeline for a day.'),
+  PZ('tr_year_tablet', 'The Year Tablet', 'epic', 'year_hall', 'A small brass tablet from the Hall of Years, cut with one year and the shadow of a frame. Ennick says it fits only the frame it came from, and that you will know which.'),
+  PZ('tr_tally_stick', 'The Tally Stick', 'epic', 'reckoning', 'A short stick of pale wood from the Counting House drawer, notched with every sum you solved. Isolde keeps the match half. She says a tally is the oldest kind of promise.'),
   PZ('vt_lamp_hook', 'The Quay Vault Lamp', 'rare', 'vault_quay', 'A small lamp on an iron hook from the vault in the Quay wall. Its flame is the size of a fingernail and has not gone out since the Wardens lit it.'),
   PZ('vt_clay_tablet', 'The Cellar Tablet', 'epic', 'vault_cellar', 'A square clay tablet stamped with a lamp, found in the cellar vault under the clock tower. It is the key to its own door, which the Wardens thought was a good joke.'),
   PZ('vt_lamp_key', 'The Mirror Key', 'legendary', 'vault_mirror', 'A bronze key with a bow shaped like a lamp, from behind the dark mirror. It was waiting for someone who could keep a tablet for a whole month.'),
+  // 1.1 The Long Vigil: earned only by items held at 7 or 30 days (see engine/vigil.js).
+  { id: 'vg_watch_ledger', name: 'The Watch Ledger', kind: 'prize', rarity: 'epic', source: { type: 'vigil' }, lore: 'A slim ledger with a brass clasp, kept by the night watch on the Quay battlements. It has one line for every phantom that was sent home after a week or a month, and no line for those that were not. The watch says that is how a ledger should be: it records what was held.' },
 ];
 
 // v0.9.1 deep treasures share the crypt's data; the rest are new kinds (see traced-items.js).

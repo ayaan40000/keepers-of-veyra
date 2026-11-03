@@ -1,0 +1,569 @@
+{
+  "notes": "Draft. 16 invented talk outlines of 5 to 9 points, all invented towns, clubs and plans. No real people, places or organisations. Each point has a \"key\" that appears in the text and is unique inside its talk. Preparing key points helps you keep your order; it does not decide how a talk goes.",
+  "talks": [
+    {
+      "id": "talk-library-box",
+      "title": "A Little Free Library for Our Street",
+      "points": [
+        {
+          "text": "Greet the neighbours and say what you want to build.",
+          "key": "neighbours"
+        },
+        {
+          "text": "Show a photo of a small wooden box on a post.",
+          "key": "photo"
+        },
+        {
+          "text": "Explain that anyone can take a book or leave one.",
+          "key": "book"
+        },
+        {
+          "text": "Say where it would stand, at the corner by the bus stop.",
+          "key": "corner"
+        },
+        {
+          "text": "Describe the volunteers who will build it on a Saturday.",
+          "key": "volunteers"
+        },
+        {
+          "text": "Give the cost, about the price of one tank of paint.",
+          "key": "paint"
+        },
+        {
+          "text": "Ask for a show of hands.",
+          "key": "hands"
+        }
+      ]
+    },
+    {
+      "id": "talk-walking-club",
+      "title": "Starting a Walking Club",
+      "points": [
+        {
+          "text": "Open with the empty path behind the school.",
+          "key": "path"
+        },
+        {
+          "text": "Name the problem: nobody walks together.",
+          "key": "problem"
+        },
+        {
+          "text": "Give the plan: a short walk every Tuesday.",
+          "key": "walk"
+        },
+        {
+          "text": "Pick a meeting spot at the front gate.",
+          "key": "gate"
+        },
+        {
+          "text": "Show the route on a hand-drawn map.",
+          "key": "map"
+        },
+        {
+          "text": "Offer a badge for every ten walks.",
+          "key": "badge"
+        },
+        {
+          "text": "Close with a sign-up sheet.",
+          "key": "sheet"
+        }
+      ]
+    },
+    {
+      "id": "talk-class-trip",
+      "title": "Planning a Class Trip to a Museum",
+      "points": [
+        {
+          "text": "Start by holding up a ticket.",
+          "key": "ticket"
+        },
+        {
+          "text": "Explain that the museum has a room of fossils.",
+          "key": "fossils"
+        },
+        {
+          "text": "List the cost per student.",
+          "key": "cost"
+        },
+        {
+          "text": "Describe the bus and the driver.",
+          "key": "bus"
+        },
+        {
+          "text": "Say what to pack: lunch and a notebook.",
+          "key": "lunch"
+        },
+        {
+          "text": "Give the date and the clock time the bus leaves.",
+          "key": "clock"
+        },
+        {
+          "text": "Hand out the permission slip.",
+          "key": "slip"
+        }
+      ]
+    },
+    {
+      "id": "talk-chess-welcome",
+      "title": "Welcoming New Chess Club Members",
+      "points": [
+        {
+          "text": "Smile and hold up a chess king.",
+          "key": "king"
+        },
+        {
+          "text": "Say the club meets on Wednesdays.",
+          "key": "wednesday"
+        },
+        {
+          "text": "Explain that beginners play first on the small boards.",
+          "key": "boards"
+        },
+        {
+          "text": "Show the clock used in timed games.",
+          "key": "clock"
+        },
+        {
+          "text": "Point to the shelf of loan books.",
+          "key": "shelf"
+        },
+        {
+          "text": "Mention the end-of-term tournament trophy.",
+          "key": "trophy"
+        },
+        {
+          "text": "Finish with a first game.",
+          "key": "game"
+        }
+      ]
+    },
+    {
+      "id": "talk-bake-sale",
+      "title": "Organising a Bake Sale",
+      "points": [
+        {
+          "text": "Hold up a tray of cookies.",
+          "key": "cookies"
+        },
+        {
+          "text": "State the goal: new books for the library.",
+          "key": "books"
+        },
+        {
+          "text": "Pick a date on the calendar, the first Saturday of the month.",
+          "key": "calendar"
+        },
+        {
+          "text": "Set up tables by the front door.",
+          "key": "tables"
+        },
+        {
+          "text": "Ask each family to bring one batch.",
+          "key": "batch"
+        },
+        {
+          "text": "Write prices on little flags.",
+          "key": "flags"
+        },
+        {
+          "text": "Count the coins in a jar at the end.",
+          "key": "jar"
+        },
+        {
+          "text": "Thank everyone with a round of applause.",
+          "key": "applause"
+        }
+      ]
+    },
+    {
+      "id": "talk-recycling-plan",
+      "title": "A Recycling Plan for the Office",
+      "points": [
+        {
+          "text": "Show a full wastebasket.",
+          "key": "wastebasket"
+        },
+        {
+          "text": "Say that most of it is paper.",
+          "key": "paper"
+        },
+        {
+          "text": "Propose a blue bin at each desk.",
+          "key": "bin"
+        },
+        {
+          "text": "Name a person who empties the bins on Fridays.",
+          "key": "friday"
+        },
+        {
+          "text": "Add a poster by the printer.",
+          "key": "poster"
+        },
+        {
+          "text": "Mark a short check on the calendar after one month.",
+          "key": "calendar"
+        },
+        {
+          "text": "Weigh the paper saved on a scale and report it.",
+          "key": "scale"
+        },
+        {
+          "text": "Finish with a question for the team.",
+          "key": "question"
+        }
+      ]
+    },
+    {
+      "id": "talk-rooftop-garden",
+      "title": "Pitching a Rooftop Garden",
+      "points": [
+        {
+          "text": "Begin with a picture of the flat roof.",
+          "key": "roof"
+        },
+        {
+          "text": "Explain the sunshine it gets all day.",
+          "key": "sun"
+        },
+        {
+          "text": "List the plants: tomatoes, beans and herbs.",
+          "key": "tomatoes"
+        },
+        {
+          "text": "Show the wooden boxes along the edge.",
+          "key": "boxes"
+        },
+        {
+          "text": "Describe the water barrel that catches rain.",
+          "key": "barrel"
+        },
+        {
+          "text": "Set a rota for who waters.",
+          "key": "rota"
+        },
+        {
+          "text": "Explain the cost in a simple chart.",
+          "key": "chart"
+        },
+        {
+          "text": "Offer a first harvest picnic.",
+          "key": "picnic"
+        },
+        {
+          "text": "Close by handing out packets of seeds.",
+          "key": "seeds"
+        }
+      ]
+    },
+    {
+      "id": "talk-volunteer-day",
+      "title": "Introducing Our Volunteer Day",
+      "points": [
+        {
+          "text": "Hold up a yellow vest.",
+          "key": "vest"
+        },
+        {
+          "text": "Say the day is the second Sunday of spring.",
+          "key": "sunday"
+        },
+        {
+          "text": "Describe the pond clean-up.",
+          "key": "pond"
+        },
+        {
+          "text": "Give out gloves and bags.",
+          "key": "gloves"
+        },
+        {
+          "text": "Mention the lunch under the oak tree.",
+          "key": "oak"
+        },
+        {
+          "text": "Name the team leaders.",
+          "key": "leaders"
+        },
+        {
+          "text": "End with a group photo taken on a camera.",
+          "key": "camera"
+        }
+      ]
+    },
+    {
+      "id": "talk-bus-route",
+      "title": "Explaining a New Bus Route",
+      "points": [
+        {
+          "text": "Show a map with a red line.",
+          "key": "map"
+        },
+        {
+          "text": "Say the route begins at the market.",
+          "key": "market"
+        },
+        {
+          "text": "Name the three stops after it.",
+          "key": "stops"
+        },
+        {
+          "text": "Point out the new stop at the library.",
+          "key": "library"
+        },
+        {
+          "text": "Give the first bus time in the morning.",
+          "key": "morning"
+        },
+        {
+          "text": "Say a ticket costs the same as before.",
+          "key": "ticket"
+        },
+        {
+          "text": "Add that buses have a ramp.",
+          "key": "ramp"
+        },
+        {
+          "text": "End with a phone number to call.",
+          "key": "phone"
+        }
+      ]
+    },
+    {
+      "id": "talk-quiet-hour",
+      "title": "A Quiet Study Hour at School",
+      "points": [
+        {
+          "text": "Pick up a pencil and hold it still.",
+          "key": "pencil"
+        },
+        {
+          "text": "Explain the hour runs after lunch.",
+          "key": "lunch"
+        },
+        {
+          "text": "List the rules: no talking, no phones.",
+          "key": "rules"
+        },
+        {
+          "text": "Put out a basket for phones.",
+          "key": "basket"
+        },
+        {
+          "text": "Provide a timer on the desk.",
+          "key": "timer"
+        },
+        {
+          "text": "Offer a small snack after.",
+          "key": "snack"
+        }
+      ]
+    },
+    {
+      "id": "talk-seed-swap",
+      "title": "Launching a Seed Swap",
+      "points": [
+        {
+          "text": "Hold up a paper envelope of seeds.",
+          "key": "envelope"
+        },
+        {
+          "text": "Say people bring seeds they do not need.",
+          "key": "seeds"
+        },
+        {
+          "text": "Set out a long table with labels.",
+          "key": "labels"
+        },
+        {
+          "text": "Explain how to take one packet for each you give.",
+          "key": "packet"
+        },
+        {
+          "text": "Invite gardeners to share tips.",
+          "key": "tips"
+        },
+        {
+          "text": "Plan the first swap in March.",
+          "key": "march"
+        },
+        {
+          "text": "Hand out blank labels and a pen.",
+          "key": "pen"
+        }
+      ]
+    },
+    {
+      "id": "talk-makerspace-open-house",
+      "title": "Open House for Our Makerspace",
+      "points": [
+        {
+          "text": "Greet visitors at the red door.",
+          "key": "door"
+        },
+        {
+          "text": "Show the wood bench and its tools.",
+          "key": "bench"
+        },
+        {
+          "text": "Explain the sewing corner.",
+          "key": "sewing"
+        },
+        {
+          "text": "Demonstrate the robot kit.",
+          "key": "robot"
+        },
+        {
+          "text": "Point to the paint wall.",
+          "key": "paint"
+        },
+        {
+          "text": "Share the sign-in book.",
+          "key": "book"
+        },
+        {
+          "text": "Give out a free badge.",
+          "key": "badge"
+        },
+        {
+          "text": "Close with a chance to try a project.",
+          "key": "project"
+        }
+      ]
+    },
+    {
+      "id": "talk-park-report",
+      "title": "Annual Report of the Park Crew",
+      "points": [
+        {
+          "text": "Begin with the number of trees planted.",
+          "key": "trees"
+        },
+        {
+          "text": "Report the benches repaired.",
+          "key": "benches"
+        },
+        {
+          "text": "Mention the new path to the lake.",
+          "key": "lake"
+        },
+        {
+          "text": "Say how many bags of litter were collected.",
+          "key": "litter"
+        },
+        {
+          "text": "Share the ducks counted in spring.",
+          "key": "ducks"
+        },
+        {
+          "text": "Thank the school group.",
+          "key": "school"
+        },
+        {
+          "text": "Show next year on a map.",
+          "key": "map"
+        }
+      ]
+    },
+    {
+      "id": "talk-film-night",
+      "title": "Planning a Community Film Night",
+      "points": [
+        {
+          "text": "Show a ticket stub.",
+          "key": "ticket"
+        },
+        {
+          "text": "Choose the hall with a big white wall.",
+          "key": "wall"
+        },
+        {
+          "text": "List the speaker and cables to borrow.",
+          "key": "speaker"
+        },
+        {
+          "text": "Set up folding chairs in rows.",
+          "key": "chairs"
+        },
+        {
+          "text": "Plan a popcorn stand by the door.",
+          "key": "popcorn"
+        },
+        {
+          "text": "Set the start time at dusk.",
+          "key": "dusk"
+        },
+        {
+          "text": "Choose a short film first.",
+          "key": "film"
+        },
+        {
+          "text": "Thank the sponsor and wave goodnight.",
+          "key": "wave"
+        }
+      ]
+    },
+    {
+      "id": "talk-lighthouse-guides",
+      "title": "Training New Lighthouse Guides",
+      "points": [
+        {
+          "text": "Show a ring of keys.",
+          "key": "keys"
+        },
+        {
+          "text": "Teach the greeting at the gate.",
+          "key": "gate"
+        },
+        {
+          "text": "Describe the 90 stairs to the top.",
+          "key": "stairs"
+        },
+        {
+          "text": "Explain the big lens.",
+          "key": "lens"
+        },
+        {
+          "text": "Share a story about the old keeper.",
+          "key": "keeper"
+        },
+        {
+          "text": "Show where the safety rail is.",
+          "key": "rail"
+        },
+        {
+          "text": "Rehearse the last question.",
+          "key": "question"
+        }
+      ]
+    },
+    {
+      "id": "talk-trail-signs",
+      "title": "New Signs for the Nature Trail",
+      "points": [
+        {
+          "text": "Hold up a small wooden sign.",
+          "key": "sign"
+        },
+        {
+          "text": "Say the old signs have faded in the sun.",
+          "key": "sun"
+        },
+        {
+          "text": "Show the map of the loop around the lake.",
+          "key": "lake"
+        },
+        {
+          "text": "Explain the colour code painted on the posts.",
+          "key": "posts"
+        },
+        {
+          "text": "Mention the bird pictures on each sign.",
+          "key": "bird"
+        },
+        {
+          "text": "Ask for helpers to carry the posts on Saturday.",
+          "key": "helpers"
+        }
+      ]
+    }
+  ]
+}

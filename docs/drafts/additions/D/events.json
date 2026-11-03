@@ -1,0 +1,442 @@
+{
+  "notes": "Workstream D draft. Practical Event Hall copy only. Per the owner decisions of Nov 2, 2026: the hall is a Veyra lore tournament with tiers and a rival; NO real championship is named; best-result ladders only (no badges, no Lumen, no skill credit); pace mode is off by default. The STORY (why Veyra competes, the tier names, the rival's character and lines) is written by the story workstream (docs/drafts/additions/story/); this file uses placeholders in braces where story text goes: {HALL_NAME}, {TIER_NAME}, {TIER_NUMBER}, {RIVAL}, {RIVAL_RESULT}, {RIVAL_LINE_BEFORE}, {RIVAL_LINE_AFTER}, {CONTEST_NAME} (the lore name of each event if the story gives one, otherwise ourName is used). Result tokens: {score}, {total}, {best}, {level}, {time}. The 'realName' field of the plan is set to null because no real championship is named in the game. 'formatInspiration' is for builders and is NOT shown to players. The real contest formats are only loosely described and every exact figure or rule from docs/CURRICULUM_ADDITIONS.md section 2 is left out of player text, because that section came from a summary of the page and a human has not rechecked it. Our own scaled-down numbers (12 to 24 faces, rows of 20 digits and so on) are OUR rules and are stated as such. Ties, bonus formulas and exact event timings are not used. All people, words and poems used in these events are supplied by workstreams B and C (invented people, public-domain or original poems). Nothing here implies that any real organisation, contest or person endorses Mnemos. Fact-check (Nov 2, 2026): no real-contest figure, count, time or rule appears in player-facing fields; the unsupported claim that name gains are 'modest' was removed from the Face Round honest line; 'verified' now means the copy was read for claims and rules were checked for internal consistency.",
+  "hall": {
+    "title": "The Event Hall",
+    "intro": "Welcome to {HALL_NAME}. Seven contests are held here, tier by tier, from the easiest to the hardest. Each one uses a method you have learned. Climb the tiers, and meet {RIVAL} in the final.",
+    "practiceOnly": "This is practice. Your results here never change your skill estimates. They do not earn Lumen. They are the best you have done in the hall, kept so you can try to beat yourself.",
+    "ladderOnly": "There are no prizes in the hall, only your own best results and the tiers you have cleared.",
+    "rivalRule": "{RIVAL}'s results are part of the story. They are set in advance. They do not change when you are slow, there is no clock against them, and they never change what you earn. You see them after you finish.",
+    "paceMode": {
+      "label": "Contest pace",
+      "text": "Turn on Contest pace to answer each question in a short fixed time, as in a real elimination round. It is off by default. You never have to use it. If you use a longer time setting for accessibility, Contest pace follows it.",
+      "defaultOn": false
+    },
+    "eliminationEnd": "A round can end early in the elimination contests. When it does, the round ends gently, the answers are shown, and nothing is lost. Look at the ones you missed, and try again whenever you like.",
+    "quiet": "Study and recall screens in the hall stay still and quiet, like the rest of the game.",
+    "honest": "These contests are made-up formats on Mnemos material. A good result shows how you did on that task on that day. It is not a test of your memory in general, and it does not predict how you will do in real life.",
+    "bestResultLabel": "Best result",
+    "notDoneYet": "Not tried yet.",
+    "generalAdvice": [
+      "Use a method you already know, and do not try something new on the day.",
+      "Take the study time you are given. Do not rush the first items.",
+      "In recall, answer what you know first, then go back for the rest. A blank is better than a wild guess in the strict formats, because one mistake can end a row, a run or a round.",
+      "Try again later. A second go on another day is part of practice."
+    ],
+    "resultsTemplates": {
+      "finished": "You finished {CONTEST_NAME}: {score} out of {total}.",
+      "newBest": "A new best for {CONTEST_NAME}: {score}. Your last best was {best}.",
+      "matchedBest": "You matched your best for {CONTEST_NAME}: {score}.",
+      "belowBest": "{score} this time. Your best is still {best}. That is fine. Every try is practice.",
+      "tierCleared": "You have cleared {TIER_NAME}. The next tier is open.",
+      "tierNotYet": "Not quite {TIER_NAME} yet. Try again whenever you like.",
+      "rivalAfter": "{RIVAL} scored {RIVAL_RESULT} in this contest. {RIVAL_LINE_AFTER}",
+      "rivalBefore": "{RIVAL_LINE_BEFORE}",
+      "finalWon": "You beat {RIVAL} in the final.",
+      "finalLost": "{RIVAL} took this one. The final is open to you again whenever you like.",
+      "noBadges": "There are no badges and no prizes. The record is yours."
+    },
+    "ladderWording": {
+      "intro": "Each contest has a ladder of levels. Reach a level by getting every part right at that size. The levels grow, so the same contest gets harder as you climb.",
+      "levelReached": "Level {level} reached.",
+      "bestAt": "Your best: {best}.",
+      "nextLevel": "Next level: {level}.",
+      "honestPersonalBest": "A personal best only counts when the contest is bigger (more faces, rows, cards or items) or faster at the same accuracy. A small contest done well is not a record."
+    }
+  },
+  "events": [
+    {
+      "id": "faces",
+      "ourName": "Face Round",
+      "realName": null,
+      "formatInspiration": "Builder note, not shown to players: a face-and-name memory contest where a page of faces is shown, then recalled in a different order, with credit for each correctly spelled first and last name. Exact figures from the source summary are unconfirmed and are not used here.",
+      "trains": "Names and faces (Month 3).",
+      "howItWorks": "You are shown faces, each with a first and a last name. After a study time, the faces come back in a new order and you type the first and last name of each one. Each name is scored by itself. A spelling that is only close does not count in the strict round.",
+      "ourVersion": "12 to 24 faces, depending on the level. Each face has an invented first and last name. Faces come from the game's own pixel-art cast.",
+      "rules": [
+        "Study time is set by the level: about 7 seconds for each face at the top level, and longer for the lower ones. The time is shown before you begin.",
+        "Recall shows the same faces in a new order. Type the first and last name.",
+        "Spelling must be exact. Capital letters and spacing are ignored, but letters are not.",
+        "Each correct name part is one point: a first name is one point and a last name is one point. A wrong guess costs nothing. A blank costs nothing.",
+        "You may skip a face and come back to it."
+      ],
+      "instructions": {
+        "study": "Look at each face and its name. Make a picture for the first name and a picture for the last name, and join both to the face in one scene.",
+        "recall": "Type the first name and the last name for each face. If you only know one part, type that part."
+      },
+      "scoring": "One point for each correct name part, so a level of 12 faces is worth 24 points. The result is shown as points out of the total.",
+      "ladder": [
+        {
+          "level": 1,
+          "size": "12 faces",
+          "wording": "Face Round, 12 faces, relaxed study time"
+        },
+        {
+          "level": 2,
+          "size": "16 faces",
+          "wording": "Face Round, 16 faces"
+        },
+        {
+          "level": 3,
+          "size": "20 faces",
+          "wording": "Face Round, 20 faces"
+        },
+        {
+          "level": 4,
+          "size": "24 faces",
+          "wording": "Face Round, 24 faces, close to the top pace"
+        }
+      ],
+      "results": {
+        "finished": "You named {score} of {total} name parts.",
+        "tip": "Look at the ones you missed. Was it the first name or the last? Make that picture stranger."
+      },
+      "advice": [
+        "Pick one feature on each face and stick with it.",
+        "A last name often has a picture of its own, such as Baker or Stone. Join it to the first-name picture.",
+        "Say each name once in your head as you study, in the same beat."
+      ],
+      "notConfirmed": "Real contests of this kind have different numbers of faces, study times and scoring rules. We do not give them here.",
+      "honest": "Names and faces here are invented. In real life, remembering a name takes attention when you meet someone. This round trains the method, not your general memory.",
+      "verified": true
+    },
+    {
+      "id": "numbers",
+      "ourName": "Number Rows",
+      "realName": null,
+      "formatInspiration": "Builder note, not shown to players: a speed-digits contest with digits in rows of 20, scored by whole row, with two trials and the better one counted. The exact values in the source summary are unconfirmed and are not used here.",
+      "trains": "The Major System and digit palaces (Months 4 and 5).",
+      "howItWorks": "You are shown rows of digits, 20 to a row. After a study time you write the digits back, row by row, in order.",
+      "ourVersion": "1 to 4 rows of 20 digits. Two trials with different numbers, and your better one counts. Forty digits (two rows) is the same size as your Month 5 gate.",
+      "rules": [
+        "Digits are made by the game with a fixed check for patterns and repeats. They are never real numbers, codes or PINs.",
+        "Study time is set by the level and shown before you begin.",
+        "Recall shows empty rows of 20. Type the digits in each row.",
+        "A row scores only if all 20 digits are right. One mistake and the row scores nothing.",
+        "If you leave a whole row blank, scoring stops there. Rows after a blank row do not count.",
+        "You have two trials. Your better trial is your result."
+      ],
+      "instructions": {
+        "study": "Cut each row into pairs or groups, make a picture for each, and put the pictures on your stops. Say each group aloud in your head in a steady beat.",
+        "recall": "Walk your stops and type the digits, row by row. If a row is not complete, fill in what you can and move on only if you are sure of the next row."
+      },
+      "scoring": "20 points for each completely correct row. The result is shown as points out of the total, and as the number of full rows. A row with a mistake is shown as a miss and the right digits are shown after.",
+      "ladder": [
+        {
+          "level": 1,
+          "size": "1 row (20 digits)",
+          "wording": "Number Rows, 1 row"
+        },
+        {
+          "level": 2,
+          "size": "2 rows (40 digits)",
+          "wording": "Number Rows, 2 rows, your gate size"
+        },
+        {
+          "level": 3,
+          "size": "3 rows (60 digits)",
+          "wording": "Number Rows, 3 rows"
+        },
+        {
+          "level": 4,
+          "size": "4 rows (80 digits)",
+          "wording": "Number Rows, 4 rows"
+        }
+      ],
+      "results": {
+        "finished": "{score} points: you got {rows} full rows.",
+        "tip": "Look at the row you missed. Often it is one pair. Fix that picture and try again tomorrow."
+      },
+      "advice": [
+        "Keep the same group size all the way through, such as pairs.",
+        "Do not start a new row until you have checked the last pair of the old one.",
+        "If you are not sure of a digit, the honest answer is to leave the row until you have thought about it."
+      ],
+      "notConfirmed": "Real contests of this kind use their own point values and bonus rules. We do not give them here.",
+      "honest": "Number memory like this is a sport skill. The Major System is useful for dates, house numbers and friends' phone numbers, but never for passwords or PINs. The contest trains your own method and does not make you good with numbers in general.",
+      "verified": true
+    },
+    {
+      "id": "cards",
+      "ourName": "Deck Run",
+      "realName": null,
+      "formatInspiration": "Builder note, not shown to players: a speed-cards contest where one shuffled deck is memorised and then laid out in order, with credit for the cards in a run from the start. Bonus formulas and exact times are unconfirmed and not used.",
+      "trains": "Linking pictures along a route, quickly. Cards are optional and a sport.",
+      "howItWorks": "A shuffled run of cards is shown to you. After the study time, you put the cards back in the same order, from the first card on.",
+      "ourVersion": "10, 15, 20, 26, 39 or 52 cards, depending on the level. Two trials, and the better one counts.",
+      "rules": [
+        "The cards are drawn in the game's own style, with the suit shown by shape and by letter, never by colour alone.",
+        "Study the cards at your own pace inside the study time shown.",
+        "Recall by tapping each card into its numbered slot, or by typing a code such as 10H.",
+        "Your result is the longest run of correct cards from card 1. The first mistake ends the run.",
+        "You have two trials with different orders. Your better trial counts.",
+        "Cards never change your skill estimates and never earn Lumen."
+      ],
+      "instructions": {
+        "study": "Give each card one picture, lay two cards at each stop along a route, and walk the route. If you have no picture list yet, link each card to the next in a story.",
+        "recall": "Walk your route and place each card in its slot. Stop and check if you are not sure, because one wrong card ends the run."
+      },
+      "scoring": "Your score is how many cards in a row you placed correctly from the start. It is shown as cards out of the deck size, and your accuracy over the whole deck is shown as well.",
+      "ladder": [
+        {
+          "level": 1,
+          "size": "10 cards",
+          "wording": "Deck Run, 10 cards"
+        },
+        {
+          "level": 2,
+          "size": "15 cards",
+          "wording": "Deck Run, 15 cards"
+        },
+        {
+          "level": 3,
+          "size": "20 cards",
+          "wording": "Deck Run, 20 cards"
+        },
+        {
+          "level": 4,
+          "size": "26 cards (half a deck)",
+          "wording": "Deck Run, 26 cards"
+        },
+        {
+          "level": 5,
+          "size": "39 cards",
+          "wording": "Deck Run, 39 cards"
+        },
+        {
+          "level": 6,
+          "size": "52 cards (a full deck)",
+          "wording": "Deck Run, a full deck"
+        }
+      ],
+      "results": {
+        "finished": "Your run reached {score} of {total} cards.",
+        "tip": "The card after your last correct one is the one to look at. Make its picture stranger."
+      },
+      "advice": [
+        "Learn one picture for each card so that it comes without thinking before you try a long deck.",
+        "Use the same route for each trial, and wipe it before the next.",
+        "Start with the small levels. Ten cards done cleanly is better than 52 cards half done."
+      ],
+      "notConfirmed": "Real contests of this kind have their own time rules and bonus points. We do not give them here.",
+      "honest": "Cards are a memory sport. They train linking a picture to a card and walking a route, and they do not carry much into daily life. That is why they earn nothing in Mnemos. It is fine to skip them.",
+      "verified": true
+    },
+    {
+      "id": "poem",
+      "ourName": "Poem Page",
+      "realName": null,
+      "formatInspiration": "Builder note, not shown to players: a poetry contest where a poem is memorised and written out line by line, strict on words, capitals and punctuation. The real contest's point values, line counts and skip rules are unconfirmed and are not used.",
+      "trains": "Exact wording in order (Month 7).",
+      "howItWorks": "You are shown a poem you have not seen before. After a study time, you write it out line by line, with its title and author. In the strict round, words, capitals and punctuation must all match.",
+      "ourVersion": "A public-domain poem of 4 to 16 lines, supplied by workstream C. Strict scoring, our own point values.",
+      "rules": [
+        "The poem is shown in a still card with its title, author and line numbers.",
+        "Recall gives you one box for each line, with a box for the title and one for the author.",
+        "A line scores in full only if it is exactly right: every word, capital and punctuation mark.",
+        "Each line is worth one point. The title and the author are one point each.",
+        "If you leave more than two lines in a row blank, scoring stops.",
+        "In practice mode, small slips are allowed and capitals and punctuation are ignored. The strict round is for the Event Hall."
+      ],
+      "instructions": {
+        "study": "Read it once for the meaning. Give each line one picture, and each stanza its own room or a stop on a route. Say each line aloud in your head in a steady beat.",
+        "recall": "Type each line in order, then check the title and author. Do the lines you know first, then return to the gaps."
+      },
+      "scoring": "One point for each line that is exactly right, plus one for the title and one for the author. The result is shown as points out of the total, and every line that missed is shown with the correct line after.",
+      "ladder": [
+        {
+          "level": 1,
+          "size": "4 lines",
+          "wording": "Poem Page, 4 lines"
+        },
+        {
+          "level": 2,
+          "size": "6 lines",
+          "wording": "Poem Page, 6 lines"
+        },
+        {
+          "level": 3,
+          "size": "8 lines",
+          "wording": "Poem Page, 8 lines"
+        },
+        {
+          "level": 4,
+          "size": "12 lines",
+          "wording": "Poem Page, 12 lines"
+        },
+        {
+          "level": 5,
+          "size": "16 lines",
+          "wording": "Poem Page, 16 lines"
+        }
+      ],
+      "results": {
+        "finished": "{score} of {total} points.",
+        "tip": "The words in the lines you missed are shown. Try the line again with first letters only."
+      },
+      "advice": [
+        "Get the meaning first. It makes the words easier to find.",
+        "Learn it a few lines at a time, not all at once.",
+        "A poem you want to keep needs several checks over days, not one long sitting."
+      ],
+      "notConfirmed": "The real contest values lines differently, and we do not give those values. Our point values are our own.",
+      "honest": "Pictures help you keep the order of the lines, and exact words come from checking yourself again and again over days. Poems here are public domain or written for the game.",
+      "verified": true
+    },
+    {
+      "id": "words",
+      "ourName": "Word Numbers",
+      "realName": null,
+      "formatInspiration": "Builder note, not shown to players: an oral round where a numbered word list is memorised and then asked by number in random order, with a single miss ending a competitor's round. The exact list length in the source summary was inconsistent and is not used.",
+      "trains": "Random access: finding item 23 without counting from item 1 (Week 7).",
+      "howItWorks": "You study a numbered list of words. Then you are asked for the word at a number, in random order. In this contest, three wrong answers end your round.",
+      "ourVersion": "40 numbered words. You are asked for the word at a number. Three strikes end the round. The top level uses a longer list of 100 words from workstream B.",
+      "rules": [
+        "Words are shown with numbers. Study time is set by the level and shown before you begin.",
+        "Each question asks for one number. Type the word. The matcher forgives small typos.",
+        "A wrong answer is a strike. The right word is shown after, and the round goes on.",
+        "Three strikes end the round, gently. The answers are shown and nothing is lost.",
+        "There is no time limit unless you turn on Contest pace."
+      ],
+      "instructions": {
+        "study": "Put each word on a numbered stop: ten stops to a room is a handy way to find number 23 quickly. Make a picture for each word and place it.",
+        "recall": "When you hear a number, go straight to its stop and look at the picture."
+      },
+      "scoring": "Your score is how many words you answered correctly before the round ended, out of the list size. The result is shown as words and strikes.",
+      "ladder": [
+        {
+          "level": 1,
+          "size": "20 words",
+          "wording": "Word Numbers, 20 words"
+        },
+        {
+          "level": 2,
+          "size": "40 words",
+          "wording": "Word Numbers, 40 words"
+        },
+        {
+          "level": 3,
+          "size": "100 words",
+          "wording": "Word Numbers, the long list"
+        }
+      ],
+      "results": {
+        "finished": "You answered {score} of {total} words with {strikes} strikes.",
+        "tip": "Look at the numbers you struck on. Are they next to each other? Perhaps two stops are too alike."
+      },
+      "advice": [
+        "Number your rooms and stops before the contest, so number 23 always lives in the same place.",
+        "If your answer is not there, say the one before it and the one after it in your head. They can bring it back.",
+        "A word you know you do not have is a strike you already expected. Move on to the next."
+      ],
+      "notConfirmed": "The number of words in real contests of this kind is not confirmed. Our list sizes are our own.",
+      "honest": "This round trains finding any item quickly, which is useful for lists you may need out of order. It does not make you better at words in general.",
+      "verified": true
+    },
+    {
+      "id": "strikes",
+      "ourName": "Three Strikes",
+      "realName": null,
+      "formatInspiration": "Builder note, not shown to players: a round where facts about several people are given aloud and as a map, then asked in a new order with three wrong answers eliminating the competitor. The real recall time is not confirmed and is not used.",
+      "trains": "Details about people and Mind Maps (Month 3 and Week 29).",
+      "howItWorks": "You are given facts about a few people, and a Mind Map for each. After the study time, you are asked what you remember in a new order. Three wrong answers end the round.",
+      "ourVersion": "4 to 6 invented people, with 4 to 6 details each: birthday, hometown, pet, hobby, car, food and a four-digit desk extension. All people and places are invented. None are real, and none are anyone's private details.",
+      "rules": [
+        "Each person comes with a Mind Map. Study time is set by the level and shown before you begin.",
+        "Each question asks for one detail about one person, such as 'What is Imke's hobby?'",
+        "A wrong or empty answer is a strike. The right answer is shown after.",
+        "Three strikes end the round, gently. The answers are shown and nothing is lost.",
+        "There is no time limit unless you turn on Contest pace."
+      ],
+      "instructions": {
+        "study": "Make a picture for each person's name, and join each detail to it in one scene. Put each person on a stop.",
+        "recall": "Go to the person's stop, find the picture, and read off the detail."
+      },
+      "scoring": "Your score is how many details you answered correctly before three strikes, out of the total number of details. It is shown as answers and strikes.",
+      "ladder": [
+        {
+          "level": 1,
+          "size": "4 people, 4 details each",
+          "wording": "Three Strikes, 4 people"
+        },
+        {
+          "level": 2,
+          "size": "5 people, 5 details each",
+          "wording": "Three Strikes, 5 people"
+        },
+        {
+          "level": 3,
+          "size": "6 people, 6 details each",
+          "wording": "Three Strikes, 6 people"
+        }
+      ],
+      "results": {
+        "finished": "You answered {score} of {total} details with {strikes} strikes.",
+        "tip": "Look at the details you struck on. Were they all from one person? Make that person's scene stronger."
+      },
+      "advice": [
+        "Keep the same order of details for every person, such as pet first, then food.",
+        "Mix the people up in your practice, since the questions will not come in order.",
+        "A four-digit extension can be turned into two pairs and two pictures."
+      ],
+      "notConfirmed": "The recall time in real contests of this kind is not confirmed. Our rules are our own.",
+      "honest": "The people here are invented, which keeps everyone's real details private. In real life, keep it kind and light, and never collect private details about anyone.",
+      "verified": true
+    },
+    {
+      "id": "decks",
+      "ourName": "Double Deck",
+      "realName": null,
+      "formatInspiration": "Builder note, not shown to players: a round where two decks are memorised and then cards are asked by position in random order, with one miss ending the round. The contest's exact name and tie-break rules are unconfirmed and are not used.",
+      "trains": "Finding the card at any position, not only the next one.",
+      "howItWorks": "You study a run of cards in order. Then you are asked for the card at a position, in random order. One wrong card ends the round.",
+      "ourVersion": "A run of 20 to 52 cards, asked by position. In this contest, one miss ends the round. At the top level, the run is longer and the questions are quicker.",
+      "rules": [
+        "Cards are drawn in the game's own style, with the suit shown by shape and by letter, never by colour alone.",
+        "Study the cards at your own pace inside the study time shown.",
+        "Each question asks for one position, such as 'Card number 17?' Answer by tapping the card or typing a code like 10H.",
+        "One wrong card ends the round, gently. The answer is shown, along with the rest of the run.",
+        "There is no time limit unless you turn on Contest pace.",
+        "Cards never change your skill estimates and never earn Lumen."
+      ],
+      "instructions": {
+        "study": "Lay two cards at each stop along a route, so card number 17 lives at stop 9. Know which stop each position lives in.",
+        "recall": "When you hear a position, work out its stop, then read the card from your picture."
+      },
+      "scoring": "Your score is how many positions you answered correctly in a row before the first miss. It is shown out of the run size.",
+      "ladder": [
+        {
+          "level": 1,
+          "size": "20 cards",
+          "wording": "Double Deck, 20 cards"
+        },
+        {
+          "level": 2,
+          "size": "26 cards",
+          "wording": "Double Deck, 26 cards"
+        },
+        {
+          "level": 3,
+          "size": "39 cards",
+          "wording": "Double Deck, 39 cards"
+        },
+        {
+          "level": 4,
+          "size": "52 cards",
+          "wording": "Double Deck, a full deck"
+        }
+      ],
+      "results": {
+        "finished": "You answered {score} of {total} positions before the round ended.",
+        "tip": "The position you missed is shown with its card. Check which stop it lives in and make that picture stranger."
+      },
+      "advice": [
+        "Count your stops before the contest and know them by number.",
+        "If you are not sure, go to the stop and look at the picture instead of guessing.",
+        "Be patient. A missed card ends the round, so a slow right answer is better than a quick wrong one."
+      ],
+      "notConfirmed": "The real contest's name, tie-break rules and the second deck are not confirmed. Our single-run version is our own.",
+      "honest": "Cards are a memory sport with little everyday use. This contest trains finding any item at a position, which is a skill that is also useful for numbered lists. It is fine to skip it.",
+      "verified": true
+    }
+  ]
+}

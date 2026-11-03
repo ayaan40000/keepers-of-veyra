@@ -83,7 +83,39 @@ function drawRestore(ctx, id, k) {
   ctx.fillRect(s.x0 - 2, s.y0 - 2, s.w + 4, s.h + 4);
 }
 
-export default function WorldMap({ gates = [], current = 'M1', selected, onSelect, restoring, onRestored, className = '' }) {
+// Lethe Brambles (1.1): small code-drawn thorny vines at the foot of a district, one clump per slipped item (up to four).
+// They sway only when motion is allowed. They never cover the district's button, so the map stays fully usable.
+function drawBrambles(ctx, id, n, t) {
+  const s = LANDMARKS[id];
+  if (!s || n <= 0) return;
+  const clumps = Math.min(4, n);
+  const y0 = s.y0 + s.h - 1;
+  for (let c = 0; c < clumps; c++) {
+    const x0 = s.x0 + 2 + Math.round(((c + 0.5) / clumps) * (s.w - 4));
+    const sway = Math.round(Math.sin(t * 1.6 + c * 1.7));
+    ctx.fillStyle = '#16231a';
+    for (let k = 0; k < 9; k++) ctx.fillRect(x0 - 2 + (k % 2) * 2 + Math.round(Math.sin(k * 0.9) * 2) + (k > 5 ? sway : 0), y0 - k - 1, 3, 3);
+    ctx.fillStyle = '#5b7f4e';
+    for (let k = 0; k < 9; k++) ctx.fillRect(x0 - 1 + (k % 2) * 2 + Math.round(Math.sin(k * 0.9) * 2) + (k > 5 ? sway : 0), y0 - k, 1, 1);
+    ctx.fillStyle = '#c9d8b0';
+    ctx.fillRect(x0 - 3, y0 - 6, 1, 1); ctx.fillRect(x0 + 3, y0 - 3, 1, 1); ctx.fillRect(x0 + 2 + sway, y0 - 9, 1, 1);
+  }
+}
+// A bramble burning away: amber sparks rising from the foot of the district for about 3 seconds.
+const BURN_SECS = 3;
+function drawBurn(ctx, id, k) {
+  const s = LANDMARKS[id];
+  if (!s) return;
+  const y0 = s.y0 + s.h - 1;
+  for (let i = 0; i < 18; i++) {
+    const x = s.x0 + 2 + ((i * 37) % Math.max(4, s.w - 4));
+    const y = y0 - Math.round(k * (10 + (i % 5) * 6)) - (i % 3);
+    ctx.fillStyle = css(i % 2 ? K.am5 : K.am3, Math.max(0, 0.9 * (1 - k)));
+    ctx.fillRect(x, y, 1, i % 4 === 0 ? 2 : 1);
+  }
+}
+
+export default function WorldMap({ gates = [], current = 'M1', selected, onSelect, restoring, onRestored, brambles = null, burning = null, onBurned, className = '' }) {
   const ref = useRef(null);
   const gatesKey = gates.join(',');
   const layer = useMemo(() => (typeof document === 'undefined' ? null : stateLayer(gates, current)), [gatesKey, current]);
@@ -91,6 +123,16 @@ export default function WorldMap({ gates = [], current = 'M1', selected, onSelec
   const base = useMemo(() => buildMapBase(), []);
   const restoreRef = useRef(null);
   const doneRef = useRef(onRestored); doneRef.current = onRestored;
+  const bramRef = useRef(brambles); bramRef.current = brambles;
+  const burnRef = useRef(null);
+  const burnedDone = useRef(onBurned); burnedDone.current = onBurned;
+  useEffect(() => {
+    if (!burning) return undefined;
+    if (reducedMotion()) { burnedDone.current?.(); return undefined; }
+    burnRef.current = { id: burning, start: null };
+    const id = setTimeout(() => { burnRef.current = null; ref.current?._redraw?.(); burnedDone.current?.(); }, BURN_SECS * 1000 + 200);
+    return () => clearTimeout(id);
+  }, [burning]);
   useEffect(() => {
     if (!restoring) return undefined;
     if (reducedMotion()) { doneRef.current?.(); return undefined; }
@@ -113,6 +155,9 @@ export default function WorldMap({ gates = [], current = 'M1', selected, onSelec
       drawFog(ctx, layer.fog, t);
       if (current && LANDMARKS[current] && layer.states[current] !== 'restored') drawBeacon(ctx, current, t);
       if (selRef.current && LANDMARKS[selRef.current]) drawSelection(ctx, selRef.current, t);
+      if (bramRef.current) for (const bid of Object.keys(bramRef.current)) drawBrambles(ctx, bid, bramRef.current[bid], t);
+      const bs = burnRef.current;
+      if (bs) { if (bs.start == null) bs.start = t; const kb = (t - bs.start) / BURN_SECS; if (kb < 1) drawBurn(ctx, bs.id, kb); }
       const rs = restoreRef.current;
       if (rs) { if (rs.start == null) rs.start = t; const k = (t - rs.start) / RESTORE_SECS; if (k < 1) drawRestore(ctx, rs.id, k); }
     };
@@ -124,7 +169,7 @@ export default function WorldMap({ gates = [], current = 'M1', selected, onSelec
     if (still) return undefined;
     return subscribeFrame(fn);
   }, [layer, current, base]);
-  useEffect(() => { ref.current?._redraw?.(); }, [selected]);
+  useEffect(() => { ref.current?._redraw?.(); }, [selected, JSON.stringify(brambles)]);
 
   const states = layer?.states || {};
   // Layered depth (v0.8): the city shifts a few pixels with the pointer while the mist layer drifts the other way.

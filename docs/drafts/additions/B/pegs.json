@@ -1,0 +1,108 @@
+{
+  "notes": "Shape pegs 1 to 10 are the list already shipped in the Week 24 lesson (candle, swan, handcuffs, sailboat, hook, golf club, cliff edge, snowman, balloon on a string, bat and ball), kept so existing saved lessons agree; this file and A/lessons-add.json week24 and D now use the same two lists. Rhyme pegs 1 to 10 are bun, glue, tree, oar, beehive, sticks, heaven, crate, vine, hen (the earlier oven rhymed only loosely with seven, so heaven replaces it). Rhyme pegs 11 to 20 are left out on purpose: the -teen numbers all rhyme with each other. Rhyme words checked against the 260 numbered-list words in wordlists-numbered.json: no clash. Nothing here is copied from a published peg table.",
+  "honestLimit": "A peg list is fast for items 1 to 10 in any order. It does not scale past about 20 and a palace is better for long or ordered lists.",
+  "shape": [
+    {
+      "n": 1,
+      "word": "candle",
+      "why": "A lit candle stands straight and tall like the digit 1."
+    },
+    {
+      "n": 2,
+      "word": "swan",
+      "why": "A swan has a curved neck and a flat base, like a 2."
+    },
+    {
+      "n": 3,
+      "word": "handcuffs",
+      "why": "Two linked rings with curves like a 3 on its side."
+    },
+    {
+      "n": 4,
+      "word": "sailboat",
+      "why": "A 4 has a slanted sail and a flat line like the deck of a boat."
+    },
+    {
+      "n": 5,
+      "word": "hook",
+      "why": "A 5 has a flat top and a curved belly, like a hook."
+    },
+    {
+      "n": 6,
+      "word": "golf club",
+      "why": "A golf club has a long shaft and a curved head, like a 6."
+    },
+    {
+      "n": 7,
+      "word": "cliff edge",
+      "why": "A 7 is a flat top with a steep slope, like a cliff edge."
+    },
+    {
+      "n": 8,
+      "word": "snowman",
+      "why": "An 8 is two circles stacked, a snowman."
+    },
+    {
+      "n": 9,
+      "word": "balloon on a string",
+      "why": "A 9 is a round balloon on a string."
+    },
+    {
+      "n": 10,
+      "word": "bat and ball",
+      "why": "A 10 is a bat (the 1) beside a ball (the 0)."
+    }
+  ],
+  "rhyme": [
+    {
+      "n": 1,
+      "word": "bun",
+      "why": "Rhymes with one."
+    },
+    {
+      "n": 2,
+      "word": "glue",
+      "why": "Rhymes with two."
+    },
+    {
+      "n": 3,
+      "word": "tree",
+      "why": "Rhymes with three."
+    },
+    {
+      "n": 4,
+      "word": "oar",
+      "why": "Rhymes with four."
+    },
+    {
+      "n": 5,
+      "word": "beehive",
+      "why": "Rhymes with five."
+    },
+    {
+      "n": 6,
+      "word": "sticks",
+      "why": "Rhymes with six."
+    },
+    {
+      "n": 7,
+      "word": "heaven",
+      "why": "Rhymes with seven. Picture a bright cloud with a halo."
+    },
+    {
+      "n": 8,
+      "word": "crate",
+      "why": "Rhymes with eight."
+    },
+    {
+      "n": 9,
+      "word": "vine",
+      "why": "Rhymes with nine."
+    },
+    {
+      "n": 10,
+      "word": "hen",
+      "why": "Rhymes with ten."
+    }
+  ]
+}

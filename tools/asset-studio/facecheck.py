@@ -32,7 +32,14 @@ def img(path: Path) -> dict:
     return {"type": "image_url", "image_url": {"url": "data:image/png;base64," + base64.b64encode(b.getvalue()).decode()}}
 
 
-def ask(text: str, *paths: Path) -> dict:
+def ask(text: str, *paths: Path, retry: bool = True) -> dict:
+    res = _ask(text, *paths)
+    if "error" in res and retry:  # the model sometimes answers in prose; ask once more for the bare JSON
+        res = _ask(text + " Answer with the JSON object only, no explanation.", *paths)
+    return res
+
+
+def _ask(text: str, *paths: Path) -> dict:
     body = {"model": MODEL, "temperature": 0, "max_tokens": 200, "reasoning_effort": "none",
             "messages": [{"role": "system", "content": SYSTEM}, {"role": "user", "content": [{"type": "text", "text": text}, *[img(p) for p in paths]]}]}
     req = urllib.request.Request("http://127.0.0.1:1234/v1/chat/completions", json.dumps(body).encode(), {"content-type": "application/json"})
@@ -75,6 +82,9 @@ def check_person(p: dict) -> dict:
 
 
 def main():
+    if (CAST.parent / "SKIP_QWEN_CHECK").exists():  # owner, Nov 2, 2026: Claude reviews the faces instead (review_sheets.py, apply_review.py)
+        print("Qwen face check switched off (out/faces/SKIP_QWEN_CHECK)")
+        return
     sel = sys.argv[1] if len(sys.argv) > 1 and ":" in sys.argv[1] else "0:300"
     reject = "--reject" in sys.argv
     people_file = Path(next((a.split("=", 1)[1] for a in sys.argv if a.startswith("--people=")), PEOPLE))

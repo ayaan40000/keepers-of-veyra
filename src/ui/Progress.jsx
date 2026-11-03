@@ -5,6 +5,7 @@ import { TEMPLATE_NAME, BASELINE } from '../data/curriculum.js';
 import { componentScores, mtsFor, WEIGHTS, dailySeries, skillSummary, streaks, sessionLengths } from '../engine/progress.js';
 import { addDays } from '../engine/util.js';
 import { today } from '../engine/core.js';
+import { ThenNow, YourMethods } from './Methods.jsx';
 
 const MASTERY = ['Untrained', 'Learning', 'Practiced', 'Proficient', 'Mastered'];
 const COMP = { retention: 'Retention', accuracy: 'Accuracy', transfer: 'Transfer', mastery: 'Mastery', speed: 'Speed' };
@@ -126,6 +127,9 @@ export default function Progress({ profile, update }) {
           <p className="muted small">The same three tasks, same length, new material, repeated in the assessments of weeks 13, 26, 39 and 52.</p>
         </section>
       )}
+
+      <ThenNow profile={profile} />
+      <YourMethods profile={profile} />
 
       <section className="card">
         <h3 className="panel-title"><PxIcon name="crypt" size={24} />Assessment history</h3>

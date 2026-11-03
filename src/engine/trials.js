@@ -1,7 +1,10 @@
 // v0.11 District Trials and vaults: pure logic. A trial NEVER changes skill estimates, review sets or results
 // (like the Undercroft and Echo battles). It writes only p.trials, a small capped amount of Lumen for vault lines held
 // without a hint, and the prize is derived from p.trials[id].passed (see collect.js).
-import { TRIALS, TIMELINES, DESKS, OLD_TONGUE, STALLS, CLOCK_PARTS, TABLETS_V } from '../data/trials.js';
+import { TRIALS, TIMELINES, YEAR_POOL, DESKS, OLD_TONGUE, STALLS, CLOCK_PARTS, TABLETS_V } from '../data/trials.js';
+import RECKON from '../data/add/reckon.json';
+import { CALC_LEVELS, numericOk } from './additions.js';
+import { yearOk } from './events.js';
 import { rng, sample, shuffle, matches, normalize, lev, addDays, daysBetween } from './util.js';
 import { today, genItems } from './core.js';
 import { FREE_XP_CAP } from './progress.js';
@@ -39,6 +42,36 @@ export function material(id, seed, p) {
     return {
       study: real.map((x, i) => ({ label: `Statue ${i + 1}`, face: x.face, text: x.answer })),
       items: shuffle(real.map((x, i) => ({ key: i, prompt: 'Who is this statue?', face: x.face, answer: x.answer })), r),
+    };
+  }
+  if (t.material === 'timeline' && t.ask === 'year') {
+    // 1.1 Hall of Years: the event is shown and the year is asked. Every digit must be right.
+    const tl = YEAR_POOL[Math.floor(r() * YEAR_POOL.length)];
+    const ev = tl.events.slice(0, t.n);
+    return {
+      title: tl.title, real: tl.real,
+      study: ev.map(([y, text], i) => ({ label: DESKS[i], text: `${y}: ${text}` })),
+      items: ev.map(([y, text], i) => ({ key: i, prompt: `${text} In which year? (it was on ${DESKS[i]}; add BCE for a year before the common era)`, answer: y, year: true })),
+    };
+  }
+  if (t.material === 'calc') {
+    // 1.1 Reckoning: three number facts to study, seven sums (levels 2 to 6), then the three facts asked back.
+    const sq = RECKON.squares[Math.floor(r() * RECKON.squares.length)];
+    const k = RECKON.constants[Math.floor(r() * RECKON.constants.length)];
+    const a = 13 + Math.floor(r() * 7), b = 12 + Math.floor(r() * 8);
+    const facts = [
+      { text: `${sq[0]} squared is ${sq[1]}`, prompt: `What is ${sq[0]} squared?`, answer: String(sq[1]) },
+      { text: `${k.cue}: ${k.answer}`, prompt: `${k.cue}?`, answer: String(k.answer) },
+      { text: `${a} times ${b} is ${a * b}`, prompt: `What is ${a} times ${b}?`, answer: String(a * b) },
+    ];
+    const sums = [2, 3, 3, 4, 5, 5, 6].map((lv) => CALC_LEVELS[lv](r));
+    return {
+      title: 'Three facts to hold',
+      study: facts.map((f, i) => ({ label: `Fact ${i + 1}`, text: f.text })),
+      items: [
+        ...sums.map((x, i) => ({ key: i, prompt: `Work out: ${x.cue}`, answer: String(x.answer), num: true, how: `${x.cue}: ${x.steps.join(', then ')}` })),
+        ...facts.map((f, i) => ({ key: 7 + i, prompt: f.prompt, answer: f.answer, num: true })),
+      ],
     };
   }
   if (t.material === 'timeline') {
@@ -100,6 +133,8 @@ export function lineMatches(response, target) {
 }
 export function isRightTrial(item, response) {
   if (!String(response ?? '').trim()) return false;
+  if (item.year) return yearOk(response, item.answer);
+  if (item.num) return numericOk(response, item.answer);
   if (item.code) return String(response).replace(/\D/g, '') === item.answer;
   if (item.line) return lineMatches(response, item.answer);
   return matches(response, item.answer) || (item.alts || []).some((a) => matches(response, a));
@@ -137,6 +172,14 @@ export function submitCheck(p, id, responses, hints = {}, date = today(p)) {
   }
   const need = Math.ceil(check.pass * total - 1e-9);
   out.need = need;
+  if (n >= need && r.step < t.checks.length - 1) {
+    // 1.1 A first check with a pass mark that is not the last one (Hall of Years): holding it opens the later check, nothing is won yet.
+    r.step++;
+    r.due = addDays(r.start, t.checks[r.step].after);
+    if (r.due <= date) r.due = addDays(date, 1);
+    out.practice = true; out.stage = true;
+    return out;
+  }
   if (n >= need) {
     r.passed = date; r.start = null; r.due = null; r.recovering = false;
     out.passed = true; out.final = true;
@@ -169,7 +212,7 @@ export function submitCheck(p, id, responses, hints = {}, date = today(p)) {
 // Plain-language status for the trial list.
 export function statusLine(p, id, date = today(p)) {
   const st = trialState(p, id, date), r = rec(p, id), t = TRIALS[id];
-  if (st === 'locked') return `Opens when the ${t.district} is restored.`;
+  if (st === 'locked') return `Opens when the ${t.gateDistrict || t.district} is restored.`;
   if (st === 'done') return `Passed on ${r.passed}.`;
   if (st === 'rest') return `Fresh material from ${r.retryOn}. A miss costs nothing.`;
   if (st === 'due') return r.recovering ? 'Asked again today, after your review.' : t.checks[r.step]?.quiet ? 'A quiet check-in is ready.' : 'A check is ready today.';

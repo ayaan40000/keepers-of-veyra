@@ -30,7 +30,7 @@ describe('v0.10 Field Guide content', () => {
     expect(allText).not.toMatch(/guarantee/i);
   });
   it('every playbook states honest limits', () => {
-    for (const b of PLAYBOOKS) { expect(b.caveat.length).toBeGreaterThan(30); expect(b.steps).toHaveLength(3); }
+    for (const b of PLAYBOOKS) { expect(b.caveat.length).toBeGreaterThan(30); expect(b.steps.length).toBeGreaterThanOrEqual(3); expect(b.steps.length).toBeLessThanOrEqual(7); }
   });
   it('never teaches memorising secrets', () => {
     expect(GUIDE_SAFETY.join(' ')).toMatch(/password manager/);

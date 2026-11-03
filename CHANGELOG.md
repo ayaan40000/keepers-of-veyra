@@ -2,6 +2,19 @@
 
 All notable changes to Mnemos: Keepers of Veyra. Saved data from every earlier version loads in this one.
 
+## 1.1.0: The Living World, the Say-Back Games and Chapter 13 (2026-11-02)
+
+Built and tested on the owner's computer; not pushed or deployed. Everything the owner chose for 1.1 ships together. New pictures are painted and waiting for the owner's picks, so the new screens show code-drawn art or no picture until they are shipped.
+
+- **The Living World**: the Long Vigil (a weekly Echo scene on the Quay battlements with your own items from 1, 7 and 30 days ago; opens at the Month 2 gate; it cannot be failed), relics on pedestals that dim when a delayed review slips (calm repair as before), the Cabinet of Voices (seven coach voices, one per skill; Light by default, never on study or recall screens), Lethe Brambles on the map (a thorn grows where a delayed review slipped and burns away when the item is right on a later day; can be switched off), the Mirror Room (the Character sheet is shrouded while the mist is thick; relight it with the Major System) and Wren's Audit (spot the kind of mistake Wren made on a route). Daytime lines for every district.
+- **Curriculum additions** from the memory-course and championship review: 25 lesson cards and four Masters' Notes; new drills Mind Map (topic and people), Poem, Mental Reckoning and Card Run (optional, no skill credit); variants for pegs, digit groups, grocery lists, steps, talk points, numbered lists, surnames and Skim, Pick, Keep; three Unit Checks with "Then and now"; "Your Methods"; printable worksheets; new study sets (capitals, elements, word roots, music theory, chess openings, anatomy terms).
+- **The Event Hall and the Say-Back Games**: Veyra's own memory contests, nine scaled-down events (names and faces, numbers, cards, poetry, words, three strikes, double deck, years and facts) with best-result ladders only. The Games climb five tiers against Ottoline Gilt, a rival whose marks follow your own earlier best. Losing locks nothing. New District Trials: the Hall of Years and the Reckoning.
+- **Chapter 13 and Wren's family**: after the Year of Keeping, the Great Forgetting and the Stitch (six of nine days closes the rift; a miss means another day), Ambrose Tallow, and a second epilogue. Wren's father Edrin, eleven story beats and 29 delayed questions about details she shares (a held answer adds a keepsake; a miss is repeated warmly; can be switched off). Earlier shipped story text is unchanged; the new canon is added around it. The lore guide is rebuilt.
+- **Your Own Text**: paste a text you want to learn (any language and script), learn it in sections with first letters and blanks, and check it after 1, 7, 30, 90 and 180 days. Role mode for lines in a play. A small Lumen reward only for a typed check that held after 7 days or more, inside the daily practice cap. "Export my texts only". No scripture or treasured text ships with the game.
+- **Field Guide**: 19 new pages on using the methods in real life (lists, numbers, dates, facts, exams, speeches, poems and passages, names, music, chess and more). Honest-claims wording pass.
+- **Art pipeline**: Claude-reviewed face cast for people 0 to 149 (people 150 to 299 next), new scene, voice, pedestal, bramble, story and trial art, day versions of the trial pictures, a local picture review and corrected picture descriptions.
+- Saved data: new `brambles`, `mirror`, `audit`, `events`, `seam`, `wren` and `own` records and new settings, with migrations, checks and import tests. Older saves load unchanged.
+
 ## 1.0.0: Public release (2026-11-02)
 
 The first public release, free and open source, played in the browser at https://ayaan40000.github.io/keepers-of-veyra/. It holds everything from 0.4 to 0.11. The owner confirmed the trademark search is clear and chose to release now and invite the community to help with what is still planned.

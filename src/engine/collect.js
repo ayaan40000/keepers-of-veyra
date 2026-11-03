@@ -22,6 +22,7 @@ export function earnedItems(p) {
                   : s.type === 'polish' ? Object.keys(p?.relics?.polish || {}).length >= s.n
                     : s.type === 'levels' ? levelsGained(p) >= s.n
                       : s.type === 'trial' ? !!p?.trials?.[s.id]?.passed
+                        : s.type === 'vigil' ? !!p?.battles?.vigil?.ledger
                 : false;
     if (own) out.push(it.id);
   }

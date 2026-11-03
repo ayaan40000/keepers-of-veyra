@@ -117,7 +117,7 @@ export const LESSONS = {
     'To remember a list of ten, link the first item to the candle, the second to the swan, and so on. To recall, just count from one to ten and see what is attached to each shape.',
   ],
   25: [
-    'This week the vocabulary lists get longer. When a suggested keyword doesn\'t work for you, make your own. Research shows that cues you create yourself are remembered better than ones you are given.',
+    'This week the vocabulary lists get longer. When a suggested keyword doesn\'t work for you, make your own. Research suggests that cues you create yourself are often remembered better than ones you are given.',
     'Don\'t be put off if some words fall out after a few days. That\'s normal. The next review is designed to catch them.',
   ],
   26: [
@@ -221,3 +221,14 @@ export const LESSONS = {
     'After this, Keeper mode will keep your skills alive with short monthly sessions. The year ends here, but the skill does not have to.',
   ],
 };
+
+// 1.1 additions (checked drafts in docs/drafts/additions/A, built by scripts/additions-build.mjs).
+// A card's `at` is its 1-based place in that week's cards (existing cards move down); 0 adds it at the end.
+// Week 24 is replaced: both peg systems, with one worked example each.
+import ADD from './add/lessons.json';
+for (const c of ADD.cards) {
+  const list = LESSONS[c.week];
+  if (!list || list.includes(c.text)) continue;
+  if (c.at > 0) list.splice(Math.min(c.at - 1, list.length), 0, c.text); else list.push(c.text);
+}
+LESSONS[24] = ADD.week24.slice();

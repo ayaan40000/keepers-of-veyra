@@ -59,6 +59,8 @@ Estimated size: M for Concept 3 (new Echo scene and weekly entry), M for Concept
 
 ## v0.13: Wren's Story Memory and a calm pass (accepted Nov 2, 2026, not built)
 
+**1.1 update (Nov 2, 2026): Wren's Story Memory is built** (`src/data/wren.js`, `src/engine/wren.js`, `src/ui/WrenStory.jsx`): eleven family beats as Wren cards on Today, 29 delayed questions (asked at 10 and 30 days, retired after two held), a Keeper setting to turn the questions off, Chronolog keepsakes. Chapter 13, the Seam and the Great Forgetting, is built with it (`src/data/forgetting.js`, `src/engine/seam.js`, `src/ui/Seam.jsx`). The rest and recovery pass and the accessibility check below are still open.
+
 From "The Social Link with Your Own Past", cut down to the part that fits. Wren shares small invented details in story beats (a name, a fear, something about her family). Weeks later she asks about one of them as an ordinary delayed question. If the player held it, they unlock a short extra scene or a Chronolog entry (story and cosmetic only). It practises the Field Guide's "details about people" playbook (Months 3 and 7). Size S to M for the logic and save data (`story.wren = { told, held }`, validated), L for the writing (drafted with the local model and edited by hand).
 
 Refused from the original, on purpose:
@@ -68,6 +70,10 @@ Refused from the original, on purpose:
 - **A "high-stakes social calendar".** Wren repeats a forgotten detail warmly. Nothing is ever locked behind it.
 
 Also in v0.13: a rest and recovery pass (an "I am tired today" lighter session; catch-up is a lighter review of what is due, never a bonus for coming back) and an accessibility check of every new screen at 390px, 150% text and with a screen reader.
+
+## Soundtrack (pilot, owner-led)
+
+Planned, not built. An original 8-bit chiptune soundtrack and a few new sound effects, generated at runtime from small score data (no audio files), off by default in a separate Music setting, and silent on every study and recall screen. The pilot is one 30 to 60 second map theme ("Veyra at dusk") and three effects, judged by the owner by ear using the draft tool in `tools/sound-studio/`; nothing touches the game until the owner approves it. Plan, tool survey (licences to verify), size budget and decisions: `docs/SOUNDTRACK.md`.
 
 ## Second idea set: verdicts (Nov 2, 2026)
 

@@ -111,7 +111,7 @@ describe('v0.9 story text', () => {
     const all = [...EPILOGUE.text, ...Object.values(GATE_TALK).map((x) => x[1]), ...KEEPING_LINES];
     for (const t of all) expect(t).not.toMatch(/[–—]/);
     expect(EPILOGUE.text.length).toBe(5);
-    expect(Object.keys(GATE_TALK)).toEqual(MODULES.slice(0, 11).map((m) => m.id));
+    expect(Object.keys(GATE_TALK)).toEqual(MODULES.map((m) => m.id)); // 1.1 added the Month 12 row
   });
 });
 

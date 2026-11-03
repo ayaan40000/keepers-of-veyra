@@ -1,5 +1,11 @@
 import { KEEPING_LINES } from '../data/afteryear.js';
-import React from 'react';
+import { SEAM_KEEPING_LINES } from '../data/forgetting.js';
+import { WrenBeatCard, WrenAskCard } from './WrenStory.jsx';
+import { SeamCard } from './Seam.jsx';
+import { seamClosed } from '../engine/seam.js';
+import React, { useState } from 'react';
+import Cards from './Cards.jsx';
+import { STUDY_SETS } from '../engine/additions.js';
 import { Tip } from './Tips.jsx';
 import { moodFor } from '../engine/moods.js';
 import { WEEKS, TEMPLATE_NAME, TEMPLATE_SKILL, SKILLS } from '../data/curriculum.js';
@@ -15,8 +21,10 @@ import { DistrictScene } from './artLookup.jsx';
 import { BackupReminder, SafariNotice, InstallCard, downloadBackup } from './Notices.jsx';
 import { buildExport } from '../store.js';
 import { RealLifeCard } from './FieldGuide.jsx';
-import { EchoCard } from './Battle.jsx';
+import { EchoCard, VigilCard } from './Battle.jsx';
+import { TodayVoice } from './Voices.jsx';
 import { TrialDueCard } from './Trials.jsx';
+import { OwnTextCard } from './OwnText.jsx';
 import { pendingNudge } from '../engine/guide.js';
 import { today } from '../engine/core.js';
 
@@ -24,9 +32,18 @@ const FREE = [
   { t: 'wordlist', n: 10, s: 60, w: 1 }, { t: 'pairs', n: 8, s: 70, w: 2 }, { t: 'chain', n: 10, s: 90, w: 3 },
   { t: 'palace', n: 10, s: 90, w: 5 }, { t: 'faces', n: 6, s: 60, w: 9 }, { t: 'major', n: 10, range: 10, w: 14 },
   { t: 'digits', n: 12, s: 80, w: 18 }, { t: 'vocab', n: 8, s: 90, w: 22 }, { t: 'facts', n: 8, s: 90, w: 27 },
+  // 1.1 additions: still optional, opened by the week that teaches them. Mental Reckoning and Cards earn no Lumen and change no skill estimate.
+  { t: 'pairs', n: 10, s: 80, peg: 'shape', label: 'Pegs: shapes', w: 24 }, { t: 'pairs', n: 10, s: 80, peg: 'rhyme', label: 'Pegs: rhymes', w: 24 },
+  { t: 'faces', n: 6, s: 70, surname: true, label: 'Names and surnames', w: 13 },
+  { t: 'map', kind: 'topic', n: 12, s: 110, label: 'Mind Map: topics', w: 29 }, { t: 'map', kind: 'people', n: 12, s: 100, label: 'Mind Map: people', w: 29 },
+  { t: 'facts', n: 5, s: 60, skim: true, label: 'Skim, Pick, Keep', w: 41 }, { t: 'poem', n: 6, s: 120, label: 'Poem', w: 41 },
+  { t: 'calc', n: 8, mode: 'see', label: 'Reckoning: see the sum', w: 22 }, { t: 'calc', n: 8, mode: 'hold', label: 'Reckoning: hold the sum', w: 22 },
+  ...STUDY_SETS.map((x) => ({ t: 'facts', n: 8, s: 90, src: x.src, label: x.label, w: x.w })),
+  { t: 'chain', n: 12, s: 100, src: 'body', label: 'Anatomy terms', w: 27 },
 ];
 
 export default function Today({ profile, start, onEnterCrypt, update, onFight, onTrial }) {
+  const [cards, setCards] = useState(false);
   const st = sessionStatus(profile);
   const g = profile.progress.gates.length;
   const stage = wrenStage(g);
@@ -79,9 +96,23 @@ export default function Today({ profile, start, onEnterCrypt, update, onFight, o
 
       {st.doneToday && !resume && nudge && <RealLifeCard profile={profile} update={update} task={nudge} />}
 
+      {st.keeping > 0 && !seamClosed(profile) && !resume && <p className="muted small tide-line">{SEAM_KEEPING_LINES[(st.keeping - 1) % SEAM_KEEPING_LINES.length]}</p>}
+
+      {!resume && onFight && <SeamCard profile={profile} onOpen={() => onFight('seam')} />}
+
+      {!resume && <WrenBeatCard profile={profile} update={update} />}
+
+      {st.doneToday && !resume && <WrenAskCard profile={profile} update={update} />}
+
       {st.doneToday && !resume && onFight && <EchoCard profile={profile} update={update} onFight={onFight} />}
 
+      {st.doneToday && !resume && <TodayVoice profile={profile} />}
+
+      {st.doneToday && !resume && onFight && <VigilCard profile={profile} update={update} onFight={onFight} />}
+
       {st.doneToday && !resume && onTrial && <TrialDueCard profile={profile} onTrial={onTrial} />}
+
+      {!resume && onFight && <OwnTextCard profile={profile} onOpen={() => onFight('own')} />}
 
       {!resume && <BackupReminder profile={profile} update={update} onExport={() => downloadBackup(profile, update, buildExport)} />}
       {!resume && <SafariNotice profile={profile} update={update} />}
@@ -111,15 +142,22 @@ export default function Today({ profile, start, onEnterCrypt, update, onFight, o
           <div className="grounds">
             {FREE.map((f) => {
               const open = st.week.w >= f.w || profile.progress.reviewerUnlock;
+              const spec = f.t === 'calc' ? { ...f, level: Math.max(1, Math.min(6, Math.ceil((profile.skills.numbers?.level || 1) / 2))) } : f;
               return (
-                <button key={f.t} className="ground" disabled={!open} onClick={() => start('free', { spec: f })}>
+                <button key={f.label || f.t} className="ground" disabled={!open} onClick={() => start('free', { spec })}>
                   <PxIcon name={open ? 'quill' : 'lock'} size={28} />
-                  <b>{TEMPLATE_NAME[f.t]}</b>
-                  <span className="small">{open ? SKILLS[TEMPLATE_SKILL[f.t]].short : `Opens week ${f.w}`}</span>
+                  <b>{f.label || TEMPLATE_NAME[f.t]}</b>
+                  <span className="small">{open ? (f.t === 'calc' ? 'No Lumen' : SKILLS[TEMPLATE_SKILL[f.t]].short) : `Opens week ${f.w}`}</span>
                 </button>
               );
             })}
+            <button className="ground" disabled={!(st.week.w >= 22 || profile.progress.reviewerUnlock)} onClick={() => setCards(true)}>
+              <PxIcon name={st.week.w >= 22 || profile.progress.reviewerUnlock ? 'quill' : 'lock'} size={28} />
+              <b>Card Run</b>
+              <span className="small">{st.week.w >= 22 || profile.progress.reviewerUnlock ? 'Optional, no credit' : 'Opens week 22'}</span>
+            </button>
           </div>
+          {cards && <Cards onClose={() => setCards(false)} timerMult={profile.user.prefs.timerMult || 1} />}
         </section>
       )}
     </div>

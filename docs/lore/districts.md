@@ -114,3 +114,5 @@ Veyra is built as twelve great routes, one district a month. Each district keeps
 **The Art:** Mastery, Curation and Maintenance. Complete the annual assessment and design a personal maintenance plan.
 
 **The quest:** Hold the Lethe Gate through the Long Vigil
+
+**Once restored:** ""The Tide stopped on the bridge, a yard from your feet. Did you hear a tick? Like a clock? No. Never mind. Probably it was only my own heart. I was very frightened. I did not write it down.""

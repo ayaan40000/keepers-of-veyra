@@ -1,0 +1,278 @@
+{
+  "notes": "Workstream E, the Your Own Text tool (design and copy). This is a design for the builder, not code. Fact-check, Nov 2, 2026: the only statements about faith are neutral ('a verse, a chant, a prayer or other treasured text', follow your teacher, communities differ on how texts are handled); the earlier sentences describing particular traditions were removed from the 'treasured' page. The Unicode ranges named below (bidirectional controls U+202A to U+202E and U+2066 to U+2069, direction marks U+200E and U+200F, control characters) are correct per the Unicode standard. Intl.Segmenter is available in current Chrome, Safari and Firefox. No scripture or other text is included in the game.",
+  "name": "Your Own Text",
+  "shelfName": "Your Shelf",
+  "recommendation": {
+    "decision": "Do NOT ship any scripture, prayer, hymn or other treasured text inside the game. Ship a tool that works on text the player supplies.",
+    "reasons": [
+      "Accuracy. Traditions differ on editions, readings, translations and spellings, and a single wrong letter matters a great deal to many learners. The game cannot verify any of it, and a hand-typed copy by the project could carry errors into a text people hold sacred.",
+      "Even-handedness. Choosing which texts and which editions to ship would mean choosing between traditions. A tool that holds nothing treats every tradition, and every non-religious text, the same way.",
+      "Rights. Many translations and editions are under copyright, and the rules differ by country. Shipping none avoids the question.",
+      "Respect. Many traditions have their own long-established ways of learning, usually with a teacher or a community. The game should sit beside those, as a practice aid, and not stand in front of them.",
+      "Privacy. What a person memorises can be personal. The text lives only on their device, which is the game's existing promise."
+    ],
+    "honestLine": "Mnemos cannot check that the text you type is right. Copy it from a printed or trusted edition, and check it with your teacher or a source you trust."
+  },
+  "where": {
+    "fieldGuide": "Playbooks 'ownText', 'treasured' and 'longverse' (see fieldguide-e.json).",
+    "drill": "Not a drill template. It is its own screen with its own schedule. It reuses the spaced-check intervals and the ladder logic of the delayed-recall engine in src/engine/core.js, but it does not write to p.sets and never touches skill estimates.",
+    "trial": "None.",
+    "eventHall": "None. Texts are private and are never shown in a contest.",
+    "yourOwnText": "This is the tool."
+  },
+  "gate": "M1. After the first month the player knows pictures and chains. The tool itself has no technique requirement, so there is no reason to wait longer. Do not ask the player to finish any module for the tool to work.",
+  "whereInApp": "A card on the Field Guide screen ('Your Shelf'), and a quiet line on Today when checks are ready: 'Your Own Text: 2 checks are ready. About 3 minutes.' It never blocks the day's session, never counts toward the streak and never shows a warning for a missed day.",
+  "reward": {
+    "rule": "No Lumen, no streak, no relic, no achievement, no skill change, no battle or Echo use, no leaderboard. The tool shows the player's own history only.",
+    "why": "A reward for text the player typed could be farmed with a one-letter text, and it would reward time spent. The game's rule is that rewards come only from demonstrated learning on the curriculum.",
+    "future": "A later, owner-approved idea: a small capped Lumen for a delayed check that held on a text of at least 8 lines. Not recommended for 1.1."
+  },
+  "screens": {
+    "shelf": "A list of the player's texts: title, label, number of sections, how many sections are learned, next check date. Buttons: Add a text, Open, Delete.",
+    "add": "Title (required), label (optional, for example the source in the player's own words), a large box to paste or type the text, direction (Auto, Left to right, Right to left), language code (optional), how exact (Gist, Close, Exact), checks (Typed or Said aloud), and a switch 'Ignore vowel marks and accents when I check'. Then 'Cut it into pieces'.",
+    "split": "The tool shows the pieces (see chunking). The player can split a piece, join two pieces, or edit a line. A plain count: '9 sections, 52 lines'.",
+    "learn": "One section at a time. Four still steps, each with a button to move on: Read (full text, 'say it aloud if you like'), First letters (each word shows its first letter only), Line starts (only the first word of each line), Blank (empty boxes or an empty card). An optional line before the Read step: 'If you like pictures, give each line one. If you prefer sound and repetition, skip this.'",
+    "check": "Typed: one box for each line, in order, with the previous line shown as the cue after the player has left it, or Said aloud: the card is blank, the player says the section, then taps 'Show me' and marks each line 'Had it' or 'Slipped'. After a check, the correct text is shown beside the answer, with missing or different words marked in plain words.",
+    "result": "How many lines held, the next check date, and what slipped. Slipped lines are listed for tomorrow. Nothing red, no sound except the one soft submit sound."
+  },
+  "stillRule": "No animation, no countdown, no sound apart from the one soft submit sound. Respect the reduced-motion preference. Text is never revealed by animation.",
+  "chunking": {
+    "autoRules": [
+      "A blank line in the pasted text starts a new section (a stanza, a verse group, a paragraph).",
+      "If there are no blank lines, a section is 4 lines. A line is one line of the pasted text.",
+      "If the text has no line breaks at all, it is cut at sentence ends (full stops, question marks, exclamation marks and the Arabic and Devanagari equivalents), then grouped 3 sentences to a section. A sentence longer than 400 characters is cut at the nearest comma or space.",
+      "A section is at most 40 lines. The default target is 4 to 8 lines, the size the curriculum uses for a day's piece.",
+      "Numbers at the start of a line (verse numbers) are kept as part of the line, shown in the Read step and not asked for in checks (a leading run of digits and its following punctuation is ignored by the checker)."
+    ],
+    "honest": "The tool cuts at places that look natural, but only the player knows where their text really breaks. They can always edit the cuts."
+  },
+  "cueLadder": {
+    "stages": [
+      {
+        "n": 1,
+        "id": "read",
+        "name": "Read",
+        "shows": "the full section",
+        "action": "Read it aloud or silently, and make pictures if you like."
+      },
+      {
+        "n": 2,
+        "id": "letters",
+        "name": "First letters",
+        "shows": "the first letter of each word, with a mark for each word",
+        "action": "Say the section, using the letters as hints."
+      },
+      {
+        "n": 3,
+        "id": "starts",
+        "name": "Line starts",
+        "shows": "only the first word of each line",
+        "action": "Say the section from the line starts."
+      },
+      {
+        "n": 4,
+        "id": "blank",
+        "name": "Blank",
+        "shows": "numbered empty lines",
+        "action": "Say or type the whole section from nothing."
+      }
+    ],
+    "hint": "A hint (a peek at the true line) is always available. A line peeked at counts as 'Slipped' for that check, and the tool says so before the player taps it. Nothing else is penalised.",
+    "firstLetterRule": "The first letter of a word is its first grapheme cluster (what a reader sees as one character), taken with Intl.Segmenter('grapheme') where the browser supports it, or by a small fallback that takes one code point plus any following combining marks. For Arabic and Hebrew this keeps the first base letter with its marks. For Chinese, Japanese and Thai, which do not use spaces, word-level cues are not offered: First letters becomes 'first character of each line', and the Line starts step is dropped.",
+    "layout": "The cue line is shown with dir='auto', in the same direction as the text, at the player's chosen text size."
+  },
+  "checking": {
+    "modes": {
+      "typed": "The player types each line. The checker compares it with the stored line.",
+      "said": "The player says it aloud and marks each line 'Had it' or 'Slipped'. This is the natural mode for many learners and for texts that are learned by ear. The game trusts the player's mark: it is their text and their practice."
+    },
+    "exactness": {
+      "gist": "Right when at least 70 percent of the stored line's words appear in the answer in the right order (longest common subsequence of words).",
+      "close": "Right when the normalised answer is at most 10 percent different from the normalised line (edit distance over code points divided by the longer length). Default.",
+      "exact": "Right only when the normalised answer equals the normalised line."
+    },
+    "normalise": [
+      "Unicode NFKC, so presentation forms and compatibility characters compare equal to their base forms.",
+      "Lower-case where the script has case.",
+      "Remove punctuation and symbols (Unicode categories P and S, which include the Arabic comma, the Devanagari danda and the Hebrew maqaf), and remove the zero-width joiner only when it is between two spaces.",
+      "Compare word by word, splitting on white space. For scripts without spaces, compare the whole line with spaces removed.",
+      "If 'Ignore vowel marks and accents' is on, also remove: Arabic marks (U+0610 to U+061A, U+064B to U+065F, U+0670, U+06D6 to U+06ED), Hebrew points and cantillation (U+0591 to U+05C7) and Latin accents (U+0300 to U+036F after NFD). Never remove Indic vowel signs (matras) or any letter: in those scripts they are part of the word. Never fold different letters together (for example, the different forms of Arabic alef or ya) unless the player turns on a separate 'treat these letter forms as the same' switch, which is not part of 1.1.",
+      "A leading run of digits and punctuation (a verse number) is ignored."
+    ],
+    "mustNotUse": "The existing normalize() in src/engine/util.js keeps only a to z and 0 to 9, so for Arabic, Hebrew, Devanagari, Chinese and every other non-Latin text it returns an empty string, and matches() would call every answer wrong. The Own Text checker needs its own Unicode-aware normaliser. Do not reuse normalize() or matches() here.",
+    "feedback": "After a check, show the stored line and mark in words which words were missing or different: 'You left out the 3rd word' and 'The 5th word was different'. No red text on its own; use a text mark as well as a colour.",
+    "lineScore": "1 for a line that passes the chosen exactness, otherwise 0. Section accuracy is lines passed divided by lines."
+  },
+  "scripts": {
+    "fonts": "The pixel fonts (Pixelify Sans, Silkscreen, VT323) have no glyphs for most scripts and are only for the interface. Own text is shown in the system font stack so that the browser picks its own face for each script, with generous line height (about 1.7) because marks above and below letters need room. The player's text size preference applies, and a larger setting is offered for texts with small marks. No font is downloaded.",
+    "direction": "Each text has dir: auto, ltr or rtl. 'auto' lets the browser choose from the first strong character. Boxes use dir='auto'. Line numbers sit on the outer side of the line.",
+    "lang": "An optional language code (2 to 12 characters such as ar, he, hi, zh, ja, sa) is stored and written to the lang attribute so browsers can pick the right face and line-breaking rules.",
+    "noOtherChanges": "No transliteration, no translation, no audio and no recognition of speech. The game does not interpret the text in any way."
+  },
+  "schedule": {
+    "reuse": "Reuse the interval list GATE_PROBE_INTERVALS (1, 7, 30, 90, 180 days) and the 'next due is no earlier than tomorrow' rule from applyProbe. Pull the shared part out of applyProbe into a small pure function, for example advanceSchedule(sched, passed, today), used by both so that the curriculum's behaviour is unchanged. Do not call applyProbe on Your Own Text, because it writes skill probes and mastery.",
+    "perSection": "Every section has its own schedule: { created, due, idx, immediate, misses, history, retired }. A check asks only the sections that are due.",
+    "start": "A section starts its schedule when the player finishes the Blank step of Learn with at least 80 percent of lines passed (their 'immediate' score). The first check is due the next day.",
+    "pass": "A check passes when the section's lines passed reach the pass level: gist 0.7, close 0.85, exact 0.95 (for a short section of 4 lines, 'exact' means every line).",
+    "onPass": "idx goes up by one, and the next check is due at the next interval from the section's creation date or tomorrow, whichever is later. After the last interval the section is 'kept' (retired), and the shelf shows it as kept.",
+    "onMiss": "A miss is gentle. The first miss keeps idx where it is and sets the section due tomorrow, with only the slipped lines asked (the section is relearned from the Line starts step, not from Read). A second miss in a row drops idx by one step, never to zero. Nothing is lost and the text is never marked failed.",
+    "overdue": "A check that is late is still the same check. There is no penalty. When more than 3 sections are ready, the tool asks for the three oldest and says so: 'Three checks today. The rest can wait.' An 'I'm tired today' button shortens the sitting to one section.",
+    "newMaterial": "The tool suggests at most 2 new sections a day and says why in plain words: 'Checking what you know before adding more helps it last.' It does not enforce it.",
+    "yearlyKeep": "After the 180-day check a text is 'kept'. Optional later: a once-a-year touch. Not in 1.1."
+  },
+  "data": {
+    "field": "p.own",
+    "shape": {
+      "v": 1,
+      "texts": [
+        {
+          "id": "string, 1 to 40 characters, created with uid(), permanent",
+          "title": "string, 1 to 80",
+          "label": "string, 0 to 80, the player's own words about the source",
+          "note": "string, 0 to 200, the player's own reminder, for example 'check with my teacher on Friday'",
+          "created": "YYYY-MM-DD",
+          "dir": "'auto' | 'ltr' | 'rtl'",
+          "lang": "string, 0 to 12",
+          "exact": "'gist' | 'close' | 'exact'",
+          "marks": "boolean, ignore vowel marks and accents",
+          "mode": "'typed' | 'said'",
+          "sections": [
+            {
+              "id": "string, 1 to 20",
+              "lines": [
+                "string, 1 to 400 characters, up to 40 lines"
+              ],
+              "stage": "integer 0 to 4, 0 not started, 4 finished Blank",
+              "sched": {
+                "created": "YYYY-MM-DD",
+                "due": "YYYY-MM-DD",
+                "idx": "integer 0 to 5",
+                "immediate": "number 0 to 1",
+                "misses": "integer 0 to 99",
+                "history": [
+                  {
+                    "date": "YYYY-MM-DD",
+                    "acc": "number 0 to 1",
+                    "pass": "boolean"
+                  }
+                ],
+                "retired": "boolean"
+              }
+            }
+          ]
+        }
+      ],
+      "history": [
+        {
+          "date": "YYYY-MM-DD",
+          "text": "text id",
+          "held": "integer",
+          "of": "integer"
+        }
+      ]
+    },
+    "caps": {
+      "texts": 20,
+      "charsPerText": 30000,
+      "sectionsPerText": 120,
+      "linesPerSection": 40,
+      "charsPerLine": 400,
+      "historyEntries": 200,
+      "sectionHistory": 12,
+      "wholeRecordBytes": 1500000
+    },
+    "capReason": "The import cap in store.js is 5 million characters for the whole backup. A 30,000 character text of a script that takes 2 to 3 bytes a character is under 100 KB, so 20 of them stay well inside the cap. The caps also keep the whole profile quick to save to IndexedDB, which writes the whole record each time. Measure the save time with 20 full texts before shipping.",
+    "stored": "In IndexedDB and localStorage with the rest of the profile, like every other record. Nothing is sent anywhere.",
+    "notStored": "No audio, no keystrokes and no per-word timing."
+  },
+  "migration": {
+    "schema": "SCHEMA stays 2, as in the last two releases: this is an additive record with a default created by migrate().",
+    "steps": [
+      "src/engine/core.js newProfile(): add own: { v: 1, texts: [], history: [] }.",
+      "src/store.js migrate(): if (!isObj(p.own) || !Array.isArray(p.own.texts)) p.own = { v: 1, texts: [], history: [] }; if (!Array.isArray(p.own.history)) p.own.history = []; if (!Number.isInteger(p.own.v)) p.own.v = 1.",
+      "src/store.js validateProfile(): add a block for p.own that rejects anything outside the caps and shapes above with 'Your Own Text record is invalid.' Check types, lengths, dates (isDate), enums, that every section has at least one line, and that no field is a function or object where a string is expected. Check texts[].id and sections[].id are unique inside their lists.",
+      "src/store.js withDefaults(): nothing to add, because base.own comes from newProfile and the spread keeps the backup's own when present.",
+      "buildExport(): nothing to add. The profile is exported whole, so texts travel in the backup. The backup dialog says so in one line: 'Your backup includes Your Own Text. Keep the file as private as the text.'",
+      "Import: a backup with no own field loads with the empty default. A backup from the 1.0 app, which does not know the field, loads normally. A backup with a malformed own field is rejected with the validation message and nothing is changed."
+    ],
+    "importReplaces": "Check what import does to existing data. If import replaces the whole profile, importing an older backup that has no texts would remove the texts on the device. Add a plain warning on import when the device holds texts and the backup does not: 'This backup has no texts. Importing it will remove the texts on this device.'",
+    "optionalExtra": "'Export my texts only' and 'Import texts' as a separate small file (app 'mnemos-texts', schema 1), which merges by text id and never overwrites. Useful for moving texts between devices and for keeping them out of a shared progress backup. Owner decision.",
+    "tests": [
+      "newProfile has own with empty texts.",
+      "migrate adds own to a profile that lacks it, and repairs own when it is null, an array or a string.",
+      "validate accepts a valid Arabic, Hebrew, Devanagari, Chinese and Latin text.",
+      "validate rejects: a text over 30,000 characters, a line over 400 characters, 21 texts, 121 sections, an unknown exact value, a bad date, a non-string line, a duplicate text id, a section with no lines, a history entry with held greater than of.",
+      "Export then import round-trips a profile with texts byte for byte.",
+      "Importing a 1.0 backup (no own) works. Importing an oversized file is refused by the 5 MB rule.",
+      "The problem report and beta report never include any field of p.own and the local error log never stores text (check beta.js: it reads p.results only, so keep it that way).",
+      "No code path renders own text with dangerouslySetInnerHTML or writes it to the URL."
+    ]
+  },
+  "safety": {
+    "paste": "On paste, normalise to NFC, replace tabs with spaces, remove control characters (U+0000 to U+0008, U+000B, U+000C, U+000E to U+001F, U+007F) and bidirectional override and isolate characters (U+202A to U+202E, U+2066 to U+2069), which can make text display differently from what it holds. Keep U+200E and U+200F (direction marks), which are normal in right-to-left text.",
+    "render": "Render as text nodes only. No HTML, no Markdown, no links, no images.",
+    "delete": "Every text has a Delete button with a one-line confirmation, and the shelf has 'Delete all my texts'. Deleting removes the text from the profile and from the next backup.",
+    "noPersonalPrompts": "The add screen says: 'This is for text you want to learn. Do not put passwords, bank details or private numbers here.' It is a reminder, not a scanner."
+  },
+  "uses": [
+    {
+      "use": "A verse, chant, prayer or other treasured text",
+      "how": "Exact mode, Said aloud, no pictures needed, ignore-marks switch for scripts with vowel marks, right-to-left where needed.",
+      "playbook": "treasured"
+    },
+    {
+      "use": "A poem",
+      "how": "Close mode, one stanza a section. Shipped poems from Workstream C are in the Poem drill, so this is for the player's own choice.",
+      "playbook": "longverse"
+    },
+    {
+      "use": "A speech or toast word for word (the opening and closing lines)",
+      "how": "Close mode, short sections.",
+      "playbook": "talk"
+    },
+    {
+      "use": "Lines in a play or a song",
+      "how": "Later option 'Role mode': lines begin with a speaker name and a colon; the player chooses a role; other roles' lines are shown as cues and the player's lines are the ones hidden. Not in the first build. A song is the player's own copy for private practice.",
+      "playbook": "lines"
+    },
+    {
+      "use": "A vow, a formal wording, an oath",
+      "how": "Exact mode.",
+      "playbook": "treasured"
+    },
+    {
+      "use": "A chess repertoire line, a list of formulas, vocabulary one word a line",
+      "how": "Close mode, one item a line, 'Gist' for definitions.",
+      "playbook": "ownText"
+    }
+  ],
+  "copy": {
+    "intro": "Your Own Text is for anything you want to learn word for word: a verse, a prayer, a poem, a speech, lines in a play. Paste it in, and Mnemos will cut it into small pieces, hide it a little at a time, and remind you when to check yourself again.",
+    "privacy": "Your text stays on this device and goes in your backup file. Mnemos never sends it anywhere.",
+    "accuracy": "Mnemos cannot check that the text you type is right. Copy it from a printed or trusted edition, and check it with your teacher or a source you trust.",
+    "aid": "Mnemos is a practice aid. It does not teach any tradition and takes no view on which text, translation or way of reciting is right. If a teacher or community guides you, their guidance comes first.",
+    "empty": "Your shelf is empty. Add a text when you have something you want to keep.",
+    "addHelp": "Paste the text. Leave a blank line between sections if you want them cut in a certain place.",
+    "stepRead": "Read it, aloud if you like. Pictures are optional here.",
+    "stepLetters": "First letters only. Say the section.",
+    "stepStarts": "Only the start of each line. Say the section.",
+    "stepBlank": "Nothing shown. Say or type the whole section.",
+    "checkDue": "{n} checks are ready. About {m} minutes.",
+    "checkResult": "{held} of {of} lines held. Next check: {date}.",
+    "slipped": "These lines slipped. They will come back tomorrow.",
+    "lightDay": "I'm tired today: one section only.",
+    "peek": "Peeking counts this line as slipped. Show it anyway?",
+    "deleteOne": "Delete this text from this device? It will also be left out of your next backup.",
+    "deleteAll": "Delete all your texts from this device?",
+    "noReward": "Checks on your own texts do not earn Lumen or change your skills. They are yours.",
+    "importWarn": "This backup has no texts. Importing it will remove the texts on this device.",
+    "backupLine": "Your backup includes Your Own Text. Keep the file as private as the text."
+  },
+  "builderNotes": [
+    "New files: src/ui/OwnText.jsx (shelf, add, split, learn, check), src/engine/owntext.js (chunking, normaliser, checker, scheduling, caps), src/data/owntext.js (copy). Keep copy in data like other screens.",
+    "Accessible names for e2e: 'Your Shelf', 'Add a text', 'Cut it into pieces', 'Check', 'Had it', 'Slipped', 'Show me'. Add a journey to tests/e2e.mjs with a short Latin text, then an Arabic text and a Devanagari text, at 390px and desktop.",
+    "Test the checker with real strings in each script and with decomposed and precomposed accents.",
+    "Intl.Segmenter is available in current Chrome, Safari and Firefox. Keep the fallback for older browsers and test it.",
+    "Today card and Field Guide card are the only entry points. No push, no reminder outside the app."
+  ]
+}

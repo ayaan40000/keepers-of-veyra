@@ -86,6 +86,22 @@ I understand it now. The river can only keep what nobody up above is keeping. Ev
 
 I have set my lamp on this ledge with all the oil I could carry. Let it burn as long as it can, so that whoever comes after knows somebody remembered the way down. Now go back up. Do not stay here listening to the singing. Go up into the light and keep things: names, faces, songs, the way home. That is all that ever pushed the Tide back, and it is enough.
 
+### Floor 75: The Winder of the Clocks
+
+Not every Warden walked a route. One of us wound the clocks. I kept the timetable of the Tide for nineteen years at a time, and I never missed a night. I tell you so you will know it was not carelessness. When the lamps went out in the city above, I went down to see why, and I found a place where the river's warmth comes up through the stone, and the hours there were loose.
+
+### Floor 80: A Warden Who Stayed
+
+The others went up, or went home, or forgot. I stayed at the last lamp until the last of the oil was gone, and then I came down here, because a thread was loose and I have always been unable to leave a loose thread alone. I only meant to hold it until someone came who could hold it better. I have been holding it a long time. I am not complaining. It is only that my hands are tired.
+
+### Floor 90: The Thread Is Warm
+
+I am not trapped. I want that understood. I can climb out whenever I choose. But the thread has the whole evening on it: the lamps, the singing, the old Wardens laughing on the Quay steps, every name said aloud. If I let go, it goes where everything goes. So I do not let go. I have written my name on the ledge above, so that I do not forget it. I cannot read it any more.
+
+### Floor 100: One Evening
+
+I have kept it. It is a good evening, perhaps the best there ever was. But the lamps will not go out, and nobody goes home, and the songs do not end. I used to think a day was something to keep. I begin to think it is something to finish. If you have come this far, and you are kind, and you remember things in order, I would be grateful if you said my name. I think it begins with a sound like a wick being trimmed.
+
 ## Guardians
 
 - **The Crowned Echo** (from floor 10): A king with no name rises from his throne and repeats everything you say, a moment too late.

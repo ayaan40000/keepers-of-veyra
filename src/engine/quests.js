@@ -1,6 +1,11 @@
 import { SIDE_QUESTS, CODEX, CHARACTERS, CHAPTERS } from '../data/story.js';
 import { MODULES } from '../data/curriculum.js';
 import { today } from './core.js';
+import { AUDIT_LORE } from '../data/audit.js';
+import { EVENT_LORE } from '../data/events.js';
+import { eventLoreOpen } from './events.js';
+import { SEAM_LORE } from '../data/forgetting.js';
+import { heldCount, faceKept, lampKept, keepsakeText } from './wren.js';
 
 const moduleReached = (p, modId) => {
   const m = MODULES.find((x) => x.id === modId);
@@ -58,11 +63,22 @@ export function codexUnlocked(p, entry) {
   if (u === 'start') return true;
   if (u.startsWith('gate:')) return p.progress.gates.includes(u.slice(5));
   if (u.startsWith('side:')) return !!p.story.sideDone?.[u.slice(5)];
+  if (u.startsWith('audit:')) return (p.audit?.done || 0) >= +u.slice(6);
+  if (u.startsWith('events:')) return eventLoreOpen(p, u.slice(7));
   if (u.startsWith('trial:')) return !!p.trials?.[u.slice(6)]?.passed;
+  // 1.1 the Seam and Wren's family
+  if (u === 'seam:met') return !!p.seam?.met;
+  if (u === 'seam:closed') return !!p.seam?.closed;
+  if (u.startsWith('wren:beat:')) return !!p.wren?.seen?.[u.slice(10)];
+  if (u.startsWith('wren:held:')) return heldCount(p) >= +u.slice(10);
+  if (u === 'wren:scene:face') return faceKept(p);
+  if (u === 'wren:scene:lamp') return lampKept(p);
   return false;
 }
 
-export function codexFor(p) { return CODEX.map((e) => ({ ...e, open: codexUnlocked(p, e) })); }
+export function codexFor(p) {
+  return [...CODEX, ...AUDIT_LORE, ...EVENT_LORE, ...SEAM_LORE].map((e) => ({ ...e, text: e.dynamic === 'wren_keepsakes' ? keepsakeText(p) : e.text, open: codexUnlocked(p, e) }));
+}
 
 export function charactersFor(p) {
   const g = p.progress.gates.length;

@@ -1,0 +1,1148 @@
+{
+  "notes": "Workstream E, speed math. The numbers in every table were recomputed on Nov 2, 2026 by script (squares 1 to 30, cubes 1 to 10, powers of two to 2^16, primes under 100: all correct). Strategy examples were recomputed by hand (487+356=843, 698+457=1155, 1000-648=352, 46x5=230, 53x11=583, 78x11=858, 35^2=1225, 47^2=2209, 15 percent of 80 = 12, casting out nines 487 to 1, 356 to 5, 843 to 6). Constants were compared with the SI Brochure and NIST and the digits of pi, e, root 2, root 3 and the golden ratio with Python's math library: all correct as stated. Square pictures use Major words from the shipped lists. Where a value is not exact the entry says 'about' and gives the rounding rule. No claim is made that this training speeds up mental arithmetic in general, or makes anyone better at maths.",
+  "honestVerdict": {
+    "summary": "Pictures rarely beat plain calculation for the sums themselves. Memory methods help with a short list of things that must simply be there: times tables, squares, cubes, powers of two, primes, constants, conversion factors and formulas. For the sum, use calculation strategies and say the partial results aloud.",
+    "helps": [
+      "Number facts you want instantly: a table up to 15 by 15, squares to 30, cubes to 10, powers of two to 65,536, primes under 100. A picture can start a stubborn fact. Repeated recall makes it fast, and the picture should fade as the fact becomes automatic.",
+      "Constants and formulas you must recall exactly (a picture for the formula, the Major System for its digits).",
+      "Conversion factors (1 inch is 2.54 cm), once, with a check next week.",
+      "Chunking a result into groups of two or three digits when you say it aloud, so the next step has less to hold. This is the same chunking as in the digit drills."
+    ],
+    "doesNotHelp": [
+      "Turning a half-finished sum into pictures. The picture costs more time than just holding a four-digit result and saying it aloud.",
+      "Pictures for every intermediate number of a long multiplication.",
+      "Anything that claims mental speed in general. A fast mental calculator is mostly using calculation methods and number facts known by heart, built over years."
+    ],
+    "saysAloud": "Say each partial result aloud or under your breath. Saying it gives you a second copy of the number to hold on to. This is advice, not a promise, and the game does not test whether you do it."
+  },
+  "where": {
+    "fieldGuide": "New playbook \"reckoning\" (see fieldguide-e.json) that adds to the existing \"speedmath\" playbook (M8). Tells the honest verdict and shows eight strategies.",
+    "drill": "New drill template \"calc\" (Mental Reckoning, skill: numbers, but see \"skill\" below). Items are generated, so no pool file is needed.",
+    "trial": "New trial \"reckoning\" in the Counting House (see \"trial\").",
+    "eventHall": "Not in the Event Hall: speed math is not one of the championship formats the lore copies. It may be added as an optional \"Sum Run\" later (owner decision, README).",
+    "yourOwnText": "Not used."
+  },
+  "gates": {
+    "drill": "M5 (after the number palace). The facts tables from M4.",
+    "guide": "M8 (the existing speedmath page already opens there)",
+    "trial": "M8"
+  },
+  "skill": "Recommend NO new skill estimate for the calc drill. Reckoning is practice with a small result record, not part of the seven-skill model. Accuracy is shown to the player and kept in the drill history (p.results already stores t, acc, day, role; add the variant name v). It does not change skills or Lumen, so the rule \"rewards come only from demonstrated learning\" is kept by giving no reward. Facts-table recall at delayed probes (1, 7, 30 days) can still go through p.sets under the numbers skill (it is a cued fact drill).",
+  "drill": {
+    "template": "calc",
+    "name": "Mental Reckoning",
+    "spec": "{ t: 'calc', n: 8, s: 60, level: 1..6, mode: 'see' | 'hold', kinds: ['ltr'] | ['ltr','sq','tbl'] }",
+    "modes": {
+      "see": "The sum stays on screen. The player has boxes for each partial result (shown as empty, count visible) and one for the final answer. Boxes for partials are not scored.",
+      "hold": "The sum is shown for the set study time (6 seconds for level 1, 12 for level 6), then hidden. The player must hold it, calculate and type the final answer. This is the working-memory version. Pairs well with saying the numbers aloud."
+    },
+    "stillScreens": "No animation, no countdown ring, no sound except the one soft submit sound. The study time is shown as plain text if needed.",
+    "levels": {
+      "1": "Add two numbers, two digits",
+      "2": "Add a two-digit number to a three-digit number",
+      "3": "Add two three-digit numbers",
+      "4": "Subtract two three-digit numbers",
+      "5": "Multiply a two-digit number by one digit",
+      "6": "Multiply two two-digit numbers"
+    },
+    "adaptive": "The existing adaptive rules (R1 to R6) move the level and n by accuracy. A level goes up after two drills at 90 percent or higher. It never goes up on speed.",
+    "scoring": {
+      "main": "Share of final answers exactly right (digits only; commas and spaces ignored; no partial credit on the final).",
+      "feedback": "After each item the steps are shown in plain words: \"487 plus 300 is 787, plus 50 is 837, plus 6 is 843.\" If the player typed partials, correct ones are ticked.",
+      "time": "Personal best time per 8 items shown only when accuracy is 90 percent or higher. Time never lowers the score.",
+      "notes": "Scored by a new recall mode that the builder adds beside free, ordered and cued: \"numeric\" (normalise by removing spaces and commas, compare strings). Existing matches() would accept a one-letter slip on 5-character answers, which is wrong for numbers, so calc must not use it."
+    },
+    "data": "No new saved record. Sets can enter p.sets only for the facts kinds (sq, tbl) with cue and answer; sums are regenerated each time and never probed (a fresh sum has nothing to forget). Add \"calc\" to TEMPLATE_SKILL (skill numbers), TEMPLATE_NAME, BRIEF in Drill.jsx and the store.js template whitelist.",
+    "migration": "None.",
+    "tests": [
+      "Item generation deterministic for a seed and level.",
+      "Answer equals recomputed arithmetic for 14,000 generated items (the reference script does this).",
+      "Subtraction never negative and multiplication partials add to the answer.",
+      "numeric recall mode: \"1,112\", \"1112\", \" 1112 \" all right; \"1113\" and \"111\" wrong; empty wrong.",
+      "Time bonus never applies below 90 percent.",
+      "hold mode hides the cue at recall."
+    ]
+  },
+  "trial": {
+    "id": "reckoning",
+    "kind": "trial",
+    "title": "The Counting House Reckoning",
+    "gate": "M8",
+    "district": "Counting House",
+    "coach": "isolde",
+    "art": "trial_reckoning",
+    "prize": "tr_tally_stick",
+    "method": "Hold the sum: work left to right, say each partial aloud, and keep a few number facts by heart.",
+    "setup": "Isolde has found an old reckoning table in the Counting House. The merchants who used it never wrote down their sums. They said each step aloud and moved on. Three number facts are scratched on the side of the table.",
+    "intro": "First, study three number facts and give each a picture. Then seven sums wait for you, one at a time. Take your time: the table cares about right answers, not quick ones. Nine of ten opens the drawer.",
+    "pass": "The last answer lands and the table clicks. A drawer slides open with a small tally stick inside, notched with every sum you just solved.",
+    "miss": "A few answers were off. That is normal. Look at the steps shown, try the sums again tomorrow, and fresh ones will be waiting.",
+    "material": "calc",
+    "n": 10,
+    "study": 120,
+    "checks": [
+      {
+        "after": 0,
+        "pass": 0.9
+      }
+    ],
+    "retry": 1,
+    "structure": "Study: three number facts (one square above 20, one constant or conversion, one table fact above 12). Then 7 sums in see mode at levels 2, 3, 3, 4, 5, 5, 6. Then the three facts asked back from memory. Total 10 answers.",
+    "builderNotes": "Needs a new branch in material() of src/engine/trials.js and a new prize item and art (owner decision). Trial results never change skills (TRIAL_HONEST). The delayed 7-day check of the three facts is optional and is not part of the pass."
+  },
+  "strategies": [
+    {
+      "id": "s-ltr",
+      "title": "Work left to right",
+      "text": "Start with the biggest part, so your first answer is already close. 487 + 356: 487 plus 300 is 787, plus 50 is 837, plus 6 is 843.",
+      "check": 843
+    },
+    {
+      "id": "s-round",
+      "title": "Round, then fix",
+      "text": "Round one number to a friendly one and correct at the end. 698 + 457: 700 + 457 is 1157, take off 2, and you have 1155.",
+      "check": 1155
+    },
+    {
+      "id": "s-complement",
+      "title": "Subtract by counting up",
+      "text": "For 1000 minus 648, make each digit add to 9, except the last, which adds to 10: 3, 5, 2. So the answer is 352.",
+      "check": 352
+    },
+    {
+      "id": "s-five",
+      "title": "Multiply by 5 with a half",
+      "text": "Half the number, then times ten. 46 x 5: half of 46 is 23, so 230.",
+      "check": 230
+    },
+    {
+      "id": "s-eleven",
+      "title": "Multiply a two-digit number by 11",
+      "text": "Put the sum of the two digits in the middle. 53 x 11: 5, then 5 + 3 = 8, then 3, giving 583. When the middle is 10 or more, carry one: 78 x 11 is 7, 15, 8, which becomes 858.",
+      "check": 583
+    },
+    {
+      "id": "s-five-sq",
+      "title": "Square a number ending in 5",
+      "text": "Take the tens digit, multiply it by the next number up, and put 25 after it. 35 squared: 3 x 4 is 12, so 1225.",
+      "check": 1225
+    },
+    {
+      "id": "s-near-fifty",
+      "title": "Square near a friendly number",
+      "text": "Use (a minus b) squared = a squared minus 2ab plus b squared. 47 squared: 2500 minus 300 plus 9 is 2209.",
+      "check": 2209
+    },
+    {
+      "id": "s-percent",
+      "title": "Percentages from ten percent",
+      "text": "Ten percent is one digit left. 15 percent of 80: 10 percent is 8, 5 percent is 4, so 12.",
+      "check": 12
+    },
+    {
+      "id": "s-estimate",
+      "title": "Estimate first, then check by casting out nines",
+      "text": "Before you start, estimate: 487 + 356 is about 500 + 350, so about 850. Then check by adding the digits of each number until one digit is left: 487 gives 1, 356 gives 5, so the answer should give 6. 843 gives 6. A matching check does not prove the sum, but a mismatch means an error.",
+      "check": 843
+    }
+  ],
+  "tables": {
+    "squares": [
+      {
+        "n": 1,
+        "square": 1
+      },
+      {
+        "n": 2,
+        "square": 4
+      },
+      {
+        "n": 3,
+        "square": 9
+      },
+      {
+        "n": 4,
+        "square": 16
+      },
+      {
+        "n": 5,
+        "square": 25
+      },
+      {
+        "n": 6,
+        "square": 36
+      },
+      {
+        "n": 7,
+        "square": 49
+      },
+      {
+        "n": 8,
+        "square": 64
+      },
+      {
+        "n": 9,
+        "square": 81
+      },
+      {
+        "n": 10,
+        "square": 100
+      },
+      {
+        "n": 11,
+        "square": 121
+      },
+      {
+        "n": 12,
+        "square": 144
+      },
+      {
+        "n": 13,
+        "square": 169,
+        "picture": [
+          "dish",
+          "bee"
+        ],
+        "pairs": [
+          "16",
+          "9"
+        ]
+      },
+      {
+        "n": 14,
+        "square": 196,
+        "picture": [
+          "tub",
+          "shoe"
+        ],
+        "pairs": [
+          "19",
+          "6"
+        ]
+      },
+      {
+        "n": 15,
+        "square": 225
+      },
+      {
+        "n": 16,
+        "square": 256,
+        "picture": [
+          "nail",
+          "shoe"
+        ],
+        "pairs": [
+          "25",
+          "6"
+        ]
+      },
+      {
+        "n": 17,
+        "square": 289,
+        "picture": [
+          "knife",
+          "bee"
+        ],
+        "pairs": [
+          "28",
+          "9"
+        ]
+      },
+      {
+        "n": 18,
+        "square": 324,
+        "picture": [
+          "moon",
+          "ray"
+        ],
+        "pairs": [
+          "32",
+          "4"
+        ]
+      },
+      {
+        "n": 19,
+        "square": 361,
+        "picture": [
+          "match",
+          "tea"
+        ],
+        "pairs": [
+          "36",
+          "1"
+        ]
+      },
+      {
+        "n": 20,
+        "square": 400
+      },
+      {
+        "n": 21,
+        "square": 441,
+        "picture": [
+          "rower",
+          "tea"
+        ],
+        "pairs": [
+          "44",
+          "1"
+        ]
+      },
+      {
+        "n": 22,
+        "square": 484,
+        "picture": [
+          "roof",
+          "ray"
+        ],
+        "pairs": [
+          "48",
+          "4"
+        ]
+      },
+      {
+        "n": 23,
+        "square": 529,
+        "picture": [
+          "lion",
+          "bee"
+        ],
+        "pairs": [
+          "52",
+          "9"
+        ]
+      },
+      {
+        "n": 24,
+        "square": 576,
+        "picture": [
+          "lock",
+          "shoe"
+        ],
+        "pairs": [
+          "57",
+          "6"
+        ]
+      },
+      {
+        "n": 25,
+        "square": 625
+      },
+      {
+        "n": 26,
+        "square": 676,
+        "picture": [
+          "chalk",
+          "shoe"
+        ],
+        "pairs": [
+          "67",
+          "6"
+        ]
+      },
+      {
+        "n": 27,
+        "square": 729,
+        "picture": [
+          "coin",
+          "bee"
+        ],
+        "pairs": [
+          "72",
+          "9"
+        ]
+      },
+      {
+        "n": 28,
+        "square": 784,
+        "picture": [
+          "cave",
+          "ray"
+        ],
+        "pairs": [
+          "78",
+          "4"
+        ]
+      },
+      {
+        "n": 29,
+        "square": 841,
+        "picture": [
+          "fire",
+          "tea"
+        ],
+        "pairs": [
+          "84",
+          "1"
+        ]
+      },
+      {
+        "n": 30,
+        "square": 900
+      }
+    ],
+    "squaresNote": "Squares 1 to 30. The \"picture\" field lists Major words for the hardest squares only (a pair plus a single digit, from the default list and MAJOR_SINGLE). Use them as a starter and let them fade after a week of retrieval checks. 14 squares carry a picture, the other 16 are easy or follow a pattern (11 squared is 121, 20 squared is 400, 25 squared is 625, 30 squared is 900).",
+    "cubes": [
+      {
+        "n": 1,
+        "cube": 1
+      },
+      {
+        "n": 2,
+        "cube": 8
+      },
+      {
+        "n": 3,
+        "cube": 27
+      },
+      {
+        "n": 4,
+        "cube": 64
+      },
+      {
+        "n": 5,
+        "cube": 125
+      },
+      {
+        "n": 6,
+        "cube": 216
+      },
+      {
+        "n": 7,
+        "cube": 343
+      },
+      {
+        "n": 8,
+        "cube": 512
+      },
+      {
+        "n": 9,
+        "cube": 729
+      },
+      {
+        "n": 10,
+        "cube": 1000
+      }
+    ],
+    "powersOfTwo": [
+      {
+        "exp": 1,
+        "value": 2
+      },
+      {
+        "exp": 2,
+        "value": 4
+      },
+      {
+        "exp": 3,
+        "value": 8
+      },
+      {
+        "exp": 4,
+        "value": 16
+      },
+      {
+        "exp": 5,
+        "value": 32
+      },
+      {
+        "exp": 6,
+        "value": 64
+      },
+      {
+        "exp": 7,
+        "value": 128
+      },
+      {
+        "exp": 8,
+        "value": 256
+      },
+      {
+        "exp": 9,
+        "value": 512
+      },
+      {
+        "exp": 10,
+        "value": 1024
+      },
+      {
+        "exp": 11,
+        "value": 2048
+      },
+      {
+        "exp": 12,
+        "value": 4096
+      },
+      {
+        "exp": 13,
+        "value": 8192
+      },
+      {
+        "exp": 14,
+        "value": 16384
+      },
+      {
+        "exp": 15,
+        "value": 32768
+      },
+      {
+        "exp": 16,
+        "value": 65536
+      }
+    ],
+    "primesUnder100": [
+      2,
+      3,
+      5,
+      7,
+      11,
+      13,
+      17,
+      19,
+      23,
+      29,
+      31,
+      37,
+      41,
+      43,
+      47,
+      53,
+      59,
+      61,
+      67,
+      71,
+      73,
+      79,
+      83,
+      89,
+      97
+    ],
+    "fractionsAsDecimals": [
+      {
+        "fraction": "1/2",
+        "decimal": "0.5",
+        "note": "exact"
+      },
+      {
+        "fraction": "1/3",
+        "decimal": "0.3333",
+        "note": "rounded"
+      },
+      {
+        "fraction": "1/4",
+        "decimal": "0.25",
+        "note": "exact"
+      },
+      {
+        "fraction": "1/5",
+        "decimal": "0.2",
+        "note": "exact"
+      },
+      {
+        "fraction": "1/6",
+        "decimal": "0.1667",
+        "note": "rounded"
+      },
+      {
+        "fraction": "1/7",
+        "decimal": "0.142857",
+        "note": "the digits 142857 repeat forever"
+      },
+      {
+        "fraction": "1/8",
+        "decimal": "0.125",
+        "note": "exact"
+      },
+      {
+        "fraction": "1/9",
+        "decimal": "0.1111",
+        "note": "rounded"
+      },
+      {
+        "fraction": "1/11",
+        "decimal": "0.0909",
+        "note": "rounded"
+      },
+      {
+        "fraction": "1/12",
+        "decimal": "0.0833",
+        "note": "rounded"
+      }
+    ],
+    "timesTable": "Generated, not stored: 6 to 15 by 6 to 15. The drill picks pairs with the stubborn ones (7 x 8, 6 x 9, 12 x 13) weighted by the adaptive rules."
+  },
+  "constants": [
+    {
+      "id": "k-c",
+      "cue": "Speed of light in a vacuum, metres per second",
+      "answer": "299792458",
+      "display": "299,792,458",
+      "exact": true,
+      "source": "SI definition of the metre",
+      "verified": true,
+      "sourceUrls": [
+        "https://www.bipm.org/en/publications/si-brochure"
+      ]
+    },
+    {
+      "id": "k-pi",
+      "cue": "Pi to 8 decimal places",
+      "answer": "3.14159265",
+      "exact": false,
+      "rule": "The next digit is 3, so truncating and rounding agree",
+      "source": "standard value",
+      "verified": true,
+      "sourceUrls": [
+        "https://physics.nist.gov/cuu/Constants/"
+      ]
+    },
+    {
+      "id": "k-e",
+      "cue": "Euler's number e to 7 decimal places",
+      "answer": "2.7182818",
+      "exact": false,
+      "rule": "The next digit is 2",
+      "source": "standard value",
+      "verified": true,
+      "sourceUrls": [
+        "https://physics.nist.gov/cuu/Constants/"
+      ]
+    },
+    {
+      "id": "k-sqrt2",
+      "cue": "Square root of 2 to 8 decimal places",
+      "answer": "1.41421356",
+      "exact": false,
+      "rule": "The next digit is 2",
+      "source": "standard value",
+      "verified": true,
+      "sourceUrls": [
+        "https://physics.nist.gov/cuu/Constants/"
+      ]
+    },
+    {
+      "id": "k-sqrt3",
+      "cue": "Square root of 3 to 7 decimal places",
+      "answer": "1.7320508",
+      "exact": false,
+      "rule": "The next digit is 0",
+      "source": "standard value",
+      "verified": true,
+      "sourceUrls": [
+        "https://physics.nist.gov/cuu/Constants/"
+      ]
+    },
+    {
+      "id": "k-phi",
+      "cue": "The golden ratio to 5 decimal places",
+      "answer": "1.61803",
+      "exact": false,
+      "rule": "The next digit is 3",
+      "source": "standard value",
+      "verified": true,
+      "sourceUrls": [
+        "https://physics.nist.gov/cuu/Constants/"
+      ]
+    },
+    {
+      "id": "k-g",
+      "cue": "Standard gravity, metres per second squared",
+      "answer": "9.80665",
+      "exact": true,
+      "source": "conventional standard value (CGPM 1901)",
+      "verified": true,
+      "sourceUrls": [
+        "https://www.nist.gov/pml/special-publication-811"
+      ]
+    },
+    {
+      "id": "k-zero",
+      "cue": "Absolute zero in degrees Celsius",
+      "answer": "273.15",
+      "display": "minus 273.15",
+      "exact": true,
+      "source": "follows from the kelvin and Celsius scales",
+      "verified": true,
+      "sourceUrls": [
+        "https://www.bipm.org/en/publications/si-brochure"
+      ]
+    },
+    {
+      "id": "k-avo",
+      "cue": "Avogadro constant, digits before the power of ten (times 10 to the 23 per mole)",
+      "answer": "602214076",
+      "display": "6.02214076",
+      "exact": true,
+      "source": "SI 2019 definition",
+      "verified": true,
+      "sourceUrls": [
+        "https://www.bipm.org/en/publications/si-brochure"
+      ]
+    },
+    {
+      "id": "k-planck",
+      "cue": "Planck constant, digits before the power of ten (times 10 to the minus 34 joule seconds)",
+      "answer": "662607015",
+      "display": "6.62607015",
+      "exact": true,
+      "source": "SI 2019 definition",
+      "verified": true,
+      "sourceUrls": [
+        "https://www.bipm.org/en/publications/si-brochure"
+      ]
+    },
+    {
+      "id": "k-inch",
+      "cue": "Centimetres in one inch",
+      "answer": "2.54",
+      "exact": true,
+      "source": "international yard and pound agreement of 1959",
+      "verified": true,
+      "sourceUrls": [
+        "https://www.nist.gov/pml/special-publication-811"
+      ]
+    },
+    {
+      "id": "k-foot",
+      "cue": "Metres in one foot",
+      "answer": "0.3048",
+      "exact": true,
+      "source": "1959 agreement",
+      "verified": true,
+      "sourceUrls": [
+        "https://www.nist.gov/pml/special-publication-811"
+      ]
+    },
+    {
+      "id": "k-mile",
+      "cue": "Kilometres in one mile",
+      "answer": "1.609344",
+      "exact": true,
+      "source": "1959 agreement",
+      "verified": true,
+      "sourceUrls": [
+        "https://www.nist.gov/pml/special-publication-811"
+      ]
+    },
+    {
+      "id": "k-pound",
+      "cue": "Kilograms in one pound",
+      "answer": "0.45359237",
+      "exact": true,
+      "source": "1959 agreement",
+      "verified": true,
+      "sourceUrls": [
+        "https://www.nist.gov/pml/special-publication-811"
+      ]
+    },
+    {
+      "id": "k-usgal",
+      "cue": "Litres in one US liquid gallon, to 5 decimal places",
+      "answer": "3.78541",
+      "exact": false,
+      "rule": "Exact value 3.785411784; the sixth digit is 1",
+      "source": "NIST",
+      "verified": true,
+      "sourceUrls": [
+        "https://www.nist.gov/pml/special-publication-811"
+      ]
+    },
+    {
+      "id": "k-impgal",
+      "cue": "Litres in one imperial gallon",
+      "answer": "4.54609",
+      "exact": true,
+      "source": "UK weights and measures definition",
+      "verified": true,
+      "sourceUrls": [
+        "https://physics.nist.gov/cuu/Constants/"
+      ]
+    },
+    {
+      "id": "k-earth",
+      "cue": "Mean radius of the Earth in kilometres, rounded",
+      "answer": "6371",
+      "exact": false,
+      "rule": "About; the exact figure depends on the model",
+      "source": "IUGG mean radius",
+      "verified": true,
+      "sourceUrls": [
+        "https://nssdc.gsfc.nasa.gov/planetary/factsheet/earthfact.html"
+      ]
+    },
+    {
+      "id": "k-moon",
+      "cue": "Average distance from the Earth to the Moon in kilometres, to the nearest hundred",
+      "answer": "384400",
+      "exact": false,
+      "rule": "About; it varies through the orbit",
+      "source": "NASA fact sheet",
+      "verified": true,
+      "sourceUrls": [
+        "https://nssdc.gsfc.nasa.gov/planetary/factsheet/moonfact.html"
+      ]
+    },
+    {
+      "id": "k-sun",
+      "cue": "Average distance from the Earth to the Sun in millions of kilometres, to 1 decimal place",
+      "answer": "149.6",
+      "exact": false,
+      "rule": "One astronomical unit is exactly 149,597,870,700 metres",
+      "source": "IAU 2012",
+      "verified": true,
+      "sourceUrls": [
+        "https://www.iau.org/static/resolutions/IAU2012_English.pdf"
+      ]
+    },
+    {
+      "id": "k-sound",
+      "cue": "Speed of sound in dry air at 20 degrees Celsius, metres per second, rounded",
+      "answer": "343",
+      "exact": false,
+      "rule": "About; it changes with temperature",
+      "source": "standard value",
+      "verified": true,
+      "sourceUrls": [
+        "https://physics.nist.gov/cuu/Constants/"
+      ]
+    }
+  ],
+  "formulas": [
+    {
+      "id": "f-pyth",
+      "cue": "Pythagoras in a right triangle",
+      "answer": "a squared plus b squared equals c squared",
+      "picture": "two small squares of tile pour into a big square of tile"
+    },
+    {
+      "id": "f-quad",
+      "cue": "Quadratic formula, said aloud",
+      "answer": "x equals minus b, plus or minus the square root of b squared minus 4ac, all over 2a",
+      "picture": "a fraction bar as a bridge with a root growing from a box"
+    },
+    {
+      "id": "f-circ-area",
+      "cue": "Area of a circle",
+      "answer": "pi r squared",
+      "picture": "a pie in a square-shaped dish"
+    },
+    {
+      "id": "f-circ-len",
+      "cue": "Circumference of a circle",
+      "answer": "2 pi r",
+      "picture": "two pies rolling round a ring"
+    },
+    {
+      "id": "f-sphere-vol",
+      "cue": "Volume of a sphere",
+      "answer": "four thirds pi r cubed",
+      "picture": "a ball sitting on three dice with a pie on top"
+    },
+    {
+      "id": "f-sphere-area",
+      "cue": "Surface area of a sphere",
+      "answer": "4 pi r squared",
+      "picture": "four pies stuck to a ball"
+    },
+    {
+      "id": "f-tri",
+      "cue": "Area of a triangle",
+      "answer": "half base times height",
+      "picture": "a tent cut in half down the middle"
+    },
+    {
+      "id": "f-angles",
+      "cue": "Interior angles of a polygon with n sides, in degrees",
+      "answer": "(n minus 2) times 180",
+      "picture": "a fence with two posts missing and 180 nails"
+    },
+    {
+      "id": "f-speed",
+      "cue": "Distance in terms of speed and time",
+      "answer": "distance equals speed times time",
+      "picture": "a racing snail with a clock for a shell"
+    },
+    {
+      "id": "f-ke",
+      "cue": "Kinetic energy",
+      "answer": "half m v squared",
+      "picture": "half a mouse zooming past in a squared box"
+    },
+    {
+      "id": "f-emc",
+      "cue": "Mass and energy",
+      "answer": "E equals m c squared",
+      "picture": "an emu with a pair of mice on a cube of ice"
+    },
+    {
+      "id": "f-ohm",
+      "cue": "Ohm's law",
+      "answer": "V equals I times R",
+      "picture": "a vase with an eye and a rose"
+    },
+    {
+      "id": "f-density",
+      "cue": "Density",
+      "answer": "mass divided by volume",
+      "picture": "a heavy mass of clay sinking into a bath"
+    },
+    {
+      "id": "f-slope",
+      "cue": "A straight line on a graph",
+      "answer": "y equals m x plus b",
+      "picture": "a yak on a mat with a bee on top"
+    },
+    {
+      "id": "f-compound",
+      "cue": "Compound interest after t years, with n payments a year",
+      "answer": "A equals P times (1 plus r over n) to the power n t",
+      "picture": "a coin purse planting seeds that grow in n rows for t years"
+    },
+    {
+      "id": "f-mean",
+      "cue": "Mean of a list of numbers",
+      "answer": "the sum divided by how many there are",
+      "picture": "a fair share of cake: all cakes into one pile, cut into equal slices"
+    }
+  ],
+  "samples": {
+    "level1": {
+      "name": "Add two numbers, two digits",
+      "items": [
+        {
+          "kind": "ltr",
+          "level": 1,
+          "mode": "see",
+          "cue": "79 + 52",
+          "steps": [
+            129,
+            131
+          ],
+          "answer": "131"
+        },
+        {
+          "kind": "ltr",
+          "level": 1,
+          "mode": "see",
+          "cue": "33 + 37",
+          "steps": [
+            63,
+            70
+          ],
+          "answer": "70"
+        },
+        {
+          "kind": "ltr",
+          "level": 1,
+          "mode": "see",
+          "cue": "48 + 43",
+          "steps": [
+            88,
+            91
+          ],
+          "answer": "91"
+        }
+      ]
+    },
+    "level2": {
+      "name": "Add a two-digit number to a three-digit number",
+      "items": [
+        {
+          "kind": "ltr",
+          "level": 2,
+          "mode": "see",
+          "cue": "605 + 37",
+          "steps": [
+            635,
+            642
+          ],
+          "answer": "642"
+        },
+        {
+          "kind": "ltr",
+          "level": 2,
+          "mode": "see",
+          "cue": "295 + 35",
+          "steps": [
+            325,
+            330
+          ],
+          "answer": "330"
+        },
+        {
+          "kind": "ltr",
+          "level": 2,
+          "mode": "see",
+          "cue": "467 + 67",
+          "steps": [
+            527,
+            534
+          ],
+          "answer": "534"
+        }
+      ]
+    },
+    "level3": {
+      "name": "Add two three-digit numbers",
+      "items": [
+        {
+          "kind": "ltr",
+          "level": 3,
+          "mode": "see",
+          "cue": "657 + 774",
+          "steps": [
+            1357,
+            1427,
+            1431
+          ],
+          "answer": "1431"
+        },
+        {
+          "kind": "ltr",
+          "level": 3,
+          "mode": "see",
+          "cue": "339 + 669",
+          "steps": [
+            939,
+            999,
+            1008
+          ],
+          "answer": "1008"
+        },
+        {
+          "kind": "ltr",
+          "level": 3,
+          "mode": "see",
+          "cue": "274 + 677",
+          "steps": [
+            874,
+            944,
+            951
+          ],
+          "answer": "951"
+        }
+      ]
+    },
+    "level4": {
+      "name": "Subtract two three-digit numbers",
+      "items": [
+        {
+          "kind": "ltr",
+          "level": 4,
+          "mode": "see",
+          "cue": "901 minus 228",
+          "steps": [
+            701,
+            681,
+            673
+          ],
+          "answer": "673"
+        },
+        {
+          "kind": "ltr",
+          "level": 4,
+          "mode": "see",
+          "cue": "781 minus 398",
+          "steps": [
+            481,
+            391,
+            383
+          ],
+          "answer": "383"
+        },
+        {
+          "kind": "ltr",
+          "level": 4,
+          "mode": "see",
+          "cue": "715 minus 306",
+          "steps": [
+            415,
+            415,
+            409
+          ],
+          "answer": "409"
+        }
+      ]
+    },
+    "level5": {
+      "name": "Multiply a two-digit number by one digit",
+      "items": [
+        {
+          "kind": "ltr",
+          "level": 5,
+          "mode": "see",
+          "cue": "50 × 9",
+          "steps": [
+            450,
+            450
+          ],
+          "answer": "450"
+        },
+        {
+          "kind": "ltr",
+          "level": 5,
+          "mode": "see",
+          "cue": "73 × 8",
+          "steps": [
+            560,
+            584
+          ],
+          "answer": "584"
+        },
+        {
+          "kind": "ltr",
+          "level": 5,
+          "mode": "see",
+          "cue": "17 × 4",
+          "steps": [
+            40,
+            68
+          ],
+          "answer": "68"
+        }
+      ]
+    },
+    "level6": {
+      "name": "Multiply two two-digit numbers",
+      "items": [
+        {
+          "kind": "ltr",
+          "level": 6,
+          "mode": "see",
+          "cue": "17 × 12",
+          "steps": [
+            120,
+            84,
+            204
+          ],
+          "answer": "204"
+        },
+        {
+          "kind": "ltr",
+          "level": 6,
+          "mode": "see",
+          "cue": "20 × 61",
+          "steps": [
+            1220,
+            0,
+            1220
+          ],
+          "answer": "1220"
+        },
+        {
+          "kind": "ltr",
+          "level": 6,
+          "mode": "see",
+          "cue": "34 × 70",
+          "steps": [
+            2100,
+            280,
+            2380
+          ],
+          "answer": "2380"
+        }
+      ]
+    }
+  },
+  "honest": "Mental Reckoning trains these particular steps on these kinds of sums. It does not make you quick at mathematics in general, and the game does not claim that."
+}

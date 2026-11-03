@@ -218,6 +218,111 @@ Lamps in every window. Hask oiling the hinges of the Gate stair. Ennick and Toma
 
 No moon. No stars. A wall of black water standing higher than the roofs. A hundred grey robes on top of the Gate, and one man with his hands on the great iron wheel. And in every street of Veyra, for the first time in three hundred years, the people of the city coming out of their doors with lamps.
 
+## Wren's story
+
+Eleven small beats about Wren's family, shown as a Wren card on the Today screen as the year goes by. Weeks later she may ask about one small detail (the number of stirs in her tea, the colour of the door). A miss only means she says it again; a held detail is kept in the Lore.
+
+### Three stirs and a spoon of honey
+
+*The Quay, Tansy's stall, from day 8.*
+
+Wren was waiting at Tansy's stall with her coat buttoned wrong and a cup in both hands. She stirred it, once, twice, three times, and nodded as if a lock had clicked. "I always stir three times. Any other number and the afternoon feels off."
+
+"And she cannot start the morning without honey," Tansy said. Wren agreed that this was true. "I cannot start the morning without a spoonful of wild honey in my oats," she said. "Do not tell the baker."
+
+Tansy slid a second cup across the stall, and Wren took it. "Tansy gives me Mist and Mint. She says it is not strictly a real blend." Tansy said that a blend is real if somebody drinks it, and went back to her kettle.
+
+### The house with the blue door
+
+*The Quay, the last lamp, from day 22.*
+
+Wren stopped at the last lamp and pointed along Quay Row with her chin. "That is my house, the one with the blue door. The paint is always flaking." She laughed. "My father, Edrin, lit lamps twenty-three to forty-four. He keeps saying he will repaint it."
+
+A grey cat on the wall opened one eye. "My cat is grey, with a white patch on her left ear like a tiny moon. Her name is Pip. She will not come when I call her, but she will come for the sound of a tin opening."
+
+Wren added, apropos of nothing, "I do not like dark attics. I always think the boxes are looking at me." She walked on a little faster past the door, and then slowed down again, to look at it.
+
+### The tune with no words
+
+*The Gallery, when a face returns, from day 36.*
+
+A face came back out of the fog on the Gallery wall, a name under it, and Wren stood a long time in front of it with her hands in her pockets.
+
+At last she spoke. "I cannot remember my mother's face. I remember the tune. She called it The Last Lamp." She did not say it, exactly. She hummed it, soft and a little flat, with no words, the way you hum something you were given before you could read. "She hummed it while she lit the lamps along the Quay."
+
+She stopped, and shook herself, and took out a card, and did not write anything on it. "That is enough of that. Which wall is next?"
+
+### What Wren kept
+
+*The Hall of Faces, from day 64.*
+
+In the Hall of Faces Wren made a list aloud, the way she does when a place is full of what is missing. "What I kept. Granny Orla grew the sweetest white roses by the river. The scent followed me home."
+
+"My cousin Bram is very tall. He always smells of sawdust. He built me my first shelf, and it was crooked, and I still have it."
+
+She pulled a small red button from her pocket and turned it in the lamplight. "I keep one red button in my pocket. It came off the first coat my mother made me. She sewed eleven pockets into it, because I lost everything." She put the button away. "Which explains the coat I wear now. My father cut it to the same pattern when I was sixteen."
+
+### Thirty-one, Quay Row
+
+*The Counting House, from day 99.*
+
+In the Counting House Wren was practising numbers on a slate when she stopped, and smiled, and wrote one down for you. "Number thirty-one, Quay Row. I could walk it blind."
+
+"That is the trick with a number you love. It already has a picture. My mother had the first twenty-two lamps. My father had the rest. Thirty-one is the door I came home to."
+
+### Good night to the last lamp
+
+*The bridge, after the thrown stone, from day 176.*
+
+Afterwards, on the bridge, with the thrown stone still ringing somewhere under the water, Wren told you how it happened. She did not look at you while she said it.
+
+"I was eight. The winter of the long cough. My mother died in the week before the new year, and the Tide came up on the Saturday, an ordinary Tide, thin, nobody's fault, and when I woke on Sunday I could not see her face. I looked and looked. It was only the place where it had been."
+
+"Every night since, I say good night to the last lamp on the Quay." She almost smiled. "It is a silly thing. It always seems to brighten a little. I have never checked whether that is true."
+
+### A small green notebook
+
+*The drain, after the file, from day 260.*
+
+Down in the drain, after the file had been found and read, Wren sat on an upturned bucket and said she had remembered something she had not thought of in years.
+
+"My first notebook. It was a small green notebook, and I was nine. A woman gave it to me the spring after my mother died. She smelled of rosemary and ink." She looked at the lamp for a while. "I think it was Calder. She made me a mint tea that spring too, for a girl who could not sleep, and I had not thought of it until now. Tansy's Mist and Mint tastes exactly like it. I cannot think why."
+
+Neither of you said anything about that. After a while she opened her own notebook and wrote one word in it, and closed it again.
+
+### Edrin
+
+*The Amphitheatre, before the Rite, from day 302.*
+
+An older man in a lamplighter's coat was waiting by the Amphitheatre gate, with one hand on his bad knee. "I am Edrin," he said. "I have come to watch my daughter. I will not say anything. I will just stand here."
+
+He said something, in the end. He took you aside. "She cannot remember her mother's face. I can. I would like somebody to hold some of it, in case I cannot always. A scar through the left eyebrow, from a lamp glass. She pinned her hair with a brass lamp key. She wore a yellow scarf, winter and summer. And her laugh always started before the joke was done."
+
+"Keep these," Edrin said. "She would want her face to have someone." Then he went and stood at the back, and did not say a word through the whole of the Rite, and cheered at the end like a man half his age.
+
+### The third verse
+
+*The Quay, the old songs, from day 337.*
+
+> On the Quay at dusk Tansy and Wren were teaching the old songs to anyone who stopped. Tansy gave the third verse, the part people only hum, slowly, so that it could be written down. Trim the wick and turn the key,
+> Tallow keeps the lamp for me.
+> By river stones and light, go home:
+> the last lamp waits, and none walk alone.
+
+Wren put her pencil down. "That is her tune," she said. "That is the Last Lamp. It had words all along. She was humming the third verse." She sang it through, once, badly, and the whole Quay went quiet, and nobody laughed.
+
+"Tallow keeps the lamp for me," Wren repeated. "I always thought she was singing about candle fat." The last lamp ticked, very faintly, over her shoulder. Nobody mentioned it.
+
+### The door is green
+
+*Quay Row, from day 366.*
+
+On the first morning of the Year of Keeping Wren came up the Quay at a near run. "Come and see," she said. "Come and see before I decide it is a dream."
+
+The door at number thirty-one, Quay Row, had been painted overnight, and all the flaking blue was gone. "It is green now. Blue was only ever a mistake I never fixed," Wren said, in a hushed voice, and then, because it was not quite her sentence: "That is what my father said, from the step, rubbing his knee, looking enormously pleased with himself."
+
+"Twenty years," Wren said. "Twenty years he has been promising." She touched the door and drew her fingers back. It was still a little tacky. Pip sat on the wall with the look of a cat who had been consulted and had objected.
+
 ## Side quests
 
 Side quests finish themselves when the Keeper genuinely shows the skill they ask for.

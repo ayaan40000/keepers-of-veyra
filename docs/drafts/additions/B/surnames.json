@@ -1,0 +1,704 @@
+{
+  "notes": "Draft. Common public surnames from many regions. No surname equals a first name in NAMES or NAMES_MORE. The \"avoid\" list holds full names that match, or may match, a well-known real person when a first name from NAMES or NAMES_MORE is joined to a surname. It is written from memory and is NOT exhaustive and NOT verified by search. Builder rule: never join any listed full name, keep each surname to one person per set, and keep the faces invented. The avoid list also names some surnames that are not in the pool, as a warning if the pool grows. Fact-check, Nov 2, 2026: first-name and surname pairs were looked up as English Wikipedia titles, but Wikipedia rate-limited the scan after about 180 of 11,880 pairs, so only that partial result is in. The 132 pairs that have an article were added to the avoid list (an article does not always mean a famous person, but it is safer to avoid it). The scan was NOT completed. Builder rule stays: never join any listed full name, keep each surname to one person per set, and keep faces invented.",
+  "surnames": [
+    {
+      "name": "Baker",
+      "origin": "English and Irish"
+    },
+    {
+      "name": "Cooper",
+      "origin": "English and Irish"
+    },
+    {
+      "name": "Bennett",
+      "origin": "English and Irish"
+    },
+    {
+      "name": "Fisher",
+      "origin": "English and Irish"
+    },
+    {
+      "name": "Harris",
+      "origin": "English and Irish"
+    },
+    {
+      "name": "Murray",
+      "origin": "English and Irish"
+    },
+    {
+      "name": "Parker",
+      "origin": "English and Irish"
+    },
+    {
+      "name": "Reed",
+      "origin": "English and Irish"
+    },
+    {
+      "name": "Webb",
+      "origin": "English and Irish"
+    },
+    {
+      "name": "Walker",
+      "origin": "English and Irish"
+    },
+    {
+      "name": "Taylor",
+      "origin": "English and Irish"
+    },
+    {
+      "name": "Johnson",
+      "origin": "English and Irish"
+    },
+    {
+      "name": "Miller",
+      "origin": "English and Irish"
+    },
+    {
+      "name": "Hill",
+      "origin": "English and Irish"
+    },
+    {
+      "name": "Kelly",
+      "origin": "English and Irish"
+    },
+    {
+      "name": "Campbell",
+      "origin": "English and Irish"
+    },
+    {
+      "name": "Williams",
+      "origin": "English and Irish"
+    },
+    {
+      "name": "Turner",
+      "origin": "English and Irish"
+    },
+    {
+      "name": "Murphy",
+      "origin": "English and Irish"
+    },
+    {
+      "name": "Walsh",
+      "origin": "English and Irish"
+    },
+    {
+      "name": "Byrne",
+      "origin": "English and Irish"
+    },
+    {
+      "name": "Fraser",
+      "origin": "English and Irish"
+    },
+    {
+      "name": "Hamilton",
+      "origin": "English and Irish"
+    },
+    {
+      "name": "Ross",
+      "origin": "English and Irish"
+    },
+    {
+      "name": "Stewart",
+      "origin": "English and Irish"
+    },
+    {
+      "name": "Garcia",
+      "origin": "Spanish and Portuguese"
+    },
+    {
+      "name": "Martinez",
+      "origin": "Spanish and Portuguese"
+    },
+    {
+      "name": "Lopez",
+      "origin": "Spanish and Portuguese"
+    },
+    {
+      "name": "Fernandez",
+      "origin": "Spanish and Portuguese"
+    },
+    {
+      "name": "Silva",
+      "origin": "Spanish and Portuguese"
+    },
+    {
+      "name": "Santos",
+      "origin": "Spanish and Portuguese"
+    },
+    {
+      "name": "Costa",
+      "origin": "Spanish and Portuguese"
+    },
+    {
+      "name": "Torres",
+      "origin": "Spanish and Portuguese"
+    },
+    {
+      "name": "Ramirez",
+      "origin": "Spanish and Portuguese"
+    },
+    {
+      "name": "Flores",
+      "origin": "Spanish and Portuguese"
+    },
+    {
+      "name": "Cruz",
+      "origin": "Spanish and Portuguese"
+    },
+    {
+      "name": "Reyes",
+      "origin": "Spanish and Portuguese"
+    },
+    {
+      "name": "Ortiz",
+      "origin": "Spanish and Portuguese"
+    },
+    {
+      "name": "Medina",
+      "origin": "Spanish and Portuguese"
+    },
+    {
+      "name": "Castro",
+      "origin": "Spanish and Portuguese"
+    },
+    {
+      "name": "Vargas",
+      "origin": "Spanish and Portuguese"
+    },
+    {
+      "name": "Rivera",
+      "origin": "Spanish and Portuguese"
+    },
+    {
+      "name": "Chavez",
+      "origin": "Spanish and Portuguese"
+    },
+    {
+      "name": "Dubois",
+      "origin": "French, Italian and Dutch"
+    },
+    {
+      "name": "Moreau",
+      "origin": "French, Italian and Dutch"
+    },
+    {
+      "name": "Laurent",
+      "origin": "French, Italian and Dutch"
+    },
+    {
+      "name": "Petit",
+      "origin": "French, Italian and Dutch"
+    },
+    {
+      "name": "Rossi",
+      "origin": "French, Italian and Dutch"
+    },
+    {
+      "name": "Romano",
+      "origin": "French, Italian and Dutch"
+    },
+    {
+      "name": "Bianchi",
+      "origin": "French, Italian and Dutch"
+    },
+    {
+      "name": "Conti",
+      "origin": "French, Italian and Dutch"
+    },
+    {
+      "name": "Jansen",
+      "origin": "French, Italian and Dutch"
+    },
+    {
+      "name": "Bakker",
+      "origin": "French, Italian and Dutch"
+    },
+    {
+      "name": "Visser",
+      "origin": "French, Italian and Dutch"
+    },
+    {
+      "name": "Schmidt",
+      "origin": "German, Polish and Czech"
+    },
+    {
+      "name": "Weber",
+      "origin": "German, Polish and Czech"
+    },
+    {
+      "name": "Fischer",
+      "origin": "German, Polish and Czech"
+    },
+    {
+      "name": "Becker",
+      "origin": "German, Polish and Czech"
+    },
+    {
+      "name": "Nowak",
+      "origin": "German, Polish and Czech"
+    },
+    {
+      "name": "Kowalski",
+      "origin": "German, Polish and Czech"
+    },
+    {
+      "name": "Novak",
+      "origin": "German, Polish and Czech"
+    },
+    {
+      "name": "Horvat",
+      "origin": "German, Polish and Czech"
+    },
+    {
+      "name": "Hansen",
+      "origin": "Nordic"
+    },
+    {
+      "name": "Larsen",
+      "origin": "Nordic"
+    },
+    {
+      "name": "Nilsson",
+      "origin": "Nordic"
+    },
+    {
+      "name": "Johansson",
+      "origin": "Nordic"
+    },
+    {
+      "name": "Andersen",
+      "origin": "Nordic"
+    },
+    {
+      "name": "Virtanen",
+      "origin": "Nordic"
+    },
+    {
+      "name": "Korhonen",
+      "origin": "Nordic"
+    },
+    {
+      "name": "Berg",
+      "origin": "Nordic"
+    },
+    {
+      "name": "Popov",
+      "origin": "Eastern Europe and Greece"
+    },
+    {
+      "name": "Ivanov",
+      "origin": "Eastern Europe and Greece"
+    },
+    {
+      "name": "Petrov",
+      "origin": "Eastern Europe and Greece"
+    },
+    {
+      "name": "Papadopoulos",
+      "origin": "Eastern Europe and Greece"
+    },
+    {
+      "name": "Georgiou",
+      "origin": "Eastern Europe and Greece"
+    },
+    {
+      "name": "Stoica",
+      "origin": "Eastern Europe and Greece"
+    },
+    {
+      "name": "Yilmaz",
+      "origin": "Turkish and Arabic"
+    },
+    {
+      "name": "Demir",
+      "origin": "Turkish and Arabic"
+    },
+    {
+      "name": "Kaya",
+      "origin": "Turkish and Arabic"
+    },
+    {
+      "name": "Haddad",
+      "origin": "Turkish and Arabic"
+    },
+    {
+      "name": "Khalil",
+      "origin": "Turkish and Arabic"
+    },
+    {
+      "name": "Nasser",
+      "origin": "Turkish and Arabic"
+    },
+    {
+      "name": "Mansour",
+      "origin": "Turkish and Arabic"
+    },
+    {
+      "name": "Hussain",
+      "origin": "Turkish and Arabic"
+    },
+    {
+      "name": "Patel",
+      "origin": "South Asian"
+    },
+    {
+      "name": "Sharma",
+      "origin": "South Asian"
+    },
+    {
+      "name": "Singh",
+      "origin": "South Asian"
+    },
+    {
+      "name": "Gupta",
+      "origin": "South Asian"
+    },
+    {
+      "name": "Reddy",
+      "origin": "South Asian"
+    },
+    {
+      "name": "Nair",
+      "origin": "South Asian"
+    },
+    {
+      "name": "Khan",
+      "origin": "South Asian"
+    },
+    {
+      "name": "Ahmed",
+      "origin": "South Asian"
+    },
+    {
+      "name": "Mehta",
+      "origin": "South Asian"
+    },
+    {
+      "name": "Desai",
+      "origin": "South Asian"
+    },
+    {
+      "name": "Wang",
+      "origin": "East and Southeast Asian"
+    },
+    {
+      "name": "Zhang",
+      "origin": "East and Southeast Asian"
+    },
+    {
+      "name": "Liu",
+      "origin": "East and Southeast Asian"
+    },
+    {
+      "name": "Huang",
+      "origin": "East and Southeast Asian"
+    },
+    {
+      "name": "Lin",
+      "origin": "East and Southeast Asian"
+    },
+    {
+      "name": "Nguyen",
+      "origin": "East and Southeast Asian"
+    },
+    {
+      "name": "Tran",
+      "origin": "East and Southeast Asian"
+    },
+    {
+      "name": "Pham",
+      "origin": "East and Southeast Asian"
+    },
+    {
+      "name": "Park",
+      "origin": "East and Southeast Asian"
+    },
+    {
+      "name": "Choi",
+      "origin": "East and Southeast Asian"
+    },
+    {
+      "name": "Tanaka",
+      "origin": "East and Southeast Asian"
+    },
+    {
+      "name": "Suzuki",
+      "origin": "East and Southeast Asian"
+    },
+    {
+      "name": "Sato",
+      "origin": "East and Southeast Asian"
+    },
+    {
+      "name": "Takahashi",
+      "origin": "East and Southeast Asian"
+    },
+    {
+      "name": "Watanabe",
+      "origin": "East and Southeast Asian"
+    },
+    {
+      "name": "Ito",
+      "origin": "East and Southeast Asian"
+    },
+    {
+      "name": "Yamamoto",
+      "origin": "East and Southeast Asian"
+    },
+    {
+      "name": "Nakamura",
+      "origin": "East and Southeast Asian"
+    },
+    {
+      "name": "Kobayashi",
+      "origin": "East and Southeast Asian"
+    },
+    {
+      "name": "Okafor",
+      "origin": "African"
+    },
+    {
+      "name": "Adeyemi",
+      "origin": "African"
+    },
+    {
+      "name": "Mensah",
+      "origin": "African"
+    },
+    {
+      "name": "Owusu",
+      "origin": "African"
+    },
+    {
+      "name": "Diallo",
+      "origin": "African"
+    },
+    {
+      "name": "Traore",
+      "origin": "African"
+    },
+    {
+      "name": "Kamau",
+      "origin": "African"
+    },
+    {
+      "name": "Mwangi",
+      "origin": "African"
+    },
+    {
+      "name": "Otieno",
+      "origin": "African"
+    },
+    {
+      "name": "Abebe",
+      "origin": "African"
+    },
+    {
+      "name": "Tesfaye",
+      "origin": "African"
+    },
+    {
+      "name": "Banda",
+      "origin": "African"
+    },
+    {
+      "name": "Nkosi",
+      "origin": "African"
+    },
+    {
+      "name": "Dlamini",
+      "origin": "African"
+    },
+    {
+      "name": "Cohen",
+      "origin": "Jewish and other"
+    },
+    {
+      "name": "Levy",
+      "origin": "Jewish and other"
+    },
+    {
+      "name": "Rosen",
+      "origin": "Jewish and other"
+    },
+    {
+      "name": "Katz",
+      "origin": "Jewish and other"
+    },
+    {
+      "name": "Friedman",
+      "origin": "Jewish and other"
+    }
+  ],
+  "avoid": [
+    "Aisha Ahmed",
+    "Aisha Campbell",
+    "Aisha Harris",
+    "Aisha Johnson",
+    "Aisha Sharma",
+    "Aisha Taylor",
+    "Aisha Tyler",
+    "Amara Miller",
+    "Amara Traore",
+    "Amara Walker",
+    "Bruno Mars",
+    "Callum Turner",
+    "Chloe Kim",
+    "Clara Schumann",
+    "Diego Becker",
+    "Diego Costa",
+    "Diego Fischer",
+    "Diego Garcia",
+    "Diego Ortiz",
+    "Diego Reyes",
+    "Diego Rivera",
+    "Diego Romano",
+    "Diego Rossi",
+    "Diego Santos",
+    "Diego Walsh",
+    "Elena Bennett",
+    "Elena Conti",
+    "Elena Fernandez",
+    "Elena Fisher",
+    "Elena Flores",
+    "Elena Horvat",
+    "Elena Johnson",
+    "Elena Lopez",
+    "Elena Miller",
+    "Elena Ramirez",
+    "Elena Torres",
+    "Esther Williams",
+    "Ezra Miller",
+    "Felix Baker",
+    "Felix Campbell",
+    "Felix Cohen",
+    "Felix Cruz",
+    "Felix Dubois",
+    "Felix Flores",
+    "Felix Garcia",
+    "Felix Kelly",
+    "Felix Levy",
+    "Felix Mendelssohn",
+    "Felix Murray",
+    "Felix Nakamura",
+    "Felix Nilsson",
+    "Felix Ortiz",
+    "Felix Owusu",
+    "Felix Reyes",
+    "Felix Rivera",
+    "Felix Romano",
+    "Grace Hopper",
+    "Grace Jones",
+    "Grace Kelly",
+    "Hana Kobayashi",
+    "Hana Nasser",
+    "Hana Takahashi",
+    "Hana Williams",
+    "Hugo Chavez",
+    "Ingrid Bergman",
+    "Isaac Hayes",
+    "Jonah Fisher",
+    "Jonah Harris",
+    "Jonah Hill",
+    "Jonah Miller",
+    "Kofi Annan",
+    "Kofi Baker",
+    "Kofi Mensah",
+    "Kofi Owusu",
+    "Leila Ahmed",
+    "Leila Bennett",
+    "Leila Berg",
+    "Leila Campbell",
+    "Leila Fernandez",
+    "Leila Khan",
+    "Leila Patel",
+    "Leila Silva",
+    "Leila Walker",
+    "Leila Williams",
+    "Liam Baker",
+    "Liam Byrne",
+    "Liam Campbell",
+    "Liam Cohen",
+    "Liam Cooper",
+    "Liam Fraser",
+    "Liam Haddad",
+    "Liam Hamilton",
+    "Liam Harris",
+    "Liam Hill",
+    "Liam Johnson",
+    "Liam Miller",
+    "Liam Murray",
+    "Liam Neeson",
+    "Liam Reddy",
+    "Liam Taylor",
+    "Liam Turner",
+    "Liam Walker",
+    "Marcus Rashford",
+    "Mateo Garcia",
+    "Mateo Levy",
+    "Mateo Santos",
+    "Maya Lin",
+    "Mia Campbell",
+    "Mia Hamm",
+    "Mia Kelly",
+    "Mia Murray",
+    "Mia Park",
+    "Mia Yamamoto",
+    "Naomi Campbell",
+    "Naomi Watts",
+    "Nikolai Berg",
+    "Omar Ahmed",
+    "Omar Chavez",
+    "Omar Cooper",
+    "Omar Cruz",
+    "Omar Diallo",
+    "Omar Flores",
+    "Omar Hussain",
+    "Omar Johnson",
+    "Omar Khalil",
+    "Omar Martinez",
+    "Omar Miller",
+    "Omar Ortiz",
+    "Omar Popov",
+    "Omar Romano",
+    "Omar Sharif",
+    "Omar Torres",
+    "Omar Williams",
+    "Oscar Isaac",
+    "Pablo Picasso",
+    "Priya Cooper",
+    "Priya Desai",
+    "Priya Reddy",
+    "Priya Sharma",
+    "Rafael Nadal",
+    "Ravi Desai",
+    "Ravi Gupta",
+    "Ravi Ross",
+    "Ravi Shankar",
+    "Ravi Silva",
+    "Rosa Parks",
+    "Samuel Adams",
+    "Samuel Johnson",
+    "Sofia Castro",
+    "Sofia Coppola",
+    "Sofia Flores",
+    "Sofia Garcia",
+    "Sofia Johansson",
+    "Sofia Larsen",
+    "Sofia Lopez",
+    "Sofia Martinez",
+    "Sofia Moreau",
+    "Sofia Reyes",
+    "Sofia Santos",
+    "Sofia Vergara",
+    "Tomas Berg",
+    "Vera Lynn",
+    "Vera Wang",
+    "Yuki Nakamura",
+    "Yuki Suzuki",
+    "Yuki Takahashi",
+    "Yuki Watanabe",
+    "Zara Phillips",
+    "Zara Turner"
+  ]
+}

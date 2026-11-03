@@ -188,6 +188,9 @@ Found behind the District Trials and the sealed vaults, for what you could still
 - **The Market Mainspring**: The old mainspring of the market clock, coiled in its brass barrel. It was replaced long ago, but Mosk kept it in a drawer. He says a spring remembers how it was wound.
 - **The Gargoyle's Stone**: A smooth grey river stone with a small friendly face carved on it. The eldest gargoyle of the Tongues Bridge gives one to every traveller who still knows the old words a week later.
 - **The Saved Scroll**: A scroll from the high chest of the Sunken Scriptorium, tied with blue ribbon and sealed with a drop of amber wax. It stayed dry because you held its timeline for a day.
+- **The Year Tablet**: A small brass tablet from the Hall of Years, cut with one year and the shadow of a frame. Ennick says it fits only the frame it came from, and that you will know which.
+- **The Tally Stick**: A short stick of pale wood from the Counting House drawer, notched with every sum you solved. Isolde keeps the match half. She says a tally is the oldest kind of promise.
 - **The Quay Vault Lamp**: A small lamp on an iron hook from the vault in the Quay wall. Its flame is the size of a fingernail and has not gone out since the Wardens lit it.
 - **The Cellar Tablet**: A square clay tablet stamped with a lamp, found in the cellar vault under the clock tower. It is the key to its own door, which the Wardens thought was a good joke.
 - **The Mirror Key**: A bronze key with a bow shaped like a lamp, from behind the dark mirror. It was waiting for someone who could keep a tablet for a whole month.
+- **The Watch Ledger**: A slim ledger with a brass clasp, kept by the night watch on the Quay battlements. It has one line for every phantom that was sent home after a week or a month, and no line for those that were not. The watch says that is how a ledger should be: it records what was held.

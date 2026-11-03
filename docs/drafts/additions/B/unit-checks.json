@@ -1,0 +1,283 @@
+{
+  "notes": "Draft. Unit Check pre and post forms for Lists, Numbers and Talk. All content is invented or generic. Form A is taken before the unit with no technique required; Form B after. Keep the forms out of practice draws. The scores mean \"your score on Mnemos tasks\", never proof that the method works: some change is simply learning the task. Do not show Form B as a prize.",
+  "checks": [
+    {
+      "unit": "lists",
+      "title": "Unit Check: Lists",
+      "when": "Form A in the first week of the unit (Week 3), Form B in the last (Week 6).",
+      "instructions": {
+        "A": "Use your own way. Study the list and the steps for the time shown, then write them back in order.",
+        "B": "Use any method you like. Study the list and the steps for the time shown, then write them back in order."
+      },
+      "forms": {
+        "A": {
+          "grocery": {
+            "template": "chain",
+            "src": "grocery",
+            "items": [
+              "broccoli",
+              "strawberry",
+              "ginger",
+              "butter",
+              "yogurt",
+              "baguette",
+              "salmon",
+              "sausage",
+              "spaghetti",
+              "vinegar",
+              "lemonade",
+              "sponge"
+            ]
+          },
+          "procedure": {
+            "template": "chain",
+            "src": "steps",
+            "id": "check-lists-a",
+            "title": "Make a birthday card",
+            "steps": [
+              {
+                "text": "Fold a sheet of card in half.",
+                "key": "card"
+              },
+              {
+                "text": "Press the fold flat with a ruler.",
+                "key": "ruler"
+              },
+              {
+                "text": "Draw a big cake on the front.",
+                "key": "cake"
+              },
+              {
+                "text": "Colour the cake pink with a crayon.",
+                "key": "crayon"
+              },
+              {
+                "text": "Add three candles on top.",
+                "key": "candles"
+              },
+              {
+                "text": "Glue a gold star in the corner.",
+                "key": "star"
+              },
+              {
+                "text": "Write a short message inside with a pen.",
+                "key": "pen"
+              },
+              {
+                "text": "Slide the card into an envelope.",
+                "key": "envelope"
+              },
+              {
+                "text": "Tie a ribbon around the envelope.",
+                "key": "ribbon"
+              }
+            ]
+          }
+        },
+        "B": {
+          "grocery": {
+            "template": "chain",
+            "src": "grocery",
+            "items": [
+              "parsnip",
+              "blueberry",
+              "garlic",
+              "cheddar",
+              "cream",
+              "croissant",
+              "tuna",
+              "meatballs",
+              "oatmeal",
+              "olive oil",
+              "iced tea",
+              "napkins"
+            ]
+          },
+          "procedure": {
+            "template": "chain",
+            "src": "steps",
+            "id": "check-lists-b",
+            "title": "Make a paper lantern",
+            "steps": [
+              {
+                "text": "Fold a sheet of paper in half.",
+                "key": "paper"
+              },
+              {
+                "text": "Press the fold flat with a book.",
+                "key": "book"
+              },
+              {
+                "text": "Draw ten short lines along the fold.",
+                "key": "lines"
+              },
+              {
+                "text": "Cut along each line with scissors.",
+                "key": "scissors"
+              },
+              {
+                "text": "Open the sheet and curl it into a tube.",
+                "key": "tube"
+              },
+              {
+                "text": "Glue the two short edges together.",
+                "key": "glue"
+              },
+              {
+                "text": "Tape a thin strip of card on top as a handle.",
+                "key": "handle"
+              },
+              {
+                "text": "Stick a gold star on the side.",
+                "key": "star"
+              },
+              {
+                "text": "Hang it on a hook by the window.",
+                "key": "hook"
+              }
+            ]
+          }
+        }
+      },
+      "difficultyNote": "Both forms: 12 groceries and a 9-step procedure. Same aisle mix (3 fruit and vegetables, 2 dairy, 1 bakery, 2 meat and fish, 2 pantry, 1 drink, 1 household). Average item length: A 7.25 letters, B 7.08. Procedure step length: A 6.67 words, B 7.56. Each list has no two items that sound alike. The 9 procedure steps in both forms are everyday paper crafts with concrete keys. Parallel difficulty is by design and has not been tested on players; Form B only means \"after\", and some of any gain is learning the task."
+    },
+    {
+      "unit": "numbers",
+      "title": "Unit Check: Numbers",
+      "when": "Form A in Week 14, Form B in Week 21.",
+      "instructions": {
+        "A": "Use your own way. Study the numbers for the time shown, then write them back.",
+        "B": "Use any method you like, such as the Major System. Study the numbers for the time shown, then write them back."
+      },
+      "forms": {
+        "A": {
+          "digits12": {
+            "template": "digits",
+            "value": "816137025972",
+            "n": 12
+          },
+          "phoneShaped": {
+            "template": "digits",
+            "value": "127 060 4757",
+            "group": [
+              3,
+              3,
+              4
+            ],
+            "n": 10
+          }
+        },
+        "B": {
+          "digits12": {
+            "template": "digits",
+            "value": "680434651929",
+            "n": 12
+          },
+          "phoneShaped": {
+            "template": "digits",
+            "value": "097 102 7847",
+            "group": [
+              3,
+              3,
+              4
+            ],
+            "n": 10
+          }
+        }
+      },
+      "reserveDigits12": [
+        "807151646209",
+        "307858612418",
+        "218480568139",
+        "762635152047",
+        "920380790652",
+        "403718269651"
+      ],
+      "difficultyNote": "Both forms use a fixed 12-digit number and a phone-shaped 10-digit number grouped 3-3-4. Rules each number passes: no repeated neighbouring digit, no run of three digits stepping the same way (such as 135 or 321), no pair of digits used twice, a first digit that is not zero for the 12-digit number, no emergency or year-like groups. 12-digit forms: A has {\"distinct\":9,\"highDigits\":6,\"meanStep\":4.18}, B has {\"distinct\":9,\"highDigits\":6,\"meanStep\":4.09}. Phone-shaped forms: A has {\"distinct\":7,\"highDigits\":5,\"meanStep\":4}, B has {\"distinct\":7,\"highDigits\":5,\"meanStep\":3.67}. The first digit of each of the first two phone groups is 0 or 1, which valid North American numbers cannot start with, so these cannot be a real number there. They are random digits for practice and not meant as real phone numbers. The reserve list holds six more 12-digit numbers that pass the same rules, for any later re-take."
+    },
+    {
+      "unit": "talk",
+      "title": "Unit Check: Talk",
+      "when": "Form A in Week 28, Form B in Week 30.",
+      "instructions": {
+        "A": "Use your own way. Study the seven points for the time shown, then write them back in order.",
+        "B": "Use any method you like. Study the seven points for the time shown, then write them back in order."
+      },
+      "forms": {
+        "A": {
+          "template": "chain",
+          "src": "points",
+          "id": "check-talk-a",
+          "title": "A Community Garden Plan",
+          "points": [
+            {
+              "text": "Open by holding up a trowel.",
+              "key": "trowel"
+            },
+            {
+              "text": "Name the empty lot behind the school.",
+              "key": "lot"
+            },
+            {
+              "text": "Show a drawing of eight raised beds.",
+              "key": "beds"
+            },
+            {
+              "text": "Say which vegetables will grow there.",
+              "key": "vegetables"
+            },
+            {
+              "text": "Describe the water barrel by the fence.",
+              "key": "barrel"
+            },
+            {
+              "text": "Explain the weekly work rota pinned to the gate.",
+              "key": "gate"
+            },
+            {
+              "text": "Ask the volunteers to raise a hand.",
+              "key": "hand"
+            }
+          ]
+        },
+        "B": {
+          "template": "chain",
+          "src": "points",
+          "id": "check-talk-b",
+          "title": "A Book Swap Shelf",
+          "points": [
+            {
+              "text": "Open by holding up a paperback.",
+              "key": "paperback"
+            },
+            {
+              "text": "Name the empty corner of the hallway.",
+              "key": "corner"
+            },
+            {
+              "text": "Show a drawing of eight wooden shelves.",
+              "key": "shelves"
+            },
+            {
+              "text": "Say which comics and novels are welcome.",
+              "key": "comics"
+            },
+            {
+              "text": "Describe the donation box by the door.",
+              "key": "box"
+            },
+            {
+              "text": "Explain the weekly tidy rota pinned to the board.",
+              "key": "board"
+            },
+            {
+              "text": "Ask the volunteers to sign a sheet.",
+              "key": "sheet"
+            }
+          ]
+        }
+      },
+      "difficultyNote": "Both forms are a seven-point plan for a small community project with the same shape (open with an object, name a place, show a drawing, say what is included, describe a container, explain a rota, ask for volunteers). Average point length: A 7 words, B 7.14. Keys are concrete nouns of similar length. Equal difficulty is by design, not tested on players."
+    }
+  ]
+}

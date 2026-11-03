@@ -1,3 +1,4 @@
+import { NEW_TABLETS } from './forgetting.js';
 // The Undercroft: an endless memory crypt beneath the Archive.
 // Data only: tuning constants, depth bands, treasures and the crypt-only Lore Tablets.
 import { DEEP_TREASURES } from './traced-items.js';
@@ -163,6 +164,9 @@ export const TABLETS = [
   { id: 'tab_lamp_left_burning', depth: 70, title: 'The Lamp Left Burning',
     text: 'I have set my lamp on this ledge with all the oil I could carry. Let it burn as long as it can, so that whoever comes after knows somebody remembered the way down. Now go back up. Do not stay here listening to the singing. Go up into the light and keep things: names, faces, songs, the way home. That is all that ever pushed the Tide back, and it is enough.' },
 ];
+
+// 1.1: four later tablets (floors 75 to 100) by an unsigned hand with a ring-and-hand mark. Appended; existing tablets are unchanged.
+TABLETS.push(...NEW_TABLETS);
 
 // Small celebration lines for sealed chests.
 export const CHEST_LINES = [

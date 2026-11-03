@@ -1,0 +1,484 @@
+{
+  "notes": "Workstream D claims audit. First pass written Nov 2, 2026; second pass and status added by the fact-check editor the same day, covering A, B, C, D and E. Status values: fixed (changed in the files), closed (checked, no change needed), open (needs the owner, the story workstream or the builder; named in the resolution), deferred (outside the files this pass could edit). Checks run across all files: no em or en dashes except the two published dashes in Stevenson's The Swing; the drill is called Mind Map everywhere; no learning-style claim; no athlete or real championship named in player-facing fields; no passwords, PINs or medical advice.",
+  "scope": {
+    "audited": [
+      "docs/drafts/additions/A/lessons-add.json",
+      "docs/drafts/additions/A/masters-add.json",
+      "docs/drafts/additions/A/event-cards.json",
+      "docs/drafts/additions/D/fieldguide-add.json",
+      "docs/drafts/additions/D/worksheets.json",
+      "docs/drafts/additions/D/your-methods.json",
+      "docs/drafts/additions/D/events.json",
+      "docs/CURRICULUM_ADDITIONS.md (plan, sections that conflict with the owner decisions)",
+      "src/data/fieldguide.js (existing text that the new text sits beside)",
+      "docs/drafts/additions/C/poems.json (metadata and notes only; poem text was NOT proofread against editions)",
+      "docs/drafts/additions/B/*.json",
+      "docs/drafts/additions/C/*.json",
+      "docs/drafts/additions/E/*.json"
+    ],
+    "notYetWritten": []
+  },
+  "findings": [
+    {
+      "file": "A/lessons-add.json",
+      "id": "l-w42-procedure-steps",
+      "severity": "high",
+      "problem": "The example is checking a bicycle tyre and brake before a ride. The brake check is safety-related, and the plan says procedures must be harmless and nothing safety-critical. The card itself admits a slip could hurt someone.",
+      "fix": "Replace the example with a clearly harmless procedure, such as repotting a houseplant or making a bed. Keep the line that written steps come first wherever a slip matters.",
+      "status": "fixed",
+      "resolution": "Replaced with repotting a houseplant (pot, soil, roots, press, water); kept the written-steps line."
+    },
+    {
+      "file": "A/masters-add.json",
+      "id": "m-stanza",
+      "severity": "medium",
+      "problem": "'rhythm and rhyme often carry as much as the pictures do' has no source and is not supported by the cited papers (those are about testing).",
+      "fix": "Say 'rhythm and rhyme give extra cues' and drop 'as much as the pictures do'.",
+      "status": "fixed",
+      "resolution": "Now \"rhythm and rhyme give extra cues\"; meta claim says plausible, not shown."
+    },
+    {
+      "file": "A/masters-add.json",
+      "id": "m-check",
+      "severity": "medium",
+      "problem": "'Even a few wrong guesses help' is a claim about pre-testing that the two cited sources do not establish.",
+      "fix": "Remove it, or cite a pre-testing study that a person has verified. Safe wording: 'Trying first, even when unsure, is the habit.'",
+      "status": "fixed",
+      "resolution": "Now \"Trying first, even when unsure, is the habit\"; meta claim no longer mentions wrong guesses."
+    },
+    {
+      "file": "A/masters-add.json",
+      "id": "m-chunks",
+      "severity": "low",
+      "problem": "'People who memorise long numbers often split them into groups' is a general statement about memory athletes with no checked source. CHAMPIONS.md says to name nobody and quote nothing unchecked.",
+      "fix": "Reword to 'Long numbers are easier to hold in groups of a fixed size' which the Miller and Cowan citations do support.",
+      "status": "fixed",
+      "resolution": "Reworded to \"Long numbers are easier to hold in groups of a fixed size\", supported by Miller 1956 and Cowan 2001."
+    },
+    {
+      "file": "A/lessons-add.json",
+      "id": "l-w20-rhythm",
+      "severity": "medium",
+      "problem": "Evidence is marked moderate and the text says 'rhythm adds a second cue for exact digits' as a fact. The production effect is supported (moderate) but the rhythm cue is only plausible, not shown.",
+      "fix": "Write 'rhythm may add a second cue'. Split the claim: production effect moderate, rhythm cue weak.",
+      "status": "fixed",
+      "resolution": "Text says a beat \"may\" add a cue and that this is only a guess; evidence split: moderate for saying aloud, weak for rhythm."
+    },
+    {
+      "file": "A/lessons-add.json",
+      "id": "l-w15-own-library",
+      "severity": "medium",
+      "problem": "Cites the generation effect (Slamecka and Graf 1978), which is about words people generate themselves, to support 'a personal picture is easier to retrieve'. The match is loose. 'The library takes a few weeks of use before it feels automatic, and there is no shortcut' is an unsupported timing claim.",
+      "fix": "Say 'many people find a picture from their own life easier to find again' and mark evidence weak. Replace the timing with 'it takes repeated use' and no number of weeks.",
+      "status": "fixed",
+      "resolution": "Now \"many people find\"; evidence weak; timing claim removed; Slamecka and Graf cited as a related finding only."
+    },
+    {
+      "file": "A/lessons-add.json",
+      "id": "l-w14-digit-images",
+      "severity": "low",
+      "problem": "'For long numbers the Major System is much faster' is an unsupported comparison.",
+      "fix": "Say 'for long numbers the Major System is the better fit, because one picture stands for two digits'.",
+      "status": "fixed",
+      "resolution": "Now \"the better fit, because one picture stands for two digits\"."
+    },
+    {
+      "file": "A/lessons-add.json",
+      "id": "l-w05-roman-room",
+      "severity": "medium",
+      "problem": "Two issues. The card says the name Roman Room comes from the Roman writers, which is not verified (the name is a modern one and its origin is not established). Evidence is marked strong, but the cited sources show that the method is old, not that it works.",
+      "fix": "Say 'ordered-place methods are described in old Roman writing on public speaking' and drop the claim about the name. Mark the evidence as 'historical' or moderate, and keep the Dresler et al. 2017 line for the claim that it works.",
+      "status": "fixed",
+      "resolution": "Name-origin claim removed; \"ordered-place methods are described in old Roman writing on public speaking\"; Dresler 2017 added for what the evidence supports; evidence moderate."
+    },
+    {
+      "file": "A/lessons-add.json",
+      "id": "l-w30-close-say-check",
+      "severity": "low",
+      "problem": "'that effort is exactly why it lasts longer' states a mechanism as fact.",
+      "fix": "Say 'that effort is thought to be part of why it lasts longer'.",
+      "status": "fixed",
+      "resolution": "Now \"thought to be part of why it lasts longer\"."
+    },
+    {
+      "file": "A/lessons-add.json",
+      "id": "l-w49-check-before-look",
+      "severity": "medium",
+      "problem": "'Ten minutes on a Sunday is enough for a lot of things' is an unsupported amount. 'Rereading feels easy and teaches less' is fine.",
+      "fix": "Remove the ten-minute sentence, or say 'a short regular check is better than one long session' (spacing, Cepeda et al. 2006, to be verified).",
+      "status": "fixed",
+      "resolution": "Ten-minute sentence removed; now \"a short regular check is better than one long session\", with Cepeda et al. 2006 verified."
+    },
+    {
+      "file": "A/lessons-add.json",
+      "id": "l-w23-soundalike",
+      "severity": "low",
+      "problem": "'Hope sounds like hoop' is a sound-alike, not a homophone, but the sentence after it defines homophones as if it were one. It also reads as if the examples are homophones.",
+      "fix": "Use a true homophone for the example (for example peace and piece) and say the others are 'sound-alikes'.",
+      "status": "fixed",
+      "resolution": "Uses peace and piece as the homophone example; hope and hoop are called sound-alikes."
+    },
+    {
+      "file": "A/lessons-add.json",
+      "id": "l-w41-skim-pick-keep",
+      "severity": "low",
+      "problem": "Marked evidence weak with a note, which is honest. Check that the Skim step is not later described as a way to learn faster in any card or in B's skim texts.",
+      "fix": "None now. Recheck against B's skim-texts.json when it exists.",
+      "status": "closed",
+      "resolution": "Rechecked against B skim texts: the Skim step is never described as a way to learn faster. No change needed."
+    },
+    {
+      "file": "A/lessons-add.json",
+      "id": "w24-rhyme-pegs",
+      "severity": "medium",
+      "problem": "Rhyme pegs were checked against content.js only and not against Workstream B's pegs.json, which is not written yet. Two lists may disagree. D's playbooks use '2 is a swan' and '1 is a bun' as examples, which agree with A today.",
+      "fix": "When B writes pegs.json, make it the single source and update A's week 24 cards and D's digits and senses examples to match.",
+      "status": "fixed",
+      "resolution": "B/pegs.json is now the single source. Shape list is the shipped one (A, B and D agree). Rhyme list is bun, glue, tree, oar, beehive, sticks, heaven, crate, vine, hen in A week 24 and B; D uses only 1 bun and 2 swan, which agree."
+    },
+    {
+      "file": "A/event-cards.json",
+      "id": "e-w47-event-hall-honest",
+      "severity": "medium",
+      "problem": "'Cards ... are a good test of calm' is unsupported. The cited papers are about working-memory training and do not support a claim about calm.",
+      "fix": "Delete 'a good test of calm'. Keep 'fun' and 'little use in daily life'.",
+      "status": "fixed",
+      "resolution": "\"A good test of calm\" deleted."
+    },
+    {
+      "file": "A/event-cards.json",
+      "id": "e-w47-what-each-trains",
+      "severity": "low",
+      "problem": "Says Names and Faces is taught in weeks 9 to 11, while the formats list in the same file says weeks 9 to 12. One of them is wrong.",
+      "fix": "Check curriculum.js for the M3 week range and use one range in both places.",
+      "status": "fixed",
+      "resolution": "Names and Faces is weeks 9 to 11 in both places (week 12 is mixed review, week 13 the assessment)."
+    },
+    {
+      "file": "A/event-cards.json",
+      "id": "e-w44-*, e-w45-*, e-w46-*",
+      "severity": "high",
+      "problem": "The player-facing text uses 'Event Hall' as if it were a place in the world with real-contest facts, while the owner decision of Nov 2 makes it a Veyra tournament with tiers and a rival. Real-contest facts (a point for each correctly spelled name, rows of 20, best trial counts, an eliminating mistake) are stated as facts, but they came from a model summary and a person has not re-checked the page. The 'source' field names 'a national memory championship's public events page': it must never be shown to players.",
+      "fix": "Use the lore names once the story workstream sets them. Keep the 'as reported' wording and show no figure until a person has checked the live page. Keep 'source' as a builder-only field.",
+      "status": "fixed",
+      "resolution": "All real-contest facts removed from player text (rows of 20, strikes, answer times, point rules). Cards now describe Mnemos rules only. The \"source\" field no longer names a championship. Lore names for the Event Hall are still the story workstream's job."
+    },
+    {
+      "file": "A/event-cards.json",
+      "id": "e-w44-seven-events",
+      "severity": "low",
+      "problem": "Uses the shortened name 'Double Deck' (good, as the real name is unconfirmed) and says 'nobody beyond you sees the results' which is true because there are no accounts. 'Three Strikes You're Out' is a common phrase and fine as a name.",
+      "fix": "None. Make the names agree with D's events.json (Face Round, Number Rows, Deck Run, Poem Page, Word Numbers, Three Strikes, Double Deck).",
+      "status": "closed",
+      "resolution": "Event names agree across A, C and D (Face Round, Number Rows, Deck Run, Poem Page, Word Numbers, Three Strikes, Double Deck)."
+    },
+    {
+      "file": "A/lessons-add.json and masters-add.json",
+      "id": "all citations",
+      "severity": "high",
+      "problem": "Every citation was written from memory with no web access. Page-level details (for example the exact titles and years of Tulving and Thomson 1973, Bower and Clark 1969, Bellezza 1981, Underwood 1957, Slamecka and Graf 1978, Cowan 2001, Miller 1956, Rhetorica ad Herennium about 85 BCE, Cicero about 55 BCE, Quintilian about 95 CE) may be wrong.",
+      "fix": "A person with web access checks each one before any card ships. Leave 'verified' false until then. If a source cannot be confirmed, delete the 'source' line and keep only the plain-language claim, or cut the card.",
+      "status": "fixed",
+      "resolution": "Every citation was verified against DOI, PubMed or publisher records; years, volumes, pages and titles corrected where needed (see FACTCHECK.md). verified is now true with sourceUrls."
+    },
+    {
+      "file": "D/fieldguide-add.json",
+      "id": "recall",
+      "severity": "low",
+      "problem": "First draft said 'the surest thing we know about memory'. This was edited to 'among the best-supported findings'. The existing src/data/fieldguide.js GUIDE_CLAIM still says 'The surest thing we know is that checking yourself after a gap is what makes a memory last', which is stronger than the evidence rating supports.",
+      "fix": "Change GUIDE_CLAIM and CALDER_LETTER (in the story's voice, 'What makes a memory last is... checking yourself') to 'one of the best-supported things we know' when src is next touched. The CALDER_LETTER is Calder's voice, so it is the owner's call.",
+      "status": "deferred",
+      "resolution": "GUIDE_CLAIM and CALDER_LETTER live in src and the story, outside this pass. Owner decision. The D recall page itself says \"among the best-supported findings\"."
+    },
+    {
+      "file": "D/fieldguide-add.json",
+      "id": "lists, digits, maps, reading, talk",
+      "severity": "medium",
+      "problem": "Evidence lines were written from memory. In particular: 'moderate' for route methods on lists rests on one study (Dresler et al. 2017: 51 men, one kind of list, as CHAMPIONS.md warns); mind map evidence is mixed; the chunking source (Miller 1956) is general and I did not pick a specific champion-checked source.",
+      "fix": "Verify all sources. Keep the existing rule that the game cites Dresler only with 'this does not show a better memory for everything'. Add that clause to the 'lists' and 'talk' playbooks if they show their source line to players.",
+      "status": "fixed",
+      "resolution": "Evidence lines corrected (maps: Nesbit and Adesope found a benefit on average; Farrand 2002 added); Dresler clause added to the lists and talk caveats."
+    },
+    {
+      "file": "D/fieldguide-add.json",
+      "id": "interview",
+      "severity": "low",
+      "problem": "The playbook says nothing about outcomes. Check that the builder does not add a headline like 'Ace your interview' or similar.",
+      "fix": "Keep the title 'A job interview'. The caveat is the required honest line.",
+      "status": "closed",
+      "resolution": "The playbook makes no outcome claim. Builder must keep the title \"A job interview\"."
+    },
+    {
+      "file": "D/fieldguide-add.json",
+      "id": "toolbox",
+      "severity": "low",
+      "problem": "The week numbers in the 'weeks' column follow the plan (Weeks 1 and 2, 3 and 4, 5 to 8, 14 to 20, 22 and 23, 24, 27 and 29, 41, 30 and 49) and have not been checked against lessons.js. Week 5 to 8 for the palace and 3 and 4 for the chain come from the plan's section 6 and CURRICULUM_ADDITIONS.md only.",
+      "fix": "Builder checks each week against curriculum.js before the page ships.",
+      "status": "fixed",
+      "resolution": "Toolbox weeks checked against curriculum.js week titles: all agree."
+    },
+    {
+      "file": "D/worksheets.json",
+      "id": "image-library",
+      "severity": "medium",
+      "problem": "The sound code (0 s or z, 1 t or d, 2 n, 3 m, 4 r, 5 l, 6 j sh or ch, 7 k or hard g, 8 f or v, 9 p or b) is the standard public Major System code and agrees with the worked examples in the existing Field Guide (26 is niche, 80 is face), but it was written from memory.",
+      "fix": "Compare with the Month 4 lesson text in src/data before shipping, so the two never disagree.",
+      "status": "fixed",
+      "resolution": "Sound code compared with src/data/lessons.js and curriculum.js week 14: identical."
+    },
+    {
+      "file": "D/worksheets.json",
+      "id": "map-people",
+      "severity": "low",
+      "problem": "A people sheet invites writing down details about real people. The privacy line is included, but a printed sheet cannot enforce it.",
+      "fix": "Keep the privacy paragraph above the grid, not below it. Never offer a version that saves answers without the owner's approval.",
+      "status": "open",
+      "resolution": "Builder rule: keep the privacy paragraph above the grid; no saved version without owner approval."
+    },
+    {
+      "file": "D/worksheets.json",
+      "id": "before-after",
+      "severity": "low",
+      "problem": "Carries the practice-effect note and 'not proof'. The risk is a builder shortening it to 'see your improvement' on a button or heading.",
+      "fix": "Keep the heading 'Before and After' and the line 'These are your scores on your own material, nothing more'.",
+      "status": "open",
+      "resolution": "Builder rule: keep the heading and the \"your scores on your own material\" line."
+    },
+    {
+      "file": "D/your-methods.json",
+      "id": "perMethodTemplate",
+      "severity": "medium",
+      "problem": "The card shows accuracy per method. Showing methods in order of score would read as a ranking, and a method with one try would read as a verdict.",
+      "fix": "Show methods in teaching order, never sorted by score. Hide figures with fewer than four tries and show 'lowDataLine' instead. Never colour a score as good or bad.",
+      "status": "open",
+      "resolution": "Builder rule: teaching order, hide figures under four tries, never colour a score."
+    },
+    {
+      "file": "D/events.json",
+      "id": "hall.rivalRule",
+      "severity": "medium",
+      "problem": "The rival rule says results are fixed story, no clock against them and no effect on rewards. It depends on the story workstream not writing lines that taunt, rush or shame the player (the owner described the rival as smug and bratty).",
+      "fix": "Story text for {RIVAL_LINE_BEFORE} and {RIVAL_LINE_AFTER} must be in character but must never say the player is slow, stupid or failing, and must not appear during study or recall. Recheck when story files exist.",
+      "status": "open",
+      "resolution": "Story workstream: rival lines must not taunt, rush or shame. The story folder was outside this pass and was not edited."
+    },
+    {
+      "file": "D/events.json",
+      "id": "events.faces, events.strikes",
+      "severity": "low",
+      "problem": "Face Round says spelling must be exact while Word Numbers and Three Strikes say the forgiving matcher allows small typos. These are intended (strict for names, forgiving for spoken-style recall) but could confuse a player.",
+      "fix": "Keep both and state the spelling rule on each event's own screen, as written.",
+      "status": "closed",
+      "resolution": "Intentional (strict for names, forgiving for spoken-style recall); each event screen states its rule."
+    },
+    {
+      "file": "D/events.json",
+      "id": "events.*.formatInspiration",
+      "severity": "medium",
+      "problem": "Builder-only text describes real contest formats and must not reach players. It names no organisation, but it still describes real rules that a person has not re-checked.",
+      "fix": "Builder strips 'formatInspiration' from player-facing data. 'notConfirmed' lines may be shown as 'Real contests differ' text, never with figures.",
+      "status": "open",
+      "resolution": "Builder rule: strip formatInspiration from player data. The real-contest summaries in A and C were also made generic."
+    },
+    {
+      "file": "docs/CURRICULUM_ADDITIONS.md",
+      "id": "sections 1 to 10",
+      "severity": "medium",
+      "problem": "The plan still uses the old drill name (and a 1.2 and 1.3 split, and a real-championship Event Hall) in sections 1 to 10. Section 11 overrides these. A builder reading top to bottom might apply the earlier text.",
+      "fix": "Add one line at the top of the plan: 'Section 11 overrides everything above: Mind Map, one release (1.1), a Veyra tournament with a rival, no real championship named.'",
+      "status": "open",
+      "resolution": "docs/CURRICULUM_ADDITIONS.md is outside A to E. Add the \"Section 11 overrides\" line when the plan is next edited."
+    },
+    {
+      "file": "docs/CURRICULUM_ADDITIONS.md",
+      "id": "section 3, Roman Room row",
+      "severity": "low",
+      "problem": "'was described in Roman writing on public speaking (champions verify)'. Same issue as l-w05-roman-room.",
+      "fix": "Verify before it ships, in either file.",
+      "status": "open",
+      "resolution": "Same file as above. The Roman Room claim is now fixed in A."
+    },
+    {
+      "file": "C/poems.json",
+      "id": "all pd-* entries (18)",
+      "severity": "high",
+      "problem": "All 18 public-domain poems are checked:false, written from memory, and not compared with two editions. Strict mode scores every word, capital and punctuation mark, so one wrong word would mark a correct answer wrong.",
+      "fix": "A person compares each against two independent editions, names the edition and sets checked:true. Cut any poem that cannot be verified. Do not ship strict scoring on an unchecked text.",
+      "status": "fixed",
+      "resolution": "All public-domain texts compared with at least two editions by script and corrected (Stevenson, Rossetti, Dickinson dates and wording, Herrick, Jonson, Shakespeare). Four poems dropped where editions disagree (Blake x2, Landor, Carroll). 14 remain, all checked true with sourceUrls and variants."
+    },
+    {
+      "file": "C/poems.json",
+      "id": "original poems (15, origin original)",
+      "severity": "medium",
+      "problem": "Owner defaults in the plan section 11 say poems are public domain only, and the owner may veto poets. The file includes 15 originals under invented poet names, which section 9 allowed but section 11 narrows.",
+      "fix": "Ask the owner whether the originals stay. If they do, say so in the lore (invented poets of Veyra) and keep them in the lore set, not as real-world poems.",
+      "status": "open",
+      "resolution": "Owner question: keep the 15 originals under invented poets (the plan default is public domain only). One poet surname that matches a real writer (Ellowen) was changed to Ashvane."
+    },
+    {
+      "file": "C/poems.json",
+      "id": "pd-remember, pd-sonnet-18",
+      "severity": "low",
+      "problem": "These are 14 lines, but the plan sizes the Poem Page at 4, 6, 8, 12 or 16 lines. The Event Hall ladder in D/events.json lists 4, 6, 8, 12 and 16 lines.",
+      "fix": "Either drop them, use them only as practice poems, or add a 14-line level. D events.json does not need to change if they are practice only.",
+      "status": "fixed",
+      "resolution": "Both kept as practice only (14 lines)."
+    },
+    {
+      "file": "C/poems.json",
+      "id": "pd-eternity, pd-a-word-is-dead, pd-no-frigate",
+      "severity": "medium",
+      "problem": "Marked pdStatus check: the first printing year or the edition text is in doubt (Blake from a notebook, Dickinson early edited texts that differ from later editions in capitals and dashes). Strict scoring on capitals and dashes is exactly where editions disagree.",
+      "fix": "Pick one named edition, copy its text exactly, and tell the player which edition the strict round uses; or prefer poems whose punctuation is stable.",
+      "status": "fixed",
+      "resolution": "Eternity dropped (manuscript draft, editors disagree). Dickinson poems now follow Poems, Third Series (1896), which both editions confirm; first-print year corrected from 1891 or 1894 to 1896."
+    },
+    {
+      "file": "C/poems.json",
+      "id": "originals that mention Wren, the Archive, lamplighters and the river",
+      "severity": "low",
+      "problem": "Wren and the Archive Cat are Veyra lore. If the story workstream changes or retires them, the poems drift from canon.",
+      "fix": "Check against docs/lore/README.md and the story workstream before shipping.",
+      "status": "open",
+      "resolution": "Story workstream: check Wren, the Archive and lamplighter references against docs/lore/README.md."
+    },
+    {
+      "file": "B/pegs.json",
+      "id": "shape and rhyme lists",
+      "severity": "high",
+      "problem": "B's shape and rhyme lists disagreed with the shipped Week 24 lesson, with A and with D. Rhyme 7 (oven) is only a loose rhyme.",
+      "fix": "Shape list set to the shipped one; rhyme list shared by A and B with heaven for 7.",
+      "status": "fixed",
+      "resolution": "A week 24, B pegs.json and D now agree. No peg word clashes with the 260 numbered words."
+    },
+    {
+      "file": "B/maps-topic.json",
+      "id": "map-states-of-matter, map-earth-layers, map-cell-parts, map-mountain-ranges, map-instrument-families",
+      "severity": "medium",
+      "problem": "Steam is invisible water vapour and clashes with the water cycle; inner and outer core repeated Iron and Nickel; chloroplasts are in plant cells only; Vinson Massif is a peak not a range; keyboard is not a standard orchestra family.",
+      "fix": "Steam to Nitrogen; inner core leaves changed; chloroplast branch marked plant cells; Ellsworth Mountains; centre renamed Instruments.",
+      "status": "fixed",
+      "resolution": "All 24 maps checked and marked verified with sourceUrls."
+    },
+    {
+      "file": "B/skim-texts.json",
+      "id": "skim-tides, skim-paper",
+      "severity": "medium",
+      "problem": "The neap-tide section said 'at those times' straight after its heading, which pointed back to the wrong tide; 'as long as a football pitch' for paper machines was loose.",
+      "fix": "Reordered and reworded the neap section; paper machine line changed to 'as long as a street'.",
+      "status": "fixed",
+      "resolution": "All six real texts read against their named sources; no other error found."
+    },
+    {
+      "file": "B/grocery.json",
+      "id": "groc-popsicle",
+      "severity": "low",
+      "problem": "Popsicle is a trademark.",
+      "fix": "Renamed ice pop.",
+      "status": "fixed",
+      "resolution": "No other brand name found in 120 items."
+    },
+    {
+      "file": "B/maps-people-pools.json, B/skim-texts.json",
+      "id": "towns",
+      "severity": "medium",
+      "problem": "Heronsgate, Nettlecombe and Tarnaby are real places.",
+      "fix": "Renamed Heronsfold, Nettlebrook and Tarnwick.",
+      "status": "fixed",
+      "resolution": "All 39 pool towns and the five skim-text towns were looked up as Wikipedia titles."
+    },
+    {
+      "file": "B/surnames.json",
+      "id": "avoid list",
+      "severity": "medium",
+      "problem": "The avoid list was written from memory and was not exhaustive.",
+      "fix": "A Wikipedia title lookup of first name plus surname pairs was started; Wikipedia rate-limited it after about 180 of 11,880 pairs. The 132 hits found were added to the avoid list.",
+      "status": "open",
+      "resolution": "The scan is partial. Rerun slowly (one request a second) or rely on the builder rule: never join a listed name and keep each surname to one person per set. A title lookup cannot find every private person with the same name."
+    },
+    {
+      "file": "C/strikes-people.json",
+      "id": "towns and names",
+      "severity": "medium",
+      "problem": "Marlcombe and Wickstead are real places.",
+      "fix": "Renamed Marldale and Wickfold. None of the 48 names has a Wikipedia article.",
+      "status": "fixed",
+      "resolution": "All 48 towns and 48 names looked up."
+    },
+    {
+      "file": "C/deck-formats.json",
+      "id": "realFormatInOurWords",
+      "severity": "medium",
+      "problem": "Real-contest timings (five minutes, 15 seconds, coloured backs) stated from an unconfirmed summary.",
+      "fix": "Made generic; no real timing or rule.",
+      "status": "fixed",
+      "resolution": "Rules vary by contest and year."
+    },
+    {
+      "file": "C/poems.json",
+      "id": "invented poet name Marit Ellowen",
+      "severity": "medium",
+      "problem": "Ellowen is the name of a living Irish writer and singer-songwriter.",
+      "fix": "Renamed Marit Ashvane. The other seven invented poet names found no matches in a web search.",
+      "status": "fixed",
+      "resolution": "README updated."
+    },
+    {
+      "file": "A/event-cards.json, C/deck-formats.json, D/events.json",
+      "id": "real contest rules",
+      "severity": "high",
+      "problem": "Rows of 20, strike counts, answer times, point values and deck times were presented as how real contests work, from one unverified summary. A web check could not confirm them and found that real formats change from year to year.",
+      "fix": "Removed from player text; all rules are Mnemos rules.",
+      "status": "fixed",
+      "resolution": "CHAMPIONS.md rule (no figures from real contests) now met."
+    },
+    {
+      "file": "E/pools.json",
+      "id": "music drill note",
+      "severity": "low",
+      "problem": "Said rhyme pegs cover 11 and 12, but B's rhyme pegs stop at 10.",
+      "fix": "Reworded.",
+      "status": "fixed",
+      "resolution": "All other pool entries checked."
+    },
+    {
+      "file": "E/fieldguide-e.json, E/own-text.json",
+      "id": "treasured page",
+      "severity": "high",
+      "problem": "Six sentences described how particular faiths learn texts, written from memory and unchecked.",
+      "fix": "Removed; the page is minimal and neutral and makes no claim about any tradition.",
+      "status": "fixed",
+      "resolution": "traditions array is empty."
+    },
+    {
+      "file": "E/dates.json",
+      "id": "duplicate years",
+      "severity": "low",
+      "problem": "1869, 1914 and 1991 each appear in two sets, which is ambiguous if sets are mixed.",
+      "fix": "Noted in the file notes: accept both events or keep the sets apart.",
+      "status": "open",
+      "resolution": "Builder choice."
+    },
+    {
+      "file": "E/dates.json, E/trivia.json, E/pools.json, E/speedmath.json",
+      "id": "all facts",
+      "severity": "high",
+      "problem": "All E facts were written from memory.",
+      "fix": "Dates: every year found in its Wikipedia article by script. Elements and capitals compared by script with Wikipedia lists. Speed math tables, constants and strategies recomputed. Trivia, roots, music, chess and anatomy read entry by entry; no entry was wrong.",
+      "status": "fixed",
+      "resolution": "verified true with sourceUrls. Trivia and roots rest on editor review rather than line-by-line lookup (see FACTCHECK.md)."
+    }
+  ],
+  "recheckList": [
+    "RESULT: no em or en dashes in any player-facing field (only the two published dashes in The Swing).",
+    "RESULT: the old drill name does not appear anywhere in A to D; E and the plan were not changed (plan is outside scope).",
+    "RESULT: no real championship name, athlete name, or real-contest figure remains in A to E player-facing fields.",
+    "RESULT: no brand names in B (popsicle replaced); no real towns in B and C after renames (Wikipedia title lookup).",
+    "RESULT: poems: 14 public-domain poems, all authors died before 1900, all texts published before 1930; four dropped; none is a translation.",
+    "OPEN (story folder not in this pass): rival lines that shame, rush or taunt; any beat-the-clock mechanic against the rival; any reward tied to the rival.",
+    "RESULT: every real fact has verified true and a source URL or named source; every citation verified (see FACTCHECK.md for method and limits).",
+    "RESULT: peg words agree across A (week 24), B (pegs.json) and D (digits and senses playbooks).",
+    "RESULT: event names agree across A, C and D. Lore names are the story workstream's."
+  ]
+}

@@ -1,0 +1,429 @@
+{
+  "notes": "Original system written for this project. It does not follow any published card-picture table (no person-by-initials tables, no table of famous people), and the images were chosen fresh. Not tested with players yet. Every image is common, easy to picture and safe (no brands, no real people). Players are told to make their own pictures, since a picture you choose sticks better than one you are handed. Fact-check (Nov 2, 2026): all 52 images are plain objects and roles; no brand, real person or copied table found. The rule is our own.",
+  "rule": {
+    "name": "World and Count",
+    "threeSentences": "The suit picks a world: Spades is the sea, Hearts is the kitchen, Diamonds is the market and Clubs is the forest. The rank picks the picture: an Ace is one big thing from that world, a number card shows that many of something (two oars, five arms, ten fish), and Jack, Queen and King are always people of that world, the young helper, the expert and the chief. Learn one world and you already know a quarter of the deck.",
+    "worlds": {
+      "S": "the sea",
+      "H": "the kitchen",
+      "D": "the market",
+      "C": "the forest"
+    },
+    "peopleRule": {
+      "J": "the young helper",
+      "Q": "the expert",
+      "K": "the chief"
+    },
+    "whyItWorks": "Four worlds give you the suit at a glance, and the count hook gives you the rank. You rebuild a picture from the rule instead of memorising 52 loose images.",
+    "learningPlan": [
+      "Day 1: learn the Spades world (13 pictures). Say each card code and its picture aloud, then cover the list and test yourself.",
+      "Day 2: Hearts. Day 3: Diamonds. Day 4: Clubs. Take a day off whenever a world still feels wobbly.",
+      "Then shuffle and flip single cards, saying the picture within two seconds. Only start Deck Run once you can do that for most of the deck."
+    ]
+  },
+  "makeYourOwn": "These are suggestions. If a picture does not work for you, swap it for one that does, and keep the same rule so you can rebuild it. A picture you chose yourself is stronger than one you were handed. The game does not save your own card pictures in 1.1; keep them on paper.",
+  "cardCodes": "Card code is rank then suit letter: AS is Ace of Spades, 10H is Ten of Hearts, KC is King of Clubs. S is Spades, H is Hearts, D is Diamonds, C is Clubs. Suits are never shown by colour alone (the Cards drill draws each suit as shape and letter).",
+  "deckRunGuide": {
+    "title": "How to lay a deck along a route",
+    "steps": [
+      "Pick a route you know well with 13 to 26 stops (a palace, a street or a commute). You need half as many stops as cards, because each stop holds two cards.",
+      "Flip the cards two at a time. Turn both into pictures from your card list. Let the first picture do something to the second at the stop, such as pushing, pouring, eating or weighing it.",
+      "Move to the next stop for the next two cards. Keep the action short and a little silly. Do not stop to fix a picture that is a bit weak.",
+      "At recall, walk the route from stop 1, say the two cards at each stop and place them in order. If a stop is blank, leave a gap and keep going rather than guess.",
+      "Check against the deck. Look for the pattern of your errors (a mixed-up suit, a swapped pair) and fix that, not everything."
+    ],
+    "workedExample": {
+      "cards": [
+        "5C",
+        "2D",
+        "9S",
+        "4H"
+      ],
+      "stops": [
+        {
+          "stop": "Front door",
+          "cards": [
+            "5C",
+            "2D"
+          ],
+          "scene": "A big maple leaf with five points is weighed on a two-pan scale, and the scale tips right over the doormat."
+        },
+        {
+          "stop": "Hall mirror",
+          "cards": [
+            "9S",
+            "4H"
+          ],
+          "scene": "Nine pearls spill from an oyster onto a four-legged kitchen table that is reflected in the mirror."
+        }
+      ]
+    },
+    "honestNote": "Memorising the order of a shuffled deck is a memory sport. It trains turning a card into a picture and placing pictures along a route, and it does not carry much into daily life. Cards in Mnemos give no skill points and no Lumen. They are here for people who want the challenge, and you can skip them with no cost to your year."
+  },
+  "cards": [
+    {
+      "card": "AS",
+      "suit": "Spades",
+      "rank": "A",
+      "image": "a tall lighthouse",
+      "rule": "Ace: one big thing from the sea, standing alone."
+    },
+    {
+      "card": "2S",
+      "suit": "Spades",
+      "rank": "2",
+      "image": "a pair of oars",
+      "rule": "2: something from the sea that shows the number 2."
+    },
+    {
+      "card": "3S",
+      "suit": "Spades",
+      "rank": "3",
+      "image": "a trident with three prongs",
+      "rule": "3: something from the sea that shows the number 3."
+    },
+    {
+      "card": "4S",
+      "suit": "Spades",
+      "rank": "4",
+      "image": "a sea turtle with four flippers",
+      "rule": "4: something from the sea that shows the number 4."
+    },
+    {
+      "card": "5S",
+      "suit": "Spades",
+      "rank": "5",
+      "image": "a starfish with five arms",
+      "rule": "5: something from the sea that shows the number 5."
+    },
+    {
+      "card": "6S",
+      "suit": "Spades",
+      "rank": "6",
+      "image": "six gulls flying in a V",
+      "rule": "6: something from the sea that shows the number 6."
+    },
+    {
+      "card": "7S",
+      "suit": "Spades",
+      "rank": "7",
+      "image": "a treasure chest holding seven gold coins",
+      "rule": "7: something from the sea that shows the number 7."
+    },
+    {
+      "card": "8S",
+      "suit": "Spades",
+      "rank": "8",
+      "image": "an octopus waving eight arms",
+      "rule": "8: something from the sea that shows the number 8."
+    },
+    {
+      "card": "9S",
+      "suit": "Spades",
+      "rank": "9",
+      "image": "nine pearls in an open oyster",
+      "rule": "9: something from the sea that shows the number 9."
+    },
+    {
+      "card": "10S",
+      "suit": "Spades",
+      "rank": "10",
+      "image": "a net holding ten silver fish",
+      "rule": "10: something from the sea that shows the number 10."
+    },
+    {
+      "card": "JS",
+      "suit": "Spades",
+      "rank": "J",
+      "image": "a deckhand mopping the ship's deck",
+      "rule": "Jack: the young helper of the sea, shown as a person."
+    },
+    {
+      "card": "QS",
+      "suit": "Spades",
+      "rank": "Q",
+      "image": "a navigator unrolling a star chart",
+      "rule": "Queen: the expert of the sea, shown as a person."
+    },
+    {
+      "card": "KS",
+      "suit": "Spades",
+      "rank": "K",
+      "image": "a harbour master with a brass telescope",
+      "rule": "King: the chief of the sea, shown as a person."
+    },
+    {
+      "card": "AH",
+      "suit": "Hearts",
+      "rank": "A",
+      "image": "one giant cooking pot",
+      "rule": "Ace: one big thing from the kitchen, standing alone."
+    },
+    {
+      "card": "2H",
+      "suit": "Hearts",
+      "rank": "2",
+      "image": "a pair of oven mitts",
+      "rule": "2: something from the kitchen that shows the number 2."
+    },
+    {
+      "card": "3H",
+      "suit": "Hearts",
+      "rank": "3",
+      "image": "a three-legged stool",
+      "rule": "3: something from the kitchen that shows the number 3."
+    },
+    {
+      "card": "4H",
+      "suit": "Hearts",
+      "rank": "4",
+      "image": "a kitchen table with four legs",
+      "rule": "4: something from the kitchen that shows the number 4."
+    },
+    {
+      "card": "5H",
+      "suit": "Hearts",
+      "rank": "5",
+      "image": "a floury handprint with five fingers",
+      "rule": "5: something from the kitchen that shows the number 5."
+    },
+    {
+      "card": "6H",
+      "suit": "Hearts",
+      "rank": "6",
+      "image": "a carton of six eggs",
+      "rule": "6: something from the kitchen that shows the number 6."
+    },
+    {
+      "card": "7H",
+      "suit": "Hearts",
+      "rank": "7",
+      "image": "a cake with seven layers",
+      "rule": "7: something from the kitchen that shows the number 7."
+    },
+    {
+      "card": "8H",
+      "suit": "Hearts",
+      "rank": "8",
+      "image": "a pizza cut into eight slices",
+      "rule": "8: something from the kitchen that shows the number 8."
+    },
+    {
+      "card": "9H",
+      "suit": "Hearts",
+      "rank": "9",
+      "image": "a steamer basket holding nine dumplings",
+      "rule": "9: something from the kitchen that shows the number 9."
+    },
+    {
+      "card": "10H",
+      "suit": "Hearts",
+      "rank": "10",
+      "image": "a cake with ten candles",
+      "rule": "10: something from the kitchen that shows the number 10."
+    },
+    {
+      "card": "JH",
+      "suit": "Hearts",
+      "rank": "J",
+      "image": "a kitchen helper carrying a tower of plates",
+      "rule": "Jack: the young helper of the kitchen, shown as a person."
+    },
+    {
+      "card": "QH",
+      "suit": "Hearts",
+      "rank": "Q",
+      "image": "a head baker in a very tall hat",
+      "rule": "Queen: the expert of the kitchen, shown as a person."
+    },
+    {
+      "card": "KH",
+      "suit": "Hearts",
+      "rank": "K",
+      "image": "a feast master holding a huge ladle",
+      "rule": "King: the chief of the kitchen, shown as a person."
+    },
+    {
+      "card": "AD",
+      "suit": "Diamonds",
+      "rank": "A",
+      "image": "one big gem on a velvet stall",
+      "rule": "Ace: one big thing from the market, standing alone."
+    },
+    {
+      "card": "2D",
+      "suit": "Diamonds",
+      "rank": "2",
+      "image": "a scale with two pans",
+      "rule": "2: something from the market that shows the number 2."
+    },
+    {
+      "card": "3D",
+      "suit": "Diamonds",
+      "rank": "3",
+      "image": "a barrow with three wheels",
+      "rule": "3: something from the market that shows the number 3."
+    },
+    {
+      "card": "4D",
+      "suit": "Diamonds",
+      "rank": "4",
+      "image": "a wagon with four wheels",
+      "rule": "4: something from the market that shows the number 4."
+    },
+    {
+      "card": "5D",
+      "suit": "Diamonds",
+      "rank": "5",
+      "image": "a shop door hung with five bells",
+      "rule": "5: something from the market that shows the number 5."
+    },
+    {
+      "card": "6D",
+      "suit": "Diamonds",
+      "rank": "6",
+      "image": "a cup holding six dice",
+      "rule": "6: something from the market that shows the number 6."
+    },
+    {
+      "card": "7D",
+      "suit": "Diamonds",
+      "rank": "7",
+      "image": "a string of seven lanterns",
+      "rule": "7: something from the market that shows the number 7."
+    },
+    {
+      "card": "8D",
+      "suit": "Diamonds",
+      "rank": "8",
+      "image": "a canopy umbrella with eight ribs",
+      "rule": "8: something from the market that shows the number 8."
+    },
+    {
+      "card": "9D",
+      "suit": "Diamonds",
+      "rank": "9",
+      "image": "a pyramid of nine melons",
+      "rule": "9: something from the market that shows the number 9."
+    },
+    {
+      "card": "10D",
+      "suit": "Diamonds",
+      "rank": "10",
+      "image": "a tower of ten coins",
+      "rule": "10: something from the market that shows the number 10."
+    },
+    {
+      "card": "JD",
+      "suit": "Diamonds",
+      "rank": "J",
+      "image": "an errand runner with a basket",
+      "rule": "Jack: the young helper of the market, shown as a person."
+    },
+    {
+      "card": "QD",
+      "suit": "Diamonds",
+      "rank": "Q",
+      "image": "a stallholder draped in ribbons",
+      "rule": "Queen: the expert of the market, shown as a person."
+    },
+    {
+      "card": "KD",
+      "suit": "Diamonds",
+      "rank": "K",
+      "image": "a guildmaster with a ring of keys",
+      "rule": "King: the chief of the market, shown as a person."
+    },
+    {
+      "card": "AC",
+      "suit": "Clubs",
+      "rank": "A",
+      "image": "one giant oak tree",
+      "rule": "Ace: one big thing from the forest, standing alone."
+    },
+    {
+      "card": "2C",
+      "suit": "Clubs",
+      "rank": "2",
+      "image": "two squirrels",
+      "rule": "2: something from the forest that shows the number 2."
+    },
+    {
+      "card": "3C",
+      "suit": "Clubs",
+      "rank": "3",
+      "image": "a clover with three leaves",
+      "rule": "3: something from the forest that shows the number 3."
+    },
+    {
+      "card": "4C",
+      "suit": "Clubs",
+      "rank": "4",
+      "image": "a clover with four leaves",
+      "rule": "4: something from the forest that shows the number 4."
+    },
+    {
+      "card": "5C",
+      "suit": "Clubs",
+      "rank": "5",
+      "image": "a maple leaf with five points",
+      "rule": "5: something from the forest that shows the number 5."
+    },
+    {
+      "card": "6C",
+      "suit": "Clubs",
+      "rank": "6",
+      "image": "a beetle with six legs",
+      "rule": "6: something from the forest that shows the number 6."
+    },
+    {
+      "card": "7C",
+      "suit": "Clubs",
+      "rank": "7",
+      "image": "a ring of seven toadstools",
+      "rule": "7: something from the forest that shows the number 7."
+    },
+    {
+      "card": "8C",
+      "suit": "Clubs",
+      "rank": "8",
+      "image": "a spider with eight legs",
+      "rule": "8: something from the forest that shows the number 8."
+    },
+    {
+      "card": "9C",
+      "suit": "Clubs",
+      "rank": "9",
+      "image": "nine fireflies in a jar",
+      "rule": "9: something from the forest that shows the number 9."
+    },
+    {
+      "card": "10C",
+      "suit": "Clubs",
+      "rank": "10",
+      "image": "a stag with ten-point antlers",
+      "rule": "10: something from the forest that shows the number 10."
+    },
+    {
+      "card": "JC",
+      "suit": "Clubs",
+      "rank": "J",
+      "image": "a young forager with a berry basket",
+      "rule": "Jack: the young helper of the forest, shown as a person."
+    },
+    {
+      "card": "QC",
+      "suit": "Clubs",
+      "rank": "Q",
+      "image": "a beekeeper in a veil",
+      "rule": "Queen: the expert of the forest, shown as a person."
+    },
+    {
+      "card": "KC",
+      "suit": "Clubs",
+      "rank": "K",
+      "image": "a forest warden blowing a horn",
+      "rule": "King: the chief of the forest, shown as a person."
+    }
+  ]
+}

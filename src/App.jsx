@@ -16,6 +16,10 @@ import Crypt from './ui/Crypt.jsx';
 import Character from './ui/Character.jsx';
 import Battle from './ui/Battle.jsx';
 import TrialRun from './ui/Trials.jsx';
+import Audit from './ui/Audit.jsx';
+import Seam from './ui/Seam.jsx';
+import EventHall from './ui/EventHall.jsx';
+import OwnText from './ui/OwnText.jsx';
 import { ItemIcon } from './ui/ItemIcon.jsx';
 import { UnlockToast } from './ui/game/UnlockToast.jsx';
 import { earnedItems, collectionStats } from './engine/collect.js';
@@ -169,6 +173,22 @@ export default function App() {
       onDone={() => update((p) => { p.collectionSeen = [...new Set([...(p.collectionSeen || []), ...fresh])]; })} />
   );
 
+  if (battle && battle.mode === 'events') {
+    return <EventHall key={battle.n} profile={profile} update={update} onExit={() => { setBattle(null); window.scrollTo(0, 0); }} />;
+  }
+
+  if (battle && battle.mode === 'own') {
+    return <OwnText key={battle.n} profile={profile} update={update} onExit={() => { setBattle(null); window.scrollTo(0, 0); }} />;
+  }
+
+  if (battle && battle.mode === 'seam') {
+    return <Seam key={battle.n} profile={profile} update={update} onExit={() => { setBattle(null); window.scrollTo(0, 0); }} />;
+  }
+
+  if (battle && battle.mode === 'audit') {
+    return <Audit key={battle.n} profile={profile} update={update} onExit={() => { setBattle(null); window.scrollTo(0, 0); }} />;
+  }
+
   if (battle) {
     return <Battle key={battle.n} profile={profile} update={update} mode={battle.mode} onExit={() => { setBattle(null); window.scrollTo(0, 0); }} />;
   }
@@ -189,10 +209,10 @@ export default function App() {
     today: <Today profile={profile} start={start} update={update} onEnterCrypt={() => setInCrypt(true)} onFight={fight} onTrial={openTrial} />,
     relics: <Relics profile={profile} update={update} onEnterCrypt={() => setInCrypt(true)} />,
     veyra: <Veyra profile={profile} update={update} onFight={fight} onTrial={openTrial} />,
-    character: <Character profile={profile} update={update} />,
+    character: <Character profile={profile} update={update} onReview={() => start('review')} />,
     palaces: <Palaces profile={profile} update={update} />,
     progress: <Progress profile={profile} update={update} />,
-    guide: <FieldGuide profile={profile} update={update} start={start} />,
+    guide: <FieldGuide profile={profile} update={update} start={start} onOwnText={() => fight('own')} />,
     keeper: <Keeper profile={profile} update={update} replaceProfile={replace} openCharacter={() => goRef.current?.('character')} wipe={async () => { await deleteProfile(); ref.current = null; setProfile(null); }} />,
   };
   const go = (id) => {

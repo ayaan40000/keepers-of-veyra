@@ -32,7 +32,7 @@ function RecallCard({ profile, update, id }) {
 }
 
 // v0.11 calm repair: the recall card now, then a different word one to three days later. No timer, nothing lost.
-function RepairCard({ profile, update, id }) {
+export function RepairCard({ profile, update, id }) {
   const [val, setVal] = useState('');
   const [res, setRes] = useState(null);
   const day = today(profile);

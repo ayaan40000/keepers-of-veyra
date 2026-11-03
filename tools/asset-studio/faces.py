@@ -162,6 +162,8 @@ def opening(p):
 
 
 def paint_prompt(p, text):
+    # "olive" alone sometimes paints green skin; name the human tone plainly
+    text = text.replace("light olive skin", "light beige skin with a warm olive undertone").replace("olive brown skin", "warm light-brown skin")
     return f"{LOOK} {opening(p)}: {text}. Background: plain {p['bg']}.{TAIL}"
 
 

@@ -23,9 +23,9 @@ describe('crypt data', () => {
       ['ct_hollow_mask', 15], ['ct_iron_key', 18], ['ct_star_chart', 21], ['ct_grey_phial', 25], ['ct_heart_stone', 30], ['ct_lamp_of_ages', 40],
     ]);
   });
-  it('has 19 tablets of 60 to 120 words with no dashes', () => {
-    expect(TABLETS.map((t) => t.depth)).toEqual([2, 4, 6, 8, 10, 12, 14, 16, 19, 22, 26, 29, 33, 37, 45, 50, 55, 60, 70]);
-    expect(new Set(TABLETS.map((t) => t.id)).size).toBe(19);
+  it('has 23 tablets of 60 to 120 words with no dashes', () => {
+    expect(TABLETS.map((t) => t.depth)).toEqual([2, 4, 6, 8, 10, 12, 14, 16, 19, 22, 26, 29, 33, 37, 45, 50, 55, 60, 70, 75, 80, 90, 100]);
+    expect(new Set(TABLETS.map((t) => t.id)).size).toBe(23);
     for (const t of TABLETS) {
       const words = t.text.split(/\s+/).length;
       expect(words).toBeGreaterThanOrEqual(60);
@@ -167,7 +167,7 @@ describe('runs', () => {
   it('awards treasures and tablets once, at the right depths', () => {
     const p = fresh(); ensureCrypt(p); grantKeys(p, 4); startRun(p, 1);
     const got = {};
-    for (let f = 1; f <= 71; f++) {
+    for (let f = 1; f <= 101; f++) {
       const r = applyFloorResult(p, 1);
       for (const id of [...r.rewards.treasures, ...r.rewards.tablets]) got[id] = f;
       expect(r.rewards.chest).toBe(f % 4 === 0);
@@ -176,9 +176,9 @@ describe('runs', () => {
     for (const t of TABLETS) expect(got[t.id]).toBe(t.depth);
     climbOut(p);
     startRun(p, 2);
-    for (let f = 1; f <= 71; f++) { const r = applyFloorResult(p, 1); expect(r.rewards.treasures).toEqual([]); expect(r.rewards.tablets).toEqual([]); }
+    for (let f = 1; f <= 101; f++) { const r = applyFloorResult(p, 1); expect(r.rewards.treasures).toEqual([]); expect(r.rewards.tablets).toEqual([]); }
     expect(Object.keys(p.crypt.treasures).length).toBe(19);
-    expect(Object.keys(p.crypt.tablets).length).toBe(19);
+    expect(Object.keys(p.crypt.tablets).length).toBe(23);
   });
   it('a chest refills one lamp flask when one is missing', () => {
     const p = fresh(); ensureCrypt(p); startRun(p, 1);

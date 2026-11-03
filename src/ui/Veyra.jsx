@@ -10,7 +10,18 @@ import { sideQuestState, codexFor, charactersFor, mainQuests } from '../engine/q
 import { Portrait } from '../pixel/Faces.jsx';
 import WorldMap from './pixel/WorldMap.jsx';
 import { EchoHall } from './Battle.jsx';
+import { EventHallCard } from './EventHall.jsx';
+import { SeamCard } from './Seam.jsx';
+import { ArtImg, artFor } from './artLookup.jsx';
+import { SEAM_CHAPTER, EPILOGUE_TWO, SEAM_PEOPLE } from '../data/forgetting.js';
+import { WF_BEATS } from '../data/wren.js';
+import { seenBeats as wrenSeen } from '../engine/wren.js';
+import { codexUnlocked } from '../engine/quests.js';
 import { TrialHall } from './Trials.jsx';
+import { BramblePanel, burnLine } from './Brambles.jsx';
+import { thornCounts, unseenBurns, markBurnsSeen, bramblesOn } from '../engine/brambles.js';
+import { DAYLIFE } from '../data/daylife.js';
+import { timeOfDay } from './pixel/WorldMap.jsx';
 
 // District positions along the river, isometric map (original art).
 const POS = [[70, 330], [150, 300], [235, 320], [300, 260], [220, 230], [130, 210], [70, 150], [160, 120], [250, 140], [320, 90], [230, 60], [130, 40]];
@@ -53,16 +64,24 @@ function Journal({ profile }) {
 
 function Chapters({ profile }) {
   const seenBeats = Object.keys(BEATS).map(Number).filter((w) => (profile.story.seen || []).includes('w' + w));
-  const list = ['prologue', ...MODULES.map((m) => m.id), 'epilogue'].filter((k) => k === 'prologue' || k === 'epilogue' ? profile.story.seen.includes(k) : profile.progress.gates.includes(k));
+  const list = ['prologue', ...MODULES.map((m) => m.id), 'epilogue', 'seam', 'epilogue2'].filter((k) => k === 'prologue' || k === 'epilogue' || k === 'seam' || k === 'epilogue2' ? profile.story.seen.includes(k) : profile.progress.gates.includes(k));
+  const chapterOf = (k) => (k === 'epilogue' ? EPILOGUE : k === 'seam' ? SEAM_CHAPTER : k === 'epilogue2' ? EPILOGUE_TWO : CHAPTERS[k]);
+  const wrenBeats = wrenSeen(profile).filter((b) => !b.epilogue);
   return (
     <>
       {list.map((k) => (
         <details key={k} className="card parchment chapter-read">
-          <summary><h3>{(k === 'epilogue' ? EPILOGUE : CHAPTERS[k]).title}</h3></summary>
-          {(k === 'epilogue' ? EPILOGUE : CHAPTERS[k]).text.map((t, i) => <p key={i} className={`story-text ${i === 0 ? 'drop' : ''}`}>{tell(t, profile)}</p>)}
+          <summary><h3>{chapterOf(k).title}</h3></summary>
+          {chapterOf(k).text.map((t, i) => <p key={i} className={`story-text ${i === 0 ? 'drop' : ''}`}>{tell(t, profile)}</p>)}
         </details>
       ))}
-      {list.filter((k) => k !== 'epilogue').length < 13 && <section className="card"><p className="muted">{13 - list.filter((k) => k !== 'epilogue').length} chapters are still hidden in the fog. Each one opens when you pass the gate of its district.</p></section>}
+      {list.filter((k) => !['epilogue', 'seam', 'epilogue2'].includes(k)).length < 13 && <section className="card"><p className="muted">{13 - list.filter((k) => !['epilogue', 'seam', 'epilogue2'].includes(k)).length} chapters are still hidden in the fog. Each one opens when you pass the gate of its district.</p></section>}
+      {wrenBeats.length > 0 && (
+        <details className="card chapter-read">
+          <summary><h3>Wren's story ({wrenBeats.length} of {WF_BEATS.filter((b) => !b.epilogue).length})</h3></summary>
+          {wrenBeats.map((b) => <div key={b.id} className="beat-entry"><b>{b.title}</b> <span className="muted small">{b.where}</span>{b.text.map((t, i) => <p key={i} className="story-text">{tell(t, profile)}</p>)}</div>)}
+        </details>
+      )}
       {seenBeats.length > 0 && (
         <details className="card chapter-read">
           <summary><h3>Weekly tales ({seenBeats.length})</h3></summary>
@@ -96,6 +115,19 @@ function People({ profile }) {
           )}
         </section>
       ))}
+      {SEAM_PEOPLE.map((c) => {
+        const visible = c.tiers.filter((t) => codexUnlocked(profile, t)).map((t) => t.text);
+        if (!visible.length) return null;
+        return (
+          <section key={c.id} className="card person">
+            <div className="person-head">
+              {c.art && artFor(c.art) ? <ArtImg id={c.art} className="seam-portrait" alt={c.name} /> : null}
+              <div><span className="tag">{c.role}</span><h3>{c.name}</h3></div>
+            </div>
+            {visible.map((t, i) => <p key={i} className="story-text">{tell(t, profile)}</p>)}
+          </section>
+        );
+      })}
       <p className="muted small center">More people, and more about these ones, are revealed as the story unfolds.</p>
     </>
   );
@@ -109,6 +141,7 @@ function Codex({ profile }) {
       {entries.map((e) => e.open ? (
         <details key={e.id} className="card chapter-read">
           <summary><h3>{e.title}</h3></summary>
+          {e.art && artFor(e.art) && <ArtImg id={e.art} className="seam-art" />}
           {e.text.map((t, i) => <p key={i} className="story-text">{t.includes(' / ') ? t.split(' / ').map((l, j) => <span key={j} className="verse">{l}</span>) : t}</p>)}
         </details>
       ) : (
@@ -153,6 +186,10 @@ export default function Veyra({ profile, update, onFight, onTrial }) {
   // A gate restored since the map was last opened plays its restoration once.
   const mapSeen = profile.story.mapSeen || [];
   const restoring = view === 'map' ? gates.find((g) => !mapSeen.includes(g)) : null;
+  // 1.1 brambles: one burn plays on the map at a time, then is marked seen. Only on the map, never on a study or recall screen.
+  const burnsOn = bramblesOn(profile);
+  const burn = view === 'map' && burnsOn && !restoring ? unseenBurns(profile)[0] : null;
+  const burnSeen = () => update?.((p) => { markBurnsSeen(p); });
   const markSeen = () => update?.((p) => { p.story.mapSeen = [...new Set([...(p.story.mapSeen || []), ...p.progress.gates])]; });
   return (
     <div className="page">
@@ -161,15 +198,19 @@ export default function Veyra({ profile, update, onFight, onTrial }) {
       <div className="subtabs" role="tablist">{VIEWS.map(([id, label]) => <button key={id} role="tab" aria-selected={view === id} className={view === id ? 'on' : ''} onClick={() => setView(id)}>{label}</button>)}</div>
       {view === 'map' && (
         <>
-          <WorldMap gates={profile.progress.gates} current={st.mod.id} selected={restoring || sel} onSelect={setSel} restoring={restoring} onRestored={markSeen} className="veyra-map" />
+          <WorldMap gates={profile.progress.gates} current={st.mod.id} selected={restoring || sel} onSelect={setSel} restoring={restoring} onRestored={markSeen} brambles={burnsOn ? thornCounts(profile) : null} burning={burn?.district || null} onBurned={burnSeen} className="veyra-map" />
+          {burn && <p className="note" role="status">{burnLine(burn.key)}</p>}
           {restoring && <p className="note" role="status">{MODULES.find((x) => x.id === restoring)?.district} comes back out of the fog.</p>}
           <DistrictList profile={profile} current={st.mod.id} onSelect={setSel} />
           {onFight && profile.progress.gates.length >= 1 && <EchoHall profile={profile} onFight={onFight} />}
+          {onFight && <EventHallCard profile={profile} onOpen={() => onFight('events')} />}
+          {onFight && <SeamCard profile={profile} onOpen={() => onFight('seam')} />}
           <section className={`card ${restored ? 'gold' : ''}`}>
             <span className="tag">Month {m.month} · {restored ? 'Restored' : m.id === st.mod.id ? 'Your current quest' : 'In the fog'}</span>
             <h2>{m.district}</h2>
             <p className="objective">{restored || m.id === st.mod.id ? CHAPTERS[m.id].quest : 'Not yet reached'}</p>
             <p className="muted">{m.title}. {m.objective}</p>
+            {(restored || m.id === st.mod.id) && timeOfDay() === 'day' && DAYLIFE[m.id] && <p className="story-text small daylife">{DAYLIFE[m.id]}</p>}
             {restored && GATE_TALK[m.id] && (
               <figure className="gate-talk">
                 <Portrait id={GATE_TALK[m.id][0]} mood="smile" scale={2} />
@@ -178,6 +219,7 @@ export default function Veyra({ profile, update, onFight, onTrial }) {
             )}
             {restored ? <p className="muted small">This district's chapter is open. Read it under Chapters.</p> : <p className="muted small">The story of this district opens when you pass its gate.</p>}
           </section>
+          <BramblePanel profile={profile} update={update} district={sel} />
           {profile.story.seen.includes('w' + st.week.w) && beat && (
             <section className="card parchment"><span className="tag">This week in Veyra</span><h3>{beat.title}</h3><p className="story-text">{tell(beat.text, profile)}</p></section>
           )}

@@ -27,7 +27,7 @@ export function ensureBattles(p) {
 }
 
 // ---------- pulling old items ----------
-const lastHeld = (set, t) => { const h = [...(set.history || [])].reverse().find((x) => x.pass); return h ? daysBetween(h.date, t) : null; };
+export const lastHeld = (set, t) => { const h = [...(set.history || [])].reverse().find((x) => x.pass); return h ? daysBetween(h.date, t) : null; };
 const plural = (n, w) => `${n} ${w}${n === 1 ? '' : 's'}`;
 export function reasonFor(age, held, queued) {
   if (queued) return `You missed this one last time. It was learned ${plural(age, 'day')} ago.`;
@@ -35,7 +35,7 @@ export function reasonFor(age, held, queued) {
 }
 
 // Which question formats a stored set can support.
-function kindsFor(set) {
+export function kindsFor(set) {
   const t = set.t, n = set.items.length;
   if (t === 'pairs') return ['recall', 'reverse'];
   if (t === 'major') return ['recall', 'reverse'];
@@ -98,7 +98,7 @@ export function pullEntries(p, seed, max = TURNS_PER_BATTLE) {
   return interleave(entries);
 }
 // No two neighbours from the same skill when it can be avoided.
-function interleave(list) {
+export function interleave(list) {
   const left = list.slice(), out = [];
   while (left.length) {
     const lastSkill = out[out.length - 1]?.skill;

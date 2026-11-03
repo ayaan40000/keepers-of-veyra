@@ -24,9 +24,9 @@ Start with the pages that spoil nothing, then go deeper when you are ready.
 | --- | --- | --- |
 | [The world](world.md) | The Lethe, the Tide, the Wardens, the Art of Places; then lore found during the year | First half none, second half marked |
 | [Districts](districts.md) | The twelve districts, what each keeps, and its quest | Light |
-| [People](people.md) | Wren, Calder, Sevrin, Hask, Isolde, Tansy, Ennick, the Keepers' Circle, the Forgettings | Later paragraphs marked |
-| [The story](story.md) | The prologue, twelve chapters and the epilogue, in full | Yes |
-| [Tales and quests](tales.md) | Fifty-two weekly tales and twenty-five side quests | Yes |
+| [People](people.md) | Wren, Calder, Sevrin, Hask, Isolde, Tansy, Ennick, Edrin and Marit Halloway, Ambrose Tallow, the Keepers' Circle, the Forgettings | Later paragraphs marked |
+| [The story](story.md) | The prologue, twelve chapters, the epilogue, then Chapter Thirteen (the Seam) and its second epilogue, in full | Yes |
+| [Tales and quests](tales.md) | Fifty-two weekly tales, Wren's family story and twenty-five side quests | Yes |
 | [Relics](relics.md) | Every artifact, ledger page, document and keepsake, with its story | Some |
 | [The Undercroft](undercroft.md) | The tablets of the deep stair, its guardians and lost treasures | Yes |
 | [Trials and Echoes](trials.md) | The District Trials and the sealed vaults | Light |
@@ -39,6 +39,10 @@ Every page except this one is generated from the game's own story files (`script
 - **The Art of Places** (the memory palace) is old, older than Veyra, and it is not magic, though Veyra treats it with the respect usually given to magic.
 - **The Wardens** were thirteen, bound by the Compact of Lamps. Their lamps light for whoever truly remembers.
 - **Forgettings** are what the Tide leaves behind: soft, shy, a little sad. They are lost things waiting to be remembered, not monsters.
+- **The Seam** (added in 1.1, spoilers). Under the Undercroft, where the Lethe truly rises, is a place where two edges of time were sewn badly. It takes nothing away; it only tangles, so a thing is known but in the wrong place (the Prologue's baker with the wrong loaves, the dog with three names, the two old men who are brothers). It cannot be closed by force or by forgetting more. It is closed by remembering things in their true order, which is called stitching. It does not undo what the river takes in the ordinary way.
+- **Ambrose Tallow, the Winder** (spoilers). The last Warden of the Hours, who kept the Tide's timetable and wound the Mother Clock. Three hundred years ago he stepped into the Seam to hold one evening in place, and nobody has said his name since. He is not cruel: he is the mirror of Sevrin, who wanted everyone to forget, and he wanted nothing ever to be lost. His mark is a ring with a single hand. His name hides in the third verse of the Lamplighter's Song ("Tallow keeps the lamp for me"). He is never destroyed; he is remembered, and lets go.
+- **Chapter Thirteen** comes after the Year of Keeping. The Great Forgetting is the tangled days gathered into one body of mist. The battle has four parts and ends with the Stitch, nine made-up days recalled in order; six in their places closes the Seam, and a miss only means trying again another day. A second epilogue, "Days in Their Places", follows.
+- **Wren's family** (added in 1.1). Her mother Marit, a lamplighter who hummed "The Last Lamp", died when Wren was eight, and the Tide took her face from Wren's memory that same week. The face does not come back. Her father Edrin is alive at number 31, Quay Row, behind a door that was blue and is now green. In the second epilogue Wren paints her mother from five details that were kept for her. Wren asks small delayed questions about her story as the year goes on; a miss only means she says it again.
 - **The story is invented.** Veyra, its people, places and history belong to this game. Trials, Echo battles and the Undercroft may use real people, places and facts as memory material, but only true, public, checked facts, and never anything that suggests a real person endorses Mnemos.
 
 ## Writing for Veyra
@@ -56,4 +60,4 @@ Proposals are welcome as GitHub issues or pull requests (see [CONTRIBUTING.md](.
 
 ## Still being written
 
-The world is not finished. Planned additions include the Long Vigil on the Quay battlements, the Lethe Brambles, Wren's Audit, the Cabinet of Voices, Wren's own story memory, the Great Forgetting, and Calder's closing letter for the Field Guide. See [docs/ROADMAP.md](../ROADMAP.md).
+The world is not finished. Planned additions include the Long Vigil on the Quay battlements, the Lethe Brambles, Wren's Audit, and Calder's closing letter for the Field Guide. (The Long Vigil, the Brambles, Wren's Audit, the Cabinet of Voices, Wren's story memory and the Great Forgetting are in 1.1.) See [docs/ROADMAP.md](../ROADMAP.md).

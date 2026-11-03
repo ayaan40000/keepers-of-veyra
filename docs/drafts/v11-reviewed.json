@@ -1,0 +1,959 @@
+{
+ "_note": "Hand review of the Qwen drafts in v011-content-drafts.json, Nov 2, 2026 (Claude, for the 1.1 content pass). verdict: keep = use as written; fix = use the \"fixed\" text; drop = do not use. Real facts: none of these drafts holds a real fact (timelines are invented Veyra ones), so nothing needed external checking. Not shipped.",
+ "voices": [
+  {
+   "draft": {
+    "skill": "Imagery",
+    "voice": "Bramble Finch",
+    "line_hint": "Make the picture so big and bright it fills your mind.",
+    "line_after": "Your mental colours are lovely today.",
+    "line_quiet": "A quick peek at those scenes would keep them fresh."
+   },
+   "verdict": "fix",
+   "fixed": {
+    "voice": "Vision",
+    "skill": "imagery",
+    "line_hint": "Make the picture so big and bright that it fills the whole room in your mind.",
+    "line_after": "Those pictures came out sharp today. I enjoyed every one of them.",
+    "line_quiet": "Those scenes are a little dim. Shall we look at one Recall card and brighten them?"
+   },
+   "reason": "Hint was good and is kept in spirit. The draft voice name \"Bramble Finch\" is dropped (and Elara Voss and Elara Vane are near-duplicates); the voice is now Vision. After and quiet lines made warmer and more concrete. Full voice data is in src/data/voices.js."
+  },
+  {
+   "draft": {
+    "skill": "Linking",
+    "voice": "Elara Voss",
+    "line_hint": "Imagine a rope tying every image to the one before it.",
+    "line_after": "Your chain of pictures feels strong and steady today.",
+    "line_quiet": "The link thread is loose, so let us gently pull it tight again."
+   },
+   "verdict": "fix",
+   "fixed": {
+    "voice": "Thread",
+    "skill": "linking",
+    "line_hint": "Imagine a rope tying each picture to the one before it, and tug it once.",
+    "line_after": "Your chain of pictures held, link after link.",
+    "line_quiet": "A few of the links have gone slack. A Recall card or two will pull them tight again."
+   },
+   "reason": "Hint was good and is kept in spirit. The draft voice name \"Elara Voss\" is dropped (and Elara Voss and Elara Vane are near-duplicates); the voice is now Thread. After and quiet lines made warmer and more concrete. Full voice data is in src/data/voices.js."
+  },
+  {
+   "draft": {
+    "skill": "Palace",
+    "voice": "Elara Vane",
+    "line_hint": "Walk your mental path slowly to keep each spot distinct.",
+    "line_after": "Your memory home feels so much brighter now. Well done.",
+    "line_quiet": "Shall we take a quick stroll through that familiar route?"
+   },
+   "verdict": "fix",
+   "fixed": {
+    "voice": "Place",
+    "skill": "palace",
+    "line_hint": "Walk your route slowly. Each stop should feel like its own small room.",
+    "line_after": "The whole route was bright today. Every stop was waiting where you left it.",
+    "line_quiet": "Shall we take a quick stroll along that familiar route? A lighter review would do."
+   },
+   "reason": "Hint was good and is kept in spirit. The draft voice name \"Elara Vane\" is dropped (and Elara Voss and Elara Vane are near-duplicates); the voice is now Place. After and quiet lines made warmer and more concrete. Full voice data is in src/data/voices.js."
+  },
+  {
+   "draft": {
+    "skill": "Vocabulary",
+    "voice": "Mara Vance",
+    "line_hint": "Find a word that sounds alike and build a small, silly picture in your mind.",
+    "line_after": "You linked those new words with such gentle imagination today.",
+    "line_quiet": "A quick look back would keep these fresh pictures clear."
+   },
+   "verdict": "fix",
+   "fixed": {
+    "voice": "Tongue",
+    "skill": "vocab",
+    "line_hint": "Find a word you know that sounds a bit like the new one, and build a small, silly picture.",
+    "line_after": "Those words rolled off the tongue today. Well done, and very nicely pronounced.",
+    "line_quiet": "A short look back would keep these pictures clear. Nothing heavy."
+   },
+   "reason": "Hint was good and is kept in spirit. The draft voice name \"Mara Vance\" is dropped (and Elara Voss and Elara Vane are near-duplicates); the voice is now Tongue. After and quiet lines made warmer and more concrete. Full voice data is in src/data/voices.js."
+  },
+  {
+   "draft": {
+    "skill": "Structure",
+    "voice": "Bramble Finch",
+    "line_hint": "Give each fact its own small space to rest.",
+    "line_after": "Your mind now holds the whole shape so well. Well done.",
+    "line_quiet": "Shall we peek at those outlines again for a moment?"
+   },
+   "verdict": "fix",
+   "fixed": {
+    "voice": "Frame",
+    "skill": "structure",
+    "line_hint": "Give each fact its own small space to rest, one box per fact.",
+    "line_after": "You held the whole shape today, and the details sat neatly inside it.",
+    "line_quiet": "The outline may be getting a little loose. A Recall card would tighten it."
+   },
+   "reason": "Hint was good and is kept in spirit. The draft voice name \"Bramble Finch\" is dropped (and Elara Voss and Elara Vane are near-duplicates); the voice is now Frame. After and quiet lines made warmer and more concrete. Full voice data is in src/data/voices.js."
+  }
+ ],
+ "wren": [
+  {
+   "id": "tea-leaves",
+   "draft": {
+    "id": "tea-leaves",
+    "told": "I always stir my tea three times before I drink it. If you count wrong the whole afternoon feels off.",
+    "ask_later": "How many stirs do I need in my cup?",
+    "answer": "Three",
+    "scene_if_held": "You counted for me, and now the taste is just right."
+   },
+   "verdict": "fix",
+   "fixed": {
+    "told": "I always stir my tea three times before I drink it. If I stir it any other number, the whole afternoon feels slightly off.",
+    "ask_later": "How many times do I stir my tea?",
+    "answer": "Three",
+    "scene_if_held": "Three stirs, and my afternoon is right again. You noticed. Thank you."
+   },
+   "reason": "Fine small detail, ties to her tea habit. The held scene was confusing (\"you counted for me\")."
+  },
+  {
+   "id": "cat-name",
+   "draft": {
+    "id": "cat-name",
+    "told": "My cat has a patch of white fur on her left ear that looks like a tiny moon. We call her Pip.",
+    "ask_later": "What did I name my little grey cat?",
+    "answer": "Pip",
+    "scene_if_held": "Pip purred when you said it, which she rarely does for strangers."
+   },
+   "verdict": "fix",
+   "fixed": {
+    "told": "My cat is grey, with a white patch on her left ear shaped like a tiny moon. Her name is Pip.",
+    "ask_later": "What is the name of my little grey cat?",
+    "answer": "Pip",
+    "scene_if_held": "Pip purred when you said her name, which she hardly ever does for visitors."
+   },
+   "reason": "The told text never says the cat is grey, but the question does. Made consistent and gave the answer a distinct detail."
+  },
+  {
+   "id": "honey-oats",
+   "draft": {
+    "id": "honey-oats",
+    "told": "I cannot start the morning without a spoonful of wild honey in warm oats. It is very important to me.",
+    "ask_later": "What do I stir into my oatmeal?",
+    "answer": "Wild honey",
+    "scene_if_held": "It smells like autumn, just as you remembered it."
+   },
+   "verdict": "fix",
+   "fixed": {
+    "told": "I cannot start the morning without a spoonful of wild honey stirred into warm oats.",
+    "ask_later": "What do I stir into my morning oats?",
+    "answer": "Wild honey",
+    "scene_if_held": "Wild honey. The kitchen smells of autumn already. You remembered the best part."
+   },
+   "reason": "Fine, warm, harmless. The question said \"oatmeal\" while the told line said \"oats\"; the held scene was vague."
+  },
+  {
+   "id": "blue-door",
+   "draft": {
+    "id": "blue-door",
+    "told": "I grew up in a cottage with the strangest blue door. The paint was always flaking off.",
+    "ask_later": "What colour was the front door of my childhood home?",
+    "answer": "Blue",
+    "scene_if_held": "That specific shade of blue is safe again now."
+   },
+   "verdict": "fix",
+   "fixed": {
+    "told": "The house I grew up in, down on the Quay, had a blue door. The paint was always flaking, and my father always said he would repaint it.",
+    "ask_later": "What colour was the door of the house I grew up in?",
+    "answer": "Blue",
+    "scene_if_held": "Blue. I can almost see the flaking paint. It is a good colour to have kept."
+   },
+   "reason": "Good concrete detail. Placed on the Quay so it matches Wren being a lamplighter's daughter from the Quay (lore.js)."
+  },
+  {
+   "id": "fear-dark-attic",
+   "draft": {
+    "id": "fear-dark-attic",
+    "told": "I get very nervous in dark attics. I am sure something is watching from up there.",
+    "ask_later": "Where do I feel most afraid to go alone?",
+    "answer": "Dark attic",
+    "scene_if_held": "You did not laugh at my fear, and that helped a great deal."
+   },
+   "verdict": "fix",
+   "fixed": {
+    "told": "I do not like dark attics. I always think the boxes are looking at me. I know they are not. I still do not like it.",
+    "ask_later": "Which kind of room do I not like going into on my own?",
+    "answer": "Dark attic",
+    "scene_if_held": "You did not laugh at me, and that helped. The boxes were only boxes. I think."
+   },
+   "reason": "A small fear is what the roadmap asks for, but \"something watching\" tips toward horror, which the lore guide forbids. Softened to something gentle and a little funny."
+  },
+  {
+   "id": "sister-name",
+   "draft": {
+    "id": "sister-name",
+    "told": "My sister Elowen always hummed while she cooked. She is gone now but the melody stays with me.",
+    "ask_later": "What was my older sister's name?",
+    "answer": "Elowen",
+    "scene_if_held": "I can almost hear her humming that old tune again."
+   },
+   "verdict": "fix",
+   "fixed": {
+    "told": "My mother used to hum a tune called \"The Last Lamp\" while she lit the Quay lamps. I cannot remember her face, but I remember the tune.",
+    "ask_later": "What was the name of the tune my mother hummed while she lit the lamps?",
+    "answer": "The Last Lamp",
+    "scene_if_held": "The Last Lamp. Yes. That is the tune. You kept it for me when I thought it might go."
+   },
+   "reason": "Canon risk. A sister who is \"gone\" is a heavy new family fact that lore.js does not support (Wren lost her mother's face to a Tide, no sister is mentioned), and the name Elowen also appears in the statue drafts. Replaced with a detail about her mother that fits the canon, but this needs the owner's OK (see report)."
+  },
+  {
+   "id": "lost-button",
+   "draft": {
+    "id": "lost-button",
+    "told": "I keep a single red button in my pocket. It used to be on my favourite coat and I never let it go.",
+    "ask_later": "What small item do I carry for comfort?",
+    "answer": "Red button",
+    "scene_if_held": "It is still warm against your palm, just as you described."
+   },
+   "verdict": "fix",
+   "fixed": {
+    "told": "I keep one red button in my pocket. It came off my first coat, the one with all the pockets, and I never let it go.",
+    "ask_later": "What small thing do I carry in my pocket for comfort?",
+    "answer": "Red button",
+    "scene_if_held": "A red button. You remembered the right pocket and everything."
+   },
+   "reason": "Lovely, small, and ties to her pockets. Held scene said \"still warm against your palm\", which is odd when the button is hers."
+  },
+  {
+   "id": "grandma-garden",
+   "draft": {
+    "id": "grandma-garden",
+    "told": "My grandmother grew the sweetest white roses in a garden by the river. The scent used to follow me home.",
+    "ask_later": "What flower did my grandmother grow?",
+    "answer": "White roses",
+    "scene_if_held": "The air feels lighter, as if I can smell them again."
+   },
+   "verdict": "keep",
+   "fixed": {
+    "told": "My grandmother grew the sweetest white roses in a garden by the river. The scent used to follow me home.",
+    "ask_later": "What flowers did my grandmother grow?",
+    "answer": "White roses",
+    "scene_if_held": "White roses. For a moment the whole room smelled of them."
+   },
+   "reason": "Warm, harmless and specific. Only the held scene is tweaked slightly."
+  },
+  {
+   "id": "night-night-ritual",
+   "draft": {
+    "id": "night-night-ritual",
+    "told": "I always whisper 'good night' to the moon before sleeping. It is a promise that tomorrow will be kind.",
+    "ask_later": "What do I whisper to the moon each evening?",
+    "answer": "Good night",
+    "scene_if_held": "The sky feels like it listened, which makes me feel less alone."
+   },
+   "verdict": "fix",
+   "fixed": {
+    "told": "Every night before I sleep, I whisper good night to the last lamp on the Quay. It is a promise that tomorrow will be kind.",
+    "ask_later": "Who do I whisper good night to every evening?",
+    "answer": "The last lamp",
+    "scene_if_held": "The last lamp. Yes. It feels better, somehow, that someone else knows."
+   },
+   "reason": "Sweet, but \"Good night\" is too easy to guess in a free-answer question and does not test a detail. Changed to a specific habit that ties to the Quay lamps and Tansy's stall under the last lamp."
+  },
+  {
+   "id": "favourite-song-lyric",
+   "draft": {
+    "id": "favourite-song-lyric",
+    "told": "There is an old song with a line about 'river stones and light' that gets stuck in my head. I cannot shake it.",
+    "ask_later": "What phrase from the old song do I hum?",
+    "answer": "River stones and light",
+    "scene_if_held": "The melody finally stops feeling like a ghost."
+   },
+   "verdict": "fix",
+   "fixed": {
+    "told": "There is an old song with a line about \"river stones and light\" that gets stuck in my head all day.",
+    "ask_later": "Which words from the old song get stuck in my head?",
+    "answer": "River stones and light",
+    "scene_if_held": "River stones and light. There. Now it can stop going round."
+   },
+   "reason": "Invented song line, so no copyright issue. The \"ghost\" wording in the held scene was a little dark."
+  },
+  {
+   "id": "cousin-name",
+   "draft": {
+    "id": "cousin-name",
+    "told": "My cousin Bram is very tall and always smells of sawdust. He built me my first shelf.",
+    "ask_later": "What was the name of the tall cousin who helped me?",
+    "answer": "Bram",
+    "scene_if_held": "It feels good to remember he was there for me."
+   },
+   "verdict": "fix",
+   "fixed": {
+    "told": "My cousin Bram is very tall and always smells of sawdust. He built me my first shelf.",
+    "ask_later": "What was the name of the tall cousin who built my first shelf?",
+    "answer": "Bram",
+    "scene_if_held": "Bram. I can smell the sawdust from here. Thank you for holding that."
+   },
+   "reason": "Good character detail (sawdust, the shelf). Held scene made less vague."
+  },
+  {
+   "id": "comfort-tea-name",
+   "draft": {
+    "id": "comfort-tea-name",
+    "told": "I only drink a blend called 'Mist and Mint'. Anything else tastes like forgetting.",
+    "ask_later": "What is the specific name of my tea?",
+    "answer": "Mist and Mint",
+    "scene_if_held": "The cup feels full again, not just with liquid."
+   },
+   "verdict": "fix",
+   "fixed": {
+    "told": "My favourite tea is a blend called \"Mist and Mint\". Tansy says it is not strictly a real blend, but she makes it for me anyway.",
+    "ask_later": "What is the name of my favourite tea blend?",
+    "answer": "Mist and Mint",
+    "scene_if_held": "Mist and Mint. The cup feels fuller already."
+   },
+   "reason": "Fine, but \"anything else tastes like forgetting\" is a little dark, and Tansy sells rosemary tea on the Quay, so Wren's tea is made a favourite rather than her only one. Three of the drafts are about food or drink, so use only one or two in a run."
+  }
+ ],
+ "dim": [
+  {
+   "draft": "a quiet pause before we remember",
+   "verdict": "keep",
+   "reason": "Good, calm, no horror. Capitalised and made a sentence.",
+   "fixed": "A quiet pause before we remember.",
+   "use_as": "DIM_LINES"
+  },
+  {
+   "draft": "the mist waits gently here",
+   "verdict": "keep",
+   "reason": "Good. Adds the relic name so it is specific.",
+   "fixed": "The mist waits gently here, and so does {relic}.",
+   "use_as": "DIM_LINES"
+  },
+  {
+   "draft": "this relic rests in soft light",
+   "verdict": "fix",
+   "reason": "Good idea. Made clearer that the relic is only dim.",
+   "fixed": "{relic} rests in soft light. It is not gone, only dim.",
+   "use_as": "DIM_LINES"
+  },
+  {
+   "draft": "time drifts like river water now",
+   "verdict": "drop",
+   "reason": "Poetic but unclear: it says nothing about the relic and could mean anything."
+  },
+  {
+   "draft": "a gentle nap for old thoughts",
+   "verdict": "fix",
+   "reason": "Cute and calm. Made specific to the relic.",
+   "fixed": "{relic} is having a gentle nap. A review would wake it.",
+   "use_as": "DIM_LINES"
+  },
+  {
+   "draft": "it sleeps until you return soon",
+   "verdict": "fix",
+   "reason": "The meaning is right (it waits until the player returns), but \"soon\" is a little pushy. Reworded.",
+   "fixed": "It rests until you come back to it.",
+   "use_as": "DIM_LINES"
+  },
+  {
+   "draft": "bright again, warm as morning suns",
+   "verdict": "fix",
+   "reason": "This is a RESTORED line, not a dim one. Moved to RESTORED_LINES and tidied.",
+   "fixed": "Bright again, warm as a morning sun.",
+   "use_as": "RESTORED_LINES"
+  },
+  {
+   "draft": "your care has cleared the haze well",
+   "verdict": "fix",
+   "reason": "Also a restored line. Moved to RESTORED_LINES with the relic name.",
+   "fixed": "Your care has cleared the haze. {relic} is shining again.",
+   "use_as": "RESTORED_LINES"
+  },
+  {
+   "draft": "here it glows with fond recall",
+   "verdict": "fix",
+   "reason": "\"Fond recall\" is vague. Rewritten as a restored line.",
+   "fixed": "{relic} glows with a quiet, happy light.",
+   "use_as": "RESTORED_LINES"
+  },
+  {
+   "draft": "the palace hums a happy tune once more",
+   "verdict": "fix",
+   "reason": "Restored line. \"Once more\" kept as \"back to its old self\".",
+   "fixed": "The pedestal hums softly. {relic} is back to its old self.",
+   "use_as": "RESTORED_LINES"
+  },
+  {
+   "draft": "shines steady beside your memory lamp",
+   "verdict": "drop",
+   "reason": "Unclear: \"beside your memory lamp\" does not match any object in the palace room."
+  },
+  {
+   "draft": "this place feels safe and known now",
+   "verdict": "fix",
+   "reason": "Restored line, made past-facing so it sits after a repair.",
+   "fixed": "This place feels safe and known again.",
+   "use_as": "RESTORED_LINES"
+  }
+ ],
+ "tablets": [
+  {
+   "draft": {
+    "title": "Wick Trimming Rule",
+    "lines": [
+     "Clip the cotton fringe low",
+     "Dip not past the knot line",
+     "Smoke rises when oil runs dry",
+     "The fox sleeps by warm glass panes",
+     "River barges carry amber jars"
+    ]
+   },
+   "verdict": "fix",
+   "fixed": {
+    "title": "Wick Trimming Rule",
+    "lines": [
+     "Clip the cotton fringe low",
+     "Dip no deeper than the knot line",
+     "Smoke rises when the oil runs dry",
+     "Keep spare wicks in the fox tin",
+     "Trim again at the first bell"
+    ]
+   },
+   "reason": "Rule-style lines, a good tablet. Lines 4 and 5 do not belong to a wick rule (a fox, amber jars) and would confuse the picture. Rewritten to stay on topic."
+  },
+  {
+   "draft": {
+    "title": "The River Ferry Rule",
+    "lines": [
+     "Gulls circle above the mast",
+     "Boats drift through amber mist",
+     "Oars dip into dark water",
+     "Lanterns glow on stone quay walls",
+     "Sleeping fish beneath the hulls"
+    ]
+   },
+   "verdict": "drop",
+   "reason": "Too close to the shipped \"The Night Ferry\" tablet (boat, mist, lanterns, dock). Lines are descriptions, not rules, and the title says \"Rule\"."
+  },
+  {
+   "draft": {
+    "title": "The Salted Loaf Rule",
+    "lines": [
+     "Knead the flour with river water first",
+     "Crack three eggs into clay bowl centre",
+     "Let the fox smell your warm bread crusts",
+     "Sprinkle sea salt before it rises high",
+     "Pour wild honey over golden, waiting loaves"
+    ]
+   },
+   "verdict": "fix",
+   "fixed": {
+    "title": "The Salted Loaf Rule",
+    "lines": [
+     "Knead the flour with river water first",
+     "Crack 3 eggs into the clay bowl",
+     "Sprinkle sea salt before it rises",
+     "Let the loaf cool beside the window",
+     "Pour wild honey over the golden crust"
+    ]
+   },
+   "reason": "A good, concrete tablet. Line 3 (a fox smelling bread) is odd. Number written as a digit, as the exact-match rule in TABLETS_V requires."
+  },
+  {
+   "draft": {
+    "title": "The Wet Stone Keeper",
+    "lines": [
+     "Rain falls on the high wall",
+     "Moss softens every sharp edge",
+     "Puddle holds the grey sky small",
+     "Toad waits by the mossy step",
+     "Stone drinks deep of summer’s end"
+    ]
+   },
+   "verdict": "drop",
+   "reason": "Already shipped in TABLETS_V as \"The Wet Stone Keeper\" (the shipped version is the cleaned-up one)."
+  }
+ ],
+ "statues": [
+  {
+   "draft": {
+    "feature": "Curly stone hair with a small braid looped behind left ear",
+    "name": "Mara of the River Lanterns",
+    "note": "Hair looks soft even in rain weather today."
+   },
+   "verdict": "keep",
+   "fixed": {
+    "feature": "Curly stone hair with a small braid looped behind the left ear",
+    "name": "Mara of the River Lanterns",
+    "note": "Her curls were carved one at a time."
+   },
+   "reason": "Distinct carved feature, good name. Note tidied."
+  },
+  {
+   "draft": {
+    "feature": "Smooth head shaved close to pale marble scalp line",
+    "name": "Elowen of the Copper Bells",
+    "note": "Shiny top catches lamplight beautifully at dusk now."
+   },
+   "verdict": "fix",
+   "fixed": {
+    "feature": "Smooth, close-shaven head",
+    "name": "Elowen of the Copper Bells",
+    "note": "Her shiny head catches the lamplight at dusk."
+   },
+   "reason": "Feature wording awkward (\"pale marble scalp line\"). Note was fine."
+  },
+  {
+   "draft": {
+    "feature": "Wavy grey locks tucked neatly under round spectacles frame edges",
+    "name": "Tomas of the Paper Boats",
+    "note": "Spectacles sit firmly on stone nose bridge always."
+   },
+   "verdict": "fix",
+   "fixed": {
+    "feature": "Wavy hair and round spectacles",
+    "name": "Tomas of the Paper Boats",
+    "note": "His spectacles sit firmly on the stone nose."
+   },
+   "reason": "Garbled feature (\"round spectacles frame edges\"). Hair and glasses together make two features; kept one clear one."
+  },
+  {
+   "draft": {
+    "feature": "High bun with a single loose curl falling down neck side",
+    "name": "Amara of the Quiet Steps",
+    "note": "Curl bounces gently when she turns around slowly."
+   },
+   "verdict": "keep",
+   "fixed": {
+    "feature": "High bun with one loose curl falling down the neck",
+    "name": "Amara of the Quiet Steps",
+    "note": "The loose curl is the only untidy thing on her."
+   },
+   "reason": "Good feature and name. Note tidied (statues do not move)."
+  },
+  {
+   "draft": {
+    "feature": "Small upturned nose",
+    "name": "Elara of the Paper Boats",
+    "note": "Nose tilts skyward when she hums old tunes"
+   },
+   "verdict": "fix",
+   "fixed": {
+    "feature": "Small upturned nose",
+    "name": "Petra of the Tin Whistles",
+    "note": "Her nose tilts toward the sky."
+   },
+   "reason": "Duplicate first name (Elara twice). Renamed to keep every name in a set distinct, so the trial tests the method and not lookalike names."
+  },
+  {
+   "draft": {
+    "feature": "Wide gentle mouth",
+    "name": "Kofi of the Clay Pottery",
+    "note": "Mouth holds a permanent soft welcoming smile"
+   },
+   "verdict": "keep",
+   "fixed": {
+    "feature": "Wide gentle mouth",
+    "name": "Kofi of the Clay Pottery",
+    "note": "His mouth holds a soft, welcoming smile."
+   },
+   "reason": "Good feature, distinct name and trade."
+  },
+  {
+   "draft": {
+    "feature": "Square sturdy chin",
+    "name": "Anya of the Iron Anvils",
+    "note": "Chin shows strong lines from years smiling"
+   },
+   "verdict": "fix",
+   "fixed": {
+    "feature": "Square sturdy chin",
+    "name": "Anya of the Iron Anvils",
+    "note": "Her chin is as firm as her anvils."
+   },
+   "reason": "Name and feature fine. The note (\"strong lines from years smiling\") did not match a chin."
+  },
+  {
+   "draft": {
+    "feature": "Carved pearl earrings dangling low",
+    "name": "Elara of the Gilded Locket",
+    "note": "The chisel slipped slightly on her left earlobe today."
+   },
+   "verdict": "fix",
+   "fixed": {
+    "feature": "Carved pearl earrings dangling low",
+    "name": "Oriel of the Gilded Locket",
+    "note": "The chisel slipped a little on her left earlobe."
+   },
+   "reason": "Duplicate first name (Elara). Renamed."
+  },
+  {
+   "draft": {
+    "feature": "Wide brimmed straw hat with a ribbon bow",
+    "name": "Kofi of the Braided Bracelet",
+    "note": "Dust settles in the folds of his collar each dawn."
+   },
+   "verdict": "fix",
+   "fixed": {
+    "feature": "Wide-brimmed hat with a ribbon bow",
+    "name": "Idris of the Braided Bracelet",
+    "note": "The ribbon bow is carved very carefully."
+   },
+   "reason": "Duplicate first name (Kofi, three times). A hat is a thing that could change; fine on a statue, but the note about a collar did not match the hat."
+  },
+  {
+   "draft": {
+    "feature": "Small tight curls tucked beneath velvet caps",
+    "name": "Amara of the Copper Ring Set",
+    "note": "She hums softly when she polishes the silver chain."
+   },
+   "verdict": "fix",
+   "fixed": {
+    "feature": "Small tight curls under a flat cap",
+    "name": "Nadia of the Copper Rings",
+    "note": "She is said to hum while she works."
+   },
+   "reason": "Duplicate first name (Amara) and a long, repeating epithet. Shortened."
+  },
+  {
+   "draft": {
+    "feature": "scar over left cheek",
+    "name": "Kofi of the Salted Wind",
+    "note": "Weathered mark catches dawn light softly"
+   },
+   "verdict": "fix",
+   "fixed": {
+    "feature": "A scar over the left cheek",
+    "name": "Soren of the Salted Wind",
+    "note": "The weathered mark catches the dawn light."
+   },
+   "reason": "Duplicate first name (Kofi). A scar is a strong, distinctive feature. Kept for the statue; avoid for living faces."
+  },
+  {
+   "draft": {
+    "feature": "freckles across nose bridge",
+    "name": "Anouk of the Paper Lanterns",
+    "note": "Dusty motes settle on granite skin"
+   },
+   "verdict": "keep",
+   "fixed": {
+    "feature": "Freckles across the bridge of the nose",
+    "name": "Anouk of the Paper Lanterns",
+    "note": "Dust settles on her stone freckles."
+   },
+   "reason": "Good small feature, unique name."
+  },
+  {
+   "draft": {
+    "feature": "thick braided beard curls down chest",
+    "name": "Elias of the Copper Compass Ties",
+    "note": "Carved rings frame a gentle smile"
+   },
+   "verdict": "fix",
+   "fixed": {
+    "feature": "Thick braided beard falling down the chest",
+    "name": "Elias of the Copper Compass",
+    "note": "Carved rings frame a gentle smile."
+   },
+   "reason": "Epithet too long (\"Copper Compass Ties\"). Shortened. Good feature."
+  }
+ ],
+ "oldtongue": [
+  {
+   "draft": {
+    "word": "Gurthak",
+    "meaning": "A grey cat curled up on a cold roof ledge",
+    "sound_like": "Gurtchack"
+   },
+   "verdict": "drop",
+   "reason": "Already in OLD_TONGUE (gurthak, cat). The long meaning and the sound-alike \"Gurtchack\" do not make a usable keyword."
+  },
+  {
+   "draft": {
+    "word": "Mivranek",
+    "meaning": "An owl with wide yellow eyes watching from the dark",
+    "sound_like": "Meevrahnuck"
+   },
+   "verdict": "drop",
+   "reason": "Meaning (owl) already used by \"brunne\" in OLD_TONGUE; two old words for the same thing would clash in a drill."
+  },
+  {
+   "draft": {
+    "word": "Ploshik",
+    "meaning": "A small brown mouse scurrying under floorboards",
+    "sound_like": "Plushic"
+   },
+   "verdict": "drop",
+   "reason": "Already in OLD_TONGUE (ploshik, mouse)."
+  },
+  {
+   "draft": {
+    "word": "Glumthar",
+    "meaning": "a crusty round loaf of bread with dark seeds baked into the top side",
+    "sound_like": "glomming together"
+   },
+   "verdict": "drop",
+   "reason": "Meaning (bread) duplicates \"borel\", and Glumthar is too close in spelling to Gloomthar."
+  },
+  {
+   "draft": {
+    "word": "Piffraan",
+    "meaning": "small sweet puffs of dough fried in hot oil for late night snacking",
+    "sound_like": "puffing away"
+   },
+   "verdict": "fix",
+   "fixed": {
+    "word": "Piffraan",
+    "meaning": "doughnut",
+    "sound_like": "puff ran"
+   },
+   "reason": "New meaning, but too long to picture. Shortened to one noun; sound-alike made clearer."
+  },
+  {
+   "draft": {
+    "word": "Thrumblee",
+    "meaning": "thick black tea mixed with cream and sugar served in wide clay bowls",
+    "sound_like": "crumbling down"
+   },
+   "verdict": "drop",
+   "reason": "Already in OLD_TONGUE (thrumble, tea)."
+  },
+  {
+   "draft": {
+    "word": "Vexmull",
+    "meaning": "A heavy iron latch that secures the outer gate of a courtyard house",
+    "sound_like": "vexful"
+   },
+   "verdict": "drop",
+   "reason": "Already in OLD_TONGUE (vexmull, latch)."
+  },
+  {
+   "draft": {
+    "word": "Krolthorn",
+    "meaning": "The rough stone lintel above a workshop entrance, worn smooth by years of carrying goods in and out",
+    "sound_like": "cruller horn"
+   },
+   "verdict": "fix",
+   "fixed": {
+    "word": "Krolthorn",
+    "meaning": "door beam",
+    "sound_like": "cruller horn"
+   },
+   "reason": "New word, but the meaning is long and \"lintel\" is hard. Shortened. \"Cruller horn\" is a good keyword."
+  },
+  {
+   "draft": {
+    "word": "Tarnpuck",
+    "meaning": "A small clay pot used to hold wet mortar for masonry work, kept on a belt at the waist of stonemasons",
+    "sound_like": "turn up"
+   },
+   "verdict": "drop",
+   "reason": "Already in OLD_TONGUE (tarnpuck, pot)."
+  },
+  {
+   "draft": {
+    "word": "Gloomthar",
+    "meaning": "thick grey mist rising off black water",
+    "sound_like": "gloaming"
+   },
+   "verdict": "drop",
+   "reason": "Already in OLD_TONGUE (gloomthar, mist). Too close to the word \"gloom\"."
+  },
+  {
+   "draft": {
+    "word": "Purrashel",
+    "meaning": "sudden sharp gusts rattling loose shingles",
+    "sound_like": "parseling"
+   },
+   "verdict": "fix",
+   "fixed": {
+    "word": "Purrashel",
+    "meaning": "gust",
+    "sound_like": "purr a shell"
+   },
+   "reason": "New meaning (a gust). \"Parseling\" is not a real keyword; replaced with a picturable one."
+  },
+  {
+   "draft": {
+    "word": "Dripvane",
+    "meaning": "heavy rain slanting sideways against a windowpane",
+    "sound_like": "draping veine"
+   },
+   "verdict": "drop",
+   "reason": "Meaning (rain) duplicates \"pluvo\", and Dripvane is made of two English words, which breaks the \"no English word\" rule for old-tongue words."
+  }
+ ],
+ "timelines": [
+  {
+   "draft": {
+    "title": "The Year Without Light",
+    "events": [
+     "Year 104: The great lanterns dimmed as the moon vanished from the sky.",
+     "Year 105: Fishermen sang loud songs to keep fear away on dark waters.",
+     "Year 106: Children traded bright glass beads for safe passage through streets.",
+     "Year 107: Bakers baked golden cakes shaped like tiny suns for everyone.",
+     "Year 108: The river glowed softly with bioluminescent moss along its banks.",
+     "Year 109: A painter sketched the darkness using only silver and indigo ink.",
+     "Year 110: The moon returned gently, watched by a quiet and happy crowd."
+    ]
+   },
+   "verdict": "drop",
+   "reason": "Already shipped in TIMELINES as \"The Year Without Light (Veyra)\" in a cleaner form (7 events with accepted answers). This one is invented material, so no real facts needed checking."
+  },
+  {
+   "draft": {
+    "title": "Title: The Weaving of Tongues Bridge",
+    "events": [
+     "Year 304: Surveyors walked the muddy banks at dawn.",
+     "Year 305: Stonecutters quarried pale riverbed marble blocks slowly.",
+     "Year 312: Lanterns glowed softly along the first stone arches.",
+     "Year 318: Merchants carried carts across without fear of rain.",
+     "Year 329: Painters added gold leaf to every iron railing carefully.",
+     "Year 340: The bridge was officially opened with great joy and song."
+    ]
+   },
+   "verdict": "drop",
+   "reason": "Already shipped in TIMELINES as \"Building the Tongues Bridge (Veyra)\" with the extra 333 event. The draft title carries a stray \"Title:\" prefix. Invented material, no real facts."
+  }
+ ],
+ "gears": [
+  {
+   "draft": {
+    "stall": "The Brass Bellhop & Co.",
+    "part": "Escapement Anchor",
+    "picture": "A copper beak biting sparks from the air every second"
+   },
+   "verdict": "keep",
+   "reason": "Escapement anchor is a real clock part (the anchor of an anchor escapement). The picture works."
+  },
+  {
+   "draft": {
+    "stall": "Luna's Loom & Lanterns",
+    "part": "Mainspring Barrel",
+    "picture": "A coiled storm of silver silk humming in a glass jar"
+   },
+   "verdict": "keep",
+   "reason": "Mainspring barrel is a real part: the spring sits in a barrel. Picture works."
+  },
+  {
+   "draft": {
+    "stall": "Old Fenwick's Ratchet Shop",
+    "part": "Pallet Forks",
+    "picture": "Two velvet jaws snatching time with a soft click and snap"
+   },
+   "verdict": "keep",
+   "reason": "Pallet fork is a real part of a lever escapement. Picture works."
+  },
+  {
+   "draft": {
+    "stall": "The Gilded Pendulum Parlour",
+    "part": "Balance Wheel Rim",
+    "picture": "A breathing ring of hammered gold trembling on its axis"
+   },
+   "verdict": "fix",
+   "fixed": {
+    "stall": "The Gilded Pendulum Parlour",
+    "part": "Balance wheel",
+    "picture": "A breathing ring of hammered gold trembling on its axis"
+   },
+   "reason": "A balance wheel is a real part; \"rim\" is a sub-part and harder. Simplified."
+  },
+  {
+   "draft": {
+    "stall": "Misty's Minute Merchant Stall",
+    "part": "Cam Lever Tip",
+    "picture": "A polished ivory nose nudging the second hand awake"
+   },
+   "verdict": "drop",
+   "reason": "\"Cam lever tip\" is not a standard clock part name I could confirm. Dropped rather than risk an invented fact."
+  },
+  {
+   "draft": {
+    "stall": "Saffron & Sprocket Stand",
+    "part": "Escapement Anchor",
+    "picture": "A brass beak with two velvet jaws ticking softly in the gloom."
+   },
+   "verdict": "drop",
+   "reason": "Duplicate of the first entry (escapement anchor)."
+  },
+  {
+   "draft": {
+    "stall": "Gilded Wren Market",
+    "part": "Mainspring Barrel",
+    "picture": "A coiled copper dragon sleeping inside a glass jar of mist."
+   },
+   "verdict": "drop",
+   "reason": "Duplicate of the second entry (mainspring barrel)."
+  },
+  {
+   "draft": {
+    "stall": "Copper Kettle Corner",
+    "part": "Pendulum Rods",
+    "picture": "Twin silver ribbons swaying like slow, shimmering waterfalls from eaves."
+   },
+   "verdict": "fix",
+   "fixed": {
+    "stall": "Copper Kettle Corner",
+    "part": "Pendulum rod",
+    "picture": "One long silver ribbon swaying like a slow waterfall from the eaves"
+   },
+   "reason": "A pendulum rod is real. The picture showed two rods, but a clock has one. Fixed to singular."
+  },
+  {
+   "draft": {
+    "stall": "Lantern Light Emporium",
+    "part": "Click Wheel Teeth",
+    "picture": "Tiny iron thorns arranged in perfect circles to catch the dark."
+   },
+   "verdict": "drop",
+   "reason": "\"Click wheel\" is not a standard clock term (the real parts are the click and the ratchet wheel), and both are already in CLOCK_PARTS."
+  },
+  {
+   "draft": {
+    "stall": "Brass Bell Bottom Shoplet",
+    "part": "Governor Weights",
+    "picture": "Two heavy velvet plummets dancing gently above a pool of oil."
+   },
+   "verdict": "drop",
+   "reason": "\"Governor weights\" could not be confirmed as a clock part name. Dropped as unverified."
+  }
+ ],
+ "tally": {
+  "voices": {
+   "keep": 0,
+   "fix": 5,
+   "drop": 0
+  },
+  "wren": {
+   "keep": 1,
+   "fix": 11,
+   "drop": 0
+  },
+  "dim": {
+   "keep": 2,
+   "fix": 8,
+   "drop": 2
+  },
+  "tablets": {
+   "keep": 0,
+   "fix": 2,
+   "drop": 2
+  },
+  "statues": {
+   "keep": 4,
+   "fix": 9,
+   "drop": 0
+  },
+  "oldtongue": {
+   "keep": 0,
+   "fix": 3,
+   "drop": 9
+  },
+  "timelines": {
+   "keep": 0,
+   "fix": 0,
+   "drop": 2
+  },
+  "gears": {
+   "keep": 3,
+   "fix": 2,
+   "drop": 5
+  }
+ }
+}

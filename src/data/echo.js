@@ -1,3 +1,4 @@
+import { VIGIL_SCENE } from './vigil.js';
 // v0.10 Echo battles: story, coaches (the Keepers' Circle) and scene material.
 // First drafts by the local Qwen model, then rewritten and edited by hand. No em dashes. {name} is the player's alias.
 
@@ -103,6 +104,8 @@ export const SCENES = {
     tips: { palace: 'A palace helps with order. Here the hard part is the numbers, and Major turns them into pictures.', keyword: 'Keyword is for names and words. The prices are numbers, so Major fits.' },
   },
 };
+// 1.1: the Long Vigil is a sixth scene, but it uses the player's own old items, so it has its own button and is not in SCENE_ORDER.
+SCENES.vigil = VIGIL_SCENE;
 export const SCENE_ORDER = ['packing', 'speech', 'crossroads', 'gala', 'market'];
 
 // Invented, harmless material.

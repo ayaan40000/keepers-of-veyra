@@ -1,6 +1,7 @@
 import { WEEKS, MODULES, GATES, BASELINE, TEMPLATE_SKILL, SKILLS, moduleForWeek, weekForDay, moduleGateDay } from '../data/curriculum.js';
 import { scaledSpec, genItems, dueSets, probeItems, today } from './core.js';
 import { daysBetween, uid, hashStr } from './util.js';
+import { unitDue, unitSpecs } from './additions.js';
 
 const COACH = {
   omission: { title: 'Empty slots', text: 'Most misses were blanks: the image probably never formed. During study, say the image to yourself in one sentence and use the optional "your image" box.' },
@@ -138,20 +139,27 @@ export function buildSession(p, kind, opts = {}) {
     steps.push(...probes);
     if (!probes.length) steps.push(drillStep(p, { t: 'wordlist', n: 5, s: 25 }, 'warmup', seed('w'), 'warmup'));
     const firstDay = st.keeping ? false : (p.progress.day - 1) % 7 === 0;
+    // 1.1 Unit Checks: a fixed Form A before the unit's lessons, Form B near the end, each taken once.
+    const unit = st.keeping ? null : unitDue(p, week.w, p.progress.day);
+    if (unit && unit.form === 'A') unitSpecs(unit.unit, unit.form).forEach((sp, i) => steps.push({ ...drillStep(p, sp, 'check', seed('u' + i)), unitCheck: true }));
     steps.push(lessonStep(p, week, firstDay, skillsInWeek));
-    steps.push(drillStep(p, week.drills[0], 'guided', seed('g')));
+    // Skim, Pick, Keep is a three-step exercise of its own, so it is never the guided or the repeated practice round.
+    const plain = week.drills.filter((d) => !d.skim);
+    const rounds = plain.length ? plain : week.drills;
+    steps.push(drillStep(p, rounds[0], 'guided', seed('g')));
     week.drills.forEach((d, i) => {
       const sk = TEMPLATE_SKILL[d.t];
       steps.push(drillStep(p, d, p.skills[sk].remediate ? 'remedial' : 'practice', seed('p' + i)));
     });
     if (week.w >= 9) { const il = interleaveSpec(p, week); if (il) steps.push(drillStep(p, il, 'review', seed('i'))); }
     // Use the 30 minutes: add extra practice rounds with new material while the session is short.
-    for (let k = 0; k < 3 && estimateMinutes({ steps }) < 22; k++) {
-      const d = week.drills[k % week.drills.length];
+    for (let k = 0; k < 3 && !unit && estimateMinutes({ steps }) < 22; k++) {
+      const d = rounds[k % rounds.length];
       const sk = TEMPLATE_SKILL[d.t];
       steps.push(drillStep(p, d, p.skills[sk].remediate ? 'remedial' : 'practice', seed('x' + k)));
     }
-    steps.push(drillStep(p, week.check, 'check', seed('c')));
+    if (unit && unit.form === 'B') unitSpecs(unit.unit, unit.form).forEach((sp, i) => steps.push({ ...drillStep(p, sp, 'check', seed('u' + i)), unitCheck: true }));
+    else if (!unit) steps.push(drillStep(p, week.check, 'check', seed('c')));
   }
   // Weekly story beat, once per week, at the start of the first scored session that week.
   const beatKey = 'w' + week.w;

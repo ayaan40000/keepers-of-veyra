@@ -1,0 +1,104 @@
+{
+  "notes": "Four new Masters' Notes in the existing shape (id, unlock, title, idea, tryIt, why, spec, drill). No athlete is named and no claim is made about what any athlete does. Spec keys group and peg and the poem template are the new variants from the plan (V2, V1, D2); the builder must add them. Seconds values (s) are proposals for the builder to tune. The 'meta' block holds the evidence line for each note and is not shown to players. Citations were checked by the fact-check editor on Nov 2, 2026 (see FACTCHECK.md). The m-stanza note mentions 'the next day' only, with no sleep claim.",
+  "masters": [
+    {
+      "id": "m-chunks",
+      "unlock": "M5",
+      "title": "Groups You Can Say",
+      "idea": "Long numbers are easier to hold in groups of a fixed size, with each group treated as one unit. Saying each group aloud in a beat gives it a shape you can hear.",
+      "tryIt": "Take sixteen digits and write them in groups of four. Say them aloud with a small pause after each group, cover them, and write them back. On another day try groups of three, and keep the size that works for you.",
+      "why": "A group is one thing to hold instead of four, and the beat is one more cue. The best group size differs from person to person, so test it on your own scores.",
+      "spec": {
+        "t": "digits",
+        "n": 16,
+        "s": 120,
+        "group": 4
+      },
+      "drill": "Digit Recall (in groups)"
+    },
+    {
+      "id": "m-pegs",
+      "unlock": "M6",
+      "title": "Pegs on a Peg Board",
+      "idea": "A peg list is a short row of fixed hooks you know by number. You hang a new list on it each time, and you can ask for any number at once.",
+      "tryIt": "Take ten errands or ten words. Hang one on each shape peg: candle, swan, handcuffs and the rest. A day later, ask yourself for number 7 first, then number 3, then number 10. If the shape pegs get crowded, try the rhyme pegs for the next list.",
+      "why": "Asking out of order shows whether an item is stored on its peg and not just in a story. Reusing the same pegs makes lists blur, so leave a gap or switch lists.",
+      "spec": {
+        "t": "pairs",
+        "n": 10,
+        "s": 80,
+        "peg": "shape"
+      },
+      "drill": "Linked Pairs (shape pegs)"
+    },
+    {
+      "id": "m-stanza",
+      "unlock": "M7",
+      "title": "A Stanza a Night",
+      "idea": "A poem is exact wording in order, and it is learned best in small pieces, a few lines at a time. One stanza a night is a gentle pace.",
+      "tryIt": "Choose a short poem that is in the public domain, or write four lines of your own. Give each line one picture at one stop, and say the stanza aloud. The next day say it before you look, check it, and only then add the next stanza. After a week, say the whole poem.",
+      "why": "Pictures hold the order of the lines, and rhythm and rhyme give extra cues. Each time you say it before looking, you practise exactly what you will need.",
+      "spec": {
+        "t": "poem",
+        "n": 4,
+        "s": 120
+      },
+      "drill": "Poem (one stanza)"
+    },
+    {
+      "id": "m-check",
+      "unlock": "M8",
+      "title": "Check Before You Look",
+      "idea": "When you review something, try to say it first, and only then open your notes. Trying first, even when unsure, is the habit.",
+      "tryIt": "Pick a page of notes or a palace. Close it, and write down everything you recall. Open it, mark what you missed, and make a stronger picture for each miss. Do the same again after a day and after a week.",
+      "why": "Pulling a memory out takes effort, and that effort is what makes it last. Rereading feels smooth and teaches less. Mnemos delayed checks already work this way; this is the same habit for your own material.",
+      "spec": null,
+      "drill": null
+    }
+  ],
+  "meta": {
+    "m-chunks": {
+      "claim": "Grouping into chunks makes long strings easier to hold. Best size varies.",
+      "evidence": "strong",
+      "source": "Miller 1956, Psychological Review 63(2), 81-97; Cowan 2001, Behavioral and Brain Sciences 24(1), 87-114; MacLeod et al. 2010, Journal of Experimental Psychology: Learning, Memory, and Cognition 36(3), 671-685 for saying aloud",
+      "verified": true,
+      "sourceUrls": [
+        "https://doi.org/10.1037/h0043158",
+        "https://pubmed.ncbi.nlm.nih.gov/11515286/",
+        "https://link.springer.com/article/10.3758/s13421-013-0374-x"
+      ]
+    },
+    "m-pegs": {
+      "claim": "Peg lists give random access by number. Interference between similar lists is documented; advice to leave a gap is an inference.",
+      "evidence": "weak",
+      "source": "Bellezza 1981, Review of Educational Research 51(2), 247-275; Underwood 1957, Psychological Review 64(1), 49-60",
+      "verified": true,
+      "sourceUrls": [
+        "https://doi.org/10.3102/00346543051002247",
+        "https://doi.org/10.1037/h0044616"
+      ]
+    },
+    "m-stanza": {
+      "claim": "Learning in small pieces and recalling before looking helps exact wording. Pictures hold line order; rhyme and rhythm may give extra cues (plausible, not shown here).",
+      "evidence": "moderate",
+      "source": "Roediger and Karpicke 2006, Psychological Science 17(3), 249-255; Dunlosky et al. 2013, Psychological Science in the Public Interest 14(1), 4-58",
+      "verified": true,
+      "sourceUrls": [
+        "https://doi.org/10.1177/1529100612453266",
+        "https://doi.org/10.1126/science.1199327",
+        "https://doi.org/10.1111/j.1467-9280.2006.01693.x"
+      ]
+    },
+    "m-check": {
+      "claim": "Practice testing improves long-term retention more than rereading.",
+      "evidence": "strong",
+      "source": "Roediger and Karpicke 2006, Psychological Science 17(3), 249-255; Dunlosky et al. 2013, Psychological Science in the Public Interest 14(1), 4-58",
+      "verified": true,
+      "sourceUrls": [
+        "https://doi.org/10.1177/1529100612453266",
+        "https://doi.org/10.1126/science.1199327",
+        "https://doi.org/10.1111/j.1467-9280.2006.01693.x"
+      ]
+    }
+  }
+}

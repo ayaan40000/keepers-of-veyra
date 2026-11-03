@@ -1,0 +1,73 @@
+{
+  "notes": "Scaled-down practice formats for the Cards drill and the Event Hall. All numbers marked 'suggested' are ours and the builder may tune them. After the fact-check no real contest timing or rule is stated, because real formats change from contest to contest and year to year and could not be confirmed from one source. docs/CHAMPIONS.md says not to put real championship point scores or timings in the game, so none appear here.",
+  "ladder": {
+    "lengths": [
+      10,
+      15,
+      20,
+      26,
+      39,
+      52
+    ],
+    "suggestedStudySeconds": {
+      "10": 60,
+      "15": 90,
+      "20": 120,
+      "26": 150,
+      "39": 225,
+      "52": 300
+    },
+    "suggestedRecallSeconds": {
+      "10": 60,
+      "15": 90,
+      "20": 120,
+      "26": 150,
+      "39": 225,
+      "52": 300
+    },
+    "stopsAtTwoPerStop": {
+      "10": 5,
+      "15": 8,
+      "20": 10,
+      "26": 13,
+      "39": 20,
+      "52": 26
+    },
+    "note": "Roughly six seconds a card to study. Finishing early is allowed and the time is recorded. A personal best counts only when the deck is longer, or the time shorter at the same length and accuracy."
+  },
+  "deckRun": {
+    "ourName": "Deck Run",
+    "realFormatInOurWords": "Real memory contests include a shuffled-deck event in which a deck is memorised and then recalled in order. Rules and timing differ between contests, so none is described.",
+    "ourVersion": "10 to 52 cards from the ladder. Study the cards a row of four at a time. Recall by tapping cards into numbered slots, with undo, or typing codes such as 10H. Two trials, the better one counts.",
+    "scoring": "Score is the longest correct run from card 1. Accuracy (right positions over cards) is shown too, for information. No Lumen, no skill points.",
+    "advice": [
+      "Move at a steady pace. Rushing a hard deck gives you a short run.",
+      "Fix weak pictures before you add speed.",
+      "Practise the shortest deck you can do perfectly, then add 5 cards."
+    ]
+  },
+  "doubleDeck": {
+    "ourName": "Double Deck",
+    "realFormatInOurWords": "Real memory contests include card events with more than one deck. Names and rules differ between contests, so none is described.",
+    "ourVersion": "One order of 26 to 52 cards, asked by position in random order (for example: what is card number 17?). Seconds per answer are off by default, and a short pace switch is optional. One miss ends the round gently, with the answers shown.",
+    "scoring": "Score is the number of correct answers before the first miss. No Lumen, no skill points. The Echo scene version uses resolve 3, as the plan sets for the three elimination scenes, while the plain drill ends at the first miss.",
+    "advice": [
+      "Practise answering from any position, not only walking the route in order.",
+      "Know where each stop starts: number stops 1 to 26 so you can jump straight to stop 9.",
+      "Use the break to rehearse the first and last stops."
+    ]
+  },
+  "dayPlan": {
+    "title": "A four-week way in (suggested)",
+    "weeks": [
+      "Week 1: learn the four worlds, one a day.",
+      "Week 2: flip single cards and say the pictures fast. Then 10 card runs, two per stop.",
+      "Week 3: 15 and 20 card runs. Check your error pattern each time.",
+      "Week 4: 26 cards. Try Double Deck on a 26 card order. Rest a day, then try a longer deck."
+    ]
+  },
+  "plainText": {
+    "intro": "Cards are a sport inside the Event Hall. You turn each card into a picture, place pairs of pictures along a route and rebuild the order. Take it slowly and enjoy the game, since cards are optional.",
+    "honest": "Cards train one skill: turning a card into a picture and placing it. They do not make anything else in life easier, so they give no skill points and no Lumen. They are here for the challenge."
+  }
+}

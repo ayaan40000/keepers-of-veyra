@@ -151,8 +151,10 @@ export default function TrialRun({ profile, update, id, onExit }) {
       {(passed || r.final) && <ArtImg id={t.art} className="trial-art" />}
       <section className={`card ${passed ? 'gold' : ''}`} role="status">
         <span className="tag">{r.practice ? 'Noted' : passed ? 'Passed' : 'Not this time'}</span>
-        <h2>{r.total === 1 ? (r.n ? 'The code is right' : 'Not the right code') : `${r.n} of ${r.total}${r.need && !passed ? ` (needed ${r.need})` : ''}`}</h2>
-        {r.practice
+        <h2>{r.total === 1 ? (r.n ? 'The code is right' : 'Not the right code') : `${r.n} of ${r.total}${r.need && !passed && r.n < r.need ? ` (needed ${r.need})` : ''}`}</h2>
+        {r.stage
+          ? <p className="small">You held enough straight away. Nothing is won yet: the last check is on {profile.trials?.[id]?.due}, without looking first. Nothing here changes your skill estimates.</p>
+          : r.practice
           ? <p className="small">{r.quiet ? 'A quiet check-in, nothing more.' : 'A first look.'} The next check is on {profile.trials?.[id]?.due}. Nothing here changes your skill estimates.</p>
           : <p className="small story-text">{passed ? t.pass : t.miss}</p>}
         {r.lumen > 0 && <p className="small">Lumen for lines held without a hint: {r.lumen}.</p>}
@@ -180,7 +182,7 @@ export default function TrialRun({ profile, update, id, onExit }) {
       {t.kind !== 'vault' && r.missed.length > 0 && (
         <section className="card" data-quiet>
           <h3 className="panel-title"><PxIcon name="scroll" size={24} />{r.recover ? 'Look at these again now' : 'The answers'}</h3>
-          <ul className="small">{r.missed.map((x) => <li key={x.key}>{x.face != null ? <PixelFace seed={x.face} size={48} scale={1} /> : x.word ? `"${x.word}"` : x.prompt} <b>{x.answer}</b></li>)}</ul>
+          <ul className="small">{r.missed.map((x) => <li key={x.key}>{x.face != null ? <PixelFace seed={x.face} size={48} scale={1} /> : x.word ? `"${x.word}"` : x.prompt} <b>{x.answer}</b>{x.how ? <span className="muted"> ({x.how})</span> : null}</li>)}</ul>
           {r.recover && <p className="muted small">Make a fresh keyword picture for each. Forgetting a few words in a week is normal.</p>}
         </section>
       )}

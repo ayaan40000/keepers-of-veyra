@@ -1,4 +1,7 @@
 import React, { useRef, useState } from 'react';
+import { VOICES_SETTING } from '../data/voices.js';
+import { BRAMBLES_SETTING } from '../data/brambles.js';
+import { WREN_SETTING } from '../data/wren.js';
 import { PxIcon } from './game/PxIcon.jsx';
 import { ACHIEVEMENTS, wrenStage } from '../data/story.js';
 import { rankOf } from '../engine/progress.js';
@@ -8,6 +11,8 @@ import { LICENSES } from '../data/licenses.js';
 import { sfx } from '../audio/sfx.js';
 import { betaReport, problemReport, envInfo } from '../engine/beta.js';
 import { today } from '../engine/core.js';
+import { importWarning } from '../engine/owntext.js';
+import { OWN } from '../data/owntext.js';
 import { Sigil, AVATARS } from './art.jsx';
 
 function saveText(name, text, type = 'text/plain') {
@@ -112,6 +117,13 @@ export default function Keeper({ profile, update, replaceProfile, wipe, openChar
           </label>
           <label className="check"><input type="checkbox" checked={!!prefs.readableFont} onChange={(e) => setPref('readableFont', e.target.checked)} /> <span>Readable text <span className="muted small">(clean serif for reading, instead of pixel type)</span></span></label>
           <label className="check"><input type="checkbox" checked={!!prefs.reducedMotion} onChange={(e) => setPref('reducedMotion', e.target.checked)} /> Reduce motion</label>
+          <label className="field">{VOICES_SETTING.label}
+            <select value={prefs.voices || VOICES_SETTING.default} onChange={(e) => setPref('voices', e.target.value)}>{VOICES_SETTING.options.map((o) => <option key={o.id} value={o.id}>{o.label}</option>)}</select>
+          </label>
+          <p className="muted small">{VOICES_SETTING.options.find((o) => o.id === (prefs.voices || VOICES_SETTING.default))?.text} Voices never speak during study or recall.</p>
+          <label className="check"><input type="checkbox" checked={prefs.brambles !== false} onChange={(e) => setPref('brambles', e.target.checked)} /> <span>{BRAMBLES_SETTING.label} <span className="muted small">({prefs.brambles !== false ? BRAMBLES_SETTING.on : BRAMBLES_SETTING.off})</span></span></label>
+          <p className="muted small">{BRAMBLES_SETTING.explain}</p>
+          <label className="check"><input type="checkbox" checked={prefs.wrenMemory !== false} onChange={(e) => setPref('wrenMemory', e.target.checked)} /> <span>{WREN_SETTING.label} <span className="muted small">({prefs.wrenMemory !== false ? WREN_SETTING.on : WREN_SETTING.off})</span></span></label>
         </fieldset>
         <fieldset className="set-group">
           <legend>Training</legend>
@@ -137,10 +149,12 @@ export default function Keeper({ profile, update, replaceProfile, wipe, openChar
           <div className="note">
             <p><b>Backup for {imp.profile.user.alias}</b>: day {imp.profile.progress.day}, {imp.profile.progress.lumen} Lumen, {imp.profile.results.length} results, {imp.profile.palaces.length} palaces.</p>
             {imp.warning && <p className="warn">{imp.warning}</p>}
+            {importWarning(profile.own, imp.profile.own) && <p className="warn" role="alert">{importWarning(profile.own, imp.profile.own)} Use Export my texts only on Your Shelf first if you want to keep them.</p>}
             <p>Importing replaces the profile in this browser.</p>
             <div className="row"><button className="btn primary" onClick={() => { replaceProfile(imp.profile); setImp(null); setMsg('Profile restored from backup.'); }}>Replace with this backup</button><button className="btn" onClick={() => setImp(null)}>Cancel</button></div>
           </div>
         ) : <p className="warn">{imp.error}</p>)}
+        {profile.own?.texts?.length > 0 && <p className="small muted">{OWN.backupLine}</p>}
         <p className="small muted">To continue on another device: export here, move the file, then import on the other device.</p>
         {!confirmDel ? <button className="btn ghost danger" onClick={() => setConfirmDel(true)}>Delete all data</button> : (
           <div className="note"><p>This permanently deletes your profile from this browser. Export first if you might want it back.</p>

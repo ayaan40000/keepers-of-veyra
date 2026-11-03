@@ -54,6 +54,26 @@ export const TRIALS = {
     miss: 'The clock stays still for now, and nobody minds much. Tomorrow the parts will be on different stalls, and you can walk it again.',
     material: 'gears', n: 15, study: 180, distract: true, checks: [{ after: 0, pass: 14 / 15 }], retry: 1,
   },
+  // 1.1 Hall of Years: the year of each event, with two Major pictures for the year. Passes 6 of 7 now, then 5 of 7 a week later.
+  year_hall: {
+    id: 'year_hall', kind: 'trial', title: 'The Hall of Years', gate: 'M7', district: 'Scriptorium', coach: 'ennick', art: 'trial_year_hall', prize: 'tr_year_tablet',
+    method: 'Dates and timelines: two Major System pictures for the year, one hook for the event, all on the same desk.',
+    setup: 'Beyond the flooded floor, a long hall of tall brass years has lost its labels. The Tide rubbed every date from the shelves, but the events are still carved above them.',
+    intro: 'Seven events, seven desks. Make a year picture and an event picture for each, and put them on the desk. An echo will ask you for the year of each event. You will be asked again after a week.',
+    pass: 'You say all the years and the brass labels slide back into their frames, one after another. Ennick tilts a small year tablet out of the last frame and hands it to you.',
+    miss: 'A few years slid away, which is ordinary for numbers. Look at only those, make the picture stranger, and tomorrow there will be a different set of dates.',
+    material: 'timeline', ask: 'year', n: 7, study: 150, checks: [{ after: 0, pass: 6 / 7 }, { after: 7, pass: 5 / 7 }], retry: 1,
+  },
+  // 1.1 Reckoning: three number facts to hold, seven sums worked left to right, then the facts asked back. 9 of 10 opens the drawer.
+  reckoning: {
+    id: 'reckoning', kind: 'trial', title: 'The Counting House Reckoning', gate: 'M8', gateDistrict: 'Tidal Stair', district: 'Counting House', coach: 'isolde', art: 'trial_reckoning', prize: 'tr_tally_stick',
+    method: 'Hold the sum: work left to right, say each partial aloud, and keep a few number facts by heart.',
+    setup: 'Isolde has found an old reckoning table in the Counting House. The merchants who used it never wrote down their sums. They said each step aloud and moved on. Three number facts are scratched on the side of the table.',
+    intro: 'First, study three number facts and give each a picture. Then seven sums wait for you, one at a time, and then the three facts are asked back. Take your time: the table cares about right answers, not quick ones. Nine of ten opens the drawer.',
+    pass: 'The last answer lands and the table clicks. A drawer slides open with a small tally stick inside, notched with every sum you just solved.',
+    miss: 'A few answers were off. That is normal. Look at the steps shown, try the sums again tomorrow, and fresh ones will be waiting.',
+    material: 'calc', n: 10, study: 120, checks: [{ after: 0, pass: 0.9 }], retry: 1,
+  },
   // Vaults: a short invented tablet, shown once. A quiet check-in after 1 day, then the vault opens on a recall after 7 or 30 days.
   vault_quay: {
     id: 'vault_quay', kind: 'vault', title: 'The Quay Vault', gate: 'M1', district: "Lamplighters' Quay", coach: 'tansy', art: 'trial_vault', prize: 'vt_lamp_hook',
@@ -80,7 +100,7 @@ export const TRIALS = {
     material: 'tablet', study: 120, checks: [{ after: 1, practice: true, quiet: true }, { after: 30, pass: 1 }], retry: 2,
   },
 };
-export const TRIAL_ORDER = ['catacombs', 'salt_vault', 'gears', 'bridge', 'scriptorium'];
+export const TRIAL_ORDER = ['catacombs', 'salt_vault', 'gears', 'bridge', 'scriptorium', 'year_hall', 'reckoning'];
 export const VAULT_ORDER = ['vault_quay', 'vault_cellar', 'vault_mirror'];
 
 // ---------- Scriptorium timelines ----------
@@ -131,6 +151,13 @@ export const TIMELINES = [
     ['333', 'The gargoyles are carved and set on the rails.', 'Gargoyles', ['gargoyle']],
     ['340', 'The bridge opens with music and dancing.', 'Opening', ['music', 'dancing']],
   ] },
+];
+// 1.1 Hall of Years draws from the nine checked date sets (src/data/add/dates.json) and the three real timelines above.
+// Kept apart from TIMELINES on purpose: adding to that list would change which timeline an old Scriptorium seed picks.
+import DATE_SETS from './add/dates.json';
+export const YEAR_POOL = [
+  ...DATE_SETS.map((d) => ({ title: d.title, real: true, events: d.events.map((e) => [e.year, e.text, e.label, e.accepts]) })),
+  ...TIMELINES.filter((t) => t.real),
 ];
 export const DESKS = ['the door desk', 'the window desk', 'the map table', 'the ink stand', 'the reading lamp', 'the spiral stair', 'the high shelf'];
 
@@ -184,6 +211,12 @@ export const TRIAL_LORE = [
   ] },
   { id: 'lore_gears', title: 'The Market Clock', unlock: 'trial:gears', text: [
     'The great clock of the Clockwork Market has stopped four times in its history. Each time, the stallholders put it back together from memory, walking the square from the tower steps back to the tea urn.',
+  ] },
+  { id: 'lore_year_hall', title: 'The Brass Years', unlock: 'trial:year_hall', text: [
+    'The Hall of Years was lined with brass labels, one for each year the Wardens thought worth keeping. The Tide rubbed the numbers off, and the events carved above them stayed. A scholar who knows the events can put the years back, one frame at a time.',
+  ] },
+  { id: 'lore_reckoning', title: 'The Reckoning Table', unlock: 'trial:reckoning', text: [
+    'The old merchants of the Counting House worked their sums aloud and left nothing on paper. They said each step as they went, so that a sum was only ever as long as a breath. Isolde keeps the tally stick from the table drawer on her desk, and says every notch is a sum somebody got right.',
   ] },
   { id: 'lore_vaults', title: 'The Sealed Vaults', unlock: 'trial:vault_quay', text: [
     'The Wardens hid small vaults all over Veyra, each with a tablet beside its door. A vault opens only for someone who can say its tablet back after a long wait. The Wardens thought this was fair: anyone may read a tablet, but only someone who keeps it may open the door.',

@@ -4,6 +4,7 @@ import { PxIcon } from './game/PxIcon.jsx';
 import { SUGGESTED_LOCI, MAJOR_CODE, MAJOR_PAIRS, MAJOR_SINGLE } from '../data/content.js';
 import { uid, majorDecode } from '../engine/util.js';
 import PalaceRoom from './PalaceRoom.jsx';
+import { PedestalHall } from './Pedestals.jsx';
 
 export function PalaceEditor({ initial, minLoci = 5, onSave, onCancel }) {
   const [name, setName] = useState(initial?.name || 'My home');
@@ -62,6 +63,7 @@ export default function Palaces({ profile, update }) {
           <button className="btn primary has-icon" onClick={() => setEditing('new')}><PxIcon name="quill" size={24} />New palace</button>
         </>
       )}
+      <PedestalHall profile={profile} update={update} />
       <section className="card">
         <div className="row between"><h3 className="panel-title"><PxIcon name="scroll" size={28} />Number images (Major System)</h3><button className="btn small" onClick={() => setShowMajor(!showMajor)}>{showMajor ? 'Hide' : 'Show'}</button></div>
         <p className="muted small">Taught in Month 4. Replace any suggested word that does not feel vivid. A word is valid if its consonant sounds encode the number.</p>

@@ -6,7 +6,7 @@
 
 > **Spoilers.** This page reveals the story as it unfolds through the year. Read the world and district pages first if you want to discover it in the game.
 
-The story is told in a prologue, twelve chapters (one per district, opened by passing its gate) and an epilogue for the Year of Keeping.
+The story is told in a prologue, twelve chapters (one per district, opened by passing its gate), an epilogue for the Year of Keeping, and then Chapter Thirteen, the Seam, with a second epilogue.
 
 ## Prologue: The Morning After the Tide
 
@@ -279,3 +279,73 @@ The Year of Keeping settled over Veyra like soft wool. The twelve districts stoo
 Wren was waiting at the water's edge as dusk turned the sky violet and gold. "The Tide still leaves a few Forgettings every night," she said. "That is only the river being the river." Along the Quay the Keepers' Circle was gathering: Tansy with her teapot, Fennick with his keys, Isolde, Mosk, Ennick and Hask. Each evening one of them coached and one was coached, and nobody kept score.
 
 Wren put a small brass lamp in your hands, its glass warm against your palm. "The Circle will always have a place for you," she said. "Come when you like. Go when you must. The lamps will be lit either way."
+
+## Chapter Thirteen: The Seam
+
+*Stitch the Seam with nine days*
+
+After the Year of Keeping is complete and the Tide has climbed for a few days, the Great Forgetting stands on the water. It is a battle in four parts (the Hem of the Cloak, the Body of Mist, the Pale Glow and the Stitch) on made-up material. It earns nothing and changes no score. Six of nine days in their places ties the Seam off, and a miss only means trying again another day with a new thread.
+
+The Tide has climbed a finger higher every night this week, and the last lamp on the Quay has begun, very faintly, to tick. Tonight, out on the water, something is waiting.
+
+The Tide was high that evening, higher than it had been in a year, and it did not come up the streets the way it usually did. It gathered. Out on the water, a grey shape stood up out of the mist, taller than the lamp-posts, taller than the Archive dome, wearing a hood of cloud and holding a pale glow where a face should be.
+
+"Do not run," Wren said, very quietly, and she took your sleeve. "Look at what it is carrying."
+
+In the folds of its hood, in its great grey hands, trailing from its cloak like loose threads, were the small shy shapes you had met all year: Smudges and Tangles, Hollows, Blanks, Static, Murmurs and Dustleaves. And among them, many more, that you had not met: ordinary days, thousands of them, a breakfast, a quarrel, a Tuesday, a name, each one tied to the cloak by a thread, and none of them in the order it belonged.
+
+"Oh," Wren said, and her voice went thin. "The baker's loaves. The woman's dog. That was never forgetting, was it? That was this." She let go of your sleeve and took your hand instead. "It is not angry. It is only very large, and everything in it is out of place. Let us put some of it back."
+
+Held up from inside the giant, like a lantern on a pole, was a thin man in an old Warden's coat. The brass badge on his breast was worn smooth as a river stone. He had a pocket watch on a long chain, and kind, tired eyes, and the look of someone who has not slept in a very long time, which was true.
+
+"Good evening," he said. "I am sorry about the noise. I have been trying to be quiet for three hundred years."
+
+"I only meant to keep one evening," the Winder said, and he looked at Wren, not at you. "The last evening when every lamp on the Quay was lit and everyone knew everyone's name. I stepped into the Seam to hold it in place. It was meant to be one evening. It is surprising how much room one evening takes up."
+
+"You will lose most of this year, you know. Nine days in ten. The river takes it, quite fairly. But I could keep it for you. Every day in its place, and not one of them ever lost. I should only need the Heartledger, to put the days in order." He turned the watch over in his fingers. "And I should like, if it is not too much to ask, for someone to know my name."
+
+Wren took a long breath. "Nine in ten goes," she said. "Yes. That is the river being the river, and it is all right. A day gets to be over. That is how it gets to be a good one." She squeezed your hand. "Calder taught me that the last lesson is not how to keep everything. It is how to choose. We do not need all of it. We need the part we chose, in its place."
+
+The Winder looked at her for a long moment. Then he smiled, very slightly, the way a person does who has lost an argument he rather hoped to lose. "Then show me," he said. "Nine days, in order. If you can do that, I shall let go of the thread."
+
+The thread drew tight, and the Winder grew thin as glass, and for the first time he looked afraid. "I cannot remember what to be called," he said. "It was on the ledge. I could not read it. Nobody has said it in so long."
+
+Wren did not answer. She began, quietly, to hum: the tune her mother had hummed on the Quay, the one with no words, the one Tansy hummed under the last lamp. You found that you knew where the words went.
+
+"Tallow," Wren said, very softly. "Tallow keeps the lamp for me. We all thought it was candle fat. It never was." She was not cross with you for needing it. She looked as if she had needed it herself.
+
+In the Heartledger, on the roll of the Wardens, the last line had always been a smudge. Now it cleared, letter by letter, like breath leaving a cold pane: AMBROSE TALLOW, WARDEN OF THE HOURS, WHO KEPT THE LAST LAMP.
+
+"Ambrose," he said. "Ambrose Tallow." He said it three times, trying it, the way a person tries a coat they have not worn in years. "Oh. There it is." And he opened his hand, and the thread slid out of it.
+
+When the last bead slid home, nothing exploded and nothing fell. The giant simply stopped holding on. It lowered its great grey hands, and everything it had gathered rose from its cloak like a flock of tiny birds: Smudges and Tangles, Hollows, Blanks, Static, Murmurs and Dustleaves, and with them every tangled day, each one flying home along its own thread to the person it belonged to.
+
+Out on the water the seam of the world closed, as quietly as a door in another house. The Tide, which had stood a finger high all week, sank back to its ordinary silver, and the lamps along the Quay burned steady.
+
+"It was only ever lost things," Wren whispered. "And out-of-place ones. Waiting for someone to say them back."
+
+There was a tear in time the size of a mountain, and we sewed it. Not all of what was in it, and not ever all. But enough that it could rest, and so could he. Let me write that down, and then let me not write down anything else for the rest of tonight.
+
+## Epilogue Two: Days in Their Places
+
+Wren paints her mother from five details that were kept for her: a scar through the left eyebrow, from a lamp glass; a brass lamp key pinned in her hair; a yellow scarf, winter and summer; a laugh that started before the joke was done; the tune she hummed, The Last Lamp.
+
+In the Clockwork Market, all one hundred and twelve clocks gave one small click together, and the hands that had stood at nine minutes past eleven for a year and a night moved on to ten past. The stall-keepers stopped and looked up. Then somebody laughed, and someone else began to wind the stall clocks by hand, though they did not need it.
+
+On the Tidal Stair, a baker remembered that his loaves were for a christening, and ran. In Lantern Street a woman's dog trotted up, and she called it by three names, and it answered to all of them, because three children in three different years had each named it, and she had been right about every one. On a bench by the harbour two old men stopped arguing. They were brothers. Each of them had remembered the other in a different year, and each of them had been perfectly correct.
+
+Mosk the ferryman sat in his boat, quite still, for a long time. Then he said a name aloud, and said it again, and said it a third time, in case it ran off. "Wenna," he said. "Her name was Wenna." Nobody heard him but the river, and the river, as ever, kept it.
+
+In the Archive, Wren opened the oldest ledger and found that the old ink had come back under her own new lines, faint as a watermark. She read a line or two, then closed it. "I think I will leave them as they are," she said. "The city wrote them again in its own words. I like its words."
+
+That evening she asked her father to describe her mother. Edrin Halloway sat on the stool in the Archive in his lamplighter's coat, with a hand on his bad knee, and said it all slowly, as if each piece were a lamp to be lit. A scar through the left eyebrow, from a lamp glass. A brass key in her hair, for a pin. A yellow scarf. A laugh that started before the joke was done. Wren listened, and painted. It was not exactly her mother. It was near enough to say good night to. She said good night to the last lamp, as she had done every night since she was eight, and it was a little brighter than it had been.
+
+Under that lamp Old Tansy poured two cups of rosemary tea and passed one along the bench to a thin man in an old coat. "You smell of lamp oil," she said. "Drink your tea." She did not say who she thought he was. She hummed a few notes of something instead, and he hummed the next few, and neither of them said a word about how they knew it. Later, when she was sure he was listening, she told him what she had never told anyone: that the river had been at the sluice already that night, and that a hand's width had kept the Gate standing. "I did not do it only for the nine," she said. "I should have said so sooner."
+
+At the end of the week the Winder wound the Mother Clock one last time, carefully, and gave the key to Wren. Then he went and sat by the water. The Quay folk took it in turns to leave a lamp lit for him, and he never once asked them to.
+
+The Tide came back the next evening, as the Tide does. It was thin, and silver, and it left four or five small shapes on the Quay, no larger than a handful of lint.
+
+You walked down with Wren, and the two of you said them back one at a time, without any hurry. Along the water, the lamps burned steady.
+
+"Same as ever," Wren said, and smiled. "Come when you like. Go when you must."

@@ -1,6 +1,6 @@
 {
   "name": "mnemos",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Mnemos: Keepers of Veyra. A free, local-first memory training RPG.",
   "main": "index.js",
   "scripts": {

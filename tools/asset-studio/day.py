@@ -62,6 +62,14 @@ DAYS = {
     "event_tide_rising": ("dawn", "dawn: a pale golden and pink sky, the white mist wall glowing softly and thinning, rooftops lit by the first sun, lamps unlit"),
     "event_year_of_keeping": ("day", "a daytime festival: bright blue sky, warm sun, colourful lanterns and bunting hung across streets and windows, rooftops in terracotta, river teal"),
     "event_lethe_gate_vigil": ("dawn", "sunrise at the gate: a gold and pink sky behind the gate, warm light on the stone, the thirteen lamps held up but unlit, the mist pale and thin"),
+    # v0.11 trial pictures (night only until now) and the new Long Vigil battlements, added Nov 2, 2026
+    "trial_catacombs": ("day", "daylight falls through small high windows into the crypt, the pale marble statues in warm cream and sandstone light, soft violet shadows, the amber lamp unlit, the floor mist thin and pale"),
+    "trial_scriptorium": ("day", "bright daylight pours through the copper dome windows onto the half-flooded library, the grey water turned clear teal, warm wood and sandstone shelves, the candles unlit"),
+    "trial_salt_vault": ("day", "daylight from a small high cellar window falls on the round brass vault door, bright brass dials and white salt crystals sparkling, warm brick, the green lamp unlit"),
+    "trial_bridge": ("day", "a bright sunny day on the bridge, blue sky, warm sandstone carvings and gargoyles, a pale mist far below in the chasm, the lanterns unlit"),
+    "trial_gears": ("day", "a bright sunny market square, blue sky, the stopped brass clock tower shining, striped awnings in cheerful colours, brass gears gleaming on the stalls, the lamps unlit"),
+    "trial_vault": ("day", "morning light on the river wall, warm sandstone and green moss around the small round stone door, the lamp on its hook unlit, calm teal water below"),
+    "backdrop_long_vigil": ("dawn", "dawn on the battlements: a pale gold and pink sky, the mist thinning and glowing, the row of lanterns still on the parapet but unlit, the faceless phantoms only faint pale wisps fading in the light"),
     "event_undercroft_entrance": ("day", "daylight from above spills down the stair into the Undercroft, warm sunlit steps, the lantern unlit, cool shadow at the bottom"),
 }
 

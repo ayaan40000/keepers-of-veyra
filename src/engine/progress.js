@@ -1,10 +1,15 @@
 import { SKILLS, GATES, MODULES, SKILL_GATE } from '../data/curriculum.js';
 import { RANK_TITLES } from '../data/story.js';
+import { noteProbe } from './brambles.js';
 import { updateSkill, storeSet, applyProbe, today, computeMastery, applySessionLevel } from './core.js';
 import { wrenStage } from '../data/story.js';
 import { evaluateSideQuests } from './quests.js';
 import { grantKeys, ensureCrypt } from './crypt.js';
 import { mean, daysBetween, addDays, clamp } from './util.js';
+import { variantOf } from './additions.js';
+
+// Practice drills that never change skill estimates or earn Lumen (1.1: Mental Reckoning).
+const NO_CREDIT = ['calc'];
 
 export const FREE_XP_CAP = 50;
 
@@ -39,10 +44,11 @@ export function applyDrill(p, session, step, result, timing) {
     date: t, day: session.day, session: session.id, type: session.type, role: step.role, t: step.spec.t, skill: step.skill,
     level: step.level, n: result.n, correct: result.correct, acc: result.acc, errs: result.errs,
     battery: !!step.battery, interference: !!step.spec.interference, studyMs: timing.studyMs || 0, recallMs: timing.recallMs || 0, speed: result.acc >= 0.8 ? spd : null, timed: !!step.spec.timed,
+    ...(variantOf(step.spec) ? { v: variantOf(step.spec) } : {}), // 1.1: which variant, so Then and Now can tell them apart
   };
   p.results.push(record);
   // Only independent, unscaffolded drills update skill estimates (guided, warm-up, review, free and baseline do not).
-  if (['practice', 'check', 'gate', 'remedial'].includes(step.role)) events.push(...updateSkill(p, step.skill, result, step.role, speedOk));
+  if (['practice', 'check', 'gate', 'remedial'].includes(step.role) && !NO_CREDIT.includes(step.spec.t)) events.push(...updateSkill(p, step.skill, result, step.role, speedOk));
   if (step.role === 'baseline') {
     p.baseline = p.baseline || { date: t, results: {} };
     p.baseline.results[step.spec.t] = result.acc;
@@ -54,6 +60,7 @@ export function applyDrill(p, session, step, result, timing) {
 
   let lumen = Math.round(10 * result.acc * (1 + 0.1 * ((step.level || 1) - 1)));
   if (step.role === 'warmup') lumen = Math.round(lumen / 2);
+  if (NO_CREDIT.includes(step.spec.t)) lumen = 0;
   if (step.role === 'free' || session.repeatToday) {
     const fx = p.progress.freeXp && p.progress.freeXp.date === t && Number.isFinite(p.progress.freeXp.xp) ? p.progress.freeXp : { date: t, xp: 0 };
     lumen = Math.max(0, Math.min(lumen, FREE_XP_CAP - fx.xp));
@@ -70,10 +77,11 @@ export function applyProbeStep(p, session, step, result) {
   const set = p.sets.find((s) => s.id === step.setId);
   if (!set) return { lumen: 0, events: [] };
   const { delay, ratio, pass } = applyProbe(p, set, result);
+  noteProbe(p, set, result); // 1.1 brambles: a record of what slipped, and what held on a later day
   const factor = delay >= 30 ? 1.8 : delay >= 7 ? 1.4 : 1;
   const lumen = Math.round(25 * ratio * factor);
   p.progress.lumen += lumen;
-  p.results.push({ date: today(p), day: session.day, session: session.id, type: session.type, role: 'probe', t: set.t, skill: set.skill, n: result.n, correct: result.correct, acc: result.acc, ratio, delay, pass, errs: result.errs, lumen });
+  p.results.push({ date: today(p), day: session.day, session: session.id, type: session.type, role: 'probe', t: set.t, skill: set.skill, n: result.n, correct: result.correct, acc: result.acc, ratio, delay, pass, errs: result.errs, lumen, ...(variantOf(set.spec) ? { v: variantOf(set.spec) } : {}) });
   if (delay >= 1 && result.acc >= 0.9) unlock(p, 'it_stayed');
   if (delay >= 7 && result.acc >= 0.8) unlock(p, 'week_later');
   if (delay >= 7 && pass) { ensureCrypt(p); grantKeys(p, 1); }

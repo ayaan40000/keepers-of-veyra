@@ -19,7 +19,11 @@ describe('curriculum', () => {
     const p = newProfile('t', 'key');
     for (const w of WEEKS) for (const d of [...w.drills, w.check]) {
       const s = scaledSpec(d, 3);
-      expect(genItems(s, 42, p).items.length).toBe(s.n);
+      const got = genItems(s, 42, p).items.length;
+      // 1.1: some specs size themselves (a Mind Map or poem is a whole piece, pegs stop at 10, a text has so many steps or points)
+      if (d.t === 'map' || d.t === 'poem' || d.skim) expect(got).toBeGreaterThan(0);
+      else if (d.peg || d.src === 'steps' || d.src === 'points') expect(got).toBeLessThanOrEqual(s.n);
+      else expect(got).toBe(s.n);
     }
   });
 });
@@ -265,7 +269,8 @@ describe('v0.2 story and quests', async () => {
     expect(wren.visible.length).toBe(1);
     expect(charactersFor(p).some((c) => c.id === 'sevrin')).toBe(false);
     p.progress.gates = MODULES.map((m) => m.id);
-    expect(codexFor(p).filter((e) => e.open).length).toBe(CODEX.filter((e) => !e.unlock.startsWith('side:') && !e.unlock.startsWith('trial:')).length);
+    // 1.1: the Seam's four foreshadowing entries also open at gates (M1, M5, M6, M9)
+    expect(codexFor(p).filter((e) => e.open).length).toBe(CODEX.filter((e) => !e.unlock.startsWith('side:') && !e.unlock.startsWith('trial:')).length + 4);
     expect(tell('Hello {name}', p)).toBe('Hello Ayaan');
   });
 });

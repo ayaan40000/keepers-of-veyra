@@ -7,6 +7,9 @@ import { FURNITURE_KINDS } from './engine/room.js';
 import { GEAR, SLOTS } from './data/gear.js';
 import { ITEM_BY_ID } from './data/items.js';
 import { TRIALS } from './data/trials.js';
+import { EVENT_IDS, EVENTS, HISTORY_CAP, blankEvents } from './data/events.js';
+import { WF_BEATS, WF_QUESTIONS } from './data/wren.js';
+import { blankOwn, validateOwn } from './engine/owntext.js';
 
 
 export const MAX_IMPORT_BYTES = 5 * 1024 * 1024;
@@ -116,6 +119,39 @@ export function migrate(p) {
   if (!Array.isArray(p.battles.history)) p.battles.history = [];
   // v0.11 District Trials and vaults
   if (!isObj(p.trials)) p.trials = {};
+  // 1.1 Brambles, Mirror Room, Wren's Audit, the Long Vigil and the Voices / Brambles settings
+  if (!isObj(p.brambles)) p.brambles = { thorns: {}, chests: {} };
+  if (!isObj(p.brambles.thorns)) p.brambles.thorns = {};
+  if (!isObj(p.brambles.chests)) p.brambles.chests = {};
+  if (!isObj(p.mirror)) p.mirror = { episode: null, lit: {} };
+  if (!isObj(p.mirror.lit)) p.mirror.lit = {};
+  if (!isObj(p.audit)) p.audit = { done: 0, last: null };
+  if (typeof p.audit.done !== 'number') p.audit.done = 0;
+  // 1.1 Event Hall: best results, the Say-Back Games season and the rival's marks
+  if (!isObj(p.events)) p.events = blankEvents();
+  if (!isObj(p.events.best)) p.events.best = blankEvents().best;
+  for (const id of EVENT_IDS) if (p.events.best[id] === undefined) p.events.best[id] = null;
+  if (!Array.isArray(p.events.history)) p.events.history = [];
+  if (typeof p.events.pace !== 'boolean') p.events.pace = false;
+  if (!isObj(p.events.season)) p.events.season = blankEvents().season;
+  for (const k of ['snap', 'posted', 'marks']) if (!isObj(p.events.season[k])) p.events.season[k] = {};
+  // 1.1 Chapter 13 (the Seam) and Wren's Story Memory
+  if (!isObj(p.seam)) p.seam = { met: null, cleared: [], tries: 0, best: 0, rests: 0, last: null, used: [], closed: null, held: null, epilogue: null };
+  if (!Array.isArray(p.seam.cleared)) p.seam.cleared = [];
+  if (!Array.isArray(p.seam.used)) p.seam.used = [];
+  for (const k of ['tries', 'best', 'rests']) if (typeof p.seam[k] !== 'number') p.seam[k] = 0;
+  if (!isObj(p.wren)) p.wren = { seen: {}, asked: {}, lastBeat: null, lastQ: null };
+  if (!isObj(p.wren.seen)) p.wren.seen = {};
+  if (!isObj(p.wren.asked)) p.wren.asked = {};
+  if (isObj(p.user?.prefs)) {
+    if (typeof p.user.prefs.wrenMemory !== 'boolean') p.user.prefs.wrenMemory = true;
+    if (typeof p.user.prefs.brambles !== 'boolean') p.user.prefs.brambles = true;
+    if (!['off', 'light', 'full'].includes(p.user.prefs.voices)) p.user.prefs.voices = 'light';
+  }
+  // 1.1 Your Own Text: the player's own texts and their checks (stays in this browser)
+  if (!isObj(p.own) || !Array.isArray(p.own.texts)) p.own = blankOwn();
+  if (!Array.isArray(p.own.history)) p.own.history = [];
+  if (!Number.isInteger(p.own.v)) p.own.v = 1;
   p.meta.schema = SCHEMA;
   return p;
 }
@@ -152,7 +188,7 @@ export function validateProfile(p) {
     if (s.recentErrs != null && (!Array.isArray(s.recentErrs) || !s.recentErrs.every(isObj))) return `Skill "${k}" error history is invalid.`;
     if (!Object.values(s.errs).every((v) => isNum(v, 0))) return `Skill "${k}" error counts are invalid.`;
   }
-  if (!Array.isArray(p.results) || !p.results.every((r) => isObj(r) && isDate(r.date) && isNum(r.acc, 0, 1) && typeof r.t === 'string')) return 'Results are invalid.';
+  if (!Array.isArray(p.results) || !p.results.every((r) => isObj(r) && isDate(r.date) && isNum(r.acc, 0, 1) && typeof r.t === 'string' && (r.v == null || (typeof r.v === 'string' && r.v.length <= 40)))) return 'Results are invalid.';
   if (!Array.isArray(p.sets) || !p.sets.every((s) => isObj(s) && Array.isArray(s.items) && s.items.every(isObj) && Array.isArray(s.history) && Array.isArray(s.intervals) && isDate(s.due) && isDate(s.created) && isObj(s.spec))) return 'Review sets are invalid.';
   if (!Array.isArray(p.palaces) || !p.palaces.every((x) => isObj(x) && typeof x.name === 'string' && typeof x.id === 'string' && Array.isArray(x.loci) && x.loci.every((l) => typeof l === 'string'))) return 'Palaces are invalid.';
   if (p.crypt != null && (!isObj(p.crypt) || !isNum(p.crypt.keys ?? 0, 0, 99) || !isNum(p.crypt.deepest ?? 0, 0) || (p.crypt.treasures != null && !isObj(p.crypt.treasures)))) return 'Crypt record is invalid.';
@@ -182,6 +218,9 @@ function validateExtras(p) {
     if (pr.volume != null && !isNum(pr.volume, 0, 1)) return 'Volume setting is invalid.';
     if (pr.textSize != null && !isNum(pr.textSize, 1, 1.5)) return 'Text size setting is invalid.';
     if (pr.home != null && !['today', 'veyra'].includes(pr.home)) return 'Home page setting is invalid.';
+    if (pr.brambles != null && typeof pr.brambles !== 'boolean') return 'Brambles setting is invalid.';
+    if (pr.voices != null && !['off', 'light', 'full'].includes(pr.voices)) return 'Voices setting is invalid.';
+    if (pr.wrenMemory != null && typeof pr.wrenMemory !== 'boolean') return 'Wren question setting is invalid.';
   }
   if (!p.palaces.every((x) => x.furniture == null || (Array.isArray(x.furniture) && x.furniture.length <= 200 && x.furniture.every((k) => k == null || FURNITURE_KINDS.includes(k))))) return 'Palace furniture is invalid.';
   if (!p.palaces.every((x) => isStr(x.name, 100) && isStr(x.id, 64) && x.loci.length <= 200 && x.loci.every((l) => isStr(l, 120)))) return 'A palace name or stop is too long.';
@@ -226,6 +265,56 @@ function validateExtras(p) {
       if (r.recovering != null && typeof r.recovering !== 'boolean') return 'Trial record is invalid.';
     }
   }
+  if (p.brambles != null) {
+    const br = p.brambles;
+    if (!isObj(br) || (br.thorns != null && !isObj(br.thorns)) || (br.chests != null && !datedMap(br.chests))) return 'Bramble record is invalid.';
+    const ths = Object.entries(br.thorns || {});
+    if (ths.length > 80 || !ths.every(([k, t]) => isStr(k, 200) && isObj(t) && isStr(t.set, 40) && isStr(t.target, 100) && (t.cue == null || isStr(t.cue, 100)) && isStr(t.skill, 20) && !!SKILLS[t.skill] && isDate(t.born) && (t.burned == null || isDate(t.burned)) && (t.note == null || isStr(t.note, 300)) && (t.seen == null || typeof t.seen === 'boolean'))) return 'Bramble record is invalid.';
+  }
+  if (p.mirror != null) {
+    const m = p.mirror;
+    if (!isObj(m) || (m.episode != null && !isStr(m.episode, 80)) || (m.lit != null && (!datedMap(m.lit) || !Object.keys(m.lit).every((k) => !!SKILLS[k])))) return 'Mirror Room record is invalid.';
+  }
+  if (p.audit != null) {
+    const a = p.audit;
+    if (!isObj(a) || !isInt(a.done ?? 0, 0, 1e6) || (a.last != null && !isDate(a.last))) return 'Audit record is invalid.';
+  }
+  if (p.events != null) {
+    const ev = p.events, share = (x) => isNum(x, 0, 1);
+    if (!isObj(ev)) return 'Event record is invalid.';
+    if (ev.pace != null && typeof ev.pace !== 'boolean') return 'Event record is invalid.';
+    if (ev.best != null) {
+      if (!isObj(ev.best)) return 'Event record is invalid.';
+      for (const [id, b] of Object.entries(ev.best)) {
+        if (!EVENT_IDS.includes(id)) return 'Event record is invalid.';
+        if (b == null) continue;
+        if (!isObj(b) || Object.keys(b).length > 12) return 'Event record is invalid.';
+        for (const [lv, r] of Object.entries(b)) if (!isInt(+lv, 1, EVENTS[id].sizes.length) || !isObj(r) || !isInt(r.max, 1, 999) || !isInt(r.score, 0, r.max) || !isDate(r.date)) return 'Event record is invalid.';
+      }
+    }
+    if (ev.history != null && (!Array.isArray(ev.history) || ev.history.length > HISTORY_CAP || !ev.history.every((h) => isObj(h) && isDate(h.date) && EVENT_IDS.includes(h.ev) && isInt(h.lv, 1, 9) && isInt(h.max, 1, 999) && isInt(h.score, 0, h.max)))) return 'Event history is invalid.';
+    if (ev.season != null) {
+      const s = ev.season;
+      if (!isObj(s) || !isInt(s.tier ?? 0, 0, 5) || (s.started != null && !isDate(s.started)) || (s.won != null && !isDate(s.won)) || (s.lamps != null && !isInt(s.lamps, 0, 7))) return 'Season record is invalid.';
+      if (s.snap != null && (!isObj(s.snap) || !Object.entries(s.snap).every(([k, v]) => EVENT_IDS.includes(k) && (v == null || share(v))))) return 'Season record is invalid.';
+      if (s.posted != null && (!isObj(s.posted) || !Object.entries(s.posted).every(([k, v]) => EVENT_IDS.includes(k) && isObj(v) && isInt(v.max, 1, 999) && isInt(v.score, 0, v.max)))) return 'Season record is invalid.';
+      if (s.marks != null && (!isObj(s.marks) || Object.keys(s.marks).length > 5 || !Object.entries(s.marks).every(([t, m]) => isInt(+t, 1, 5) && isObj(m) && Object.entries(m).every(([k, v]) => EVENT_IDS.includes(k) && Array.isArray(v) && v.length === 2 && share(v[0]) && share(v[1]))))) return 'Season record is invalid.';
+    }
+  }
+  if (p.seam != null) {
+    const s = p.seam, ph = ['fringe', 'body', 'face'];
+    if (!isObj(s) || ['met', 'last', 'closed', 'epilogue'].some((f) => s[f] != null && !isDate(s[f]))) return 'Seam record is invalid.';
+    if (!isInt(s.tries ?? 0, 0, 1e6) || !isInt(s.best ?? 0, 0, 9) || !isInt(s.rests ?? 0, 0, 1e6) || (s.held != null && !['held', 'told'].includes(s.held))) return 'Seam record is invalid.';
+    if (s.cleared != null && (!Array.isArray(s.cleared) || s.cleared.length > 3 || !s.cleared.every((x) => ph.includes(x)))) return 'Seam record is invalid.';
+    if (s.used != null && (!Array.isArray(s.used) || s.used.length > 12 || !s.used.every((x) => isStr(x, 30)))) return 'Seam record is invalid.';
+  }
+  if (p.wren != null) {
+    const w = p.wren, beats = new Set(WF_BEATS.map((b) => b.id)), qs = new Set(WF_QUESTIONS.map((q) => q.id));
+    if (!isObj(w) || (w.lastBeat != null && !isDate(w.lastBeat)) || (w.lastQ != null && !isDate(w.lastQ))) return 'Wren record is invalid.';
+    if (w.seen != null && (!isObj(w.seen) || !Object.entries(w.seen).every(([k, v]) => beats.has(k) && isDate(v)))) return 'Wren record is invalid.';
+    if (w.asked != null && (!isObj(w.asked) || !Object.entries(w.asked).every(([k, a]) => qs.has(k) && isObj(a) && isInt(a.n ?? 0, 0, 99) && isInt(a.ok ?? 0, 0, 99) && (a.last == null || isDate(a.last)) && (a.held == null || isDate(a.held))))) return 'Wren record is invalid.';
+  }
+  if (p.own != null) { const e = validateOwn(p.own); if (e) return e; }
   if (p.guide != null) {
     const okMap = (m) => m == null || (datedMap(m) && Object.keys(m).length <= 200 && Object.keys(m).every((k) => isStr(k, 40)));
     if (!isObj(p.guide) || !okMap(p.guide.tried) || !okMap(p.guide.later)) return 'Field Guide record is invalid.';
@@ -244,6 +333,7 @@ function validateExtras(p) {
     const b = p.battles;
     if (!isObj(b) || !isInt(b.done ?? 0, 0, 1e6) || !isInt(b.held ?? 0, 0, 1e6) || !isInt(b.rests ?? 0, 0, 1e6)) return 'Battle record is invalid.';
     if ((b.last != null && !isDate(b.last)) || (b.skipped != null && !isDate(b.skipped))) return 'Battle record is invalid.';
+    if (b.vigil != null && (!isObj(b.vigil) || !isInt(b.vigil.done ?? 0, 0, 1e6) || !isInt(b.vigil.ledgers ?? 0, 0, 1e6) || ['last', 'skipped', 'ledger'].some((f) => b.vigil[f] != null && !isDate(b.vigil[f])))) return 'Vigil record is invalid.';
     if (b.queue != null && (!Array.isArray(b.queue) || b.queue.length > 60 || !b.queue.every((q) => isObj(q) && isStr(q.set, 40) && isInt(q.i, 0, 999) && isDate(q.date)))) return 'Battle queue is invalid.';
     if (b.history != null && (!Array.isArray(b.history) || b.history.length > 100 || !b.history.every((h) => isObj(h) && isDate(h.date) && isStr(h.mode, 20) && isStr(h.outcome, 12) && isInt(h.items, 0, 99) && isInt(h.held, 0, 99) && isInt(h.relearned ?? 0, 0, 99) && isInt(h.queued ?? 0, 0, 99) && isInt(h.lumen ?? 0, 0, 999)))) return 'Battle history is invalid.';
   }

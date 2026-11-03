@@ -1,6 +1,8 @@
 // Mnemos curriculum: single source of truth for the 365-day program.
 // Drill spec keys: t = template, n = item count at difficulty 1, s = study seconds at difficulty 1,
 // reverse = recall backwards, interference = a second list is studied before recall, timed = speed scored.
+// 1.1 variants: peg ('shape' | 'rhyme'), group (digit group sizes), src ('grocery' | 'steps' | 'points' | 'body' | study sets),
+// numbered, surname, skim, kind ('topic' | 'people' for Mind Map). All are optional keys, so stored sets keep working.
 
 export const SKILLS = {
   imagery: { name: 'Visual Association', short: 'Imagery', color: '#E8B04B' },
@@ -15,11 +17,13 @@ export const SKILLS = {
 export const TEMPLATE_SKILL = {
   wordlist: 'imagery', pairs: 'imagery', chain: 'linking', palace: 'palace',
   digits: 'numbers', major: 'numbers', faces: 'faces', vocab: 'vocab', facts: 'structure',
+  map: 'structure', poem: 'structure', calc: 'numbers', // 1.1 (calc is practice only: no skill or Lumen credit)
 };
 
 export const TEMPLATE_NAME = {
   wordlist: 'Word Recall', pairs: 'Linked Pairs', chain: 'Story Chain', palace: 'Palace Walk',
   digits: 'Digit Recall', major: 'Major Conversion', faces: 'Names and Faces', vocab: 'Vocabulary', facts: 'Fact Recall',
+  map: 'Mind Map', poem: 'Poem', calc: 'Mental Reckoning',
 };
 
 export const MODULES = [
@@ -225,11 +229,11 @@ export const WEEKS = [
     lesson: ['Two separate images fade. Two images doing something to each other stick.', 'Make the first item act on the second: the candle melts the anchor, the anchor crushes the violin.', 'Interaction matters more than strangeness. Odd is good only if the two are clearly touching.'] },
   { w: 3, title: 'Story Chains', obj: 'Recall a 12-item list in order using a linked story.', drills: [{ t: 'chain', n: 10, s: 90 }], check: { t: 'chain', n: 10, s: 80 },
     lesson: ['A chain links item 1 to 2, 2 to 3, and so on. Each link is one small scene.', 'Walk the story forward when recalling. If a link breaks, the rest is still there; skip and continue.', 'Exaggerate size and number: a thousand keys, a lemon the size of a car.'] },
-  { w: 4, title: 'Consolidation and Gate', obj: 'Combine imagery and chaining under light time pressure.', drills: [{ t: 'chain', n: 12, s: 90 }, { t: 'pairs', n: 10, s: 70 }], check: { t: 'wordlist', n: 12, s: 70 },
+  { w: 4, title: 'Consolidation and Gate', obj: 'Combine imagery and chaining under light time pressure.', drills: [{ t: 'chain', n: 12, s: 90, src: 'grocery' }, { t: 'pairs', n: 10, s: 70 }], check: { t: 'wordlist', n: 12, s: 70 },
     lesson: ['This week mixes the three skills so you learn to choose which one fits.', 'Order matters: chain it. Pairs matter: link them. Neither: just image it vividly.'] },
   { w: 5, title: 'Building Your First Palace', obj: 'Design a 10-stop route through a place you know well.', drills: [{ t: 'palace', n: 5, s: 60 }], check: { t: 'palace', n: 5, s: 50 },
     lesson: ['Choose a place you can walk with eyes closed: your home. Pick stops in a fixed order: door, mat, hook, mirror and so on.', 'Stops should be distinct and spread apart. Two chairs side by side get confused.', 'Walk the route in your mind three times before placing anything.'] },
-  { w: 6, title: 'Placing and Walking', obj: 'Place 10 items and recall them by walking the route.', drills: [{ t: 'palace', n: 10, s: 90 }], check: { t: 'palace', n: 8, s: 70 },
+  { w: 6, title: 'Placing and Walking', obj: 'Place 10 items and recall them by walking the route.', drills: [{ t: 'palace', n: 10, s: 90, src: 'grocery' }], check: { t: 'palace', n: 8, s: 70 },
     lesson: ['Put each image at its stop and make it interact with the place: the fish flops in the sink and sprays the window.', 'Recall is a walk. Arrive at each stop and look: what is happening here?', 'An empty stop usually means the image did not touch the place. Fix it next time.'] },
   { w: 7, title: 'Reverse and Random Access', obj: 'Recall palace items backward and from any stop.', drills: [{ t: 'palace', n: 12, s: 100, reverse: true }], check: { t: 'palace', n: 10, s: 80 },
     lesson: ['Because the route is fixed, you can walk it backward. That is a test of the places, not the story.', 'Random access: jump to stop 7 directly. Number your stops if it helps: the fifth stop gets a hand with five fingers.'] },
@@ -253,11 +257,11 @@ export const WEEKS = [
     lesson: ['Drill in decades, then shuffled. Speed comes after accuracy.'] },
   { w: 17, title: 'Conversion Speed', obj: 'Under 3 seconds per pair.', drills: [{ t: 'major', n: 20, range: 100, timed: true }, { t: 'digits', n: 8, s: 60 }], check: { t: 'major', n: 20, range: 100, timed: true },
     lesson: ['See 47, think rock, see the rock. Do not spell it out. If you hesitate, the image is weak; change it.'] },
-  { w: 18, title: 'Digits in the Palace', obj: '16 digits in a palace.', drills: [{ t: 'digits', n: 12, s: 90 }], check: { t: 'digits', n: 12, s: 80 },
+  { w: 18, title: 'Digits in the Palace', obj: '16 digits in a palace.', drills: [{ t: 'digits', n: 12, s: 90, group: 2 }], check: { t: 'digits', n: 12, s: 80 },
     lesson: ['Split the digits into pairs. Each pair is an image. Put one or two images at each stop.'] },
-  { w: 19, title: 'Longer Numbers', obj: '24 digits in 3 minutes.', drills: [{ t: 'digits', n: 20, s: 150 }], check: { t: 'digits', n: 16, s: 120 },
+  { w: 19, title: 'Longer Numbers', obj: '24 digits in 3 minutes.', drills: [{ t: 'digits', n: 20, s: 150, group: 4 }], check: { t: 'digits', n: 16, s: 120 },
     lesson: ['Two images per stop: the first acts on the second. That halves the route length you need.'] },
-  { w: 20, title: 'Dates and Phone Numbers', obj: 'Encode dates and phone formats.', drills: [{ t: 'digits', n: 10, s: 70 }, { t: 'pairs', n: 8, s: 70 }], check: { t: 'digits', n: 10, s: 60 },
+  { w: 20, title: 'Dates and Phone Numbers', obj: 'Encode dates and phone formats.', drills: [{ t: 'digits', n: 10, s: 70, group: [3, 3, 4] }, { t: 'pairs', n: 8, s: 70 }], check: { t: 'digits', n: 10, s: 60 },
     lesson: ['A date is a person or event linked to a number image. A phone number is a short palace walk.'] },
   { w: 21, title: 'Number Gate', obj: '40 digits in 5 minutes.', drills: [{ t: 'digits', n: 24, s: 180 }], check: { t: 'digits', n: 24, s: 160 },
     lesson: ['Pace yourself: one pass at encoding, one quick review walk, then stop.'] },
@@ -265,7 +269,7 @@ export const WEEKS = [
     lesson: ['Find a word that sounds like the foreign word: kitabu sounds like "kit a boo". Picture a kit full of books that says boo.', 'Keywords work fast but fade. They must be followed by spaced retrieval, which the app schedules for you.'] },
   { w: 23, title: 'Abstract to Concrete', obj: 'Encode abstract words through substitutes.', drills: [{ t: 'pairs', n: 8, s: 80, abstract: true }, { t: 'vocab', n: 8, s: 90 }], check: { t: 'pairs', n: 8, s: 70, abstract: true },
     lesson: ['Abstract words have no picture. Use a symbol (justice: scales), a sound-alike (evolve: eve rolls), or a scene you associate with it.'] },
-  { w: 24, title: 'Peg Systems', obj: 'Use number-shape pegs for short lists.', drills: [{ t: 'chain', n: 10, s: 80 }, { t: 'vocab', n: 10, s: 100 }], check: { t: 'vocab', n: 10, s: 90 },
+  { w: 24, title: 'Peg Systems', obj: 'Use number-shape pegs for short lists.', drills: [{ t: 'pairs', n: 10, s: 80, peg: 'shape' }, { t: 'pairs', n: 10, s: 80, peg: 'rhyme' }], check: { t: 'vocab', n: 10, s: 90 },
     lesson: ['Number-shape pegs: 1 candle, 2 swan, 3 handcuffs, 4 sailboat, 5 hook, 6 golf club, 7 cliff, 8 snowman, 9 balloon on a string, 10 bat and ball. Good for quick lists of ten when no palace is free.'] },
   { w: 25, title: 'Vocabulary Volume', obj: '12 words per session retained at 7 days.', drills: [{ t: 'vocab', n: 12, s: 120 }], check: { t: 'vocab', n: 10, s: 100 },
     lesson: ['Write your own keyword when the suggestion does not work. Self-made cues are remembered better.'] },
@@ -273,9 +277,9 @@ export const WEEKS = [
     lesson: ['Half way. This week compares every skill to where you started.'] },
   { w: 27, title: 'Facts as Cue and Answer', obj: 'Encode fact pairs (country to capital, element to symbol).', drills: [{ t: 'facts', n: 6, s: 90 }], check: { t: 'facts', n: 6, s: 80 },
     lesson: ['A fact is a pair: cue and answer. Link an image for the cue to an image for the answer, exactly like Linked Pairs.'] },
-  { w: 28, title: 'Outlines in the Palace', obj: 'Hold a 7-point outline in a palace.', drills: [{ t: 'chain', n: 7, s: 70 }, { t: 'facts', n: 8, s: 100 }], check: { t: 'facts', n: 8, s: 90 },
+  { w: 28, title: 'Outlines in the Palace', obj: 'Hold a 7-point outline in a palace.', drills: [{ t: 'chain', n: 7, s: 70, src: 'points' }, { t: 'facts', n: 8, s: 100 }], check: { t: 'facts', n: 8, s: 90 },
     lesson: ['Reduce a talk or chapter to 5 to 9 key points. One image per point, one stop per image.'] },
-  { w: 29, title: 'Self-Explanation', obj: 'Explain encoded facts in your own words.', drills: [{ t: 'facts', n: 10, s: 110 }], check: { t: 'facts', n: 8, s: 90 },
+  { w: 29, title: 'Self-Explanation', obj: 'Explain encoded facts in your own words.', drills: [{ t: 'facts', n: 10, s: 110 }, { t: 'map', kind: 'topic', n: 12, s: 110 }], check: { t: 'facts', n: 8, s: 90 },
     lesson: ['After encoding, ask why each fact is true. Explanation adds meaning, which adds retrieval routes.'] },
   { w: 30, title: 'Structure Gate', obj: '12 facts plus an outline at 1 day.', drills: [{ t: 'facts', n: 12, s: 120 }], check: { t: 'facts', n: 12, s: 110 },
     lesson: ['Test yourself tomorrow before looking. Retrieval is the study.'] },
@@ -299,9 +303,9 @@ export const WEEKS = [
     lesson: ['This week checks what survived months of other learning.'] },
   { w: 40, title: 'Choosing the Technique', obj: 'Pick the right tool for the material.', drills: [{ t: 'facts', n: 8, s: 90 }, { t: 'chain', n: 10, s: 80 }], check: { t: 'pairs', n: 10, s: 80 },
     lesson: ['Ask: is it ordered, paired, numeric or a person? That answer picks the technique.'] },
-  { w: 41, title: 'Learning from Books', obj: 'Turn a chapter into a palace outline.', drills: [{ t: 'facts', n: 10, s: 100 }], check: { t: 'facts', n: 10, s: 90 },
+  { w: 41, title: 'Learning from Books', obj: 'Turn a chapter into a palace outline.', drills: [{ t: 'facts', n: 5, s: 60, skim: true }, { t: 'poem', n: 6, s: 120 }], check: { t: 'facts', n: 10, s: 90 },
     lesson: ['Read, close the book, write the key points from memory, then place them. Retrieval first, palace second.'] },
-  { w: 42, title: 'Exam and Technical Material', obj: 'Encode formulas, terms and procedures.', drills: [{ t: 'vocab', n: 10, s: 100 }, { t: 'chain', n: 8, s: 70 }], check: { t: 'vocab', n: 10, s: 90 },
+  { w: 42, title: 'Exam and Technical Material', obj: 'Encode formulas, terms and procedures.', drills: [{ t: 'vocab', n: 10, s: 100 }, { t: 'chain', n: 8, s: 70, src: 'steps' }, { t: 'facts', n: 5, s: 60, skim: true }], check: { t: 'vocab', n: 10, s: 90 },
     lesson: ['Terms are vocabulary. Procedures are chains. Numbers are Major images. Use all three on one subject.'] },
   { w: 43, title: 'Transfer Gate', obj: 'Unfamiliar mixed tasks.', drills: [{ t: 'facts', n: 10, s: 100 }, { t: 'faces', n: 8, s: 80 }], check: { t: 'pairs', n: 12, s: 90, abstract: true },
     lesson: ['The gate uses formats you have not seen in this exact form.'] },
@@ -313,7 +317,7 @@ export const WEEKS = [
     lesson: ['Five events, one routine. Reset between events with one slow breath.'] },
   { w: 47, title: 'Arena Gate', obj: 'Mini-decathlon, each event at least 75%.', drills: [{ t: 'palace', n: 25, s: 140 }, { t: 'faces', n: 10, s: 90 }], check: { t: 'digits', n: 24, s: 120 },
     lesson: ['Every event counts. A weaker event gets a targeted week afterward.'] },
-  { w: 48, title: 'What to Keep', obj: 'Decide your permanent knowledge set.', drills: [{ t: 'facts', n: 10, s: 100 }, { t: 'palace', n: 15, s: 90 }], check: { t: 'facts', n: 10, s: 90 },
+  { w: 48, title: 'What to Keep', obj: 'Decide your permanent knowledge set.', drills: [{ t: 'facts', n: 10, s: 100 }, { t: 'poem', n: 8, s: 100 }], check: { t: 'facts', n: 10, s: 90 },
     lesson: ['You cannot keep everything. Choose what you will review for years and give it a permanent palace.'] },
   { w: 49, title: 'Maintenance Scheduling', obj: 'Design a weekly 10-minute review.', drills: [{ t: 'vocab', n: 10, s: 90 }, { t: 'digits', n: 16, s: 90 }], check: { t: 'faces', n: 8, s: 80 },
     lesson: ['Long intervals keep memories alive at very low cost. Monthly review of a permanent palace takes minutes.'] },
@@ -351,7 +355,7 @@ export const GATES = {
   M7: { threshold: 0.8, drills: [{ t: 'facts', n: 12, s: 130 }, { t: 'chain', n: 7, s: 60 }] },
   M8: { threshold: 0.85, drills: [{ t: 'palace', n: 30, s: 180, timed: true }] },
   M9: { threshold: 0.8, drills: [{ t: 'wordlist', n: 15, s: 90, interference: true }, { t: 'palace', n: 20, s: 120 }] },
-  M10: { threshold: 0.75, drills: [{ t: 'facts', n: 10, s: 100 }, { t: 'pairs', n: 12, s: 90, abstract: true }, { t: 'faces', n: 8, s: 80 }] },
+  M10: { threshold: 0.75, drills: [{ t: 'facts', n: 10, s: 100 }, { t: 'pairs', n: 12, s: 90, abstract: true }, { t: 'faces', n: 8, s: 80 }, { t: 'map', kind: 'people', n: 12, s: 100 }] }, // 1.1: Mind Map is a true new-format test here
   M11: { threshold: 0.75, drills: [{ t: 'palace', n: 25, s: 150 }, { t: 'digits', n: 24, s: 120 }, { t: 'faces', n: 10, s: 90 }, { t: 'vocab', n: 10, s: 90 }, { t: 'facts', n: 10, s: 90 }] },
   M12: { threshold: 0, drills: [{ t: 'palace', n: 30, s: 180 }, { t: 'vocab', n: 12, s: 100 }, { t: 'facts', n: 12, s: 100 }] }, // the day-1 battery is added on gate days 91, 182, 273, 364
 };

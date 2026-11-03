@@ -84,6 +84,28 @@ A young acolyte of the Quiet Order, freckled, earnest and badly out of place. He
 
 **After 7 gates (spoiler):** He brought you the true account of the night of the Tide, at great risk, and now hides in the Scriptorium cellars. He is trying very hard to remember how to be brave.
 
+## Edrin Halloway
+
+*Wren's father*
+
+A lamplighter of the Quay, who lit lamps twenty-three to forty-four. Quiet, with a bad knee and a house at number thirty-one, Quay Row, whose blue door he has been promising to repaint for twenty years.
+
+**Later (spoiler):** He came to the Amphitheatre to watch his daughter and stayed to give you the things he remembers of his wife's face. He asked you to keep them. "She would want her face to have someone."
+
+**Later (spoiler):** He has finally repainted the door. It is green. He says blue was only ever a mistake he never fixed.
+
+## Marit Halloway
+
+*Wren's mother*
+
+A lamplighter of the Quay who lit lamps one to twenty-two and hummed a tune with no words while she did it. She died in the winter of the long cough, when Wren was eight. The Tide took her face from Wren's memory that same week, an ordinary Tide, and nobody's fault.
+
+## Ambrose Tallow, the Winder
+
+*The last Warden of the Hours*
+
+The Warden who kept the Tide's timetable and wound the Mother Clock. Three hundred years ago he stepped into the Seam to hold one evening in place, and nobody has said his name since. He was not cruel. He was lonely. He paid for the Order's oil and wicks for eleven years without being asked for anything, and he is remembered now: Ambrose Tallow, Warden of the Hours, who kept the last lamp.
+
 ## The Keepers' Circle
 
 The friends who coach a Keeper before and after an Echo battle, never during a question. Each joins once their district is restored.

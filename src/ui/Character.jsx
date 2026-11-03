@@ -11,9 +11,15 @@ import { ITEM_BY_ID } from '../data/items.js';
 import { attributes, classOf, options, equipOf, equip, dollSpec, gatesPassed, ATTR_MAX } from '../engine/character.js';
 import { rankOf } from '../engine/progress.js';
 import { ECHO_HONEST } from '../data/echo.js';
+import { CabinetCard } from './Voices.jsx';
+import { MirrorRoom, MistNote } from './MirrorRoom.jsx';
+import { mistState, litSkills } from '../engine/mirror.js';
+import { GREYED } from '../data/mirror.js';
 
-export default function Character({ profile, update }) {
+export default function Character({ profile, update, onReview }) {
   const at = attributes(profile);
+  const mist = mistState(profile);
+  const relit = new Set(litSkills(profile, mist.episode));
   const cls = classOf(profile);
   const rank = rankOf(profile.progress.lumen);
   const spec = dollSpec(profile);
@@ -41,16 +47,23 @@ export default function Character({ profile, update }) {
       <section className="card">
         <h3 className="panel-title"><PxIcon name="chart" size={28} />Attributes</h3>
         <p className="muted small">Each one is a skill you have trained: its level plus its mastery step. They only grow when you learn.</p>
-        <ul className="attrs">{at.map((a) => (
-          <li key={a.skill}>
-            <span className="attr-name"><b>{a.name}</b> <span className="muted small">{a.short}</span></span>
-            <PixelBar value={a.value} max={ATTR_MAX} size="xs" label={`${a.name} ${a.value} of ${ATTR_MAX}`} />
-            <span className="num attr-val">{a.value}</span>
-            <span className="muted small attr-why">Level {a.level}, mastery {a.mastery}</span>
-          </li>
-        ))}</ul>
+        <MistNote mist={mist} />
+        <ul className="attrs">{at.map((a) => {
+          const hidden = mist.up && !relit.has(a.skill);
+          return (
+            <li key={a.skill} className={hidden ? 'shrouded' : ''} title={hidden ? GREYED.tooltip : undefined}>
+              <span className="attr-name"><b>{a.name}</b> <span className="muted small">{a.short}</span></span>
+              <PixelBar value={hidden ? 0 : a.value} max={ATTR_MAX} size="xs" label={hidden ? `${a.name} hidden by the mist. ${GREYED.tooltip}` : `${a.name} ${a.value} of ${ATTR_MAX}`} />
+              <span className="num attr-val">{hidden ? '?' : a.value}</span>
+              <span className="muted small attr-why">{hidden ? GREYED.tooltip : `Level ${a.level}, mastery ${a.mastery}`}</span>
+            </li>
+          );
+        })}</ul>
         <p className="muted small">Class: {cls.top ? `your strongest attribute makes you a ${cls.klass}.` : cls.klass === 'Wayfarer' ? 'your skills are evenly grown, so you are a Wayfarer.' : 'you are still an Apprentice. Train a skill to find your class.'}</p>
       </section>
+
+      <CabinetCard profile={profile} onReview={onReview} />
+      <MirrorRoom profile={profile} update={update} />
 
       <section className="card">
         <h3 className="panel-title"><PxIcon name="chest" size={28} />Gear</h3>

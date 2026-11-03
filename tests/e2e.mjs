@@ -281,6 +281,40 @@ await page.keyboard.press('5');
 if (!(await page.locator('h1', { hasText: 'Reliquary' }).count())) errors.push('key 5 did not open Relics');
 log('keyboard shortcuts: OK');
 
+
+// 7d. 1.1 Your Own Text: add a Latin text and an Arabic text, learn a section, check it, and look for overflow
+await nav('Keeper');
+await page.getByLabel('Unlock all Training Grounds drills').check();
+await nav('Field Guide');
+await page.getByRole('button', { name: /^Open Your Shelf/ }).click();
+if (!(await page.locator('h1', { hasText: 'Your Shelf' }).count())) errors.push('Your Shelf did not open');
+const ownAdd = async (title, text) => {
+  await btn('Add a text').click();
+  await page.getByLabel('Title', { exact: true }).fill(title);
+  await page.getByLabel('The text').fill(text);
+  await btn('Cut it into pieces').click();
+  await overflowCheck('own text split');
+  await btn('Save to my shelf').click();
+};
+await ownAdd('Lamp verse', ['The lamp is lit above the stair,', 'a slow moth circles in the light,', 'the clock says nothing, being old,', 'and all the house is warm tonight.'].join('\n'));
+await overflowCheck('own text page');
+await page.getByRole('button', { name: 'Learn this section' }).first().click();
+for (const s of ['Next step', 'Next step', 'Try it from nothing']) await btn(s).click();
+for (const [i, l] of ['The lamp is lit above the stair,', 'a slow moth circles in the light,', 'the clock says nothing, being old,', 'and all the house is warm tonight.'].entries()) await page.getByLabel('Line ' + (i + 1), { exact: true }).fill(l);
+await btn('Check').click();
+if (!(await page.getByText('4 of 4 lines held.').count())) errors.push('own text check did not hold');
+await overflowCheck('own text result');
+await btn('Next').click();
+await page.getByRole('button', { name: 'Back to your shelf' }).click();
+const ar = String.fromCodePoint(0x628, 0x633, 0x645, 0x20, 0x627, 0x644, 0x644, 0x647, 0x20, 0x627, 0x644, 0x631, 0x62D, 0x645, 0x646);
+await ownAdd('Arabic line', ar + '\n' + ar);
+await page.getByRole('button', { name: 'Back to your shelf' }).click();
+await snap('own-shelf'); await overflowCheck('own shelf');
+const stored = await page.evaluate(() => JSON.parse(localStorage.getItem('mnemos.profile')).own.texts.length);
+if (stored !== 2) errors.push('own texts not saved: ' + stored);
+await btn('Close Your Shelf').click();
+log('your own text: OK');
+
 // 8. Desktop layout
 await page.setViewportSize({ width: 1280, height: 860 });
 await nav('Today');

@@ -66,6 +66,8 @@ export function itemHint(item) {
   if (s.type === 'held') return `Yours when ${s.n} delayed recalls have held.`;
   if (s.type === 'polish') return `Turns up once you have polished ${s.n} relic${s.n > 1 ? 's' : ''} with recall cards.`;
   if (s.type === 'levels') return `Earned when your skills have gained ${s.n} level${s.n > 1 ? 's' : ''} in all.`;
+  if (s.type === 'trial') return 'Won by a District Trial or a sealed vault, when the check held after the wait.';
+  if (s.type === 'vigil') return 'Given at the Long Vigil, only for things you held for a week or a month.';
   return '';
 }
 

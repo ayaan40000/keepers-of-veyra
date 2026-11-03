@@ -5,6 +5,8 @@ import { GUIDE_CLAIM, GUIDE_SAFETY, RECIPE, REAL_TRIES, PLAYBOOKS, CALDER_LETTER
 import { MASTERS, NOT_TO_COPY } from '../data/masters.js';
 import { gateDone } from '../engine/guide.js';
 import { today } from '../engine/core.js';
+import { Toolbox, Worksheets } from './Worksheets.jsx';
+import { OwnTextEntry } from './OwnText.jsx';
 
 const districtOf = (id) => MODULES.find((m) => m.id === id)?.district || id;
 const Locked = ({ mod }) => <span className="small muted">Opens when you pass the gate of {districtOf(mod)}.</span>;
@@ -26,7 +28,7 @@ export function RealLifeCard({ profile, update, task }) {
   );
 }
 
-export default function FieldGuide({ profile, update, start }) {
+export default function FieldGuide({ profile, update, start, onOwnText }) {
   const date = today(profile);
   const done = gateDone(profile, 'M12');
   return (
@@ -70,8 +72,11 @@ export default function FieldGuide({ profile, update, start }) {
         })}
       </section>
 
+      {onOwnText && <OwnTextEntry profile={profile} onOpen={onOwnText} />}
+
       <section className="card">
         <h3 className="panel-title"><PxIcon name="scroll" size={28} />Playbooks</h3>
+        <Toolbox profile={profile} />
         {PLAYBOOKS.map((b) => (
           <details key={b.id} className="about-more" data-testid={`playbook-${b.id}`}>
             <summary>{b.title}{gateDone(profile, b.unlock) ? '' : ' (locked)'}</summary>
@@ -89,6 +94,8 @@ export default function FieldGuide({ profile, update, start }) {
           </details>
         ))}
       </section>
+
+      <Worksheets />
 
       <section className="card">
         <h3 className="panel-title"><PxIcon name="chest" size={28} />Masters&apos; Notes</h3>

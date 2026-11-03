@@ -1,0 +1,629 @@
+{
+  "notes": "Draft. 120 generic grocery items by aisle, no brand names, all easy to picture. The 24 items used in Unit Check: Lists forms A and B carry \"reservedFor\" and should be left out of practice draws so the check stays fresh. 2 items also appear in CONCRETE or the Major pools (celery, cucumber). That is expected for groceries; the grocery source is a separate pool, so the builder may leave them in. Fact-check: 'popsicle' (a trademark) replaced by 'ice pop'. No other brand names found.",
+  "items": [
+    {
+      "id": "groc-broccoli",
+      "item": "broccoli",
+      "aisle": "Fruit and vegetables",
+      "reservedFor": "unit-check-lists-A"
+    },
+    {
+      "id": "groc-leek",
+      "item": "leek",
+      "aisle": "Fruit and vegetables"
+    },
+    {
+      "id": "groc-parsnip",
+      "item": "parsnip",
+      "aisle": "Fruit and vegetables",
+      "reservedFor": "unit-check-lists-B"
+    },
+    {
+      "id": "groc-cauliflower",
+      "item": "cauliflower",
+      "aisle": "Fruit and vegetables"
+    },
+    {
+      "id": "groc-zucchini",
+      "item": "zucchini",
+      "aisle": "Fruit and vegetables"
+    },
+    {
+      "id": "groc-eggplant",
+      "item": "eggplant",
+      "aisle": "Fruit and vegetables"
+    },
+    {
+      "id": "groc-potato",
+      "item": "potato",
+      "aisle": "Fruit and vegetables"
+    },
+    {
+      "id": "groc-beetroot",
+      "item": "beetroot",
+      "aisle": "Fruit and vegetables"
+    },
+    {
+      "id": "groc-grapefruit",
+      "item": "grapefruit",
+      "aisle": "Fruit and vegetables"
+    },
+    {
+      "id": "groc-strawberry",
+      "item": "strawberry",
+      "aisle": "Fruit and vegetables",
+      "reservedFor": "unit-check-lists-A"
+    },
+    {
+      "id": "groc-blueberry",
+      "item": "blueberry",
+      "aisle": "Fruit and vegetables",
+      "reservedFor": "unit-check-lists-B"
+    },
+    {
+      "id": "groc-pomegranate",
+      "item": "pomegranate",
+      "aisle": "Fruit and vegetables"
+    },
+    {
+      "id": "groc-garlic",
+      "item": "garlic",
+      "aisle": "Fruit and vegetables",
+      "reservedFor": "unit-check-lists-B"
+    },
+    {
+      "id": "groc-ginger",
+      "item": "ginger",
+      "aisle": "Fruit and vegetables",
+      "reservedFor": "unit-check-lists-A"
+    },
+    {
+      "id": "groc-lettuce",
+      "item": "lettuce",
+      "aisle": "Fruit and vegetables"
+    },
+    {
+      "id": "groc-mushrooms",
+      "item": "mushrooms",
+      "aisle": "Fruit and vegetables"
+    },
+    {
+      "id": "groc-corn",
+      "item": "corn",
+      "aisle": "Fruit and vegetables"
+    },
+    {
+      "id": "groc-watermelon",
+      "item": "watermelon",
+      "aisle": "Fruit and vegetables"
+    },
+    {
+      "id": "groc-celery",
+      "item": "celery",
+      "aisle": "Fruit and vegetables"
+    },
+    {
+      "id": "groc-cucumber",
+      "item": "cucumber",
+      "aisle": "Fruit and vegetables"
+    },
+    {
+      "id": "groc-baguette",
+      "item": "baguette",
+      "aisle": "Bakery",
+      "reservedFor": "unit-check-lists-A"
+    },
+    {
+      "id": "groc-croissant",
+      "item": "croissant",
+      "aisle": "Bakery",
+      "reservedFor": "unit-check-lists-B"
+    },
+    {
+      "id": "groc-muffin",
+      "item": "muffin",
+      "aisle": "Bakery"
+    },
+    {
+      "id": "groc-doughnut",
+      "item": "doughnut",
+      "aisle": "Bakery"
+    },
+    {
+      "id": "groc-pretzel",
+      "item": "pretzel",
+      "aisle": "Bakery"
+    },
+    {
+      "id": "groc-cupcake",
+      "item": "cupcake",
+      "aisle": "Bakery"
+    },
+    {
+      "id": "groc-flatbread",
+      "item": "flatbread",
+      "aisle": "Bakery"
+    },
+    {
+      "id": "groc-brownie",
+      "item": "brownie",
+      "aisle": "Bakery"
+    },
+    {
+      "id": "groc-scone",
+      "item": "scone",
+      "aisle": "Bakery"
+    },
+    {
+      "id": "groc-pie",
+      "item": "pie",
+      "aisle": "Bakery"
+    },
+    {
+      "id": "groc-butter",
+      "item": "butter",
+      "aisle": "Dairy and eggs",
+      "reservedFor": "unit-check-lists-A"
+    },
+    {
+      "id": "groc-yogurt",
+      "item": "yogurt",
+      "aisle": "Dairy and eggs",
+      "reservedFor": "unit-check-lists-A"
+    },
+    {
+      "id": "groc-cheddar",
+      "item": "cheddar",
+      "aisle": "Dairy and eggs",
+      "reservedFor": "unit-check-lists-B"
+    },
+    {
+      "id": "groc-mozzarella",
+      "item": "mozzarella",
+      "aisle": "Dairy and eggs"
+    },
+    {
+      "id": "groc-cream",
+      "item": "cream",
+      "aisle": "Dairy and eggs",
+      "reservedFor": "unit-check-lists-B"
+    },
+    {
+      "id": "groc-milk",
+      "item": "milk",
+      "aisle": "Dairy and eggs"
+    },
+    {
+      "id": "groc-eggs",
+      "item": "eggs",
+      "aisle": "Dairy and eggs"
+    },
+    {
+      "id": "groc-cottage-cheese",
+      "item": "cottage cheese",
+      "aisle": "Dairy and eggs"
+    },
+    {
+      "id": "groc-sausage",
+      "item": "sausage",
+      "aisle": "Meat and fish",
+      "reservedFor": "unit-check-lists-A"
+    },
+    {
+      "id": "groc-bacon",
+      "item": "bacon",
+      "aisle": "Meat and fish"
+    },
+    {
+      "id": "groc-salmon",
+      "item": "salmon",
+      "aisle": "Meat and fish",
+      "reservedFor": "unit-check-lists-A"
+    },
+    {
+      "id": "groc-tuna",
+      "item": "tuna",
+      "aisle": "Meat and fish",
+      "reservedFor": "unit-check-lists-B"
+    },
+    {
+      "id": "groc-shrimp",
+      "item": "shrimp",
+      "aisle": "Meat and fish"
+    },
+    {
+      "id": "groc-steak",
+      "item": "steak",
+      "aisle": "Meat and fish"
+    },
+    {
+      "id": "groc-drumsticks",
+      "item": "drumsticks",
+      "aisle": "Meat and fish"
+    },
+    {
+      "id": "groc-ham",
+      "item": "ham",
+      "aisle": "Meat and fish"
+    },
+    {
+      "id": "groc-meatballs",
+      "item": "meatballs",
+      "aisle": "Meat and fish",
+      "reservedFor": "unit-check-lists-B"
+    },
+    {
+      "id": "groc-sardines",
+      "item": "sardines",
+      "aisle": "Meat and fish"
+    },
+    {
+      "id": "groc-rice",
+      "item": "rice",
+      "aisle": "Pantry"
+    },
+    {
+      "id": "groc-spaghetti",
+      "item": "spaghetti",
+      "aisle": "Pantry",
+      "reservedFor": "unit-check-lists-A"
+    },
+    {
+      "id": "groc-flour",
+      "item": "flour",
+      "aisle": "Pantry"
+    },
+    {
+      "id": "groc-oatmeal",
+      "item": "oatmeal",
+      "aisle": "Pantry",
+      "reservedFor": "unit-check-lists-B"
+    },
+    {
+      "id": "groc-lentils",
+      "item": "lentils",
+      "aisle": "Pantry"
+    },
+    {
+      "id": "groc-peanut-butter",
+      "item": "peanut butter",
+      "aisle": "Pantry"
+    },
+    {
+      "id": "groc-olive-oil",
+      "item": "olive oil",
+      "aisle": "Pantry",
+      "reservedFor": "unit-check-lists-B"
+    },
+    {
+      "id": "groc-vinegar",
+      "item": "vinegar",
+      "aisle": "Pantry",
+      "reservedFor": "unit-check-lists-A"
+    },
+    {
+      "id": "groc-ketchup",
+      "item": "ketchup",
+      "aisle": "Pantry"
+    },
+    {
+      "id": "groc-mustard",
+      "item": "mustard",
+      "aisle": "Pantry"
+    },
+    {
+      "id": "groc-tomato-soup",
+      "item": "tomato soup",
+      "aisle": "Pantry"
+    },
+    {
+      "id": "groc-cereal",
+      "item": "cereal",
+      "aisle": "Pantry"
+    },
+    {
+      "id": "groc-syrup",
+      "item": "syrup",
+      "aisle": "Pantry"
+    },
+    {
+      "id": "groc-cocoa",
+      "item": "cocoa",
+      "aisle": "Pantry"
+    },
+    {
+      "id": "groc-ice-cream",
+      "item": "ice cream",
+      "aisle": "Frozen"
+    },
+    {
+      "id": "groc-frozen-peas",
+      "item": "frozen peas",
+      "aisle": "Frozen"
+    },
+    {
+      "id": "groc-french-fries",
+      "item": "french fries",
+      "aisle": "Frozen"
+    },
+    {
+      "id": "groc-waffles",
+      "item": "waffles",
+      "aisle": "Frozen"
+    },
+    {
+      "id": "groc-ice-pop",
+      "item": "ice pop",
+      "aisle": "Frozen"
+    },
+    {
+      "id": "groc-frozen-berries",
+      "item": "frozen berries",
+      "aisle": "Frozen"
+    },
+    {
+      "id": "groc-fish-sticks",
+      "item": "fish sticks",
+      "aisle": "Frozen"
+    },
+    {
+      "id": "groc-frozen-corn",
+      "item": "frozen corn",
+      "aisle": "Frozen"
+    },
+    {
+      "id": "groc-ice-cubes",
+      "item": "ice cubes",
+      "aisle": "Frozen"
+    },
+    {
+      "id": "groc-orange-juice",
+      "item": "orange juice",
+      "aisle": "Drinks"
+    },
+    {
+      "id": "groc-apple-juice",
+      "item": "apple juice",
+      "aisle": "Drinks"
+    },
+    {
+      "id": "groc-lemonade",
+      "item": "lemonade",
+      "aisle": "Drinks",
+      "reservedFor": "unit-check-lists-A"
+    },
+    {
+      "id": "groc-sparkling-water",
+      "item": "sparkling water",
+      "aisle": "Drinks"
+    },
+    {
+      "id": "groc-coffee-beans",
+      "item": "coffee beans",
+      "aisle": "Drinks"
+    },
+    {
+      "id": "groc-tea-bags",
+      "item": "tea bags",
+      "aisle": "Drinks"
+    },
+    {
+      "id": "groc-soda",
+      "item": "soda",
+      "aisle": "Drinks"
+    },
+    {
+      "id": "groc-iced-tea",
+      "item": "iced tea",
+      "aisle": "Drinks",
+      "reservedFor": "unit-check-lists-B"
+    },
+    {
+      "id": "groc-coconut-water",
+      "item": "coconut water",
+      "aisle": "Drinks"
+    },
+    {
+      "id": "groc-hot-chocolate",
+      "item": "hot chocolate",
+      "aisle": "Drinks"
+    },
+    {
+      "id": "groc-popcorn",
+      "item": "popcorn",
+      "aisle": "Snacks"
+    },
+    {
+      "id": "groc-crackers",
+      "item": "crackers",
+      "aisle": "Snacks"
+    },
+    {
+      "id": "groc-potato-chips",
+      "item": "potato chips",
+      "aisle": "Snacks"
+    },
+    {
+      "id": "groc-peanuts",
+      "item": "peanuts",
+      "aisle": "Snacks"
+    },
+    {
+      "id": "groc-raisins",
+      "item": "raisins",
+      "aisle": "Snacks"
+    },
+    {
+      "id": "groc-granola-bars",
+      "item": "granola bars",
+      "aisle": "Snacks"
+    },
+    {
+      "id": "groc-almonds",
+      "item": "almonds",
+      "aisle": "Snacks"
+    },
+    {
+      "id": "groc-marshmallows",
+      "item": "marshmallows",
+      "aisle": "Snacks"
+    },
+    {
+      "id": "groc-gumdrops",
+      "item": "gumdrops",
+      "aisle": "Snacks"
+    },
+    {
+      "id": "groc-trail-mix",
+      "item": "trail mix",
+      "aisle": "Snacks"
+    },
+    {
+      "id": "groc-rice-cakes",
+      "item": "rice cakes",
+      "aisle": "Snacks"
+    },
+    {
+      "id": "groc-jelly-beans",
+      "item": "jelly beans",
+      "aisle": "Snacks"
+    },
+    {
+      "id": "groc-dish-soap",
+      "item": "dish soap",
+      "aisle": "Household"
+    },
+    {
+      "id": "groc-sponge",
+      "item": "sponge",
+      "aisle": "Household",
+      "reservedFor": "unit-check-lists-A"
+    },
+    {
+      "id": "groc-paper-towels",
+      "item": "paper towels",
+      "aisle": "Household"
+    },
+    {
+      "id": "groc-trash-bags",
+      "item": "trash bags",
+      "aisle": "Household"
+    },
+    {
+      "id": "groc-napkins",
+      "item": "napkins",
+      "aisle": "Household",
+      "reservedFor": "unit-check-lists-B"
+    },
+    {
+      "id": "groc-foil",
+      "item": "foil",
+      "aisle": "Household"
+    },
+    {
+      "id": "groc-light-bulbs",
+      "item": "light bulbs",
+      "aisle": "Household"
+    },
+    {
+      "id": "groc-laundry-soap",
+      "item": "laundry soap",
+      "aisle": "Household"
+    },
+    {
+      "id": "groc-toilet-paper",
+      "item": "toilet paper",
+      "aisle": "Household"
+    },
+    {
+      "id": "groc-plastic-wrap",
+      "item": "plastic wrap",
+      "aisle": "Household"
+    },
+    {
+      "id": "groc-clothespins",
+      "item": "clothespins",
+      "aisle": "Household"
+    },
+    {
+      "id": "groc-rubber-gloves",
+      "item": "rubber gloves",
+      "aisle": "Household"
+    },
+    {
+      "id": "groc-toothbrush",
+      "item": "toothbrush",
+      "aisle": "Personal care"
+    },
+    {
+      "id": "groc-toothpaste",
+      "item": "toothpaste",
+      "aisle": "Personal care"
+    },
+    {
+      "id": "groc-shampoo",
+      "item": "shampoo",
+      "aisle": "Personal care"
+    },
+    {
+      "id": "groc-hand-soap",
+      "item": "hand soap",
+      "aisle": "Personal care"
+    },
+    {
+      "id": "groc-razor",
+      "item": "razor",
+      "aisle": "Personal care"
+    },
+    {
+      "id": "groc-tissues",
+      "item": "tissues",
+      "aisle": "Personal care"
+    },
+    {
+      "id": "groc-cotton-balls",
+      "item": "cotton balls",
+      "aisle": "Personal care"
+    },
+    {
+      "id": "groc-sunscreen",
+      "item": "sunscreen",
+      "aisle": "Personal care"
+    },
+    {
+      "id": "groc-lip-balm",
+      "item": "lip balm",
+      "aisle": "Personal care"
+    },
+    {
+      "id": "groc-hairbrush",
+      "item": "hairbrush",
+      "aisle": "Personal care"
+    },
+    {
+      "id": "groc-dog-food",
+      "item": "dog food",
+      "aisle": "Pet"
+    },
+    {
+      "id": "groc-cat-litter",
+      "item": "cat litter",
+      "aisle": "Pet"
+    },
+    {
+      "id": "groc-birdseed",
+      "item": "birdseed",
+      "aisle": "Pet"
+    },
+    {
+      "id": "groc-fish-food",
+      "item": "fish food",
+      "aisle": "Pet"
+    },
+    {
+      "id": "groc-pet-treats",
+      "item": "pet treats",
+      "aisle": "Pet"
+    }
+  ]
+}

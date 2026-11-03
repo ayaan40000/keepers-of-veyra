@@ -1,0 +1,2348 @@
+{
+  "notes": "Workstream E, dates and historical events. 63 real dates in 9 themed sets of 7, in ascending year order inside each set. Fact-check, Nov 2, 2026: every year was looked up in the English Wikipedia article named in sourceUrls (62 found directly in the article text, and the Columbus article was then corrected to Voyages of Christopher Columbus, which gives 1492); day-level details in 'source' (for example 15 June 1215, 14 October 1066) are standard and agree with the named reference works. Two dates are conventional and are worded that way (476 and 1337). The Web date (1991) is worded as 'announced to the public' (6 August 1991 summary by Tim Berners-Lee; CERN placed the technology in the public domain in 1993). Three years appear in two sets (1869, 1914, 1991): if two sets are mixed in one drill, accept both events for that year or keep them apart. Dates already used by the v0.11 Scriptorium timelines (1957 to 1980 space, flight and medicine) are deliberately not repeated. No living person is named. Nothing implies endorsement. Hooks (the event pictures) are suggestions; the player may swap them. Major words are computed from MAJOR_PAIRS in src/data/content.js (the shipped default list); if the player has edited their own list (p.major) the app should show their words instead.",
+  "where": {
+    "fieldGuide": "New playbook \"dates\" (see fieldguide-e.json), unlock M4.",
+    "drill": "Facts drill variant src \"dates\" (see \"drillVariant\"), from the Week 20 pairs slot and as optional extra practice from M5.",
+    "trial": "The nine real sets are appended to TIMELINES, so the existing Scriptorium trial can draw them. A new trial \"year_hall\" (event to year, Major pictures) unlocks at M7.",
+    "eventHall": "Year Round, a scaled-down scored round (see \"eventHallRound\").",
+    "yourOwnText": "Not used. The player may type their own dates as lines of a text, but these shipped sets are not text."
+  },
+  "gates": {
+    "guide": "M4",
+    "drillVariant": "M5",
+    "trialYearHall": "M7",
+    "eventHallYearRound": "M10 (the Event Hall opens at the M10 gate)"
+  },
+  "method": {
+    "name": "Year Pictures on a Timeline",
+    "summary": "Give each date two pictures and one scene. The year is the two Major System pictures side by side (the first two digits, then the last two). The event is a hook picture. Put the scene on the next desk or stop of a timeline route, so the order of events holds the order of the years.",
+    "steps": [
+      "Pad the year to four digits. 1066 is 10 and 66. 476 is 04 and 76. 44 BCE is 00 and 44, and you keep BCE in the label of the set.",
+      "Say each pair as its Major picture: 10 is toes and 66 is judge.",
+      "Choose a hook for the event: a bright eye over a hasty meal for Hastings.",
+      "Make one scene that holds the hook, the two year pictures and the desk: a judge with ten toes pulling an arrow out of a bright eye, standing on the first desk.",
+      "Run the desks in order. Because the desks go forward in time, you always know roughly which century you are in, so on a ladder you may learn the last two digits only."
+    ],
+    "ladder": [
+      {
+        "level": 1,
+        "name": "Last two digits",
+        "rule": "The player answers only the last two digits (66 for 1066). The century is shown on the set title or by the order of the desks."
+      },
+      {
+        "level": 2,
+        "name": "Full years",
+        "rule": "The player answers the full year (1066). BCE years need the letters BCE or BC."
+      },
+      {
+        "level": 3,
+        "name": "Put them in order",
+        "rule": "The seven events are shown shuffled, with no years. The player puts them in order along the desks. One point for each event in its right place."
+      }
+    ],
+    "honest": "Pictures are a good way to keep a bare year such as 1066 attached to an event. They do not teach why anything happened. The Major System costs time at first: for a year you already half know, a plain check is quicker. Use pictures for the years you keep mixing up.",
+    "workedExamples": [
+      {
+        "year": "1066",
+        "pairs": [
+          "10",
+          "66"
+        ],
+        "words": [
+          "toes",
+          "judge"
+        ],
+        "scene": "A judge with ten toes pulls an arrow out of a bright eye at the first desk of the hall."
+      },
+      {
+        "year": "1492",
+        "pairs": [
+          "14",
+          "92"
+        ],
+        "words": [
+          "tire",
+          "bone"
+        ],
+        "scene": "A tiny ship rolls on a tire towards a giant dove, carrying a bone as its mast."
+      },
+      {
+        "year": "1789",
+        "pairs": [
+          "17",
+          "89"
+        ],
+        "words": [
+          "duck",
+          "fob"
+        ],
+        "scene": "A duck wearing a watch fob swings a giant key at a stone fortress."
+      }
+    ]
+  },
+  "scoring": {
+    "accuracyFirst": "Each question is right or wrong. A year is right only when every digit is right (no off-by-one credit). Feedback shows the true year and the date detail from \"source\" in plain words.",
+    "skillEstimate": "The facts skill (structure) only, through the normal drill result. Event Hall and trial results never change skill estimates.",
+    "speed": "No timer on recall. Time is shown only as a personal best when accuracy is 85 percent or higher.",
+    "trial": "year_hall passes with 6 of 7 straight after studying and 5 of 7 after 7 days. A miss costs nothing and fresh dates come on the next try.",
+    "delayed": "Drill sets go to p.sets as usual and are probed at 1, 7 and 30 days."
+  },
+  "drillVariant": {
+    "spec": "{ t: 'facts', n: 7, s: 120, src: 'dates', ask: 'event'|'year'|'order', yearPart: 'last2'|'full', set: '<set id>' (optional) }",
+    "items": "{ cue: '1066' or event label, answer: event label or year, hook, pairs: ['10','66'], accepts: [...] }. For ask 'order' the item is { cue: 'Hastings', answer: '4' } (the position 1 to 7).",
+    "recallMode": "ask 'event' and 'year' use the cued mode with the existing forgiving matcher plus the alternates in accepts; ask 'order' uses the cued mode and a number answer.",
+    "save": "No new record. Stored in p.sets with the spec; the probe reads cue and answer. Add the template check in store.js only if new keys (src, ask, yearPart) are validated."
+  },
+  "trialYearHall": {
+    "id": "year_hall",
+    "kind": "trial",
+    "title": "The Hall of Years",
+    "gate": "M7",
+    "district": "Scriptorium",
+    "coach": "ennick",
+    "art": "trial_year_hall",
+    "prize": "tr_year_tablet",
+    "method": "Dates and timelines: two Major System pictures for the year, one hook for the event, all on the same desk.",
+    "setup": "Beyond the flooded floor, a long hall of tall brass years has lost its labels. The Tide rubbed every date from the shelves, but the events are still carved above them.",
+    "intro": "Seven events, seven desks. Make a year picture and an event picture for each, and put them on the desk. An echo will ask you for the year of each event. You will be asked again after a week.",
+    "pass": "You say all the years and the brass labels slide back into their frames, one after another. Ennick tilts a small year tablet out of the last frame and hands it to you.",
+    "miss": "A few years slid away, which is ordinary for numbers. Look at only those, make the picture stranger, and tomorrow there will be a different set of dates.",
+    "material": "timeline",
+    "ask": "year",
+    "n": 7,
+    "study": 150,
+    "checks": [
+      {
+        "after": 0,
+        "pass": 0.8571428571428571
+      },
+      {
+        "after": 7,
+        "pass": 0.7142857142857143
+      }
+    ],
+    "retry": 1,
+    "builderNotes": "Needs a new prize item id (permanent once shipped) and art from tools/asset-studio/prizes.py; owner decision. material() in src/engine/trials.js needs a branch: when t.ask is \"year\", the study rows show the year as text and the item prompt is \"When did this happen? (it was on <desk>)\" with the answer the year, alts from accepts. Add the nine real sets to TIMELINES and also keep the three existing real ones. Because both trials draw from TIMELINES, keep \"real\" true for these."
+  },
+  "eventHallRound": {
+    "id": "year-round",
+    "ourName": "Year Round",
+    "realFormat": "Not named in the game. A scaled-down scored round where years come from real events.",
+    "howItWorks": "You see 10 to 28 real events, each with its year, for a set study time. Then the same events return in a new order and you give the year of each.",
+    "ladder": [
+      10,
+      14,
+      21,
+      28
+    ],
+    "studySecondsPerEvent": 12,
+    "recallSecondsPerEvent": 20,
+    "scoring": "One point for each year with every digit right. Two trials with fresh events; the better one counts. Practice only: no Lumen, no skill change, best result recorded on the Event Hall ladder.",
+    "notConfirmed": "Whether real memory competitions use exactly this format was not verified. The game does not claim it does.",
+    "honest": "Years are practised here as a sport skill. Do not read the score as a measure of how much history you know.",
+    "saved": "The p.events record from the main plan (best.dates, history). Add the key \"dates\" to p.events.best in newProfile, migrate and validate.",
+    "pool": "All 63 events below, drawn with a seeded shuffle."
+  },
+  "sets": [
+    {
+      "id": "dates-crowns",
+      "title": "Rome, crowns and castles",
+      "real": true,
+      "intro": "From a famous murder in Rome to the end of the Middle Ages.",
+      "events": [
+        {
+          "year": "44 BCE",
+          "bce": true,
+          "text": "Julius Caesar is killed in Rome by a group of senators.",
+          "label": "Caesar",
+          "accepts": [
+            "Julius Caesar",
+            "44 BC"
+          ],
+          "majorPairs": [
+            "00",
+            "44"
+          ],
+          "majorWords": [
+            "sauce",
+            "rower"
+          ],
+          "hook": "a laurel wreath sliding off a marble head",
+          "source": "Ides of March, 15 March 44 BCE; Plutarch and Suetonius; any standard history of Rome",
+          "verified": true,
+          "sourceUrls": [
+            "https://en.wikipedia.org/wiki/Assassination_of_Julius_Caesar"
+          ]
+        },
+        {
+          "year": "476",
+          "bce": false,
+          "text": "The last emperor in the West, Romulus Augustulus, is removed. This is the usual date for the end of the Western Roman Empire.",
+          "label": "Western Rome falls",
+          "accepts": [
+            "fall of rome",
+            "Romulus Augustulus"
+          ],
+          "majorPairs": [
+            "04",
+            "76"
+          ],
+          "majorWords": [
+            "zero",
+            "cage"
+          ],
+          "hook": "a stone eagle toppling off a column",
+          "source": "Conventional date; historians note the change was gradual",
+          "verified": true,
+          "sourceUrls": [
+            "https://en.wikipedia.org/wiki/Fall_of_the_Western_Roman_Empire"
+          ]
+        },
+        {
+          "year": "800",
+          "bce": false,
+          "text": "Charlemagne is crowned emperor in Rome on Christmas Day.",
+          "label": "Charlemagne",
+          "accepts": [
+            "Charles the Great"
+          ],
+          "majorPairs": [
+            "08",
+            "00"
+          ],
+          "majorWords": [
+            "sofa",
+            "sauce"
+          ],
+          "hook": "a giant crown on a Christmas tree",
+          "source": "25 December 800; Einhard; Frankish Royal Annals",
+          "verified": true,
+          "sourceUrls": [
+            "https://en.wikipedia.org/wiki/Charlemagne"
+          ]
+        },
+        {
+          "year": "1066",
+          "bce": false,
+          "text": "William of Normandy wins the Battle of Hastings and becomes King of England.",
+          "label": "Hastings",
+          "accepts": [
+            "battle of hastings",
+            "Norman conquest",
+            "William the Conqueror"
+          ],
+          "majorPairs": [
+            "10",
+            "66"
+          ],
+          "majorWords": [
+            "toes",
+            "judge"
+          ],
+          "hook": "an arrow in a bright eye over a hasty meal",
+          "source": "14 October 1066; Anglo-Saxon Chronicle; Bayeux Tapestry",
+          "verified": true,
+          "sourceUrls": [
+            "https://en.wikipedia.org/wiki/Battle_of_Hastings"
+          ]
+        },
+        {
+          "year": "1215",
+          "bce": false,
+          "text": "King John of England seals Magna Carta.",
+          "label": "Magna Carta",
+          "accepts": [
+            "magna carta"
+          ],
+          "majorPairs": [
+            "12",
+            "15"
+          ],
+          "majorWords": [
+            "tin",
+            "tail"
+          ],
+          "hook": "a king pressing a wax seal on a huge map",
+          "source": "15 June 1215, Runnymede; British Library",
+          "verified": true,
+          "sourceUrls": [
+            "https://en.wikipedia.org/wiki/Magna_Carta"
+          ]
+        },
+        {
+          "year": "1337",
+          "bce": false,
+          "text": "The Hundred Years' War between England and France begins, as it is usually dated.",
+          "label": "Hundred Years War",
+          "accepts": [
+            "hundred years war",
+            "100 years war"
+          ],
+          "majorPairs": [
+            "13",
+            "37"
+          ],
+          "majorWords": [
+            "tomb",
+            "mug"
+          ],
+          "hook": "a hundred candles on a sword",
+          "source": "Conventional start date; the war ends 1453",
+          "verified": true,
+          "sourceUrls": [
+            "https://en.wikipedia.org/wiki/Hundred_Years'_War"
+          ]
+        },
+        {
+          "year": "1453",
+          "bce": false,
+          "text": "Constantinople falls to the Ottoman army of Sultan Mehmed II.",
+          "label": "Constantinople",
+          "accepts": [
+            "fall of constantinople",
+            "Istanbul"
+          ],
+          "majorPairs": [
+            "14",
+            "53"
+          ],
+          "majorWords": [
+            "tire",
+            "lime"
+          ],
+          "hook": "a huge gate with a cannonball through it",
+          "source": "29 May 1453; standard histories",
+          "verified": true,
+          "sourceUrls": [
+            "https://en.wikipedia.org/wiki/Fall_of_Constantinople"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dates-voyages",
+      "title": "Voyages and far horizons",
+      "real": true,
+      "intro": "Ships, seas and the poles.",
+      "events": [
+        {
+          "year": "1492",
+          "bce": false,
+          "text": "Columbus's first voyage reaches the Caribbean.",
+          "label": "Columbus",
+          "accepts": [
+            "Christopher Columbus"
+          ],
+          "majorPairs": [
+            "14",
+            "92"
+          ],
+          "majorWords": [
+            "tire",
+            "bone"
+          ],
+          "hook": "a tiny ship under a giant dove",
+          "source": "12 October 1492, landfall in the Bahamas",
+          "verified": true,
+          "sourceUrls": [
+            "https://en.wikipedia.org/wiki/Voyages_of_Christopher_Columbus"
+          ]
+        },
+        {
+          "year": "1498",
+          "bce": false,
+          "text": "Vasco da Gama's ships reach India by sea from Europe.",
+          "label": "Vasco da Gama",
+          "accepts": [
+            "da Gama",
+            "gama"
+          ],
+          "majorPairs": [
+            "14",
+            "98"
+          ],
+          "majorWords": [
+            "tire",
+            "beef"
+          ],
+          "hook": "a gamer on the deck holding a spice jar",
+          "source": "Calicut, May 1498",
+          "verified": true,
+          "sourceUrls": [
+            "https://en.wikipedia.org/wiki/Vasco_da_Gama"
+          ]
+        },
+        {
+          "year": "1522",
+          "bce": false,
+          "text": "The Victoria, the last ship of Magellan's expedition, returns to Spain after sailing around the world.",
+          "label": "Around the world",
+          "accepts": [
+            "Magellan",
+            "Victoria",
+            "circumnavigation",
+            "Elcano"
+          ],
+          "majorPairs": [
+            "15",
+            "22"
+          ],
+          "majorWords": [
+            "tail",
+            "nun"
+          ],
+          "hook": "a ship with a globe for a sail",
+          "source": "6 September 1522; Magellan himself died in 1521",
+          "verified": true,
+          "sourceUrls": [
+            "https://en.wikipedia.org/wiki/Ferdinand_Magellan"
+          ]
+        },
+        {
+          "year": "1620",
+          "bce": false,
+          "text": "The Mayflower reaches the coast of North America with settlers from England.",
+          "label": "Mayflower",
+          "accepts": [
+            "pilgrims",
+            "may flower"
+          ],
+          "majorPairs": [
+            "16",
+            "20"
+          ],
+          "majorWords": [
+            "dish",
+            "nose"
+          ],
+          "hook": "a huge flower floating like a boat",
+          "source": "November 1620 at Cape Cod; settlement at Plymouth December 1620",
+          "verified": true,
+          "sourceUrls": [
+            "https://en.wikipedia.org/wiki/Mayflower"
+          ]
+        },
+        {
+          "year": "1770",
+          "bce": false,
+          "text": "James Cook sails along the east coast of Australia and lands at Botany Bay.",
+          "label": "Captain Cook",
+          "accepts": [
+            "Cook",
+            "Botany Bay",
+            "James Cook"
+          ],
+          "majorPairs": [
+            "17",
+            "70"
+          ],
+          "majorWords": [
+            "duck",
+            "case"
+          ],
+          "hook": "a cook flipping pancakes on a shore",
+          "source": "April 1770",
+          "verified": true,
+          "sourceUrls": [
+            "https://en.wikipedia.org/wiki/James_Cook"
+          ]
+        },
+        {
+          "year": "1911",
+          "bce": false,
+          "text": "Roald Amundsen's party is the first to reach the South Pole.",
+          "label": "South Pole",
+          "accepts": [
+            "Amundsen"
+          ],
+          "majorPairs": [
+            "19",
+            "11"
+          ],
+          "majorWords": [
+            "tub",
+            "date"
+          ],
+          "hook": "a flag on an iceberg shaped like a pole",
+          "source": "14 December 1911",
+          "verified": true,
+          "sourceUrls": [
+            "https://en.wikipedia.org/wiki/Amundsen's_South_Pole_expedition"
+          ]
+        },
+        {
+          "year": "1953",
+          "bce": false,
+          "text": "Edmund Hillary and Tenzing Norgay are the first known climbers to reach the top of Mount Everest.",
+          "label": "Everest",
+          "accepts": [
+            "Mount Everest",
+            "Hillary",
+            "Tenzing"
+          ],
+          "majorPairs": [
+            "19",
+            "53"
+          ],
+          "majorWords": [
+            "tub",
+            "lime"
+          ],
+          "hook": "two climbers waving from a giant sofa on a peak",
+          "source": "29 May 1953",
+          "verified": true,
+          "sourceUrls": [
+            "https://en.wikipedia.org/wiki/Tenzing_Norgay"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dates-ideas",
+      "title": "Ideas that changed minds",
+      "real": true,
+      "intro": "Faith, science and the big books.",
+      "events": [
+        {
+          "year": "1517",
+          "bce": false,
+          "text": "Martin Luther publishes his Ninety-five Theses.",
+          "label": "Luther",
+          "accepts": [
+            "Martin Luther",
+            "95 theses"
+          ],
+          "majorPairs": [
+            "15",
+            "17"
+          ],
+          "majorWords": [
+            "tail",
+            "duck"
+          ],
+          "hook": "a nail hammering a long list to a door",
+          "source": "Traditionally 31 October 1517, Wittenberg",
+          "verified": true,
+          "sourceUrls": [
+            "https://en.wikipedia.org/wiki/Ninety-five_Theses"
+          ]
+        },
+        {
+          "year": "1543",
+          "bce": false,
+          "text": "Copernicus publishes his book placing the Sun at the centre of the planets' paths.",
+          "label": "Copernicus",
+          "accepts": [
+            "copernican",
+            "On the Revolutions"
+          ],
+          "majorPairs": [
+            "15",
+            "43"
+          ],
+          "majorWords": [
+            "tail",
+            "ram"
+          ],
+          "hook": "a sun sitting on a throne with planets circling",
+          "source": "De revolutionibus orbium coelestium, 1543",
+          "verified": true,
+          "sourceUrls": [
+            "https://en.wikipedia.org/wiki/De_revolutionibus_orbium_coelestium"
+          ]
+        },
+        {
+          "year": "1610",
+          "bce": false,
+          "text": "Galileo sees four moons of Jupiter through his telescope.",
+          "label": "Galileo",
+          "accepts": [
+            "Jupiter moons",
+            "telescope"
+          ],
+          "majorPairs": [
+            "16",
+            "10"
+          ],
+          "majorWords": [
+            "dish",
+            "toes"
+          ],
+          "hook": "a tiny telescope with four beads",
+          "source": "January 1610; Sidereus Nuncius, March 1610",
+          "verified": true,
+          "sourceUrls": [
+            "https://en.wikipedia.org/wiki/Sidereus_Nuncius"
+          ]
+        },
+        {
+          "year": "1687",
+          "bce": false,
+          "text": "Isaac Newton publishes his Principia, setting out his laws of motion and gravity.",
+          "label": "Newton",
+          "accepts": [
+            "Principia",
+            "Isaac Newton"
+          ],
+          "majorPairs": [
+            "16",
+            "87"
+          ],
+          "majorWords": [
+            "dish",
+            "fog"
+          ],
+          "hook": "an apple rolling off a thick book",
+          "source": "Published July 1687; Royal Society",
+          "verified": true,
+          "sourceUrls": [
+            "https://en.wikipedia.org/wiki/Philosophi%C3%A6_Naturalis_Principia_Mathematica"
+          ]
+        },
+        {
+          "year": "1859",
+          "bce": false,
+          "text": "Charles Darwin publishes On the Origin of Species.",
+          "label": "Darwin",
+          "accepts": [
+            "Origin of Species",
+            "Charles Darwin"
+          ],
+          "majorPairs": [
+            "18",
+            "59"
+          ],
+          "majorWords": [
+            "dove",
+            "lip"
+          ],
+          "hook": "a finch wearing a crown of seeds",
+          "source": "24 November 1859",
+          "verified": true,
+          "sourceUrls": [
+            "https://en.wikipedia.org/wiki/On_the_Origin_of_Species"
+          ]
+        },
+        {
+          "year": "1869",
+          "bce": false,
+          "text": "Dmitri Mendeleev presents his periodic table of the elements.",
+          "label": "Periodic table",
+          "accepts": [
+            "Mendeleev"
+          ],
+          "majorPairs": [
+            "18",
+            "69"
+          ],
+          "majorWords": [
+            "dove",
+            "ship"
+          ],
+          "hook": "a table laid with tiny labelled squares like cards",
+          "source": "March 1869, Russian Chemical Society",
+          "verified": true,
+          "sourceUrls": [
+            "https://en.wikipedia.org/wiki/Dmitri_Mendeleev"
+          ]
+        },
+        {
+          "year": "1905",
+          "bce": false,
+          "text": "Albert Einstein publishes his theory of special relativity.",
+          "label": "Special relativity",
+          "accepts": [
+            "Einstein",
+            "relativity",
+            "Albert Einstein"
+          ],
+          "majorPairs": [
+            "19",
+            "05"
+          ],
+          "majorWords": [
+            "tub",
+            "sail"
+          ],
+          "hook": "a wild-haired clock running slow",
+          "source": "Annalen der Physik, 1905",
+          "verified": true,
+          "sourceUrls": [
+            "https://en.wikipedia.org/wiki/Special_relativity"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dates-revolutions",
+      "title": "Revolutions and republics",
+      "real": true,
+      "intro": "Independence, uprisings and new countries.",
+      "events": [
+        {
+          "year": "1776",
+          "bce": false,
+          "text": "The American colonies adopt the Declaration of Independence.",
+          "label": "Declaration",
+          "accepts": [
+            "Declaration of Independence",
+            "Independence"
+          ],
+          "majorPairs": [
+            "17",
+            "76"
+          ],
+          "majorWords": [
+            "duck",
+            "cage"
+          ],
+          "hook": "a quill pen holding up a flag",
+          "source": "4 July 1776",
+          "verified": true,
+          "sourceUrls": [
+            "https://en.wikipedia.org/wiki/United_States_Declaration_of_Independence"
+          ]
+        },
+        {
+          "year": "1789",
+          "bce": false,
+          "text": "The French Revolution begins; crowds storm the Bastille in Paris.",
+          "label": "Bastille",
+          "accepts": [
+            "French Revolution",
+            "storming of the bastille"
+          ],
+          "majorPairs": [
+            "17",
+            "89"
+          ],
+          "majorWords": [
+            "duck",
+            "fob"
+          ],
+          "hook": "a stone fortress with a giant key",
+          "source": "14 July 1789",
+          "verified": true,
+          "sourceUrls": [
+            "https://en.wikipedia.org/wiki/Storming_of_the_Bastille"
+          ]
+        },
+        {
+          "year": "1804",
+          "bce": false,
+          "text": "Haiti declares independence, the first country led by formerly enslaved people to do so.",
+          "label": "Haiti",
+          "accepts": [
+            "Haitian independence"
+          ],
+          "majorPairs": [
+            "18",
+            "04"
+          ],
+          "majorWords": [
+            "dove",
+            "zero"
+          ],
+          "hook": "a bright sunrise over a broken chain",
+          "source": "1 January 1804",
+          "verified": true,
+          "sourceUrls": [
+            "https://en.wikipedia.org/wiki/Haitian_Declaration_of_Independence"
+          ]
+        },
+        {
+          "year": "1815",
+          "bce": false,
+          "text": "Napoleon is defeated at the Battle of Waterloo.",
+          "label": "Waterloo",
+          "accepts": [
+            "battle of waterloo",
+            "Napoleon"
+          ],
+          "majorPairs": [
+            "18",
+            "15"
+          ],
+          "majorWords": [
+            "dove",
+            "tail"
+          ],
+          "hook": "a small hat floating in a flooded station",
+          "source": "18 June 1815",
+          "verified": true,
+          "sourceUrls": [
+            "https://en.wikipedia.org/wiki/Battle_of_Waterloo"
+          ]
+        },
+        {
+          "year": "1861",
+          "bce": false,
+          "text": "The American Civil War begins with the firing on Fort Sumter.",
+          "label": "Civil War",
+          "accepts": [
+            "American Civil War",
+            "Fort Sumter"
+          ],
+          "majorPairs": [
+            "18",
+            "61"
+          ],
+          "majorWords": [
+            "dove",
+            "sheet"
+          ],
+          "hook": "a cannon fired at a sumo wrestler",
+          "source": "12 April 1861",
+          "verified": true,
+          "sourceUrls": [
+            "https://en.wikipedia.org/wiki/Battle_of_Fort_Sumter"
+          ]
+        },
+        {
+          "year": "1871",
+          "bce": false,
+          "text": "The German Empire is proclaimed at Versailles.",
+          "label": "German Empire",
+          "accepts": [
+            "Germany unified",
+            "unification of germany"
+          ],
+          "majorPairs": [
+            "18",
+            "71"
+          ],
+          "majorWords": [
+            "dove",
+            "cat"
+          ],
+          "hook": "a giant eagle crowned in a hall of mirrors",
+          "source": "18 January 1871",
+          "verified": true,
+          "sourceUrls": [
+            "https://en.wikipedia.org/wiki/German_Empire"
+          ]
+        },
+        {
+          "year": "1917",
+          "bce": false,
+          "text": "Revolutions in Russia end the rule of the tsar and bring the Bolsheviks to power.",
+          "label": "Russian Revolution",
+          "accepts": [
+            "Russia",
+            "October Revolution"
+          ],
+          "majorPairs": [
+            "19",
+            "17"
+          ],
+          "majorWords": [
+            "tub",
+            "duck"
+          ],
+          "hook": "a red flag on a tsar's crown",
+          "source": "Two revolutions in 1917, February and October by the old calendar",
+          "verified": true,
+          "sourceUrls": [
+            "https://en.wikipedia.org/wiki/Russian_Revolution"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dates-wars",
+      "title": "Two world wars and after",
+      "real": true,
+      "intro": "From 1914 to the end of the Cold War era.",
+      "events": [
+        {
+          "year": "1914",
+          "bce": false,
+          "text": "The First World War begins.",
+          "label": "World War I",
+          "accepts": [
+            "First World War",
+            "WWI",
+            "World War 1"
+          ],
+          "majorPairs": [
+            "19",
+            "14"
+          ],
+          "majorWords": [
+            "tub",
+            "tire"
+          ],
+          "hook": "a long trench with a number one on it",
+          "source": "July to August 1914",
+          "verified": true,
+          "sourceUrls": [
+            "https://en.wikipedia.org/wiki/World_War_I"
+          ]
+        },
+        {
+          "year": "1918",
+          "bce": false,
+          "text": "The armistice ends the fighting of the First World War.",
+          "label": "Armistice",
+          "accepts": [
+            "end of world war one",
+            "WWI ends"
+          ],
+          "majorPairs": [
+            "19",
+            "18"
+          ],
+          "majorWords": [
+            "tub",
+            "dove"
+          ],
+          "hook": "a white flag in a poppy field",
+          "source": "11 November 1918",
+          "verified": true,
+          "sourceUrls": [
+            "https://en.wikipedia.org/wiki/Armistice_of_11_November_1918"
+          ]
+        },
+        {
+          "year": "1939",
+          "bce": false,
+          "text": "The Second World War begins in Europe.",
+          "label": "World War II",
+          "accepts": [
+            "Second World War",
+            "WWII",
+            "World War 2"
+          ],
+          "majorPairs": [
+            "19",
+            "39"
+          ],
+          "majorWords": [
+            "tub",
+            "map"
+          ],
+          "hook": "a trench with a number two on it",
+          "source": "1 September 1939, the invasion of Poland; Britain and France declare war on 3 September",
+          "verified": true,
+          "sourceUrls": [
+            "https://en.wikipedia.org/wiki/World_War_II"
+          ]
+        },
+        {
+          "year": "1945",
+          "bce": false,
+          "text": "The Second World War ends.",
+          "label": "War ends",
+          "accepts": [
+            "end of world war two",
+            "VE day",
+            "VJ day"
+          ],
+          "majorPairs": [
+            "19",
+            "45"
+          ],
+          "majorWords": [
+            "tub",
+            "roll"
+          ],
+          "hook": "bells ringing over a quiet field",
+          "source": "Europe 8 May 1945; Japan's surrender signed 2 September 1945",
+          "verified": true,
+          "sourceUrls": [
+            "https://en.wikipedia.org/wiki/World_War_II"
+          ]
+        },
+        {
+          "year": "1947",
+          "bce": false,
+          "text": "India becomes independent from British rule.",
+          "label": "India independent",
+          "accepts": [
+            "Indian independence"
+          ],
+          "majorPairs": [
+            "19",
+            "47"
+          ],
+          "majorWords": [
+            "tub",
+            "rock"
+          ],
+          "hook": "a spinning wheel on a flag",
+          "source": "15 August 1947",
+          "verified": true,
+          "sourceUrls": [
+            "https://en.wikipedia.org/wiki/Indian_Independence_Act_1947"
+          ]
+        },
+        {
+          "year": "1989",
+          "bce": false,
+          "text": "The Berlin Wall is opened.",
+          "label": "Berlin Wall",
+          "accepts": [
+            "fall of the berlin wall"
+          ],
+          "majorPairs": [
+            "19",
+            "89"
+          ],
+          "majorWords": [
+            "tub",
+            "fob"
+          ],
+          "hook": "a brick wall with a door swinging open",
+          "source": "9 November 1989",
+          "verified": true,
+          "sourceUrls": [
+            "https://en.wikipedia.org/wiki/Fall_of_the_Berlin_Wall"
+          ]
+        },
+        {
+          "year": "1991",
+          "bce": false,
+          "text": "The Soviet Union is dissolved.",
+          "label": "Soviet Union",
+          "accepts": [
+            "USSR",
+            "end of the soviet union"
+          ],
+          "majorPairs": [
+            "19",
+            "91"
+          ],
+          "majorWords": [
+            "tub",
+            "bat"
+          ],
+          "hook": "a big red star breaking into fifteen small ones",
+          "source": "December 1991",
+          "verified": true,
+          "sourceUrls": [
+            "https://en.wikipedia.org/wiki/Dissolution_of_the_Soviet_Union"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dates-rights",
+      "title": "Rights and reforms",
+      "real": true,
+      "intro": "People and laws that widened who counts.",
+      "events": [
+        {
+          "year": "1833",
+          "bce": false,
+          "text": "The United Kingdom passes the Slavery Abolition Act.",
+          "label": "Abolition Act",
+          "accepts": [
+            "Slavery Abolition Act",
+            "abolition"
+          ],
+          "majorPairs": [
+            "18",
+            "33"
+          ],
+          "majorWords": [
+            "dove",
+            "mummy"
+          ],
+          "hook": "a broken chain on a parliament door",
+          "source": "Royal assent 28 August 1833",
+          "verified": true,
+          "sourceUrls": [
+            "https://en.wikipedia.org/wiki/Slavery_Abolition_Act_1833"
+          ]
+        },
+        {
+          "year": "1893",
+          "bce": false,
+          "text": "New Zealand becomes the first self-governing country where women win the vote in national elections.",
+          "label": "New Zealand women vote",
+          "accepts": [
+            "women vote",
+            "new zealand"
+          ],
+          "majorPairs": [
+            "18",
+            "93"
+          ],
+          "majorWords": [
+            "dove",
+            "beam"
+          ],
+          "hook": "a kiwi bird dropping a ballot paper",
+          "source": "19 September 1893",
+          "verified": true,
+          "sourceUrls": [
+            "https://en.wikipedia.org/wiki/Women's_suffrage_in_New_Zealand"
+          ]
+        },
+        {
+          "year": "1920",
+          "bce": false,
+          "text": "The 19th Amendment gives women in the United States the right to vote.",
+          "label": "19th Amendment",
+          "accepts": [
+            "women's suffrage",
+            "nineteenth amendment"
+          ],
+          "majorPairs": [
+            "19",
+            "20"
+          ],
+          "majorWords": [
+            "tub",
+            "nose"
+          ],
+          "hook": "a nineteen-candle cake with a ballot paper",
+          "source": "Ratified August 1920",
+          "verified": true,
+          "sourceUrls": [
+            "https://en.wikipedia.org/wiki/Nineteenth_Amendment_to_the_United_States_Constitution"
+          ]
+        },
+        {
+          "year": "1948",
+          "bce": false,
+          "text": "The United Nations adopts the Universal Declaration of Human Rights.",
+          "label": "Human Rights",
+          "accepts": [
+            "Universal Declaration",
+            "UDHR"
+          ],
+          "majorPairs": [
+            "19",
+            "48"
+          ],
+          "majorWords": [
+            "tub",
+            "roof"
+          ],
+          "hook": "a tall scroll held up by many hands",
+          "source": "10 December 1948",
+          "verified": true,
+          "sourceUrls": [
+            "https://en.wikipedia.org/wiki/Universal_Declaration_of_Human_Rights"
+          ]
+        },
+        {
+          "year": "1963",
+          "bce": false,
+          "text": "A great crowd gathers at the March on Washington for jobs and freedom.",
+          "label": "March on Washington",
+          "accepts": [
+            "Washington march",
+            "I Have a Dream"
+          ],
+          "majorPairs": [
+            "19",
+            "63"
+          ],
+          "majorWords": [
+            "tub",
+            "jam"
+          ],
+          "hook": "a long line of walkers around a tall white tower",
+          "source": "28 August 1963",
+          "verified": true,
+          "sourceUrls": [
+            "https://en.wikipedia.org/wiki/March_on_Washington_for_Jobs_and_Freedom"
+          ]
+        },
+        {
+          "year": "1964",
+          "bce": false,
+          "text": "The Civil Rights Act becomes law in the United States.",
+          "label": "Civil Rights Act",
+          "accepts": [
+            "civil rights act"
+          ],
+          "majorPairs": [
+            "19",
+            "64"
+          ],
+          "majorWords": [
+            "tub",
+            "chair"
+          ],
+          "hook": "a big stamp on a door that opens wide",
+          "source": "2 July 1964",
+          "verified": true,
+          "sourceUrls": [
+            "https://en.wikipedia.org/wiki/Civil_Rights_Act_of_1964"
+          ]
+        },
+        {
+          "year": "1994",
+          "bce": false,
+          "text": "South Africa holds its first elections open to adults of every race.",
+          "label": "South Africa votes",
+          "accepts": [
+            "South Africa",
+            "first democratic election",
+            "Mandela"
+          ],
+          "majorPairs": [
+            "19",
+            "94"
+          ],
+          "majorWords": [
+            "tub",
+            "bear"
+          ],
+          "hook": "a long queue winding round a giant ballot box",
+          "source": "27 April 1994",
+          "verified": true,
+          "sourceUrls": [
+            "https://en.wikipedia.org/wiki/1994_South_African_general_election"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dates-machines",
+      "title": "Machines and networks",
+      "real": true,
+      "intro": "Wheels, wires and chips.",
+      "events": [
+        {
+          "year": "1830",
+          "bce": false,
+          "text": "The Liverpool and Manchester Railway opens, the first intercity line run by steam trains.",
+          "label": "Railway",
+          "accepts": [
+            "Liverpool and Manchester",
+            "steam railway"
+          ],
+          "majorPairs": [
+            "18",
+            "30"
+          ],
+          "majorWords": [
+            "dove",
+            "mouse"
+          ],
+          "hook": "a steam engine puffing into a library",
+          "source": "15 September 1830",
+          "verified": true,
+          "sourceUrls": [
+            "https://en.wikipedia.org/wiki/Liverpool_and_Manchester_Railway"
+          ]
+        },
+        {
+          "year": "1876",
+          "bce": false,
+          "text": "Alexander Graham Bell patents the telephone.",
+          "label": "Telephone",
+          "accepts": [
+            "Bell",
+            "Alexander Graham Bell"
+          ],
+          "majorPairs": [
+            "18",
+            "76"
+          ],
+          "majorWords": [
+            "dove",
+            "cage"
+          ],
+          "hook": "a bell ringing inside a telephone",
+          "source": "Patent granted 7 March 1876",
+          "verified": true,
+          "sourceUrls": [
+            "https://en.wikipedia.org/wiki/Alexander_Graham_Bell"
+          ]
+        },
+        {
+          "year": "1879",
+          "bce": false,
+          "text": "Thomas Edison's team makes a long-lasting electric light bulb.",
+          "label": "Light bulb",
+          "accepts": [
+            "Edison",
+            "electric light"
+          ],
+          "majorPairs": [
+            "18",
+            "79"
+          ],
+          "majorWords": [
+            "dove",
+            "cap"
+          ],
+          "hook": "a glowing bulb that never goes out",
+          "source": "Late 1879, Menlo Park",
+          "verified": true,
+          "sourceUrls": [
+            "https://en.wikipedia.org/wiki/Incandescent_light_bulb"
+          ]
+        },
+        {
+          "year": "1946",
+          "bce": false,
+          "text": "The ENIAC, an early general-purpose electronic computer, is unveiled in the United States.",
+          "label": "ENIAC",
+          "accepts": [
+            "eniac",
+            "early computer"
+          ],
+          "majorPairs": [
+            "19",
+            "46"
+          ],
+          "majorWords": [
+            "tub",
+            "roach"
+          ],
+          "hook": "a room-sized computer eating a mountain of cables",
+          "source": "Public unveiling February 1946",
+          "verified": true,
+          "sourceUrls": [
+            "https://en.wikipedia.org/wiki/ENIAC"
+          ]
+        },
+        {
+          "year": "1969",
+          "bce": false,
+          "text": "The first message is sent over ARPANET, an early computer network.",
+          "label": "ARPANET",
+          "accepts": [
+            "internet begins",
+            "arpanet"
+          ],
+          "majorPairs": [
+            "19",
+            "69"
+          ],
+          "majorWords": [
+            "tub",
+            "ship"
+          ],
+          "hook": "two computers shouting through a tin-can line",
+          "source": "29 October 1969, between UCLA and the Stanford Research Institute",
+          "verified": true,
+          "sourceUrls": [
+            "https://en.wikipedia.org/wiki/ARPANET"
+          ]
+        },
+        {
+          "year": "1971",
+          "bce": false,
+          "text": "Intel releases the 4004, the first commercial microprocessor.",
+          "label": "Microprocessor",
+          "accepts": [
+            "Intel 4004",
+            "4004",
+            "Intel"
+          ],
+          "majorPairs": [
+            "19",
+            "71"
+          ],
+          "majorWords": [
+            "tub",
+            "cat"
+          ],
+          "hook": "a tiny chip wearing a very large crown",
+          "source": "November 1971",
+          "verified": true,
+          "sourceUrls": [
+            "https://en.wikipedia.org/wiki/Intel_4004"
+          ]
+        },
+        {
+          "year": "1991",
+          "bce": false,
+          "text": "The World Wide Web is announced to the public.",
+          "label": "World Wide Web",
+          "accepts": [
+            "web",
+            "www",
+            "Berners-Lee"
+          ],
+          "majorPairs": [
+            "19",
+            "91"
+          ],
+          "majorWords": [
+            "tub",
+            "bat"
+          ],
+          "hook": "a giant spider web with a globe in the middle",
+          "source": "August 1991; Tim Berners-Lee at CERN",
+          "verified": true,
+          "sourceUrls": [
+            "https://en.wikipedia.org/wiki/World_Wide_Web"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dates-arts",
+      "title": "Buildings, books and music",
+      "real": true,
+      "intro": "Art that people still visit.",
+      "events": [
+        {
+          "year": "1818",
+          "bce": false,
+          "text": "Mary Shelley's novel Frankenstein is published.",
+          "label": "Frankenstein",
+          "accepts": [
+            "Mary Shelley"
+          ],
+          "majorPairs": [
+            "18",
+            "18"
+          ],
+          "majorWords": [
+            "dove",
+            "dove"
+          ],
+          "hook": "a stitched green giant reading under a lamp",
+          "source": "1 January 1818",
+          "verified": true,
+          "sourceUrls": [
+            "https://en.wikipedia.org/wiki/Frankenstein"
+          ]
+        },
+        {
+          "year": "1824",
+          "bce": false,
+          "text": "Beethoven's Ninth Symphony is first performed in Vienna.",
+          "label": "Beethoven's Ninth",
+          "accepts": [
+            "Ninth Symphony",
+            "Beethoven"
+          ],
+          "majorPairs": [
+            "18",
+            "24"
+          ],
+          "majorWords": [
+            "dove",
+            "nero"
+          ],
+          "hook": "a nine-armed conductor shaking a choir",
+          "source": "7 May 1824",
+          "verified": true,
+          "sourceUrls": [
+            "https://en.wikipedia.org/wiki/Symphony_No._9_(Beethoven)"
+          ]
+        },
+        {
+          "year": "1851",
+          "bce": false,
+          "text": "The Great Exhibition opens in the Crystal Palace in London.",
+          "label": "Great Exhibition",
+          "accepts": [
+            "crystal palace",
+            "exhibition"
+          ],
+          "majorPairs": [
+            "18",
+            "51"
+          ],
+          "majorWords": [
+            "dove",
+            "lid"
+          ],
+          "hook": "a glass palace full of whirring machines",
+          "source": "1 May 1851",
+          "verified": true,
+          "sourceUrls": [
+            "https://en.wikipedia.org/wiki/Great_Exhibition"
+          ]
+        },
+        {
+          "year": "1889",
+          "bce": false,
+          "text": "The Eiffel Tower opens in Paris for the World's Fair.",
+          "label": "Eiffel Tower",
+          "accepts": [
+            "Eiffel"
+          ],
+          "majorPairs": [
+            "18",
+            "89"
+          ],
+          "majorWords": [
+            "dove",
+            "fob"
+          ],
+          "hook": "a tower of iron lace over a fair",
+          "source": "Completed 31 March 1889; open to visitors May 1889",
+          "verified": true,
+          "sourceUrls": [
+            "https://en.wikipedia.org/wiki/Eiffel_Tower"
+          ]
+        },
+        {
+          "year": "1913",
+          "bce": false,
+          "text": "Stravinsky's ballet The Rite of Spring has its first performance in Paris, and the crowd is noisy.",
+          "label": "Rite of Spring",
+          "accepts": [
+            "Stravinsky",
+            "the rite of spring"
+          ],
+          "majorPairs": [
+            "19",
+            "13"
+          ],
+          "majorWords": [
+            "tub",
+            "tomb"
+          ],
+          "hook": "dancers stamping on a bouncing spring",
+          "source": "29 May 1913",
+          "verified": true,
+          "sourceUrls": [
+            "https://en.wikipedia.org/wiki/The_Rite_of_Spring"
+          ]
+        },
+        {
+          "year": "1931",
+          "bce": false,
+          "text": "The Empire State Building opens in New York.",
+          "label": "Empire State",
+          "accepts": [
+            "Empire State Building"
+          ],
+          "majorPairs": [
+            "19",
+            "31"
+          ],
+          "majorWords": [
+            "tub",
+            "mat"
+          ],
+          "hook": "a tower with an enormous crown and a flag",
+          "source": "1 May 1931",
+          "verified": true,
+          "sourceUrls": [
+            "https://en.wikipedia.org/wiki/Empire_State_Building"
+          ]
+        },
+        {
+          "year": "1937",
+          "bce": false,
+          "text": "Pablo Picasso paints Guernica, a huge picture about a bombed town.",
+          "label": "Guernica",
+          "accepts": [
+            "Picasso"
+          ],
+          "majorPairs": [
+            "19",
+            "37"
+          ],
+          "majorWords": [
+            "tub",
+            "mug"
+          ],
+          "hook": "a giant grey mural with a crying bull",
+          "source": "Painted May to June 1937",
+          "verified": true,
+          "sourceUrls": [
+            "https://en.wikipedia.org/wiki/Guernica_(Picasso)"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dates-harbours",
+      "title": "Harbours, canals and games",
+      "real": true,
+      "intro": "Water, ships and sport.",
+      "events": [
+        {
+          "year": "1869",
+          "bce": false,
+          "text": "The Suez Canal opens, joining the Mediterranean Sea to the Red Sea.",
+          "label": "Suez Canal",
+          "accepts": [
+            "Suez"
+          ],
+          "majorPairs": [
+            "18",
+            "69"
+          ],
+          "majorWords": [
+            "dove",
+            "ship"
+          ],
+          "hook": "a ship sneezing its way between two seas",
+          "source": "17 November 1869",
+          "verified": true,
+          "sourceUrls": [
+            "https://en.wikipedia.org/wiki/Suez_Canal"
+          ]
+        },
+        {
+          "year": "1886",
+          "bce": false,
+          "text": "The Statue of Liberty is dedicated in New York Harbor.",
+          "label": "Statue of Liberty",
+          "accepts": [
+            "Liberty"
+          ],
+          "majorPairs": [
+            "18",
+            "86"
+          ],
+          "majorWords": [
+            "dove",
+            "fish"
+          ],
+          "hook": "a torch held high over a harbour",
+          "source": "28 October 1886",
+          "verified": true,
+          "sourceUrls": [
+            "https://en.wikipedia.org/wiki/Statue_of_Liberty"
+          ]
+        },
+        {
+          "year": "1896",
+          "bce": false,
+          "text": "The first modern Olympic Games are held in Athens.",
+          "label": "First Olympics",
+          "accepts": [
+            "Athens Olympics",
+            "modern Olympics"
+          ],
+          "majorPairs": [
+            "18",
+            "96"
+          ],
+          "majorWords": [
+            "dove",
+            "beach"
+          ],
+          "hook": "five rings dropped in an olive grove",
+          "source": "April 1896",
+          "verified": true,
+          "sourceUrls": [
+            "https://en.wikipedia.org/wiki/1896_Summer_Olympics"
+          ]
+        },
+        {
+          "year": "1912",
+          "bce": false,
+          "text": "The Titanic sinks on her first voyage.",
+          "label": "Titanic",
+          "accepts": [
+            "RMS Titanic"
+          ],
+          "majorPairs": [
+            "19",
+            "12"
+          ],
+          "majorWords": [
+            "tub",
+            "tin"
+          ],
+          "hook": "a giant ship tipping into a bath of ice",
+          "source": "15 April 1912",
+          "verified": true,
+          "sourceUrls": [
+            "https://en.wikipedia.org/wiki/Titanic"
+          ]
+        },
+        {
+          "year": "1914",
+          "bce": false,
+          "text": "The Panama Canal opens to ships.",
+          "label": "Panama Canal",
+          "accepts": [
+            "Panama"
+          ],
+          "majorPairs": [
+            "19",
+            "14"
+          ],
+          "majorWords": [
+            "tub",
+            "tire"
+          ],
+          "hook": "a hat floating through a narrow stone lock",
+          "source": "15 August 1914",
+          "verified": true,
+          "sourceUrls": [
+            "https://en.wikipedia.org/wiki/Panama_Canal"
+          ]
+        },
+        {
+          "year": "1930",
+          "bce": false,
+          "text": "The first football World Cup is played, in Uruguay.",
+          "label": "First World Cup",
+          "accepts": [
+            "World Cup",
+            "Uruguay"
+          ],
+          "majorPairs": [
+            "19",
+            "30"
+          ],
+          "majorWords": [
+            "tub",
+            "mouse"
+          ],
+          "hook": "a golden cup spinning on a football",
+          "source": "July 1930",
+          "verified": true,
+          "sourceUrls": [
+            "https://en.wikipedia.org/wiki/1930_FIFA_World_Cup"
+          ]
+        },
+        {
+          "year": "1954",
+          "bce": false,
+          "text": "Roger Bannister runs the first mile in under four minutes.",
+          "label": "Four-minute mile",
+          "accepts": [
+            "Bannister",
+            "Roger Bannister",
+            "sub four minute mile"
+          ],
+          "majorPairs": [
+            "19",
+            "54"
+          ],
+          "majorWords": [
+            "tub",
+            "lorry"
+          ],
+          "hook": "a stopwatch with a banister rail around it",
+          "source": "6 May 1954, Oxford",
+          "verified": true,
+          "sourceUrls": [
+            "https://en.wikipedia.org/wiki/Roger_Bannister"
+          ]
+        }
+      ]
+    }
+  ],
+  "timelinesShape": [
+    {
+      "title": "Rome, crowns and castles",
+      "real": true,
+      "events": [
+        [
+          "44 BCE",
+          "Julius Caesar is killed in Rome by a group of senators.",
+          "Caesar",
+          [
+            "Julius Caesar",
+            "44 BC"
+          ]
+        ],
+        [
+          "476",
+          "The last emperor in the West, Romulus Augustulus, is removed. This is the usual date for the end of the Western Roman Empire.",
+          "Western Rome falls",
+          [
+            "fall of rome",
+            "Romulus Augustulus"
+          ]
+        ],
+        [
+          "800",
+          "Charlemagne is crowned emperor in Rome on Christmas Day.",
+          "Charlemagne",
+          [
+            "Charles the Great"
+          ]
+        ],
+        [
+          "1066",
+          "William of Normandy wins the Battle of Hastings and becomes King of England.",
+          "Hastings",
+          [
+            "battle of hastings",
+            "Norman conquest",
+            "William the Conqueror"
+          ]
+        ],
+        [
+          "1215",
+          "King John of England seals Magna Carta.",
+          "Magna Carta",
+          [
+            "magna carta"
+          ]
+        ],
+        [
+          "1337",
+          "The Hundred Years' War between England and France begins, as it is usually dated.",
+          "Hundred Years War",
+          [
+            "hundred years war",
+            "100 years war"
+          ]
+        ],
+        [
+          "1453",
+          "Constantinople falls to the Ottoman army of Sultan Mehmed II.",
+          "Constantinople",
+          [
+            "fall of constantinople",
+            "Istanbul"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Voyages and far horizons",
+      "real": true,
+      "events": [
+        [
+          "1492",
+          "Columbus's first voyage reaches the Caribbean.",
+          "Columbus",
+          [
+            "Christopher Columbus"
+          ]
+        ],
+        [
+          "1498",
+          "Vasco da Gama's ships reach India by sea from Europe.",
+          "Vasco da Gama",
+          [
+            "da Gama",
+            "gama"
+          ]
+        ],
+        [
+          "1522",
+          "The Victoria, the last ship of Magellan's expedition, returns to Spain after sailing around the world.",
+          "Around the world",
+          [
+            "Magellan",
+            "Victoria",
+            "circumnavigation",
+            "Elcano"
+          ]
+        ],
+        [
+          "1620",
+          "The Mayflower reaches the coast of North America with settlers from England.",
+          "Mayflower",
+          [
+            "pilgrims",
+            "may flower"
+          ]
+        ],
+        [
+          "1770",
+          "James Cook sails along the east coast of Australia and lands at Botany Bay.",
+          "Captain Cook",
+          [
+            "Cook",
+            "Botany Bay",
+            "James Cook"
+          ]
+        ],
+        [
+          "1911",
+          "Roald Amundsen's party is the first to reach the South Pole.",
+          "South Pole",
+          [
+            "Amundsen"
+          ]
+        ],
+        [
+          "1953",
+          "Edmund Hillary and Tenzing Norgay are the first known climbers to reach the top of Mount Everest.",
+          "Everest",
+          [
+            "Mount Everest",
+            "Hillary",
+            "Tenzing"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Ideas that changed minds",
+      "real": true,
+      "events": [
+        [
+          "1517",
+          "Martin Luther publishes his Ninety-five Theses.",
+          "Luther",
+          [
+            "Martin Luther",
+            "95 theses"
+          ]
+        ],
+        [
+          "1543",
+          "Copernicus publishes his book placing the Sun at the centre of the planets' paths.",
+          "Copernicus",
+          [
+            "copernican",
+            "On the Revolutions"
+          ]
+        ],
+        [
+          "1610",
+          "Galileo sees four moons of Jupiter through his telescope.",
+          "Galileo",
+          [
+            "Jupiter moons",
+            "telescope"
+          ]
+        ],
+        [
+          "1687",
+          "Isaac Newton publishes his Principia, setting out his laws of motion and gravity.",
+          "Newton",
+          [
+            "Principia",
+            "Isaac Newton"
+          ]
+        ],
+        [
+          "1859",
+          "Charles Darwin publishes On the Origin of Species.",
+          "Darwin",
+          [
+            "Origin of Species",
+            "Charles Darwin"
+          ]
+        ],
+        [
+          "1869",
+          "Dmitri Mendeleev presents his periodic table of the elements.",
+          "Periodic table",
+          [
+            "Mendeleev"
+          ]
+        ],
+        [
+          "1905",
+          "Albert Einstein publishes his theory of special relativity.",
+          "Special relativity",
+          [
+            "Einstein",
+            "relativity",
+            "Albert Einstein"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Revolutions and republics",
+      "real": true,
+      "events": [
+        [
+          "1776",
+          "The American colonies adopt the Declaration of Independence.",
+          "Declaration",
+          [
+            "Declaration of Independence",
+            "Independence"
+          ]
+        ],
+        [
+          "1789",
+          "The French Revolution begins; crowds storm the Bastille in Paris.",
+          "Bastille",
+          [
+            "French Revolution",
+            "storming of the bastille"
+          ]
+        ],
+        [
+          "1804",
+          "Haiti declares independence, the first country led by formerly enslaved people to do so.",
+          "Haiti",
+          [
+            "Haitian independence"
+          ]
+        ],
+        [
+          "1815",
+          "Napoleon is defeated at the Battle of Waterloo.",
+          "Waterloo",
+          [
+            "battle of waterloo",
+            "Napoleon"
+          ]
+        ],
+        [
+          "1861",
+          "The American Civil War begins with the firing on Fort Sumter.",
+          "Civil War",
+          [
+            "American Civil War",
+            "Fort Sumter"
+          ]
+        ],
+        [
+          "1871",
+          "The German Empire is proclaimed at Versailles.",
+          "German Empire",
+          [
+            "Germany unified",
+            "unification of germany"
+          ]
+        ],
+        [
+          "1917",
+          "Revolutions in Russia end the rule of the tsar and bring the Bolsheviks to power.",
+          "Russian Revolution",
+          [
+            "Russia",
+            "October Revolution"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Two world wars and after",
+      "real": true,
+      "events": [
+        [
+          "1914",
+          "The First World War begins.",
+          "World War I",
+          [
+            "First World War",
+            "WWI",
+            "World War 1"
+          ]
+        ],
+        [
+          "1918",
+          "The armistice ends the fighting of the First World War.",
+          "Armistice",
+          [
+            "end of world war one",
+            "WWI ends"
+          ]
+        ],
+        [
+          "1939",
+          "The Second World War begins in Europe.",
+          "World War II",
+          [
+            "Second World War",
+            "WWII",
+            "World War 2"
+          ]
+        ],
+        [
+          "1945",
+          "The Second World War ends.",
+          "War ends",
+          [
+            "end of world war two",
+            "VE day",
+            "VJ day"
+          ]
+        ],
+        [
+          "1947",
+          "India becomes independent from British rule.",
+          "India independent",
+          [
+            "Indian independence"
+          ]
+        ],
+        [
+          "1989",
+          "The Berlin Wall is opened.",
+          "Berlin Wall",
+          [
+            "fall of the berlin wall"
+          ]
+        ],
+        [
+          "1991",
+          "The Soviet Union is dissolved.",
+          "Soviet Union",
+          [
+            "USSR",
+            "end of the soviet union"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Rights and reforms",
+      "real": true,
+      "events": [
+        [
+          "1833",
+          "The United Kingdom passes the Slavery Abolition Act.",
+          "Abolition Act",
+          [
+            "Slavery Abolition Act",
+            "abolition"
+          ]
+        ],
+        [
+          "1893",
+          "New Zealand becomes the first self-governing country where women win the vote in national elections.",
+          "New Zealand women vote",
+          [
+            "women vote",
+            "new zealand"
+          ]
+        ],
+        [
+          "1920",
+          "The 19th Amendment gives women in the United States the right to vote.",
+          "19th Amendment",
+          [
+            "women's suffrage",
+            "nineteenth amendment"
+          ]
+        ],
+        [
+          "1948",
+          "The United Nations adopts the Universal Declaration of Human Rights.",
+          "Human Rights",
+          [
+            "Universal Declaration",
+            "UDHR"
+          ]
+        ],
+        [
+          "1963",
+          "A great crowd gathers at the March on Washington for jobs and freedom.",
+          "March on Washington",
+          [
+            "Washington march",
+            "I Have a Dream"
+          ]
+        ],
+        [
+          "1964",
+          "The Civil Rights Act becomes law in the United States.",
+          "Civil Rights Act",
+          [
+            "civil rights act"
+          ]
+        ],
+        [
+          "1994",
+          "South Africa holds its first elections open to adults of every race.",
+          "South Africa votes",
+          [
+            "South Africa",
+            "first democratic election",
+            "Mandela"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Machines and networks",
+      "real": true,
+      "events": [
+        [
+          "1830",
+          "The Liverpool and Manchester Railway opens, the first intercity line run by steam trains.",
+          "Railway",
+          [
+            "Liverpool and Manchester",
+            "steam railway"
+          ]
+        ],
+        [
+          "1876",
+          "Alexander Graham Bell patents the telephone.",
+          "Telephone",
+          [
+            "Bell",
+            "Alexander Graham Bell"
+          ]
+        ],
+        [
+          "1879",
+          "Thomas Edison's team makes a long-lasting electric light bulb.",
+          "Light bulb",
+          [
+            "Edison",
+            "electric light"
+          ]
+        ],
+        [
+          "1946",
+          "The ENIAC, an early general-purpose electronic computer, is unveiled in the United States.",
+          "ENIAC",
+          [
+            "eniac",
+            "early computer"
+          ]
+        ],
+        [
+          "1969",
+          "The first message is sent over ARPANET, an early computer network.",
+          "ARPANET",
+          [
+            "internet begins",
+            "arpanet"
+          ]
+        ],
+        [
+          "1971",
+          "Intel releases the 4004, the first commercial microprocessor.",
+          "Microprocessor",
+          [
+            "Intel 4004",
+            "4004",
+            "Intel"
+          ]
+        ],
+        [
+          "1991",
+          "The World Wide Web is announced to the public.",
+          "World Wide Web",
+          [
+            "web",
+            "www",
+            "Berners-Lee"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Buildings, books and music",
+      "real": true,
+      "events": [
+        [
+          "1818",
+          "Mary Shelley's novel Frankenstein is published.",
+          "Frankenstein",
+          [
+            "Mary Shelley"
+          ]
+        ],
+        [
+          "1824",
+          "Beethoven's Ninth Symphony is first performed in Vienna.",
+          "Beethoven's Ninth",
+          [
+            "Ninth Symphony",
+            "Beethoven"
+          ]
+        ],
+        [
+          "1851",
+          "The Great Exhibition opens in the Crystal Palace in London.",
+          "Great Exhibition",
+          [
+            "crystal palace",
+            "exhibition"
+          ]
+        ],
+        [
+          "1889",
+          "The Eiffel Tower opens in Paris for the World's Fair.",
+          "Eiffel Tower",
+          [
+            "Eiffel"
+          ]
+        ],
+        [
+          "1913",
+          "Stravinsky's ballet The Rite of Spring has its first performance in Paris, and the crowd is noisy.",
+          "Rite of Spring",
+          [
+            "Stravinsky",
+            "the rite of spring"
+          ]
+        ],
+        [
+          "1931",
+          "The Empire State Building opens in New York.",
+          "Empire State",
+          [
+            "Empire State Building"
+          ]
+        ],
+        [
+          "1937",
+          "Pablo Picasso paints Guernica, a huge picture about a bombed town.",
+          "Guernica",
+          [
+            "Picasso"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Harbours, canals and games",
+      "real": true,
+      "events": [
+        [
+          "1869",
+          "The Suez Canal opens, joining the Mediterranean Sea to the Red Sea.",
+          "Suez Canal",
+          [
+            "Suez"
+          ]
+        ],
+        [
+          "1886",
+          "The Statue of Liberty is dedicated in New York Harbor.",
+          "Statue of Liberty",
+          [
+            "Liberty"
+          ]
+        ],
+        [
+          "1896",
+          "The first modern Olympic Games are held in Athens.",
+          "First Olympics",
+          [
+            "Athens Olympics",
+            "modern Olympics"
+          ]
+        ],
+        [
+          "1912",
+          "The Titanic sinks on her first voyage.",
+          "Titanic",
+          [
+            "RMS Titanic"
+          ]
+        ],
+        [
+          "1914",
+          "The Panama Canal opens to ships.",
+          "Panama Canal",
+          [
+            "Panama"
+          ]
+        ],
+        [
+          "1930",
+          "The first football World Cup is played, in Uruguay.",
+          "First World Cup",
+          [
+            "World Cup",
+            "Uruguay"
+          ]
+        ],
+        [
+          "1954",
+          "Roger Bannister runs the first mile in under four minutes.",
+          "Four-minute mile",
+          [
+            "Bannister",
+            "Roger Bannister",
+            "sub four minute mile"
+          ]
+        ]
+      ]
+    }
+  ],
+  "count": 63
+}

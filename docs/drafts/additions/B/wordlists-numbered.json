@@ -1,0 +1,1075 @@
+{
+  "notes": "Draft. Four lists of 40 and one of 100 numbered words for Words to Remember. All 260 words are distinct across all lists, concrete, one word, easy to spell, and absent from CONCRETE, CONCRETE_MORE, ABSTRACT, MAJOR_SINGLE and MAJOR_PAIRS and from the peg lists. Within each list no two words share their first three or last three letters, none contains another, and none is within two letter changes of another, as a rough guard against sound-alike clashes. A person should still read each list aloud once for clashes. The real championship word count is not confirmed in the plan, so the 100-word list is a game format of our own. Fact-check: no word clashes with the shape or rhyme pegs now in pegs.json (checked Nov 2, 2026).",
+  "lists": [
+    {
+      "id": "wl-100",
+      "count": 100,
+      "words": [
+        {
+          "n": 1,
+          "word": "meteor"
+        },
+        {
+          "n": 2,
+          "word": "puzzle"
+        },
+        {
+          "n": 3,
+          "word": "meadow"
+        },
+        {
+          "n": 4,
+          "word": "oatmeal"
+        },
+        {
+          "n": 5,
+          "word": "kaleidoscope"
+        },
+        {
+          "n": 6,
+          "word": "buckle"
+        },
+        {
+          "n": 7,
+          "word": "reef"
+        },
+        {
+          "n": 8,
+          "word": "pretzel"
+        },
+        {
+          "n": 9,
+          "word": "lifeboat"
+        },
+        {
+          "n": 10,
+          "word": "cricket"
+        },
+        {
+          "n": 11,
+          "word": "taco"
+        },
+        {
+          "n": 12,
+          "word": "toast"
+        },
+        {
+          "n": 13,
+          "word": "medal"
+        },
+        {
+          "n": 14,
+          "word": "watermelon"
+        },
+        {
+          "n": 15,
+          "word": "bonfire"
+        },
+        {
+          "n": 16,
+          "word": "valley"
+        },
+        {
+          "n": 17,
+          "word": "hammock"
+        },
+        {
+          "n": 18,
+          "word": "subway"
+        },
+        {
+          "n": 19,
+          "word": "jackhammer"
+        },
+        {
+          "n": 20,
+          "word": "stool"
+        },
+        {
+          "n": 21,
+          "word": "vineyard"
+        },
+        {
+          "n": 22,
+          "word": "gondola"
+        },
+        {
+          "n": 23,
+          "word": "coral"
+        },
+        {
+          "n": 24,
+          "word": "whisk"
+        },
+        {
+          "n": 25,
+          "word": "barbecue"
+        },
+        {
+          "n": 26,
+          "word": "twig"
+        },
+        {
+          "n": 27,
+          "word": "escalator"
+        },
+        {
+          "n": 28,
+          "word": "tollbooth"
+        },
+        {
+          "n": 29,
+          "word": "tripod"
+        },
+        {
+          "n": 30,
+          "word": "beaver"
+        },
+        {
+          "n": 31,
+          "word": "scarecrow"
+        },
+        {
+          "n": 32,
+          "word": "cheetah"
+        },
+        {
+          "n": 33,
+          "word": "peanut"
+        },
+        {
+          "n": 34,
+          "word": "shortbread"
+        },
+        {
+          "n": 35,
+          "word": "crocodile"
+        },
+        {
+          "n": 36,
+          "word": "staircase"
+        },
+        {
+          "n": 37,
+          "word": "ginger"
+        },
+        {
+          "n": 38,
+          "word": "seagull"
+        },
+        {
+          "n": 39,
+          "word": "sweatshirt"
+        },
+        {
+          "n": 40,
+          "word": "haystack"
+        },
+        {
+          "n": 41,
+          "word": "pudding"
+        },
+        {
+          "n": 42,
+          "word": "lynx"
+        },
+        {
+          "n": 43,
+          "word": "yogurt"
+        },
+        {
+          "n": 44,
+          "word": "saxophone"
+        },
+        {
+          "n": 45,
+          "word": "gecko"
+        },
+        {
+          "n": 46,
+          "word": "cupcake"
+        },
+        {
+          "n": 47,
+          "word": "cloak"
+        },
+        {
+          "n": 48,
+          "word": "maraca"
+        },
+        {
+          "n": 49,
+          "word": "hedgehog"
+        },
+        {
+          "n": 50,
+          "word": "passport"
+        },
+        {
+          "n": 51,
+          "word": "monsoon"
+        },
+        {
+          "n": 52,
+          "word": "overalls"
+        },
+        {
+          "n": 53,
+          "word": "trampoline"
+        },
+        {
+          "n": 54,
+          "word": "bookmark"
+        },
+        {
+          "n": 55,
+          "word": "library"
+        },
+        {
+          "n": 56,
+          "word": "molasses"
+        },
+        {
+          "n": 57,
+          "word": "soapbox"
+        },
+        {
+          "n": 58,
+          "word": "forklift"
+        },
+        {
+          "n": 59,
+          "word": "cardigan"
+        },
+        {
+          "n": 60,
+          "word": "biscuit"
+        },
+        {
+          "n": 61,
+          "word": "driftwood"
+        },
+        {
+          "n": 62,
+          "word": "pelican"
+        },
+        {
+          "n": 63,
+          "word": "jelly"
+        },
+        {
+          "n": 64,
+          "word": "stump"
+        },
+        {
+          "n": 65,
+          "word": "pigeon"
+        },
+        {
+          "n": 66,
+          "word": "salami"
+        },
+        {
+          "n": 67,
+          "word": "paintbrush"
+        },
+        {
+          "n": 68,
+          "word": "cape"
+        },
+        {
+          "n": 69,
+          "word": "hourglass"
+        },
+        {
+          "n": 70,
+          "word": "fireworks"
+        },
+        {
+          "n": 71,
+          "word": "wrench"
+        },
+        {
+          "n": 72,
+          "word": "ladybug"
+        },
+        {
+          "n": 73,
+          "word": "tweezers"
+        },
+        {
+          "n": 74,
+          "word": "rattle"
+        },
+        {
+          "n": 75,
+          "word": "lemonade"
+        },
+        {
+          "n": 76,
+          "word": "cranberry"
+        },
+        {
+          "n": 77,
+          "word": "eraser"
+        },
+        {
+          "n": 78,
+          "word": "moccasin"
+        },
+        {
+          "n": 79,
+          "word": "muffin"
+        },
+        {
+          "n": 80,
+          "word": "skillet"
+        },
+        {
+          "n": 81,
+          "word": "drawbridge"
+        },
+        {
+          "n": 82,
+          "word": "thimble"
+        },
+        {
+          "n": 83,
+          "word": "wigwam"
+        },
+        {
+          "n": 84,
+          "word": "signpost"
+        },
+        {
+          "n": 85,
+          "word": "glacier"
+        },
+        {
+          "n": 86,
+          "word": "dandelion"
+        },
+        {
+          "n": 87,
+          "word": "jigsaw"
+        },
+        {
+          "n": 88,
+          "word": "trowel"
+        },
+        {
+          "n": 89,
+          "word": "handcuff"
+        },
+        {
+          "n": 90,
+          "word": "earmuffs"
+        },
+        {
+          "n": 91,
+          "word": "anchovy"
+        },
+        {
+          "n": 92,
+          "word": "garage"
+        },
+        {
+          "n": 93,
+          "word": "bedroom"
+        },
+        {
+          "n": 94,
+          "word": "paprika"
+        },
+        {
+          "n": 95,
+          "word": "fern"
+        },
+        {
+          "n": 96,
+          "word": "lettuce"
+        },
+        {
+          "n": 97,
+          "word": "playground"
+        },
+        {
+          "n": 98,
+          "word": "jaguar"
+        },
+        {
+          "n": 99,
+          "word": "tabletop"
+        },
+        {
+          "n": 100,
+          "word": "weathervane"
+        }
+      ]
+    },
+    {
+      "id": "wl-40-a",
+      "count": 40,
+      "words": [
+        {
+          "n": 1,
+          "word": "raincoat"
+        },
+        {
+          "n": 2,
+          "word": "stork"
+        },
+        {
+          "n": 3,
+          "word": "keyboard"
+        },
+        {
+          "n": 4,
+          "word": "meatball"
+        },
+        {
+          "n": 5,
+          "word": "cheddar"
+        },
+        {
+          "n": 6,
+          "word": "badger"
+        },
+        {
+          "n": 7,
+          "word": "bookcase"
+        },
+        {
+          "n": 8,
+          "word": "stagecoach"
+        },
+        {
+          "n": 9,
+          "word": "crowbar"
+        },
+        {
+          "n": 10,
+          "word": "oatcake"
+        },
+        {
+          "n": 11,
+          "word": "toolbox"
+        },
+        {
+          "n": 12,
+          "word": "hamster"
+        },
+        {
+          "n": 13,
+          "word": "locket"
+        },
+        {
+          "n": 14,
+          "word": "mammoth"
+        },
+        {
+          "n": 15,
+          "word": "blueberry"
+        },
+        {
+          "n": 16,
+          "word": "wheelbarrow"
+        },
+        {
+          "n": 17,
+          "word": "pasta"
+        },
+        {
+          "n": 18,
+          "word": "microscope"
+        },
+        {
+          "n": 19,
+          "word": "mole"
+        },
+        {
+          "n": 20,
+          "word": "marble"
+        },
+        {
+          "n": 21,
+          "word": "beanie"
+        },
+        {
+          "n": 22,
+          "word": "waffle"
+        },
+        {
+          "n": 23,
+          "word": "falcon"
+        },
+        {
+          "n": 24,
+          "word": "heron"
+        },
+        {
+          "n": 25,
+          "word": "crane"
+        },
+        {
+          "n": 26,
+          "word": "hilltop"
+        },
+        {
+          "n": 27,
+          "word": "elevator"
+        },
+        {
+          "n": 28,
+          "word": "slingshot"
+        },
+        {
+          "n": 29,
+          "word": "wristwatch"
+        },
+        {
+          "n": 30,
+          "word": "pier"
+        },
+        {
+          "n": 31,
+          "word": "ketchup"
+        },
+        {
+          "n": 32,
+          "word": "pipeline"
+        },
+        {
+          "n": 33,
+          "word": "dragon"
+        },
+        {
+          "n": 34,
+          "word": "joystick"
+        },
+        {
+          "n": 35,
+          "word": "blossom"
+        },
+        {
+          "n": 36,
+          "word": "swamp"
+        },
+        {
+          "n": 37,
+          "word": "vest"
+        },
+        {
+          "n": 38,
+          "word": "shampoo"
+        },
+        {
+          "n": 39,
+          "word": "screwdriver"
+        },
+        {
+          "n": 40,
+          "word": "porch"
+        }
+      ]
+    },
+    {
+      "id": "wl-40-b",
+      "count": 40,
+      "words": [
+        {
+          "n": 1,
+          "word": "tugboat"
+        },
+        {
+          "n": 2,
+          "word": "stopwatch"
+        },
+        {
+          "n": 3,
+          "word": "backyard"
+        },
+        {
+          "n": 4,
+          "word": "stapler"
+        },
+        {
+          "n": 5,
+          "word": "strawberry"
+        },
+        {
+          "n": 6,
+          "word": "snowflake"
+        },
+        {
+          "n": 7,
+          "word": "hatbox"
+        },
+        {
+          "n": 8,
+          "word": "flagpole"
+        },
+        {
+          "n": 9,
+          "word": "pillowcase"
+        },
+        {
+          "n": 10,
+          "word": "crayon"
+        },
+        {
+          "n": 11,
+          "word": "salmon"
+        },
+        {
+          "n": 12,
+          "word": "burger"
+        },
+        {
+          "n": 13,
+          "word": "yardstick"
+        },
+        {
+          "n": 14,
+          "word": "notebook"
+        },
+        {
+          "n": 15,
+          "word": "waterfall"
+        },
+        {
+          "n": 16,
+          "word": "iceberg"
+        },
+        {
+          "n": 17,
+          "word": "chimpanzee"
+        },
+        {
+          "n": 18,
+          "word": "sandal"
+        },
+        {
+          "n": 19,
+          "word": "workshop"
+        },
+        {
+          "n": 20,
+          "word": "cottage"
+        },
+        {
+          "n": 21,
+          "word": "ravioli"
+        },
+        {
+          "n": 22,
+          "word": "mansion"
+        },
+        {
+          "n": 23,
+          "word": "hyena"
+        },
+        {
+          "n": 24,
+          "word": "bench"
+        },
+        {
+          "n": 25,
+          "word": "spatula"
+        },
+        {
+          "n": 26,
+          "word": "stethoscope"
+        },
+        {
+          "n": 27,
+          "word": "peppermint"
+        },
+        {
+          "n": 28,
+          "word": "rooster"
+        },
+        {
+          "n": 29,
+          "word": "thermos"
+        },
+        {
+          "n": 30,
+          "word": "artichoke"
+        },
+        {
+          "n": 31,
+          "word": "lawnmower"
+        },
+        {
+          "n": 32,
+          "word": "saucer"
+        },
+        {
+          "n": 33,
+          "word": "goggles"
+        },
+        {
+          "n": 34,
+          "word": "mugwort"
+        },
+        {
+          "n": 35,
+          "word": "noodle"
+        },
+        {
+          "n": 36,
+          "word": "domino"
+        },
+        {
+          "n": 37,
+          "word": "tambourine"
+        },
+        {
+          "n": 38,
+          "word": "sawdust"
+        },
+        {
+          "n": 39,
+          "word": "balcony"
+        },
+        {
+          "n": 40,
+          "word": "sheepdog"
+        }
+      ]
+    },
+    {
+      "id": "wl-40-c",
+      "count": 40,
+      "words": [
+        {
+          "n": 1,
+          "word": "paddleboat"
+        },
+        {
+          "n": 2,
+          "word": "starfish"
+        },
+        {
+          "n": 3,
+          "word": "quarry"
+        },
+        {
+          "n": 4,
+          "word": "clipboard"
+        },
+        {
+          "n": 5,
+          "word": "almond"
+        },
+        {
+          "n": 6,
+          "word": "muffler"
+        },
+        {
+          "n": 7,
+          "word": "harbor"
+        },
+        {
+          "n": 8,
+          "word": "sandpaper"
+        },
+        {
+          "n": 9,
+          "word": "typewriter"
+        },
+        {
+          "n": 10,
+          "word": "trophy"
+        },
+        {
+          "n": 11,
+          "word": "mailbox"
+        },
+        {
+          "n": 12,
+          "word": "dustpan"
+        },
+        {
+          "n": 13,
+          "word": "windmill"
+        },
+        {
+          "n": 14,
+          "word": "paperclip"
+        },
+        {
+          "n": 15,
+          "word": "wardrobe"
+        },
+        {
+          "n": 16,
+          "word": "flashlight"
+        },
+        {
+          "n": 17,
+          "word": "rainbow"
+        },
+        {
+          "n": 18,
+          "word": "tinfoil"
+        },
+        {
+          "n": 19,
+          "word": "chisel"
+        },
+        {
+          "n": 20,
+          "word": "woodpecker"
+        },
+        {
+          "n": 21,
+          "word": "teacup"
+        },
+        {
+          "n": 22,
+          "word": "tangerine"
+        },
+        {
+          "n": 23,
+          "word": "garlic"
+        },
+        {
+          "n": 24,
+          "word": "spaghetti"
+        },
+        {
+          "n": 25,
+          "word": "cushion"
+        },
+        {
+          "n": 26,
+          "word": "doughnut"
+        },
+        {
+          "n": 27,
+          "word": "gravel"
+        },
+        {
+          "n": 28,
+          "word": "firefly"
+        },
+        {
+          "n": 29,
+          "word": "thundercloud"
+        },
+        {
+          "n": 30,
+          "word": "hippo"
+        },
+        {
+          "n": 31,
+          "word": "tricycle"
+        },
+        {
+          "n": 32,
+          "word": "cobweb"
+        },
+        {
+          "n": 33,
+          "word": "panther"
+        },
+        {
+          "n": 34,
+          "word": "bowtie"
+        },
+        {
+          "n": 35,
+          "word": "toucan"
+        },
+        {
+          "n": 36,
+          "word": "moose"
+        },
+        {
+          "n": 37,
+          "word": "paintball"
+        },
+        {
+          "n": 38,
+          "word": "zucchini"
+        },
+        {
+          "n": 39,
+          "word": "meerkat"
+        },
+        {
+          "n": 40,
+          "word": "gingerbread"
+        }
+      ]
+    },
+    {
+      "id": "wl-40-d",
+      "count": 40,
+      "words": [
+        {
+          "n": 1,
+          "word": "rowboat"
+        },
+        {
+          "n": 2,
+          "word": "orchard"
+        },
+        {
+          "n": 3,
+          "word": "pepper"
+        },
+        {
+          "n": 4,
+          "word": "weasel"
+        },
+        {
+          "n": 5,
+          "word": "porcupine"
+        },
+        {
+          "n": 6,
+          "word": "sandbag"
+        },
+        {
+          "n": 7,
+          "word": "scorpion"
+        },
+        {
+          "n": 8,
+          "word": "mailman"
+        },
+        {
+          "n": 9,
+          "word": "sweater"
+        },
+        {
+          "n": 10,
+          "word": "campfire"
+        },
+        {
+          "n": 11,
+          "word": "sailor"
+        },
+        {
+          "n": 12,
+          "word": "marshmallow"
+        },
+        {
+          "n": 13,
+          "word": "pumpernickel"
+        },
+        {
+          "n": 14,
+          "word": "boulder"
+        },
+        {
+          "n": 15,
+          "word": "tuxedo"
+        },
+        {
+          "n": 16,
+          "word": "plank"
+        },
+        {
+          "n": 17,
+          "word": "radio"
+        },
+        {
+          "n": 18,
+          "word": "dumpling"
+        },
+        {
+          "n": 19,
+          "word": "nutmeg"
+        },
+        {
+          "n": 20,
+          "word": "cymbal"
+        },
+        {
+          "n": 21,
+          "word": "lunchbox"
+        },
+        {
+          "n": 22,
+          "word": "periscope"
+        },
+        {
+          "n": 23,
+          "word": "napkin"
+        },
+        {
+          "n": 24,
+          "word": "firetruck"
+        },
+        {
+          "n": 25,
+          "word": "ferret"
+        },
+        {
+          "n": 26,
+          "word": "vacuum"
+        },
+        {
+          "n": 27,
+          "word": "bamboo"
+        },
+        {
+          "n": 28,
+          "word": "quilt"
+        },
+        {
+          "n": 29,
+          "word": "motorcycle"
+        },
+        {
+          "n": 30,
+          "word": "cornfield"
+        },
+        {
+          "n": 31,
+          "word": "bison"
+        },
+        {
+          "n": 32,
+          "word": "seaweed"
+        },
+        {
+          "n": 33,
+          "word": "omelet"
+        },
+        {
+          "n": 34,
+          "word": "sidewalk"
+        },
+        {
+          "n": 35,
+          "word": "buffalo"
+        },
+        {
+          "n": 36,
+          "word": "bongo"
+        },
+        {
+          "n": 37,
+          "word": "driveway"
+        },
+        {
+          "n": 38,
+          "word": "pistachio"
+        },
+        {
+          "n": 39,
+          "word": "canvas"
+        },
+        {
+          "n": 40,
+          "word": "gorilla"
+        }
+      ]
+    }
+  ]
+}

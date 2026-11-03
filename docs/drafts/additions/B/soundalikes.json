@@ -1,0 +1,874 @@
+{
+  "notes": "Draft. Covers all of ABSTRACT and ABSTRACT_MORE (80 words) plus 18 extra abstract words not in any pool. Each entry: the word, a sound-alike made of easy words, one picture and a short note on how close the match is. The soundalike is a memory hook only. Keyword and sound-alike pictures fade without retrieval (Dunlosky and colleagues 2013 rate the keyword method low for lasting learning), so the app should pair these with spaced checks and show the real word after the answer. Homophone pairs are spelling-different words that sound the same in most accents; a few pairs (for example cereal and serial, plain and plane) depend slightly on accent. Pair lists are common English homophones from general knowledge, not from any one source. Fact-check: the Dunlosky and colleagues 2013 reference (Psychological Science in the Public Interest 14(1), 4-58, https://doi.org/10.1177/1529100612453266) rates the keyword mnemonic low utility, confirmed Nov 2, 2026. All 45 homophone pairs were read and are true homophones in most accents; cereal and serial, plain and plane, and a few others depend slightly on accent.",
+  "honestLimit": "This is fast to start and fades without checks. It is a way to get a first picture for an abstract word, not the best long-term way to keep vocabulary.",
+  "entries": [
+    {
+      "id": "sa-justice",
+      "word": "justice",
+      "soundalike": "just ice",
+      "picture": "A judge in a wig slips on a block of ice and bangs the gavel to stop himself.",
+      "note": "Built from smaller words that sound like the target. Say the real word aloud as you picture it."
+    },
+    {
+      "id": "sa-freedom",
+      "word": "freedom",
+      "soundalike": "free dome",
+      "picture": "A glass dome with a FREE sign opens at the top and birds fly out.",
+      "note": "Built from smaller words that sound like the target. Say the real word aloud as you picture it."
+    },
+    {
+      "id": "sa-envy",
+      "word": "envy",
+      "soundalike": "N V",
+      "picture": "Two huge green letters, N and V, stare at a neighbour's shiny bicycle.",
+      "note": "Spells the word out as letters, then picture the letters as things."
+    },
+    {
+      "id": "sa-patience",
+      "word": "patience",
+      "soundalike": "patients",
+      "picture": "A row of patients sit calmly in a waiting room, reading old magazines.",
+      "note": "A near match. The picture only has to remind you of the target word."
+    },
+    {
+      "id": "sa-honor",
+      "word": "honor",
+      "soundalike": "on her",
+      "picture": "A gold medal is pinned on her coat.",
+      "note": "Built from smaller words that sound like the target. Say the real word aloud as you picture it."
+    },
+    {
+      "id": "sa-courage",
+      "word": "courage",
+      "soundalike": "cur age",
+      "picture": "A scruffy dog (a cur) wearing a badge that says 8 barks at a lion.",
+      "note": "Built from smaller words that sound like the target. Say the real word aloud as you picture it."
+    },
+    {
+      "id": "sa-doubt",
+      "word": "doubt",
+      "soundalike": "trout",
+      "picture": "A trout jumps out of a pond holding a question mark balloon.",
+      "note": "Rhymes with the target, so it works as a cue and not as a meaning."
+    },
+    {
+      "id": "sa-memory",
+      "word": "memory",
+      "soundalike": "memo",
+      "picture": "Yellow memos are stuck all over a tree.",
+      "note": "Only the start of the word matches. Say the whole word aloud."
+    },
+    {
+      "id": "sa-truth",
+      "word": "truth",
+      "soundalike": "tooth",
+      "picture": "A giant tooth sits in a witness chair and tells the whole story.",
+      "note": "A near match. The picture only has to remind you of the target word."
+    },
+    {
+      "id": "sa-chaos",
+      "word": "chaos",
+      "soundalike": "K O",
+      "picture": "A boxing glove knocks over a giant letter K and an O rolls away.",
+      "note": "Spells the word out as letters, then picture the letters as things."
+    },
+    {
+      "id": "sa-wisdom",
+      "word": "wisdom",
+      "soundalike": "wise dumb",
+      "picture": "A wise owl wears a dunce cap.",
+      "note": "Built from smaller words that sound like the target. Say the real word aloud as you picture it."
+    },
+    {
+      "id": "sa-greed",
+      "word": "greed",
+      "soundalike": "G reed",
+      "picture": "A giant letter G made of reeds is stuffed with gold coins.",
+      "note": "Built from smaller words that sound like the target. Say the real word aloud as you picture it."
+    },
+    {
+      "id": "sa-loyalty",
+      "word": "loyalty",
+      "soundalike": "royal tea",
+      "picture": "A teapot with a crown pours tea for a dog who never leaves its side.",
+      "note": "Built from smaller words that sound like the target. Say the real word aloud as you picture it."
+    },
+    {
+      "id": "sa-mercy",
+      "word": "mercy",
+      "soundalike": "mer sea",
+      "picture": "A mermaid on the sea floor lifts a fallen sailor to his feet.",
+      "note": "Built from smaller words that sound like the target. Say the real word aloud as you picture it."
+    },
+    {
+      "id": "sa-pride",
+      "word": "pride",
+      "soundalike": "pride of lions",
+      "picture": "A pride of lions lines up on a rock, chests out.",
+      "note": "The picture is a real link to what the word means or is also called."
+    },
+    {
+      "id": "sa-shame",
+      "word": "shame",
+      "soundalike": "shh aim",
+      "picture": "An archer holds a finger to his lips, blushes red and aims at the floor.",
+      "note": "Built from smaller words that sound like the target. Say the real word aloud as you picture it."
+    },
+    {
+      "id": "sa-trust",
+      "word": "trust",
+      "soundalike": "crust",
+      "picture": "Two friends lean back off a pie crust bridge, sure they will be caught.",
+      "note": "Rhymes with the target, so it works as a cue and not as a meaning."
+    },
+    {
+      "id": "sa-hope",
+      "word": "hope",
+      "soundalike": "soap",
+      "picture": "A bar of soap floats up into the sky like a balloon.",
+      "note": "Rhymes with the target, so it works as a cue and not as a meaning."
+    },
+    {
+      "id": "sa-grief",
+      "word": "grief",
+      "soundalike": "reef",
+      "picture": "A grey reef with a single flower laid on it.",
+      "note": "A near match. The picture only has to remind you of the target word."
+    },
+    {
+      "id": "sa-luck",
+      "word": "luck",
+      "soundalike": "duck",
+      "picture": "A lucky duck with a four-leaf clover on its beak.",
+      "note": "Rhymes with the target, so it works as a cue and not as a meaning."
+    },
+    {
+      "id": "sa-fame",
+      "word": "fame",
+      "soundalike": "flame",
+      "picture": "A film star walks a red carpet with a flame on her head.",
+      "note": "A near match. The picture only has to remind you of the target word."
+    },
+    {
+      "id": "sa-peace",
+      "word": "peace",
+      "soundalike": "piece",
+      "picture": "A puzzle piece with a white dove drawn on it.",
+      "note": "Sounds exactly like the target. Use the picture, then say the target."
+    },
+    {
+      "id": "sa-anger",
+      "word": "anger",
+      "soundalike": "hanger",
+      "picture": "A red coat hanger shakes its fist.",
+      "note": "A near match. The picture only has to remind you of the target word."
+    },
+    {
+      "id": "sa-joy",
+      "word": "joy",
+      "soundalike": "toy",
+      "picture": "A toy drum with a smiling face, beating happily.",
+      "note": "Rhymes with the target, so it works as a cue and not as a meaning."
+    },
+    {
+      "id": "sa-fear",
+      "word": "fear",
+      "soundalike": "deer",
+      "picture": "A deer frozen in the glare of a flashlight.",
+      "note": "Rhymes with the target, so it works as a cue and not as a meaning."
+    },
+    {
+      "id": "sa-duty",
+      "word": "duty",
+      "soundalike": "dew tea",
+      "picture": "A guard on watch holds a cup of tea covered in dew.",
+      "note": "Built from smaller words that sound like the target. Say the real word aloud as you picture it."
+    },
+    {
+      "id": "sa-balance",
+      "word": "balance",
+      "soundalike": "ballet ants",
+      "picture": "Ants in tutus balance on a ball.",
+      "note": "Built from smaller words that sound like the target. Say the real word aloud as you picture it."
+    },
+    {
+      "id": "sa-silence",
+      "word": "silence",
+      "soundalike": "sigh lens",
+      "picture": "A camera lens lets out one long, quiet sigh.",
+      "note": "Built from smaller words that sound like the target. Say the real word aloud as you picture it."
+    },
+    {
+      "id": "sa-logic",
+      "word": "logic",
+      "soundalike": "log tick",
+      "picture": "A log with a big green tick mark carved on it.",
+      "note": "Built from smaller words that sound like the target. Say the real word aloud as you picture it."
+    },
+    {
+      "id": "sa-beauty",
+      "word": "beauty",
+      "soundalike": "butte",
+      "picture": "A flat-topped rocky butte glowing pink at sunset.",
+      "note": "A near match. The picture only has to remind you of the target word."
+    },
+    {
+      "id": "sa-rhythm",
+      "word": "rhythm",
+      "soundalike": "rid them",
+      "picture": "A drummer chases little ghosts called THEM away with drumsticks.",
+      "note": "Built from smaller words that sound like the target. Say the real word aloud as you picture it."
+    },
+    {
+      "id": "sa-progress",
+      "word": "progress",
+      "soundalike": "pro grass",
+      "picture": "A pro golfer cuts a path through tall grass.",
+      "note": "Built from smaller words that sound like the target. Say the real word aloud as you picture it."
+    },
+    {
+      "id": "sa-gravity",
+      "word": "gravity",
+      "soundalike": "gravy",
+      "picture": "A gravy boat tips off the table and falls.",
+      "note": "A near match. The picture only has to remind you of the target word."
+    },
+    {
+      "id": "sa-energy",
+      "word": "energy",
+      "soundalike": "N R G",
+      "picture": "A battery with the letters N R G painted on its side.",
+      "note": "Spells the word out as letters, then picture the letters as things."
+    },
+    {
+      "id": "sa-history",
+      "word": "history",
+      "soundalike": "his story",
+      "picture": "A bearded man unrolls a scroll and reads his story.",
+      "note": "Built from smaller words that sound like the target. Say the real word aloud as you picture it."
+    },
+    {
+      "id": "sa-mystery",
+      "word": "mystery",
+      "soundalike": "mist tree",
+      "picture": "A tree wrapped in mist with one glowing eye.",
+      "note": "Built from smaller words that sound like the target. Say the real word aloud as you picture it."
+    },
+    {
+      "id": "sa-value",
+      "word": "value",
+      "soundalike": "valley",
+      "picture": "A valley full of price tags like flowers.",
+      "note": "A near match. The picture only has to remind you of the target word."
+    },
+    {
+      "id": "sa-comfort",
+      "word": "comfort",
+      "soundalike": "come fort",
+      "picture": "A fort with a sign saying COME IN and a door full of cushions.",
+      "note": "Built from smaller words that sound like the target. Say the real word aloud as you picture it."
+    },
+    {
+      "id": "sa-danger",
+      "word": "danger",
+      "soundalike": "Dane jar",
+      "picture": "A Great Dane is stuck in a jar.",
+      "note": "Built from smaller words that sound like the target. Say the real word aloud as you picture it."
+    },
+    {
+      "id": "sa-promise",
+      "word": "promise",
+      "soundalike": "prom miss",
+      "picture": "Two little fingers lock in a pinkie promise on a prom dance floor.",
+      "note": "A near match. The picture only has to remind you of the target word."
+    },
+    {
+      "id": "sa-success",
+      "word": "success",
+      "soundalike": "sack S",
+      "picture": "A sack of gold with a giant S sewn on it.",
+      "note": "Built from smaller words that sound like the target. Say the real word aloud as you picture it."
+    },
+    {
+      "id": "sa-failure",
+      "word": "failure",
+      "soundalike": "fail her",
+      "picture": "A big red F is stuck on her shirt.",
+      "note": "Built from smaller words that sound like the target. Say the real word aloud as you picture it."
+    },
+    {
+      "id": "sa-victory",
+      "word": "victory",
+      "soundalike": "Vic tree",
+      "picture": "A man named Vic holds a trophy at the top of a tree.",
+      "note": "Built from smaller words that sound like the target. Say the real word aloud as you picture it."
+    },
+    {
+      "id": "sa-secret",
+      "word": "secret",
+      "soundalike": "see crate",
+      "picture": "A locked crate you cannot see into, with a keyhole.",
+      "note": "Built from smaller words that sound like the target. Say the real word aloud as you picture it."
+    },
+    {
+      "id": "sa-rumor",
+      "word": "rumor",
+      "soundalike": "roomer",
+      "picture": "A lodger (a roomer) leans out of a window and whispers to the whole street.",
+      "note": "The picture is a real link to what the word means or is also called."
+    },
+    {
+      "id": "sa-habit",
+      "word": "habit",
+      "soundalike": "rabbit",
+      "picture": "A rabbit wears a monk's habit.",
+      "note": "The picture is a real link to what the word means or is also called."
+    },
+    {
+      "id": "sa-choice",
+      "word": "choice",
+      "soundalike": "voice",
+      "picture": "A speech bubble stands between two doors.",
+      "note": "Rhymes with the target, so it works as a cue and not as a meaning."
+    },
+    {
+      "id": "sa-chance",
+      "word": "chance",
+      "soundalike": "dance",
+      "picture": "A pair of dice dances in the street.",
+      "note": "Rhymes with the target, so it works as a cue and not as a meaning."
+    },
+    {
+      "id": "sa-desire",
+      "word": "desire",
+      "soundalike": "D sire",
+      "picture": "A king (a sire) with a giant letter D on his crown.",
+      "note": "Built from smaller words that sound like the target. Say the real word aloud as you picture it."
+    },
+    {
+      "id": "sa-reason",
+      "word": "reason",
+      "soundalike": "raisin",
+      "picture": "A raisin in round glasses explains itself on a blackboard.",
+      "note": "A near match. The picture only has to remind you of the target word."
+    },
+    {
+      "id": "sa-anxiety",
+      "word": "anxiety",
+      "soundalike": "ant sigh tea",
+      "picture": "An ant sighs over a trembling cup of tea.",
+      "note": "Built from smaller words that sound like the target. Say the real word aloud as you picture it."
+    },
+    {
+      "id": "sa-ambition",
+      "word": "ambition",
+      "soundalike": "am bishop",
+      "picture": "A chess bishop climbs a very tall ladder.",
+      "note": "Built from smaller words that sound like the target. Say the real word aloud as you picture it."
+    },
+    {
+      "id": "sa-bliss",
+      "word": "bliss",
+      "soundalike": "kiss",
+      "picture": "A big kiss mark on a fluffy cloud.",
+      "note": "Rhymes with the target, so it works as a cue and not as a meaning."
+    },
+    {
+      "id": "sa-calmness",
+      "word": "calmness",
+      "soundalike": "calm mess",
+      "picture": "A cat sleeps calmly in a mess of papers.",
+      "note": "Built from smaller words that sound like the target. Say the real word aloud as you picture it."
+    },
+    {
+      "id": "sa-dignity",
+      "word": "dignity",
+      "soundalike": "dig knit tea",
+      "picture": "An upright person digs a hole while knitting and sipping tea.",
+      "note": "Built from smaller words that sound like the target. Say the real word aloud as you picture it."
+    },
+    {
+      "id": "sa-elegance",
+      "word": "elegance",
+      "soundalike": "elephant",
+      "picture": "An elephant in a tuxedo walks down a staircase.",
+      "note": "Only the start of the word matches. Say the whole word aloud."
+    },
+    {
+      "id": "sa-gratitude",
+      "word": "gratitude",
+      "soundalike": "grate dude",
+      "picture": "A cheese grater dude in a hat tips it to you.",
+      "note": "Built from smaller words that sound like the target. Say the real word aloud as you picture it."
+    },
+    {
+      "id": "sa-happiness",
+      "word": "happiness",
+      "soundalike": "happy Ness",
+      "picture": "A smiling lake monster waves from a calm lake.",
+      "note": "Built from smaller words that sound like the target. Say the real word aloud as you picture it."
+    },
+    {
+      "id": "sa-harmony",
+      "word": "harmony",
+      "soundalike": "harmonica",
+      "picture": "A harmonica plays by itself while birds sing along.",
+      "note": "Only the start of the word matches. Say the whole word aloud."
+    },
+    {
+      "id": "sa-humility",
+      "word": "humility",
+      "soundalike": "hum mill",
+      "picture": "A windmill hums quietly with its head bowed.",
+      "note": "Built from smaller words that sound like the target. Say the real word aloud as you picture it."
+    },
+    {
+      "id": "sa-imagination",
+      "word": "imagination",
+      "soundalike": "image nation",
+      "picture": "A flag-waving crowd holds up giant empty picture frames.",
+      "note": "Built from smaller words that sound like the target. Say the real word aloud as you picture it."
+    },
+    {
+      "id": "sa-innocence",
+      "word": "innocence",
+      "soundalike": "inn scents",
+      "picture": "A tiny inn with flower scents drifting out of its windows.",
+      "note": "Built from smaller words that sound like the target. Say the real word aloud as you picture it."
+    },
+    {
+      "id": "sa-inspiration",
+      "word": "inspiration",
+      "soundalike": "in spy ration",
+      "picture": "A spy hides inside a box of food rations.",
+      "note": "Built from smaller words that sound like the target. Say the real word aloud as you picture it."
+    },
+    {
+      "id": "sa-kindness",
+      "word": "kindness",
+      "soundalike": "kind nest",
+      "picture": "A smiling bird hands you a nest.",
+      "note": "Built from smaller words that sound like the target. Say the real word aloud as you picture it."
+    },
+    {
+      "id": "sa-laughter",
+      "word": "laughter",
+      "soundalike": "rafter",
+      "picture": "A wooden rafter beam with a big laughing mouth.",
+      "note": "Rhymes with the target, so it works as a cue and not as a meaning."
+    },
+    {
+      "id": "sa-nostalgia",
+      "word": "nostalgia",
+      "soundalike": "nose tall jar",
+      "picture": "A tall jar with a nose sniffing old photographs.",
+      "note": "Built from smaller words that sound like the target. Say the real word aloud as you picture it."
+    },
+    {
+      "id": "sa-optimism",
+      "word": "optimism",
+      "soundalike": "optic prism",
+      "picture": "A glass prism sends out a bright rainbow beam.",
+      "note": "Built from smaller words that sound like the target. Say the real word aloud as you picture it."
+    },
+    {
+      "id": "sa-passion",
+      "word": "passion",
+      "soundalike": "fashion",
+      "picture": "A catwalk model wearing a glowing red heart.",
+      "note": "Rhymes with the target, so it works as a cue and not as a meaning."
+    },
+    {
+      "id": "sa-purpose",
+      "word": "purpose",
+      "soundalike": "purr pose",
+      "picture": "A purring cat strikes a proud pose.",
+      "note": "Built from smaller words that sound like the target. Say the real word aloud as you picture it."
+    },
+    {
+      "id": "sa-reflection",
+      "word": "reflection",
+      "soundalike": "ref flex",
+      "picture": "A referee flexes his arms in front of a mirror.",
+      "note": "Built from smaller words that sound like the target. Say the real word aloud as you picture it."
+    },
+    {
+      "id": "sa-respect",
+      "word": "respect",
+      "soundalike": "wrist pecked",
+      "picture": "A bird pecks a wristwatch on someone's wrist.",
+      "note": "Built from smaller words that sound like the target. Say the real word aloud as you picture it."
+    },
+    {
+      "id": "sa-serenity",
+      "word": "serenity",
+      "soundalike": "cereal knit",
+      "picture": "A bowl of cereal knits a scarf in the sun.",
+      "note": "Built from smaller words that sound like the target. Say the real word aloud as you picture it."
+    },
+    {
+      "id": "sa-sincerity",
+      "word": "sincerity",
+      "soundalike": "sink carrot",
+      "picture": "A carrot stands honestly in the kitchen sink.",
+      "note": "Built from smaller words that sound like the target. Say the real word aloud as you picture it."
+    },
+    {
+      "id": "sa-spirit",
+      "word": "spirit",
+      "soundalike": "spear it",
+      "picture": "A friendly ghost holds a spear.",
+      "note": "Built from smaller words that sound like the target. Say the real word aloud as you picture it."
+    },
+    {
+      "id": "sa-surprise",
+      "word": "surprise",
+      "soundalike": "sir prize",
+      "picture": "A knight (a sir) pops out of a cake holding a prize ribbon.",
+      "note": "Built from smaller words that sound like the target. Say the real word aloud as you picture it."
+    },
+    {
+      "id": "sa-sympathy",
+      "word": "sympathy",
+      "soundalike": "SIM path",
+      "picture": "A SIM card lies on a garden path with a tiny bandage.",
+      "note": "Built from smaller words that sound like the target. Say the real word aloud as you picture it."
+    },
+    {
+      "id": "sa-tenderness",
+      "word": "tenderness",
+      "soundalike": "tender dress",
+      "picture": "A tender steak wearing a dress.",
+      "note": "Built from smaller words that sound like the target. Say the real word aloud as you picture it."
+    },
+    {
+      "id": "sa-tranquility",
+      "word": "tranquility",
+      "soundalike": "train quill",
+      "picture": "A quiet train with a feather quill pen on its roof.",
+      "note": "Built from smaller words that sound like the target. Say the real word aloud as you picture it."
+    },
+    {
+      "id": "sa-wonder",
+      "word": "wonder",
+      "soundalike": "wander",
+      "picture": "A hiker wanders down a long path with wide eyes.",
+      "note": "A near match. The picture only has to remind you of the target word."
+    },
+    {
+      "id": "sa-curiosity",
+      "word": "curiosity",
+      "soundalike": "carrot city",
+      "picture": "A city made entirely of carrots.",
+      "note": "A near match. The picture only has to remind you of the target word."
+    },
+    {
+      "id": "sa-honesty",
+      "word": "honesty",
+      "soundalike": "honey sty",
+      "picture": "A pig sty filled with golden honey.",
+      "note": "Built from smaller words that sound like the target. Say the real word aloud as you picture it."
+    },
+    {
+      "id": "sa-jealousy",
+      "word": "jealousy",
+      "soundalike": "jelly sea",
+      "picture": "A green jelly floats on the sea.",
+      "note": "Built from smaller words that sound like the target. Say the real word aloud as you picture it."
+    },
+    {
+      "id": "sa-boredom",
+      "word": "boredom",
+      "soundalike": "board dome",
+      "picture": "A wooden board under a glass dome yawns.",
+      "note": "Built from smaller words that sound like the target. Say the real word aloud as you picture it."
+    },
+    {
+      "id": "sa-generosity",
+      "word": "generosity",
+      "soundalike": "general rosy",
+      "picture": "A general in a rosy uniform hands out presents.",
+      "note": "A near match. The picture only has to remind you of the target word."
+    },
+    {
+      "id": "sa-bravery",
+      "word": "bravery",
+      "soundalike": "brave berry",
+      "picture": "A tiny blueberry wears a helmet and stands up to a spoon.",
+      "note": "Built from smaller words that sound like the target. Say the real word aloud as you picture it."
+    },
+    {
+      "id": "sa-confusion",
+      "word": "confusion",
+      "soundalike": "cone fuse",
+      "picture": "An ice cream cone with a long twisted fuse.",
+      "note": "Built from smaller words that sound like the target. Say the real word aloud as you picture it."
+    },
+    {
+      "id": "sa-loneliness",
+      "word": "loneliness",
+      "soundalike": "lone lily",
+      "picture": "A single lily in a huge empty field.",
+      "note": "Built from smaller words that sound like the target. Say the real word aloud as you picture it."
+    },
+    {
+      "id": "sa-advice",
+      "word": "advice",
+      "soundalike": "ad vice",
+      "picture": "A poster advert is clamped in a workshop vise.",
+      "note": "Built from smaller words that sound like the target. Say the real word aloud as you picture it."
+    },
+    {
+      "id": "sa-courtesy",
+      "word": "courtesy",
+      "soundalike": "curtsy",
+      "picture": "A person makes a deep curtsy at a door.",
+      "note": "A near match. The picture only has to remind you of the target word."
+    },
+    {
+      "id": "sa-forgiveness",
+      "word": "forgiveness",
+      "soundalike": "four give ness",
+      "picture": "Four wrapped gifts are handed over, one by one.",
+      "note": "Built from smaller words that sound like the target. Say the real word aloud as you picture it."
+    },
+    {
+      "id": "sa-tradition",
+      "word": "tradition",
+      "soundalike": "tray dish",
+      "picture": "A waiter in old-fashioned clothes carries a tray with one dish.",
+      "note": "Built from smaller words that sound like the target. Say the real word aloud as you picture it."
+    },
+    {
+      "id": "sa-opinion",
+      "word": "opinion",
+      "soundalike": "onion",
+      "picture": "An onion gives a speech on a soapbox.",
+      "note": "A near match. The picture only has to remind you of the target word."
+    },
+    {
+      "id": "sa-equality",
+      "word": "equality",
+      "soundalike": "equal tea",
+      "picture": "Two identical cups of tea with an equals sign between them.",
+      "note": "Built from smaller words that sound like the target. Say the real word aloud as you picture it."
+    },
+    {
+      "id": "sa-suspense",
+      "word": "suspense",
+      "soundalike": "suss pence",
+      "picture": "Pennies hang on strings over a cliff edge.",
+      "note": "A near match. The picture only has to remind you of the target word."
+    },
+    {
+      "id": "sa-stress",
+      "word": "stress",
+      "soundalike": "dress",
+      "picture": "A tight dress with a zip about to burst.",
+      "note": "Rhymes with the target, so it works as a cue and not as a meaning."
+    },
+    {
+      "id": "sa-adventure",
+      "word": "adventure",
+      "soundalike": "add vent chair",
+      "picture": "A map is spread across a chair beside a wall vent.",
+      "note": "Built from smaller words that sound like the target. Say the real word aloud as you picture it."
+    },
+    {
+      "id": "sa-mood",
+      "word": "mood",
+      "soundalike": "moo",
+      "picture": "A cow wearing a mood ring says moo.",
+      "note": "Only the start of the word matches. Say the whole word aloud."
+    },
+    {
+      "id": "sa-talent",
+      "word": "talent",
+      "soundalike": "tall tent",
+      "picture": "A tall circus tent with a spotlight.",
+      "note": "Built from smaller words that sound like the target. Say the real word aloud as you picture it."
+    }
+  ],
+  "homophones": [
+    {
+      "a": "bare",
+      "b": "bear"
+    },
+    {
+      "a": "flour",
+      "b": "flower"
+    },
+    {
+      "a": "knight",
+      "b": "night"
+    },
+    {
+      "a": "sea",
+      "b": "see"
+    },
+    {
+      "a": "pair",
+      "b": "pear"
+    },
+    {
+      "a": "whole",
+      "b": "hole"
+    },
+    {
+      "a": "sun",
+      "b": "son"
+    },
+    {
+      "a": "wait",
+      "b": "weight"
+    },
+    {
+      "a": "write",
+      "b": "right"
+    },
+    {
+      "a": "blue",
+      "b": "blew"
+    },
+    {
+      "a": "break",
+      "b": "brake"
+    },
+    {
+      "a": "buy",
+      "b": "by"
+    },
+    {
+      "a": "cell",
+      "b": "sell"
+    },
+    {
+      "a": "cereal",
+      "b": "serial"
+    },
+    {
+      "a": "dear",
+      "b": "deer"
+    },
+    {
+      "a": "hair",
+      "b": "hare"
+    },
+    {
+      "a": "heal",
+      "b": "heel"
+    },
+    {
+      "a": "hear",
+      "b": "here"
+    },
+    {
+      "a": "mail",
+      "b": "male"
+    },
+    {
+      "a": "meat",
+      "b": "meet"
+    },
+    {
+      "a": "one",
+      "b": "won"
+    },
+    {
+      "a": "pail",
+      "b": "pale"
+    },
+    {
+      "a": "peace",
+      "b": "piece"
+    },
+    {
+      "a": "plain",
+      "b": "plane"
+    },
+    {
+      "a": "rain",
+      "b": "reign"
+    },
+    {
+      "a": "role",
+      "b": "roll"
+    },
+    {
+      "a": "sail",
+      "b": "sale"
+    },
+    {
+      "a": "tail",
+      "b": "tale"
+    },
+    {
+      "a": "tide",
+      "b": "tied"
+    },
+    {
+      "a": "toe",
+      "b": "tow"
+    },
+    {
+      "a": "weak",
+      "b": "week"
+    },
+    {
+      "a": "waste",
+      "b": "waist"
+    },
+    {
+      "a": "steal",
+      "b": "steel"
+    },
+    {
+      "a": "stair",
+      "b": "stare"
+    },
+    {
+      "a": "flea",
+      "b": "flee"
+    },
+    {
+      "a": "genes",
+      "b": "jeans"
+    },
+    {
+      "a": "grate",
+      "b": "great"
+    },
+    {
+      "a": "knot",
+      "b": "not"
+    },
+    {
+      "a": "mane",
+      "b": "main"
+    },
+    {
+      "a": "nose",
+      "b": "knows"
+    },
+    {
+      "a": "sew",
+      "b": "so"
+    },
+    {
+      "a": "thrown",
+      "b": "throne"
+    },
+    {
+      "a": "wood",
+      "b": "would"
+    },
+    {
+      "a": "bored",
+      "b": "board"
+    },
+    {
+      "a": "creak",
+      "b": "creek"
+    }
+  ]
+}

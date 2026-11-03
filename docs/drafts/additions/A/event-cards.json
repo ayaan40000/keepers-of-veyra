@@ -1,0 +1,162 @@
+{
+  "notes": "Event cards for Weeks 44 to 47. No real championship is named in any text field, and after the fact-check no real-contest figure, count, time or scoring rule is stated either (rules vary by contest and year and could not be confirmed from one source). All rules shown are Mnemos rules for our own versions. Names like Event Hall and Face Round are from the plan and may change when the story workstream sets the lore names. 'Mind Map' is the drill name. Appended cards for one week keep file order.",
+  "cards": [
+    {
+      "id": "e-w44-how-contests-work",
+      "week": 44,
+      "at": 0,
+      "text": "Memory contests are organised around events. In each event you get a set of things to learn in a fixed time, and then a set time to bring them back. Scoring differs from event to event and from year to year: some count each right answer, and others end a round at a mistake. Each event is a narrow task, and people practise it the way a runner practises a race.",
+      "claim": "Memory contests have timed memorise-then-recall events with scoring that varies by event and year.",
+      "evidence": "none",
+      "source": "General description; no real contest rule or figure is quoted.",
+      "notConfirmed": "No rule, count or time from any real contest is stated in player text.",
+      "verified": true,
+      "sourceUrls": []
+    },
+    {
+      "id": "e-w44-seven-events",
+      "week": 44,
+      "at": 0,
+      "text": "Seven formats are in the Event Hall: Names and Faces, Speed Numbers, Speed Cards, Poetry, Words to Remember, Three Strikes You're Out and Double Deck. You will practise scaled-down versions of them, with our own rules. They are for fun and for practice. They never change your skill scores, and nobody beyond you sees the results.",
+      "claim": "The formats are Mnemos versions inspired by real contest events. Event Hall results never touch skill estimates.",
+      "evidence": "none",
+      "source": "General description; no real contest rule or figure is quoted.",
+      "notConfirmed": "Real event names, rules and scoring vary and are not stated.",
+      "verified": true,
+      "sourceUrls": []
+    },
+    {
+      "id": "e-w45-elimination",
+      "week": 45,
+      "at": 0,
+      "text": "In an elimination event you are asked for one item at a time, in a random order. A mistake, or in some of our contests three mistakes, ends your round. Calm matters more than speed here. In Mnemos an ended round is gentle: you see the answers, nothing is taken away, and you can try again whenever you like.",
+      "claim": "Mnemos elimination contests ask for single items in random order and end the round on a mistake or a set number of strikes (our rules).",
+      "evidence": "none",
+      "source": "General description; no real contest rule or figure is quoted.",
+      "notConfirmed": "No real contest rule is stated.",
+      "verified": true,
+      "sourceUrls": []
+    },
+    {
+      "id": "e-w45-pace-mode",
+      "week": 45,
+      "at": 0,
+      "text": "Mnemos has an optional pace mode that gives each answer a short time limit. It is off unless you turn it on, and it never changes your skill scores. Use it only when you want to practise calm under a clock. Without it, you can take all the time you need.",
+      "claim": "Optional pace mode exists in the Event Hall, off by default. No claim about real events.",
+      "evidence": "none",
+      "source": "Game design decision (CURRICULUM_ADDITIONS.md sections 5 and 11).",
+      "notConfirmed": "None.",
+      "verified": true,
+      "sourceUrls": []
+    },
+    {
+      "id": "e-w46-scored-events",
+      "week": 46,
+      "at": 0,
+      "text": "In the scored events you memorise for a fixed time and then recall. In our Names and Faces round you learn faces with a first and last name, and a point goes for each correctly spelled name. In Speed Cards you learn the order of a shuffled deck. In Poetry you learn a poem and write it out. In Speed Numbers you learn digits. For each, your best result counts, not your average.",
+      "claim": "Scoring rules described here are the Mnemos rules for our versions. No claim about real contests.",
+      "evidence": "none",
+      "source": "General description; no real contest rule or figure is quoted.",
+      "notConfirmed": "No real contest scoring is stated.",
+      "verified": true,
+      "sourceUrls": []
+    },
+    {
+      "id": "e-w46-speed-numbers-rows",
+      "week": 46,
+      "at": 0,
+      "text": "Speed Numbers is built from rows. In our version the digits come in rows of 20, and a row counts only when every digit in it is right: one mistake and that row is worth nothing. Our version has one to four rows, so 40 digits is two rows, the size of your digit gate. Treat each row as a small palace or a few stops of pictures, and check each row before you start the next.",
+      "claim": "Mnemos Speed Numbers uses rows of 20 digits; a row scores only if fully correct (our rule). One to four rows.",
+      "evidence": "none",
+      "source": "General description; no real contest rule or figure is quoted.",
+      "notConfirmed": "No real contest format is stated.",
+      "verified": true,
+      "sourceUrls": []
+    },
+    {
+      "id": "e-w47-what-each-trains",
+      "week": 47,
+      "at": 0,
+      "text": "Each event trains something you already know. Names and Faces: the feature and picture method from weeks 9 to 11. Speed Numbers: the Major System and the digit palace from weeks 14 to 21. Poetry: exact wording, a stanza at a time. Words to Remember: palaces and asking by number. Three Strikes: facts about people held in a Mind Map. Speed Cards and Double Deck: turning a card into a picture and laying a deck along a route.",
+      "claim": "Mapping of event formats to taught methods. Cards are a sport and carry little into everyday life.",
+      "evidence": "none",
+      "source": "Game curriculum (curriculum.js) and CURRICULUM_ADDITIONS.md sections 3 and 5.",
+      "notConfirmed": "None.",
+      "verified": true,
+      "sourceUrls": []
+    },
+    {
+      "id": "e-w47-event-hall-honest",
+      "week": 47,
+      "at": 0,
+      "text": "The Event Hall is practice for a sport. Doing well in these events shows you can do these tasks. It does not show a better memory in general. Cards in particular are fun, but they carry little into daily life. Your best result is for you, and a repeat of the same result earns nothing.",
+      "claim": "Event results measure performance on narrow tasks and do not show general memory. Training a narrow task has not been shown to transfer broadly. Cards have little everyday use.",
+      "evidence": "moderate",
+      "source": "Melby-Lervag and Hulme 2013, Is working memory training effective? A meta-analytic review, Developmental Psychology 49(2), 270-291; Simons et al. 2016, Do 'brain-training' programs work?, Psychological Science in the Public Interest 17(3), 103-186",
+      "notConfirmed": "None.",
+      "verified": true,
+      "sourceUrls": [
+        "https://pubmed.ncbi.nlm.nih.gov/22612437/",
+        "https://www.psychologicalscience.org/publications/brain-training.html"
+      ]
+    }
+  ],
+  "formats": [
+    {
+      "id": "ev-names",
+      "ourName": "Face Round",
+      "realFormatSummary": "Real memory contests include face-and-name events where names are memorised from photos and written back. Rules, counts and scoring differ between contests and years, so none is described.",
+      "trains": "Choosing a face feature, turning a name into a picture, and exact spelling. Taught in weeks 9 to 11.",
+      "notConfirmed": "No real contest rule, count or time is stated; ours are our own.",
+      "verified": true
+    },
+    {
+      "id": "ev-numbers",
+      "ourName": "Number Rows",
+      "realFormatSummary": "Real memory contests include a speed-digits event. Layout, timing and scoring differ between contests and years, so none is described.",
+      "trains": "The Major System, the digit palace and groups of digits. Taught in weeks 14 to 21.",
+      "notConfirmed": "No real contest rule, count or time is stated; ours are our own.",
+      "verified": true
+    },
+    {
+      "id": "ev-cards",
+      "ourName": "Deck Run",
+      "realFormatSummary": "Real memory contests include a shuffled-deck event. Time rules and scoring differ between contests and years, so none is described.",
+      "trains": "Turning a card into a picture and laying a deck along a route, two cards a stop. A sport skill that carries little into daily life.",
+      "notConfirmed": "No real contest rule, count or time is stated; ours are our own.",
+      "verified": true
+    },
+    {
+      "id": "ev-poetry",
+      "ourName": "Poem Page",
+      "realFormatSummary": "Real memory contests include a poem event, strict on exact wording. Length and scoring differ between contests and years, so none is described.",
+      "trains": "Exact wording, line by line, with the stanza habit from A Stanza a Night.",
+      "notConfirmed": "No real contest rule, count or time is stated; ours are our own.",
+      "verified": true
+    },
+    {
+      "id": "ev-words",
+      "ourName": "Word Numbers",
+      "realFormatSummary": "Real memory contests include a word-list event where words are asked by number. List length and rules differ between contests and years, so none is described.",
+      "trains": "Palaces and asking by number, which is random access, not just walking in order.",
+      "notConfirmed": "No real contest rule, count or time is stated; ours are our own.",
+      "verified": true
+    },
+    {
+      "id": "ev-strikes",
+      "ourName": "Three Strikes",
+      "realFormatSummary": "Real memory contests include rounds where facts about people are memorised and asked back, with a limited number of mistakes allowed. Details differ between contests, so none is described.",
+      "trains": "Facts about people held in a Mind Map: branches for birthday, town, pet, hobby, car and food.",
+      "notConfirmed": "No real contest rule, count or time is stated; ours are our own.",
+      "verified": true
+    },
+    {
+      "id": "ev-decks",
+      "ourName": "Double Deck",
+      "realFormatSummary": "Real memory contests include card events with more than one deck. Names and rules differ between contests, so none is described.",
+      "trains": "Card pictures along a route, asked by position. A sport skill that carries little into daily life.",
+      "notConfirmed": "No real contest rule, count or time is stated; ours are our own.",
+      "verified": true
+    }
+  ]
+}

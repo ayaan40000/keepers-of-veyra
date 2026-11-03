@@ -7,6 +7,7 @@ import { shuffle, rng } from '../engine/util.js';
 import { PixelFace, Portrait } from '../pixel/Faces.jsx';
 import { PalaceEditor } from './Palaces.jsx';
 import { sfx } from '../audio/sfx.js';
+import { groupDigits, DIGIT_ROW, mapBranches, SOUNDALIKE, SOUND_HONEST, PEG_HONEST, MAP_HONEST, SKIM_HONEST, POEM_LEARN, POOL_NOTES, numericOk } from '../engine/additions.js';
 
 const BRIEF = {
   wordlist: 'You will see a list of words. For each one, make a clear, vivid picture in your mind: something you could almost touch. When the time is up, write down as many as you can remember, in any order. Don\'t worry about spelling.',
@@ -21,6 +22,19 @@ const BRIEF = {
   facesRestyle: 'People change their hair, glasses and clothes. At recall they may look different, so anchor each name on the face itself: the nose, the eyes, the shape of the jaw.',
   vocab: 'You will see words in Swahili with their meanings. For each one, find something it sounds like in English and make that picture act on the meaning. Later you will see the Swahili word and type what it means.',
   facts: 'You will see questions with their answers. Make a picture for the question and a picture for the answer, and make them interact. Later you will see each question and type the answer.',
+  map: 'You will see a map of a topic: a centre, a few branches, and short leaves on each branch. Study how it fits together, and give each leaf a picture. Then the leaves disappear. You will see the centre and the branches with empty boxes, and rebuild the map from memory. Order inside a branch does not matter, but a leaf must go under the right branch.',
+  poem: 'You will see a poem, line by line. Give each line one picture at one stop, and say it aloud. Then you will write it back one line at a time, in order. Capitals and punctuation do not matter in practice, and a small typo is forgiven.',
+  calc: 'You will see short sums. Work left to right, say each partial result aloud, and type the final answer. Only the final answer is scored. The boxes for partial results are for you.',
+  skim: 'Three steps on one short text. Skim: look at the headings and the first lines for a short time. Pick: choose up to five sentences you think are the key points. Keep: study the key points with a picture each, then write one key word for each heading. Skimming finds points. It does not store them. Keeping them is the separate job.',
+  peg: 'Each number has a fixed picture. For each peg, hang the item on it: make the picture and the item touch. Later you will see a peg and its number in a different order, and write what was hung on it.',
+  numbered: 'You will see numbered words. Picture each one and hang it on its number. Later you will be asked for words by number, in a different order.',
+  surname: 'You will meet some people with a first name and a surname. Picture the first name on one feature and the surname on another. Later you write both names. Each name is one point.',
+};
+const SPEC_NOTE = {
+  group: 'The digits are shown in groups. Treat each group as one unit, and say it aloud in a beat if you like.',
+  src: 'Some items come with a sentence. The key word is marked. Picture the key word and keep the order, then write the key words back.',
+  body: 'This is study vocabulary for a course. It is not health information and does not help anyone judge a symptom. See a health professional for any health question.',
+  poolHonest: 'Pictures help you hold a list. They do not teach the subject.',
 };
 
 const ROLE_LABEL = { guided: 'Guided practice', practice: 'Practice', remedial: 'Rebuild practice', check: 'Check', gate: 'Gate challenge', baseline: 'Baseline', warmup: 'Warm-up', review: 'Mixed review', free: 'Free practice', probe: 'Delayed recall', crypt: 'Undercroft trial' };
@@ -67,7 +81,7 @@ export default function Drill({ step, isProbe, profile, update, onResult, onCont
   const items = step.items;
   const n = items.length;
   const mode = recallMode(t, spec);
-  const guided = step.role === 'guided' && !isProbe;
+  const guided = step.role === 'guided' && !isProbe && !['map', 'calc', 'poem'].includes(t) && !spec.skim;
   const [phase, setPhase] = useState('brief');
   const [loci, setLoci] = useState(step.loci || null);
   const [palaceId, setPalaceId] = useState(null);
@@ -99,6 +113,21 @@ export default function Drill({ step, isProbe, profile, update, onResult, onCont
   };
   const studyLeft = useCountdown(phase === 'study' && !guided, studySecs, endStudy);
   const bLeft = useCountdown(phase === 'studyB', Math.max(20, Math.round(studySecs / 2)), startRecall);
+  // Skim, Pick, Keep (1.1): three steps on one short text
+  const skim = step.extra?.skim;
+  const [picks, setPicks] = useState([]);
+  const skimLeft = useCountdown(phase === 'skim', studySecs || 60, () => setPhase('pick'));
+  const keepLeft = useCountdown(phase === 'keep', studySecs || 60, endStudy);
+  // Mental Reckoning (1.1): one sum at a time; in hold mode the sum is hidden after a few seconds
+  const [parts, setParts] = useState({});
+  const [shown, setShown] = useState(true);
+  const holdSecs = Math.round(6 + ((spec.level || 1) - 1) * 1.2);
+  useEffect(() => {
+    if (phase !== 'recall' || t !== 'calc' || items[mIdx]?.mode !== 'hold') return undefined;
+    setShown(true);
+    const id = setTimeout(() => setShown(false), holdSecs * 1000);
+    return () => clearTimeout(id);
+  }, [phase, mIdx]);
   const recallLimit = spec.timed ? Math.max(45, n * 5) : 0;
   const recallLeft = useCountdown(phase === 'recall' && !!spec.timed && t !== 'major', recallLimit, () => submit(true));
 
@@ -116,9 +145,9 @@ export default function Drill({ step, isProbe, profile, update, onResult, onCont
       update((p) => { const x = p.palaces.find((q) => q.id === pal.id); if (x) x.lastUsed = new Date().toISOString(); });
     }
     onStart?.();
-    if (isProbe || t === 'major') { startRecall(); return; }
+    if (isProbe || t === 'major' || t === 'calc') { startRecall(); return; }
     marks.current.study = Date.now();
-    setPhase('study');
+    setPhase(spec.skim ? 'skim' : 'study');
   }
 
   function submit(timedOut = false) {
@@ -146,11 +175,27 @@ export default function Drill({ step, isProbe, profile, update, onResult, onCont
     }
   }
 
+  function calcNext(final, partial) {
+    const now = Date.now();
+    timing.current.perItemMs.push(now - marks.current.item);
+    marks.current.item = now;
+    const next = resp.slice(); next[mIdx] = final; setResp(next);
+    setParts({ ...parts, [mIdx]: partial });
+    if (mIdx + 1 < n) setMIdx(mIdx + 1);
+    else {
+      sfx.soft();
+      timing.current.recallMs = Date.now() - marks.current.recall;
+      const res = scoreDrill(t, items, next, { spec });
+      setResult(res); setPhase('feedback');
+      onResult(res, timing.current, { loci });
+    }
+  }
+
   const label = (i) => (t === 'palace' && loci ? loci[i] : `${i + 1}`);
   const header = (
     <div className="drill-head">
       <span className="tag">{ROLE_LABEL[isProbe ? 'probe' : step.role]}</span>
-      <h2>{TEMPLATE_NAME[t]}{spec.reverse ? ' (reverse)' : ''}</h2>
+      <h2>{TEMPLATE_NAME[t]}{spec.reverse ? ' (reverse)' : ''}{variantLabel(spec)}</h2>
       <span className="muted small">{SKILLS[step.skill]?.name} · {n} items{!isProbe && step.level ? ` · level ${step.level}` : ''}{spec.timed ? ' · timed' : ''}</span>
     </div>
   );
@@ -171,8 +216,18 @@ export default function Drill({ step, isProbe, profile, update, onResult, onCont
         {t === 'faces' && spec.lures > 0 && !isProbe && <p className="note">{BRIEF.facesLures}</p>}
         {t === 'faces' && spec.restyle && !isProbe && <p className="note">{BRIEF.facesRestyle}</p>}
         {t === 'faces' && spec.turn && !isProbe && <p className="note">{BRIEF.facesTurn}</p>}
+        {!isProbe && spec.skim && <p className="note">{BRIEF.skim}</p>}
+        {!isProbe && spec.peg && <p className="note">{BRIEF.peg} {PEG_HONEST}</p>}
+        {!isProbe && spec.numbered && <p className="note">{BRIEF.numbered}</p>}
+        {!isProbe && spec.surname && <p className="note">{BRIEF.surname}</p>}
+        {!isProbe && spec.group && <p className="note">{SPEC_NOTE.group}</p>}
+        {!isProbe && step.extra?.title && items.some((x) => x.text) && <p className="note">{SPEC_NOTE.src}</p>}
+        {!isProbe && spec.src === 'body' && <p className="note">{SPEC_NOTE.body}</p>}
+        {!isProbe && POOL_NOTES[spec.src] && spec.src !== 'body' && <p className="note">{POOL_NOTES[spec.src]}</p>}
+        {!isProbe && t === 'map' && <p className="note">{MAP_HONEST}</p>}
+        {!isProbe && t === 'poem' && step.extra?.poem?.learn && <details className="about-more"><summary>How to learn a poem like this</summary><p className="small">{step.extra.poem.learn}</p></details>}
         {spec.interference && !isProbe && <p className="note">Tricky one: after the first list, you will see a second list too. But you will only be asked for the first one. Try to keep them in separate places in your mind.</p>}
-        {!isProbe && studySecs > 0 && t !== 'major' && !guided && <p className="muted small">You have {studySecs} seconds to study. If you are ready sooner, you can finish early.</p>}
+        {!isProbe && studySecs > 0 && t !== 'major' && t !== 'calc' && !guided && <p className="muted small">You have {studySecs} seconds to study. If you are ready sooner, you can finish early.</p>}
         {guided && <p className="note">Guided practice: the items come one at a time, with no clock running. If you like, type a few words describing the picture you made. It is optional, but people who do it tend to remember more.</p>}
         {t === 'major' && (
           <details className="major-code" open={step.level <= 2 || guided}>
@@ -194,7 +249,7 @@ export default function Drill({ step, isProbe, profile, update, onResult, onCont
           </label>
         ))}
         {t === 'palace' && loci && isProbe && <p className="muted small">Walk the same stops: {loci.slice(0, 3).join(', ')}…</p>}
-        <button className="btn primary" autoFocus disabled={t === 'palace' && !loci && !palaceId} onClick={begin}>{isProbe || t === 'major' ? 'Begin recall' : 'Begin study'}</button>
+        <button className="btn primary" autoFocus disabled={t === 'palace' && !loci && !palaceId} onClick={begin}>{isProbe || t === 'major' || t === 'calc' ? 'Begin recall' : spec.skim ? 'Begin skimming' : 'Begin study'}</button>
       </section>
     );
   }
@@ -225,6 +280,53 @@ export default function Drill({ step, isProbe, profile, update, onResult, onCont
     );
   }
 
+  // ---------- SKIM, PICK, KEEP ----------
+  if (phase === 'skim' && skim) {
+    return (
+      <section className="card drill stimulus" data-quiet>
+        {header}
+        <p className="muted small">Step 1 of 3: Skim. Headings and first lines are marked.</p>
+        <TimerBar left={skimLeft} total={studySecs || 60} />
+        <h3>{skim.title}</h3>
+        <div className="skim-text">{skim.text.split(/\n\n+/).map((blk, i) => {
+          const [head, ...rest] = blk.replace(/^## /, '').split('\n');
+          const body = rest.join(' ');
+          const first = (body.match(/^.+?[.!?](\s|$)/) || [body])[0];
+          return <div key={i}><h4>{head}</h4><p><b className="skim-first">{first}</b>{body.slice(first.length)}</p></div>;
+        })}</div>
+        <button className="btn" onClick={() => setPhase('pick')}>I have skimmed it</button>
+      </section>
+    );
+  }
+  if (phase === 'pick' && skim) {
+    const toggle = (i) => setPicks(picks.includes(i) ? picks.filter((x) => x !== i) : picks.length < 5 ? [...picks, i] : picks);
+    return (
+      <section className="card drill recall" data-quiet>
+        {header}
+        <p className="muted small">Step 2 of 3: Pick. Choose up to five sentences that are the key points of the text. You picked {picks.length} of 5.</p>
+        <ul className="pick-list">{skim.candidates.map((c, i) => (
+          <li key={i}><label><input type="checkbox" checked={picks.includes(i)} onChange={() => toggle(i)} aria-label={c} /> <span>{c}</span></label></li>
+        ))}</ul>
+        <button className="btn primary" onClick={() => { marks.current.study = Date.now(); setPhase('keep'); }}>Check my picks</button>
+      </section>
+    );
+  }
+  if (phase === 'keep' && skim) {
+    const found = skim.keyPoints.filter((k) => picks.some((i) => skim.candidates[i] === k)).length;
+    return (
+      <section className="card drill stimulus" data-quiet>
+        {header}
+        <p className="muted small">Step 3 of 3: Keep. You found {found} of {skim.keyPoints.length} key points. This is shown for interest and does not change any score. Give each key point one picture, then write one key word for each heading.</p>
+        <TimerBar left={keepLeft} total={studySecs || 60} />
+        <ul className="step-list">{skim.headings.map((h, i) => (
+          <li key={i}><b>{h}</b>: {markKey(skim.keyPoints[i], items[i]?.answer)} {picks.some((x) => skim.candidates[x] === skim.keyPoints[i]) ? <span className="muted small">(you picked this)</span> : null}</li>
+        ))}</ul>
+        <p className="muted small">{SKIM_HONEST}</p>
+        <button className="btn" onClick={endStudy}>I'm ready</button>
+      </section>
+    );
+  }
+
   // ---------- STUDY ----------
   if (phase === 'study' || phase === 'studyB') {
     const listB = phase === 'studyB';
@@ -235,10 +337,22 @@ export default function Drill({ step, isProbe, profile, update, onResult, onCont
         <div aria-live="polite" className="sr-only" ref={live} />
         <TimerBar left={listB ? bLeft : studyLeft} total={listB ? Math.max(20, Math.round(studySecs / 2)) : studySecs} />
         {listB && <p className="note">List B. Study these too. You will be asked for list A.</p>}
-        {t === 'digits' ? (
-          <div className="digits mono">{showItems.map((x) => x.answer).join('').match(/.{1,2}/g).map((g, i) => <span key={i}>{g}</span>)}</div>
+        {t === 'map' ? (
+          <MapTree map={step.extra?.map || mapFromItems(items)} />
+        ) : t === 'poem' ? (
+          <div className="poem-card">
+            {step.extra?.poem && <p><b>{step.extra.poem.title}</b> <span className="muted">by {step.extra.poem.author}</span></p>}
+            <ol className="poem-lines">{showItems.map((it, i) => <li key={i}>{it.answer}</li>)}</ol>
+          </div>
+        ) : t === 'digits' ? (
+          <DigitBlock digits={showItems.map((x) => x.answer).join('')} spec={spec} />
         ) : t === 'faces' ? (
           <div className="face-grid">{showItems.map((it, i) => <figure key={i}><PixelFace seed={it.face} size={48} scale={3} /><figcaption>{it.answer}</figcaption></figure>)}</div>
+        ) : showItems.some((it) => it.text) ? (
+          <>
+            {step.extra?.title && <p className="muted">{step.extra.title}</p>}
+            <ol className="step-list">{showItems.map((it, i) => <li key={i}>{markKey(it.text, it.answer)}</li>)}</ol>
+          </>
         ) : mode === 'cued' ? (
           <ul className="pair-list">{showItems.map((it, i) => <li key={i}><span>{it.cue}</span><span className="arrow">→</span><b>{it.answer}</b></li>)}</ul>
         ) : (
@@ -265,7 +379,43 @@ export default function Drill({ step, isProbe, profile, update, onResult, onCont
         </section>
       );
     }
+    if (t === 'calc') {
+      const it = items[mIdx];
+      const hold = it.mode === 'hold';
+      const go = (e) => {
+        const box = e.currentTarget.closest('section');
+        calcNext(box.querySelector('input[data-slot]').value, [...box.querySelectorAll('input[data-part]')].map((x) => x.value));
+      };
+      return (
+        <section className="card drill recall" data-quiet>
+          {header}
+          <p className="muted small">{mIdx + 1} of {n}. {hold ? `The sum is shown for ${holdSecs} seconds, then hidden. Hold it, work it out and type the final answer.` : 'Work left to right. Type the final answer and press Enter.'}</p>
+          <div className="big mono center" aria-label={hold && !shown ? 'The sum is hidden' : `Sum: ${it.cue}`}>{hold && !shown ? '?' : it.cue}</div>
+          {it.steps.length > 1 && <div className="calc-steps">{it.steps.slice(0, -1).map((_, k) => <input key={`${mIdx}-${k}`} data-part inputMode="numeric" {...inputProps} aria-label={`Partial result ${k + 1}, not scored`} placeholder={`step ${k + 1}`} />)}</div>}
+          <input key={mIdx} data-slot autoFocus inputMode="numeric" {...inputProps} aria-label={`Final answer for sum ${mIdx + 1}`} placeholder="final answer" onKeyDown={(e) => { if (e.key === 'Enter') go(e); }} />
+          <button data-submit className="btn primary" onClick={go}>Next</button>
+        </section>
+      );
+    }
     const set = (i, v) => { const next = resp.slice(); next[i] = v; setResp(next); };
+    if (t === 'map') {
+      const branches = mapBranches(items);
+      const centre = step.extra?.map?.center || items[0]?.center;
+      return (
+        <section className="card drill recall" data-quiet>
+          {header}
+          <div aria-live="polite" className="sr-only" ref={live} />
+          <p className="muted small">Rebuild the map. Write the leaves under each branch, in any order. The number of boxes is the number of leaves.</p>
+          {centre && <p className="mm-centre"><b>{centre}</b></p>}
+          <div className="mm-recall">{branches.map((b) => (
+            <fieldset key={b.label} className="mm-branch"><legend>{b.label} <span className="muted small">({b.idx.length} leaves)</span></legend>
+              {b.idx.map((i, k) => <input key={i} data-slot {...inputProps} aria-label={`Leaf ${k + 1} of ${b.idx.length} under ${b.label}`} value={resp[i]} onChange={(e) => set(i, e.target.value)} onKeyDown={focusNext} />)}
+            </fieldset>
+          ))}</div>
+          <button data-submit data-sfx="soft" className="btn primary" onClick={() => submit(false)}>Check answers</button>
+        </section>
+      );
+    }
     return (
       <section className="card drill recall" data-quiet>
         {header}
@@ -284,7 +434,7 @@ export default function Drill({ step, isProbe, profile, update, onResult, onCont
             return (
               <figure key={i}>
                 <PixelFace seed={it.face} look={look} turn={it.turn || 0} size={48} scale={3} label={`Face ${k + 1}`} />
-                <input data-slot {...inputProps} aria-label={`Name for face ${k + 1}`} value={resp[i]} onChange={(e) => set(i, e.target.value)} onKeyDown={focusNext} />
+                <input data-slot {...inputProps} placeholder={spec.surname ? 'First Last' : undefined} aria-label={`Name for face ${k + 1}`} value={resp[i]} onChange={(e) => set(i, e.target.value)} onKeyDown={focusNext} />
                 {anyLures && <button type="button" className={`btn tiny${resp[i] === LURE_ANSWER ? ' on' : ''}`} aria-pressed={resp[i] === LURE_ANSWER} aria-label={`Not met face ${k + 1}`} onClick={() => set(i, resp[i] === LURE_ANSWER ? '' : LURE_ANSWER)}>Not met</button>}
               </figure>
             );
@@ -316,16 +466,22 @@ export default function Drill({ step, isProbe, profile, update, onResult, onCont
         {(t === 'digits' ? [{ target: items.map((x) => x.answer).join(''), response: String(resp), ok: result.acc === 1, summary: true }] : result.perItem).map((x, i) => (
           <li key={i} className={x.ok ? 'ok' : 'miss'}>
             <span className="mark" aria-hidden="true">{x.ok ? '✓' : '–'}</span>
-            <span className="locus">{t === 'palace' && loci ? loci[i] : items[i]?.cue || (t === 'faces' ? '' : '')}</span>
+            <span className="locus">{t === 'palace' && loci ? loci[i] : items[i]?.cue || items[i]?.branch || ''}</span>
             {t === 'faces' && <PixelFace seed={items[i].face} look={items[i].alter || items[i].look ? { ...(items[i].look || {}), ...(items[i].alter || {}) } : null} size={48} scale={1} />}
             <b>{t === 'faces' && items[i].lure ? 'A stranger (not met)' : x.target}</b>
             {t === 'faces' && <span className="muted small face-keys">{items[i].lure ? `Looked like someone you met, but with ${describeAlter(items[i].alter)}.` : `Key features: ${describeFace(faceParams(items[i].face))}`}</span>}
             {!x.ok && <span className="muted small">{x.response ? `you wrote “${x.response}”` : 'blank'}{x.err && x.err !== 'omission' ? ` · ${x.err}` : ''}</span>}
+            {t === 'faces' && spec.surname && x.parts && <span className="muted small">{x.parts[0] ? 'first name right' : 'first name missed'}, {x.parts[1] ? 'surname right' : 'surname missed'}</span>}
+            {t === 'calc' && items[i]?.steps?.length > 0 && <span className="muted small">steps: {items[i].steps.join(', then ')}</span>}
+            {spec.abstract && SOUNDALIKE[x.target] && <span className="muted small">Sound-alike idea: {SOUNDALIKE[x.target][0]}. {SOUNDALIKE[x.target][1]}.</span>}
             <span className="sr-only">{x.ok ? 'correct' : 'missed'}</span>
           </li>
         ))}
       </ul>
       {t === 'digits' && <p className="muted small">{result.correct} of {n} digits in the right position.</p>}
+      {spec.abstract && <p className="muted small">{SOUND_HONEST}</p>}
+      {t === 'calc' && result.acc >= 0.9 && timing.current.recallMs > 0 && <p className="muted small">Time for these {n} sums: {Math.round(timing.current.recallMs / 1000)} seconds. Shown for interest. Time never lowers the score.</p>}
+      {t === 'calc' && <p className="muted small">Mental Reckoning trains these particular steps on these kinds of sums. It does not make you quick at mathematics in general. It earns no Lumen and changes no skill estimate.</p>}
       <ContinueBtn onClick={onContinue} />
     </section>
   );
@@ -339,4 +495,57 @@ function ContinueBtn({ onClick }) {
   const ref = useRef(null);
   useEffect(() => { const id = setTimeout(() => ref.current?.focus(), 350); return () => clearTimeout(id); }, []);
   return <button ref={ref} className="btn primary" onClick={onClick}>Continue</button>;
+}
+
+// ---------- 1.1 helpers ----------
+const VARIANT_WORD = { shape: 'shape pegs', rhyme: 'rhyme pegs' };
+function variantLabel(spec) {
+  if (spec.unit) return ' (Unit Check, Form ' + spec.form + ')';
+  if (spec.peg) return ` (${VARIANT_WORD[spec.peg] || 'pegs'})`;
+  if (spec.skim) return ' (Skim, Pick, Keep)';
+  if (spec.numbered) return ' (numbered)';
+  if (spec.surname) return ' (first names and surnames)';
+  if (spec.kind === 'people') return ' (people)';
+  if (spec.src === 'grocery') return ' (shopping list)';
+  if (spec.src === 'steps') return ' (steps)';
+  if (spec.src === 'points') return ' (talk points)';
+  if (spec.src === 'body') return ' (study terms)';
+  if (['atlas', 'elements', 'roots', 'music', 'chess'].includes(spec.src)) return ` (${{ atlas: 'capitals', elements: 'elements', roots: 'word roots', music: 'music theory', chess: 'chess openings' }[spec.src]})`;
+  return '';
+}
+
+// A sentence with its key word marked.
+function markKey(text, key) {
+  const i = key ? String(text).toLowerCase().indexOf(String(key).toLowerCase()) : -1;
+  if (i < 0) return text;
+  return <>{text.slice(0, i)}<mark className="key">{text.slice(i, i + key.length)}</mark>{text.slice(i + key.length)}</>;
+}
+
+// Digits in groups (or in rows of 20 for event mode). Display only.
+function DigitBlock({ digits, spec }) {
+  if (spec.rows) {
+    const rows = digits.match(new RegExp(`.{1,${DIGIT_ROW}}`, 'g')) || [];
+    return <div className="digits mono rows">{rows.map((r, i) => <div key={i} className="digit-row"><span className="muted small">Row {i + 1}</span>{groupDigits(r, 4).map((g, k) => <span key={k}>{g}</span>)}</div>)}</div>;
+  }
+  return <div className="digits mono">{groupDigits(digits, spec.group || 2).map((g, i) => <span key={i}>{g}</span>)}</div>;
+}
+
+function mapFromItems(items) {
+  return { center: items[0]?.center || '', branches: mapBranches(items).map((b) => ({ label: b.label, leaves: b.idx.map((i) => items[i].show || items[i].answer) })) };
+}
+
+// A still tree drawn with plain boxes, and the same map as a nested list for screen readers.
+function MapTree({ map }) {
+  return (
+    <div className="mm">
+      <div className="mm-visual" aria-hidden="true">
+        <div className="mm-centre"><b>{map.center}</b></div>
+        <div className="mm-branches">{map.branches.map((b) => (
+          <div key={b.label} className="mm-branch"><span className="mm-label">{b.label}</span>
+            <ul>{b.leaves.map((l) => <li key={l}>{l}</li>)}</ul></div>
+        ))}</div>
+      </div>
+      <ul className="sr-only"><li>{map.center}<ul>{map.branches.map((b) => <li key={b.label}>{b.label}<ul>{b.leaves.map((l) => <li key={l}>{l}</li>)}</ul></li>)}</ul></li></ul>
+    </div>
+  );
 }
