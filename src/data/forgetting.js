@@ -32,7 +32,7 @@ export const SEAM_RULES = {
 export const WINDER = {
   id: 'winder', name: 'Ambrose Tallow', epithet: 'the Winder',
   look: `A thin, tidy man in an old Warden's coat, the brass badge worn smooth as a river stone, a pocket watch on a long chain, and kind, tired eyes. His mark is a ring with a single hand, like a clock's.`,
-  art: 'story_ambrose', // art manifest id; missing art falls back to text
+  art: 'portrait_ambrose_tallow', // art manifest id; missing art falls back to text
 };
 
 export const BOSS_INTRO = [
@@ -385,7 +385,7 @@ export const EPILOGUE_TWO = { id: 'epilogue_days_in_place', title: SECOND_EPILOG
 // All new Chronolog entries from this chapter (lore.js shape). Ids are permanent once released.
 export const SEAM_LORE = [
   ...FORESHADOW.filter((x) => x.unlock),
-  { ...SEAM_RULES, art: 'story_winding_mark' },
+  { ...SEAM_RULES, art: 'lore_winding_mark' },
   BOSS_LORE,
   { id: 'lore_p_third_verse', title: `The Part the Quay Folk Only Hum`, unlock: 'wren:beat:wf_b9_third_verse', text: [
     `The Lamplighter's Song has a third verse that people mostly hum. Tansy says it is the part for the very end of the evening.`,
@@ -404,7 +404,7 @@ export const SEAM_LORE = [
 ];
 // Extra people shown in Veyra, People once their story has begun. unlock uses the same keys as lore entries.
 export const SEAM_PEOPLE = [
-  { id: 'edrin', name: `Edrin Halloway`, role: `Wren's father`, art: 'story_edrin', tiers: [
+  { id: 'edrin', name: `Edrin Halloway`, role: `Wren's father`, art: 'portrait_edrin_halloway', tiers: [
     { unlock: 'wren:beat:wf_b2_blue_door', text: `A lamplighter of the Quay, who lit lamps twenty-three to forty-four. Quiet, with a bad knee and a house at number thirty-one, Quay Row, whose blue door he has been promising to repaint for twenty years.` },
     { unlock: 'wren:beat:wf_b8_edrin', text: `He came to the Amphitheatre to watch his daughter and stayed to give you the things he remembers of his wife's face. He asked you to keep them. "She would want her face to have someone."` },
     { unlock: 'wren:beat:wf_b10_green_door', text: `He has finally repainted the door. It is green. He says blue was only ever a mistake he never fixed.` },
@@ -412,7 +412,7 @@ export const SEAM_PEOPLE = [
   { id: 'marit', name: `Marit Halloway`, role: `Wren's mother`, art: null, tiers: [
     { unlock: 'wren:beat:wf_b3_the_tune', text: `A lamplighter of the Quay who lit lamps one to twenty-two and hummed a tune with no words while she did it. She died in the winter of the long cough, when Wren was eight. The Tide took her face from Wren's memory that same week, an ordinary Tide, and nobody's fault.` },
   ] },
-  { id: 'tallow', name: `Ambrose Tallow, the Winder`, role: `The last Warden of the Hours`, art: 'story_ambrose', tiers: [
+  { id: 'tallow', name: `Ambrose Tallow, the Winder`, role: `The last Warden of the Hours`, art: 'portrait_ambrose_tallow', tiers: [
     { unlock: 'seam:closed', text: `The Warden who kept the Tide's timetable and wound the Mother Clock. Three hundred years ago he stepped into the Seam to hold one evening in place, and nobody has said his name since. He was not cruel. He was lonely. He paid for the Order's oil and wicks for eleven years without being asked for anything, and he is remembered now: Ambrose Tallow, Warden of the Hours, who kept the last lamp.` },
   ] },
 ];

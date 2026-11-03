@@ -82,13 +82,13 @@ function storyPages(kind, first) {
   const W = BOSS_WINDER;
   if (kind === 'intro') return [{ tag: 'Chapter Thirteen', title: GREAT_FORGETTING.chapter.title, paras: first ? [GREAT_FORGETTING.unlock, ...BOSS_INTRO] : [GREAT_FORGETTING.unlock, BOSS_INTRO[0]] }];
   if (kind === 'winder') {
-    const p = first ? [{ tag: 'The Pale Glow', title: 'A thin man in the light', art: 'story_ambrose', paras: [...W.appears, ...W.pitch] }, { tag: 'The Pale Glow', title: 'Wren answers', paras: [W.wren, W.set] }]
-      : [{ tag: 'The Pale Glow', title: 'The Winder waits', art: 'story_ambrose', paras: [W.set] }];
+    const p = first ? [{ tag: 'The Pale Glow', title: 'A thin man in the light', art: 'portrait_ambrose_tallow', paras: [...W.appears, ...W.pitch] }, { tag: 'The Pale Glow', title: 'Wren answers', paras: [W.wren, W.set] }]
+      : [{ tag: 'The Pale Glow', title: 'The Winder waits', art: 'portrait_ambrose_tallow', paras: [W.set] }];
     return p;
   }
-  if (kind === 'name') return [{ tag: 'The thread draws tight', title: 'What to be called', art: 'story_ambrose', paras: W.name }];
+  if (kind === 'name') return [{ tag: 'The thread draws tight', title: 'What to be called', art: 'portrait_ambrose_tallow', paras: W.name }];
   if (kind === 'ending') return [
-    { tag: 'The Heartledger', title: 'Ambrose Tallow', art: 'story_ambrose', paras: [W.roll, W.letGo] },
+    { tag: 'The Heartledger', title: 'Ambrose Tallow', art: 'portrait_ambrose_tallow', paras: [W.roll, W.letGo] },
     { tag: 'Chapter Thirteen', title: BOSS_ENDING.title, paras: [...BOSS_ENDING.text, BOSS_ENDING.wren] },
   ];
   if (kind === 'epilogue') {
@@ -106,7 +106,7 @@ function storyPages(kind, first) {
 export function PortraitCard({ profile }) {
   return (
     <div className="portrait-card">
-      {artFor('story_mother_portrait') && <ArtImg id="story_mother_portrait" className="seam-art" />}
+      {artFor('event_wren_mother_portrait') && <ArtImg id="event_wren_mother_portrait" className="seam-art" />}
       <h3 className="panel-title">{PORTRAIT_NOTE.title}</h3>
       <p className="small">{PORTRAIT_NOTE.intro}</p>
       <ul className="small portrait-details">{FACE_DETAILS.map((d) => (

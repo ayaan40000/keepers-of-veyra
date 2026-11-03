@@ -48,7 +48,7 @@ export const WF_BEATS = [
       `"My first notebook. It was a small green notebook, and I was nine. A woman gave it to me the spring after my mother died. She smelled of rosemary and ink." She looked at the lamp for a while. "I think it was Calder. She made me a mint tea that spring too, for a girl who could not sleep, and I had not thought of it until now. Tansy's Mist and Mint tastes exactly like it. I cannot think why."`,
       `Neither of you said anything about that. After a while she opened her own notebook and wrote one word in it, and closed it again.`,
     ] },
-  { id: 'wf_b8_edrin', n: 8, week: 44, day: 302, where: 'The Amphitheatre, before the Rite', title: 'Edrin', art: 'story_edrin',
+  { id: 'wf_b8_edrin', n: 8, week: 44, day: 302, where: 'The Amphitheatre, before the Rite', title: 'Edrin', art: 'portrait_edrin_halloway',
     text: [
       `An older man in a lamplighter's coat was waiting by the Amphitheatre gate, with one hand on his bad knee. "I am Edrin," he said. "I have come to watch my daughter. I will not say anything. I will just stand here."`,
       `He said something, in the end. He took you aside. "She cannot remember her mother's face. I can. I would like somebody to hold some of it, in case I cannot always. A scar through the left eyebrow, from a lamp glass. She pinned her hair with a brass lamp key. She wore a yellow scarf, winter and summer. And her laugh always started before the joke was done."`,
@@ -60,13 +60,13 @@ export const WF_BEATS = [
       `Wren put her pencil down. "That is her tune," she said. "That is the Last Lamp. It had words all along. She was humming the third verse." She sang it through, once, badly, and the whole Quay went quiet, and nobody laughed.`,
       `"Tallow keeps the lamp for me," Wren repeated. "I always thought she was singing about candle fat." The last lamp ticked, very faintly, over her shoulder. Nobody mentioned it.`,
     ] },
-  { id: 'wf_b10_green_door', n: 10, week: 53, day: 366, where: 'Quay Row', title: 'The door is green', art: 'story_green_door',
+  { id: 'wf_b10_green_door', n: 10, week: 53, day: 366, where: 'Quay Row', title: 'The door is green', art: 'event_green_door',
     text: [
       `On the first morning of the Year of Keeping Wren came up the Quay at a near run. "Come and see," she said. "Come and see before I decide it is a dream."`,
       `The door at number thirty-one, Quay Row, had been painted overnight, and all the flaking blue was gone. "It is green now. Blue was only ever a mistake I never fixed," Wren said, in a hushed voice, and then, because it was not quite her sentence: "That is what my father said, from the step, rubbing his knee, looking enormously pleased with himself."`,
       `"Twenty years," Wren said. "Twenty years he has been promising." She touched the door and drew her fingers back. It was still a little tacky. Pip sat on the wall with the look of a cat who had been consulted and had objected.`,
     ] },
-  { id: 'wf_b11_portrait', n: 11, week: 54, day: 0, where: 'The Archive, after the Seam', title: 'The portrait', art: 'story_mother_portrait', epilogue: true,
+  { id: 'wf_b11_portrait', n: 11, week: 54, day: 0, where: 'The Archive, after the Seam', title: 'The portrait', art: 'event_wren_mother_portrait', epilogue: true,
     text: [`Wren paints her mother from five things that were kept for her. It is told in the second epilogue.`] },
 ];
 export const BEAT_BY_ID = Object.fromEntries(WF_BEATS.map((b) => [b.id, b]));

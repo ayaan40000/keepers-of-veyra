@@ -74,7 +74,7 @@ export const FINAL = {
   // Four events she should win, three she should lose.
   factors: { names: 1.04, numbers: 1.04, cards: 1.04, poem: 1.04, words: 0.97, strikes: 0.97, decks: 0.97 },
 };
-export const RIVAL = { name: 'Ottoline Gilt', nick: 'Lantern', art: 'story_ottoline', cap: 0.96, defaultRatio: 0.5, close: 0.03 };
+export const RIVAL = { name: 'Ottoline Gilt', nick: 'Lantern', art: 'portrait_ottoline_gilt', cap: 0.96, defaultRatio: 0.5, close: 0.03 };
 
 export const RIVAL_INTRO = 'Nineteen, only daughter of Gilt & Daughters, lamp-oil and wicks, the richest supplier in Veyra. Tall, immaculate, a ribbon in her hair for each tier she has won. She has seven tutors, one for each event, and a very small man whose only job is to carry the first tutor\'s umbrella. She is fast on a prepared picture and brittle on a new one, and believes these are the same as skill.';
 

@@ -26,6 +26,8 @@ PRIZES = {
     "vt_lamp_hook": ("prize_vault_hook", 0),
     "vt_clay_tablet": ("prize_vault_tablet", 0),
     "vt_lamp_key": ("prize_vault_key", 0),
+    "tr_year_tablet": ("prizex_year_tablet", 0),  # 1.1
+    "tr_tally_stick": ("prizex_tally_stick", 0),  # 1.1
 }
 
 

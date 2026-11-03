@@ -419,6 +419,7 @@ function CupNight({ profile, res, onBack }) {
         {all && (
           <>
             <p><b>{count} of 7 lamps are lit.</b> {res.won ? 'The Lamp Cup is yours.' : 'The Cup stays with the Gilts tonight.'}</p>
+            {res.won && artFor('event_lamp_cup') && <ArtImg id="event_lamp_cup" className="seam-art" />}
             <Rival profile={profile}>{RIVAL_LINES[5][verdictKey]}</Rival>
             <p className="story-text">{RIVAL_SCENES[5]}</p>
             {RIVAL_CLOSING.map((l, i) => i === 0 ? <Rival key={i} profile={profile}>{l.replace(/^"|"$/g, '')}</Rival> : <p key={i} className="story-text">{l}</p>)}

@@ -142,7 +142,8 @@ SHIP += rows("crypt", "undercroft", "crypt", [
 
 # New art painted by gen.py: (ship id, job id in out/new, category, alt). The seed to use is in PICK (default 0).
 # Seed (0 or 1) chosen by eye for each painted job; default 0.
-PICK = {"echo_packing_bay": 1, "echo_crossroads": 1, "echo_tide_shore": 1, "echo_speech_hall": 0,
+PICK = {"voice_vision": 1, "audit_route": 1, "story_ottoline": 1, "story_green_door": 1, 
+        "echo_packing_bay": 1, "echo_crossroads": 1, "echo_tide_shore": 1, "echo_speech_hall": 0,
         "forget_linking": 1, "forget_faces": 1, "forget_numbers": 1, "forget_structure": 1, "forget_boss": 1,
         "district_M2": 1, "district_M12": 1, "event_lethe_gate_vigil": 1, "event_gate_trial": 1, "event_archive_lamp": 1}
 NEWROWS = [
@@ -253,6 +254,13 @@ def resolve():
 
 # Own descriptions for the day versions (the night alt text names lamps, dusk or mist that the day picture does not show)
 DAY_ALT = {
+    "trial_catacombs": "A crypt lined with pale marble busts in niches, lit by daylight, with a logbook on a stone lectern.",
+    "trial_scriptorium": "A sunlit library floor flooded with still water, desks and scrolls floating under a copper dome.",
+    "trial_salt_vault": "A round brass vault door covered in small dials in a brick wall, with salt crystals below, by day.",
+    "trial_bridge": "A long stone bridge over a chasm with small stone gargoyles on the railings, by day.",
+    "trial_gears": "A market square of small stalls with brass gears laid out on them, under a clock tower, by day.",
+    "trial_vault": "A small round stone door in the river wall with an empty niche beside it, by day.",
+    "backdrop_long_vigil": "The Quay battlements at dawn above the river, the night's watch over.",
     "backdrop_gala": "A grand ballroom of Veyra by daylight, with tall windows and polished floors.",
     "backdrop_packing_bay": "A stone quay by day with crates and barrels beside the water.",
     "backdrop_speech_hall": "A round lecture hall with tiered seats and a lectern, lit by daylight.",
