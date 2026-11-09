@@ -9,9 +9,10 @@
 import { FORMULAS, CHEM, WONDERS, JOKES, DIAGRAMS, DIAGRAM_BY_ID } from '../data/abstract.js';
 import DATE_SETS from '../data/add/dates.json';
 import TRIVIA from '../data/add/trivia.json';
+import { FINANCE } from '../data/finance.js';
 import { sample, shuffle, matches, normalize } from './util.js';
 
-export const ABSTRACT_SRC = ['formulas', 'dates', 'trivia', 'wonders', 'jokes', 'diagram'];
+export const ABSTRACT_SRC = ['formulas', 'dates', 'trivia', 'wonders', 'jokes', 'diagram', 'finance'];
 const DATE_EVENTS = DATE_SETS.flatMap((s) => s.events.map((e) => ({ ...e, set: s.id })));
 
 // ---------- checking ----------
@@ -87,6 +88,25 @@ function dates(n, r) {
   // Next day: given the year, name the event (its short label, or any accepted name).
   const noYear = (e) => [e.label, ...(e.accepts || [])].filter((k) => !/\d/.test(k)); // the year is in the question, so it cannot be the answer
   const probe = ev.map((e) => ({ cue: `What happened in ${e.year}?`, answer: e.label, keyed: true, key: noYear(e) }));
+  // 1.4 Which came first? Next day, one ordering question for every four events studied.
+  const yr = (e) => (e.bce ? -1 : 1) * parseInt(String(e.year), 10);
+  for (let k = 0; k + 1 < ev.length && k < Math.floor(ev.length / 4) * 2; k += 2) {
+    const [a, b] = [ev[k], ev[k + 1]];
+    if (yr(a) === yr(b)) continue;
+    const first = yr(a) < yr(b) ? a : b;
+    probe.unshift({ cue: `Which came first: ${a.label} or ${b.label}?`, answer: first.label, keyed: true, key: noYear(first), order: true, text: `${first.label} came first.` });
+  }
+  return { items, extra: { probe } };
+}
+// 1.4 Finance: half the items are a formula with one part missing, half are "use it once" (a small worked number).
+// Next day each formula comes back with its other blank.
+function finance(n, r) {
+  const kUse = Math.floor(n / 2);
+  const fs = sample(FINANCE, Math.min(FINANCE.length, n - kUse), r);
+  const uses = sample(FINANCE.filter((f) => f.use && !fs.includes(f)).concat(fs.filter((f) => f.use)), kUse, r);
+  const pick = fs.map((f) => { const bs = shuffle(f.blank, r); return { f, b: bs[0], b2: bs[1] ?? bs[0] }; });
+  const items = [...pick.map(({ f, b }) => formulaItem(f, b)), ...uses.map((f) => ({ cue: `${f.name}. ${f.use.q}`, answer: f.use.a, kind: 'number', text: `${f.name}: ${f.show.join(' ')}. ${f.use.q} ${f.use.a}.` }))];
+  const probe = pick.map(({ f, b2 }) => formulaItem(f, b2));
   return { items, extra: { probe } };
 }
 function trivia(n, r) {
@@ -118,6 +138,7 @@ export function abstractItems(spec, n, r) {
     case 'wonders': return wonders(n, r);
     case 'jokes': return jokes(n, r);
     case 'diagram': return diagram(spec, r);
+    case 'finance': return finance(n, r);
     default: return null;
   }
 }

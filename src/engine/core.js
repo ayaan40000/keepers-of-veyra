@@ -46,7 +46,7 @@ export function newProfile(alias, avatar, prefs = {}) {
     results: [], sets: [], palaces: [], major: {}, achievements: {}, story: { seen: [] }, reflections: 0, baseline: null, inProgress: null,
     tips: { seen: [] }, relics: { polish: {} }, stats: { sessions: [] }, trials: {}, brambles: { thorns: {}, chests: {} }, mirror: { episode: null, lit: {} }, audit: { done: 0, last: null }, events: blankEvents(),
     seam: { met: null, cleared: [], tries: 0, best: 0, rests: 0, last: null, used: [], closed: null, held: null, epilogue: null }, wren: { seen: {}, asked: {}, lastBeat: null, lastQ: null },
-    guide: { tried: {}, later: {} }, own: blankOwn(), ledger: blankLedger(), habits: { plans: [], carry: [] }, ladder: {},
+    guide: { tried: {}, later: {} }, own: blankOwn(), ledger: blankLedger(), gloss: { v: 1, items: {}, history: [] }, habits: { plans: [], carry: [] }, ladder: {},
     keeper: { equip: { lantern: null, cloak: null, charm: null, tool: null } },
     battles: { done: 0, held: 0, rests: 0, last: null, skipped: null, queue: [], history: [] },
   };

@@ -9,7 +9,7 @@ const VARIANT_NAME = {
   peg: 'Pegs', group: 'Digits in groups', rows: 'Digit rows', grocery: 'Shopping lists', steps: 'Steps', points: 'Talk points', body: 'Study terms',
   numbered: 'Numbered words', surname: 'Names and surnames', skim: 'Skim, Pick, Keep', map: 'Mind Map', poem: 'Poem', calc: 'Mental Reckoning',
   atlas: 'Capitals', elements: 'Elements', roots: 'Word roots', music: 'Music theory', chess: 'Chess openings',
-  formulas: 'Formulae', dates: 'Historical dates', trivia: 'General knowledge', wonders: 'Surprising facts', jokes: 'Jokes', diagram: 'Labelled diagrams',
+  formulas: 'Formulae', finance: 'Finance formulae', dates: 'Historical dates', trivia: 'General knowledge', wonders: 'Surprising facts', jokes: 'Jokes', diagram: 'Labelled diagrams',
 };
 // 1.2 new-language and scene variants have compound keys (vocab-es-produce, scene-sc-shop-choose).
 const LANG_WORD = { sw: 'Swahili', es: 'Spanish', tr: 'Turkish', old: 'Old tongue' };

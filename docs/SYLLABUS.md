@@ -162,7 +162,7 @@ Generated from `src/data/curriculum.js` by `scripts/syllabus-doc.mjs`. Do not ed
 | --- | --- | --- | --- | --- |
 | 40 | Choosing the Technique | Pick the right tool for the material. | Fact Recall (8 items, 90s study); Real-life Scene (10 items, 90s study, sc: sc-shop, skill: palace, choose); Real-life Scene (10 items, 100s study, sc: sc-voicemail, skill: numbers, choose) | Linked Pairs (10 items, 80s study) |
 | 41 | Learning from Books | Turn a chapter into a palace outline. | Fact Recall (5 items, 60s study, skim); Poem (6 items, 120s study); Fact Recall (8 items, 110s study, src: diagram) | Fact Recall (10 items, 90s study) |
-| 42 | Exam and Technical Material | Encode formulas, terms and procedures. | Vocabulary (8 items, 100s study, lang: es, dir: produce, gender); Story Chain (8 items, 70s study, src: steps); Fact Recall (5 items, 60s study, skim); Fact Recall (8 items, 160s study, src: formulas) | Vocabulary (10 items, 90s study) |
+| 42 | Exam and Technical Material | Encode formulas, terms and procedures. | Vocabulary (8 items, 100s study, lang: es, dir: produce, gender); Story Chain (8 items, 70s study, src: steps); Fact Recall (8 items, 160s study, src: finance); Fact Recall (8 items, 160s study, src: formulas) | Vocabulary (10 items, 90s study) |
 | 43 | Transfer Gate | Unfamiliar mixed tasks. | Fact Recall (10 items, 100s study); Names and Faces (8 items, 80s study); Real-life Scene (10 items, 90s study, sc: sc-party, skill: faces, choose); Real-life Scene (10 items, 90s study, sc: sc-recipe, skill: linking, choose) | Linked Pairs (12 items, 90s study) |
 
 ## M11. Month 11: Integration and Competition Formats (The Amphitheatre of Echoes)

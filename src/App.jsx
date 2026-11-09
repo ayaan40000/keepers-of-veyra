@@ -21,6 +21,7 @@ import Seam from './ui/Seam.jsx';
 import EventHall from './ui/EventHall.jsx';
 import OwnText from './ui/OwnText.jsx';
 import Ledger from './ui/Ledger.jsx';
+import Gloss from './ui/Gloss.jsx';
 import { ItemIcon } from './ui/ItemIcon.jsx';
 import { UnlockToast } from './ui/game/UnlockToast.jsx';
 import { earnedItems, collectionStats } from './engine/collect.js';
@@ -176,6 +177,10 @@ export default function App() {
 
   if (battle && battle.mode === 'events') {
     return <EventHall key={battle.n} profile={profile} update={update} onExit={() => { setBattle(null); window.scrollTo(0, 0); }} />;
+  }
+
+  if (battle && battle.mode === 'gloss') {
+    return <Gloss key={battle.n} profile={profile} update={update} onExit={() => { setBattle(null); window.scrollTo(0, 0); }} />;
   }
 
   if (battle && battle.mode === 'ledger') {

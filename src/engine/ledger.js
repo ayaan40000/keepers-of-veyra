@@ -6,6 +6,7 @@ import { addDays, daysBetween, uid } from './util.js';
 import POOLS from '../data/add/pools.json';
 import DATES from '../data/add/dates.json';
 import { FORMULAS } from '../data/abstract.js';
+import { FINANCE, MARKS } from '../data/finance.js';
 
 export const LEDGER_INTERVALS = [1, 3, 7, 14, 30, 60, 120, 240, 365];
 export const CAPS = { books: 50, cards: 5000, side: 400, note: 200, title: 80, history: 300, cardHistory: 8, record: 3000000 };
@@ -177,6 +178,10 @@ export const STARTERS = [
     cards: () => DATES.flatMap((s) => s.events.map((e) => ({ front: e.text, back: e.year }))) },
   { id: 'formulae', title: 'Formulae', kind: 'cards', self: true,
     cards: () => FORMULAS.map((f) => ({ front: f.name, back: f.show.join(' '), note: f.legend || '' })) },
+  { id: 'finance', title: 'Ledger of Debts: finance formulae', kind: 'cards', self: true,
+    cards: () => FINANCE.map((f) => ({ front: f.name, back: f.show.join(' '), note: f.legend })) },
+  { id: 'marks', title: "The Merchants' Marks", kind: 'words', self: true,
+    cards: () => MARKS.map(([m, img]) => ({ front: m, back: img })) },
 ];
 export function addStarter(l, id, date) {
   const st = STARTERS.find((s) => s.id === id);

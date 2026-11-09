@@ -18,6 +18,16 @@ export const MIN_REWARD_WORDS = 15;
 
 export const blankOwn = () => ({ v: 1, texts: [], history: [] });
 
+// 1.4 The Evening Round: once a section is kept (its 180-day check held), it joins a rotation and is said at least once
+// every 7, 14 or 30 days (the player's choice per text; 0 switches it off), forever. A slip drops it back to the 1, 7, 30 ladder.
+export const ROUND_CHOICES = [7, 14, 30, 0];
+export const DEFAULT_ROUND = 30;
+export const roundOf = (t) => (ROUND_CHOICES.includes(t?.round) ? t.round : DEFAULT_ROUND);
+export function roundDue(t, sch) {
+  if (!sch?.retired || !roundOf(t)) return null;
+  return sch.roundDue || next(sch.history.at(-1)?.date || sch.created, roundOf(t));
+}
+
 // ---------- paste safety ----------
 // NFC, tabs to spaces, control characters and bidirectional override or isolate characters removed.
 // The direction marks U+200E and U+200F stay, because right-to-left text uses them.
@@ -236,7 +246,11 @@ export function advanceSched(sch, passed, acc, date) {
 
 export function dueSections(own, date) {
   const out = [];
-  for (const t of own.texts) for (const s of t.sections) if (s.sched && !s.sched.retired && s.sched.due <= date) out.push({ textId: t.id, sectionId: s.id, due: s.sched.due });
+  for (const t of own.texts) for (const s of t.sections) {
+    if (s.sched && !s.sched.retired && s.sched.due <= date) out.push({ textId: t.id, sectionId: s.id, due: s.sched.due });
+    const rd = roundDue(t, s.sched);
+    if (rd && rd <= date) out.push({ textId: t.id, sectionId: s.id, due: rd, round: true });
+  }
   return out.sort((a, b) => (a.due < b.due ? -1 : a.due > b.due ? 1 : 0));
 }
 export const sitting = (own, date, tired = false) => dueSections(own, date).slice(0, tired ? 1 : SITTING_MAX);
@@ -269,6 +283,11 @@ export function recordCheck(p, textId, sectionId, results, { date, typed = false
   if (!sec.sched) {
     // the Blank step of learning: enters the schedule at 80 percent
     if (acc >= START_LEVEL) { sec.sched = startSched(date, acc); sec.stage = 4; started = true; } else sec.stage = Math.max(sec.stage || 0, 3);
+  } else if (sec.sched.retired) {
+    // The Evening Round: a kept section said again. Held: next round. Slipped: back to the 1, 7, 30 ladder.
+    sec.sched.history = [...sec.sched.history, { date, acc: Math.round(acc * 1000) / 1000, pass: passed }].slice(-CAPS.sectionHistory);
+    if (passed) sec.sched.roundDue = next(date, roundOf(text) || DEFAULT_ROUND);
+    else { sec.sched.retired = false; sec.sched.created = date; sec.sched.idx = 0; sec.sched.due = next(date, 1); sec.sched.misses = Math.min(99, sec.sched.misses + 1); delete sec.sched.roundDue; }
   } else {
     const idxBefore = sec.sched.idx;
     const { delay } = advanceSched(sec.sched, passed, acc, date);
@@ -282,8 +301,9 @@ export function recordCheck(p, textId, sectionId, results, { date, typed = false
       p.progress.lumen += lumen;
     }
   }
+  if (sec.sched?.retired && !sec.sched.roundDue && roundOf(text)) sec.sched.roundDue = next(date, roundOf(text));
   own.history = [...own.history, { date, text: textId, held, of }].slice(-CAPS.history);
-  return { held, of, acc, passed, started, lumen, due: sec.sched?.due ?? null, retired: !!sec.sched?.retired };
+  return { held, of, acc, passed, started, lumen, due: sec.sched?.retired ? roundDue(text, sec.sched) : sec.sched?.due ?? null, retired: !!sec.sched?.retired };
 }
 
 // ---------- texts ----------
@@ -316,6 +336,7 @@ export function validateText(t) {
   if (!isObj(t) || !isStr(t.id, 40, 1) || !isStr(t.title, CAPS.title, 1) || !isStr(t.label ?? '', CAPS.label) || !isStr(t.note ?? '', CAPS.note) || !isDate(t.created)) return false;
   if (!['auto', 'ltr', 'rtl'].includes(t.dir) || !isStr(t.lang ?? '', 12) || !['gist', 'close', 'exact'].includes(t.exact) || typeof t.marks !== 'boolean' || !['typed', 'said'].includes(t.mode)) return false;
   if ((t.roleMode != null && typeof t.roleMode !== 'boolean') || !isStr(t.role ?? '', CAPS.role)) return false;
+  if (t.round != null && !ROUND_CHOICES.includes(t.round)) return false;
   if (!Array.isArray(t.sections) || !t.sections.length || t.sections.length > CAPS.sections) return false;
   const ids = new Set();
   let chars = 0;
@@ -328,6 +349,7 @@ export function validateText(t) {
       const c = s.sched;
       if (!isObj(c) || !isDate(c.created) || !isDate(c.due) || !isInt(c.idx, 0, OWN_INTERVALS.length) || typeof c.immediate !== 'number' || !(c.immediate >= 0 && c.immediate <= 1) || !isInt(c.misses, 0, 99) || typeof c.retired !== 'boolean') return false;
       if (!Array.isArray(c.history) || c.history.length > CAPS.sectionHistory || !c.history.every((h) => isObj(h) && isDate(h.date) && typeof h.acc === 'number' && h.acc >= 0 && h.acc <= 1 && typeof h.pass === 'boolean')) return false;
+      if (c.roundDue != null && !isDate(c.roundDue)) return false;
       if (c.paid != null && (!Array.isArray(c.paid) || c.paid.length > OWN_INTERVALS.length || !c.paid.every((x) => isInt(x, 0, OWN_INTERVALS.length)))) return false;
     }
   }

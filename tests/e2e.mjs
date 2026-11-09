@@ -341,6 +341,20 @@ if (!lcards) errors.push('ledger card not scheduled');
 await btn('Back').click();
 log('keeper\'s ledger: OK');
 
+// 7f. 1.4 The Gloss at Ennick's desk
+await nav('Today');
+await page.getByRole('button', { name: "Go to Ennick's desk" }).click();
+await btn('Begin').click();
+await btn("Show Ennick's gloss").click();
+await overflowCheck('gloss');
+await btn('Kept').click();
+await btn("Show Ennick's gloss").click();
+await btn('Partly').click();
+await snap('gloss-done');
+if (!(await page.getByText('1 of 2 glossed well.').count())) errors.push('gloss sitting did not finish');
+await btn('Back').click();
+log('the gloss: OK');
+
 // 8. Desktop layout
 await page.setViewportSize({ width: 1280, height: 860 });
 await nav('Today');

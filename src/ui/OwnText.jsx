@@ -10,7 +10,7 @@ import { OWN, ownCheckLine } from '../data/owntext.js';
 import {
   CAPS, SITTING_MAX, NEW_PER_DAY, chunk, joinSections, splitSection, renumber, draftError, newText, rolesOf, speakers, hiddenMask,
   askedPart, firstLetters, lineStart, stagesFor, checkLine, missingNote, isNoSpace, recordCheck, sitting, dueSections, minutesFor,
-  sectionCounts, startedToday, buildTextsExport, importTexts,
+  sectionCounts, startedToday, buildTextsExport, importTexts, roundOf,
 } from '../engine/owntext.js';
 
 function saveText(name, text) {
@@ -390,6 +390,7 @@ export default function OwnText({ profile, update, onExit }) {
                 <li key={t.id} className="note">
                   <p><b {...lineProps(t)}>{t.title}</b>{t.label ? <span className="muted small"> {t.label}</span> : null}</p>
                   <p className="small muted">{c.total} section{c.total > 1 ? 's' : ''}, {c.learned} learned{c.kept ? `, ${c.kept} kept` : ''}{c.nextDue ? `, next check ${c.nextDue}` : ''}</p>
+                  <label className="field small">Evening Round, once a section is kept<select value={roundOf(t)} onChange={(e) => { const v = +e.target.value; update((p) => { const x = p.own.texts.find((y) => y.id === t.id); if (x) { x.round = v; x.sections.forEach((s) => { if (s.sched) delete s.sched.roundDue; }); } }); }}><option value={7}>Say each kept section every 7 days</option><option value={14}>Every 14 days</option><option value={30}>Every 30 days</option><option value={0}>Off</option></select></label>
                   <button className="btn small" onClick={() => go({ name: 'text', id: t.id })}>Open</button>
                 </li>
               );

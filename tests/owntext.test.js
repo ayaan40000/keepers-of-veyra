@@ -187,7 +187,7 @@ describe('Your Own Text: schedule', () => {
     }
     expect(seen).toEqual(OWN_INTERVALS.map((n) => addDays(start, n)));
     expect(sec.sched.retired).toBe(true);
-    expect(dueSections(p.own, addDays(start, 400))).toHaveLength(0);
+    expect(dueSections(p.own, addDays(start, 400)).every((x) => x.round)).toBe(true); // 1.4: kept sections come back in the Evening Round
   });
   it('a miss is gentle: same place, due tomorrow; a second miss drops one step but never to zero', () => {
     const p = withText(); learn(p);

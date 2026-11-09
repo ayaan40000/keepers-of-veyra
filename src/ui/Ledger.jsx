@@ -85,6 +85,7 @@ export default function Ledger({ profile, update, onExit }) {
           );
         })}</div>
         <p className="muted small">{T.glow}</p>
+        {l.books.some((b) => b.kind === 'project') && <p className="small">Projects with a kept card: {Math.min(3, l.books.filter((b) => b.kind === 'project' && bookStats(b, date).kept > 0).length)} of 3 (the Month 10 roads).</p>}
       </section>
       <NewBook profile={profile} update={update} onMade={(id) => { setBookId(id); setView('book'); }} />
       <section className="card">
