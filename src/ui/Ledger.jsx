@@ -6,10 +6,33 @@ import { DialogueBox } from './game/DialogueBox.jsx';
 import { Portrait } from '../pixel/Faces.jsx';
 import { today } from '../engine/core.js';
 import { gateDone } from '../engine/guide.js';
-import { KINDS, STARTERS, CAPS, DAILY, sitting, dueCount, bookStats, addBook, addCard, addStarter, parseBulk, matchCard, selfMarked, recordReview, cardCount, newList } from '../engine/ledger.js';
+import { KINDS, STARTERS, CAPS, DAILY, sitting, openingQueue, resetDaily, OPENING_WEEK, dueCount, bookStats, addBook, addCard, addStarter, parseBulk, matchCard, selfMarked, recordReview, cardCount, newList } from '../engine/ledger.js';
 import { LEDGER_TEXT as T } from '../data/ledger.js';
 
 export const ledgerOpen = (p) => gateDone(p, 'M1') || !!p?.progress?.reviewerUnlock;
+// 1.9: should today's session open with the Ledger? Week 5 on, due reviews only, once a day, player can turn it off.
+export const ledgerOpens = (p, week) => ledgerOpen(p) && week >= OPENING_WEEK && p.user?.prefs?.ledgerFirst !== false && p.ledger?.daily?.opened !== today(p) && openingQueue(p.ledger, today(p)).length > 0;
+
+// The Ledger as the first step of the day. Skipping is always fine and costs nothing.
+export function LedgerOpening({ profile, update, onDone }) {
+  const [go, setGo] = useState(false);
+  const mark = () => update((p) => { resetDaily(p.ledger, today(p)).opened = today(p); });
+  const n = openingQueue(profile.ledger, today(profile)).length;
+  if (go) return <Review profile={profile} update={update} opening onDone={() => { mark(); onDone(); }} />;
+  return (
+    <div className="page ledger">
+      <section className="card" data-testid="ledger-opening">
+        <h2 className="panel-title"><PxIcon name="scroll" size={28} />The Ledger first</h2>
+        <p className="small">{n === 1 ? 'One of your own cards is due.' : `${n} of your own cards are due.`} Calder keeps them at the start of the day, while your mind is fresh.</p>
+        <p className="muted small">Skipping is fine. They wait for you on the Ledger page.</p>
+        <div className="row wrap">
+          <button className="btn primary" autoFocus onClick={() => setGo(true)}>Answer them</button>
+          <button className="btn ghost" onClick={() => { mark(); onDone(); }}>Skip to today's session</button>
+        </div>
+      </section>
+    </div>
+  );
+}
 
 export function LedgerCard({ profile, onOpen }) {
   if (!ledgerOpen(profile) || !profile.ledger?.books?.length) return null;
@@ -185,9 +208,9 @@ function BookView({ profile, update, book, onBack }) {
   );
 }
 
-function Review({ profile, update, onDone }) {
+function Review({ profile, update, onDone, opening = false }) {
   const date = today(profile);
-  const queue = useMemo(() => sitting(profile.ledger, date), []); // fixed for this sitting
+  const queue = useMemo(() => (opening ? openingQueue(profile.ledger, date) : sitting(profile.ledger, date)), []); // fixed for this sitting
   const [i, setI] = useState(0);
   const [phase, setPhase] = useState('ask'); // ask, shown (new card), result
   const [val, setVal] = useState('');
@@ -208,7 +231,7 @@ function Review({ profile, update, onDone }) {
           {t.kept > 0 && <p className="small">{t.kept === 1 ? 'One card is now kept: it held after a month or more.' : `${t.kept} cards are now kept: they held after a month or more.`}</p>}
           {t.lumen > 0 && <p className="small">+{t.lumen} Lumen for cards that held after a week or more.</p>}
           <p className="small muted">{T.after}</p>
-          <button className="btn primary" autoFocus onClick={onDone}>Back to the shelf</button>
+          <button className="btn primary" autoFocus onClick={onDone}>{opening ? "On to today's session" : 'Back to the shelf'}</button>
         </section>
       </div>
     );

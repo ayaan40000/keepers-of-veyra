@@ -29,7 +29,7 @@ export const TIMES = [60, 300, 900]; // study seconds: one-minute sprint, five-m
 export const STOP_TARGETS = [50, 100, 300, 600, 1000];
 
 export function blankRoad() {
-  return { v: 1, audio: false, strict: true, system: { kind: null, pao: {}, d3: {} }, cards: {}, pb: {}, history: [], slips: {}, sundays: [], title: null };
+  return { v: 1, audio: false, strict: true, system: { kind: null, pao: {}, d3: {} }, cards: {}, pb: {}, history: [], slips: {}, sundays: [], title: null, days: [] };
 }
 export function ensureRoad(p) {
   const b = blankRoad();
@@ -39,6 +39,11 @@ export function ensureRoad(p) {
 }
 
 // The calendar week a player has reached (the reviewer unlock opens every tablet).
+// 1.9 Road days: weekdays (0 Sunday to 6 Saturday) on which a full session drops its scene and extra rounds for the Road.
+export const WEEKDAYS = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+export const weekdayOf = (date) => new Date(date + 'T12:00:00').getDay();
+export const roadDay = (p, date) => roadOpen(p) && Array.isArray(p?.road?.days) && p.road.days.includes(weekdayOf(date));
+
 export function weekOf(p) { return p?.progress?.reviewerUnlock ? 99 : weekForDay(p?.progress?.day || 1).w; }
 export const tabletOpen = (p, id) => roadOpen(p) && weekOf(p) >= DISC[id].week;
 
@@ -228,6 +233,7 @@ export function validateRoad(r) {
   const BAD = "The Wardens' Road record is invalid.";
   if (!isObj(r) || typeof r.audio !== 'boolean' || !isObj(r.system) || !isObj(r.cards) || !isObj(r.pb) || !Array.isArray(r.history) || !isObj(r.slips) || !Array.isArray(r.sundays)) return BAD;
   if (r.title != null && !isDate(r.title)) return BAD;
+  if (r.days != null && (!Array.isArray(r.days) || r.days.length > 7 || !r.days.every((d) => Number.isInteger(d) && d >= 0 && d <= 6))) return BAD;
   const s = r.system;
   if (s.kind != null && !['pao', 'd3'].includes(s.kind)) return BAD;
   if (!isObj(s.pao || {}) || Object.keys(s.pao || {}).length > 100 || !Object.entries(s.pao || {}).every(([k, v]) => /^\d\d$/.test(k) && isObj(v) && ['p', 'a', 'o'].every((f) => sOk(v[f] ?? '', 60)))) return BAD;

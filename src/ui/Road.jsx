@@ -8,7 +8,7 @@ import { today } from '../engine/core.js';
 import {
   ROAD_HONEST, DISCIPLINES, DISC, TIMES, tabletOpen, makeMaterial, scoreRows, scoreColumns, scoreDates, scoreImages, scoreSpoken,
   recordEvent, ottolineMark, journeyStats, STOP_TARGETS, systemCount, pad2, pad3, DECK, cardLabel, convPrompts, SLOW_MS, addSlip,
-  weakest, systemImage, SUNDAY_EVENTS, recordSunday, ensureRoad,
+  weakest, systemImage, SUNDAY_EVENTS, recordSunday, ensureRoad, WEEKDAYS,
 } from '../engine/road.js';
 import { majorDecode, shuffle, rng } from '../engine/util.js';
 
@@ -62,6 +62,13 @@ export default function Road({ profile, update, onExit }) {
         road.title ? 'You have walked the whole road. Warden of the Road: it is only a title, and you earned it. Ottoline Gilt sends a stiff note of congratulation. She is already training again.' : 'Ottoline Gilt is on this road too. Her marks will follow yours, always a step ahead of your own best. Do not chase her. Chase yourself.',
       ]} />
       <section className="card"><p className="small muted">{ROAD_HONEST}</p></section>
+      <section className="card" data-testid="road-days">
+        <h3>Road days</h3>
+        <p className="small">On the days you tick, a full session skips its real-life scene and extra rounds and points you here for one event instead. The day stays about 30 minutes.</p>
+        <div className="row wrap">{WEEKDAYS.map((w, i) => (
+          <label key={w} className="check"><input type="checkbox" checked={(road.days || []).includes(i)} onChange={(e) => update((p) => { const r = ensureRoad(p); r.days = e.target.checked ? [...new Set([...(r.days || []), i])].sort() : (r.days || []).filter((x) => x !== i); })} /> <span>{w.slice(0, 3)}</span></label>
+        ))}</div>
+      </section>
       <section className="card">
         <h3>The tablets</h3>
         <div className="grounds">{DISCIPLINES.map((d) => {

@@ -44,7 +44,7 @@ export function coachLine(session, step) {
 
 const CAUSES = [['encoding', 'No image formed'], ['vague', 'Image was vague'], ['order', 'Mixed up the order'], ['speed', 'Ran out of time'], ['attention', 'Got distracted'], ['none', 'Nothing missed']];
 
-export default function Session({ profile, update, onExit }) {
+export default function Session({ profile, update, onExit, onRoad }) {
   const ip = profile.inProgress;
   const session = ip.session;
   const step = session.steps[ip.idx];
@@ -136,7 +136,7 @@ export default function Session({ profile, update, onExit }) {
   } else if (step.kind === 'reflect') {
     body = <Reflect results={ip.results} skill={session.steps.find((s) => s.kind === 'drill' && s.role !== 'warmup')?.skill || 'imagery'} gates={gates} onDone={(r) => advance((p) => { p.inProgress.reflection = r; })} />;
   } else if (step.kind === 'summary') {
-    body = <Summary profile={profile} update={update} onExit={onExit} />;
+    body = <Summary profile={profile} update={update} onExit={onExit} onRoad={onRoad} />;
   }
 
   return (
@@ -228,7 +228,7 @@ function Reflect({ results, skill, gates, onDone }) {
   );
 }
 
-function Summary({ profile, update, onExit }) {
+function Summary({ profile, update, onExit, onRoad }) {
   const ip = profile.inProgress;
   const fin = ip.final;
   useEffect(() => {
@@ -284,6 +284,7 @@ function Summary({ profile, update, onExit }) {
       {nextDue && <p className="muted small">Next delayed recall due {nextDue === today(profile) ? 'today (review session)' : nextDue}.</p>}
       {(fin.sideQuests || []).map((id) => { const q = SIDE_QUESTS.find((x) => x.id === id); return q ? <div key={id} className="quest-done"><span className="tag">Side quest complete · +40 Lumen</span><h3>{q.title}</h3><p className="story-text">{tell(q.done, profile)}</p></div> : null; })}
       {chapter && CHAPTERS[chapter] && <div className="chapter-open"><span className="tag"><PxIcon name="scroll" size={14} />New chapter unlocked</span><h3>{CHAPTERS[chapter].title}</h3><p className="muted small">Read it now in the Veyra tab, under Chapters.</p></div>}
+      {ip.session.roadDay && onRoad && <div className="note" data-testid="road-day"><p className="small"><b>A Road day.</b> Today's scene and extra rounds give way to one Wardens' Road event, so the day stays about 30 minutes.</p><button className="btn" onClick={() => { update((p) => { p.inProgress = null; }); onRoad(); }}>Walk the Wardens' Road</button></div>}
       <button className="btn primary big" onClick={() => { update((p) => { p.inProgress = null; }); onExit(); }}>Back to Today</button>
     </section>
   );

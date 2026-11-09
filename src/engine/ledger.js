@@ -85,6 +85,10 @@ export function sitting(l, date, { reviews = DAILY.reviews, newCards = DAILY.new
   return [...due, ...fresh].slice(0, max);
 }
 export const dueCount = (l, date) => (l ? dueList(l, date).length : 0);
+// 1.9: from week 5 the day's session opens with the Ledger's due reviews (no new cards), at most OPENING_MAX.
+export const OPENING_WEEK = 5;
+export const OPENING_MAX = 15;
+export function openingQueue(l, date) { return l && l.books?.length ? sitting(l, date, { newCards: 0, max: OPENING_MAX }) : []; }
 
 // Record one answer. Mutates the profile. Returns {held, lumen, kept, due, gap}.
 export function recordReview(p, { bookId, cardId, dir = 'f', fresh = false }, held, { date, typed = false } = {}) {

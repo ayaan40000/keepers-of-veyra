@@ -9,6 +9,7 @@ import { Toolbox, Worksheets } from './Worksheets.jsx';
 import { OwnTextEntry } from './OwnText.jsx';
 import { LedgerEntry } from './Ledger.jsx';
 import { RoadEntry } from './Road.jsx';
+import { RehearseEntry } from './Rehearse.jsx';
 
 const districtOf = (id) => MODULES.find((m) => m.id === id)?.district || id;
 const Locked = ({ mod }) => <span className="small muted">Opens when you pass the gate of {districtOf(mod)}.</span>;
@@ -30,7 +31,7 @@ export function RealLifeCard({ profile, update, task }) {
   );
 }
 
-export default function FieldGuide({ profile, update, start, onOwnText, onLedger, onRoad }) {
+export default function FieldGuide({ profile, update, start, onOwnText, onLedger, onRoad, onRehearse }) {
   const date = today(profile);
   const done = gateDone(profile, 'M12');
   return (
@@ -77,6 +78,7 @@ export default function FieldGuide({ profile, update, start, onOwnText, onLedger
       {onLedger && <LedgerEntry profile={profile} onOpen={onLedger} />}
       {onRoad && <RoadEntry profile={profile} onOpen={onRoad} />}
       {onOwnText && <OwnTextEntry profile={profile} onOpen={onOwnText} />}
+      {onRehearse && <RehearseEntry profile={profile} onOpen={onRehearse} />}
 
       <section className="card">
         <h3 className="panel-title"><PxIcon name="scroll" size={28} />Playbooks</h3>

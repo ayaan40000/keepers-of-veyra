@@ -1,6 +1,6 @@
 // 1.5 The Turning Stones: common verbs and their forms. Spanish: 15 common irregular verbs, present tense.
-// Turkish: 10 common verbs, present continuous (-iyor), where the pattern is a rule and four verbs change their stem
-// (gitmek gidiyor, yemek yiyor). Checked against standard grammars (Real Academia Espanola conjugation tables;
+// Turkish: 10 common verbs, present continuous (-iyor), where the pattern is a rule and a few verbs change their stem
+// (here gitmek gidiyor and yemek yiyor; etmek ediyor and demek diyor work the same way). Checked against standard grammars (Real Academia Espanola conjugation tables;
 // Goksel and Kerslake, Turkish: A Comprehensive Grammar). Native-speaker review is still wanted before more are added.
 export const PERSONS = {
   es: ['yo', 'tú', 'él / ella', 'nosotros', 'vosotros', 'ellos / ellas'],
@@ -42,5 +42,5 @@ export const VERBS = {
 
 export const VERB_RULES = {
   es: 'Most Spanish verbs follow three patterns (-ar, -er, -ir). These fifteen do not, so each gets a picture for its odd forms: the yo form (tengo, hago, salgo) and the stem that changes (quiero, puedo, duermo). The nosotros and vosotros forms usually keep the plain stem.',
-  tr: 'Turkish is regular: take the stem, add -iyor (the i follows the last vowel: ı, i, u or ü), then the person: -um, -sun, nothing, -uz, -sunuz, -lar. A stem ending in a or e loses it (bekle, bekliyor). Learn the rule once, and picture only the stems that change: gitmek becomes gid-, yemek becomes yi-.',
+  tr: 'Turkish is regular: take the stem, add -iyor (the i follows the last vowel: ı, i, u or ü), then the person: -um, -sun, nothing, -uz, -sunuz, -lar. A stem ending in a or e loses it (bekle, bekliyor); a stem ending in ı, i, u or ü just adds -yor (oku, okuyor). Learn the rule once, and picture only the stems that change: gitmek becomes gid-, yemek becomes yi-.',
 };

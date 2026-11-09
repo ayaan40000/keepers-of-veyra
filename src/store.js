@@ -148,6 +148,7 @@ export function migrate(p) {
   if (!isObj(p.wren.asked)) p.wren.asked = {};
   if (isObj(p.user?.prefs)) {
     if (typeof p.user.prefs.wrenMemory !== 'boolean') p.user.prefs.wrenMemory = true;
+    if (typeof p.user.prefs.ledgerFirst !== 'boolean') p.user.prefs.ledgerFirst = true;
     if (typeof p.user.prefs.brambles !== 'boolean') p.user.prefs.brambles = true;
     if (!['off', 'light', 'full'].includes(p.user.prefs.voices)) p.user.prefs.voices = 'light';
   }
@@ -239,6 +240,7 @@ function validateExtras(p) {
     if (pr.brambles != null && typeof pr.brambles !== 'boolean') return 'Brambles setting is invalid.';
     if (pr.voices != null && !['off', 'light', 'full'].includes(pr.voices)) return 'Voices setting is invalid.';
     if (pr.wrenMemory != null && typeof pr.wrenMemory !== 'boolean') return 'Wren question setting is invalid.';
+    if (pr.ledgerFirst != null && typeof pr.ledgerFirst !== 'boolean') return 'Ledger setting is invalid.';
   }
   if (!p.palaces.every((x) => x.furniture == null || (Array.isArray(x.furniture) && x.furniture.length <= 200 && x.furniture.every((k) => k == null || FURNITURE_KINDS.includes(k))))) return 'Palace furniture is invalid.';
   if (!p.palaces.every((x) => isStr(x.name, 100) && isStr(x.id, 64) && x.loci.length <= 200 && x.loci.every((l) => isStr(l, 120)))) return 'A palace name or stop is too long.';
@@ -388,7 +390,7 @@ function withDefaults(p) {
 
 export function parseImport(text) {
   if (typeof text !== 'string' || !text.trim()) return { ok: false, error: 'This file is empty.' };
-  if (text.length > MAX_IMPORT_BYTES) return { ok: false, error: 'This file is larger than 5 MB, so it cannot be a Mnemos backup.' };
+  if (text.length > MAX_IMPORT_BYTES) return { ok: false, error: 'This file is larger than 10 MB, so it cannot be a Mnemos backup.' };
   let data;
   try { data = JSON.parse(text); } catch { return { ok: false, error: 'This file is not valid JSON.' }; }
   if (!isObj(data) || data.app !== 'mnemos' || !isObj(data.profile)) return { ok: false, error: 'This is not a Mnemos backup file.' };

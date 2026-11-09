@@ -65,7 +65,7 @@ export default function Keeper({ profile, update, replaceProfile, wipe, openChar
     const f = e.target.files?.[0];
     if (!f) return;
     e.target.value = '';
-    if (f.size > MAX_IMPORT_BYTES) { setImp({ ok: false, error: 'This file is larger than 5 MB, so it cannot be a Mnemos backup.' }); return; }
+    if (f.size > MAX_IMPORT_BYTES) { setImp({ ok: false, error: 'This file is larger than 10 MB, so it cannot be a Mnemos backup.' }); return; }
     f.text().then((txt) => setImp(parseImport(txt)), () => setImp({ ok: false, error: 'This file could not be read.' }));
   }
 
@@ -123,6 +123,7 @@ export default function Keeper({ profile, update, replaceProfile, wipe, openChar
           <p className="muted small">{VOICES_SETTING.options.find((o) => o.id === (prefs.voices || VOICES_SETTING.default))?.text} Voices never speak during study or recall.</p>
           <label className="check"><input type="checkbox" checked={prefs.brambles !== false} onChange={(e) => setPref('brambles', e.target.checked)} /> <span>{BRAMBLES_SETTING.label} <span className="muted small">({prefs.brambles !== false ? BRAMBLES_SETTING.on : BRAMBLES_SETTING.off})</span></span></label>
           <p className="muted small">{BRAMBLES_SETTING.explain}</p>
+          <label className="check"><input type="checkbox" checked={prefs.ledgerFirst !== false} onChange={(e) => setPref('ledgerFirst', e.target.checked)} /> <span>Open the day with the Ledger <span className="muted small">(from week 5, your due cards come first; you can always skip)</span></span></label>
           <label className="check"><input type="checkbox" checked={prefs.wrenMemory !== false} onChange={(e) => setPref('wrenMemory', e.target.checked)} /> <span>{WREN_SETTING.label} <span className="muted small">({prefs.wrenMemory !== false ? WREN_SETTING.on : WREN_SETTING.off})</span></span></label>
         </fieldset>
         <fieldset className="set-group">

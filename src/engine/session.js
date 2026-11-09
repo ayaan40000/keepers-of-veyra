@@ -3,6 +3,7 @@ import { scaledSpec, genItems, dueSets, probeItems, today } from './core.js';
 import { daysBetween, uid, hashStr } from './util.js';
 import { unitDue, unitSpecs } from './additions.js';
 import { sceneFor, sceneMode, SCENE_SPEC, SCENE_FROM_WEEK } from './scene.js';
+import { roadDay } from './road.js';
 
 // 1.2: some drills train another skill than their template's (dates train numbers, jokes train linking).
 const skillOfSpec = (d) => d.skill || TEMPLATE_SKILL[d.t];
@@ -98,6 +99,7 @@ export function buildSession(p, kind, opts = {}) {
   const skillsInWeek = [...new Set(week.drills.map((d) => skillOfSpec(d)))];
   const steps = [];
   const type = kind || st.type;
+  let roadToday = false;
 
   if (type === 'baseline') {
     steps.push({ kind: 'story', chapter: 'prologue' });
@@ -159,10 +161,13 @@ export function buildSession(p, kind, opts = {}) {
     });
     if (week.w >= 9) { const il = interleaveSpec(p, week); if (il) steps.push(drillStep(p, il, 'review', seed('i'))); }
     // 1.2 one real-life scene per full session from week 3: today's tools used on everyday-shaped material.
-    const sc = !unit && week.w >= SCENE_FROM_WEEK && !week.drills.some((d) => d.t === 'scene') ? sceneFor(p, week.w, p.progress.day) : null;
+    // 1.9 On a Road day the scene and the extra rounds give way to a Wardens' Road event after the session.
+    const rd = roadDay(p, st.t);
+    if (rd) roadToday = true;
+    const sc = !rd && !unit && week.w >= SCENE_FROM_WEEK && !week.drills.some((d) => d.t === 'scene') ? sceneFor(p, week.w, p.progress.day) : null;
     if (sc) steps.push({ ...drillStep(p, SCENE_SPEC(sc), 'practice', seed('sc')), sceneMode: sceneMode(p, sc, week.w) });
     // Use the 30 minutes: add extra practice rounds with new material while the session is short.
-    for (let k = 0; k < 2 && !unit && estimateMinutes({ steps }) < 22; k++) {
+    for (let k = 0; k < 2 && !rd && !unit && estimateMinutes({ steps }) < 22; k++) {
       const d = rounds[k % rounds.length];
       const sk = skillOfSpec(d);
       steps.push({ ...drillStep(p, d, p.skills[sk].remediate ? 'remedial' : 'practice', seed('x' + k)), topup: true });
@@ -177,7 +182,7 @@ export function buildSession(p, kind, opts = {}) {
   if (type !== 'free') steps.push({ kind: 'reflect' });
   steps.push({ kind: 'summary' });
   const repeatToday = p.progress.abandoned === st.t && type !== 'free';
-  return { id, type, repeatToday, day: st.day, ...(st.keeping ? { keeping: st.keeping } : {}), week: week.w, module: (type === 'gateRetry' ? opts.mod : st.mod).id, steps, startedAt: Date.now() };
+  return { id, type, repeatToday, day: st.day, ...(st.keeping ? { keeping: st.keeping } : {}), ...(roadToday ? { roadDay: true } : {}), week: week.w, module: (type === 'gateRetry' ? opts.mod : st.mod).id, steps, startedAt: Date.now() };
 }
 
 export { COACH };

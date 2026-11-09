@@ -2,6 +2,15 @@
 
 All notable changes to Mnemos: Keepers of Veyra. Saved data from every earlier version loads in this one.
 
+## 1.9.0: The Ledger first, Road days and the Amphitheatre (2026-11-08)
+
+- **The Ledger first**: from week 5, a full or end-of-week session opens with your Ledger's due cards (reviews only, at most 15, once a day). Skipping is always fine and costs nothing; a setting on the Keeper page turns it off.
+- **Road days**: on the Wardens' Road, tick the weekdays you want as Road days. On those days a full session skips its real-life scene and extra rounds, and its summary points you to one Road event instead, so the day stays about 30 minutes.
+- **The Amphitheatre of Echoes** (Field Guide, from week 28): give a talk from memory, out loud, using a Ledger book or typed points as the outline, against a target of 3, 5 or 10 minutes. Self-marked, earns nothing, no ticking clock; the time shows at the end.
+- **Words**: 1,200 new picture words, so the word pool is now about 2,000. No new names.
+- **Checks**: an AI review of the Spanish and Turkish verb tables and of the finance formulae found no wrong forms or numbers; it clarified the Turkish -yor rule and three finance explanations (annuity payments at period end, what Gain means in ROI, what current assets are). A human native speaker and a human finance checker are still wanted.
+- Fixes: the backup size message said 5 MB after the limit became 10 MB; `scripts/pool-filter.mjs` no longer reports every 1.5 word as a clash with itself.
+
 ## 1.8.0: Review fixes and the syllabus plan complete (2026-11-08)
 
 - **Backups**: a large Keeper's Ledger could make its own backup refuse to load. Each card now keeps its last three answers, the Ledger's size check matches what the app can build, and the import cap rises from 5 MB to 10 MB. Saves from 1.3 to 1.7 load unchanged.

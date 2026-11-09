@@ -24,12 +24,11 @@ The owner asked for the syllabus plan (`docs/SYLLABUS_PLAN.md`, from the audit i
 | 1.6.0 | Wardens' Road: strict events (numbers, words, binary, invented dates, abstract images, spoken), journey manager, PAO / 3-digit builder, card images, flash drills, Book of Slips, Long Sunday, Warden of the Road title. |
 | 1.7.0 | "Hear it" pronunciation; Road named in M5, weeks 22, 44, 46. |
 | 1.8.0 | Review fixes, docs, release. |
+| 1.9.0 | Owner follow-ups: the Ledger opens the session from week 5, Road days replace the scene and top-up rounds, the Amphitheatre talk timer, about 2,000 words, AI review of verbs and finance. |
 
 ## Not built yet (honest list)
-- Pools: the targets (2,000 words, 1,000 first names, 1,000 surnames) are not reached; about 1,000 words, 307 first names and the old plus 88 surnames exist. The local Qwen can draft more once ComfyUI is idle; always run `scripts/pool-filter.mjs`.
+- Pools: words reached about 2,000 in 1.9. The owner decided (Nov 8) no more names. Always run `scripts/pool-filter.mjs` after adding words.
 - French and German gender, more verb tenses: need native-speaker review first.
-- The Ledger does not yet open the session itself from week 5 (the due cards show on Today instead); the Long Gallery shelf is drawn on the Ledger page, not in the palace room.
-- The Road is its own screen; it does not yet replace the scene and top-up rounds on chosen days.
-- Talk rehearsal is a lesson, not a timer screen. Recipes rely on the existing recipe scene.
-- Native-speaker check of the Spanish and Turkish verb tables; a second human checker for the finance set (a unit test checks the arithmetic, not the definitions).
-- A phone performance check before raising Own Text limits.
+- The Long Gallery shelf is drawn on the Ledger page, not in the palace room. Recipes rely on the existing recipe scene. (Built in 1.9: the Ledger opening the session, Road days, the talk timer.)
+- Native-speaker check of the Spanish and Turkish verb tables; a second human checker for the finance set. In 1.9 an AI reviewer checked both and found no errors in forms or numbers, but a human check is still wanted.
+- Own Text limits: the owner decided (Nov 8) to leave them as they are; no phone check planned.

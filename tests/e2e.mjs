@@ -376,8 +376,24 @@ await btn('I am ready').click();
 await overflowCheck('road images recall');
 await btn('Hand in').click();
 await btn('Back to the road').click();
+await page.getByTestId('road-days').getByLabel('Mon').check();
 await btn('Leave the road').click();
 log('wardens road: OK');
+
+// 7h. 1.9 The Amphitheatre of Echoes: rehearse two typed points, self-marked
+await nav('Field Guide');
+await btn('Rehearse a talk').click();
+await overflowCheck('rehearse');
+await btn('Type points for this sitting').click();
+await page.getByLabel('Talk points, one per line').fill('Open with the lamp\nClose with the quay');
+await snap('rehearse');
+await btn('Begin the talk').click();
+await btn('Said it').click();
+await btn('Lost this one').click();
+await page.getByTestId('rehearse-done').getByText('1 of 2 points').waitFor({ timeout: 3000 }).catch(() => errors.push('rehearse tally wrong'));
+await overflowCheck('rehearse done');
+await btn('Done').click();
+log('amphitheatre: OK');
 
 // 8. Desktop layout
 await page.setViewportSize({ width: 1280, height: 860 });

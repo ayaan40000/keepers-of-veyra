@@ -34,7 +34,7 @@ export function newSkill() {
 }
 
 // Sound starts off (v0.4): players opt in. Dialogue blips have their own switch.
-export const DEFAULT_PREFS = { theme: 'dark', reducedMotion: false, timerMult: 1, sound: false, blips: true, volume: 0.6, textSize: 1, home: 'today', brambles: true, voices: 'light', wrenMemory: true };
+export const DEFAULT_PREFS = { theme: 'dark', reducedMotion: false, timerMult: 1, sound: false, blips: true, volume: 0.6, textSize: 1, home: 'today', brambles: true, voices: 'light', wrenMemory: true, ledgerFirst: true };
 
 export function newProfile(alias, avatar, prefs = {}) {
   const now = new Date().toISOString();

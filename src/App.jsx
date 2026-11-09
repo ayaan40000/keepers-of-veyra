@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { newProfile, today } from './engine/core.js';
-import { buildSession } from './engine/session.js';
+import { buildSession, sessionStatus } from './engine/session.js';
 import { abandonSession } from './engine/progress.js';
 import { loadProfile, saveProfile, deleteProfile, requestPersistence, parseImport, peekSaved, LS_KEY, MAX_IMPORT_BYTES } from './store.js';
 import Onboarding from './ui/Onboarding.jsx';
@@ -20,7 +20,8 @@ import Audit from './ui/Audit.jsx';
 import Seam from './ui/Seam.jsx';
 import EventHall from './ui/EventHall.jsx';
 import OwnText from './ui/OwnText.jsx';
-import Ledger from './ui/Ledger.jsx';
+import Ledger, { LedgerOpening, ledgerOpens } from './ui/Ledger.jsx';
+import Rehearse from './ui/Rehearse.jsx';
 import Gloss from './ui/Gloss.jsx';
 import Road from './ui/Road.jsx';
 import { ItemIcon } from './ui/ItemIcon.jsx';
@@ -131,6 +132,8 @@ export default function App() {
 
   function start(type, opts) {
     if (type === 'discard') { update((p) => abandonSession(p)); return; }
+    // 1.9: from week 5 a full or assessment day opens with the Ledger's due reviews (skippable, once a day).
+    if ((type === 'full' || type === 'assessment') && !opts?.afterLedger && ledgerOpens(ref.current, sessionStatus(ref.current).week.w)) { setBattle({ mode: 'ledgerFirst', type, n: Date.now() }); window.scrollTo(0, 0); return; }
     if (type !== 'resume') update((p) => { p.inProgress = { session: buildSession(p, type, opts), idx: 0, results: [], events: [] }; });
     setInSession(true);
     window.scrollTo(0, 0);
@@ -144,7 +147,7 @@ export default function App() {
         <Onboarding onCreate={(alias, avatar, prefs) => replace(newProfile(alias, avatar, prefs))} onImport={() => importRef.current.click()} />
         <input ref={importRef} type="file" accept=".json,application/json" hidden data-testid="onboard-import" onChange={(e) => {
           const f = e.target.files?.[0]; if (!f) return;
-          if (f.size > MAX_IMPORT_BYTES) { alert('This file is larger than 5 MB, so it cannot be a Mnemos backup.'); e.target.value = ''; return; }
+          if (f.size > MAX_IMPORT_BYTES) { alert('This file is larger than 10 MB, so it cannot be a Mnemos backup.'); e.target.value = ''; return; }
           f.text().then((t) => { const r = parseImport(t); if (!r.ok) { alert(r.error); return; } if (r.warning && !confirm(`${r.warning} Import anyway?`)) return; replace(r.profile); });
           e.target.value = '';
         }} />
@@ -188,6 +191,14 @@ export default function App() {
     return <Gloss key={battle.n} profile={profile} update={update} onExit={() => { setBattle(null); window.scrollTo(0, 0); }} />;
   }
 
+  if (battle && battle.mode === 'rehearse') {
+    return <Rehearse key={battle.n} profile={profile} onExit={() => { setBattle(null); window.scrollTo(0, 0); }} />;
+  }
+
+  if (battle && battle.mode === 'ledgerFirst') {
+    return <LedgerOpening key={battle.n} profile={profile} update={update} onDone={() => { const t = battle.type; setBattle(null); start(t, { afterLedger: true }); }} />;
+  }
+
   if (battle && battle.mode === 'ledger') {
     return <Ledger key={battle.n} profile={profile} update={update} onExit={() => { setBattle(null); window.scrollTo(0, 0); }} />;
   }
@@ -217,7 +228,7 @@ export default function App() {
   }
 
   if (inSession && profile.inProgress) {
-    return <Session profile={profile} update={update} onExit={() => { setInSession(false); setTab('today'); }} />;
+    return <Session profile={profile} update={update} onExit={() => { setInSession(false); setTab('today'); }} onRoad={() => { setInSession(false); setTab('today'); fight('road'); }} />;
   }
 
   const pages = {
@@ -227,7 +238,7 @@ export default function App() {
     character: <Character profile={profile} update={update} onReview={() => start('review')} />,
     palaces: <Palaces profile={profile} update={update} />,
     progress: <Progress profile={profile} update={update} />,
-    guide: <FieldGuide profile={profile} update={update} start={start} onOwnText={() => fight('own')} onLedger={() => fight('ledger')} onRoad={() => fight('road')} />,
+    guide: <FieldGuide profile={profile} update={update} start={start} onOwnText={() => fight('own')} onLedger={() => fight('ledger')} onRoad={() => fight('road')} onRehearse={() => fight('rehearse')} />,
     keeper: <Keeper profile={profile} update={update} replaceProfile={replace} openCharacter={() => goRef.current?.('character')} wipe={async () => { await deleteProfile(); ref.current = null; setProfile(null); }} />,
   };
   const go = (id) => {
