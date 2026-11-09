@@ -12,6 +12,7 @@ import { WF_BEATS, WF_QUESTIONS } from './data/wren.js';
 import { blankOwn, validateOwn } from './engine/owntext.js';
 import { blankLedger, validateLedger } from './engine/ledger.js';
 import { blankGloss, validateGloss } from './engine/gloss.js';
+import { ensureRoad, validateRoad } from './engine/road.js';
 
 
 export const MAX_IMPORT_BYTES = 5 * 1024 * 1024;
@@ -158,6 +159,9 @@ export function migrate(p) {
   if (!isObj(p.ledger) || !Array.isArray(p.ledger.books)) p.ledger = blankLedger();
   if (!Array.isArray(p.ledger.history)) p.ledger.history = [];
   if (!isObj(p.ledger.daily)) p.ledger.daily = { date: null, newCards: 0, reviews: 0 };
+  // 1.6 The Wardens' Road (Champion Track): fills any missing field with its default
+  if (p.road != null && !isObj(p.road)) p.road = null;
+  if (p.road) ensureRoad(p);
   // 1.4 The Gloss (self-marked explanations)
   if (!isObj(p.gloss) || !isObj(p.gloss.items)) p.gloss = blankGloss();
   if (!Array.isArray(p.gloss.history)) p.gloss.history = [];
@@ -331,6 +335,7 @@ function validateExtras(p) {
   if (p.own != null) { const e = validateOwn(p.own); if (e) return e; }
   if (p.ledger != null) { const e = validateLedger(p.ledger); if (e) return e; }
   if (p.gloss != null) { const e = validateGloss(p.gloss); if (e) return e; }
+  if (p.road != null) { const e = validateRoad(p.road); if (e) return e; }
   if (p.habits != null) {
     const h = p.habits;
     if (!isObj(h) || !Array.isArray(h.plans) || !Array.isArray(h.carry) || h.plans.length > 50 || h.carry.length > 60) return 'Carry it record is invalid.';

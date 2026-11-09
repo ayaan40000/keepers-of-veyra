@@ -2,6 +2,17 @@
 
 All notable changes to Mnemos: Keepers of Veyra. Saved data from every earlier version loads in this one.
 
+## 1.6.0: The Wardens' Road, the Champion Track (2026-11-08)
+
+- **The Wardens' Road** (opens at the Month 5 gate, from the Field Guide): an optional Champion Track for people who want to try memory sport. Each discipline is a lost Warden's tablet, found as the calendar weeks pass (week 22 to 48). Results never change skill estimates and earn no Lumen; the road keeps its own personal bests per event and format (1, 5 or 15 minutes of study, recall twice as long), and Ottoline Gilt's mark always sits a step ahead of your own earlier best. The game says plainly that competitive levels take years.
+- **Strict formats** with simplified competition scoring, explained on each screen: Numbers (rows of 40, one slip halves a row), Words (columns of 20, exact spelling), Binary (rows of 30 "Quay lamps"), Invented Dates (made-up events from Veyra, years 1000 to 2099, wrong answers cost half a point), Abstract Images (black and white shapes drawn in code, rows of 5 put back in order) and Spoken Numbers.
+- **Spoken Numbers and audio** (owner's decision to allow it, under conditions): digits are read one a second with the device's own offline voice only, the event is labelled as audio and is off until you switch it on. Mnemos never uses an online voice; if none is available the event explains why and does not run.
+- **The Warden of Ways**: a journey manager over your palaces: total stops, journeys by size, last used, a "hot" warning for a journey used in the last 24 hours, a check for stops that repeat, and marks at 50, 100, 300, 600 and 1,000 stops.
+- **The Players**: build your own number system, 100 Players (person, action, object for 00 to 99) or 1,000 single images (000 to 999) with a Major-decoder check and Major suggestions. **The Warden of Wagers**: one image for each of the 52 cards. **Number flash** and **card flash**: timed, aiming under 1.5 s an image (1 s for cards).
+- **Ennick's Book of Slips**: every missed digit pair, and every slow or missed flash image, is written down; the ten weakest from the last 30 days can be drilled.
+- **Long Sunday**: a mock championship of four five-minute events. Four Long Sundays with every tablet tried earn the title Warden of the Road, a title in Veyra and never a claim about the world. Hour-long formats are explained as Tallow's Hours.
+- Saved data: a new `road` record (filled in only when you walk the road), with checks and import tests.
+
 ## 1.5.0: The Turning Stones and bigger pools (2026-11-08)
 
 - **The Turning Stones** (Month 6, the Tongues Bridge): verbs and their forms. 15 common irregular Spanish verbs in the present tense and 10 common Turkish verbs in the present continuous, taught as a rule plus pictures for the odd forms only. A new Fact Recall source (verb and person to form, exact form with accents folded); the next day the same verbs come back with other persons. Week 25 adds a Spanish verb drill. Both sets are also Ledger starter books (180 and 60 cards). Checked against standard grammars; native-speaker review is still wanted before more languages or tenses are added, so French and German genders wait.

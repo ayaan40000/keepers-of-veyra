@@ -22,6 +22,7 @@ import EventHall from './ui/EventHall.jsx';
 import OwnText from './ui/OwnText.jsx';
 import Ledger from './ui/Ledger.jsx';
 import Gloss from './ui/Gloss.jsx';
+import Road from './ui/Road.jsx';
 import { ItemIcon } from './ui/ItemIcon.jsx';
 import { UnlockToast } from './ui/game/UnlockToast.jsx';
 import { earnedItems, collectionStats } from './engine/collect.js';
@@ -179,6 +180,10 @@ export default function App() {
     return <EventHall key={battle.n} profile={profile} update={update} onExit={() => { setBattle(null); window.scrollTo(0, 0); }} />;
   }
 
+  if (battle && battle.mode === 'road') {
+    return <Road key={battle.n} profile={profile} update={update} onExit={() => { setBattle(null); window.scrollTo(0, 0); }} />;
+  }
+
   if (battle && battle.mode === 'gloss') {
     return <Gloss key={battle.n} profile={profile} update={update} onExit={() => { setBattle(null); window.scrollTo(0, 0); }} />;
   }
@@ -222,7 +227,7 @@ export default function App() {
     character: <Character profile={profile} update={update} onReview={() => start('review')} />,
     palaces: <Palaces profile={profile} update={update} />,
     progress: <Progress profile={profile} update={update} />,
-    guide: <FieldGuide profile={profile} update={update} start={start} onOwnText={() => fight('own')} onLedger={() => fight('ledger')} />,
+    guide: <FieldGuide profile={profile} update={update} start={start} onOwnText={() => fight('own')} onLedger={() => fight('ledger')} onRoad={() => fight('road')} />,
     keeper: <Keeper profile={profile} update={update} replaceProfile={replace} openCharacter={() => goRef.current?.('character')} wipe={async () => { await deleteProfile(); ref.current = null; setProfile(null); }} />,
   };
   const go = (id) => {

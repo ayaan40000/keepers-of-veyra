@@ -355,6 +355,30 @@ if (!(await page.getByText('1 of 2 glossed well.').count())) errors.push('gloss 
 await btn('Back').click();
 log('the gloss: OK');
 
+// 7g. 1.6 The Wardens' Road: one-minute numbers, hand in a row, see a score
+await nav('Field Guide');
+await page.getByRole('button', { name: "Walk the Wardens' Road" }).click();
+await snap('road'); await overflowCheck('road');
+await page.getByRole('button', { name: /^The Warden of Counts/ }).click();
+await page.getByRole('button', { name: /^1 minute/ }).click();
+await overflowCheck('road study');
+const firstRow = (await page.locator('.road-digits p').first().innerText()).replace(/[^0-9]/g, '').slice(1, 41);
+await btn('I am ready').click();
+await page.getByLabel('Row 1', { exact: true }).fill(firstRow);
+await overflowCheck('road recall');
+await btn('Hand in').click();
+await page.getByText('40 points').waitFor({ timeout: 4000 }).catch(async () => errors.push('road numbers did not score 40: ' + (await page.locator('.card.gold h2').innerText())));
+await btn('Back to the road').click();
+await page.getByRole('button', { name: /^The Warden of Mirrors/ }).click();
+await page.getByRole('button', { name: /^1 minute/ }).click();
+await snap('road-images'); await overflowCheck('road images');
+await btn('I am ready').click();
+await overflowCheck('road images recall');
+await btn('Hand in').click();
+await btn('Back to the road').click();
+await btn('Leave the road').click();
+log('wardens road: OK');
+
 // 8. Desktop layout
 await page.setViewportSize({ width: 1280, height: 860 });
 await nav('Today');
