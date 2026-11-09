@@ -273,6 +273,7 @@ export default function Battle({ profile, update, mode, onExit }) {
           <h2>{b.outcome === 'left' ? 'The phantoms wait for another night.' : endText(b)}</h2>
           {b.outcome !== 'left' && VIGIL_END.closing.map((t, i) => <p key={i} className="small">{t}</p>)}
           <p className="small">{!out ? 'Saving.' : out.ledger ? LEDGER_TEXT.earned : b.outcome === 'left' ? '' : out.heldOld >= 2 ? LEDGER_TEXT.already : LEDGER_TEXT.none}</p>
+          {out?.oldEchoes > 0 && <p className="small">{out.oldEchoes === 1 ? 'You held an Old Echo from a season ago. A lamp on the battlements will stay lit until the season turns.' : `You held ${out.oldEchoes} Old Echoes from a season ago. Their lamps will stay lit on the battlements until the season turns.`}</p>}
           <p className="muted small">Nothing here changes your skill estimates, and the vigil earns no Lumen. {VIGIL_HONEST}</p>
         </section>
         {missed.length > 0 && (

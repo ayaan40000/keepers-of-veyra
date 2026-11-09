@@ -26,6 +26,7 @@ import { EchoCard, VigilCard } from './Battle.jsx';
 import { TodayVoice } from './Voices.jsx';
 import { TrialDueCard } from './Trials.jsx';
 import { OwnTextCard } from './OwnText.jsx';
+import { LedgerCard, LedgerEntry, ledgerOpen } from './Ledger.jsx';
 import { pendingNudge } from '../engine/guide.js';
 import { today } from '../engine/core.js';
 
@@ -114,6 +115,8 @@ export default function Today({ profile, start, onEnterCrypt, update, onFight, o
 
       {st.doneToday && !resume && onTrial && <TrialDueCard profile={profile} onTrial={onTrial} />}
 
+      {!resume && onFight && <LedgerCard profile={profile} onOpen={() => onFight('ledger')} />}
+      {!resume && onFight && ledgerOpen(profile) && !profile.ledger?.books?.length && <LedgerEntry profile={profile} onOpen={() => onFight('ledger')} />}
       {!resume && onFight && <OwnTextCard profile={profile} onOpen={() => onFight('own')} />}
 
       {!resume && <BackupReminder profile={profile} update={update} onExport={() => downloadBackup(profile, update, buildExport)} />}

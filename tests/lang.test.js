@@ -115,7 +115,8 @@ describe('vocabulary review schedule', () => {
     const c = storeSet(p, { role: 'practice', skill: 'linking', spec: { t: 'chain', n: 4 }, items: [] }, { acc: 1 });
     expect(v.intervals).toEqual(VOCAB_PROBE_INTERVALS);
     expect(VOCAB_PROBE_INTERVALS).toEqual([1, 3, 7, 14, 30, 60]);
-    expect(c.intervals).toEqual(PROBE_INTERVALS);
+    expect(c.intervals).toEqual([1, 7, 30, 90]); // 1.3: held at 80% or more, so it comes back at 90 days
+    expect(storeSet(p, { role: 'practice', skill: 'linking', spec: { t: 'chain', n: 4 }, items: [] }, { acc: 0.6 }).intervals).toEqual(PROBE_INTERVALS);
   });
 });
 

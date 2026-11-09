@@ -1,6 +1,7 @@
 // Mnemos: Keepers of Veyra. Original world, characters and lore.
 // Unlocks: 'start' = known from the beginning; 'gate:M3' = after that module's gate; 'side:<id>' = after a side quest.
 import { TRIAL_LORE } from './trials.js';
+import { SYLLABUS_LORE } from './lore13.js';
 
 const BASE_CODEX = [
   {
@@ -135,7 +136,7 @@ const BASE_CODEX = [
     ],
   },
 ];
-export const CODEX = [...BASE_CODEX, ...TRIAL_LORE];
+export const CODEX = [...BASE_CODEX, ...TRIAL_LORE, ...SYLLABUS_LORE];
 
 // Characters reveal more as gates are passed (tiers by gates count).
 export const CHARACTERS = [

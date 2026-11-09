@@ -13,7 +13,8 @@ export const VIGIL_GAP = 6;        // days between offered vigils (a week, with 
 export const LEDGER_MIN = 2;       // old items held on the first try, without a hint, for the Ledger
 
 // Which of the three "days ago" groups an age belongs to. The wording on screen says "about".
-export const bucketOf = (age) => (age <= 5 ? 1 : age <= 20 ? 7 : 30);
+// 1.3: items from about 90 days back are Old Echoes, older and fainter Forgettings that climbed up from the Undercroft.
+export const bucketOf = (age) => (age <= 5 ? 1 : age <= 20 ? 7 : age <= 60 ? 30 : 90);
 export const vigilOpen = (p) => (p?.progress?.gates || []).includes('M2');
 
 export function ensureVigil(p) {
@@ -29,7 +30,7 @@ export function ensureVigil(p) {
 // Deterministic for a seed. At most two items from one set, so one topic does not fill the whole watch.
 export function pullVigilEntries(p, seed, max = VIGIL_MAX) {
   const t = today(p), r = rng(seed);
-  const groups = { 1: [], 7: [], 30: [] };
+  const groups = { 1: [], 7: [], 30: [], 90: [] };
   for (const set of p.sets || []) {
     const age = daysBetween(set.created, t);
     if (age < 1 || !Array.isArray(set.items) || !kindsFor(set).length) continue;
@@ -37,7 +38,7 @@ export function pullVigilEntries(p, seed, max = VIGIL_MAX) {
     if (!idxs.length) continue;
     groups[bucketOf(age)].push({ set, age, idxs });
   }
-  const lists = [7, 30, 1].map((k) => sample(groups[k], groups[k].length, r));
+  const lists = [90, 7, 30, 1].map((k) => sample(groups[k], groups[k].length, r));
   const entries = [], used = new Set(), perSet = {};
   const add = (c) => {
     const free = c.idxs.filter((i) => !used.has(`${c.set.id}:${i}`));
@@ -90,6 +91,8 @@ export function settleVigil(p, b) {
   const band = endBand(b);
   const by = (st) => b.entries.filter((e) => b.state[e.key].status === st);
   const heldOld = by('held').filter((e) => e.age >= HELD_MIN_AGE);
+  const oldEchoes = by('held').filter((e) => e.bucket === 90).length;
+  if (oldEchoes && b.outcome !== 'left') v.oldEchoes = (v.oldEchoes || 0) + oldEchoes; // a lamp on the battlements for each Old Echo held
   const queued = by('queued');
   let ledger = false;
   if (b.outcome !== 'left') {
@@ -101,5 +104,5 @@ export function settleVigil(p, b) {
   bt.queue = [...bt.queue.filter((q) => !gone.has(`${q.set}:${q.i}`) && !add.some((a) => a.set === q.set && a.i === q.i)), ...add].slice(-QUEUE_CAP);
   bt.history = [...bt.history, { date: t, mode: 'vigil', outcome: b.outcome === 'left' ? 'left' : 'won', items: b.entries.length, held: heldOld.length, relearned: by('relearned').length, queued: queued.length, lumen: 0 }].slice(-HISTORY_CAP);
   const quests = evaluateSideQuests(p).map((q) => q.id);
-  return { ...band, held: by('held').length, heldOld: heldOld.length, relearned: by('relearned').length, queued: queued.length, ledger, quests };
+  return { ...band, oldEchoes, held: by('held').length, heldOld: heldOld.length, relearned: by('relearned').length, queued: queued.length, ledger, quests };
 }

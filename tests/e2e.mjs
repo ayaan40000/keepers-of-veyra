@@ -319,6 +319,28 @@ if (stored !== 2) errors.push('own texts not saved: ' + stored);
 await btn('Close Your Shelf').click();
 log('your own text: OK');
 
+// 7e. 1.3 The Keeper's Ledger: take it from Calder, start a book, write a card, meet it once
+await nav('Field Guide');
+await page.getByRole('button', { name: /^Open the Ledger/ }).click();
+await btn('Take the Ledger').click();
+await page.getByLabel('Name', { exact: true }).fill('Spanish words');
+await btn('Start the book').click();
+await page.getByLabel('Question or cue', { exact: true }).fill('casa');
+await page.getByLabel('Answer', { exact: true }).fill('house');
+await btn('Write it').click();
+await overflowCheck('ledger book');
+await btn('Back to the shelf').click();
+await snap('ledger-shelf'); await overflowCheck('ledger shelf');
+await btn('Ask me').click();
+await btn('I have it').click();
+await btn('Next').click();
+if (!(await page.getByText('New cards written into memory.').count())) errors.push('ledger sitting did not finish');
+await btn('Back to the shelf').click();
+const lcards = await page.evaluate(() => JSON.parse(localStorage.getItem('mnemos.profile')).ledger.books[0].cards[0].s?.due);
+if (!lcards) errors.push('ledger card not scheduled');
+await btn('Back').click();
+log('keeper\'s ledger: OK');
+
 // 8. Desktop layout
 await page.setViewportSize({ width: 1280, height: 860 });
 await nav('Today');

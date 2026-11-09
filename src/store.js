@@ -10,6 +10,7 @@ import { TRIALS } from './data/trials.js';
 import { EVENT_IDS, EVENTS, HISTORY_CAP, blankEvents } from './data/events.js';
 import { WF_BEATS, WF_QUESTIONS } from './data/wren.js';
 import { blankOwn, validateOwn } from './engine/owntext.js';
+import { blankLedger, validateLedger } from './engine/ledger.js';
 
 
 export const MAX_IMPORT_BYTES = 5 * 1024 * 1024;
@@ -152,6 +153,10 @@ export function migrate(p) {
   if (!isObj(p.own) || !Array.isArray(p.own.texts)) p.own = blankOwn();
   if (!Array.isArray(p.own.history)) p.own.history = [];
   if (!Number.isInteger(p.own.v)) p.own.v = 1;
+  // 1.3 The Keeper's Ledger: the player's own cards in books (stays in this browser)
+  if (!isObj(p.ledger) || !Array.isArray(p.ledger.books)) p.ledger = blankLedger();
+  if (!Array.isArray(p.ledger.history)) p.ledger.history = [];
+  if (!isObj(p.ledger.daily)) p.ledger.daily = { date: null, newCards: 0, reviews: 0 };
   // Schema 3 (1.2): Carry it (if-then plans and real-life lists to recall later) and the technique ladder
   if (!isObj(p.habits)) p.habits = { plans: [], carry: [] };
   if (!Array.isArray(p.habits.plans)) p.habits.plans = [];
@@ -320,6 +325,7 @@ function validateExtras(p) {
     if (w.asked != null && (!isObj(w.asked) || !Object.entries(w.asked).every(([k, a]) => qs.has(k) && isObj(a) && isInt(a.n ?? 0, 0, 99) && isInt(a.ok ?? 0, 0, 99) && (a.last == null || isDate(a.last)) && (a.held == null || isDate(a.held))))) return 'Wren record is invalid.';
   }
   if (p.own != null) { const e = validateOwn(p.own); if (e) return e; }
+  if (p.ledger != null) { const e = validateLedger(p.ledger); if (e) return e; }
   if (p.habits != null) {
     const h = p.habits;
     if (!isObj(h) || !Array.isArray(h.plans) || !Array.isArray(h.carry) || h.plans.length > 50 || h.carry.length > 60) return 'Carry it record is invalid.';

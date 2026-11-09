@@ -1029,3 +1029,14 @@ fieldset.mm-branch legend { font-family: var(--f-head); font-weight: 600; paddin
 .symbol-strip { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; margin: 6px 0 10px; }
 .symbol-strip li { display: flex; flex-direction: column; align-items: center; font-size: 1.1em; }
 .symbol-strip img { width: 48px; height: 48px; }
+
+/* 1.3 The Keeper's Ledger (still and quiet: no animation) */
+.ledger-shelf { display: grid; gap: 8px; margin: 12px 0; }
+.ledger-spine { display: flex; flex-direction: column; align-items: flex-start; gap: 2px; text-align: left; min-height: 48px; padding: 10px 14px; border: 2px solid var(--ink-2); border-left-width: 10px; background: var(--panel, transparent); color: inherit; font: inherit; cursor: pointer;
+  border-left-color: color-mix(in srgb, #f2c14e calc(var(--glow) * 100%), #6b5a45); box-shadow: 0 0 calc(var(--glow) * 14px) color-mix(in srgb, #f2c14e 60%, transparent); }
+.ledger-spine small { opacity: .8; }
+.ledger-cue { font-size: 1.4rem; overflow-wrap: anywhere; }
+.ledger-answer { font-size: 1.15rem; overflow-wrap: anywhere; }
+.ledger-cards { padding-left: 1.4em; }
+.ledger-cards li { display: flex; justify-content: space-between; gap: 8px; align-items: center; padding: 4px 0; overflow-wrap: anywhere; }
+.ledger-foot { padding: 0 16px; }

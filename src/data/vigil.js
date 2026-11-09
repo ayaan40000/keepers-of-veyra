@@ -36,6 +36,10 @@ export const PHANTOM_LINES = {
     'Another phantom drifts along the battlements, trailing a little mist, carrying something carefully in both hands.',
   ],
   carries: {
+    90: [
+      'This one is an Old Echo, older and fainter than the rest. It climbed all the way up from the Undercroft with something from about three months ago.',
+      'An Old Echo, thin as a draught under a door. What it carries is a season old. If you know it, a lamp on the battlements will stay lit until spring.',
+    ],
     1: [
       'This one carries something from yesterday. It is still warm.',
       'It holds something you met only a day ago. It has not had time to get lost yet.',

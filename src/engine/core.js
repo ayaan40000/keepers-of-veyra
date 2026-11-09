@@ -11,6 +11,7 @@ function faceFor(name, r) {
 import { rng, sample, shuffle, clamp, mean, matches, majorDecode, todayISO, addDays, daysBetween, uid, setKnownWords } from './util.js';
 import { blankEvents } from '../data/events.js';
 import { blankOwn } from './owntext.js';
+import { blankLedger } from './ledger.js';
 import { ALL_FOREIGN, isLangSpec, scoreArticle } from './lang.js';
 import { scoreScene } from './scene.js';
 import { abstractOk } from './abstract.js';
@@ -21,6 +22,7 @@ setKnownWords([...CONCRETE, ...ABSTRACT, ...NAMES, ...VOCAB.map((v) => v[1]), ..
 export const SCHEMA = 3; // 1.2: habits (Carry it) and the technique ladder
 export const CURRICULUM_VERSION = '2026.11-v0.8';
 export const PROBE_INTERVALS = [1, 7, 30];
+export const LONG_PROBE_INTERVALS = [1, 7, 30, 90]; // 1.3: practice sets first held at 80% or more come back as Old Echoes at 90 days
 export const GATE_PROBE_INTERVALS = [1, 7, 30, 90, 180];
 // 1.2: vocabulary is reviewed at the gaps Month 6 promises. Each set keeps the schedule it was stored with.
 export const VOCAB_PROBE_INTERVALS = [1, 3, 7, 14, 30, 60];
@@ -44,7 +46,7 @@ export function newProfile(alias, avatar, prefs = {}) {
     results: [], sets: [], palaces: [], major: {}, achievements: {}, story: { seen: [] }, reflections: 0, baseline: null, inProgress: null,
     tips: { seen: [] }, relics: { polish: {} }, stats: { sessions: [] }, trials: {}, brambles: { thorns: {}, chests: {} }, mirror: { episode: null, lit: {} }, audit: { done: 0, last: null }, events: blankEvents(),
     seam: { met: null, cleared: [], tries: 0, best: 0, rests: 0, last: null, used: [], closed: null, held: null, epilogue: null }, wren: { seen: {}, asked: {}, lastBeat: null, lastQ: null },
-    guide: { tried: {}, later: {} }, own: blankOwn(), habits: { plans: [], carry: [] }, ladder: {},
+    guide: { tried: {}, later: {} }, own: blankOwn(), ledger: blankLedger(), habits: { plans: [], carry: [] }, ladder: {},
     keeper: { equip: { lantern: null, cloak: null, charm: null, tool: null } },
     battles: { done: 0, held: 0, rests: 0, last: null, skipped: null, queue: [], history: [] },
   };
@@ -271,7 +273,7 @@ export function storeSet(p, step, result) {
   const set = {
     id: uid(), skill: step.skill, t: step.spec.t, spec: step.spec, items: step.items, loci: step.loci || null,
     ...(step.extra?.probe ? { probe: step.extra.probe } : {}), // 1.2 scenes: next-day questions asked in a different form
-    created: today(p), immediate: result.acc, idx: 0, intervals: isGate ? GATE_PROBE_INTERVALS : step.spec.t === 'vocab' ? VOCAB_PROBE_INTERVALS : step.spec.t === 'scene' ? SCENE_PROBE_INTERVALS : PROBE_INTERVALS, history: [], retired: false,
+    created: today(p), immediate: result.acc, idx: 0, intervals: isGate ? GATE_PROBE_INTERVALS : step.spec.t === 'vocab' ? VOCAB_PROBE_INTERVALS : step.spec.t === 'scene' ? SCENE_PROBE_INTERVALS : result.acc >= 0.8 ? LONG_PROBE_INTERVALS : PROBE_INTERVALS, history: [], retired: false,
   };
   set.due = addDays(set.created, set.intervals[0]);
   p.sets.push(set);
@@ -325,7 +327,8 @@ export function applyProbe(p, set, result) {
   const delay = daysBetween(set.created, t);
   // "Kept" = delayed score relative to the first score, with a floor of 50% so a weak first score cannot inflate it.
   const ratio = Math.min(1, result.acc / Math.max(set.immediate, 0.5));
-  const pass = result.acc >= 0.7 || (ratio >= 0.8 && result.acc >= 0.5);
+  // 1.3: from 30 days on a pass needs 70% outright (a low first score no longer lowers the bar).
+  const pass = result.acc >= 0.7 || (delay < 30 && ratio >= 0.8 && result.acc >= 0.5);
   set.history.push({ date: t, acc: result.acc, ratio, delay, pass });
   const s = p.skills[set.skill];
   s.probes = [...s.probes, { date: t, delay, score: ratio, acc: result.acc }].slice(-12);

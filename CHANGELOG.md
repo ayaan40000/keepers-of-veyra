@@ -2,6 +2,15 @@
 
 All notable changes to Mnemos: Keepers of Veyra. Saved data from every earlier version loads in this one.
 
+## 1.3.0: The Keeper's Ledger and Old Echoes (2026-11-08)
+
+- **The Keeper's Ledger** (opens at the Month 1 gate; Calder hands you a ledger the Tide left blank): your own cards in named books, asked again after 1, 3, 7, 14, 30, 60, 120 and 240 days, then once a year, for as long as you keep the book. Book kinds: Cards, Words, Timeline, the Joke Box (keep the key word, then tell the joke aloud), the Travellers' Satchel (ideas from books, said aloud and self-marked) and Project. Ask both ways, tie a book to a palace (card 7 sits on stop 7), paste many cards at once, several right answers with a semicolon, accents folded. Up to 10 new cards and 40 reviews a day. Starter books from the game's checked sets: capitals, elements, word roots, real dates, formulae. A card is kept when it holds after a month or more, and its spine glows warmer on the shelf. A held typed review after a week or more earns a little Lumen inside the daily free-practice cap; nothing in the Ledger changes skill estimates. Limits: 50 books, 5,000 cards, 400 characters a side. Due cards show on Today; the Ledger also opens from the Field Guide.
+- **Longer review gaps**: practice sets first held at 80% or more now come back at 90 days as well, and from 30 days on a delayed check needs 70% to pass. Old sets keep their own schedule.
+- **Old Echoes**: 90-day items come to the Long Vigil as Old Echoes, and each one held lights a lamp on the battlements for the season.
+- Weeks 4, 25 and 48 point to the Ledger; Month 6 says honestly that keeping words is not the same as speaking a language.
+- **New canon** in the codex and the lore guide: the Keeper's Ledger, Old Echoes, the Evening Round, the Gloss, the Merchants' Marks, the Turning Stones, the Joke Box, the Travellers' Satchel, the Wardens' Road, the Quay lamps, the Players of the Clockwork Market, Ennick's Book of Slips and Tallow's Hours.
+- Saved data: a new  record with defaults, checks and import tests. Older saves load unchanged.
+
 ## 1.2.1: Honest fixes from the syllabus audit (2026-11-08)
 
 - Lesson cards no longer claim what nobody checked (what champions agree on, how many use the palace, that competitors love PAO), no PIN advice, and the last week describes the Year of Keeping as it is.
