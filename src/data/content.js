@@ -1,3 +1,4 @@
+import { CONCRETE_15, NAMES_15 } from './pools15.js';
 // Original word selections and public facts. See IP register.
 export const CONCRETE = `anchor apple arrow axe badge balloon banana barrel basket bathtub beard bee bell bicycle blanket boot bottle bowl bracelet bread brick bridge broom bucket butterfly button cabbage cactus cake camel candle cannon canoe carpet carrot castle cat chain chair cherry chimney clock cloud coat coconut coin comb compass cookie crab crown crystal cup curtain daisy desk diamond dice dolphin donkey door dragonfly drum duck eagle egg elephant envelope feather fence fiddle flag flamingo flute fork fountain fox frog giraffe glove goat grapes guitar hammer harp hat helmet hive honey horse hose igloo iron jacket jar jellyfish kettle key kite ladder ladle lamp lantern leaf lemon lighthouse lion lobster lock magnet map mask melon mirror mitten monkey moon mop mushroom nail necklace needle nest net octopus onion orange owl paddle paint panda parrot peach peacock pear pencil penguin piano pickle pillow pineapple pirate pizza plum pumpkin puppet rabbit raft rake ribbon ring robot rocket rope rose ruler saddle sail sandwich saw scarf scissors seal shark shell shovel skateboard sled snail snake sock spider spoon squirrel stamp statue sunflower swan sword teapot telescope tent tiger toaster tomato torch tractor trumpet tulip turtle umbrella unicorn vase violin volcano wagon walrus wand watch whale wheel whistle window wizard wolf yacht zebra zipper`.split(' ');
 
@@ -72,3 +73,6 @@ export const NAMES_MORE = [["Zuri","f"],["Tunde","m"],["Meera","f"],["Hiro","m"]
 CONCRETE.push(...CONCRETE_MORE);
 ABSTRACT.push(...ABSTRACT_MORE);
 for (const [n, pres] of NAMES_MORE) { NAMES.push(n); NAME_PRES[n] = pres; }
+// 1.5 bigger pools (filtered by scripts/pool-filter.mjs). Appended only.
+CONCRETE.push(...CONCRETE_15);
+for (const [n, pres] of NAMES_15) { NAMES.push(n); NAME_PRES[n] = pres; }

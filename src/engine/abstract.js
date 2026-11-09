@@ -10,9 +10,11 @@ import { FORMULAS, CHEM, WONDERS, JOKES, DIAGRAMS, DIAGRAM_BY_ID } from '../data
 import DATE_SETS from '../data/add/dates.json';
 import TRIVIA from '../data/add/trivia.json';
 import { FINANCE } from '../data/finance.js';
+import { VERBS, PERSONS, TENSE } from '../data/verbs.js';
+import { matchCard } from './ledger.js';
 import { sample, shuffle, matches, normalize } from './util.js';
 
-export const ABSTRACT_SRC = ['formulas', 'dates', 'trivia', 'wonders', 'jokes', 'diagram', 'finance'];
+export const ABSTRACT_SRC = ['formulas', 'dates', 'trivia', 'wonders', 'jokes', 'diagram', 'finance', 'verbs'];
 const DATE_EVENTS = DATE_SETS.flatMap((s) => s.events.map((e) => ({ ...e, set: s.id })));
 
 // ---------- checking ----------
@@ -59,6 +61,7 @@ export function jokeOk(resp, it) {
 const firstNum = (s) => { const m = String(s ?? '').replace(/,(?=\d{3})/g, '').match(/\d+(\.\d+)?/); return m ? +m[0] : null; };
 const bareText = (s) => String(s ?? '').trim().replace(/^(the|a|an)\s+/i, '');
 export function abstractOk(resp, it) {
+  if (it.verb) return matchCard(resp, [it.answer, ...(it.alt || [])].join(';'), true); // exact form, accents and Turkish dotless i folded
   if (it.formula) return formulaOk(resp, it);
   if (it.year) return yearOk(resp, it);
   if (it.joke || it.keyed) return jokeOk(resp, it);
@@ -109,6 +112,15 @@ function finance(n, r) {
   const probe = pick.map(({ f, b2 }) => formulaItem(f, b2));
   return { items, extra: { probe } };
 }
+// 1.5 The Turning Stones: verb + person -> form. Next day the same verbs come back with other persons.
+function verbs(spec, n, r) {
+  const lang = VERBS[spec.lang] ? spec.lang : 'es';
+  const vs = sample(VERBS[lang], Math.min(n, VERBS[lang].length), r);
+  const P = PERSONS[lang];
+  const pick = vs.map((v) => { const ps = shuffle([0, 1, 2, 3, 4, 5], r); return { v, a: ps[0], b: ps[1] }; });
+  const item = (v, k) => ({ cue: `${v[0]} (${v[1]}), ${P[k]}, ${TENSE[lang]}`, answer: v[2][k], verb: true, text: `${v[0]}, ${P[k]}: ${v[2][k]}  (all: ${v[2].join(', ')})` });
+  return { items: pick.map(({ v, a }) => item(v, a)), extra: { probe: pick.map(({ v, b }) => item(v, b)) } };
+}
 function trivia(n, r) {
   const qs = sample(TRIVIA, n, r);
   return { items: qs.map((q) => ({ cue: q.q, answer: q.a, alt: q.accepts || [], text: `${q.q} ${q.a}.` })) };
@@ -139,6 +151,7 @@ export function abstractItems(spec, n, r) {
     case 'jokes': return jokes(n, r);
     case 'diagram': return diagram(spec, r);
     case 'finance': return finance(n, r);
+    case 'verbs': return verbs(spec, n, r);
     default: return null;
   }
 }

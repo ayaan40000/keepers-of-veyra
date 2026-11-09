@@ -97,7 +97,7 @@ Generated from `src/data/curriculum.js` by `scripts/syllabus-doc.mjs`. Do not ed
 | 22 | Keyword Method | Link a foreign word to its meaning through a sound-alike. | Vocabulary (6 items, 90s study) | Vocabulary (6 items, 80s study) |
 | 23 | Abstract to Concrete | Encode abstract words through substitutes. | Linked Pairs (8 items, 80s study); Vocabulary (8 items, 90s study); Vocabulary (6 items, 90s study, lang: old) | Linked Pairs (8 items, 70s study) |
 | 24 | Peg Systems | Use number-shape pegs for short lists. | Linked Pairs (10 items, 80s study, peg: shape); Linked Pairs (10 items, 80s study, peg: rhyme) | Vocabulary (10 items, 90s study) |
-| 25 | Vocabulary Volume | 12 words per session retained at 7 days. | Vocabulary (10 items, 120s study, lang: es); Vocabulary (6 items, 90s study, lang: es, dir: produce) | Vocabulary (10 items, 100s study) |
+| 25 | Vocabulary Volume | 12 words per session retained at 7 days. | Vocabulary (10 items, 120s study, lang: es); Vocabulary (6 items, 90s study, lang: es, dir: produce); Fact Recall (6 items, 110s study, src: verbs, lang: es, skill: vocab) | Vocabulary (10 items, 100s study) |
 | 26 | Quarter 2 Assessment | Half-year measurement and 6-month palace probe. | Word Recall (15 items, 90s study); Digit Recall (16 items, 120s study) | Vocabulary (10 items, 90s study) |
 
 ## M7. Month 7: Structured Knowledge (The Scriptorium)

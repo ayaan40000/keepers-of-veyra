@@ -55,3 +55,17 @@ describe('1.4 the Evening Round', () => {
     expect(roundDue({}, { retired: false, created: d0, history: [] })).toBeNull();
   });
 });
+
+describe('1.5 turning stones and pools', () => {
+  it('verb items check the exact form, with accents folded', () => {
+    const { items, extra } = abstractItems({ src: 'verbs', lang: 'es' }, 6, rng(2));
+    expect(items).toHaveLength(6);
+    expect(items.every((x) => abstractOk(x.answer, x))).toBe(true);
+    const tener = { verb: true, answer: 'tenéis' };
+    expect(abstractOk('teneis', tener)).toBe(true);
+    expect(abstractOk('tenemos', tener)).toBe(false);
+    expect(extra.probe).toHaveLength(6);
+    const tr = abstractItems({ src: 'verbs', lang: 'tr' }, 4, rng(1)).items;
+    expect(tr.every((x) => abstractOk(x.answer, x))).toBe(true);
+  });
+});

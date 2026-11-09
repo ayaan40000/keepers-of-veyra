@@ -10,7 +10,7 @@ export const ALL_TEMPLATES = Object.keys(CRYPT_BASE);
 export const TEMPLATE_FIRST_WEEK = (() => {
   const out = {};
   // 1.2: scenes and the hard-material sources (jokes in week 12, dates in week 20) do not open the plain templates early
-  const extra = (d) => d.t === 'scene' || ['formulas', 'dates', 'trivia', 'wonders', 'jokes', 'diagram'].includes(d.src);
+  const extra = (d) => d.t === 'scene' || ['formulas', 'dates', 'trivia', 'wonders', 'jokes', 'diagram', 'finance', 'verbs'].includes(d.src);
   for (const w of WEEKS) for (const d of [...w.drills, w.check]) if (out[d.t] == null && !extra(d)) out[d.t] = w.w;
   return out;
 })();

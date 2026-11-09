@@ -13,7 +13,9 @@ import POEMS from '../data/add/poems.json';
 import POOLS from '../data/add/pools.json';
 import UNITS from '../data/add/unitchecks.json';
 import SOUND from '../data/add/soundalikes.json';
-import SURN from '../data/add/surnames.json';
+import SURN_BASE from '../data/add/surnames.json';
+import { SURNAMES_15 } from '../data/pools15.js';
+const SURN = { ...SURN_BASE, surnames: [...SURN_BASE.surnames, ...SURNAMES_15] }; // 1.5 more surnames
 import { CONCRETE } from '../data/content.js';
 import { sample, shuffle, lev, normalize, matches } from './util.js';
 import { langItems, isLangSpec, langVariant } from './lang.js';

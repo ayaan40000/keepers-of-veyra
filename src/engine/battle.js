@@ -50,7 +50,7 @@ export function kindsFor(set) {
 const FMT = { recall: 'Recall', reverse: 'Reverse', order: 'Order', locate: 'Locate', face: 'Recall' };
 
 // 1.2: how a stored item is checked (formulae, years, punchlines, numbers and accepted spellings).
-const CHECK_KEYS = ['formula', 'year', 'bce', 'joke', 'keyed', 'key', 'alt', 'kind', 'range', 'text'];
+const CHECK_KEYS = ['verb', 'formula', 'year', 'bce', 'joke', 'keyed', 'key', 'alt', 'kind', 'range', 'text'];
 const pickCheck = (it) => Object.fromEntries(CHECK_KEYS.filter((k) => it[k] != null).map((k) => [k === 'key' ? 'keys' : k, it[k]]));
 
 export function makeEntry(set, i, kind, age, reason, setId) {

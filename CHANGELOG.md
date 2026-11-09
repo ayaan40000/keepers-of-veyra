@@ -2,6 +2,12 @@
 
 All notable changes to Mnemos: Keepers of Veyra. Saved data from every earlier version loads in this one.
 
+## 1.5.0: The Turning Stones and bigger pools (2026-11-08)
+
+- **The Turning Stones** (Month 6, the Tongues Bridge): verbs and their forms. 15 common irregular Spanish verbs in the present tense and 10 common Turkish verbs in the present continuous, taught as a rule plus pictures for the odd forms only. A new Fact Recall source (verb and person to form, exact form with accents folded); the next day the same verbs come back with other persons. Week 25 adds a Spanish verb drill. Both sets are also Ledger starter books (180 and 60 cards). Checked against standard grammars; native-speaker review is still wanted before more languages or tenses are added, so French and German genders wait.
+- **Bigger pools**: 421 more concrete words, 197 more first names (with presentation, many cultures) and 88 more surnames, after removing every word one letter away from a word already in the pools (`scripts/pool-filter.mjs`), so the forgiving matcher cannot accept the wrong word. The plan's targets (2,000 words, 1,000 names each) are not reached yet; this is a first step.
+- The new sources do not open the plain Undercroft templates early.
+
 ## 1.4.0: The Gloss, finance formulae and the Evening Round (2026-11-08)
 
 - **The Gloss** (from Month 7, at Brother Ennick's desk): explain an idea in your own words, compare with Ennick's gloss, and mark yourself Kept, Partly or Missed. Each gloss comes back the next day and a week later, without looking. 54 prompts: finance, formulae, the course's own ideas and the 26 surprising facts. Self-marked, so it earns nothing and changes no score.
