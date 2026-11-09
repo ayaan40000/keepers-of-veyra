@@ -1,0 +1,2246 @@
+{
+ "honest": "Sound-alike pictures start a word, and spaced checks keep it. This does not teach grammar or fluency, and a say-it spelling is only a rough guide to the sound.",
+ "langs": {
+  "es": {
+   "name": "Spanish",
+   "verified": "Checked by hand against standard dictionary meanings. Every word here is spelled the same in Spain and Latin America. A native speaker review is still welcome.",
+   "sourceUrls": [
+    "https://dle.rae.es/"
+   ],
+   "words": [
+    {
+     "id": "es-0001",
+     "word": "perro",
+     "meaning": "dog",
+     "gender": "m",
+     "say": "PEH-rroh",
+     "hint": "pear-oh: a dog chewing a pear"
+    },
+    {
+     "id": "es-0002",
+     "word": "gato",
+     "meaning": "cat",
+     "gender": "m",
+     "say": "GAH-toh",
+     "hint": "gateau: a cat sitting in a cake"
+    },
+    {
+     "id": "es-0003",
+     "word": "casa",
+     "meaning": "house",
+     "alt": [
+      "home"
+     ],
+     "gender": "f",
+     "say": "KAH-sah",
+     "hint": "cash: a house built from cash"
+    },
+    {
+     "id": "es-0004",
+     "word": "libro",
+     "meaning": "book",
+     "gender": "m",
+     "say": "LEE-broh",
+     "hint": "Lee-bro: your bro Lee buried in books"
+    },
+    {
+     "id": "es-0005",
+     "word": "pan",
+     "meaning": "bread",
+     "gender": "m",
+     "say": "pahn",
+     "hint": "pan: bread baking in a frying pan"
+    },
+    {
+     "id": "es-0006",
+     "word": "leche",
+     "meaning": "milk",
+     "gender": "f",
+     "say": "LEH-cheh"
+    },
+    {
+     "id": "es-0007",
+     "word": "queso",
+     "meaning": "cheese",
+     "gender": "m",
+     "say": "KEH-soh",
+     "hint": "case-oh: a suitcase full of cheese"
+    },
+    {
+     "id": "es-0008",
+     "word": "mesa",
+     "meaning": "table",
+     "gender": "f",
+     "say": "MEH-sah",
+     "hint": "messy: a very messy table"
+    },
+    {
+     "id": "es-0009",
+     "word": "silla",
+     "meaning": "chair",
+     "gender": "f",
+     "say": "SEE-yah",
+     "hint": "see ya: a chair waving goodbye"
+    },
+    {
+     "id": "es-0010",
+     "word": "puerta",
+     "meaning": "door",
+     "gender": "f",
+     "say": "PWEHR-tah",
+     "hint": "pour-ta: pouring tea through a door"
+    },
+    {
+     "id": "es-0011",
+     "word": "ventana",
+     "meaning": "window",
+     "gender": "f",
+     "say": "behn-TAH-nah",
+     "hint": "vent: a window that blows air like a vent"
+    },
+    {
+     "id": "es-0012",
+     "word": "cama",
+     "meaning": "bed",
+     "gender": "f",
+     "say": "KAH-mah",
+     "hint": "comma: a giant comma asleep in a bed"
+    },
+    {
+     "id": "es-0013",
+     "word": "cocina",
+     "meaning": "kitchen",
+     "gender": "f",
+     "say": "koh-SEE-nah",
+     "hint": "cozy-nah: a cozy kitchen"
+    },
+    {
+     "id": "es-0014",
+     "word": "reloj",
+     "meaning": "clock",
+     "alt": [
+      "watch"
+     ],
+     "gender": "m",
+     "say": "reh-LOH"
+    },
+    {
+     "id": "es-0015",
+     "word": "zapato",
+     "meaning": "shoe",
+     "gender": "m",
+     "say": "sah-PAH-toh",
+     "hint": "sap a toe: sap dripping on the toe of a shoe"
+    },
+    {
+     "id": "es-0016",
+     "word": "falda",
+     "meaning": "skirt",
+     "gender": "f",
+     "say": "FAHL-dah",
+     "hint": "fold-a: folding a skirt"
+    },
+    {
+     "id": "es-0017",
+     "word": "árbol",
+     "meaning": "tree",
+     "gender": "m",
+     "say": "AHR-bohl",
+     "hint": "arbour: a tree growing through an arbour"
+    },
+    {
+     "id": "es-0018",
+     "word": "flor",
+     "meaning": "flower",
+     "gender": "f",
+     "say": "flohr",
+     "hint": "floor: a flower pushing up through the floor"
+    },
+    {
+     "id": "es-0019",
+     "word": "sol",
+     "meaning": "sun",
+     "gender": "m",
+     "say": "sohl",
+     "hint": "sole: the sun burning the sole of your shoe"
+    },
+    {
+     "id": "es-0020",
+     "word": "luna",
+     "meaning": "moon",
+     "gender": "f",
+     "say": "LOO-nah"
+    },
+    {
+     "id": "es-0021",
+     "word": "estrella",
+     "meaning": "star",
+     "gender": "f",
+     "say": "ehs-TREH-yah"
+    },
+    {
+     "id": "es-0022",
+     "word": "nube",
+     "meaning": "cloud",
+     "gender": "f",
+     "say": "NOO-beh",
+     "hint": "newbie: a newbie cloud learning to rain"
+    },
+    {
+     "id": "es-0023",
+     "word": "lluvia",
+     "meaning": "rain",
+     "gender": "f",
+     "say": "YOO-byah"
+    },
+    {
+     "id": "es-0024",
+     "word": "nieve",
+     "meaning": "snow",
+     "gender": "f",
+     "say": "NYEH-beh",
+     "hint": "naive: a naive snowman"
+    },
+    {
+     "id": "es-0025",
+     "word": "río",
+     "meaning": "river",
+     "gender": "m",
+     "say": "REE-oh"
+    },
+    {
+     "id": "es-0026",
+     "word": "mar",
+     "meaning": "sea",
+     "gender": "m",
+     "say": "mahr"
+    },
+    {
+     "id": "es-0027",
+     "word": "playa",
+     "meaning": "beach",
+     "gender": "f",
+     "say": "PLAH-yah",
+     "hint": "player: a football player on a beach"
+    },
+    {
+     "id": "es-0028",
+     "word": "montaña",
+     "meaning": "mountain",
+     "gender": "f",
+     "say": "mohn-TAH-nyah"
+    },
+    {
+     "id": "es-0029",
+     "word": "piedra",
+     "meaning": "stone",
+     "alt": [
+      "rock"
+     ],
+     "gender": "f",
+     "say": "PYEH-drah"
+    },
+    {
+     "id": "es-0030",
+     "word": "arena",
+     "meaning": "sand",
+     "gender": "f",
+     "say": "ah-REH-nah",
+     "hint": "arena: an arena filled with sand"
+    },
+    {
+     "id": "es-0031",
+     "word": "pájaro",
+     "meaning": "bird",
+     "gender": "m",
+     "say": "PAH-hah-roh"
+    },
+    {
+     "id": "es-0032",
+     "word": "pez",
+     "meaning": "fish",
+     "gender": "m",
+     "say": "pehs",
+     "hint": "fez: a fish wearing a little red fez"
+    },
+    {
+     "id": "es-0033",
+     "word": "caballo",
+     "meaning": "horse",
+     "gender": "m",
+     "say": "kah-BAH-yoh",
+     "hint": "cab: a horse pulling a cab"
+    },
+    {
+     "id": "es-0034",
+     "word": "vaca",
+     "meaning": "cow",
+     "gender": "f",
+     "say": "BAH-kah"
+    },
+    {
+     "id": "es-0035",
+     "word": "cerdo",
+     "meaning": "pig",
+     "gender": "m",
+     "say": "SEHR-doh"
+    },
+    {
+     "id": "es-0036",
+     "word": "oveja",
+     "meaning": "sheep",
+     "gender": "f",
+     "say": "oh-BEH-hah"
+    },
+    {
+     "id": "es-0037",
+     "word": "gallina",
+     "meaning": "hen",
+     "gender": "f",
+     "say": "gah-YEE-nah"
+    },
+    {
+     "id": "es-0038",
+     "word": "conejo",
+     "meaning": "rabbit",
+     "gender": "m",
+     "say": "koh-NEH-hoh"
+    },
+    {
+     "id": "es-0039",
+     "word": "ratón",
+     "meaning": "mouse",
+     "gender": "m",
+     "say": "rah-TOHN",
+     "hint": "rat on: a rat sitting on a mouse"
+    },
+    {
+     "id": "es-0040",
+     "word": "oso",
+     "meaning": "bear",
+     "gender": "m",
+     "say": "OH-soh"
+    },
+    {
+     "id": "es-0041",
+     "word": "lobo",
+     "meaning": "wolf",
+     "gender": "m",
+     "say": "LOH-boh",
+     "hint": "lobe: a wolf nibbling an ear lobe"
+    },
+    {
+     "id": "es-0042",
+     "word": "serpiente",
+     "meaning": "snake",
+     "gender": "f",
+     "say": "sehr-PYEHN-teh"
+    },
+    {
+     "id": "es-0043",
+     "word": "mano",
+     "meaning": "hand",
+     "gender": "f",
+     "say": "MAH-noh"
+    },
+    {
+     "id": "es-0044",
+     "word": "pie",
+     "meaning": "foot",
+     "gender": "m",
+     "say": "pyeh",
+     "hint": "pie: a foot stepping in a pie"
+    },
+    {
+     "id": "es-0045",
+     "word": "cabeza",
+     "meaning": "head",
+     "gender": "f",
+     "say": "kah-BEH-sah"
+    },
+    {
+     "id": "es-0046",
+     "word": "ojo",
+     "meaning": "eye",
+     "gender": "m",
+     "say": "OH-hoh"
+    },
+    {
+     "id": "es-0047",
+     "word": "oreja",
+     "meaning": "ear",
+     "gender": "f",
+     "say": "oh-REH-hah"
+    },
+    {
+     "id": "es-0048",
+     "word": "nariz",
+     "meaning": "nose",
+     "gender": "f",
+     "say": "nah-REES"
+    },
+    {
+     "id": "es-0049",
+     "word": "boca",
+     "meaning": "mouth",
+     "gender": "f",
+     "say": "BOH-kah"
+    },
+    {
+     "id": "es-0050",
+     "word": "diente",
+     "meaning": "tooth",
+     "gender": "m",
+     "say": "DYEHN-teh",
+     "hint": "dentist: a dentist pulling a tooth"
+    },
+    {
+     "id": "es-0051",
+     "word": "corazón",
+     "meaning": "heart",
+     "gender": "m",
+     "say": "koh-rah-SOHN"
+    },
+    {
+     "id": "es-0052",
+     "word": "pelo",
+     "meaning": "hair",
+     "gender": "m",
+     "say": "PEH-loh",
+     "hint": "pillow: a pillow stuffed with hair"
+    },
+    {
+     "id": "es-0053",
+     "word": "cuchillo",
+     "meaning": "knife",
+     "gender": "m",
+     "say": "koo-CHEE-yoh"
+    },
+    {
+     "id": "es-0054",
+     "word": "cuchara",
+     "meaning": "spoon",
+     "gender": "f",
+     "say": "koo-CHAH-rah"
+    },
+    {
+     "id": "es-0055",
+     "word": "tenedor",
+     "meaning": "fork",
+     "gender": "m",
+     "say": "teh-neh-DOHR",
+     "hint": "ten doors: a fork stuck in ten doors"
+    },
+    {
+     "id": "es-0056",
+     "word": "plato",
+     "meaning": "plate",
+     "alt": [
+      "dish"
+     ],
+     "gender": "m",
+     "say": "PLAH-toh"
+    },
+    {
+     "id": "es-0057",
+     "word": "vaso",
+     "meaning": "glass",
+     "gender": "m",
+     "say": "BAH-soh",
+     "hint": "vase: drinking water out of a vase"
+    },
+    {
+     "id": "es-0058",
+     "word": "taza",
+     "meaning": "cup",
+     "alt": [
+      "mug"
+     ],
+     "gender": "f",
+     "say": "TAH-sah"
+    },
+    {
+     "id": "es-0059",
+     "word": "botella",
+     "meaning": "bottle",
+     "gender": "f",
+     "say": "boh-TEH-yah"
+    },
+    {
+     "id": "es-0060",
+     "word": "olla",
+     "meaning": "pot",
+     "gender": "f",
+     "say": "OH-yah"
+    },
+    {
+     "id": "es-0061",
+     "word": "huevo",
+     "meaning": "egg",
+     "gender": "m",
+     "say": "WEH-boh"
+    },
+    {
+     "id": "es-0062",
+     "word": "arroz",
+     "meaning": "rice",
+     "gender": "m",
+     "say": "ah-RROHS",
+     "hint": "arrows: arrows sticking out of a bowl of rice"
+    },
+    {
+     "id": "es-0063",
+     "word": "sal",
+     "meaning": "salt",
+     "gender": "f",
+     "say": "sahl"
+    },
+    {
+     "id": "es-0064",
+     "word": "carne",
+     "meaning": "meat",
+     "gender": "f",
+     "say": "KAHR-neh"
+    },
+    {
+     "id": "es-0065",
+     "word": "pollo",
+     "meaning": "chicken",
+     "gender": "m",
+     "say": "POH-yoh",
+     "hint": "polo: a chicken playing polo"
+    },
+    {
+     "id": "es-0066",
+     "word": "fresa",
+     "meaning": "strawberry",
+     "gender": "f",
+     "say": "FREH-sah",
+     "hint": "fresh: a fresh red strawberry"
+    },
+    {
+     "id": "es-0067",
+     "word": "naranja",
+     "meaning": "orange",
+     "gender": "f",
+     "say": "nah-RAHN-hah"
+    },
+    {
+     "id": "es-0068",
+     "word": "uva",
+     "meaning": "grape",
+     "gender": "f",
+     "say": "OO-bah"
+    },
+    {
+     "id": "es-0069",
+     "word": "cebolla",
+     "meaning": "onion",
+     "gender": "f",
+     "say": "seh-BOH-yah"
+    },
+    {
+     "id": "es-0070",
+     "word": "zanahoria",
+     "meaning": "carrot",
+     "gender": "f",
+     "say": "sah-nah-OH-ryah"
+    },
+    {
+     "id": "es-0071",
+     "word": "calle",
+     "meaning": "street",
+     "gender": "f",
+     "say": "KAH-yeh"
+    },
+    {
+     "id": "es-0072",
+     "word": "ciudad",
+     "meaning": "city",
+     "alt": [
+      "town"
+     ],
+     "gender": "f",
+     "say": "syoo-DAHD"
+    },
+    {
+     "id": "es-0073",
+     "word": "pueblo",
+     "meaning": "village",
+     "alt": [
+      "town"
+     ],
+     "gender": "m",
+     "say": "PWEH-bloh"
+    },
+    {
+     "id": "es-0074",
+     "word": "iglesia",
+     "meaning": "church",
+     "gender": "f",
+     "say": "ee-GLEH-syah"
+    },
+    {
+     "id": "es-0075",
+     "word": "escuela",
+     "meaning": "school",
+     "gender": "f",
+     "say": "ehs-KWEH-lah"
+    },
+    {
+     "id": "es-0076",
+     "word": "tienda",
+     "meaning": "shop",
+     "alt": [
+      "store"
+     ],
+     "gender": "f",
+     "say": "TYEHN-dah"
+    },
+    {
+     "id": "es-0077",
+     "word": "mercado",
+     "meaning": "market",
+     "gender": "m",
+     "say": "mehr-KAH-doh"
+    },
+    {
+     "id": "es-0078",
+     "word": "puente",
+     "meaning": "bridge",
+     "gender": "m",
+     "say": "PWEHN-teh"
+    },
+    {
+     "id": "es-0079",
+     "word": "camino",
+     "meaning": "path",
+     "alt": [
+      "way",
+      "road"
+     ],
+     "gender": "m",
+     "say": "kah-MEE-noh"
+    },
+    {
+     "id": "es-0080",
+     "word": "coche",
+     "meaning": "car",
+     "gender": "m",
+     "say": "KOH-cheh",
+     "hint": "coach: a car towing a coach"
+    },
+    {
+     "id": "es-0081",
+     "word": "barco",
+     "meaning": "boat",
+     "alt": [
+      "ship"
+     ],
+     "gender": "m",
+     "say": "BAHR-koh",
+     "hint": "bark: a dog barking on a boat"
+    },
+    {
+     "id": "es-0082",
+     "word": "tren",
+     "meaning": "train",
+     "gender": "m",
+     "say": "trehn"
+    },
+    {
+     "id": "es-0083",
+     "word": "avión",
+     "meaning": "plane",
+     "alt": [
+      "airplane",
+      "aeroplane"
+     ],
+     "gender": "m",
+     "say": "ah-BYOHN"
+    },
+    {
+     "id": "es-0084",
+     "word": "dinero",
+     "meaning": "money",
+     "gender": "m",
+     "say": "dee-NEH-roh",
+     "hint": "dinner: paying for dinner with a heap of money"
+    },
+    {
+     "id": "es-0085",
+     "word": "papel",
+     "meaning": "paper",
+     "gender": "m",
+     "say": "pah-PEHL"
+    },
+    {
+     "id": "es-0086",
+     "word": "lápiz",
+     "meaning": "pencil",
+     "gender": "m",
+     "say": "LAH-pees",
+     "hint": "lap: a pencil rolling off your lap"
+    },
+    {
+     "id": "es-0087",
+     "word": "espejo",
+     "meaning": "mirror",
+     "gender": "m",
+     "say": "ehs-PEH-hoh"
+    },
+    {
+     "id": "es-0088",
+     "word": "jabón",
+     "meaning": "soap",
+     "gender": "m",
+     "say": "hah-BOHN"
+    },
+    {
+     "id": "es-0089",
+     "word": "toalla",
+     "meaning": "towel",
+     "gender": "f",
+     "say": "toh-AH-yah"
+    },
+    {
+     "id": "es-0090",
+     "word": "fuego",
+     "meaning": "fire",
+     "gender": "m",
+     "say": "FWEH-goh"
+    },
+    {
+     "id": "es-0091",
+     "word": "humo",
+     "meaning": "smoke",
+     "gender": "m",
+     "say": "OO-moh"
+    },
+    {
+     "id": "es-0092",
+     "word": "viento",
+     "meaning": "wind",
+     "gender": "m",
+     "say": "BYEHN-toh"
+    },
+    {
+     "id": "es-0093",
+     "word": "hoja",
+     "meaning": "leaf",
+     "gender": "f",
+     "say": "OH-hah"
+    },
+    {
+     "id": "es-0094",
+     "word": "bosque",
+     "meaning": "forest",
+     "alt": [
+      "woods"
+     ],
+     "gender": "m",
+     "say": "BOHS-keh"
+    },
+    {
+     "id": "es-0095",
+     "word": "campo",
+     "meaning": "field",
+     "alt": [
+      "countryside"
+     ],
+     "gender": "m",
+     "say": "KAHM-poh",
+     "hint": "camp: a camp in a field"
+    },
+    {
+     "id": "es-0096",
+     "word": "hermano",
+     "meaning": "brother",
+     "gender": "m",
+     "say": "ehr-MAH-noh"
+    },
+    {
+     "id": "es-0097",
+     "word": "hermana",
+     "meaning": "sister",
+     "gender": "f",
+     "say": "ehr-MAH-nah"
+    },
+    {
+     "id": "es-0098",
+     "word": "madre",
+     "meaning": "mother",
+     "gender": "f",
+     "say": "MAH-dreh"
+    },
+    {
+     "id": "es-0099",
+     "word": "padre",
+     "meaning": "father",
+     "gender": "m",
+     "say": "PAH-dreh"
+    },
+    {
+     "id": "es-0100",
+     "word": "niño",
+     "meaning": "child",
+     "alt": [
+      "boy"
+     ],
+     "gender": "m",
+     "say": "NEE-nyoh"
+    },
+    {
+     "id": "es-0101",
+     "word": "amigo",
+     "meaning": "friend",
+     "gender": "m",
+     "say": "ah-MEE-goh"
+    },
+    {
+     "id": "es-0102",
+     "word": "vecino",
+     "meaning": "neighbour",
+     "alt": [
+      "neighbor"
+     ],
+     "gender": "m",
+     "say": "beh-SEE-noh"
+    },
+    {
+     "id": "es-0103",
+     "word": "cartero",
+     "meaning": "postman",
+     "alt": [
+      "mail carrier",
+      "postal worker"
+     ],
+     "gender": "m",
+     "say": "kahr-TEH-roh"
+    },
+    {
+     "id": "es-0104",
+     "word": "pera",
+     "meaning": "pear",
+     "gender": "f",
+     "say": "PEH-rah"
+    },
+    {
+     "id": "es-0105",
+     "word": "caza",
+     "meaning": "hunt",
+     "gender": "f",
+     "say": "KAH-sah"
+    },
+    {
+     "id": "es-0106",
+     "word": "llave",
+     "meaning": "key",
+     "gender": "f",
+     "say": "YAH-beh"
+    }
+   ],
+   "phrases": [
+    {
+     "id": "es-p001",
+     "phrase": "buenos días",
+     "meaning": "good morning"
+    },
+    {
+     "id": "es-p002",
+     "phrase": "buenas noches",
+     "meaning": "good night",
+     "alt": [
+      "good evening"
+     ]
+    },
+    {
+     "id": "es-p003",
+     "phrase": "por favor",
+     "meaning": "please"
+    },
+    {
+     "id": "es-p004",
+     "phrase": "muchas gracias",
+     "meaning": "thank you very much",
+     "alt": [
+      "many thanks"
+     ]
+    },
+    {
+     "id": "es-p005",
+     "phrase": "¿dónde está el baño?",
+     "meaning": "where is the bathroom",
+     "alt": [
+      "where is the toilet"
+     ]
+    },
+    {
+     "id": "es-p006",
+     "phrase": "la cuenta por favor",
+     "meaning": "the bill please",
+     "alt": [
+      "the check please"
+     ]
+    },
+    {
+     "id": "es-p007",
+     "phrase": "no entiendo",
+     "meaning": "I do not understand",
+     "alt": [
+      "I don't understand"
+     ]
+    },
+    {
+     "id": "es-p008",
+     "phrase": "¿cuánto cuesta?",
+     "meaning": "how much does it cost",
+     "alt": [
+      "how much is it"
+     ]
+    },
+    {
+     "id": "es-p009",
+     "phrase": "me llamo",
+     "meaning": "my name is",
+     "alt": [
+      "I am called"
+     ]
+    },
+    {
+     "id": "es-p010",
+     "phrase": "hasta mañana",
+     "meaning": "see you tomorrow",
+     "alt": [
+      "until tomorrow"
+     ]
+    },
+    {
+     "id": "es-p011",
+     "phrase": "tengo hambre",
+     "meaning": "I am hungry",
+     "alt": [
+      "I'm hungry"
+     ]
+    },
+    {
+     "id": "es-p012",
+     "phrase": "tengo sed",
+     "meaning": "I am thirsty",
+     "alt": [
+      "I'm thirsty"
+     ]
+    },
+    {
+     "id": "es-p013",
+     "phrase": "lo siento",
+     "meaning": "I am sorry",
+     "alt": [
+      "I'm sorry"
+     ]
+    },
+    {
+     "id": "es-p014",
+     "phrase": "mucho gusto",
+     "meaning": "nice to meet you",
+     "alt": [
+      "pleased to meet you"
+     ]
+    },
+    {
+     "id": "es-p015",
+     "phrase": "¿qué hora es?",
+     "meaning": "what time is it"
+    },
+    {
+     "id": "es-p016",
+     "phrase": "a la derecha",
+     "meaning": "to the right",
+     "alt": [
+      "on the right"
+     ]
+    },
+    {
+     "id": "es-p017",
+     "phrase": "a la izquierda",
+     "meaning": "to the left",
+     "alt": [
+      "on the left"
+     ]
+    },
+    {
+     "id": "es-p018",
+     "phrase": "todo recto",
+     "meaning": "straight ahead",
+     "alt": [
+      "straight on"
+     ]
+    },
+    {
+     "id": "es-p019",
+     "phrase": "una mesa para dos",
+     "meaning": "a table for two"
+    },
+    {
+     "id": "es-p020",
+     "phrase": "¿habla inglés?",
+     "meaning": "do you speak English"
+    }
+   ]
+  },
+  "tr": {
+   "name": "Turkish",
+   "verified": "Checked by hand against standard dictionary meanings. A native speaker review is still welcome.",
+   "sourceUrls": [
+    "https://sozluk.gov.tr/"
+   ],
+   "words": [
+    {
+     "id": "tr-0001",
+     "word": "ev",
+     "meaning": "house",
+     "alt": [
+      "home"
+     ],
+     "say": "ehv"
+    },
+    {
+     "id": "tr-0002",
+     "word": "kedi",
+     "meaning": "cat",
+     "say": "KEH-dee",
+     "hint": "caddy: a cat riding in a golf caddy"
+    },
+    {
+     "id": "tr-0003",
+     "word": "köpek",
+     "meaning": "dog",
+     "say": "kur-PEK"
+    },
+    {
+     "id": "tr-0004",
+     "word": "kuş",
+     "meaning": "bird",
+     "say": "koosh",
+     "hint": "cushion: a bird asleep on a cushion"
+    },
+    {
+     "id": "tr-0005",
+     "word": "balık",
+     "meaning": "fish",
+     "say": "bah-LUHK"
+    },
+    {
+     "id": "tr-0006",
+     "word": "at",
+     "meaning": "horse",
+     "say": "aht"
+    },
+    {
+     "id": "tr-0007",
+     "word": "inek",
+     "meaning": "cow",
+     "say": "ee-NEK"
+    },
+    {
+     "id": "tr-0008",
+     "word": "koyun",
+     "meaning": "sheep",
+     "say": "koh-YOON"
+    },
+    {
+     "id": "tr-0009",
+     "word": "tavuk",
+     "meaning": "chicken",
+     "alt": [
+      "hen"
+     ],
+     "say": "tah-VOOK"
+    },
+    {
+     "id": "tr-0010",
+     "word": "ayı",
+     "meaning": "bear",
+     "say": "ah-YUH"
+    },
+    {
+     "id": "tr-0011",
+     "word": "kurt",
+     "meaning": "wolf",
+     "say": "koort",
+     "hint": "Kurt: a man called Kurt walking a wolf"
+    },
+    {
+     "id": "tr-0012",
+     "word": "fare",
+     "meaning": "mouse",
+     "say": "FAH-reh",
+     "hint": "fare: a mouse paying the bus fare"
+    },
+    {
+     "id": "tr-0013",
+     "word": "yılan",
+     "meaning": "snake",
+     "say": "yuh-LAHN"
+    },
+    {
+     "id": "tr-0014",
+     "word": "su",
+     "meaning": "water",
+     "say": "soo",
+     "hint": "Sue: Sue pouring water over you"
+    },
+    {
+     "id": "tr-0015",
+     "word": "ekmek",
+     "meaning": "bread",
+     "say": "ek-MEK"
+    },
+    {
+     "id": "tr-0016",
+     "word": "süt",
+     "meaning": "milk",
+     "say": "sewt",
+     "hint": "suit: a suit soaked in milk"
+    },
+    {
+     "id": "tr-0017",
+     "word": "peynir",
+     "meaning": "cheese",
+     "say": "pay-NEER"
+    },
+    {
+     "id": "tr-0018",
+     "word": "elma",
+     "meaning": "apple",
+     "say": "el-MAH",
+     "hint": "elm: an apple growing on an elm"
+    },
+    {
+     "id": "tr-0019",
+     "word": "yumurta",
+     "meaning": "egg",
+     "say": "yoo-moor-TAH"
+    },
+    {
+     "id": "tr-0020",
+     "word": "pirinç",
+     "meaning": "rice",
+     "say": "pee-REENCH"
+    },
+    {
+     "id": "tr-0021",
+     "word": "tuz",
+     "meaning": "salt",
+     "say": "tooz"
+    },
+    {
+     "id": "tr-0022",
+     "word": "şeker",
+     "meaning": "sugar",
+     "alt": [
+      "candy",
+      "sweets"
+     ],
+     "say": "sheh-KER"
+    },
+    {
+     "id": "tr-0023",
+     "word": "et",
+     "meaning": "meat",
+     "say": "eht"
+    },
+    {
+     "id": "tr-0024",
+     "word": "masa",
+     "meaning": "table",
+     "say": "MAH-sah"
+    },
+    {
+     "id": "tr-0025",
+     "word": "sandalye",
+     "meaning": "chair",
+     "say": "sahn-DAHL-yeh",
+     "hint": "sandal: a chair wearing sandals"
+    },
+    {
+     "id": "tr-0026",
+     "word": "kapı",
+     "meaning": "door",
+     "say": "kah-PUH",
+     "hint": "cap: a door wearing a cap"
+    },
+    {
+     "id": "tr-0027",
+     "word": "pencere",
+     "meaning": "window",
+     "say": "PEN-jeh-reh"
+    },
+    {
+     "id": "tr-0028",
+     "word": "yatak",
+     "meaning": "bed",
+     "say": "yah-TAHK",
+     "hint": "yak: a yak asleep in your bed"
+    },
+    {
+     "id": "tr-0029",
+     "word": "mutfak",
+     "meaning": "kitchen",
+     "say": "moot-FAHK"
+    },
+    {
+     "id": "tr-0030",
+     "word": "anahtar",
+     "meaning": "key",
+     "say": "ah-nah-TAHR"
+    },
+    {
+     "id": "tr-0031",
+     "word": "saat",
+     "meaning": "clock",
+     "alt": [
+      "watch",
+      "hour"
+     ],
+     "say": "sah-AHT"
+    },
+    {
+     "id": "tr-0032",
+     "word": "ayakkabı",
+     "meaning": "shoe",
+     "alt": [
+      "shoes"
+     ],
+     "say": "ah-yahk-kah-BUH"
+    },
+    {
+     "id": "tr-0033",
+     "word": "gömlek",
+     "meaning": "shirt",
+     "say": "gurm-LEK"
+    },
+    {
+     "id": "tr-0034",
+     "word": "şapka",
+     "meaning": "hat",
+     "say": "SHAHP-kah"
+    },
+    {
+     "id": "tr-0035",
+     "word": "ağaç",
+     "meaning": "tree",
+     "say": "ah-AHCH"
+    },
+    {
+     "id": "tr-0036",
+     "word": "çiçek",
+     "meaning": "flower",
+     "say": "chee-CHEK"
+    },
+    {
+     "id": "tr-0037",
+     "word": "güneş",
+     "meaning": "sun",
+     "say": "gew-NESH"
+    },
+    {
+     "id": "tr-0038",
+     "word": "ay",
+     "meaning": "moon",
+     "alt": [
+      "month"
+     ],
+     "say": "eye",
+     "hint": "eye: the moon as one huge eye"
+    },
+    {
+     "id": "tr-0039",
+     "word": "yıldız",
+     "meaning": "star",
+     "say": "yuhl-DUHZ"
+    },
+    {
+     "id": "tr-0040",
+     "word": "bulut",
+     "meaning": "cloud",
+     "say": "boo-LOOT",
+     "hint": "loot: a cloud stuffed with loot"
+    },
+    {
+     "id": "tr-0041",
+     "word": "yağmur",
+     "meaning": "rain",
+     "say": "yaa-MOOR"
+    },
+    {
+     "id": "tr-0042",
+     "word": "kar",
+     "meaning": "snow",
+     "say": "kahr",
+     "hint": "car: a car buried in snow"
+    },
+    {
+     "id": "tr-0043",
+     "word": "nehir",
+     "meaning": "river",
+     "say": "neh-HEER"
+    },
+    {
+     "id": "tr-0044",
+     "word": "deniz",
+     "meaning": "sea",
+     "say": "deh-NEEZ",
+     "hint": "Denise: Denise swimming in the sea"
+    },
+    {
+     "id": "tr-0045",
+     "word": "kum",
+     "meaning": "sand",
+     "say": "koom"
+    },
+    {
+     "id": "tr-0046",
+     "word": "dağ",
+     "meaning": "mountain",
+     "say": "daa"
+    },
+    {
+     "id": "tr-0047",
+     "word": "taş",
+     "meaning": "stone",
+     "alt": [
+      "rock"
+     ],
+     "say": "tahsh"
+    },
+    {
+     "id": "tr-0048",
+     "word": "el",
+     "meaning": "hand",
+     "say": "el"
+    },
+    {
+     "id": "tr-0049",
+     "word": "ayak",
+     "meaning": "foot",
+     "say": "ah-YAHK"
+    },
+    {
+     "id": "tr-0050",
+     "word": "göz",
+     "meaning": "eye",
+     "say": "gurz"
+    },
+    {
+     "id": "tr-0051",
+     "word": "kulak",
+     "meaning": "ear",
+     "say": "koo-LAHK"
+    },
+    {
+     "id": "tr-0052",
+     "word": "burun",
+     "meaning": "nose",
+     "say": "boo-ROON"
+    },
+    {
+     "id": "tr-0053",
+     "word": "ağız",
+     "meaning": "mouth",
+     "say": "aa-UHZ"
+    },
+    {
+     "id": "tr-0054",
+     "word": "diş",
+     "meaning": "tooth",
+     "say": "deesh",
+     "hint": "dish: a dish piled with teeth"
+    },
+    {
+     "id": "tr-0055",
+     "word": "kalp",
+     "meaning": "heart",
+     "say": "kahlp"
+    },
+    {
+     "id": "tr-0056",
+     "word": "saç",
+     "meaning": "hair",
+     "say": "sahch"
+    },
+    {
+     "id": "tr-0057",
+     "word": "bıçak",
+     "meaning": "knife",
+     "say": "buh-CHAHK"
+    },
+    {
+     "id": "tr-0058",
+     "word": "kaşık",
+     "meaning": "spoon",
+     "say": "kah-SHUHK"
+    },
+    {
+     "id": "tr-0059",
+     "word": "çatal",
+     "meaning": "fork",
+     "say": "chah-TAHL"
+    },
+    {
+     "id": "tr-0060",
+     "word": "tabak",
+     "meaning": "plate",
+     "say": "tah-BAHK"
+    },
+    {
+     "id": "tr-0061",
+     "word": "bardak",
+     "meaning": "glass",
+     "alt": [
+      "cup"
+     ],
+     "say": "bar-DAHK"
+    },
+    {
+     "id": "tr-0062",
+     "word": "şişe",
+     "meaning": "bottle",
+     "say": "shee-SHEH"
+    },
+    {
+     "id": "tr-0063",
+     "word": "tencere",
+     "meaning": "pot",
+     "alt": [
+      "saucepan"
+     ],
+     "say": "TEN-jeh-reh"
+    },
+    {
+     "id": "tr-0064",
+     "word": "soğan",
+     "meaning": "onion",
+     "say": "soh-AHN"
+    },
+    {
+     "id": "tr-0065",
+     "word": "havuç",
+     "meaning": "carrot",
+     "say": "hah-VOOCH"
+    },
+    {
+     "id": "tr-0066",
+     "word": "portakal",
+     "meaning": "orange",
+     "say": "por-TAH-kahl"
+    },
+    {
+     "id": "tr-0067",
+     "word": "üzüm",
+     "meaning": "grape",
+     "say": "ew-ZEWM"
+    },
+    {
+     "id": "tr-0068",
+     "word": "çilek",
+     "meaning": "strawberry",
+     "say": "chee-LEK"
+    },
+    {
+     "id": "tr-0069",
+     "word": "sokak",
+     "meaning": "street",
+     "say": "soh-KAHK",
+     "hint": "sock: a street paved with socks"
+    },
+    {
+     "id": "tr-0070",
+     "word": "şehir",
+     "meaning": "city",
+     "say": "sheh-HEER"
+    },
+    {
+     "id": "tr-0071",
+     "word": "köy",
+     "meaning": "village",
+     "say": "kuy"
+    },
+    {
+     "id": "tr-0072",
+     "word": "okul",
+     "meaning": "school",
+     "say": "oh-KOOL",
+     "hint": "oh cool: a school everyone calls cool"
+    },
+    {
+     "id": "tr-0073",
+     "word": "dükkan",
+     "meaning": "shop",
+     "alt": [
+      "store"
+     ],
+     "say": "dewk-KAHN"
+    },
+    {
+     "id": "tr-0074",
+     "word": "pazar",
+     "meaning": "market",
+     "alt": [
+      "bazaar"
+     ],
+     "say": "pah-ZAHR"
+    },
+    {
+     "id": "tr-0075",
+     "word": "köprü",
+     "meaning": "bridge",
+     "say": "kurp-REW"
+    },
+    {
+     "id": "tr-0076",
+     "word": "yol",
+     "meaning": "road",
+     "alt": [
+      "way",
+      "path"
+     ],
+     "say": "yohl"
+    },
+    {
+     "id": "tr-0077",
+     "word": "gemi",
+     "meaning": "ship",
+     "alt": [
+      "boat"
+     ],
+     "say": "geh-MEE",
+     "hint": "gem: a ship loaded with gems"
+    },
+    {
+     "id": "tr-0078",
+     "word": "uçak",
+     "meaning": "plane",
+     "alt": [
+      "airplane",
+      "aeroplane"
+     ],
+     "say": "oo-CHAHK"
+    },
+    {
+     "id": "tr-0079",
+     "word": "para",
+     "meaning": "money",
+     "say": "pah-RAH",
+     "hint": "parachute: a parachute made of money"
+    },
+    {
+     "id": "tr-0080",
+     "word": "kağıt",
+     "meaning": "paper",
+     "say": "kaa-UHT"
+    },
+    {
+     "id": "tr-0081",
+     "word": "kalem",
+     "meaning": "pen",
+     "alt": [
+      "pencil"
+     ],
+     "say": "kah-LEM"
+    },
+    {
+     "id": "tr-0082",
+     "word": "ayna",
+     "meaning": "mirror",
+     "say": "eye-NAH",
+     "hint": "eye: an eye staring out of a mirror"
+    },
+    {
+     "id": "tr-0083",
+     "word": "sabun",
+     "meaning": "soap",
+     "say": "sah-BOON"
+    },
+    {
+     "id": "tr-0084",
+     "word": "havlu",
+     "meaning": "towel",
+     "say": "hahv-LOO"
+    },
+    {
+     "id": "tr-0085",
+     "word": "ateş",
+     "meaning": "fire",
+     "say": "ah-TESH"
+    },
+    {
+     "id": "tr-0086",
+     "word": "duman",
+     "meaning": "smoke",
+     "say": "doo-MAHN"
+    },
+    {
+     "id": "tr-0087",
+     "word": "rüzgar",
+     "meaning": "wind",
+     "say": "rewz-GAHR"
+    },
+    {
+     "id": "tr-0088",
+     "word": "yaprak",
+     "meaning": "leaf",
+     "say": "yahp-RAHK"
+    },
+    {
+     "id": "tr-0089",
+     "word": "orman",
+     "meaning": "forest",
+     "alt": [
+      "woods"
+     ],
+     "say": "or-MAHN"
+    },
+    {
+     "id": "tr-0090",
+     "word": "tarla",
+     "meaning": "field",
+     "say": "tar-LAH"
+    },
+    {
+     "id": "tr-0091",
+     "word": "kardeş",
+     "meaning": "sibling",
+     "alt": [
+      "brother",
+      "sister"
+     ],
+     "say": "kar-DESH"
+    },
+    {
+     "id": "tr-0092",
+     "word": "anne",
+     "meaning": "mother",
+     "say": "ahn-NEH"
+    },
+    {
+     "id": "tr-0093",
+     "word": "baba",
+     "meaning": "father",
+     "say": "bah-BAH"
+    },
+    {
+     "id": "tr-0094",
+     "word": "çocuk",
+     "meaning": "child",
+     "say": "choh-JOOK"
+    },
+    {
+     "id": "tr-0095",
+     "word": "arkadaş",
+     "meaning": "friend",
+     "say": "ar-kah-DAHSH"
+    },
+    {
+     "id": "tr-0096",
+     "word": "komşu",
+     "meaning": "neighbour",
+     "alt": [
+      "neighbor"
+     ],
+     "say": "kom-SHOO"
+    },
+    {
+     "id": "tr-0097",
+     "word": "kitap",
+     "meaning": "book",
+     "say": "kee-TAHP",
+     "hint": "kit tap: tapping a kit full of books"
+    },
+    {
+     "id": "tr-0098",
+     "word": "kapak",
+     "meaning": "lid",
+     "alt": [
+      "cover"
+     ],
+     "say": "kah-PAHK"
+    },
+    {
+     "id": "tr-0099",
+     "word": "kale",
+     "meaning": "castle",
+     "alt": [
+      "fortress"
+     ],
+     "say": "kah-LEH",
+     "hint": "kale: a castle built of kale"
+    },
+    {
+     "id": "tr-0100",
+     "word": "kuyu",
+     "meaning": "well",
+     "say": "koo-YOO"
+    },
+    {
+     "id": "tr-0101",
+     "word": "kutu",
+     "meaning": "box",
+     "say": "koo-TOO"
+    }
+   ],
+   "phrases": [
+    {
+     "id": "tr-p001",
+     "phrase": "günaydın",
+     "meaning": "good morning"
+    },
+    {
+     "id": "tr-p002",
+     "phrase": "iyi geceler",
+     "meaning": "good night"
+    },
+    {
+     "id": "tr-p003",
+     "phrase": "lütfen",
+     "meaning": "please"
+    },
+    {
+     "id": "tr-p004",
+     "phrase": "teşekkür ederim",
+     "meaning": "thank you"
+    },
+    {
+     "id": "tr-p005",
+     "phrase": "tuvalet nerede",
+     "meaning": "where is the toilet",
+     "alt": [
+      "where is the bathroom"
+     ]
+    },
+    {
+     "id": "tr-p006",
+     "phrase": "hesap lütfen",
+     "meaning": "the bill please",
+     "alt": [
+      "the check please"
+     ]
+    },
+    {
+     "id": "tr-p007",
+     "phrase": "anlamıyorum",
+     "meaning": "I do not understand",
+     "alt": [
+      "I don't understand"
+     ]
+    },
+    {
+     "id": "tr-p008",
+     "phrase": "ne kadar",
+     "meaning": "how much"
+    },
+    {
+     "id": "tr-p009",
+     "phrase": "benim adım",
+     "meaning": "my name is"
+    },
+    {
+     "id": "tr-p010",
+     "phrase": "yarın görüşürüz",
+     "meaning": "see you tomorrow"
+    },
+    {
+     "id": "tr-p011",
+     "phrase": "özür dilerim",
+     "meaning": "I am sorry",
+     "alt": [
+      "I'm sorry"
+     ]
+    },
+    {
+     "id": "tr-p012",
+     "phrase": "memnun oldum",
+     "meaning": "nice to meet you",
+     "alt": [
+      "pleased to meet you"
+     ]
+    },
+    {
+     "id": "tr-p013",
+     "phrase": "saat kaç",
+     "meaning": "what time is it"
+    },
+    {
+     "id": "tr-p014",
+     "phrase": "sağda",
+     "meaning": "on the right",
+     "alt": [
+      "to the right"
+     ]
+    },
+    {
+     "id": "tr-p015",
+     "phrase": "solda",
+     "meaning": "on the left",
+     "alt": [
+      "to the left"
+     ]
+    },
+    {
+     "id": "tr-p016",
+     "phrase": "iki kişilik masa",
+     "meaning": "a table for two"
+    }
+   ]
+  },
+  "old": {
+   "name": "the old tongue of Veyra",
+   "verified": "Invented for Mnemos. Every new word was checked against all the word lists in the game and a list of rude words, so none is a word you already know.",
+   "sourceUrls": [],
+   "words": [
+    {
+     "id": "old-0001",
+     "word": "rornak",
+     "meaning": "goose"
+    },
+    {
+     "id": "old-0002",
+     "word": "pemuv",
+     "meaning": "brush"
+    },
+    {
+     "id": "old-0003",
+     "word": "dulshei",
+     "meaning": "iguana"
+    },
+    {
+     "id": "old-0004",
+     "word": "keikeiv",
+     "meaning": "paint"
+    },
+    {
+     "id": "old-0005",
+     "word": "baefuth",
+     "meaning": "vase"
+    },
+    {
+     "id": "old-0006",
+     "word": "touldrous",
+     "meaning": "arrow"
+    },
+    {
+     "id": "old-0007",
+     "word": "thozon",
+     "meaning": "otter"
+    },
+    {
+     "id": "old-0008",
+     "word": "zeinam",
+     "meaning": "bottle"
+    },
+    {
+     "id": "old-0009",
+     "word": "maenloun",
+     "meaning": "pumpkin"
+    },
+    {
+     "id": "old-0010",
+     "word": "drakbaes",
+     "meaning": "shirt"
+    },
+    {
+     "id": "old-0011",
+     "word": "shekzuri",
+     "meaning": "bagel"
+    },
+    {
+     "id": "old-0012",
+     "word": "vourgan",
+     "meaning": "bait"
+    },
+    {
+     "id": "old-0013",
+     "word": "touvnae",
+     "meaning": "giraffe"
+    },
+    {
+     "id": "old-0014",
+     "word": "feivus",
+     "meaning": "chair"
+    },
+    {
+     "id": "old-0015",
+     "word": "houthtaes",
+     "meaning": "diamond"
+    },
+    {
+     "id": "old-0016",
+     "word": "gimdae",
+     "meaning": "donkey"
+    },
+    {
+     "id": "old-0017",
+     "word": "yesshaer",
+     "meaning": "frog"
+    },
+    {
+     "id": "old-0018",
+     "word": "krogas",
+     "meaning": "moon"
+    },
+    {
+     "id": "old-0019",
+     "word": "yaeme",
+     "meaning": "hedge"
+    },
+    {
+     "id": "old-0020",
+     "word": "vrulteith",
+     "meaning": "spinach"
+    },
+    {
+     "id": "old-0021",
+     "word": "saedri",
+     "meaning": "sail"
+    },
+    {
+     "id": "old-0022",
+     "word": "naebrev",
+     "meaning": "skunk"
+    },
+    {
+     "id": "old-0023",
+     "word": "pavdi",
+     "meaning": "backpack"
+    },
+    {
+     "id": "old-0024",
+     "word": "paekdre",
+     "meaning": "camera"
+    },
+    {
+     "id": "old-0025",
+     "word": "therdraem",
+     "meaning": "raspberry"
+    },
+    {
+     "id": "old-0026",
+     "word": "bruthsi",
+     "meaning": "scooter"
+    },
+    {
+     "id": "old-0027",
+     "word": "loutor",
+     "meaning": "highway",
+     "alt": [
+      "motorway"
+     ]
+    },
+    {
+     "id": "old-0028",
+     "word": "haesgreth",
+     "meaning": "cabbage"
+    },
+    {
+     "id": "old-0029",
+     "word": "taemae",
+     "meaning": "hill"
+    },
+    {
+     "id": "old-0030",
+     "word": "nemdo",
+     "meaning": "melon"
+    },
+    {
+     "id": "old-0031",
+     "word": "yaedous",
+     "meaning": "necklace"
+    },
+    {
+     "id": "old-0032",
+     "word": "bidraev",
+     "meaning": "llama"
+    },
+    {
+     "id": "old-0033",
+     "word": "gamdaek",
+     "meaning": "ladle"
+    },
+    {
+     "id": "old-0034",
+     "word": "pagrim",
+     "meaning": "cello"
+    },
+    {
+     "id": "old-0035",
+     "word": "paerbrou",
+     "meaning": "monkey"
+    },
+    {
+     "id": "old-0036",
+     "word": "lemveth",
+     "meaning": "tower"
+    },
+    {
+     "id": "old-0037",
+     "word": "shuthshev",
+     "meaning": "fox"
+    },
+    {
+     "id": "old-0038",
+     "word": "zaethfeik",
+     "meaning": "radish"
+    },
+    {
+     "id": "old-0039",
+     "word": "genkruv",
+     "meaning": "teddy bear"
+    },
+    {
+     "id": "old-0040",
+     "word": "draesheth",
+     "meaning": "berry"
+    },
+    {
+     "id": "old-0041",
+     "word": "kaerzir",
+     "meaning": "tunnel"
+    },
+    {
+     "id": "old-0042",
+     "word": "fenpae",
+     "meaning": "knife"
+    },
+    {
+     "id": "old-0043",
+     "word": "vraelko",
+     "meaning": "pillow"
+    },
+    {
+     "id": "old-0044",
+     "word": "grithpik",
+     "meaning": "leaf"
+    },
+    {
+     "id": "old-0045",
+     "word": "nelzormun",
+     "meaning": "walrus"
+    },
+    {
+     "id": "old-0046",
+     "word": "drukreil",
+     "meaning": "sled"
+    },
+    {
+     "id": "old-0047",
+     "word": "taraevsom",
+     "meaning": "raven"
+    },
+    {
+     "id": "old-0048",
+     "word": "deilbre",
+     "meaning": "whistle"
+    },
+    {
+     "id": "old-0049",
+     "word": "boustouk",
+     "meaning": "barrel"
+    },
+    {
+     "id": "old-0050",
+     "word": "gremorlom",
+     "meaning": "mug"
+    },
+    {
+     "id": "old-0051",
+     "word": "nouthkruv",
+     "meaning": "wagon"
+    },
+    {
+     "id": "old-0052",
+     "word": "foumei",
+     "meaning": "barber"
+    },
+    {
+     "id": "old-0053",
+     "word": "breinek",
+     "meaning": "gate"
+    },
+    {
+     "id": "old-0054",
+     "word": "thorki",
+     "meaning": "pony"
+    },
+    {
+     "id": "old-0055",
+     "word": "domseil",
+     "meaning": "bell"
+    },
+    {
+     "id": "old-0056",
+     "word": "drunsalun",
+     "meaning": "dog"
+    },
+    {
+     "id": "old-0057",
+     "word": "pidre",
+     "meaning": "candy",
+     "alt": [
+      "sweets"
+     ]
+    },
+    {
+     "id": "old-0058",
+     "word": "fouvrav",
+     "meaning": "suitcase"
+    },
+    {
+     "id": "old-0059",
+     "word": "kroumguk",
+     "meaning": "quail"
+    },
+    {
+     "id": "old-0060",
+     "word": "shidir",
+     "meaning": "truck",
+     "alt": [
+      "lorry"
+     ]
+    },
+    {
+     "id": "old-0061",
+     "word": "lomge",
+     "meaning": "torch"
+    },
+    {
+     "id": "old-0062",
+     "word": "yimtaek",
+     "meaning": "tiger"
+    },
+    {
+     "id": "old-0063",
+     "word": "lidrei",
+     "meaning": "turtle"
+    },
+    {
+     "id": "old-0064",
+     "word": "neimshil",
+     "meaning": "kazoo"
+    },
+    {
+     "id": "old-0065",
+     "word": "brokrov",
+     "meaning": "lemon"
+    },
+    {
+     "id": "old-0066",
+     "word": "zaldruk",
+     "meaning": "tunic"
+    },
+    {
+     "id": "old-0067",
+     "word": "kralleir",
+     "meaning": "kangaroo"
+    },
+    {
+     "id": "old-0068",
+     "word": "vroukvaes",
+     "meaning": "asparagus"
+    },
+    {
+     "id": "old-0069",
+     "word": "taethbra",
+     "meaning": "scarf"
+    },
+    {
+     "id": "old-0070",
+     "word": "senkak",
+     "meaning": "raccoon"
+    },
+    {
+     "id": "old-0071",
+     "word": "nevhel",
+     "meaning": "van"
+    },
+    {
+     "id": "old-0072",
+     "word": "lokvrei",
+     "meaning": "jellyfish"
+    },
+    {
+     "id": "old-0073",
+     "word": "vraevril",
+     "meaning": "broom"
+    },
+    {
+     "id": "old-0074",
+     "word": "zaerlar",
+     "meaning": "apron"
+    },
+    {
+     "id": "old-0075",
+     "word": "shemhous",
+     "meaning": "pig"
+    },
+    {
+     "id": "old-0076",
+     "word": "peimgae",
+     "meaning": "kite"
+    },
+    {
+     "id": "old-0077",
+     "word": "vraeda",
+     "meaning": "mango"
+    },
+    {
+     "id": "old-0078",
+     "word": "meimpuv",
+     "meaning": "nectarine"
+    },
+    {
+     "id": "old-0079",
+     "word": "kuthzael",
+     "meaning": "sloth"
+    },
+    {
+     "id": "old-0080",
+     "word": "sevbeipae",
+     "meaning": "blouse"
+    },
+    {
+     "id": "old-0081",
+     "word": "souvkrul",
+     "meaning": "lock"
+    },
+    {
+     "id": "old-0082",
+     "word": "shebeith",
+     "meaning": "bulb"
+    },
+    {
+     "id": "old-0083",
+     "word": "graemyeil",
+     "meaning": "armor",
+     "alt": [
+      "armour"
+     ]
+    },
+    {
+     "id": "old-0084",
+     "word": "shikthu",
+     "meaning": "wizard"
+    },
+    {
+     "id": "old-0085",
+     "word": "krisbror",
+     "meaning": "canoe"
+    },
+    {
+     "id": "old-0086",
+     "word": "brorbo",
+     "meaning": "pizza"
+    }
+   ]
+  }
+ }
+}

@@ -9,8 +9,28 @@ const VARIANT_NAME = {
   peg: 'Pegs', group: 'Digits in groups', rows: 'Digit rows', grocery: 'Shopping lists', steps: 'Steps', points: 'Talk points', body: 'Study terms',
   numbered: 'Numbered words', surname: 'Names and surnames', skim: 'Skim, Pick, Keep', map: 'Mind Map', poem: 'Poem', calc: 'Mental Reckoning',
   atlas: 'Capitals', elements: 'Elements', roots: 'Word roots', music: 'Music theory', chess: 'Chess openings',
+  formulas: 'Formulae', dates: 'Historical dates', trivia: 'General knowledge', wonders: 'Surprising facts', jokes: 'Jokes', diagram: 'Labelled diagrams',
 };
-export const methodLabel = (key) => VARIANT_NAME[key] || TEMPLATE_NAME[key] || key;
+// 1.2 new-language and scene variants have compound keys (vocab-es-produce, scene-sc-shop-choose).
+const LANG_WORD = { sw: 'Swahili', es: 'Spanish', tr: 'Turkish', old: 'Old tongue' };
+const PART_WORD = { produce: 'meaning to word', gender: 'with el or la', alike: 'look-alikes', sounds: 'sounds only', phrases: 'phrases' };
+const SCENE_WORD = { 'sc-shop': 'Shopping list', 'sc-way': 'Directions', 'sc-party': 'Names at a party', 'sc-voicemail': 'Voicemails', 'sc-tram': 'Tram board', 'sc-recipe': 'Recipe', 'sc-menu': 'Spanish menu', 'sc-dinner': 'Jokes at dinner', 'sc-board': 'Teacher\'s board', any: 'Mixed' };
+function compoundLabel(key) {
+  const parts = key.split('-');
+  if (parts[0] === 'vocab') {
+    const [, ...rest] = parts;
+    const lang = LANG_WORD[rest[0]] ? LANG_WORD[rest.shift()] : 'Swahili';
+    const extra = rest.map((x) => PART_WORD[x]).filter(Boolean);
+    return `Vocabulary: ${lang}${extra.length ? ` (${extra.join(', ')})` : ''}`;
+  }
+  if (parts[0] === 'scene') {
+    const choose = key.endsWith('-choose');
+    const id = key.replace(/^scene-/, '').replace(/-choose$/, '');
+    return `Real-life Scene: ${SCENE_WORD[id] || id}${choose ? ' (you chose the technique)' : ''}`;
+  }
+  return null;
+}
+export const methodLabel = (key) => VARIANT_NAME[key] || TEMPLATE_NAME[key] || compoundLabel(key) || key;
 
 // First scored attempt (never guided practice), the latest and the best, for each task or variant tried at least twice.
 export function thenAndNow(p) {

@@ -7,6 +7,7 @@ import { evaluateSideQuests } from './quests.js';
 import { grantKeys, ensureCrypt } from './crypt.js';
 import { mean, daysBetween, addDays, clamp } from './util.js';
 import { variantOf } from './additions.js';
+import { updateLadder, pickFits, transferResults, transferScore } from './scene.js';
 
 // Practice drills that never change skill estimates or earn Lumen (1.1: Mental Reckoning).
 const NO_CREDIT = ['calc'];
@@ -45,10 +46,13 @@ export function applyDrill(p, session, step, result, timing) {
     level: step.level, n: result.n, correct: result.correct, acc: result.acc, errs: result.errs,
     battery: !!step.battery, interference: !!step.spec.interference, studyMs: timing.studyMs || 0, recallMs: timing.recallMs || 0, speed: result.acc >= 0.8 ? spd : null, timed: !!step.spec.timed,
     ...(variantOf(step.spec) ? { v: variantOf(step.spec) } : {}), // 1.1: which variant, so Then and Now can tell them apart
+    ...(step.spec.t === 'scene' ? { sc: step.extra?.scene?.id || step.spec.sc || null, mode: step.sceneMode || null, ...(result.pick ? { pick: result.pick, pickOk: pickFits(step.extra?.scene?.id, result.pick).ok } : {}) } : {}),
   };
   p.results.push(record);
   // Only independent, unscaffolded drills update skill estimates (guided, warm-up, review, free and baseline do not).
-  if (['practice', 'check', 'gate', 'remedial'].includes(step.role) && !NO_CREDIT.includes(step.spec.t)) events.push(...updateSkill(p, step.skill, result, step.role, speedOk));
+  // 1.2: a scene still shown with a worked example or a how-to is scaffolded, so it does not change skill estimates either.
+  const scaffolded = step.spec.t === 'scene' && ['worked', 'guided'].includes(step.sceneMode);
+  if (['practice', 'check', 'gate', 'remedial'].includes(step.role) && !NO_CREDIT.includes(step.spec.t) && !scaffolded) events.push(...updateSkill(p, step.skill, result, step.role, speedOk));
   if (step.role === 'baseline') {
     p.baseline = p.baseline || { date: t, results: {} };
     p.baseline.results[step.spec.t] = result.acc;
@@ -57,6 +61,13 @@ export function applyDrill(p, session, step, result, timing) {
   const storable = step.role === 'practice' || step.role === 'remedial' || (step.role === 'guided' && !hasPractice);
   const isFirstPractice = storable && !session.steps.some((s) => s._stored);
   if (isFirstPractice || step.role === 'gate') { storeSet(p, step, result); step._stored = true; }
+  else if (step.spec.t === 'scene' && storable && !session.steps.some((s) => s._sceneStored)) { storeSet(p, step, result); step._sceneStored = true; } // 1.2: one scene a session comes back, asked differently
+  // 1.2 the technique ladder moves on the answers only (scaffolded and review rounds do not count)
+  if (step.spec.t === 'scene' && ['practice', 'check', 'gate', 'remedial'].includes(step.role)) {
+    const fit = step.extra?.scene?.fit || [];
+    const tech = result.pick && fit.includes(result.pick) ? result.pick : fit[0];
+    if (tech) record.ladder = updateLadder(p, tech, result.acc);
+  }
 
   let lumen = Math.round(10 * result.acc * (1 + 0.1 * ((step.level || 1) - 1)));
   if (step.role === 'warmup') lumen = Math.round(lumen / 2);
@@ -77,11 +88,11 @@ export function applyProbeStep(p, session, step, result) {
   const set = p.sets.find((s) => s.id === step.setId);
   if (!set) return { lumen: 0, events: [] };
   const { delay, ratio, pass } = applyProbe(p, set, result);
-  noteProbe(p, set, result); // 1.1 brambles: a record of what slipped, and what held on a later day
+  if (!step.flip) noteProbe(p, set, result); // 1.1 brambles: a record of what slipped (1.2: not for reviews asked another way)
   const factor = delay >= 30 ? 1.8 : delay >= 7 ? 1.4 : 1;
   const lumen = Math.round(25 * ratio * factor);
   p.progress.lumen += lumen;
-  p.results.push({ date: today(p), day: session.day, session: session.id, type: session.type, role: 'probe', t: set.t, skill: set.skill, n: result.n, correct: result.correct, acc: result.acc, ratio, delay, pass, errs: result.errs, lumen, ...(variantOf(set.spec) ? { v: variantOf(set.spec) } : {}) });
+  p.results.push({ date: today(p), day: session.day, session: session.id, type: session.type, role: 'probe', t: set.t, skill: set.skill, n: result.n, correct: result.correct, acc: result.acc, ratio, delay, pass, errs: result.errs, lumen, ...(variantOf(set.spec) ? { v: variantOf(set.spec) } : {}), ...(step.flip ? { flip: true } : {}) });
   if (delay >= 1 && result.acc >= 0.9) unlock(p, 'it_stayed');
   if (delay >= 7 && result.acc >= 0.8) unlock(p, 'week_later');
   if (delay >= 7 && pass) { ensureCrypt(p); grantKeys(p, 1); }
@@ -221,8 +232,8 @@ export function componentScores(p) {
   const speed = timed.length ? 100 * mean(timed.map((r) => r.speed)) : null;
   const intro = Object.values(p.skills).filter((s) => s.attempts > 0);
   const mastery = intro.length ? 100 * mean(intro.map((s) => s.mastery / 4)) : null;
-  const checks = res.filter((r) => ['check', 'gate'].includes(r.role) && within(p, r, 14));
-  const transfer = checks.length ? 100 * mean(checks.map((r) => r.acc)) : null;
+  // 1.2 honest transfer: only scenes and next-day questions asked in a new form count. Before the first one there is no score.
+  const transfer = transferScore(transferResults(res.filter((r) => within(p, r, 30))));
   return { accuracy, retention, speed, mastery, transfer };
 }
 

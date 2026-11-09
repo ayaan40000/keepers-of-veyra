@@ -107,10 +107,12 @@ async function fillRecall(missOne) {
   for (let i = 0; i < n; i++) await inputs.nth(i).fill(missOne && i === 0 ? '' : words[i] || '');
 }
 
+let scenesSeen = 0; // 1.2: full sessions from week 3 include a Real-life Scene
 async function runSession(label, { missOne = true } = {}) {
   let guided = null, steps = 0;
   for (let i = 0; i < 400; i++) {
     await page.waitForTimeout(40);
+    if (await page.locator('.recall .scene-questions').count()) scenesSeen++;
     if (await visible('Back to Today')) { await snap(`${label}-summary`); await overflowCheck(label + ' summary'); await btn('Back to Today').click(); return steps; }
     if (await page.locator('.stimulus').count()) {
       if (await page.locator('.guided-item').count()) {
@@ -193,6 +195,8 @@ for (const w of [5, 9, 14]) {
   await runSession('week' + w, { missOne: w !== 5 });
   log(`week ${w} session complete`);
 }
+log('real-life scenes walked:', scenesSeen);
+if (scenesSeen < 2) throw new Error('expected a Real-life Scene in the week 5 and week 9 sessions');
 
 // 6. Progress, Veyra, Palaces render
 for (const t of ['Progress', 'Veyra', 'Palaces', 'Relics', 'Keeper']) {

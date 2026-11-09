@@ -71,6 +71,37 @@ Alt text is plain language, no em dashes. Item, quest and achievement ids are pe
 
 Only the model file names in the ComfyUI workflow (`comfy_qwen_workflow.json`: `UNETLoader`, `CLIPLoader`, `VAELoader`) need swapping, plus the text encoder node type if the new model does not use `TextEncodeQwenImage21`. Move the old PNGs in `out/new/` and `out/day/` aside, run `gen.py`, pick seeds in `ship.PICK`, run `day.py` (it needs a model that accepts reference images; otherwise set `METHOD = "img2img"` with a denoise near 0.6), run `ship.py`, and change the `model` string in `ship.py`.
 
+## Painted scenes that move (started Nov 6, 2026)
+
+Owner request: use image-model pictures for the animated screens, at a higher, face-like pixel density. Pilot: the
+Undercroft entrance. No video is generated. Each scene is two matching stills, `lit` (every lamp burning) and `dark`
+(lamps out), sharing one palette. The game draws `dark`, then shows `lit` through a flickering, dithered light mask
+(`src/pixel/painted.js`), so the light moves over the painted stone. Code flames, mist and dust sit on top
+(`drawEntrancePainted` in `src/ui/Crypt.jsx`). If no painted scene ships, the code-drawn scene shows as before.
+
+- **Pixel density:** the same as the painted faces, about 4 image pixels per art pixel (`pixel` in `SCENES`). The tool
+  checks for an exact pixel grid first; image-model pictures usually have none. Paint at about 2 MP for scenes roughly
+  470 art pixels wide. The picture's shape is free (16:9 by default).
+- **Colours:** up to 96. 84 are picked by area and 12 are kept for the brightest spots, so small lamps and windows keep their glow.
+- **Reading the picture:** `motion.py` finds the light sources (what is brighter in `lit` than in `dark`) and the
+  small bright warm spots (flames), and writes their positions into `src/data/scenes.js`. The game animates
+  exactly those spots. If there is no painted dark version, the tool makes a darker copy and every flame becomes a
+  flickering light.
+- **Rules:** this art is shown only outside study and recall (the entrance is never mounted during a floor). With
+  reduced motion it shows one still frame. The canvas pauses when it is off screen or the tab is hidden. Scene
+  pictures count toward the 5 MB art budget (`ship.py` and `motion.py` both report the total).
+
+```
+python tools/asset-studio/motion.py guide                  # code-drawn entrance -> guides/crypt_entrance.png (no model)
+python tools/asset-studio/motion.py paint --seeds 2        # image model: lit from the guide, dark as an edit of lit
+python tools/asset-studio/motion.py ship --seed s0         # reduce, read lights/flames, ship, write src/data/scenes.js
+python tools/asset-studio/motion.py ship --seed out/new/event_undercroft_entrance_s0.png --dark derive   # any painted picture
+python tools/asset-studio/motion.py standin                # stand-in from the guide, to test code without the model
+python tools/asset-studio/motion.py gif                    # out/motion/<id>.gif, recorded from the real game code
+```
+The review sheet `out/motion/<id>_sheet.png` shows the guide, lit, dark, the lights and flames found, and a face
+picture at the same zoom for comparing pixel size. Prompts and seeds go into `art-jobs.json` under `motion`.
+
 ## Faces for the Names-and-Faces drills (owner chose image-model faces, Nov 2, 2026)
 
 Pipeline (`tools/asset-studio/`): `people.py` builds a balanced cast from a recipe (heritage, skin tone, age band, build, height, features,

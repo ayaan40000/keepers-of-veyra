@@ -6,6 +6,7 @@ import React, { useEffect, useLayoutEffect, useMemo, useRef, useState } from 're
 import Drill from './Drill.jsx';
 import RunCard from './RunCard.jsx';
 import { PixelCanvas, Sprite, makeBuffer, prng, reducedMotion } from '../pixel/core.js';
+import { paintedScene, loadPlates, lightBlend, sceneLights } from '../pixel/painted.js';
 import { TEMPLATE_NAME } from '../data/curriculum.js';
 import { CRYPT_TUNING, BANDS, TREASURES, TABLETS, bandFor } from '../data/crypt.js';
 import { ensureCrypt, newCrypt, canEnter, startRun, floorSpec, applyFloorResult, climbOut, treasureById, tabletById, enterFloor, settleAbandonedFloor, isEchoFloor, isBossFloor, weekKey } from '../engine/crypt.js';
@@ -123,13 +124,16 @@ function torchSconce(x, cx, y) {
   R(x, K.wood3, cx - 1, y - 3, 3, 4); R(x, K.wood, cx, y - 3, 1, 4);
 }
 
-function mist(x, t, y0, h, dens = 0.55, col = '184,194,214', speed = 1) {
-  for (let y = y0; y < y0 + h; y++) {
-    const fall = (y - y0) / h;
-    for (let X = 0; X < SW; X++) {
-      const n = vnoise(X * 0.06 + t * 0.35 * speed, y * 0.22 - t * 0.06) * 0.7 + vnoise(X * 0.16 - t * 0.55 * speed, y * 0.4 + 9) * 0.3;
+// Drifting floor mist. W, cell and k let painted scenes use it: k = scene pixels per code pixel (keeps the
+// mist's shapes the same size), cell = size of one mist dot (keeps the work per frame small).
+function mist(x, t, y0, h, dens = 0.55, col = '184,194,214', speed = 1, W = SW, cell = 1, k = 1) {
+  for (let y = y0; y < y0 + h; y += cell) {
+    const fall = (y - y0) / h, Y = y / k;
+    for (let X = 0; X < W; X += cell) {
+      const Xk = X / k;
+      const n = vnoise(Xk * 0.06 + t * 0.35 * speed, Y * 0.22 - t * 0.06) * 0.7 + vnoise(Xk * 0.16 - t * 0.55 * speed, Y * 0.4 + 9) * 0.3;
       const v = n * dens * (0.25 + fall * 1.1);
-      if (v > 0.32 + bay(X, y) * 0.5) { x.fillStyle = `rgba(${col},${v > 0.62 ? 0.42 : 0.24})`; x.fillRect(X, y, 1, 1); }
+      if (v > 0.32 + bay(X / cell, y / cell) * 0.5) { x.fillStyle = `rgba(${col},${v > 0.62 ? 0.42 : 0.24})`; x.fillRect(X, y, cell, cell); }
     }
   }
 }
@@ -243,6 +247,69 @@ function drawEntrance(x, t, o = {}) {
   for (let y = 10; y < 97; y++) { const cx = 103 + (y - 10) * 0.18; const w = 3 + (y - 10) * 0.06; for (let i = -1; i <= w; i++) if (bay(Math.round(cx + i), y) < 0.12) { x.fillStyle = 'rgba(214,224,244,0.22)'; x.fillRect(Math.round(cx + i), y, 1, 1); } }
   flame(x, 34, 45, t, 0); flame(x, 142, 45, t, 1.9);
   if (o.lit) { const g = 0.5 + Math.sin(t * 3) * 0.5; R(x, g > 0.5 ? K.amber2 : K.amber, CX - 1, 78, 3, 2); R(x, K.amber, CX, 80, 1, 3); }
+}
+
+// Painted entrance (src/data/scenes.js): the picture's own lights flicker and relight the stone, and the
+// code-drawn flames, mist and dust sit on top at the picture's finer pixel size. Positions come from the
+// manifest (found in the picture by tools/asset-studio/motion.py), so the picture may have any shape.
+function drawEntrancePainted(x, t, o, P, plates) {
+  const k = P.h / SH; // scene pixels per code pixel, so effects keep their size
+  const extra = o.lit && P.door ? [{ x: P.door[0], y: P.door[1], r: (18 + Math.sin(t * 3) * 2) * k, i: 0.9 }] : [];
+  lightBlend(x, P, plates, sceneLights(P, t, extra));
+  if (P.shaft) { // dust drifting down a beam of light
+    const [sx, sy, ex, ey] = P.shaft;
+    for (let i = 0; i < 9; i++) { const p = (t * 0.06 + i * 0.111) % 1; R(x, '#c9d2e6', Math.round(sx + (ex - sx) * p + Math.sin(t + i) * 2 * k), Math.round(sy + (ey - sy) * p), 2, 2); }
+  }
+  if (P.mist) mist(x, t, Math.round(P.h * P.mist[0]), Math.round(P.h * P.mist[1]), 0.85, '184,194,214', 1, P.w, 2, k); // pictures with painted mist have none
+  (P.flames || []).forEach((f, i) => flame(x, f[0], f[1], t, i * 1.9, f[2] || k * 0.8));
+}
+
+// A painted scene's manifest entry and its loaded pictures, or null while loading or when none ships.
+function usePaintedArt(id) {
+  const P = paintedScene(id);
+  const [st, setSt] = useState(() => { if (!P) return null; const r = loadPlates(P); return r.ready ? { P, plates: r } : null; });
+  useEffect(() => {
+    if (!P) { setSt(null); return; }
+    const r = loadPlates(P);
+    if (r.ready) setSt({ P, plates: r }); else { setSt(null); loadPlates(P, (rec) => setSt({ P, plates: rec })); }
+  }, [P]);
+  return P && st && st.P === P ? st : null;
+}
+
+// The entrance scene: painted when a painted version ships, otherwise the code-drawn door.
+function EntranceScene({ lit, label }) {
+  const art = usePaintedArt('crypt_entrance');
+  if (art) {
+    const { P, plates } = art;
+    return <Scene key="painted" w={P.w} h={P.h} fine draw={(x, t) => drawEntrancePainted(x, t, { lit }, P, plates)} deps={[lit, plates]} label={label} />;
+  }
+  return <Scene draw={(x, t) => drawEntrance(x, t, { lit })} deps={[lit]} label={label} />;
+}
+
+// Painted chamber (one painting per decor, src/data/scenes.js crypt_chamber_<decor>): torch light flickers over the
+// painted stone, and the floating lamp-orb, flames and mist are drawn on top at the painting's pixel size.
+function drawChamberPainted(x, t, o, P, plates) {
+  const k = P.h / SH, ox = (P.w - SW * k) / 2;
+  const extra = o.noOrb ? [] : [{ x: ox + CX * k, y: 62 * k, r: (58 + Math.sin(t * 2.2) * 2) * k, i: 1.05 }];
+  lightBlend(x, P, plates, sceneLights(P, t, extra), { ambient: o.ambient != null ? Math.max(0, o.ambient - 0.17) : 0 });
+  if (P.mist) mist(x, t, Math.round(P.h * P.mist[0]), Math.round(P.h * P.mist[1]), 0.6, '184,194,214', 0.7, P.w, 2, k);
+  (P.flames || []).forEach((f, i) => flame(x, f[0], f[1], t, i * 2.1, f[2] || k * 0.8));
+  if (!o.noOrb) {
+    x.save(); x.setTransform(k, 0, 0, k, ox, 0);
+    const oy = Math.round(60 + Math.sin(t * 2.2) * 2);
+    R(x, K.ember, CX, oy - 5, 1, 1); R(x, K.amber, CX - 1, oy - 4, 3, 1); R(x, K.amber, CX - 2, oy - 3, 5, 3); R(x, K.amber2, CX - 1, oy - 3, 2, 2); R(x, K.amber, CX - 1, oy, 3, 1); R(x, K.ember, CX, oy + 1, 1, 1); R(x, K.white, CX - 1, oy - 3, 1, 1);
+    x.restore();
+  }
+}
+
+// The chamber scene: painted for this band's decor when one ships, otherwise the code-drawn chamber.
+function ChamberScene({ band, noOrb = false, ambient, label, children }) {
+  const art = usePaintedArt(`crypt_chamber_${band.decor}`);
+  if (art) {
+    const { P, plates } = art;
+    return <Scene key={`painted-${band.decor}`} w={P.w} h={P.h} fine draw={(x, t) => drawChamberPainted(x, t, { noOrb, ambient }, P, plates)} deps={[band.name, noOrb, plates]} label={label}>{children}</Scene>;
+  }
+  return <Scene draw={(x, t) => drawChamber(x, t, { band, noOrb, ambient })} deps={[band.name]} label={label}>{children}</Scene>;
 }
 
 // ---- Stairwell: endless descent, scrolling diagonally. Period: 80px across, 40px down.
@@ -413,6 +480,16 @@ function drawChamber(x, t, o = {}) {
   flame(x, 18, 47, t, 0); flame(x, 158, 47, t, 2.1);
 }
 
+// Layout guide for tools/asset-studio (scene_capture.mjs chamber): the code-drawn chamber of the first band with
+// this decor, still. Not used by the game.
+export function chamberGuideCanvas(decor) {
+  const band = BANDS.find((b) => b.decor === decor) || BANDS[0];
+  const c = document.createElement('canvas'); c.width = SW; c.height = SH;
+  const x = c.getContext('2d'); x.imageSmoothingEnabled = false;
+  drawChamber(x, 0, { band, noOrb: true, ambient: 0.6 });
+  return c;
+}
+
 // ---- Chest opening (small celebration)
 function drawChest(x, t, o = {}) {
   drawChamber(x, t, { band: o.band, noOrb: true, ambient: 0.08, extraLights: [{ x: CX, y: 86, r: 18 + ease((t - 0.6) / 0.6) * 40, i: 0.4 + ease((t - 0.6) / 0.6) * 1.1 }] });
@@ -568,27 +645,39 @@ function relicCanvas(id, hue) { return cached(`relic-${id}`, 16, 16, (c) => { co
 // ======================================================================
 // Layout pieces
 // ======================================================================
-function useIntScale(w) {
+// Whole-number scale in CSS pixels. `fine` (painted scenes, up to 960 picture pixels wide): whole-number scale
+// in DEVICE pixels instead, so each picture pixel is a crisp 1x1, 2x2 or 3x3 block of screen dots (a desktop
+// screen shows the 960-wide entrance at 1:1). If even 1 device pixel per picture pixel does not fit, the
+// picture is shrunk smoothly to fit (averaging keeps the detail; dropping every other pixel would not).
+function useIntScale(w, fine = false) {
   const ref = useRef(null);
-  const [scale, setScale] = useState(2);
+  const [scale, setScale] = useState(fine ? 1 : 2);
   useLayoutEffect(() => {
     const el = ref.current; if (!el) return undefined;
-    const fit = () => setScale(Math.max(1, Math.min(4, Math.floor((el.clientWidth || w * 2) / w))));
+    const fit = () => {
+      const cw = el.clientWidth || w * 2;
+      if (!fine) { setScale(Math.max(1, Math.min(4, Math.floor(cw / w)))); return; }
+      const dpr = (typeof window !== 'undefined' && window.devicePixelRatio) || 1;
+      const dev = Math.min(8, Math.floor((cw * dpr + 0.5) / w));
+      setScale(dev >= 1 ? dev / dpr : cw / w);
+    };
     fit();
     const ro = typeof ResizeObserver !== 'undefined' ? new ResizeObserver(fit) : null;
     ro?.observe(el);
     return () => ro?.disconnect();
-  }, [w]);
+  }, [w, fine]);
   return [ref, scale];
 }
 
-function Scene({ w = SW, h = SH, draw, animate = true, deps = [], label, children, className = '' }) {
-  const [ref, scale] = useIntScale(w);
+function Scene({ w = SW, h = SH, fine = false, draw, animate = true, deps = [], label, children, className = '' }) {
+  const [ref, scale] = useIntScale(w, fine);
+  const dpr = (typeof window !== 'undefined' && window.devicePixelRatio) || 1;
   const style = { width: w * scale, height: h * scale };
+  const canvasStyle = scale * dpr < 0.999 ? { ...style, imageRendering: 'auto' } : style; // shrinking: average, do not drop pixels
   return (
-    <div ref={ref} className={`crypt-scene ${className}`}>
+    <div ref={ref} className={`crypt-scene ${fine ? 'is-fine' : ''} ${className}`}>
       <div className="crypt-scene-inner" style={style}>
-        <PixelCanvas w={w} h={h} draw={draw} animate={animate} fps={12} label={label} deps={deps} style={style} />
+        <PixelCanvas w={w} h={h} draw={draw} animate={animate} fps={12} label={label} deps={deps} style={canvasStyle} />
         {children && <div className="crypt-scene-over">{children}</div>}
       </div>
     </div>
@@ -819,7 +908,7 @@ export default function Crypt({ profile, update, onExit, treasureIcon }) {
           <p className="crypt-kicker">Beneath the Archive</p>
           <h1 className="crypt-title">The Undercroft</h1>
         </header>
-        <Scene draw={(x, t) => drawEntrance(x, t, { lit: crypt.keys > 0 || !!run })} deps={[crypt.keys > 0 || !!run]} label="An iron door under the Archive floor, lit by two torches" />
+        <EntranceScene lit={crypt.keys > 0 || !!run} label="An iron door under the Archive floor, lit by two torches" />
         <div className="crypt-panel">
           <div className="crypt-stats">
             <div><small>Keys</small><Keys n={crypt.keys} /></div>
@@ -921,9 +1010,9 @@ export default function Crypt({ profile, update, onExit, treasureIcon }) {
       <>
         <Hud floor={step.floor} lamps={profile.crypt?.run?.lamps ?? result?.lamps ?? 0} deepest={deepest} />
         {!live && !result && (
-          <Scene draw={(x, t) => drawChamber(x, t, { band: b })} deps={[b.name]} label={`The chamber of floor ${step.floor}: ${b.name}`}>
+          <ChamberScene band={b} label={`The chamber of floor ${step.floor}: ${b.name}`}>
             <div className="crypt-floorplate small"><b>{b.name}</b></div>
-          </Scene>
+          </ChamberScene>
         )}
         {banner}
         <div className={`crypt-drill${live ? ' is-live' : ''}`}>
@@ -937,7 +1026,7 @@ export default function Crypt({ profile, update, onExit, treasureIcon }) {
     body = (
       <>
         <Hud floor={run.floor} lamps={run.lamps} deepest={deepest} />
-        <Scene draw={(x, t) => drawChamber(x, t, { band: b, noOrb: true, ambient: 0.08 })} deps={[b.name]} label="The chamber grows darker" />
+        <ChamberScene band={b} noOrb ambient={0.08} label="The chamber grows darker" />
         <div className="crypt-panel">
           <h2 className="crypt-band">The lamp gutters</h2>
           {leftFloor != null && run.floor === leftFloor && <p className="crypt-note">You left the chamber before the trial ended, so it counts as a miss.</p>}
@@ -999,7 +1088,7 @@ export default function Crypt({ profile, update, onExit, treasureIcon }) {
   } else if (view === 'out') {
     body = (
       <>
-        <Scene draw={(x, t) => drawEntrance(x, t, { lit: crypt.keys > 0 })} deps={[crypt.keys > 0]} label="Back at the iron door" />
+        <EntranceScene lit={crypt.keys > 0} label="Back at the iron door" />
         <div className="crypt-panel">
           <h2 className="crypt-band">You climb back into the lamplight</h2>
           <p className="crypt-line">The door swings shut below you with a sound like a held breath let go. What you carried up is yours to keep.</p>

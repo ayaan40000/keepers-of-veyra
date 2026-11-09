@@ -244,7 +244,7 @@ const centre = (id) => { const s = LANDMARKS[id]; return { x: s.x0 + (s.w >> 1),
 export const DISTRICT_POS = Object.fromEntries(DISTRICT_IDS.map((id) => [id, centre(id)]));
 export const ARCHIVE_POS = centre('archive');
 
-const ROUTE = [
+export const ROUTE = [ // one street walk per district (M1..M12); exported for the painted map's townsfolk
   [[150, 281], [150, 258], [60, 258]],
   [[60, 258], [178, 258]],
   [[140, 258], [140, 224], [54, 224]],
@@ -1131,12 +1131,14 @@ export function toCanvas(p) {
 }
 
 // Fog puffs over lost districts (+ ambient river mist).
-export function mapFog(states) {
+// L: district boxes (the painted map passes its own); riverMist: the code map's mist along its river.
+export function mapFog(states, L = LANDMARKS, riverMist = true) {
   const puffs = [];
   DISTRICT_IDS.forEach((id, i) => {
     const st = states[id];
     if (st === 'restored') return;
-    const s = LANDMARKS[id];
+    const s = L[id];
+    if (!s) return;
     const cx = s.x0 + s.w / 2, cy = s.y0 + s.h / 2;
     const n = st === 'current' ? 1 : 4;
     for (let j = 0; j < n; j++) {
@@ -1145,7 +1147,7 @@ export function mapFog(states) {
       puffs.push({ x: Math.round(cx - w / 2 + (r() - 0.5) * s.w * 0.7), y: Math.round(cy - h / 2 + (j - n / 2) * 7 + (r() - 0.5) * 4), w, h, seed: i * 7 + j, amp: 4 + r() * 5, sp: 0.25 + r() * 0.25, ph: r() * 6.28, a: st === 'current' ? 0.35 : 0.8 });
     }
   });
-  for (let y = 60; y < 290; y += 34) { const r = rng(y); puffs.push({ x: Math.round(riverX(y) - 18), y: y - 4, w: 36, h: 9, seed: 500 + y, amp: 6, sp: 0.2 + r() * 0.2, ph: r() * 6, a: 0.3 }); }
+  if (riverMist) for (let y = 60; y < 290; y += 34) { const r = rng(y); puffs.push({ x: Math.round(riverX(y) - 18), y: y - 4, w: 36, h: 9, seed: 500 + y, amp: 6, sp: 0.2 + r() * 0.2, ph: r() * 6, a: 0.3 }); }
   return puffs;
 }
 

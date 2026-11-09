@@ -41,8 +41,10 @@ export function daysBetween(a, b) {
   return Math.round((Date.UTC(y2, m2 - 1, d2) - Date.UTC(y1, m1 - 1, d1)) / 86400000);
 }
 
+// Letters that do not split into a base letter plus an accent (Turkish dotless i, German sharp s, and a few more).
+const FOLD = { 'ı': 'i', 'ß': 'ss', 'ø': 'o', 'æ': 'ae', 'œ': 'oe', 'ł': 'l', 'đ': 'd', 'þ': 'th', 'ð': 'd' };
 export function normalize(s) {
-  return String(s ?? '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9]/g, '');
+  return String(s ?? '').toLowerCase().replace(/[ıßøæœłđþð]/g, (c) => FOLD[c]).normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9]/g, '');
 }
 
 let KNOWN = new Set();

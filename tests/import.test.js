@@ -1,7 +1,7 @@
 // v0.4 import security: 50 corrupted backups must each be refused with a plain message, never throw,
 // and a valid v0.3 (schema 1) backup must migrate cleanly.
 import { describe, it, expect } from 'vitest';
-import { newProfile } from '../src/engine/core.js';
+import { newProfile, SCHEMA } from '../src/engine/core.js';
 import { buildExport, parseImport, migrate, MAX_IMPORT_BYTES } from '../src/store.js';
 import { ITEMS } from '../src/data/items.js';
 import { TREASURES, TABLETS } from '../src/data/crypt.js';
@@ -98,7 +98,7 @@ describe('migration from v0.3 saves', () => {
     expect(m.user.prefs.sound).toBe(false);
     expect(m.user.prefs.blips).toBe(true);
     expect(m.tips.seen).toEqual([]); expect(m.relics.polish).toEqual({}); expect(m.stats.sessions).toEqual([]);
-    expect(m.meta.schema).toBe(2);
+    expect(m.meta.schema).toBe(SCHEMA);
     old.user.prefs.sound = true;
     expect(migrate(structuredClone(old)).user.prefs.sound).toBe(true);
   });
@@ -107,7 +107,7 @@ describe('migration from v0.3 saves', () => {
     const d = exportOf(old); d.schema = 1;
     const r = parseImport(text(d));
     expect(r.ok).toBe(true);
-    expect(r.profile.meta.schema).toBe(2);
+    expect(r.profile.meta.schema).toBe(SCHEMA);
   });
 });
 

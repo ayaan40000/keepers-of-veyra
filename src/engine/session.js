@@ -2,6 +2,10 @@ import { WEEKS, MODULES, GATES, BASELINE, TEMPLATE_SKILL, SKILLS, moduleForWeek,
 import { scaledSpec, genItems, dueSets, probeItems, today } from './core.js';
 import { daysBetween, uid, hashStr } from './util.js';
 import { unitDue, unitSpecs } from './additions.js';
+import { sceneFor, sceneMode, SCENE_SPEC, SCENE_FROM_WEEK } from './scene.js';
+
+// 1.2: some drills train another skill than their template's (dates train numbers, jokes train linking).
+const skillOfSpec = (d) => d.skill || TEMPLATE_SKILL[d.t];
 
 const COACH = {
   omission: { title: 'Empty slots', text: 'Most misses were blanks: the image probably never formed. During study, say the image to yourself in one sentence and use the optional "your image" box.' },
@@ -35,7 +39,7 @@ export function sessionStatus(p) {
 }
 
 function drillStep(p, spec, role, seedKey, mode) {
-  const skill = TEMPLATE_SKILL[spec.t];
+  const skill = spec.skill || TEMPLATE_SKILL[spec.t];
   const level = p.skills[skill]?.level || 1;
   const measure = role === 'baseline' || role === 'gate' || role === 'check';
   const s = scaledSpec(spec, role === 'baseline' || role === 'gate' ? 1 : level, mode || (role === 'guided' ? 'guided' : role === 'remedial' ? 'remedial' : role === 'warmup' ? 'warmup' : measure ? 'measure' : 'practice'), p.user.prefs.timerMult || 1);
@@ -45,8 +49,8 @@ function drillStep(p, spec, role, seedKey, mode) {
 
 function probeSteps(p, max) {
   return dueSets(p, max).map((set) => {
-    const { items, loci } = probeItems(set);
-    return { kind: 'probe', setId: set.id, skill: set.skill, spec: set.spec, items, loci, created: set.created };
+    const { items, loci, flip } = probeItems(set);
+    return { kind: 'probe', setId: set.id, skill: set.skill, spec: set.spec, items, loci, created: set.created, ...(flip ? { flip: true } : {}) };
   });
 }
 
@@ -64,10 +68,10 @@ function lessonStep(p, week, firstDayOfWeek, skillsInWeek) {
 // Earlier skill for interleaving (R8), weakest first.
 function interleaveSpec(p, week) {
   const earlier = WEEKS.filter((w) => w.w < week.w).flatMap((w) => w.drills);
-  const curSkills = new Set(week.drills.map((d) => TEMPLATE_SKILL[d.t]));
-  const cands = earlier.filter((d) => !curSkills.has(TEMPLATE_SKILL[d.t]));
+  const curSkills = new Set(week.drills.map((d) => skillOfSpec(d)));
+  const cands = earlier.filter((d) => !curSkills.has(skillOfSpec(d)));
   if (!cands.length) return null;
-  cands.sort((a, b) => (p.skills[TEMPLATE_SKILL[a.t]].avg ?? 1) - (p.skills[TEMPLATE_SKILL[b.t]].avg ?? 1));
+  cands.sort((a, b) => (p.skills[skillOfSpec(a)].avg ?? 1) - (p.skills[skillOfSpec(b)].avg ?? 1));
   const d = cands[0];
   return { ...d, n: Math.min(d.n, 8) };
 }
@@ -91,7 +95,7 @@ export function buildSession(p, kind, opts = {}) {
   const id = uid();
   const seed = (k) => `${id}:${k}`;
   const week = st.week;
-  const skillsInWeek = [...new Set(week.drills.map((d) => TEMPLATE_SKILL[d.t]))];
+  const skillsInWeek = [...new Set(week.drills.map((d) => skillOfSpec(d)))];
   const steps = [];
   const type = kind || st.type;
 
@@ -110,7 +114,7 @@ export function buildSession(p, kind, opts = {}) {
     steps.push(...probeSteps(p, 4));
     const intro = Object.entries(p.skills).filter(([, s]) => s.attempts > 0).sort((a, b) => (a[1].avg ?? 1) - (b[1].avg ?? 1)).slice(0, 2);
     intro.forEach(([sk], i) => {
-      const spec = WEEKS.filter((w) => w.w <= week.w).flatMap((w) => w.drills).find((d) => TEMPLATE_SKILL[d.t] === sk);
+      const spec = WEEKS.filter((w) => w.w <= week.w).flatMap((w) => w.drills).find((d) => skillOfSpec(d) === sk);
       if (spec) steps.push(drillStep(p, { ...spec, n: Math.min(spec.n, 8) }, 'review', seed('v' + i)));
     });
   } else if (type === 'free') {
@@ -148,14 +152,19 @@ export function buildSession(p, kind, opts = {}) {
     const rounds = plain.length ? plain : week.drills;
     steps.push(drillStep(p, rounds[0], 'guided', seed('g')));
     week.drills.forEach((d, i) => {
-      const sk = TEMPLATE_SKILL[d.t];
-      steps.push(drillStep(p, d, p.skills[sk].remediate ? 'remedial' : 'practice', seed('p' + i)));
+      const sk = skillOfSpec(d);
+      const st = drillStep(p, d, p.skills[sk].remediate ? 'remedial' : 'practice', seed('p' + i));
+      if (d.t === 'scene') st.sceneMode = sceneMode(p, st.extra?.scene?.id, week.w, !!d.choose);
+      steps.push(st);
     });
     if (week.w >= 9) { const il = interleaveSpec(p, week); if (il) steps.push(drillStep(p, il, 'review', seed('i'))); }
+    // 1.2 one real-life scene per full session from week 3: today's tools used on everyday-shaped material.
+    const sc = !unit && week.w >= SCENE_FROM_WEEK && !week.drills.some((d) => d.t === 'scene') ? sceneFor(p, week.w, p.progress.day) : null;
+    if (sc) steps.push({ ...drillStep(p, SCENE_SPEC(sc), 'practice', seed('sc')), sceneMode: sceneMode(p, sc, week.w) });
     // Use the 30 minutes: add extra practice rounds with new material while the session is short.
     for (let k = 0; k < 3 && !unit && estimateMinutes({ steps }) < 22; k++) {
       const d = rounds[k % rounds.length];
-      const sk = TEMPLATE_SKILL[d.t];
+      const sk = skillOfSpec(d);
       steps.push(drillStep(p, d, p.skills[sk].remediate ? 'remedial' : 'practice', seed('x' + k)));
     }
     if (unit && unit.form === 'B') unitSpecs(unit.unit, unit.form).forEach((sp, i) => steps.push({ ...drillStep(p, sp, 'check', seed('u' + i)), unitCheck: true }));

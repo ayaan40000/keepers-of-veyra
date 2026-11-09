@@ -7,6 +7,7 @@ import { CHAPTERS, ACHIEVEMENTS, BEATS, GATE_INTROS, SIDE_QUESTS, wrenLine, wren
 import { applyDrill, applyProbeStep, finalizeSession } from '../engine/progress.js';
 import { today, genItems } from '../engine/core.js';
 import Drill from './Drill.jsx';
+import SceneDrill from './SceneDrill.jsx';
 import { Portrait } from '../pixel/Faces.jsx';
 import { DistrictBanner } from './pixel/Scenes.jsx';
 import { DistrictScene } from './artLookup.jsx';
@@ -116,8 +117,9 @@ export default function Session({ profile, update, onExit }) {
           p.inProgress.startedIdx = null;
         }), 0);
       }
+      const DrillView = step.spec.t === 'scene' ? SceneDrill : Drill; // 1.2 Real-life Scene has its own screen
       body = (
-        <Drill key={`${session.id}-${ip.idx}-${step.regen || 0}`} step={step} isProbe={isProbe} profile={profile} update={update} coach={coachLine(session, step)}
+        <DrillView key={`${session.id}-${ip.idx}-${step.regen || 0}`} step={step} isProbe={isProbe} profile={profile} update={update} coach={coachLine(session, step)}
           onStart={() => { liveDrills.current.add(ip.idx); update((p) => { p.inProgress.startedIdx = p.inProgress.idx; }); }}
           onResult={(result, timing, extra) => update((p) => {
             if (p.inProgress.committedIdx === p.inProgress.idx) return;

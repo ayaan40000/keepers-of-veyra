@@ -47,6 +47,9 @@ SPEC = {
     "overlay": (64, 64, 24, "sprite"),    # Lethe bramble pieces for the district map (v0.12)
     "voice": (64, 64, 24, "sprite"),      # Cabinet of Voices lamp-spirits (v0.12)
     "pedestal": (48, 64, 24, "sprite"),   # relic pedestals for the walkable palace room
+    "card": (128, 96, 24, "scene"),       # 1.2 drills: surprising-fact and joke pictures (testart.py)
+    "vignette": (240, 135, 32, "scene"),  # 1.2 drills: one per real-life scene
+    "symbol": (48, 48, 16, "sprite"),     # 1.2 drills: the formula symbol alphabet
 }
 
 
@@ -227,6 +230,12 @@ NEWROWS += [
     ("trial_year_hall", "trialx_year_hall", "trial", "A long stone hall of tall pillars with a glowing timeline in the floor and lit alcoves holding tablets."),
     ("trial_reckoning", "trialx_reckoning", "trial", "A brick counting hall with a long table of brass calculating frames and tally sticks under green lamps."),
 ]
+# 1.2 drill pictures (testart.py paints them from test_art_jobs.json; ids are permanent). Seed chosen by eye, default 0.
+TEST_PICK = {}
+TEST_JOBS = json.loads((HERE / "test_art_jobs.json").read_text(encoding="utf-8"))["jobs"] if (HERE / "test_art_jobs.json").exists() else []
+for j in TEST_JOBS:
+    PICK.setdefault(j["id"], TEST_PICK.get(j["id"], 0))
+NEWROWS += [(j["id"], j["id"], j["category"], j["alt"]) for j in TEST_JOBS]
 for sid, job, cat, alt in NEWROWS:
     pass  # resolved in resolve()
 
@@ -417,6 +426,10 @@ def main():
         c = by.setdefault(e["category"], [0, 0]); c[0] += 1; c[1] += e["bytes"]
     for c, (n, b) in by.items():
         print(f"{c:10} {n:3} files {b / 1024:7.1f} KB")
+    scenes = sum(f.stat().st_size for f in (ART_DIR / "scene").glob("*") if f.suffix in (".png", ".webp")) if (ART_DIR / "scene").exists() else 0
+    if scenes:  # painted scenes are shipped by motion.py but share the budget
+        print(f"{'scene':10}     {scenes / 1024:7.1f} KB (painted scenes, motion.py)")
+        total += scenes
     print(f"TOTAL {len(entries)} files {total / 1024:.1f} KB (budget {BUDGET_KB} KB){'  OVER BUDGET' if total / 1024 > BUDGET_KB else ''}")
     if skipped:
         print("not shipped (missing or failed):", ", ".join(skipped))

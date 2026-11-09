@@ -1,0 +1,55 @@
+{
+ "crypt_entrance": {
+  "w": 960,
+  "h": 540,
+  "files": {
+   "lit": "crypt_entrance_lit.webp",
+   "dark": "crypt_entrance_dark.webp"
+  },
+  "lights": [
+   {
+    "x": 705,
+    "y": 187,
+    "r": 265,
+    "i": 1.45,
+    "flicker": 1
+   },
+   {
+    "x": 257,
+    "y": 187,
+    "r": 265,
+    "i": 1.45,
+    "flicker": 1
+   }
+  ],
+  "flames": [
+   [
+    705,
+    206,
+    6.75
+   ],
+   [
+    257,
+    206,
+    6.75
+   ]
+  ],
+  "mist": [
+   0.8,
+   0.2
+  ],
+  "alt": "An iron door under the Archive floor, lit by two torches",
+  "source": "s0",
+  "pixel": 2.1,
+  "door": [
+   480,
+   386
+  ],
+  "shaft": [
+   567,
+   58,
+   625,
+   453
+  ]
+ }
+}

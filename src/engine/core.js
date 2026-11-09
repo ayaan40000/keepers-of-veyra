@@ -11,14 +11,20 @@ function faceFor(name, r) {
 import { rng, sample, shuffle, clamp, mean, matches, majorDecode, todayISO, addDays, daysBetween, uid, setKnownWords } from './util.js';
 import { blankEvents } from '../data/events.js';
 import { blankOwn } from './owntext.js';
+import { ALL_FOREIGN, isLangSpec, scoreArticle } from './lang.js';
+import { scoreScene } from './scene.js';
+import { abstractOk } from './abstract.js';
 import { genAdded, scoreMap, scoreSurnames, poemLineOk, numericOk, normMoves, rowScore, mapProbe, surnameFor } from './additions.js';
 
-setKnownWords([...CONCRETE, ...ABSTRACT, ...NAMES, ...VOCAB.map((v) => v[1])]);
+setKnownWords([...CONCRETE, ...ABSTRACT, ...NAMES, ...VOCAB.map((v) => v[1]), ...ALL_FOREIGN]);
 
-export const SCHEMA = 2;
+export const SCHEMA = 3; // 1.2: habits (Carry it) and the technique ladder
 export const CURRICULUM_VERSION = '2026.11-v0.8';
 export const PROBE_INTERVALS = [1, 7, 30];
 export const GATE_PROBE_INTERVALS = [1, 7, 30, 90, 180];
+// 1.2: vocabulary is reviewed at the gaps Month 6 promises. Each set keeps the schedule it was stored with.
+export const VOCAB_PROBE_INTERVALS = [1, 3, 7, 14, 30, 60];
+export const SCENE_PROBE_INTERVALS = [1, 7]; // a scene is a one-off situation: the next day and a week later
 export const EWMA_ALPHA = 0.35;
 
 export function newSkill() {
@@ -38,7 +44,7 @@ export function newProfile(alias, avatar, prefs = {}) {
     results: [], sets: [], palaces: [], major: {}, achievements: {}, story: { seen: [] }, reflections: 0, baseline: null, inProgress: null,
     tips: { seen: [] }, relics: { polish: {} }, stats: { sessions: [] }, trials: {}, brambles: { thorns: {}, chests: {} }, mirror: { episode: null, lit: {} }, audit: { done: 0, last: null }, events: blankEvents(),
     seam: { met: null, cleared: [], tries: 0, best: 0, rests: 0, last: null, used: [], closed: null, held: null, epilogue: null }, wren: { seen: {}, asked: {}, lastBeat: null, lastQ: null },
-    guide: { tried: {}, later: {} }, own: blankOwn(),
+    guide: { tried: {}, later: {} }, own: blankOwn(), habits: { plans: [], carry: [] }, ladder: {},
     keeper: { equip: { lantern: null, cloak: null, charm: null, tool: null } },
     battles: { done: 0, held: 0, rests: 0, last: null, skipped: null, queue: [], history: [] },
   };
@@ -151,14 +157,16 @@ export function lookAlike(seed, r) {
 }
 export const isLureReply = (s) => /^\s*(|new|none|no|not met|stranger|-|\?|x)\s*$/i.test(String(s ?? ''));
 
-export const recallMode = (t, spec = {}) => (t === 'map' ? 'branch' : t === 'calc' ? 'numeric' : t === 'poem' ? 'ordered' : t === 'wordlist' && spec.numbered ? 'cued' : t === 'wordlist' && !spec.ordered ? 'free' : ['chain', 'palace', 'digits'].includes(t) ? 'ordered' : 'cued');
+export const recallMode = (t, spec = {}) => (t === 'vocab' && spec?.sounds ? 'free' : t === 'map' ? 'branch' : t === 'calc' ? 'numeric' : t === 'poem' ? 'ordered' : t === 'wordlist' && spec.numbered ? 'cued' : t === 'wordlist' && !spec.ordered ? 'free' : ['chain', 'palace', 'digits'].includes(t) ? 'ordered' : 'cued');
 
 // ---------- scoring ----------
 // responses: free -> array of strings (any order); ordered/cued -> array aligned with items.
 export function scoreDrill(t, items, responses, opts = {}) {
   const spec = opts.spec || {};
   if (t === 'map') return scoreMap(items, responses);
+  if (t === 'scene') return scoreScene(items, responses);
   if (t === 'faces' && spec.surname) return scoreSurnames(items, responses);
+  if (t === 'vocab' && items.length && items.every((it) => it.first && it.last)) return scoreArticle(items, responses); // article + word, one point each
   const mode = recallMode(t, opts.spec);
   const errs = { omission: 0, substitution: 0, order: 0, timeout: 0 };
   const perItem = [];
@@ -166,8 +174,10 @@ export function scoreDrill(t, items, responses, opts = {}) {
     if (it.lure) return isLureReply(resp);
     if (t === 'digits') return String(resp ?? '').trim() === it.answer;
     if (t === 'calc') return numericOk(resp, it.answer);
-    if (t === 'poem') return poemLineOk(resp, it.answer, it.alt);
+    if (t === 'poem' || it.phrase) return poemLineOk(resp, it.answer, it.alt);
     if (spec.src === 'chess') return !!normMoves(resp) && normMoves(resp) === normMoves(it.answer);
+    const ab = abstractOk(resp, it); // 1.2 formulae, years, punchlines, numbers
+    if (ab !== null) return ab;
     if (it.alt && it.alt.some((a) => matches(resp, a))) return true;
     if (t === 'major') return matches(resp, it.answer) || majorDecode(resp) === it.cue;
     return matches(resp, it.answer);
@@ -260,7 +270,8 @@ export function storeSet(p, step, result) {
   const isGate = step.role === 'gate';
   const set = {
     id: uid(), skill: step.skill, t: step.spec.t, spec: step.spec, items: step.items, loci: step.loci || null,
-    created: today(p), immediate: result.acc, idx: 0, intervals: isGate ? GATE_PROBE_INTERVALS : PROBE_INTERVALS, history: [], retired: false,
+    ...(step.extra?.probe ? { probe: step.extra.probe } : {}), // 1.2 scenes: next-day questions asked in a different form
+    created: today(p), immediate: result.acc, idx: 0, intervals: isGate ? GATE_PROBE_INTERVALS : step.spec.t === 'vocab' ? VOCAB_PROBE_INTERVALS : step.spec.t === 'scene' ? SCENE_PROBE_INTERVALS : PROBE_INTERVALS, history: [], retired: false,
   };
   set.due = addDays(set.created, set.intervals[0]);
   p.sets.push(set);
@@ -277,7 +288,20 @@ export function dueSets(p, max = 3) {
 }
 
 // A probe shows a sample (up to 8 items; ordered sets keep order).
+// 1.2: some sets are asked in a different form the next day (a scene's own probe questions; a new-language set
+// asked the other way round). Returns null when the set is asked as it was studied.
+export function flipItems(set) {
+  if (set.idx % 2 === 1) return null; // every other review is asked the way it was studied
+  if (Array.isArray(set.probe) && set.probe.length) return set.probe.slice(0, 10); // scenes, formulae with another part missing, dates asked from the year
+  if (set.t === 'vocab' && isLangSpec(set.spec) && !set.spec.gender && !set.spec.sounds && set.spec.src !== 'phrases' && set.items.every((it) => it.cue && it.answer)) {
+    return set.items.slice(0, 8).map((it) => ({ cue: it.answer, answer: it.cue, flipped: true, ...(it.malt ? { alt: it.malt } : {}) }));
+  }
+  return null;
+}
+
 export function probeItems(set) {
+  const flip = flipItems(set);
+  if (flip) return { items: flip, loci: null, flip: true };
   if (set.t === 'map') return { items: mapProbe(set.items), loci: null };
   const mode = recallMode(set.t, set.spec);
   if (mode === 'ordered' && set.t !== 'palace') return { items: set.items.slice(0, set.t === 'digits' ? 20 : 10), loci: null };

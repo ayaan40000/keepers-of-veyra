@@ -7,6 +7,23 @@ import { shuffle, rng } from '../engine/util.js';
 import { PixelFace, Portrait } from '../pixel/Faces.jsx';
 import { PalaceEditor } from './Palaces.jsx';
 import { sfx } from '../audio/sfx.js';
+import { langName, isLangSpec, VOCAB_HONEST } from '../engine/lang.js';
+import { Diagram } from './Diagram.jsx';
+import { ArtImg, artFor } from './artLookup.jsx';
+
+// 1.2 the formula symbol alphabet: a fixed picture for each symbol (shown on the formulae brief when painted).
+const SYMBOL_PICS = [['symbol_pi', 'π'], ['symbol_squared', '²'], ['symbol_cubed', '³'], ['symbol_equals', '='], ['symbol_divide', '/'], ['symbol_plus', '+'], ['symbol_root', '√'], ['symbol_half', '½'], ['symbol_lambda', 'λ'], ['symbol_rho', 'ρ']];
+import { ABSTRACT_HONEST } from '../data/abstract.js';
+
+// 1.2 how to hold each kind of hard material (shown on the brief, before studying).
+const ABSTRACT_BRIEF = {
+  formulas: 'Each formula is shown with what its letters mean. First make sure you know what each letter stands for. Then give each symbol a fixed picture (π is a pie, a small 2 is a swan, a fraction bar is a table) and act the formula out as one small scene. Later one part of each formula is missing, and you fill it in. You can type r2 for r², 1/2 for ½, and pi for π.',
+  dates: 'Each event comes with its year. Turn the year into Major System pictures (1066 is 10 toes and 66 a judge: a judge stamping on toes) and make those pictures act inside the event. Later you see the event and type the year. For years before the common era, add BC or BCE.',
+  trivia: 'Each question comes with its answer. Make a picture for the question and one for the answer, and make them touch. Later you see the question and type the answer.',
+  wonders: 'Each surprising fact comes with a short reason. Picture the surprise itself, as big and strange as you can, and tie the answer to it. The reason helps: a fact that makes sense is easier to keep. Later you see the question and type the answer.',
+  jokes: 'Most people forget a joke because they keep the punchline as words. Find the one key word that makes it funny, picture it, and stick it onto the main picture of the setup. Later you see the setup and type the punchline. The key word is what counts.',
+  diagram: 'Walk the drawing like a tiny palace, in the order of the numbers, and give each label a picture that sits on its spot. Later the labels go and you write each one by its number.',
+};
 import { groupDigits, DIGIT_ROW, mapBranches, SOUNDALIKE, SOUND_HONEST, PEG_HONEST, MAP_HONEST, SKIM_HONEST, POEM_LEARN, POOL_NOTES, numericOk } from '../engine/additions.js';
 
 const BRIEF = {
@@ -30,6 +47,19 @@ const BRIEF = {
   numbered: 'You will see numbered words. Picture each one and hang it on its number. Later you will be asked for words by number, in a different order.',
   surname: 'You will meet some people with a first name and a surname. Picture the first name on one feature and the surname on another. Later you write both names. Each name is one point.',
 };
+// 1.2: the brief for each kind of language practice.
+function vocabBrief(spec) {
+  const name = langName(spec);
+  const produce = spec.dir === 'produce';
+  if (spec.sounds) return `These are words in ${name}. They mean nothing to you yet, so the sound is all you have. Say each word aloud twice, cut it into pieces, and give each piece a sound-alike picture, then join the pictures in one small scene. Later you write the words back in any order. One wrong letter is forgiven on longer words.`;
+  if (spec.src === 'phrases') return produce
+    ? `You will see short ${name} phrases with their meanings. Picture one small scene for each phrase, with a picture for each word if you can. Later you will see the meaning and type the ${name} phrase. Accents are not needed, and a small typo is forgiven.`
+    : `You will see short ${name} phrases with their meanings. Picture one small scene for each phrase. Later you will see the ${name} phrase and type what it means. A small typo is forgiven.`;
+  if (produce && spec.gender) return `You will see ${name} words with el or la in front. Give each word a sound-alike picture, then mark it by its article: el words are on fire, la words are made of ice. Later you see the meaning and type the article and the word. Each is one point.`;
+  if (produce) return `You will see ${name} words with their meanings. Say each word aloud twice, then make a sound-alike picture that acts on the meaning. Later you will see the meaning and type the ${name} word. This way round is harder, and it is how words stick. Accents are not needed.`;
+  return `You will see words in ${name} with their meanings. Say each one aloud twice, then find something it sounds like in English and make that picture act on the meaning. Later you will see the ${name} word and type what it means.`;
+}
+
 const SPEC_NOTE = {
   group: 'The digits are shown in groups. Treat each group as one unit, and say it aloud in a beat if you like.',
   src: 'Some items come with a sentence. The key word is marked. Picture the key word and keep the order, then write the key words back.',
@@ -211,8 +241,15 @@ export default function Drill({ step, isProbe, profile, update, onResult, onCont
         {isProbe && step.echo ? (
           <p>An echo of floor {step.echoFrom}. No studying this time: write what you still hold from that chamber.</p>
         ) : isProbe ? (
-          <p>No studying this time. You learned this set on {step.created}. Just write down whatever you can still remember. Don't worry about the gaps: they show us exactly what to review next.</p>
-        ) : <p>{BRIEF[t]}</p>}
+          <p>No studying this time. You learned this set on {step.created}. Just write down whatever you can still remember. Don't worry about the gaps: they show us exactly what to review next.{items[0]?.flipped ? ' Today the words are asked the other way round from how you studied them, which is a stronger test.' : ''}</p>
+        ) : <p>{t === 'vocab' ? vocabBrief(spec) : BRIEF[t]}</p>}
+        {!isProbe && spec.alike && <p className="note">Some of these words look nearly the same. Give each look-alike its own colour or its own room, so they do not blur together.</p>}
+        {!isProbe && isLangSpec(spec) && <p className="muted small">{VOCAB_HONEST}</p>}
+        {!isProbe && ABSTRACT_BRIEF[spec.src] && <p className="note">{ABSTRACT_BRIEF[spec.src]}</p>}
+        {!isProbe && spec.src === 'formulas' && SYMBOL_PICS.some(([id]) => artFor(id)) && (
+          <ul className="symbol-strip" aria-label="Symbol pictures">{SYMBOL_PICS.filter(([id]) => artFor(id)).map(([id, sym]) => <li key={id}><ArtImg id={id} /><b>{sym}</b></li>)}</ul>
+        )}
+        {!isProbe && ABSTRACT_HONEST[spec.src] && <p className="muted small">{ABSTRACT_HONEST[spec.src]}</p>}
         {t === 'faces' && spec.lures > 0 && !isProbe && <p className="note">{BRIEF.facesLures}</p>}
         {t === 'faces' && spec.restyle && !isProbe && <p className="note">{BRIEF.facesRestyle}</p>}
         {t === 'faces' && spec.turn && !isProbe && <p className="note">{BRIEF.facesTurn}</p>}
@@ -265,7 +302,9 @@ export default function Drill({ step, isProbe, profile, update, onResult, onCont
           <span className="muted small num">{gIdx + 1} of {n}</span>
           {t === 'faces' ? <><PixelFace seed={it.face} size={48} scale={4} /><div className="big">{it.answer}</div></> :
             t === 'digits' ? <div className="big mono">{items.slice(gIdx, gIdx + 2).map((x) => x.answer).join('')}</div> :
-              <div className="big">{it.cue ? <>{it.cue} <span className="arrow">→</span> {it.answer}</> : <>{t === 'palace' && loci ? <span className="locus">{loci[gIdx]}: </span> : null}{it.answer}</>}</div>}
+              <div className="big">{it.text && ABSTRACT_BRIEF[spec.src] ? (it.formula ? it.text : markKey(it.text, it.joke ? it.key[0] : it.answer)) : it.cue ? <>{it.cue} <span className="arrow">→</span> {it.answer}</> : <>{t === 'palace' && loci ? <span className="locus">{loci[gIdx]}: </span> : null}{it.answer}</>}</div>}
+          {it.pic && <ArtImg id={it.pic} className="card-pic big-pic" />}
+          {t === 'vocab' && it.say && <p className="muted small">Say it: {it.say}</p>}
           {t === 'vocab' && it.hint && <p className="muted small">Keyword idea: {it.hint}</p>}
           <label className="field">Your image (optional)
             <input {...inputProps} value={note} onChange={(e) => setNote(e.target.value)} placeholder="e.g. the anchor smashes through the violin" onKeyDown={(e) => { if (e.key === 'Enter') e.currentTarget.closest('section').querySelector('[data-next]').click(); }} />
@@ -337,6 +376,7 @@ export default function Drill({ step, isProbe, profile, update, onResult, onCont
         <div aria-live="polite" className="sr-only" ref={live} />
         <TimerBar left={listB ? bLeft : studyLeft} total={listB ? Math.max(20, Math.round(studySecs / 2)) : studySecs} />
         {listB && <p className="note">List B. Study these too. You will be asked for list A.</p>}
+        {!listB && items[0]?.dg && <Diagram id={items[0].dg} labels />}
         {t === 'map' ? (
           <MapTree map={step.extra?.map || mapFromItems(items)} />
         ) : t === 'poem' ? (
@@ -351,13 +391,13 @@ export default function Drill({ step, isProbe, profile, update, onResult, onCont
         ) : showItems.some((it) => it.text) ? (
           <>
             {step.extra?.title && <p className="muted">{step.extra.title}</p>}
-            <ol className="step-list">{showItems.map((it, i) => <li key={i}>{markKey(it.text, it.answer)}</li>)}</ol>
+            <ol className="step-list">{showItems.map((it, i) => <li key={i} className={it.pic && artFor(it.pic) ? 'with-pic' : undefined}>{it.pic && <ArtImg id={it.pic} className="card-pic" />}<span>{it.formula ? it.text : markKey(it.text, it.joke ? it.key[0] : it.answer)}</span></li>)}</ol>
           </>
         ) : mode === 'cued' ? (
-          <ul className="pair-list">{showItems.map((it, i) => <li key={i}><span>{it.cue}</span><span className="arrow">→</span><b>{it.answer}</b></li>)}</ul>
+          <ul className="pair-list">{showItems.map((it, i) => <li key={i}><span>{it.cue}</span><span className="arrow">→</span><b>{it.answer}</b>{it.say ? <span className="muted small"> ({it.say})</span> : null}</li>)}</ul>
         ) : (
           <ol className={`word-grid ${t === 'palace' ? 'palace' : ''} ${mode === 'free' ? 'unordered' : ''}`}>
-            {showItems.map((it, i) => <li key={i}>{t === 'palace' && loci && !listB ? <><span className="locus">{loci[i]}</span><b>{it.answer}</b></> : <b>{it.answer}</b>}</li>)}
+            {showItems.map((it, i) => <li key={i}>{t === 'palace' && loci && !listB ? <><span className="locus">{loci[i]}</span><b>{it.answer}</b></> : <><b>{it.answer}</b>{it.say ? <span className="muted small"> ({it.say})</span> : null}</>}</li>)}
           </ol>
         )}
         <button className="btn" onClick={listB ? startRecall : endStudy}>I'm ready</button>
@@ -422,6 +462,7 @@ export default function Drill({ step, isProbe, profile, update, onResult, onCont
         <div aria-live="polite" className="sr-only" ref={live} />
         {spec.timed && <TimerBar left={recallLeft} total={recallLimit} />}
         {spec.interference && <p className="note">Recall list A, the first list.</p>}
+        {items[0]?.dg && <Diagram id={items[0].dg} />}
         {t === 'digits' ? (
           <label className="field">Type all {n} digits
             <input data-slot className="mono digits-in" inputMode="numeric" maxLength={n + 20} {...inputProps} value={resp} onChange={(e) => setResp(e.target.value)} onKeyDown={focusNext} />
@@ -461,6 +502,7 @@ export default function Drill({ step, isProbe, profile, update, onResult, onCont
       {header}
       <div aria-live="polite" className="sr-only" ref={live} />
       <div className="score-row"><span className="score-big">{result.correct}<small>/{result.n}</small></span><span className="muted">{pct}% correct</span></div>
+      {items[0]?.dg && <Diagram id={items[0].dg} labels />}
       {isProbe && result.acc < 0.7 && <p className="note">Some of this has faded, which is completely normal. Read the correct answers below slowly and rebuild each picture, a bit stronger this time. This set will come back tomorrow for another try.</p>}
       <ul className="feedback">
         {(t === 'digits' ? [{ target: items.map((x) => x.answer).join(''), response: String(resp), ok: result.acc === 1, summary: true }] : result.perItem).map((x, i) => (
@@ -468,6 +510,7 @@ export default function Drill({ step, isProbe, profile, update, onResult, onCont
             <span className="mark" aria-hidden="true">{x.ok ? '✓' : '–'}</span>
             <span className="locus">{t === 'palace' && loci ? loci[i] : items[i]?.cue || items[i]?.branch || ''}</span>
             {t === 'faces' && <PixelFace seed={items[i].face} look={items[i].alter || items[i].look ? { ...(items[i].look || {}), ...(items[i].alter || {}) } : null} size={48} scale={1} />}
+            {items[i]?.pic && <ArtImg id={items[i].pic} className="card-pic tiny-pic" />}
             <b>{t === 'faces' && items[i].lure ? 'A stranger (not met)' : x.target}</b>
             {t === 'faces' && <span className="muted small face-keys">{items[i].lure ? `Looked like someone you met, but with ${describeAlter(items[i].alter)}.` : `Key features: ${describeFace(faceParams(items[i].face))}`}</span>}
             {!x.ok && <span className="muted small">{x.response ? `you wrote “${x.response}”` : 'blank'}{x.err && x.err !== 'omission' ? ` · ${x.err}` : ''}</span>}
@@ -505,11 +548,21 @@ function variantLabel(spec) {
   if (spec.skim) return ' (Skim, Pick, Keep)';
   if (spec.numbered) return ' (numbered)';
   if (spec.surname) return ' (first names and surnames)';
+  if (isLangSpec(spec)) {
+    const bits = [langName(spec)];
+    if (spec.sounds) bits.push('sounds only');
+    else if (spec.src === 'phrases') bits.push('phrases');
+    if (spec.dir === 'produce') bits.push('meaning to word');
+    if (spec.gender) bits.push('with el or la');
+    if (spec.alike) bits.push('look-alikes');
+    return ` (${bits.join(', ')})`;
+  }
   if (spec.kind === 'people') return ' (people)';
   if (spec.src === 'grocery') return ' (shopping list)';
   if (spec.src === 'steps') return ' (steps)';
   if (spec.src === 'points') return ' (talk points)';
   if (spec.src === 'body') return ' (study terms)';
+  if (spec.src && { formulas: 1, dates: 1, trivia: 1, wonders: 1, jokes: 1, diagram: 1 }[spec.src]) return ` (${{ formulas: 'formulae', dates: 'historical dates', trivia: 'general knowledge', wonders: 'surprising facts', jokes: 'jokes', diagram: 'labelled diagram' }[spec.src]})`;
   if (['atlas', 'elements', 'roots', 'music', 'chess'].includes(spec.src)) return ` (${{ atlas: 'capitals', elements: 'elements', roots: 'word roots', music: 'music theory', chess: 'chess openings' }[spec.src]})`;
   return '';
 }

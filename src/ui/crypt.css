@@ -178,3 +178,10 @@
 .crypt-ends ul { list-style: none; padding: 0; margin: 6px 0 0; display: grid; gap: 3px; }
 .crypt-ends li { display: grid; grid-template-columns: 64px 1fr 32px; align-items: center; gap: 6px; }
 .crypt-ends .bar { display: block; height: 10px; background: #f0c75e; min-width: 2px; }
+
+/* High-detail painted scenes (up to 960 picture pixels wide): on wide screens the Undercroft page widens so the
+   picture shows at one screen pixel per picture pixel; text panels keep their usual reading width. */
+@media (min-width: 1100px) {
+  main:has(.crypt-scene.is-fine) { max-width: 1064px; }
+  .crypt:has(.crypt-scene.is-fine) > :not(.crypt-scene) { max-width: 716px; margin-left: auto; margin-right: auto; }
+}

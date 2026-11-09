@@ -999,3 +999,33 @@ fieldset.mm-branch legend { font-family: var(--f-head); font-weight: 600; paddin
 .own-results li { margin: 8px 0; }
 .own-results li b { margin-right: 6px; }
 .own-sections { list-style: none; padding: 0; }
+
+/* 1.2 Real-life Scene and Carry it (study and recall screens stay still: no transitions here) */
+.chip-row { display: flex; flex-wrap: wrap; gap: 6px; margin: 6px 0; }
+.chip-row .btn.on, .btn.tiny.on { background: var(--pri); color: var(--pri-ink); box-shadow: inset 0 var(--u) 0 var(--pri-hi), inset 0 calc(var(--u) * -1) 0 var(--pri-lo), 0 0 0 var(--u) var(--edge); }
+.tech-pick { border: 0; padding: 0; margin: 10px 0; }
+.tech-pick legend { font-weight: bold; margin-bottom: 4px; }
+.scene-prose p { font-size: 1.05em; line-height: 1.6; margin: 0 0 10px; }
+.scene-table { width: 100%; border-collapse: collapse; margin: 0 0 14px; }
+.scene-table td { padding: 6px 8px; border-bottom: 1px solid var(--edge); vertical-align: top; }
+.scene-table td.strong { font-weight: bold; }
+.scene-people figcaption { max-width: 160px; }
+.scene-questions { padding-left: 1.4em; margin: 0 0 14px; }
+.scene-questions li { margin: 0 0 14px; }
+.scene-questions .q { display: block; margin-bottom: 4px; }
+.scene-questions input { width: 100%; max-width: 360px; }
+.worked { white-space: normal; }
+.carry-it textarea, .carry-it select { width: 100%; }
+.diagram { margin: 0 0 12px; text-align: center; }
+.diagram svg { width: 100%; max-width: 360px; height: auto; background: #0e0c1a; border: 2px solid var(--edge); }
+.diagram-key { display: inline-block; text-align: left; margin: 6px auto 0; columns: 2; column-gap: 24px; }
+
+/* 1.2 drill pictures (still images; nothing moves on study or recall screens) */
+.card-pic { display: block; width: 128px; height: auto; border: 2px solid var(--edge); }
+.card-pic.big-pic { width: 256px; max-width: 100%; margin: 0 auto 8px; }
+.card-pic.tiny-pic { width: 64px; display: inline-block; vertical-align: middle; margin-right: 6px; }
+.step-list li.with-pic { display: flex; gap: 10px; align-items: flex-start; }
+.scene-pic { display: block; width: 100%; max-width: 480px; height: auto; margin: 0 0 10px; border: 2px solid var(--edge); }
+.symbol-strip { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; margin: 6px 0 10px; }
+.symbol-strip li { display: flex; flex-direction: column; align-items: center; font-size: 1.1em; }
+.symbol-strip img { width: 48px; height: 48px; }

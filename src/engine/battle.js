@@ -4,6 +4,7 @@ import { TEMPLATE_SKILL } from '../data/curriculum.js';
 import { CONCRETE } from '../data/content.js';
 import { SCENES, MARKET_GOODS, LANDMARKS, SPEECH_STOPS, SPEECH_POINTS, TURNS, TECHNIQUES, COACHES, COACH_FOR, FORGETTINGS } from '../data/echo.js';
 import { matches, majorDecode, rng, shuffle, sample, daysBetween } from './util.js';
+import { abstractOk } from './abstract.js';
 import { today, genItems } from './core.js';
 import { FREE_XP_CAP } from './progress.js';
 import { evaluateSideQuests } from './quests.js';
@@ -40,7 +41,7 @@ export function kindsFor(set) {
   if (t === 'pairs') return ['recall', 'reverse'];
   if (t === 'major') return ['recall', 'reverse'];
   if (t === 'vocab') return ['recall', 'reverse'];
-  if (t === 'facts') return ['recall'];
+  if (t === 'facts') return set.items.some((it) => it.dg) ? [] : ['recall']; // 1.2: a diagram needs its drawing
   if (t === 'faces') return ['face'];
   if (t === 'palace') return set.loci?.length === n ? ['locate', 'order'] : (n >= 3 ? ['order'] : []);
   if (t === 'wordlist' || t === 'chain') return n >= 3 ? ['order'] : [];
@@ -48,10 +49,14 @@ export function kindsFor(set) {
 }
 const FMT = { recall: 'Recall', reverse: 'Reverse', order: 'Order', locate: 'Locate', face: 'Recall' };
 
+// 1.2: how a stored item is checked (formulae, years, punchlines, numbers and accepted spellings).
+const CHECK_KEYS = ['formula', 'year', 'bce', 'joke', 'keyed', 'key', 'alt', 'kind', 'range', 'text'];
+const pickCheck = (it) => Object.fromEntries(CHECK_KEYS.filter((k) => it[k] != null).map((k) => [k === 'key' ? 'keys' : k, it[k]]));
+
 export function makeEntry(set, i, kind, age, reason, setId) {
   const it = set.items[i];
   const base = { key: `${setId}:${i}`, setId, i, skill: set.skill || TEMPLATE_SKILL[set.t], t: set.t, kind, fmt: set.t === 'pairs' && kind === 'recall' ? 'Pair' : FMT[kind], age, d: age >= OLD_AGE ? 2 : 1, reason };
-  if (kind === 'recall') return { ...base, prompt: set.t === 'major' ? `Your picture for ${it.cue}` : set.t === 'pairs' ? `What went with "${it.cue}"?` : `${it.cue}`, answer: it.answer, cue: it.cue, major: set.t === 'major' ? it.cue : null };
+  if (kind === 'recall') return { ...base, prompt: set.t === 'major' ? `Your picture for ${it.cue}` : set.t === 'pairs' ? `What went with "${it.cue}"?` : `${it.cue}`, answer: it.answer, cue: it.cue, major: set.t === 'major' ? it.cue : null, ...pickCheck(it) };
   if (kind === 'reverse') return { ...base, prompt: set.t === 'major' ? `Which number goes with "${it.answer}"?` : `What was the cue for "${it.answer}"?`, answer: it.cue, numeric: set.t === 'major' };
   if (kind === 'face') return { ...base, prompt: 'Who is this?', face: it.face, answer: it.answer };
   if (kind === 'locate') return { ...base, prompt: `At the stop "${set.loci[i]}", what did you place?`, answer: it.answer, locus: set.loci[i], stops: set.loci.slice() };
@@ -186,7 +191,9 @@ export function isRight(entry, response) {
   if (!norm(response)) return false;
   if (entry.numeric) return norm(response).replace(/\D/g, '') === norm(entry.answer).replace(/\D/g, '') || (entry.t === 'major' && majorDecode(response) === entry.answer);
   if (entry.t === 'major' && entry.kind === 'recall') return matches(response, entry.answer) || (entry.major != null && majorDecode(response) === String(entry.major));
-  return matches(response, entry.answer);
+  const ab = abstractOk(response, { ...entry, key: entry.keys });
+  if (ab !== null) return ab;
+  return matches(response, entry.answer) || (entry.alt || []).some((a) => matches(response, a));
 }
 export const hintOf = (entry) => `Starts with "${String(entry.answer)[0].toUpperCase()}"`;
 

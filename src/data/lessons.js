@@ -232,3 +232,10 @@ for (const c of ADD.cards) {
   if (c.at > 0) list.splice(Math.min(c.at - 1, list.length), 0, c.text); else list.push(c.text);
 }
 LESSONS[24] = ADD.week24.slice();
+// 1.2 new-language cards (words in other languages and words with no meaning at all).
+import LANG from './add/lessons-lang.json';
+for (const c of LANG.cards) {
+  const list = LESSONS[c.week];
+  if (!list || list.includes(c.text)) continue;
+  if (c.at > 0) list.splice(Math.min(c.at - 1, list.length), 0, c.text); else list.push(c.text);
+}

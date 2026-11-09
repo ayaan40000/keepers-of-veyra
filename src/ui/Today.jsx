@@ -21,6 +21,7 @@ import { DistrictScene } from './artLookup.jsx';
 import { BackupReminder, SafariNotice, InstallCard, downloadBackup } from './Notices.jsx';
 import { buildExport } from '../store.js';
 import { RealLifeCard } from './FieldGuide.jsx';
+import { CarryCard } from './CarryCard.jsx';
 import { EchoCard, VigilCard } from './Battle.jsx';
 import { TodayVoice } from './Voices.jsx';
 import { TrialDueCard } from './Trials.jsx';
@@ -95,6 +96,7 @@ export default function Today({ profile, start, onEnterCrypt, update, onFight, o
       )}
 
       {st.doneToday && !resume && nudge && <RealLifeCard profile={profile} update={update} task={nudge} />}
+      {!resume && <CarryCard profile={profile} update={update} />}
 
       {st.keeping > 0 && !seamClosed(profile) && !resume && <p className="muted small tide-line">{SEAM_KEEPING_LINES[(st.keeping - 1) % SEAM_KEEPING_LINES.length]}</p>}
 

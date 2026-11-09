@@ -16,6 +16,9 @@ import SOUND from '../data/add/soundalikes.json';
 import SURN from '../data/add/surnames.json';
 import { CONCRETE } from '../data/content.js';
 import { sample, shuffle, lev, normalize, matches } from './util.js';
+import { langItems, isLangSpec, langVariant } from './lang.js';
+import { sceneItems } from './scene.js';
+import { abstractItems, ABSTRACT_SRC } from './abstract.js';
 
 export const PEG_WORDS = { shape: PEGS.shape, rhyme: PEGS.rhyme };
 export const SKIM_TEXTS = SKIM.texts;
@@ -42,6 +45,8 @@ export function variantOf(spec) {
   if (spec.group) return 'group';
   if (spec.numbered) return 'numbered';
   if (spec.surname) return 'surname';
+  if (spec.t === 'scene') return `scene-${spec.sc || 'any'}${spec.choose ? '-choose' : ''}`;
+  if (isLangSpec(spec)) return langVariant(spec);
   if (spec.src) return spec.src;
   return undefined;
 }
@@ -317,9 +322,12 @@ export function genAdded(spec, r) {
         const t = shuffle(SKIM_TEXTS, r)[0];
         return { items: t.headings.map((h, i) => ({ cue: h, answer: t.keywords[h], text: t.keyPoints[i] })), extra: { skim: { id: t.id, title: t.title, text: t.text, headings: t.headings, candidates: t.candidates, keyPoints: t.keyPoints } } };
       }
+      if (ABSTRACT_SRC.includes(spec.src)) return abstractItems(spec, n, r); // 1.2 formulae, dates, trivia, wonders, jokes, diagrams
       const items = spec.src && poolFacts(spec.src, n, r);
       return items ? { items } : null;
     }
+    case 'vocab': return langItems(spec, n, r);
+    case 'scene': return sceneItems(spec, r);
     case 'map': return mapItems(spec, n, r);
     case 'poem': return poemItems(n, r);
     case 'calc': return calcItems(spec, n, r);

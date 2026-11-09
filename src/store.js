@@ -152,6 +152,11 @@ export function migrate(p) {
   if (!isObj(p.own) || !Array.isArray(p.own.texts)) p.own = blankOwn();
   if (!Array.isArray(p.own.history)) p.own.history = [];
   if (!Number.isInteger(p.own.v)) p.own.v = 1;
+  // Schema 3 (1.2): Carry it (if-then plans and real-life lists to recall later) and the technique ladder
+  if (!isObj(p.habits)) p.habits = { plans: [], carry: [] };
+  if (!Array.isArray(p.habits.plans)) p.habits.plans = [];
+  if (!Array.isArray(p.habits.carry)) p.habits.carry = [];
+  if (!isObj(p.ladder)) p.ladder = {};
   p.meta.schema = SCHEMA;
   return p;
 }
@@ -189,7 +194,7 @@ export function validateProfile(p) {
     if (!Object.values(s.errs).every((v) => isNum(v, 0))) return `Skill "${k}" error counts are invalid.`;
   }
   if (!Array.isArray(p.results) || !p.results.every((r) => isObj(r) && isDate(r.date) && isNum(r.acc, 0, 1) && typeof r.t === 'string' && (r.v == null || (typeof r.v === 'string' && r.v.length <= 40)))) return 'Results are invalid.';
-  if (!Array.isArray(p.sets) || !p.sets.every((s) => isObj(s) && Array.isArray(s.items) && s.items.every(isObj) && Array.isArray(s.history) && Array.isArray(s.intervals) && isDate(s.due) && isDate(s.created) && isObj(s.spec))) return 'Review sets are invalid.';
+  if (!Array.isArray(p.sets) || !p.sets.every((s) => isObj(s) && Array.isArray(s.items) && s.items.every(isObj) && Array.isArray(s.history) && Array.isArray(s.intervals) && isDate(s.due) && isDate(s.created) && isObj(s.spec) && (s.probe == null || (Array.isArray(s.probe) && s.probe.length <= 20 && s.probe.every(isObj))))) return 'Review sets are invalid.';
   if (!Array.isArray(p.palaces) || !p.palaces.every((x) => isObj(x) && typeof x.name === 'string' && typeof x.id === 'string' && Array.isArray(x.loci) && x.loci.every((l) => typeof l === 'string'))) return 'Palaces are invalid.';
   if (p.crypt != null && (!isObj(p.crypt) || !isNum(p.crypt.keys ?? 0, 0, 99) || !isNum(p.crypt.deepest ?? 0, 0) || (p.crypt.treasures != null && !isObj(p.crypt.treasures)))) return 'Crypt record is invalid.';
   if (p.collectionSeen != null && !Array.isArray(p.collectionSeen)) return 'Collection record is invalid.';
@@ -315,6 +320,17 @@ function validateExtras(p) {
     if (w.asked != null && (!isObj(w.asked) || !Object.entries(w.asked).every(([k, a]) => qs.has(k) && isObj(a) && isInt(a.n ?? 0, 0, 99) && isInt(a.ok ?? 0, 0, 99) && (a.last == null || isDate(a.last)) && (a.held == null || isDate(a.held))))) return 'Wren record is invalid.';
   }
   if (p.own != null) { const e = validateOwn(p.own); if (e) return e; }
+  if (p.habits != null) {
+    const h = p.habits;
+    if (!isObj(h) || !Array.isArray(h.plans) || !Array.isArray(h.carry) || h.plans.length > 50 || h.carry.length > 60) return 'Carry it record is invalid.';
+    if (!h.plans.every((x) => isObj(x) && isStr(x.cue, 80) && (x.tech == null || isStr(x.tech, 20)) && isDate(x.made))) return 'Carry it plans are invalid.';
+    if (!h.carry.every((c) => isObj(c) && isStr(c.id, 40) && Array.isArray(c.things) && c.things.length <= 10 && c.things.every((x) => isStr(x, 120)) && isDate(c.made) && isDate(c.due) && isInt(c.idx, 0, 9) && Array.isArray(c.checks) && c.checks.every((k) => isObj(k) && isDate(k.date) && isNum(k.acc, 0, 1))))
+      return 'Carry it lists are invalid.';
+  }
+  if (p.ladder != null) {
+    if (!isObj(p.ladder) || Object.keys(p.ladder).length > 20) return 'Technique ladder is invalid.';
+    if (!Object.entries(p.ladder).every(([k, v]) => isStr(k, 20) && isObj(v) && isInt(v.rung, 1, 5) && Array.isArray(v.hist) && v.hist.length <= 12 && v.hist.every((a) => isNum(a, 0, 1)))) return 'Technique ladder is invalid.';
+  }
   if (p.guide != null) {
     const okMap = (m) => m == null || (datedMap(m) && Object.keys(m).length <= 200 && Object.keys(m).every((k) => isStr(k, 40)));
     if (!isObj(p.guide) || !okMap(p.guide.tried) || !okMap(p.guide.later)) return 'Field Guide record is invalid.';

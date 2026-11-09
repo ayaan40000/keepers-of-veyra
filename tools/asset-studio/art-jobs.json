@@ -1110,5 +1110,144 @@
    "megapixels": 0.45,
    "steps": 24
   }
- ]
+ ],
+ "motion": {
+  "world_map": {
+   "model": "qwen-image-2.1",
+   "method": "text to image, fine style",
+   "denoise": 1.0,
+   "steps": 24,
+   "megapixels": 1.0,
+   "aspect": "3:4 (Portrait Standard)",
+   "seeds": [
+    160000,
+    160001,
+    160002
+   ],
+   "guide": null,
+   "lit_prompt": "Seen from a high bird's-eye view at a steep three-quarter angle, the whole city in frame, every district clearly separate. Veyra, an original fantasy city: a walled city of seven stacked stone terraces climbing a hill above a dark sea. A river runs down through the middle in a chain of small waterfalls under stone bridges. Landmarks: a long columned archive hall and a green-domed library at the very top, an old amphitheatre, a tall glass spire, a great zigzag stone stair, a slate chapel, a long white arched bridge, a tall timber counting house, a clock tower beside market stalls, a columned gallery, a round domed hall, and a harbour quay with small sailing boats at the bottom. Warm lit windows, gardens, street lamps. Highly detailed high-resolution pixel art illustration with very small fine pixels and dense intricate detail, like a large hand-made pixel-art poster, not chunky, not low resolution, clean dark outlines, soft many-step shading, deep navy night, warm amber lamplight, muted violet stone, original fantasy setting.",
+   "dark_prompt": "Edit this picture: the same city lost in a cold grey mist. Every window dark, every lamp out, gardens withered, thorny brambles and ivy creeping over the walls and roofs, thin fog in the streets, no boats lit. Keep every building, wall, street, the river and every position exactly the same; change only the light, colour and overgrowth. Highly detailed high-resolution pixel art illustration with very small fine pixels and dense intricate detail, like a large hand-made pixel-art poster, not chunky, not low resolution, clean dark outlines, soft many-step shading, deep navy night, warm amber lamplight, muted violet stone, original fantasy setting.",
+   "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, anti-aliasing, mixed pixel sizes, people, characters, gore, blood, characters or art from existing games or films, chunky pixels, low resolution, blocky, jpeg artifacts",
+   "note": "dark (lost) is an edit of the lit picture."
+  },
+  "title": {
+   "model": "qwen-image-2.1",
+   "method": "text to image, fine style",
+   "denoise": 1.0,
+   "steps": 24,
+   "megapixels": 1.0,
+   "aspect": "16:9 (Widescreen)",
+   "seeds": [
+    160000,
+    160001
+   ],
+   "guide": null,
+   "lit_prompt": "A walled city of stacked stone terraces with hundreds of warm lit windows climbing a dark cliff on the right, a green-domed library at the top, a thin waterfall falling through the city, a calm dark sea on the left reflecting a crescent moon, far blue mountains, a sky full of stars, a grassy hillside with a pale winding coast road and a lone windswept tree in the foreground. Leave the upper middle of the sky open and calm. No people. Highly detailed high-resolution pixel art illustration with very small fine pixels and dense intricate detail, like a large hand-made pixel-art poster, not chunky, not low resolution, clean dark outlines, soft many-step shading, deep navy night, warm amber lamplight, muted violet stone, original fantasy setting.",
+   "dark_prompt": " Highly detailed high-resolution pixel art illustration with very small fine pixels and dense intricate detail, like a large hand-made pixel-art poster, not chunky, not low resolution, clean dark outlines, soft many-step shading, deep navy night, warm amber lamplight, muted violet stone, original fantasy setting.",
+   "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, anti-aliasing, mixed pixel sizes, people, characters, gore, blood, characters or art from existing games or films, chunky pixels, low resolution, blocky, jpeg artifacts",
+   "note": "dark (lost) is an edit of the lit picture."
+  },
+  "crypt_chamber_bones": {
+   "model": "qwen-image-2.1",
+   "method": "text to image, fine style",
+   "denoise": 1.0,
+   "steps": 24,
+   "megapixels": 1.0,
+   "aspect": "16:9 (Widescreen)",
+   "seeds": [
+    160000,
+    160001
+   ],
+   "guide": null,
+   "lit_prompt": "A vaulted stone chamber deep under an old archive. Two stone pillars at the left and right edges, each holding a burning iron wall torch with a bright flame. In the centre a dark arched opening with stone steps going down into blackness, and in front of it a low stone altar block with a small carved lamp-in-a-hand mark. Worn flagstone floor, a stone vault rib overhead. Either side of the arch, deep wall niches with rows of old skulls stacked neatly and with care, grey stone. Wide view, the arch in the centre. Highly detailed high-resolution pixel art illustration with very small fine pixels and dense intricate detail, like a large hand-made pixel-art poster, not chunky, not low resolution, clean dark outlines, soft many-step shading, deep navy night, warm amber lamplight, muted violet stone, original fantasy setting.",
+   "dark_prompt": " Highly detailed high-resolution pixel art illustration with very small fine pixels and dense intricate detail, like a large hand-made pixel-art poster, not chunky, not low resolution, clean dark outlines, soft many-step shading, deep navy night, warm amber lamplight, muted violet stone, original fantasy setting.",
+   "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, anti-aliasing, mixed pixel sizes, people, characters, gore, blood, characters or art from existing games or films, chunky pixels, low resolution, blocky, jpeg artifacts",
+   "note": "dark (lost) is an edit of the lit picture."
+  },
+  "crypt_chamber_shelves": {
+   "model": "qwen-image-2.1",
+   "method": "text to image, fine style",
+   "denoise": 1.0,
+   "steps": 24,
+   "megapixels": 1.0,
+   "aspect": "16:9 (Widescreen)",
+   "seeds": [
+    160000,
+    160001
+   ],
+   "guide": null,
+   "lit_prompt": "A vaulted stone chamber deep under an old archive. Two stone pillars at the left and right edges, each holding a burning iron wall torch with a bright flame. In the centre a dark arched opening with stone steps going down into blackness, and in front of it a low stone altar block with a small carved lamp-in-a-hand mark. Worn flagstone floor, a stone vault rib overhead. Either side of the arch, tall old wooden shelves full of swollen, damp leather ledgers and books, grey stone. Wide view, the arch in the centre. Highly detailed high-resolution pixel art illustration with very small fine pixels and dense intricate detail, like a large hand-made pixel-art poster, not chunky, not low resolution, clean dark outlines, soft many-step shading, deep navy night, warm amber lamplight, muted violet stone, original fantasy setting.",
+   "dark_prompt": " Highly detailed high-resolution pixel art illustration with very small fine pixels and dense intricate detail, like a large hand-made pixel-art poster, not chunky, not low resolution, clean dark outlines, soft many-step shading, deep navy night, warm amber lamplight, muted violet stone, original fantasy setting.",
+   "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, anti-aliasing, mixed pixel sizes, people, characters, gore, blood, characters or art from existing games or films, chunky pixels, low resolution, blocky, jpeg artifacts",
+   "note": "dark (lost) is an edit of the lit picture."
+  },
+  "crypt_chamber_water": {
+   "model": "qwen-image-2.1",
+   "method": "text to image, fine style",
+   "denoise": 1.0,
+   "steps": 24,
+   "megapixels": 1.0,
+   "aspect": "16:9 (Widescreen)",
+   "seeds": [
+    160000,
+    160001
+   ],
+   "guide": null,
+   "lit_prompt": "A vaulted stone chamber deep under an old archive. Two stone pillars at the left and right edges, each holding a burning iron wall torch with a bright flame. In the centre a dark arched opening with stone steps going down into blackness, and in front of it a low stone altar block with a small carved lamp-in-a-hand mark. Worn flagstone floor, a stone vault rib overhead. Still black water covers the floor and mirrors the torches, cold blue-grey stone, thin threads of water running down the walls. Wide view, the arch in the centre. Highly detailed high-resolution pixel art illustration with very small fine pixels and dense intricate detail, like a large hand-made pixel-art poster, not chunky, not low resolution, clean dark outlines, soft many-step shading, deep navy night, warm amber lamplight, muted violet stone, original fantasy setting.",
+   "dark_prompt": " Highly detailed high-resolution pixel art illustration with very small fine pixels and dense intricate detail, like a large hand-made pixel-art poster, not chunky, not low resolution, clean dark outlines, soft many-step shading, deep navy night, warm amber lamplight, muted violet stone, original fantasy setting.",
+   "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, anti-aliasing, mixed pixel sizes, people, characters, gore, blood, characters or art from existing games or films, chunky pixels, low resolution, blocky, jpeg artifacts",
+   "note": "dark (lost) is an edit of the lit picture."
+  },
+  "crypt_chamber_thrones": {
+   "model": "qwen-image-2.1",
+   "method": "text to image, fine style",
+   "denoise": 1.0,
+   "steps": 24,
+   "megapixels": 1.0,
+   "aspect": "16:9 (Widescreen)",
+   "seeds": [
+    160000,
+    160001
+   ],
+   "guide": null,
+   "lit_prompt": "A vaulted stone chamber deep under an old archive. Two stone pillars at the left and right edges, each holding a burning iron wall torch with a bright flame. In the centre a dark arched opening with stone steps going down into blackness, and in front of it a low stone altar block with a small carved lamp-in-a-hand mark. Worn flagstone floor, a stone vault rib overhead. Either side of the arch, a throne of black stone with a small golden crown resting on its seat, violet-tinted stone. Wide view, the arch in the centre. Highly detailed high-resolution pixel art illustration with very small fine pixels and dense intricate detail, like a large hand-made pixel-art poster, not chunky, not low resolution, clean dark outlines, soft many-step shading, deep navy night, warm amber lamplight, muted violet stone, original fantasy setting.",
+   "dark_prompt": " Highly detailed high-resolution pixel art illustration with very small fine pixels and dense intricate detail, like a large hand-made pixel-art poster, not chunky, not low resolution, clean dark outlines, soft many-step shading, deep navy night, warm amber lamplight, muted violet stone, original fantasy setting.",
+   "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, anti-aliasing, mixed pixel sizes, people, characters, gore, blood, characters or art from existing games or films, chunky pixels, low resolution, blocky, jpeg artifacts",
+   "note": "dark (lost) is an edit of the lit picture."
+  },
+  "crypt_chamber_roots": {
+   "model": "qwen-image-2.1",
+   "method": "text to image, fine style",
+   "denoise": 1.0,
+   "steps": 24,
+   "megapixels": 1.0,
+   "aspect": "16:9 (Widescreen)",
+   "seeds": [
+    160000,
+    160001
+   ],
+   "guide": null,
+   "lit_prompt": "A vaulted stone chamber deep under an old archive. Two stone pillars at the left and right edges, each holding a burning iron wall torch with a bright flame. In the centre a dark arched opening with stone steps going down into blackness, and in front of it a low stone altar block with a small carved lamp-in-a-hand mark. Worn flagstone floor, a stone vault rib overhead. Pale, thick, very old tree roots hang down through the vault and push through the walls, mossy green stone. Wide view, the arch in the centre. Highly detailed high-resolution pixel art illustration with very small fine pixels and dense intricate detail, like a large hand-made pixel-art poster, not chunky, not low resolution, clean dark outlines, soft many-step shading, deep navy night, warm amber lamplight, muted violet stone, original fantasy setting.",
+   "dark_prompt": " Highly detailed high-resolution pixel art illustration with very small fine pixels and dense intricate detail, like a large hand-made pixel-art poster, not chunky, not low resolution, clean dark outlines, soft many-step shading, deep navy night, warm amber lamplight, muted violet stone, original fantasy setting.",
+   "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, anti-aliasing, mixed pixel sizes, people, characters, gore, blood, characters or art from existing games or films, chunky pixels, low resolution, blocky, jpeg artifacts",
+   "note": "dark (lost) is an edit of the lit picture."
+  },
+  "crypt_chamber_springs": {
+   "model": "qwen-image-2.1",
+   "method": "text to image, fine style",
+   "denoise": 1.0,
+   "steps": 24,
+   "megapixels": 1.0,
+   "aspect": "16:9 (Widescreen)",
+   "seeds": [
+    160000,
+    160001
+   ],
+   "guide": null,
+   "lit_prompt": "A vaulted stone chamber deep under an old archive. Two stone pillars at the left and right edges, each holding a burning iron wall torch with a bright flame. In the centre a dark arched opening with stone steps going down into blackness, and in front of it a low stone altar block with a small carved lamp-in-a-hand mark. Worn flagstone floor, a stone vault rib overhead. Small round pools of silver water well up from the floor and glow faintly, a thin pale mist, cool grey-blue stone. Wide view, the arch in the centre. Highly detailed high-resolution pixel art illustration with very small fine pixels and dense intricate detail, like a large hand-made pixel-art poster, not chunky, not low resolution, clean dark outlines, soft many-step shading, deep navy night, warm amber lamplight, muted violet stone, original fantasy setting.",
+   "dark_prompt": " Highly detailed high-resolution pixel art illustration with very small fine pixels and dense intricate detail, like a large hand-made pixel-art poster, not chunky, not low resolution, clean dark outlines, soft many-step shading, deep navy night, warm amber lamplight, muted violet stone, original fantasy setting.",
+   "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, anti-aliasing, mixed pixel sizes, people, characters, gore, blood, characters or art from existing games or films, chunky pixels, low resolution, blocky, jpeg artifacts",
+   "note": "dark (lost) is an edit of the lit picture."
+  }
+ }
 }

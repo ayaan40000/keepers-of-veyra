@@ -21,7 +21,8 @@ describe('curriculum', () => {
       const s = scaledSpec(d, 3);
       const got = genItems(s, 42, p).items.length;
       // 1.1: some specs size themselves (a Mind Map or poem is a whole piece, pegs stop at 10, a text has so many steps or points)
-      if (d.t === 'map' || d.t === 'poem' || d.skim) expect(got).toBeGreaterThan(0);
+      // 1.2: a scene asks its own set of questions, whatever n is
+      if (d.t === 'map' || d.t === 'poem' || d.skim || d.t === 'scene' || d.src === 'diagram') expect(got).toBeGreaterThan(0);
       else if (d.peg || d.src === 'steps' || d.src === 'points') expect(got).toBeLessThanOrEqual(s.n);
       else expect(got).toBe(s.n);
     }

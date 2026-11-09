@@ -18,14 +18,14 @@ export const VOCAB = [
   ['maziwa', 'milk', 'mazy-wah: a maze of milk'], ['njia', 'path', 'ninja: a ninja on a path'],
   ['mlima', 'mountain', 'lima bean: a mountain of lima beans'], ['moto', 'fire', 'motor: a motor on fire'],
   ['saa', 'clock', 'saw: sawing a clock'], ['kofia', 'hat', 'coffee: a hat full of coffee'],
-  ['mbwa', 'dog'], ['paka', 'cat'], ['kuku', 'chicken'], ['mbuzi', 'goat'], ['nyoka', 'snake'], ['tembo', 'elephant'],
-  ['twiga', 'giraffe'], ['kiboko', 'hippo'], ['ndizi', 'banana'], ['chungwa', 'orange'], ['embe', 'mango'], ['wali', 'rice'],
-  ['chumvi', 'salt'], ['sukari', 'sugar'], ['chai', 'tea'], ['kahawa', 'coffee'], ['kitanda', 'bed'], ['meza', 'table'],
-  ['kisu', 'knife'], ['kijiko', 'spoon'], ['sahani', 'plate'], ['kikombe', 'cup'], ['bahari', 'sea'], ['ziwa', 'lake'],
-  ['nyota', 'star'], ['mwezi', 'moon'], ['upepo', 'wind'], ['jiwe', 'stone'], ['mchanga', 'sand'], ['kisiwa', 'island'],
-  ['soko', 'market'], ['shule', 'school'], ['mwalimu', 'teacher'], ['mtoto', 'child'], ['mkono', 'hand'], ['mguu', 'leg'],
-  ['kichwa', 'head'], ['jicho', 'eye'], ['sikio', 'ear'], ['pua', 'nose'], ['moyo', 'heart'], ['kiatu', 'shoe'],
-  ['pesa', 'money'], ['kazi', 'work'], ['dada', 'sister'], ['kaka', 'brother'],
+  ['mbwa', 'dog', 'um-bwah: a dog that barks bwah'], ['paka', 'cat', 'packer: a cat packing a suitcase'], ['kuku', 'chicken', 'cuckoo: a chicken popping out of a cuckoo clock'], ['mbuzi', 'goat', 'm-boozy: a goat drinking from a big mug'], ['nyoka', 'snake', 'knee-yoke: a snake coiled round your knee'], ['tembo', 'elephant', 'tempo: an elephant keeping tempo on a drum'],
+  ['twiga', 'giraffe', 'twig: a giraffe nibbling a twig'], ['kiboko', 'hippo', 'key-bow: a hippo with a huge key in its mouth'], ['ndizi', 'banana', 'n-dizzy: a dizzy banana spinning round'], ['chungwa', 'orange', 'chunk: a chunk of orange'], ['embe', 'mango', 'ember: a mango glowing like an ember'], ['wali', 'rice', 'wall-y: rice piled up against a wall'],
+  ['chumvi', 'salt', 'chum: your chum salting everything'], ['sukari', 'sugar', 'Sue car: Sue drives a car full of sugar'], ['chai', 'tea', 'chai: the same word you know for tea'], ['kahawa', 'coffee', 'car-hour: a car that runs on coffee'], ['kitanda', 'bed', 'kit and a: a bed kit and a pillow'], ['meza', 'table', 'messy: a messy table'],
+  ['kisu', 'knife', 'kiss-oo: a knife and fork kissing'], ['kijiko', 'spoon', 'key-jiggle: jiggling a spoon like a key'], ['sahani', 'plate', 'sa-honey: honey poured on a plate'], ['kikombe', 'cup', 'key-comb: a comb sticking out of a cup'], ['bahari', 'sea', 'ba-hairy: a hairy sea monster'], ['ziwa', 'lake', 'zebra: a zebra paddling in a lake'],
+  ['nyota', 'star', 'knee-oh: a star stuck to your knee'], ['mwezi', 'moon', 'm-whizzy: the moon whizzing past'], ['upepo', 'wind', 'oo-pep: wind full of pep'], ['jiwe', 'stone', 'gee-way: a stone in the way'], ['mchanga', 'sand', 'm-change: loose change buried in sand'], ['kisiwa', 'island', 'kiss: two people kissing on an island'],
+  ['soko', 'market', 'soak-o: a market soaked in rain'], ['shule', 'school', 'shoe-lay: tying shoe laces at school'], ['mwalimu', 'teacher', 'wally-moo: a teacher who moos'], ['mtoto', 'child', 'toto: a child with a little dog called Toto'], ['mkono', 'hand', 'cone: an ice-cream cone in your hand'], ['mguu', 'leg', 'm-goo: goo dripping down your leg'],
+  ['kichwa', 'head', 'kitchen: a kitchen balanced on your head'], ['jicho', 'eye', 'jee-cho: an eye eating nachos'], ['sikio', 'ear', 'see-key: a key stuck in your ear'], ['pua', 'nose', 'poo-ah: a nose smelling something awful'], ['moyo', 'heart', 'mojo: a heart full of mojo'], ['kiatu', 'shoe', 'key-at: a key hidden in a shoe'],
+  ['pesa', 'money', 'pesos: a pile of money'], ['kazi', 'work', 'cozy: a cozy place to work'], ['dada', 'sister', 'dada: your sister saying dada'], ['kaka', 'brother', 'car-car: a brother racing toy cars'],
 ];
 
 export const FACTS = [

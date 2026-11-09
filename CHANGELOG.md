@@ -2,6 +2,17 @@
 
 All notable changes to Mnemos: Keepers of Veyra. Saved data from every earlier version loads in this one.
 
+## 1.2.0: Real-life Scenes, Carry it, languages and hard material (2026-11-08)
+
+Built and tested on the owner's computer.
+
+- **New languages and words with no meaning**: Spanish (106 words with el or la, 20 phrases) and Turkish (101 words, 16 phrases), each with a say-it spelling and many keyword ideas; 86 new invented words in the old tongue of Veyra (134 in all), checked against every word list in the game. The vocab drill can now go meaning to word, ask for the article with the word, use short phrases, mix look-alike words, or use sounds only. Accents and letters like Turkish ı are folded, so typing without them counts. Vocabulary is now reviewed at 1, 3, 7, 14, 30 and 60 days, as Month 6 promised. Eleven new lesson cards; the 46 Swahili words without a keyword idea now have one.
+- **Real-life Scenes**: from week 3 each full session has one scene shaped like everyday life (a neighbour's shopping list, directions, names at a party, two voicemails, a tram board, a recipe, a Spanish menu). Fresh material every time, questions the way life asks them, and a next-day review asked in a different way. A technique ladder per method: worked example, guided, named, then choose the technique yourself. Weeks 40 to 43 and the Month 10 gate now ask you to choose. Scaffolded scenes do not change skill estimates.
+- **Carry it**: after a scene you can set an if-then plan and type a few real things to keep; Mnemos asks for them a day and a week later. Only a correct recall counts as held. It earns no Lumen and has no streak.
+- **Honest transfer score**: the transfer part of the Mnemos score now counts only scenes and reviews asked in a new form.
+- **Hard material for an untrained memory**: new Fact Recall sources for formulae (24 formulas with one part missing, plus 12 chemical formulas; type r2, 1/2 or pi), historical dates (from the checked date sets), general knowledge, 26 surprising facts with a short reason, 21 jokes (keep the key word), and six labelled diagrams drawn in code (layers of the Earth, the planets, the water cycle, the heart, a flower, the compass). Formulae and dates come back the next day asked another way. They appear in weeks 12, 20, 27, 28, 29, 38, 41, 42 and 48 with six new lesson cards, and two new scenes: jokes at dinner and the teacher's board. All facts were fact-checked by a second reviewer.
+- Saved data moves to schema 3 (habits and the ladder); older saves load unchanged.
+
 ## 1.1.0: The Living World, the Say-Back Games and Chapter 13 (2026-11-02)
 
 Built and tested on the owner's computer; not pushed or deployed. Everything the owner chose for 1.1 ships together. New pictures are painted and waiting for the owner's picks, so the new screens show code-drawn art or no picture until they are shipped.
