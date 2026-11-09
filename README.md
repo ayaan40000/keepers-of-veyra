@@ -17,6 +17,8 @@ Along the way you practise the real methods memory athletes use: turning things 
 - **The Undercroft**: an optional descent below the Archive with tablets of deep history, guardians and lost treasures.
 - **Echo battles**: gentle Forgettings that hold things you learned weeks ago.
 - **District Trials and sealed vaults**: optional challenges that open only for what you can still recall days later.
+- **The Keeper's Ledger**: your own cards in your own books (words, formulae, dates, jokes, ideas from books), asked again for years. **Your Own Text** and its Evening Round keep long texts for good, and **the Gloss** asks you to explain ideas in your own words.
+- **The Wardens' Road**: an optional Champion Track with every memory-sport discipline, strict scoring, your own number and card systems and a journey manager. A hobby path, honestly labelled.
 - **A walkable memory palace**, relics with stories, a character sheet and gear, a Keeper's Field Guide for using the methods in real life.
 - **No accounts, no adverts, no trackers, no network.** Everything stays in your browser, with backup and restore. See [PRIVACY.md](PRIVACY.md).
 

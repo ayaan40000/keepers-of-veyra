@@ -10,7 +10,9 @@ import { FINANCE, MARKS } from '../data/finance.js';
 import { VERBS, PERSONS, TENSE } from '../data/verbs.js';
 
 export const LEDGER_INTERVALS = [1, 3, 7, 14, 30, 60, 120, 240, 365];
-export const CAPS = { books: 50, cards: 5000, side: 400, note: 200, title: 80, history: 300, cardHistory: 8, record: 3000000 };
+// 1.8: each card keeps its last 3 answers (validation still accepts up to 8 from older 1.3 saves). A full Ledger of
+// 5,000 two-way cards with long sides stays under `record`, which sits inside the 10 MB import cap (store.js).
+export const CAPS = { books: 50, cards: 5000, side: 400, note: 200, title: 80, history: 300, cardHistory: 3, cardHistoryMax: 8, record: 7000000 };
 export const DAILY = { newCards: 10, reviews: 40 };
 export const LEDGER_LUMEN = { 7: 3, 30: 5 };
 export const KEPT_DAYS = 30;            // a card is "kept" at its first held review after a gap of 30 days or more
@@ -209,7 +211,7 @@ const BAD = 'The Keeper\'s Ledger in this file is damaged.';
 function okSched(s) {
   if (s == null) return true;
   return isObj(s) && isInt(s.idx, 0, LEDGER_INTERVALS.length - 1) && (s.due == null || isDate(s.due)) && (s.last == null || isDate(s.last))
-    && Array.isArray(s.history) && s.history.length <= CAPS.cardHistory && s.history.every((h) => isObj(h) && isDate(h.date) && typeof h.held === 'boolean')
+    && Array.isArray(s.history) && s.history.length <= CAPS.cardHistoryMax && s.history.every((h) => isObj(h) && isDate(h.date) && typeof h.held === 'boolean')
     && Array.isArray(s.paid) && s.paid.every((x) => isInt(x, 0, 20)) && typeof s.kept === 'boolean';
 }
 export function validateLedger(l) {

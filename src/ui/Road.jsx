@@ -119,7 +119,7 @@ function EventRun({ profile, update, id, sunday, onDone: done }) {
     </div>
   );
   if (phase === 'study') return <Study id={id} secs={secs} mat={mat} onDone={() => setPhase('recall')} />;
-  if (phase === 'recall') return <Recall id={id} secs={secs * 2} mat={mat} onDone={(answers) => {
+  if (phase === 'recall') return <Recall id={id} seed={seed} secs={secs * 2} mat={mat} onDone={(answers) => {
     const s = scoreOf(id, mat, answers);
     let out = null;
     update((p) => { out = recordEvent(p, id, secs, s.score, { date: today(p), misses: s.misses || [], truth: mat.digits || '' }); });
@@ -131,7 +131,7 @@ function EventRun({ profile, update, id, sunday, onDone: done }) {
       <section className="card gold" role="status">
         <span className="tag">{d.title} · {secs / 60} min</span>
         <h2>{res ? `${res.score} points` : 'Scoring.'}</h2>
-        {res && <p className="small">{res.pb ? (prev != null ? `A new personal best (was ${prev}).` : 'Your first mark on this tablet.') : `Your best here is ${prev}.`}{res.beatOttoline ? ' You passed Ottoline\'s mark. She will not mention it.' : prev != null ? ` Ottoline's mark was ${ottolineMark(prev)}.` : ''}</p>}
+        {res && <p className="small">{res.pb ? (res.prev != null ? `A new personal best (was ${res.prev}).` : 'Your first mark on this tablet.') : `Your best here is ${res.prev}.`}{res.beatOttoline ? ' You passed Ottoline\'s mark. She will not mention it.' : res.mark != null ? ` Ottoline's mark was ${res.mark}.` : ''}</p>}
         <p className="small muted">Scored with simplified competition rules. {RULES[id]}</p>
         <button className="btn primary" autoFocus onClick={() => onDone(res?.score ?? 0)}>{sunday ? 'Next event' : 'Back to the road'}</button>
       </section>
@@ -213,7 +213,7 @@ function Spoken({ digits, onDone }) {
   );
 }
 
-function Recall({ id, secs, mat, onDone }) {
+function Recall({ id, seed, secs, mat, onDone }) {
   const init = () => {
     if (id === 'numbers' || id === 'binary') return Array(Math.ceil(mat.digits.length / mat.row)).fill('');
     if (id === 'words') return Array(Math.ceil(mat.words.length / mat.col)).fill('');
@@ -223,10 +223,10 @@ function Recall({ id, secs, mat, onDone }) {
   };
   const [a, setA] = useState(init);
   // Dates are asked in a new order; image rows are shown shuffled (the right answer is each shape's original place).
-  const order = useMemo(() => (id === 'fdates' ? shuffle(mat.dates.map((_, i) => i), rng(7)) : null), []);
+  const order = useMemo(() => (id === 'fdates' ? shuffle(mat.dates.map((_, i) => i), rng(seed + 7)) : null), []);
   const shuffled = useMemo(() => {
     if (id !== 'images') return null;
-    const r = rng(11);
+    const r = rng(seed + 11);
     mat.orders = [];
     return mat.rows.map((row) => { const p = shuffle([0, 1, 2, 3, 4], r); mat.orders.push(p.map((orig) => orig + 1)); return p.map((k) => row[k]); });
   }, []);

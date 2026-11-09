@@ -2,6 +2,13 @@
 
 All notable changes to Mnemos: Keepers of Veyra. Saved data from every earlier version loads in this one.
 
+## 1.8.0: Review fixes and the syllabus plan complete (2026-11-08)
+
+- **Backups**: a large Keeper's Ledger could make its own backup refuse to load. Each card now keeps its last three answers, the Ledger's size check matches what the app can build, and the import cap rises from 5 MB to 10 MB. Saves from 1.3 to 1.7 load unchanged.
+- **Wardens' Road**: the result screen now compares a new score with your earlier best (it compared the score with itself), and the shuffles in Abstract Images and Invented Dates change every run, so answer patterns cannot be learned.
+- **Your Own Text**: a kept section now says when its next Evening Round is, instead of "it will not be asked again".
+- Docs: the plan is marked built (`docs/SYLLABUS_PLAN.md`), what is left is in `docs/HANDOFF_SYLLABUS_PLAN.md`, and the README, roadmap and house rules describe 1.2 to 1.8.
+
 ## 1.7.0: Hear it, and the way onto the Road (2026-11-08)
 
 - **Hear it**: after recall, the review list of a language drill (Spanish, Turkish, Swahili) has a "Hear it" button that says the foreign word with the device's own offline voice. Never during study or recall, never an online voice; if the device has no offline voice for the language, it says so.

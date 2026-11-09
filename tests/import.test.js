@@ -34,7 +34,7 @@ const MUTATIONS = {
   'profile is array': (d) => text({ ...d, profile: [] }),
   'newer schema': (d) => text({ ...d, schema: 99 }),
   'schema is text': (d) => text({ ...d, schema: 'two' }),
-  'over 5 MB': () => ' '.repeat(MAX_IMPORT_BYTES + 1),
+  'over the import cap': () => ' '.repeat(MAX_IMPORT_BYTES + 1),
   'no meta': (d) => { delete d.profile.meta; return text(d); },
   'no user': (d) => { delete d.profile.user; return text(d); },
   'alias is number': (d) => { d.profile.user.alias = 7; return text(d); },

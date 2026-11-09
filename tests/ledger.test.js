@@ -73,3 +73,17 @@ describe("the Keeper's Ledger", () => {
     expect(validateLedger(bad2)).toBeTruthy();
   });
 });
+
+describe('Ledger size (1.8 review fix)', () => {
+  it('a full two-way Ledger after many reviews still validates', () => {
+    const p = newProfile('t', 'key');
+    for (let b = 0; b < 5; b++) {
+      const { book } = addBook(p.ledger, { title: 'B' + b, kind: 'words', reverse: true }, d0);
+      for (let i = 0; i < 1000; i++) addCard(p.ledger, book.id, { front: 'front word ' + i + 'x'.repeat(40), back: 'back word ' + i + 'y'.repeat(40) }, d0);
+    }
+    const hist = Array.from({ length: 3 }, () => ({ date: d0, held: true, gap: 30 }));
+    for (const b of p.ledger.books) for (const c of b.cards) { c.s = { idx: 5, due: d0, last: d0, history: hist, paid: [0, 1, 2, 3, 4], kept: true, misses: 2 }; c.rs = { ...c.s }; }
+    expect(validateLedger(p.ledger)).toBeNull();
+    const r = parseImport(buildExport(p)); expect(r.error).toBeFalsy();
+  });
+});

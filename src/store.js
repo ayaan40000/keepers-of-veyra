@@ -15,7 +15,7 @@ import { blankGloss, validateGloss } from './engine/gloss.js';
 import { ensureRoad, validateRoad } from './engine/road.js';
 
 
-export const MAX_IMPORT_BYTES = 5 * 1024 * 1024;
+export const MAX_IMPORT_BYTES = 10 * 1024 * 1024; // 1.8: raised from 5 MB so a full Keeper's Ledger and Own Text shelf fit in one backup
 
 const DB = 'mnemos', STORE = 'kv', KEY = 'profile';
 export const LS_KEY = 'mnemos.profile';

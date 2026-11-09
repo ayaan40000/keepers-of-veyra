@@ -1,5 +1,9 @@
 # Mnemos Roadmap to Public Release
 
+## 1.2 to 1.8: the syllabus plan (built Nov 8, 2026)
+
+Built from docs/SYLLABUS_PLAN.md: the Keeper's Ledger, longer review gaps and Old Echoes, the Gloss, finance formulae and the Merchants' Marks, the Evening Round, turning stones, bigger pools, the Wardens' Road (Champion Track) and pronunciation after recall. See CHANGELOG.md and docs/HANDOFF_SYLLABUS_PLAN.md for what is left.
+
 ## v1.0.0: released Nov 2, 2026 (owner decision)
 
 Mnemos 1.0 is public on GitHub Pages. The owner confirmed the trademark search for "Mnemos" is clear and decided to release with the remaining work open, and to ask the community for help with future builds. Release requirements that were **not** met before release, by owner decision, and are now open for contributors: the WCAG 2.2 AA audit with NVDA and VoiceOver, device testing on real phones (including a low-end Android), the 20-person closed beta, and the 500-face representation review. Everything planned below (v0.12, v0.13, the leftovers of v0.10 and v0.11, the painted face cast) continues after 1.0 as 1.x releases. Lore guide for the community: `docs/lore/`. How to help: `CONTRIBUTING.md`.

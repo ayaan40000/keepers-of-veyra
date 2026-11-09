@@ -1,6 +1,6 @@
 # Mnemos: Keepers of Veyra
 
-Free, open-source, local-first memory-training RPG. 365-day curriculum, about 30 minutes a day, wrapped in an original pixel-art story. Owner: Ayaan (does not code; explain changes in plain language). Current version: 1.0.0, released publicly Nov 2, 2026 (see CHANGELOG.md). Releases after 1.0 are 1.x.
+Free, open-source, local-first memory-training RPG. 365-day curriculum, about 30 minutes a day, wrapped in an original pixel-art story. Owner: Ayaan (does not code; explain changes in plain language). Current version: 1.8.0 (Nov 8, 2026; see CHANGELOG.md). 1.0.0 was the public release on Nov 2, 2026. Releases after 1.0 are 1.x.
 
 Read first: `docs/lore/README.md` (the world and the canon; `scripts/lore-doc.mjs` regenerates the other lore pages from `src/data`), `CONTRIBUTING.md` (house rules for contributors), `docs/ROADMAP.md`, `docs/BEYOND.md` (planned Field Guide: using the methods on real-life material) (what to build next and release requirements) and `docs/PRODUCT_DOSSIER.md` (research, curriculum, adaptive rules, scoring, story bible, UX spec, architecture, IP register).
 
@@ -8,7 +8,7 @@ Read first: `docs/lore/README.md` (the world and the canon; `scripts/lore-doc.mj
 ```
 npm install
 npm run dev              # Vite dev server
-npm test                 # Vitest: all unit tests must pass (221 at v1.0.0)
+npm test                 # Vitest: all unit tests must pass (482 at v1.8.0)
 npx vite-node scripts/lore-doc.mjs    # rebuild docs/lore/ after any story change
 npm run build:single     # one offline HTML file -> dist-single/index.html (the review build)
 npm run build            # static site for GitHub Pages -> dist/
@@ -36,10 +36,10 @@ node scripts/licenses.mjs             # regenerate licence list after dependency
 - `src/engine/` pure logic: `core.js` (items, scoring, adaptive rules R1-R6, probes), `session.js` (session builder), `progress.js` (Lumen, gates, streaks, scores, finalize), `quests.js` (side quests, codex), `collect.js` (relics, calm repair), `crypt.js` (Undercroft), `battle.js` (Echo battles), `trials.js` (District Trials and vaults), `util.js`.
 - `src/pixel/` engine: `raster.js` (pure buffers/sprites), `components.jsx` (Sprite, PixelCanvas), `core.js` re-exports both; `faces.js`, `portraits.js`, `Faces.jsx`, `icons.js`.
 - `src/ui/` screens (Today, Session, Drill, Veyra, Relics, Crypt, Palaces, Progress, Keeper, Onboarding); `src/ui/game/` design-system components (Panel, PxButton, Hud, DialogueBox, UnlockToast, PxIcon); `src/ui/pixel/` world map and scenes; `src/audio/sfx.js` WebAudio chiptune.
-- `src/store.js` persistence, full validation (schema 2), 5 MB import cap, migrations. `src/engine/beta.js` beta report, problem report, local error log. `src/engine/moods.js` portrait moods. `src/ui/Notices.jsx` backup reminder, Safari notice, update prompt. `src/ui/Tips.jsx` first-time tips.
+- `src/store.js` persistence, full validation (schema 3), 10 MB import cap (raised in 1.8 for the Ledger), migrations. `src/engine/beta.js` beta report, problem report, local error log. `src/engine/moods.js` portrait moods. `src/ui/Notices.jsx` backup reminder, Safari notice, update prompt. `src/ui/Tips.jsx` first-time tips.
 - Service worker is generated at build time in `vite.config.js` (cache name carries the version). `src/styles.css` design system; `src/ui/crypt.css`.
 - `previews/` dev-only preview pages for art; not part of the app.
 
 ## Next work
-Nov 8, 2026: syllabus audit and 1.3 plan written, waiting on the owner's review. Start with `docs/HANDOFF_SYLLABUS_PLAN.md`.
+Nov 8, 2026: the syllabus plan (`docs/SYLLABUS_PLAN.md`) is built as 1.2.1 to 1.8.0. What is left of it, and why, is in `docs/HANDOFF_SYLLABUS_PLAN.md`. New since 1.2: `src/engine/ledger.js` + `src/ui/Ledger.jsx` (Keeper's Ledger, `p.ledger`), `src/engine/gloss.js` + `src/ui/Gloss.jsx` (`p.gloss`), the Evening Round in `src/engine/owntext.js` (`text.round`), `src/data/finance.js`, `src/data/verbs.js`, `src/data/pools15.js` (filter with `scripts/pool-filter.mjs`), `src/data/lore13.js` (new canon), `src/engine/road.js` + `src/ui/Road.jsx` (Wardens' Road, `p.road`), `src/ui/HearIt.jsx`. Regenerate `docs/SYLLABUS.md` with `npx vite-node scripts/syllabus-doc.mjs` after curriculum changes.
 v0.4 to v0.9 are built; the owner chose to skip the closed beta. v0.9 added the Year of Keeping (`yearComplete` in `src/engine/session.js`), the epilogue and gate talk (`src/data/afteryear.js`), late-year seals, palace furniture picks (`palace.furniture`), boss trials, two modifiers and the run card (`src/ui/RunCard.jsx`). v0.11 added District Trials, sealed vaults and calm relic repair (`src/engine/trials.js`, `src/ui/Trials.jsx`, `src/data/trials.js`; prize icons from `tools/asset-studio/prizes.py`). Next: v0.12 The Living World in `docs/ROADMAP.md`, then the v1.0 release requirements (trademark, accessibility audit, device testing need people). `scripts/icons.mjs` renders the app icons; `src/pixel/furniture.js` holds palace-room furniture. Local Qwen (LM Studio at http://127.0.0.1:1234) can draft content pools; filter and review its output. Re-run unit + e2e tests after every change and look at screenshots for visual changes.

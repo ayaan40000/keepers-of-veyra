@@ -91,7 +91,7 @@ function CheckOne({ profile, update, text, sec, learning, onDone }) {
           <h3>{res.held} of {res.of} lines held.</h3>
           {learning && !res.started && <p className="small">Not quite yet. Go back to the Line starts or First letters step and try the Blank step again. Nothing is lost.</p>}
           {learning && res.started && <p className="small">This section is on your schedule. First check: {res.due}.</p>}
-          {!learning && <p className="small">{res.retired ? 'This section is kept. It will not be asked again.' : `Next check: ${res.due}.`}</p>}
+          {!learning && <p className="small">{res.retired ? (res.due ? `This section is kept. Next Evening Round: ${res.due}.` : 'This section is kept. The Evening Round is off for this text, so it will not be asked again.') : `Next check: ${res.due}.`}</p>}
           {res.lumen > 0 && <p className="small note good">A small reward of {res.lumen} Lumen, because this typed check held after a week or more.</p>}
           {slipped.length > 0 && <p className="small">{OWN.slipped}</p>}
           <ol className="own-results">{asked.map((i) => (
