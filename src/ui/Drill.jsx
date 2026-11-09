@@ -8,6 +8,7 @@ import { PixelFace, Portrait } from '../pixel/Faces.jsx';
 import { PalaceEditor } from './Palaces.jsx';
 import { sfx } from '../audio/sfx.js';
 import { langName, isLangSpec, VOCAB_HONEST } from '../engine/lang.js';
+import { HearIt } from './HearIt.jsx';
 import { Diagram } from './Diagram.jsx';
 import { ArtImg, artFor } from './artLookup.jsx';
 
@@ -516,6 +517,7 @@ export default function Drill({ step, isProbe, profile, update, onResult, onCont
             {!x.ok && <span className="muted small">{x.response ? `you wrote “${x.response}”` : 'blank'}{x.err && x.err !== 'omission' ? ` · ${x.err}` : ''}</span>}
             {t === 'faces' && spec.surname && x.parts && <span className="muted small">{x.parts[0] ? 'first name right' : 'first name missed'}, {x.parts[1] ? 'surname right' : 'surname missed'}</span>}
             {t === 'calc' && items[i]?.steps?.length > 0 && <span className="muted small">steps: {items[i].steps.join(', then ')}</span>}
+            {t === 'vocab' && isLangSpec(spec) && !spec.sounds && <HearIt code={spec.lang} word={String(spec.dir === 'produce' ? x.target : items[i]?.cue || '').replace(/^(el|la|los|las)\s+/i, (m) => m)} />}
             {spec.abstract && SOUNDALIKE[x.target] && <span className="muted small">Sound-alike idea: {SOUNDALIKE[x.target][0]}. {SOUNDALIKE[x.target][1]}.</span>}
             <span className="sr-only">{x.ok ? 'correct' : 'missed'}</span>
           </li>

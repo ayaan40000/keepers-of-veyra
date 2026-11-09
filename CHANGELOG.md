@@ -2,6 +2,12 @@
 
 All notable changes to Mnemos: Keepers of Veyra. Saved data from every earlier version loads in this one.
 
+## 1.7.0: Hear it, and the way onto the Road (2026-11-08)
+
+- **Hear it**: after recall, the review list of a language drill (Spanish, Turkish, Swahili) has a "Hear it" button that says the foreign word with the device's own offline voice. Never during study or recall, never an online voice; if the device has no offline voice for the language, it says so.
+- The Month 5 gate and week 22 now name the Wardens' Road; weeks 44 and 46 point to its one-minute warm-ups and to Long Sunday, with the same pre-event routine (breathe, walk the route once, then study).
+- House rules (`CLAUDE.md`) record the two audio exceptions and their conditions.
+
 ## 1.6.0: The Wardens' Road, the Champion Track (2026-11-08)
 
 - **The Wardens' Road** (opens at the Month 5 gate, from the Field Guide): an optional Champion Track for people who want to try memory sport. Each discipline is a lost Warden's tablet, found as the calendar weeks pass (week 22 to 48). Results never change skill estimates and earn no Lumen; the road keeps its own personal bests per event and format (1, 5 or 15 minutes of study, recall twice as long), and Ottoline Gilt's mark always sits a step ahead of your own earlier best. The game says plainly that competitive levels take years.
