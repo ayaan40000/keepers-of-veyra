@@ -1,7 +1,7 @@
 // Lesson cards for all 52 weeks, written in plain, friendly language.
 export const LESSONS = {
   1: [
-    'Here is something memory champions all agree on: most forgetting happens in the first two seconds, because we never really looked at the thing in the first place. So this week\'s skill is simple. Before you try to remember a word, stop for a moment and actually see it.',
+    'Much forgetting starts in the very first moment, because we never really looked at the thing in the first place. So this week\'s skill is simple. Before you try to remember a word, stop for a moment and actually see it.',
     'Make the picture specific. Don\'t picture "a dog". Picture one particular dog: your neighbour\'s soaking wet grey terrier, shaking muddy water all over your shoes. The more detail a picture has, the more there is for your memory to grab hold of.',
     'Now bring it to life. Give it sound, smell, weight and movement. Make it enormous, or tiny, or a bit ridiculous. Your brain is built to ignore ordinary things and remember strange ones, so use that.',
     'It will feel slow and a little silly at first. That is completely normal. Do it for every word this week, and by Sunday you will notice it starting to happen on its own.',
@@ -24,7 +24,7 @@ export const LESSONS = {
     'At the end of this week is your first gate. Don\'t worry about it. It only asks you to do what you have already been doing every day, a little more of it, a little more calmly.',
   ],
   5: [
-    'This week you start the most powerful method in this course: the memory palace. It is over two thousand years old, and almost every memory champion alive uses it.',
+    'This week you start the most powerful method in this course: the memory palace. It is over two thousand years old, and most memory competitors studied in research used it.',
     'Choose a place you know so well you could walk through it with your eyes closed. Your home is perfect. Now pick out stops along a path through it, in the order you\'d naturally walk: front door, doormat, coat hook, hallway mirror, and so on.',
     'Good stops are different from each other and spread out. Two identical chairs side by side will get mixed up. A chair, then the fridge, then the window ledge will not.',
     'Before you place anything at all, walk your route in your mind three times, slowly, seeing each stop clearly. You are building the shelves before you put anything on them.',
@@ -149,7 +149,7 @@ export const LESSONS = {
     'Walk the new parts of the route a few times before you put anything on them.',
   ],
   33: [
-    'Time pressure makes people sloppy. So here is a rule this app follows: if your accuracy drops below 75% on timed drills, you get study time back automatically.',
+    'Time pressure makes people sloppy. So here is a rule this app follows: if your running accuracy on a skill falls below 60%, you get half as much study time again on that skill until it recovers.',
     'Speed only ever counts when it comes with accuracy. A fast wrong answer is still wrong.',
   ],
   34: [
@@ -168,8 +168,8 @@ export const LESSONS = {
     'Each switch makes you choose the right technique, which is the skill you will actually need in real life.',
   ],
   38: [
-    'This week introduces an optional advanced method called PAO: Person, Action, Object. Every two-digit number gets a person, a thing they do, and an object. Six digits then become one single scene: the person from the first pair, doing the action from the second, with the object from the third.',
-    'It is very fast but takes a long time to set up. Memory competitors love it. For everyday life, the Major System you already have is plenty, so treat PAO as a bonus.',
+    'This week you push the Major System faster. It also introduces an optional advanced method called PAO: Person, Action, Object. Every two-digit number gets a person, a thing they do, and an object. Six digits then become one single scene: the person from the first pair, doing the action from the second, with the object from the third.',
+    'It is very fast but takes a long time to set up. Many competitors use a version of it. For everyday life, the Major System you already have is plenty. If you want to build a full PAO table, the Wardens\' Road (opened at the Month 5 gate) has a builder.',
   ],
   39: [
     'This week checks what has survived months of other learning. It includes a repeat of your day-one tasks, and older material you have not seen in a while.',
@@ -218,7 +218,7 @@ export const LESSONS = {
   ],
   52: [
     'The last gate tests everything you have learned. Walk every route, use every tool, and hold whatever you can.',
-    'After this, Keeper mode will keep your skills alive with short monthly sessions. The year ends here, but the skill does not have to.',
+    'After this comes the Year of Keeping: each day revisits a week of the course, and your Ledger and your own texts keep coming back. The year ends here, but the skill does not have to.',
   ],
 };
 

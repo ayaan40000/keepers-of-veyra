@@ -162,10 +162,10 @@ export function buildSession(p, kind, opts = {}) {
     const sc = !unit && week.w >= SCENE_FROM_WEEK && !week.drills.some((d) => d.t === 'scene') ? sceneFor(p, week.w, p.progress.day) : null;
     if (sc) steps.push({ ...drillStep(p, SCENE_SPEC(sc), 'practice', seed('sc')), sceneMode: sceneMode(p, sc, week.w) });
     // Use the 30 minutes: add extra practice rounds with new material while the session is short.
-    for (let k = 0; k < 3 && !unit && estimateMinutes({ steps }) < 22; k++) {
+    for (let k = 0; k < 2 && !unit && estimateMinutes({ steps }) < 22; k++) {
       const d = rounds[k % rounds.length];
       const sk = skillOfSpec(d);
-      steps.push(drillStep(p, d, p.skills[sk].remediate ? 'remedial' : 'practice', seed('x' + k)));
+      steps.push({ ...drillStep(p, d, p.skills[sk].remediate ? 'remedial' : 'practice', seed('x' + k)), topup: true });
     }
     if (unit && unit.form === 'B') unitSpecs(unit.unit, unit.form).forEach((sp, i) => steps.push({ ...drillStep(p, sp, 'check', seed('u' + i)), unitCheck: true }));
     else if (!unit) steps.push(drillStep(p, week.check, 'check', seed('c')));

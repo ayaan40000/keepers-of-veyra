@@ -2,6 +2,15 @@
 
 All notable changes to Mnemos: Keepers of Veyra. Saved data from every earlier version loads in this one.
 
+## 1.2.1: Honest fixes from the syllabus audit (2026-11-08)
+
+- Lesson cards no longer claim what nobody checked (what champions agree on, how many use the palace, that competitors love PAO), no PIN advice, and the last week describes the Year of Keeping as it is.
+- The study-time rule is described as it really works (more study time when running accuracy falls below 60%), and timed gates are explained as fixed-time formats; the pace message that could never fire is gone.
+- Week checks now match their objectives: 16, 24 and 40 digits in weeks 18, 19 and 21, a 40-stop route in week 32, 24 digits in 2 minutes in week 33. Week 38 is now "Faster Numbers (optional)".
+- Delayed checks sample across the whole set, so late palace stops are checked later too.
+- Top-up rounds: at most two, and Lumen only at or above your current level.
+- The joke drill counts toward Structure, not Linking. The photosynthesis answer needs the 6 in 6O₂.
+
 ## 1.2.0: Real-life Scenes, Carry it, languages and hard material (2026-11-08)
 
 Built and tested on the owner's computer.

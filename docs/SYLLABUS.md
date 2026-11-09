@@ -22,7 +22,7 @@ Generated from `src/data/curriculum.js` by `scripts/syllabus-doc.mjs`. Do not ed
 
 - **Objective:** Place and recall 20 items forward and backward in a personal palace with at least 90% accuracy; 7-day retention at least 70%.
 - **Techniques:** Method of Loci: route design, locus selection, placement, walking recall, reverse recall.
-- **Gate:** Gate: 20 items in palace, forward then reverse. Mastery: Gate at least 90% forward and 85% reverse; 7-day probe at least 70%.
+- **Gate:** Gate: 20 items in palace, forward then reverse. Mastery: Gate at least 88% across forward and reverse; 7-day probe at least 70%.
 - **Retention:** Palace items re-walked at 1, 7, 30, 90 days.
 - **Transfer:** Memorize a 10-point to-do list for tomorrow in your palace.
 - **Story:** Chapter 2: the Gallery's portraits are blank; restoring the route reveals Calder walked it nightly.
@@ -48,7 +48,7 @@ Generated from `src/data/curriculum.js` by `scripts/syllabus-doc.mjs`. Do not ed
 | 9 | Seeing a Face | Choose one stable distinctive feature per face in 3 seconds. | Names and Faces (4 items, 50s study) | Names and Faces (4 items, 45s study) |
 | 10 | Names as Images | Turn first names into concrete images. | Names and Faces (6 items, 60s study) | Names and Faces (5 items, 55s study) |
 | 11 | Faces at Volume | Remember 8 names in 2 minutes. | Names and Faces (8 items, 90s study) | Names and Faces (6 items, 70s study) |
-| 12 | Mixed Review | Interleave faces, palace and chains. | Names and Faces (8 items, 80s study); Palace Walk (15 items, 100s study); Fact Recall (5 items, 90s study, src: jokes, skill: linking) | Story Chain (12 items, 80s study) |
+| 12 | Mixed Review | Interleave faces, palace and chains. | Names and Faces (8 items, 80s study); Palace Walk (15 items, 100s study); Fact Recall (5 items, 90s study, src: jokes, skill: structure) | Story Chain (12 items, 80s study) |
 | 13 | Quarter 1 Assessment | Measure growth against the day-1 baseline. | Word Recall (15 items, 90s study); Names and Faces (8 items, 80s study) | Palace Walk (20 items, 150s study) |
 
 ## M4. Month 4: Number Encoding I: Major System (The Counting House)
@@ -57,7 +57,7 @@ Generated from `src/data/curriculum.js` by `scripts/syllabus-doc.mjs`. Do not ed
 - **Techniques:** Major System sound code; building a personal 00 to 99 image list.
 - **Gate:** Gate: 20 random pairs converted, timed. Mastery: At least 90% at under 3 s per item; 7-day probe at least 85%.
 - **Retention:** Conversion drill appears in review at expanding intervals until 180 days.
-- **Transfer:** Encode a PIN-length code you already know and check it.
+- **Transfer:** Encode a house number or a year you already know and check it.
 - **Story:** Chapter 4: the ledgers are written in numbers; Wren finds Calder's entries stop mid-sum.
 
 | Week | Title | Objective | Drills | Weekly check |
@@ -78,10 +78,10 @@ Generated from `src/data/curriculum.js` by `scripts/syllabus-doc.mjs`. Do not ed
 
 | Week | Title | Objective | Drills | Weekly check |
 | --- | --- | --- | --- | --- |
-| 18 | Digits in the Palace | 16 digits in a palace. | Digit Recall (12 items, 90s study, group: 2) | Digit Recall (12 items, 80s study) |
-| 19 | Longer Numbers | 24 digits in 3 minutes. | Digit Recall (20 items, 150s study, group: 4) | Digit Recall (16 items, 120s study) |
+| 18 | Digits in the Palace | 16 digits in a palace. | Digit Recall (12 items, 90s study, group: 2) | Digit Recall (16 items, 100s study) |
+| 19 | Longer Numbers | 24 digits in 3 minutes. | Digit Recall (20 items, 150s study, group: 4) | Digit Recall (24 items, 180s study) |
 | 20 | Dates and Phone Numbers | Encode dates and phone formats. | Digit Recall (10 items, 70s study, group: 3,3,4); Linked Pairs (8 items, 70s study); Fact Recall (6 items, 120s study, src: dates, skill: numbers) | Digit Recall (10 items, 60s study) |
-| 21 | Number Gate | 40 digits in 5 minutes. | Digit Recall (24 items, 180s study) | Digit Recall (24 items, 160s study) |
+| 21 | Number Gate | 40 digits in 5 minutes. | Digit Recall (24 items, 180s study) | Digit Recall (40 items, 300s study) |
 
 ## M6. Month 6: Vocabulary, Pegs and Abstract Concepts (The Tongues Bridge)
 
@@ -128,8 +128,8 @@ Generated from `src/data/curriculum.js` by `scripts/syllabus-doc.mjs`. Do not ed
 | Week | Title | Objective | Drills | Weekly check |
 | --- | --- | --- | --- | --- |
 | 31 | Encoding Faster | Accept the first usable image. | Palace Walk (15 items, 90s study, timed) | Palace Walk (15 items, 80s study, timed) |
-| 32 | A Fifty-Stop Route | Extend your palace to 50 stops. | Palace Walk (20 items, 120s study, timed) | Palace Walk (18 items, 100s study, timed) |
-| 33 | Timed Numbers | 24 digits in 2 minutes. | Digit Recall (20 items, 100s study, timed) | Digit Recall (20 items, 100s study, timed) |
+| 32 | A Fifty-Stop Route | Extend your palace toward 50 stops; one long route of 40. | Palace Walk (20 items, 120s study, timed) | Palace Walk (40 items, 240s study, timed) |
+| 33 | Timed Numbers | 24 digits in 2 minutes. | Digit Recall (20 items, 100s study, timed) | Digit Recall (24 items, 120s study, timed) |
 | 34 | Speed Gate | 30 words in 3 minutes. | Palace Walk (25 items, 150s study, timed) | Palace Walk (25 items, 150s study, timed) |
 
 ## M9. Month 9: Robustness and Interference (The Mirror Wards)
@@ -146,7 +146,7 @@ Generated from `src/data/curriculum.js` by `scripts/syllabus-doc.mjs`. Do not ed
 | 35 | Interference | Recall list A after studying list B. | Word Recall (10 items, 70s study, interference); Vocabulary (8 items, 100s study, lang: tr, alike) | Word Recall (10 items, 60s study, interference) |
 | 36 | Separate Palaces | Assign palaces by subject. | Palace Walk (15 items, 100s study); Word Recall (12 items, 70s study, interference) | Palace Walk (15 items, 90s study) |
 | 37 | Mixed Category Recall | Interleave every trained skill. | Names and Faces (6 items, 60s study); Digit Recall (12 items, 80s study); Vocabulary (6 items, 70s study, lang: tr); Vocabulary (6 items, 80s study, lang: old, sounds) | Fact Recall (8 items, 80s study) |
-| 38 | PAO (Optional Track) | Person-action-object images for faster number encoding. | Major Conversion (20 items, timed); Digit Recall (18 items, 100s study); Fact Recall (8 items, 140s study, src: dates, skill: numbers) | Digit Recall (18 items, 90s study) |
+| 38 | Faster Numbers (optional) | Faster Major images, and a first look at PAO. | Major Conversion (20 items, timed); Digit Recall (18 items, 100s study); Fact Recall (8 items, 140s study, src: dates, skill: numbers) | Digit Recall (18 items, 90s study) |
 | 39 | Quarter 3 Assessment | Cumulative probes of every gate. | Word Recall (15 items, 90s study, interference); Names and Faces (8 items, 80s study) | Palace Walk (20 items, 120s study) |
 
 ## M10. Month 10: Real-World Transfer (The Open Roads)

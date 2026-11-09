@@ -267,7 +267,7 @@ function Summary({ profile, update, onExit }) {
       {fin.gate && (
         <div className={`gate-result ${fin.gate.passed ? 'pass' : ''}`}>
           <h3>{fin.gate.passed ? `${MODULES.find((m) => m.id === fin.gate.module).district} restored` : 'The gate holds for now'}</h3>
-          <p>{Math.round(fin.gate.acc * 100)}% (needed {Math.round(fin.gate.threshold * 100)}%). {fin.gate.passed ? `A new chapter is open in Veyra.${fin.stageUp ? ` Wren is now ${fin.stageUp}.` : ''}` : `${fin.gate.speedOk === false ? 'Accuracy alone is not enough here: timed drills must also meet the target pace. ' : ''}Training continues. Retry in 3 days; your practice will target the gaps.`}</p>
+          <p>{Math.round(fin.gate.acc * 100)}% (needed {Math.round(fin.gate.threshold * 100)}%). {fin.gate.passed ? `A new chapter is open in Veyra.${fin.stageUp ? ` Wren is now ${fin.stageUp}.` : ''}` : `Training continues. Retry in 3 days; your practice will target the gaps.`}</p>
         </div>
       )}
       <table className="results loot">

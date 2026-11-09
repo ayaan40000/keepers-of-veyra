@@ -72,6 +72,8 @@ export function applyDrill(p, session, step, result, timing) {
   let lumen = Math.round(10 * result.acc * (1 + 0.1 * ((step.level || 1) - 1)));
   if (step.role === 'warmup') lumen = Math.round(lumen / 2);
   if (NO_CREDIT.includes(step.spec.t)) lumen = 0;
+  // 1.2.1: a top-up round earns Lumen only when it runs at or above the player's current level for that skill.
+  if (step.topup && (step.level || 1) < (p.skills[step.skill]?.level || 1)) lumen = 0;
   if (step.role === 'free' || session.repeatToday) {
     const fx = p.progress.freeXp && p.progress.freeXp.date === t && Number.isFinite(p.progress.freeXp.xp) ? p.progress.freeXp : { date: t, xp: 0 };
     lumen = Math.max(0, Math.min(lumen, FREE_XP_CAP - fx.xp));

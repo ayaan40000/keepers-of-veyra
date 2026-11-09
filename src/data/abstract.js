@@ -29,7 +29,7 @@ export const FORMULAS = [
   { id: 'fx-fahrenheit', name: 'Celsius to Fahrenheit', show: ['F', '=', '9/5', 'C', '+', '32'], blank: [2, 5], legend: 'C degrees Celsius, F degrees Fahrenheit', alt: { 2: ['1.8'] } },
   { id: 'fx-polygon', name: 'Interior angles of a polygon', show: ['sum', '=', '(n − 2)', '×', '180°'], blank: [2, 4], legend: 'n number of sides, answer in degrees', alt: { 3: ['x'] } },
   { id: 'fx-interest', name: 'Compound interest (yearly)', show: ['A', '=', 'P', '(1 + r)', '^t'], blank: [3, 4], legend: 'A final amount, P starting amount, r yearly rate as a decimal, t years', alt: { 4: ['t'] } },
-  { id: 'fx-photo', name: 'Photosynthesis', show: ['6CO₂', '+', '6H₂O', '→', 'C₆H₁₂O₆', '+', '6O₂'], blank: [4, 6], legend: 'carbon dioxide and water, with light, make glucose and oxygen', alt: { 6: ['O₂', '6 O2'] } },
+  { id: 'fx-photo', name: 'Photosynthesis', show: ['6CO₂', '+', '6H₂O', '→', 'C₆H₁₂O₆', '+', '6O₂'], blank: [4, 6], legend: 'carbon dioxide and water, with light, make glucose and oxygen', alt: { 6: ['6 O2', '6O2'] } },
 ];
 // Whole chemical formulas: name -> formula.
 export const CHEM = [

@@ -299,6 +299,14 @@ export function flipItems(set) {
   return null;
 }
 
+export function spreadPick(arr, k, shift = 0) {
+  if (arr.length <= k) return arr.slice();
+  const step = arr.length / k, off = ((shift * step) / 3) % step;
+  const out = [];
+  for (let j = 0; j < k; j++) out.push(arr[Math.min(arr.length - 1, Math.floor(j * step + off))]);
+  return [...new Set(out)];
+}
+
 export function probeItems(set) {
   const flip = flipItems(set);
   if (flip) return { items: flip, loci: null, flip: true };
@@ -306,7 +314,9 @@ export function probeItems(set) {
   const mode = recallMode(set.t, set.spec);
   if (mode === 'ordered' && set.t !== 'palace') return { items: set.items.slice(0, set.t === 'digits' ? 20 : 10), loci: null };
   if (mode === 'free') return { items: set.items.slice(0, 20), loci: null };
-  const idxs = set.items.map((_, i) => i).filter((i) => !set.items[i].lure).slice(0, 8);
+  // 1.2.1: sample across the whole set (late palace stops get checked too); each later probe shifts the sample.
+  const all = set.items.map((_, i) => i).filter((i) => !set.items[i].lure);
+  const idxs = spreadPick(all, 8, set.idx || 0);
   return { items: idxs.map((i) => set.items[i]), loci: set.loci ? idxs.map((i) => set.loci[i]) : null };
 }
 
