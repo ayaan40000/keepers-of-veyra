@@ -2,6 +2,14 @@
 
 All notable changes to Mnemos: Keepers of Veyra. Saved data from every earlier version loads in this one.
 
+## 1.10.0: Veyra painted (2026-11-09)
+
+- **The city, whole**: the Veyra screen now shows a painted view of the island city above the map, changing with the clock (dawn, day, dusk, night, same hours as the map): old cobbled roads, carts, boats, sheep, smoke and lamps, a river running from the moor through the sluice gate to the sea.
+- **District pictures**: the twelve districts have new painted dusk pictures (used at dusk and at night). Their day pictures are unchanged for now.
+- **Colour**: the violet tint the image model added to its pictures is gone from the new art. Prompts no longer ask for violet, and a clean-up step (`tools/asset-studio/colorfix.py`) runs on every picture the painter saves (see `docs/ART.md`, "Colour cast").
+- **Behind the scenes**: new pictures are listed in `src/data/artNew.js` (written by `tools/asset-studio/ship_v3.py`) and merged over `art.js`; story portraits can use painted faces when they ship (none yet, the code-drawn faces are still used). The painted-map code is ready but the interactive map still uses the code-drawn map.
+- Art folder is now about 3.1 MB of the 5 MB budget.
+
 ## 1.9.0: The Ledger first, Road days and the Amphitheatre (2026-11-08)
 
 - **The Ledger first**: from week 5, a full or end-of-week session opens with your Ledger's due cards (reviews only, at most 15, once a day). Skipping is always fine and costs nothing; a setting on the Keeper page turns it off.

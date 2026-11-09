@@ -58,8 +58,8 @@ Nothing in this work is committed. Another session works in the same folder on c
 The log is in the session scratchpad `q.log`. In order:
 1. Map views s0 to s2: done.
 2. `title` x2 and the six chambers x2: done (drafts are in `tools/asset-studio/out/motion/`).
-3. `testart.py` (66 x 2).
-4. `testart.py --sheet`, which writes `tools/asset-studio/out/test_art_sheet_{card,vignette,symbol}.png`.
+3. `testart.py` (66 x 2): done.
+4. `testart.py --sheet`: done (whole queue finished 20:40 with no errors). It writes `tools/asset-studio/out/test_art_sheet_{card,vignette,symbol}.png`.
 
 Drafts land in `tools/asset-studio/out/motion/` (scenes) and `tools/asset-studio/out/new/` (drill pictures). If the queue stopped, re-run the same commands. They skip files that already exist:
 ```

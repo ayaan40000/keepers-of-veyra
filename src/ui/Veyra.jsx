@@ -12,7 +12,7 @@ import WorldMap from './pixel/WorldMap.jsx';
 import { EchoHall } from './Battle.jsx';
 import { EventHallCard } from './EventHall.jsx';
 import { SeamCard } from './Seam.jsx';
-import { ArtImg, artFor } from './artLookup.jsx';
+import { ArtImg, artFor, VeyraView } from './artLookup.jsx';
 import { SEAM_CHAPTER, EPILOGUE_TWO, SEAM_PEOPLE } from '../data/forgetting.js';
 import { WF_BEATS } from '../data/wren.js';
 import { seenBeats as wrenSeen } from '../engine/wren.js';
@@ -198,6 +198,7 @@ export default function Veyra({ profile, update, onFight, onTrial }) {
       <div className="subtabs" role="tablist">{VIEWS.map(([id, label]) => <button key={id} role="tab" aria-selected={view === id} className={view === id ? 'on' : ''} onClick={() => setView(id)}>{label}</button>)}</div>
       {view === 'map' && (
         <>
+          <VeyraView />
           <WorldMap gates={profile.progress.gates} current={st.mod.id} selected={restoring || sel} onSelect={setSel} restoring={restoring} onRestored={markSeen} brambles={burnsOn ? thornCounts(profile) : null} burning={burn?.district || null} onBurned={burnSeen} className="veyra-map" />
           {burn && <p className="note" role="status">{burnLine(burn.key)}</p>}
           {restoring && <p className="note" role="status">{MODULES.find((x) => x.id === restoring)?.district} comes back out of the fog.</p>}

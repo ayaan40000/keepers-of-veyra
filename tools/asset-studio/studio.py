@@ -46,8 +46,8 @@ WORLD = (
     "the Compact of Lamps. Below the Archive lies the Undercroft. Tone: warm, plain, a little eerie, never gory."
 )
 STYLE = (
-    "Palette: deep navy night #0F1420, warm amber lamp light #E8B04B and #FFD98A, parchment #EFE6D2, muted violet "
-    "stone #3A3048, river blue #3A5A78, moss green #5A7A4A, rust #C46A2A. Every shape has a dark outline #140F1A."
+    "Palette: deep navy night #0F1420, warm amber lamp light #E8B04B and #FFD98A, parchment #EFE6D2, dark grey-brown "
+    "stone #3A3633, river blue #3A5A78, moss green #5A7A4A, rust #C46A2A. Every shape has a dark outline #140F1A."
 )
 
 # id, sprite width, height, how many, aspect for the reference picture, brief
@@ -253,9 +253,9 @@ def images(cat: str, items):
             continue
         wf = json.loads(json.dumps(wf0))
         prompt = (f"16-bit pixel art game asset, {it['name']}: {it['look']} Original fantasy setting, a lamp-lit river city at night. "
-                  f"Limited palette of deep navy, warm amber lamp light, parchment cream, muted violet stone. Crisp square pixels, "
+                  f"Limited palette of deep navy, warm amber lamp light, parchment cream, grey-brown stone, neutral colour balance with no purple cast. Crisp square pixels, "
                   f"dark outlines, {'single object centred on a plain dark navy background' if aspect == '1:1' else 'wide story panel, cinematic composition'}.")
-        neg = "text, letters, watermark, signature, logo, photo, 3d render, blurry, smooth gradients, anti-aliasing, characters or art from existing games"
+        neg = "purple tint, violet tint, magenta cast, text, letters, watermark, signature, logo, photo, 3d render, blurry, smooth gradients, anti-aliasing, characters or art from existing games"
         for node in wf.values():
             ct, inp = node["class_type"], node["inputs"]
             if ct.startswith("TextEncodeQwenImage"):

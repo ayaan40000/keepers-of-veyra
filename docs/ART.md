@@ -102,6 +102,20 @@ python tools/asset-studio/motion.py gif                    # out/motion/<id>.gif
 The review sheet `out/motion/<id>_sheet.png` shows the guide, lit, dark, the lights and flames found, and a face
 picture at the same zoom for comparing pixel size. Prompts and seeds go into `art-jobs.json` under `motion`.
 
+## Colour cast: the violet tint (added Nov 8, 2026)
+
+**The problem.** Almost every picture from the image model came out with a violet or purple cast: indigo night skies, purple haze and mist, purple-grey stone, magenta bands at the top of sunsets. Our own prompts caused most of it ("muted violet stone", "violet-blue sky", "fading to violet", "deep navy night"), and the model then added more.
+
+**What to do in every image prompt (picture jobs, scenes, maps, faces, animation frames):**
+1. **Never ask for violet, purple, lavender, indigo or magenta** in the prompt, even as a small detail. Use "deep teal-black shadows", "blue-black sky", "grey-brown stone", "cool silver moonlight" instead. (`LOOK`, `LOOK_FINE` in `motion.py` and `STYLE` in `studio.py` already say this.) A violet object that the story needs (a violet coat, vials) is fine: name the object, not the light.
+2. **Add the tint words to the negative prompt:** "purple tint, violet tint, magenta cast, lavender haze, purple colour cast, monochrome purple" (already in `NEG`, so `NEG_FINE` has it).
+3. **Add a neutral-colour line to the style text:** "neutral natural colour balance, true greys and warm browns, no colour cast".
+4. **Safety net: `tools/asset-studio/colorfix.py`.** `motion.run_wf` runs `decast_file` on every picture it saves (set the environment variable `NO_DECAST=1` to keep the raw picture). It only touches violet and magenta pixels (hue 232 to 345 degrees), turns their hue toward blue-teal and lowers their saturation a little. Oranges, ambers, peaches, greens and true blues are untouched, so lamp glow and sunsets keep their colour.
+5. **Pipelines that do not go through `motion.run_wf`** (`studio.py` jobs, `ship.py`, `testart.py`, `faces.py`) must call `colorfix.decast_file(path)` on the draft before reducing and shipping it, or run `python tools/asset-studio/colorfix.py <files> --write`. The command prints the violet share before and after (a good picture is under about 10%).
+6. **Do not "fix" it with a global green lift or white balance.** The first try did that and turned sunset and dawn skies yellow-green. Only the violet hues should move.
+
+Raw copies of the maps made before the fix are in `tools/asset-studio/out/mapviews/_raw_before_decast/` (drafts, not committed).
+
 ## Faces for the Names-and-Faces drills (owner chose image-model faces, Nov 2, 2026)
 
 Pipeline (`tools/asset-studio/`): `people.py` builds a balanced cast from a recipe (heritage, skin tone, age band, build, height, features,

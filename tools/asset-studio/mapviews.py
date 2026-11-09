@@ -40,7 +40,7 @@ EARTH_ADRIATIC = ("This could be a real place on Earth: a steep limestone bay on
                   "terraces, a still turquoise-dark sea at dusk, cool sea mist rising from the river.")
 EARTH_TROPICAL = ("This could be a real place on Earth: a humid tropical coast like Kerala, Sri Lanka or the Malabar coast, palms and banyan trees "
                   "growing out of the walls, monsoon clouds, warm dark sea at dusk, river mist in the heat.")
-WORLD_MOONS = ("This is NOT Earth: an invented world, a cold northern coast with two pale moons and a faint ring of light across a violet "
+WORLD_MOONS = ("This is NOT Earth: an invented world, a cold northern coast with two pale moons and a faint ring of light across a deep blue "
                "night sky, grey sea, strange pale heather and tall black pines.")
 WORLD_BASALT = ("This is NOT Earth: an invented world where a pewter-silver river glows faintly, black basalt columns and cliffs everywhere, "
                 "bone-white shell-stone, a huge ringed planet low in the sky over a dark sea.")
@@ -86,6 +86,30 @@ LABEL = {
     "a3_two_moons_timber": "ARCH: two moons, timber",
 }
 
+# ---- v2 (Nov 8, 2026, after the owner picked "proceed"): brighter, whole hill in frame, readable tide-lines, twelve landmarks
+VIEW2 = ("The WHOLE walled city seen in full from a high three-quarter bird's-eye view, the entire hill and the sea around it inside the frame "
+         "with a margin of dark water and sky on every side, nothing cropped. Seven terraces rise from a harbour quay at the bottom to a round "
+         "green-copper-domed Archive library at the top. A river tumbles down the middle in small lit waterfalls under stone bridges. "
+         "Twelve clearly separate districts, each with its own landmark: harbour quay with a row of lamps and boats; a very long columned gallery; "
+         "a round hall whose wall is carved with stone faces; a tall narrow timber counting house; a clock tower beside market stalls; a long white "
+         "arched bridge; a tall slender glass spire; a great zigzag stair; a courtyard of mirror pools; a north gate with a milestone and road; "
+         "a big old amphitheatre; a great sluice gate with twelve iron wheels. ")
+LIGHT = ("LIGHTING: a clear moonlit night, bright cool moonlight washes the whole city so every roof, wall and street is easy to read, a luminous "
+         "deep blue sky, pale silver light on the stone, warm amber windows glowing, not dark and not murky. ")
+TIDE = ("A broad pale band of bleached, salt-stained stone runs along every wall at one height, the line the silver Tide mist reaches each evening. ")
+
+
+def S2(place, arch):
+    return f"{VIEW2}{LIGHT}SETTING: {place} ARCHITECTURE: {arch} {TIDE}{AGE}"
+
+
+V2 = {
+    "v2_granite_s0": S2(WORLD_MOONS, ARCH_GRANITE), "v2_granite_s1": S2(WORLD_MOONS, ARCH_GRANITE),
+    "v2_round_s0": S2(WORLD_MOONS, ARCH_BYZ + " " + ARCH_GRANITE), "v2_round_s1": S2(WORLD_MOONS, ARCH_BYZ + " " + ARCH_GRANITE),
+}
+for _k in V2:
+    LABEL[_k] = "V2 " + _k[3:]
+
 
 def sheet():
     from PIL import Image, ImageDraw
@@ -104,8 +128,8 @@ def sheet():
         x, y = (i % cols) * tw, (i // cols) * rh
         sh.paste(im, (x, y + 24))
         d.text((x + 8, y + 6), LABEL[k], fill=(240, 220, 160))
-    sh.save(OUT / "sheet.png")
-    print("sheet:", OUT / "sheet.png")
+    sh.save(OUT / ("sheet_v2.png" if "v2_granite_s0" in PERMS else "sheet.png"))
+    print("sheet:", OUT / ("sheet_v2.png" if "v2_granite_s0" in PERMS else "sheet.png"))
 
 
 def main():
@@ -113,9 +137,12 @@ def main():
     ap.add_argument("--only", default="")
     ap.add_argument("--mp", type=float, default=0.9)
     ap.add_argument("--sheet", action="store_true")
+    ap.add_argument("--set", default="v1")
     a = ap.parse_args()
+    P = V2 if a.set == "v2" else PERMS
+    globals()["PERMS"] = P
     OUT.mkdir(parents=True, exist_ok=True)
-    (OUT / "prompts.json").write_text(json.dumps(PERMS, indent=1), encoding="utf-8")
+    (OUT / ("prompts_v2.json" if a.set == "v2" else "prompts.json")).write_text(json.dumps(P, indent=1), encoding="utf-8")
     if a.sheet:
         sheet(); return
     only = [s for s in a.only.split(",") if s]
@@ -127,7 +154,7 @@ def main():
         print("ComfyUI did not start"); return
     try:
         for k in todo:
-            seed = 230000 + list(PERMS).index(k)
+            seed = 240000 + list(PERMS).index(k) * 7 + (1000 if k.endswith("s1") else 0)
             wf = M.txt_wf(f"{PERMS[k]} {M.LOOK_FINE}", M.NEG_FINE + ", pristine, brand new, clean, tidy, freshly painted", seed, "3:4 (Portrait Standard)", min(a.mp, 1.0))
             M.run_wf(wf, OUT / f"{k}.png", f"mapview {k}")
     finally:

@@ -712,6 +712,8 @@ details.chapter-read[open] summary { margin-bottom: 10px; }
 .person-head canvas { flex: none; border: var(--u, 3px) solid var(--line); background: var(--bg); }
 .story-banner, .quest-banner { display: block; width: 100%; height: auto; image-rendering: pixelated; margin: 0 0 12px; border: var(--u, 3px) solid var(--line); }
 .veyra-map { display: block; margin: 0 auto; max-width: 520px; }
+.veyra-view { margin: 0 auto 12px; max-width: 640px; }
+.veyra-view .art-img { display: block; width: 100%; height: auto; image-rendering: auto !important; border: var(--u, 3px) solid var(--line); }
 canvas.px { image-rendering: pixelated; image-rendering: crisp-edges; }
 .person-head > div { min-width: 0; flex: 1; }
 .person-head .tag { white-space: normal; }

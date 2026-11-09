@@ -1249,5 +1249,931 @@
    "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, anti-aliasing, mixed pixel sizes, people, characters, gore, blood, characters or art from existing games or films, chunky pixels, low resolution, blocky, jpeg artifacts",
    "note": "dark (lost) is an edit of the lit picture."
   }
- }
+ },
+ "test_art": [
+  {
+   "id": "fact_wd-octopus",
+   "category": "card",
+   "prompt": "Highly detailed high-resolution pixel art illustration with very small fine pixels and dense intricate detail, like a large hand-made pixel-art poster, not chunky, not low resolution, clean dark outlines, soft many-step shading, deep navy night, warm amber lamplight, muted violet stone, original fantasy setting. A cheerful purple octopus with three glowing red hearts beating inside its body like drums. One clear, slightly funny subject, centred and large, simple uncluttered background, bright readable shapes, no text, no letters, no numbers, no logos.",
+   "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, anti-aliasing, mixed pixel sizes, people, characters, gore, blood, characters or art from existing games or films, chunky pixels, low resolution, blocky, jpeg artifacts, real people, celebrity, numbers, digits, readable signs",
+   "seeds": [
+    140000,
+    141000
+   ],
+   "aspect": "4:3 (Standard)",
+   "megapixels": 0.45,
+   "steps": 20,
+   "model": "qwen-image-2.1"
+  },
+  {
+   "id": "fact_wd-venus",
+   "category": "card",
+   "prompt": "Highly detailed high-resolution pixel art illustration with very small fine pixels and dense intricate detail, like a large hand-made pixel-art poster, not chunky, not low resolution, clean dark outlines, soft many-step shading, deep navy night, warm amber lamplight, muted violet stone, original fantasy setting. A sleepy yellow planet slowly turning on a pillow while a tiny clock races around it in orbit. One clear, slightly funny subject, centred and large, simple uncluttered background, bright readable shapes, no text, no letters, no numbers, no logos.",
+   "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, anti-aliasing, mixed pixel sizes, people, characters, gore, blood, characters or art from existing games or films, chunky pixels, low resolution, blocky, jpeg artifacts, real people, celebrity, numbers, digits, readable signs",
+   "seeds": [
+    140001,
+    141001
+   ],
+   "aspect": "4:3 (Standard)",
+   "megapixels": 0.45,
+   "steps": 20,
+   "model": "qwen-image-2.1"
+  },
+  {
+   "id": "fact_wd-banana",
+   "category": "card",
+   "prompt": "Highly detailed high-resolution pixel art illustration with very small fine pixels and dense intricate detail, like a large hand-made pixel-art poster, not chunky, not low resolution, clean dark outlines, soft many-step shading, deep navy night, warm amber lamplight, muted violet stone, original fantasy setting. A proud banana wearing a small crown and a gold medal, next to a surprised strawberry. One clear, slightly funny subject, centred and large, simple uncluttered background, bright readable shapes, no text, no letters, no numbers, no logos.",
+   "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, anti-aliasing, mixed pixel sizes, people, characters, gore, blood, characters or art from existing games or films, chunky pixels, low resolution, blocky, jpeg artifacts, real people, celebrity, numbers, digits, readable signs",
+   "seeds": [
+    140002,
+    141002
+   ],
+   "aspect": "4:3 (Standard)",
+   "megapixels": 0.45,
+   "steps": 20,
+   "model": "qwen-image-2.1"
+  },
+  {
+   "id": "fact_wd-sharks",
+   "category": "card",
+   "prompt": "Highly detailed high-resolution pixel art illustration with very small fine pixels and dense intricate detail, like a large hand-made pixel-art poster, not chunky, not low resolution, clean dark outlines, soft many-step shading, deep navy night, warm amber lamplight, muted violet stone, original fantasy setting. An old grey shark wearing spectacles swimming past a tiny new sapling on a beach. One clear, slightly funny subject, centred and large, simple uncluttered background, bright readable shapes, no text, no letters, no numbers, no logos.",
+   "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, anti-aliasing, mixed pixel sizes, people, characters, gore, blood, characters or art from existing games or films, chunky pixels, low resolution, blocky, jpeg artifacts, real people, celebrity, numbers, digits, readable signs",
+   "seeds": [
+    140003,
+    141003
+   ],
+   "aspect": "4:3 (Standard)",
+   "megapixels": 0.45,
+   "steps": 20,
+   "model": "qwen-image-2.1"
+  },
+  {
+   "id": "fact_wd-wombat",
+   "category": "card",
+   "prompt": "Highly detailed high-resolution pixel art illustration with very small fine pixels and dense intricate detail, like a large hand-made pixel-art poster, not chunky, not low resolution, clean dark outlines, soft many-step shading, deep navy night, warm amber lamplight, muted violet stone, original fantasy setting. A round brown wombat proudly stacking small brown cubes like building blocks. One clear, slightly funny subject, centred and large, simple uncluttered background, bright readable shapes, no text, no letters, no numbers, no logos.",
+   "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, anti-aliasing, mixed pixel sizes, people, characters, gore, blood, characters or art from existing games or films, chunky pixels, low resolution, blocky, jpeg artifacts, real people, celebrity, numbers, digits, readable signs",
+   "seeds": [
+    140004,
+    141004
+   ],
+   "aspect": "4:3 (Standard)",
+   "megapixels": 0.45,
+   "steps": 20,
+   "model": "qwen-image-2.1"
+  },
+  {
+   "id": "fact_wd-cleopatra",
+   "category": "card",
+   "prompt": "Highly detailed high-resolution pixel art illustration with very small fine pixels and dense intricate detail, like a large hand-made pixel-art poster, not chunky, not low resolution, clean dark outlines, soft many-step shading, deep navy night, warm amber lamplight, muted violet stone, original fantasy setting. An Egyptian queen in gold looking up at a rocket landing on the moon, with a tiny pyramid far away behind her. One clear, slightly funny subject, centred and large, simple uncluttered background, bright readable shapes, no text, no letters, no numbers, no logos.",
+   "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, anti-aliasing, mixed pixel sizes, people, characters, gore, blood, characters or art from existing games or films, chunky pixels, low resolution, blocky, jpeg artifacts, real people, celebrity, numbers, digits, readable signs",
+   "seeds": [
+    140005,
+    141005
+   ],
+   "aspect": "4:3 (Standard)",
+   "megapixels": 0.45,
+   "steps": 20,
+   "model": "qwen-image-2.1"
+  },
+  {
+   "id": "fact_wd-oxford",
+   "category": "card",
+   "prompt": "Highly detailed high-resolution pixel art illustration with very small fine pixels and dense intricate detail, like a large hand-made pixel-art poster, not chunky, not low resolution, clean dark outlines, soft many-step shading, deep navy night, warm amber lamplight, muted violet stone, original fantasy setting. An old stone college tower with a long white beard, next to a younger island city in a lake. One clear, slightly funny subject, centred and large, simple uncluttered background, bright readable shapes, no text, no letters, no numbers, no logos.",
+   "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, anti-aliasing, mixed pixel sizes, people, characters, gore, blood, characters or art from existing games or films, chunky pixels, low resolution, blocky, jpeg artifacts, real people, celebrity, numbers, digits, readable signs",
+   "seeds": [
+    140006,
+    141006
+   ],
+   "aspect": "4:3 (Standard)",
+   "megapixels": 0.45,
+   "steps": 20,
+   "model": "qwen-image-2.1"
+  },
+  {
+   "id": "fact_wd-flamingo",
+   "category": "card",
+   "prompt": "Highly detailed high-resolution pixel art illustration with very small fine pixels and dense intricate detail, like a large hand-made pixel-art poster, not chunky, not low resolution, clean dark outlines, soft many-step shading, deep navy night, warm amber lamplight, muted violet stone, original fantasy setting. A group of bright pink flamingos striking dramatic dance poses on a stage. One clear, slightly funny subject, centred and large, simple uncluttered background, bright readable shapes, no text, no letters, no numbers, no logos.",
+   "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, anti-aliasing, mixed pixel sizes, people, characters, gore, blood, characters or art from existing games or films, chunky pixels, low resolution, blocky, jpeg artifacts, real people, celebrity, numbers, digits, readable signs",
+   "seeds": [
+    140007,
+    141007
+   ],
+   "aspect": "4:3 (Standard)",
+   "megapixels": 0.45,
+   "steps": 20,
+   "model": "qwen-image-2.1"
+  },
+  {
+   "id": "fact_wd-honey",
+   "category": "card",
+   "prompt": "Highly detailed high-resolution pixel art illustration with very small fine pixels and dense intricate detail, like a large hand-made pixel-art poster, not chunky, not low resolution, clean dark outlines, soft many-step shading, deep navy night, warm amber lamplight, muted violet stone, original fantasy setting. A sealed clay jar of golden honey glowing on a shelf covered in thousands of years of dust and cobwebs. One clear, slightly funny subject, centred and large, simple uncluttered background, bright readable shapes, no text, no letters, no numbers, no logos.",
+   "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, anti-aliasing, mixed pixel sizes, people, characters, gore, blood, characters or art from existing games or films, chunky pixels, low resolution, blocky, jpeg artifacts, real people, celebrity, numbers, digits, readable signs",
+   "seeds": [
+    140008,
+    141008
+   ],
+   "aspect": "4:3 (Standard)",
+   "megapixels": 0.45,
+   "steps": 20,
+   "model": "qwen-image-2.1"
+  },
+  {
+   "id": "fact_wd-bones",
+   "category": "card",
+   "prompt": "Highly detailed high-resolution pixel art illustration with very small fine pixels and dense intricate detail, like a large hand-made pixel-art poster, not chunky, not low resolution, clean dark outlines, soft many-step shading, deep navy night, warm amber lamplight, muted violet stone, original fantasy setting. A friendly cartoon skeleton juggling many small bones. One clear, slightly funny subject, centred and large, simple uncluttered background, bright readable shapes, no text, no letters, no numbers, no logos.",
+   "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, anti-aliasing, mixed pixel sizes, people, characters, gore, blood, characters or art from existing games or films, chunky pixels, low resolution, blocky, jpeg artifacts, real people, celebrity, numbers, digits, readable signs",
+   "seeds": [
+    140009,
+    141009
+   ],
+   "aspect": "4:3 (Standard)",
+   "megapixels": 0.45,
+   "steps": 20,
+   "model": "qwen-image-2.1"
+  },
+  {
+   "id": "fact_wd-sunlight",
+   "category": "card",
+   "prompt": "Highly detailed high-resolution pixel art illustration with very small fine pixels and dense intricate detail, like a large hand-made pixel-art poster, not chunky, not low resolution, clean dark outlines, soft many-step shading, deep navy night, warm amber lamplight, muted violet stone, original fantasy setting. A beam of sunlight racing from the sun to a small blue earth, with a stopwatch riding on the beam. One clear, slightly funny subject, centred and large, simple uncluttered background, bright readable shapes, no text, no letters, no numbers, no logos.",
+   "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, anti-aliasing, mixed pixel sizes, people, characters, gore, blood, characters or art from existing games or films, chunky pixels, low resolution, blocky, jpeg artifacts, real people, celebrity, numbers, digits, readable signs",
+   "seeds": [
+    140010,
+    141010
+   ],
+   "aspect": "4:3 (Standard)",
+   "megapixels": 0.45,
+   "steps": 20,
+   "model": "qwen-image-2.1"
+  },
+  {
+   "id": "fact_wd-everest",
+   "category": "card",
+   "prompt": "Highly detailed high-resolution pixel art illustration with very small fine pixels and dense intricate detail, like a large hand-made pixel-art poster, not chunky, not low resolution, clean dark outlines, soft many-step shading, deep navy night, warm amber lamplight, muted violet stone, original fantasy setting. A very tall snowy mountain peak with a tiny climber planting a flag at the top. One clear, slightly funny subject, centred and large, simple uncluttered background, bright readable shapes, no text, no letters, no numbers, no logos.",
+   "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, anti-aliasing, mixed pixel sizes, people, characters, gore, blood, characters or art from existing games or films, chunky pixels, low resolution, blocky, jpeg artifacts, real people, celebrity, numbers, digits, readable signs",
+   "seeds": [
+    140011,
+    141011
+   ],
+   "aspect": "4:3 (Standard)",
+   "megapixels": 0.45,
+   "steps": 20,
+   "model": "qwen-image-2.1"
+  },
+  {
+   "id": "fact_wd-koala",
+   "category": "card",
+   "prompt": "Highly detailed high-resolution pixel art illustration with very small fine pixels and dense intricate detail, like a large hand-made pixel-art poster, not chunky, not low resolution, clean dark outlines, soft many-step shading, deep navy night, warm amber lamplight, muted violet stone, original fantasy setting. A koala holding up its paw to a magnifying glass showing swirly fingerprint lines, a detective's hat nearby. One clear, slightly funny subject, centred and large, simple uncluttered background, bright readable shapes, no text, no letters, no numbers, no logos.",
+   "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, anti-aliasing, mixed pixel sizes, people, characters, gore, blood, characters or art from existing games or films, chunky pixels, low resolution, blocky, jpeg artifacts, real people, celebrity, numbers, digits, readable signs",
+   "seeds": [
+    140012,
+    141012
+   ],
+   "aspect": "4:3 (Standard)",
+   "megapixels": 0.45,
+   "steps": 20,
+   "model": "qwen-image-2.1"
+  },
+  {
+   "id": "fact_wd-butterfly",
+   "category": "card",
+   "prompt": "Highly detailed high-resolution pixel art illustration with very small fine pixels and dense intricate detail, like a large hand-made pixel-art poster, not chunky, not low resolution, clean dark outlines, soft many-step shading, deep navy night, warm amber lamplight, muted violet stone, original fantasy setting. A butterfly standing on a leaf with a happy face, tasting the leaf through its feet, little sparkles at its feet. One clear, slightly funny subject, centred and large, simple uncluttered background, bright readable shapes, no text, no letters, no numbers, no logos.",
+   "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, anti-aliasing, mixed pixel sizes, people, characters, gore, blood, characters or art from existing games or films, chunky pixels, low resolution, blocky, jpeg artifacts, real people, celebrity, numbers, digits, readable signs",
+   "seeds": [
+    140013,
+    141013
+   ],
+   "aspect": "4:3 (Standard)",
+   "megapixels": 0.45,
+   "steps": 20,
+   "model": "qwen-image-2.1"
+  },
+  {
+   "id": "fact_wd-australia",
+   "category": "card",
+   "prompt": "Highly detailed high-resolution pixel art illustration with very small fine pixels and dense intricate detail, like a large hand-made pixel-art poster, not chunky, not low resolution, clean dark outlines, soft many-step shading, deep navy night, warm amber lamplight, muted violet stone, original fantasy setting. The moon lying next to a much wider island continent shape on a measuring tape. One clear, slightly funny subject, centred and large, simple uncluttered background, bright readable shapes, no text, no letters, no numbers, no logos.",
+   "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, anti-aliasing, mixed pixel sizes, people, characters, gore, blood, characters or art from existing games or films, chunky pixels, low resolution, blocky, jpeg artifacts, real people, celebrity, numbers, digits, readable signs",
+   "seeds": [
+    140014,
+    141014
+   ],
+   "aspect": "4:3 (Standard)",
+   "megapixels": 0.45,
+   "steps": 20,
+   "model": "qwen-image-2.1"
+  },
+  {
+   "id": "fact_wd-unicorn",
+   "category": "card",
+   "prompt": "Highly detailed high-resolution pixel art illustration with very small fine pixels and dense intricate detail, like a large hand-made pixel-art poster, not chunky, not low resolution, clean dark outlines, soft many-step shading, deep navy night, warm amber lamplight, muted violet stone, original fantasy setting. A white unicorn standing proudly on a misty green highland hill with a thistle. One clear, slightly funny subject, centred and large, simple uncluttered background, bright readable shapes, no text, no letters, no numbers, no logos.",
+   "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, anti-aliasing, mixed pixel sizes, people, characters, gore, blood, characters or art from existing games or films, chunky pixels, low resolution, blocky, jpeg artifacts, real people, celebrity, numbers, digits, readable signs",
+   "seeds": [
+    140015,
+    141015
+   ],
+   "aspect": "4:3 (Standard)",
+   "megapixels": 0.45,
+   "steps": 20,
+   "model": "qwen-image-2.1"
+  },
+  {
+   "id": "fact_wd-saturn",
+   "category": "card",
+   "prompt": "Highly detailed high-resolution pixel art illustration with very small fine pixels and dense intricate detail, like a large hand-made pixel-art poster, not chunky, not low resolution, clean dark outlines, soft many-step shading, deep navy night, warm amber lamplight, muted violet stone, original fantasy setting. A ringed planet floating like a rubber duck in a giant bathtub. One clear, slightly funny subject, centred and large, simple uncluttered background, bright readable shapes, no text, no letters, no numbers, no logos.",
+   "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, anti-aliasing, mixed pixel sizes, people, characters, gore, blood, characters or art from existing games or films, chunky pixels, low resolution, blocky, jpeg artifacts, real people, celebrity, numbers, digits, readable signs",
+   "seeds": [
+    140016,
+    141016
+   ],
+   "aspect": "4:3 (Standard)",
+   "megapixels": 0.45,
+   "steps": 20,
+   "model": "qwen-image-2.1"
+  },
+  {
+   "id": "fact_wd-ocean",
+   "category": "card",
+   "prompt": "Highly detailed high-resolution pixel art illustration with very small fine pixels and dense intricate detail, like a large hand-made pixel-art poster, not chunky, not low resolution, clean dark outlines, soft many-step shading, deep navy night, warm amber lamplight, muted violet stone, original fantasy setting. A globe that is mostly blue ocean, with a few small green islands and a little boat. One clear, slightly funny subject, centred and large, simple uncluttered background, bright readable shapes, no text, no letters, no numbers, no logos.",
+   "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, anti-aliasing, mixed pixel sizes, people, characters, gore, blood, characters or art from existing games or films, chunky pixels, low resolution, blocky, jpeg artifacts, real people, celebrity, numbers, digits, readable signs",
+   "seeds": [
+    140017,
+    141017
+   ],
+   "aspect": "4:3 (Standard)",
+   "megapixels": 0.45,
+   "steps": 20,
+   "model": "qwen-image-2.1"
+  },
+  {
+   "id": "fact_wd-hummingbird",
+   "category": "card",
+   "prompt": "Highly detailed high-resolution pixel art illustration with very small fine pixels and dense intricate detail, like a large hand-made pixel-art poster, not chunky, not low resolution, clean dark outlines, soft many-step shading, deep navy night, warm amber lamplight, muted violet stone, original fantasy setting. A tiny green hummingbird flying backwards away from a red flower, with motion lines. One clear, slightly funny subject, centred and large, simple uncluttered background, bright readable shapes, no text, no letters, no numbers, no logos.",
+   "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, anti-aliasing, mixed pixel sizes, people, characters, gore, blood, characters or art from existing games or films, chunky pixels, low resolution, blocky, jpeg artifacts, real people, celebrity, numbers, digits, readable signs",
+   "seeds": [
+    140018,
+    141018
+   ],
+   "aspect": "4:3 (Standard)",
+   "megapixels": 0.45,
+   "steps": 20,
+   "model": "qwen-image-2.1"
+  },
+  {
+   "id": "fact_wd-tittle",
+   "category": "card",
+   "prompt": "Highly detailed high-resolution pixel art illustration with very small fine pixels and dense intricate detail, like a large hand-made pixel-art poster, not chunky, not low resolution, clean dark outlines, soft many-step shading, deep navy night, warm amber lamplight, muted violet stone, original fantasy setting. A tiny round dot wearing a little hat, sitting on top of a tall thin pillar like a lighthouse keeper. One clear, slightly funny subject, centred and large, simple uncluttered background, bright readable shapes, no text, no letters, no numbers, no logos.",
+   "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, anti-aliasing, mixed pixel sizes, people, characters, gore, blood, characters or art from existing games or films, chunky pixels, low resolution, blocky, jpeg artifacts, real people, celebrity, numbers, digits, readable signs",
+   "seeds": [
+    140019,
+    141019
+   ],
+   "aspect": "4:3 (Standard)",
+   "megapixels": 0.45,
+   "steps": 20,
+   "model": "qwen-image-2.1"
+  },
+  {
+   "id": "fact_wd-lightning",
+   "category": "card",
+   "prompt": "Highly detailed high-resolution pixel art illustration with very small fine pixels and dense intricate detail, like a large hand-made pixel-art poster, not chunky, not low resolution, clean dark outlines, soft many-step shading, deep navy night, warm amber lamplight, muted violet stone, original fantasy setting. A bolt of lightning with a thermometer bursting at the top, the sun in the background looking jealous. One clear, slightly funny subject, centred and large, simple uncluttered background, bright readable shapes, no text, no letters, no numbers, no logos.",
+   "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, anti-aliasing, mixed pixel sizes, people, characters, gore, blood, characters or art from existing games or films, chunky pixels, low resolution, blocky, jpeg artifacts, real people, celebrity, numbers, digits, readable signs",
+   "seeds": [
+    140020,
+    141020
+   ],
+   "aspect": "4:3 (Standard)",
+   "megapixels": 0.45,
+   "steps": 20,
+   "model": "qwen-image-2.1"
+  },
+  {
+   "id": "fact_wd-ostrich",
+   "category": "card",
+   "prompt": "Highly detailed high-resolution pixel art illustration with very small fine pixels and dense intricate detail, like a large hand-made pixel-art poster, not chunky, not low resolution, clean dark outlines, soft many-step shading, deep navy night, warm amber lamplight, muted violet stone, original fantasy setting. An ostrich with enormous round eyes and a tiny thinking cloud above its head. One clear, slightly funny subject, centred and large, simple uncluttered background, bright readable shapes, no text, no letters, no numbers, no logos.",
+   "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, anti-aliasing, mixed pixel sizes, people, characters, gore, blood, characters or art from existing games or films, chunky pixels, low resolution, blocky, jpeg artifacts, real people, celebrity, numbers, digits, readable signs",
+   "seeds": [
+    140021,
+    141021
+   ],
+   "aspect": "4:3 (Standard)",
+   "megapixels": 0.45,
+   "steps": 20,
+   "model": "qwen-image-2.1"
+  },
+  {
+   "id": "fact_wd-desert",
+   "category": "card",
+   "prompt": "Highly detailed high-resolution pixel art illustration with very small fine pixels and dense intricate detail, like a large hand-made pixel-art poster, not chunky, not low resolution, clean dark outlines, soft many-step shading, deep navy night, warm amber lamplight, muted violet stone, original fantasy setting. A penguin wearing sunglasses standing on dry white ice under a clear sky, a little cactus made of ice beside it. One clear, slightly funny subject, centred and large, simple uncluttered background, bright readable shapes, no text, no letters, no numbers, no logos.",
+   "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, anti-aliasing, mixed pixel sizes, people, characters, gore, blood, characters or art from existing games or films, chunky pixels, low resolution, blocky, jpeg artifacts, real people, celebrity, numbers, digits, readable signs",
+   "seeds": [
+    140022,
+    141022
+   ],
+   "aspect": "4:3 (Standard)",
+   "megapixels": 0.45,
+   "steps": 20,
+   "model": "qwen-image-2.1"
+  },
+  {
+   "id": "fact_wd-russia",
+   "category": "card",
+   "prompt": "Highly detailed high-resolution pixel art illustration with very small fine pixels and dense intricate detail, like a large hand-made pixel-art poster, not chunky, not low resolution, clean dark outlines, soft many-step shading, deep navy night, warm amber lamplight, muted violet stone, original fantasy setting. A very long train carrying a row of many clocks, each showing a different time, across a snowy plain. One clear, slightly funny subject, centred and large, simple uncluttered background, bright readable shapes, no text, no letters, no numbers, no logos.",
+   "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, anti-aliasing, mixed pixel sizes, people, characters, gore, blood, characters or art from existing games or films, chunky pixels, low resolution, blocky, jpeg artifacts, real people, celebrity, numbers, digits, readable signs",
+   "seeds": [
+    140023,
+    141023
+   ],
+   "aspect": "4:3 (Standard)",
+   "megapixels": 0.45,
+   "steps": 20,
+   "model": "qwen-image-2.1"
+  },
+  {
+   "id": "fact_wd-trees",
+   "category": "card",
+   "prompt": "Highly detailed high-resolution pixel art illustration with very small fine pixels and dense intricate detail, like a large hand-made pixel-art poster, not chunky, not low resolution, clean dark outlines, soft many-step shading, deep navy night, warm amber lamplight, muted violet stone, original fantasy setting. A forest of countless trees under a night sky with a much smaller scattering of stars. One clear, slightly funny subject, centred and large, simple uncluttered background, bright readable shapes, no text, no letters, no numbers, no logos.",
+   "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, anti-aliasing, mixed pixel sizes, people, characters, gore, blood, characters or art from existing games or films, chunky pixels, low resolution, blocky, jpeg artifacts, real people, celebrity, numbers, digits, readable signs",
+   "seeds": [
+    140024,
+    141024
+   ],
+   "aspect": "4:3 (Standard)",
+   "megapixels": 0.45,
+   "steps": 20,
+   "model": "qwen-image-2.1"
+  },
+  {
+   "id": "fact_wd-eiffel",
+   "category": "card",
+   "prompt": "Highly detailed high-resolution pixel art illustration with very small fine pixels and dense intricate detail, like a large hand-made pixel-art poster, not chunky, not low resolution, clean dark outlines, soft many-step shading, deep navy night, warm amber lamplight, muted violet stone, original fantasy setting. A tall iron lattice tower stretching upwards in the summer sun, with a thermometer and a small sun hat. One clear, slightly funny subject, centred and large, simple uncluttered background, bright readable shapes, no text, no letters, no numbers, no logos.",
+   "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, anti-aliasing, mixed pixel sizes, people, characters, gore, blood, characters or art from existing games or films, chunky pixels, low resolution, blocky, jpeg artifacts, real people, celebrity, numbers, digits, readable signs",
+   "seeds": [
+    140025,
+    141025
+   ],
+   "aspect": "4:3 (Standard)",
+   "megapixels": 0.45,
+   "steps": 20,
+   "model": "qwen-image-2.1"
+  },
+  {
+   "id": "joke_jk-piano",
+   "category": "card",
+   "prompt": "Highly detailed high-resolution pixel art illustration with very small fine pixels and dense intricate detail, like a large hand-made pixel-art poster, not chunky, not low resolution, clean dark outlines, soft many-step shading, deep navy night, warm amber lamplight, muted violet stone, original fantasy setting. A grand piano whose keys are a ring of old iron door keys, standing beside a locked wooden door. One clear, slightly funny subject, centred and large, simple uncluttered background, bright readable shapes, no text, no letters, no numbers, no logos.",
+   "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, anti-aliasing, mixed pixel sizes, people, characters, gore, blood, characters or art from existing games or films, chunky pixels, low resolution, blocky, jpeg artifacts, real people, celebrity, numbers, digits, readable signs",
+   "seeds": [
+    140026,
+    141026
+   ],
+   "aspect": "4:3 (Standard)",
+   "megapixels": 0.45,
+   "steps": 20,
+   "model": "qwen-image-2.1"
+  },
+  {
+   "id": "joke_jk-clock",
+   "category": "card",
+   "prompt": "Highly detailed high-resolution pixel art illustration with very small fine pixels and dense intricate detail, like a large hand-made pixel-art poster, not chunky, not low resolution, clean dark outlines, soft many-step shading, deep navy night, warm amber lamplight, muted violet stone, original fantasy setting. A wall clock with little white gloved hands trying and failing to clap. One clear, slightly funny subject, centred and large, simple uncluttered background, bright readable shapes, no text, no letters, no numbers, no logos.",
+   "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, anti-aliasing, mixed pixel sizes, people, characters, gore, blood, characters or art from existing games or films, chunky pixels, low resolution, blocky, jpeg artifacts, real people, celebrity, numbers, digits, readable signs",
+   "seeds": [
+    140027,
+    141027
+   ],
+   "aspect": "4:3 (Standard)",
+   "megapixels": 0.45,
+   "steps": 20,
+   "model": "qwen-image-2.1"
+  },
+  {
+   "id": "joke_jk-towel",
+   "category": "card",
+   "prompt": "Highly detailed high-resolution pixel art illustration with very small fine pixels and dense intricate detail, like a large hand-made pixel-art poster, not chunky, not low resolution, clean dark outlines, soft many-step shading, deep navy night, warm amber lamplight, muted violet stone, original fantasy setting. A fluffy towel getting soaking wet while drying a happy dog. One clear, slightly funny subject, centred and large, simple uncluttered background, bright readable shapes, no text, no letters, no numbers, no logos.",
+   "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, anti-aliasing, mixed pixel sizes, people, characters, gore, blood, characters or art from existing games or films, chunky pixels, low resolution, blocky, jpeg artifacts, real people, celebrity, numbers, digits, readable signs",
+   "seeds": [
+    140028,
+    141028
+   ],
+   "aspect": "4:3 (Standard)",
+   "megapixels": 0.45,
+   "steps": 20,
+   "model": "qwen-image-2.1"
+  },
+  {
+   "id": "joke_jk-bottle",
+   "category": "card",
+   "prompt": "Highly detailed high-resolution pixel art illustration with very small fine pixels and dense intricate detail, like a large hand-made pixel-art poster, not chunky, not low resolution, clean dark outlines, soft many-step shading, deep navy night, warm amber lamplight, muted violet stone, original fantasy setting. A glass bottle wearing a scarf around its long neck, with no head. One clear, slightly funny subject, centred and large, simple uncluttered background, bright readable shapes, no text, no letters, no numbers, no logos.",
+   "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, anti-aliasing, mixed pixel sizes, people, characters, gore, blood, characters or art from existing games or films, chunky pixels, low resolution, blocky, jpeg artifacts, real people, celebrity, numbers, digits, readable signs",
+   "seeds": [
+    140029,
+    141029
+   ],
+   "aspect": "4:3 (Standard)",
+   "megapixels": 0.45,
+   "steps": 20,
+   "model": "qwen-image-2.1"
+  },
+  {
+   "id": "joke_jk-cold",
+   "category": "card",
+   "prompt": "Highly detailed high-resolution pixel art illustration with very small fine pixels and dense intricate detail, like a large hand-made pixel-art poster, not chunky, not low resolution, clean dark outlines, soft many-step shading, deep navy night, warm amber lamplight, muted violet stone, original fantasy setting. A person in a woolly hat catching a sneeze in a butterfly net, tissues flying. One clear, slightly funny subject, centred and large, simple uncluttered background, bright readable shapes, no text, no letters, no numbers, no logos.",
+   "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, anti-aliasing, mixed pixel sizes, people, characters, gore, blood, characters or art from existing games or films, chunky pixels, low resolution, blocky, jpeg artifacts, real people, celebrity, numbers, digits, readable signs",
+   "seeds": [
+    140030,
+    141030
+   ],
+   "aspect": "4:3 (Standard)",
+   "megapixels": 0.45,
+   "steps": 20,
+   "model": "qwen-image-2.1"
+  },
+  {
+   "id": "joke_jk-comb",
+   "category": "card",
+   "prompt": "Highly detailed high-resolution pixel art illustration with very small fine pixels and dense intricate detail, like a large hand-made pixel-art poster, not chunky, not low resolution, clean dark outlines, soft many-step shading, deep navy night, warm amber lamplight, muted violet stone, original fantasy setting. A comb with a toothy grin trying to bite an apple and failing. One clear, slightly funny subject, centred and large, simple uncluttered background, bright readable shapes, no text, no letters, no numbers, no logos.",
+   "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, anti-aliasing, mixed pixel sizes, people, characters, gore, blood, characters or art from existing games or films, chunky pixels, low resolution, blocky, jpeg artifacts, real people, celebrity, numbers, digits, readable signs",
+   "seeds": [
+    140031,
+    141031
+   ],
+   "aspect": "4:3 (Standard)",
+   "megapixels": 0.45,
+   "steps": 20,
+   "model": "qwen-image-2.1"
+  },
+  {
+   "id": "joke_jk-scarecrow",
+   "category": "card",
+   "prompt": "Highly detailed high-resolution pixel art illustration with very small fine pixels and dense intricate detail, like a large hand-made pixel-art poster, not chunky, not low resolution, clean dark outlines, soft many-step shading, deep navy night, warm amber lamplight, muted violet stone, original fantasy setting. A scarecrow standing alone in the middle of a wheat field holding up a gold trophy. One clear, slightly funny subject, centred and large, simple uncluttered background, bright readable shapes, no text, no letters, no numbers, no logos.",
+   "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, anti-aliasing, mixed pixel sizes, people, characters, gore, blood, characters or art from existing games or films, chunky pixels, low resolution, blocky, jpeg artifacts, real people, celebrity, numbers, digits, readable signs",
+   "seeds": [
+    140032,
+    141032
+   ],
+   "aspect": "4:3 (Standard)",
+   "megapixels": 0.45,
+   "steps": 20,
+   "model": "qwen-image-2.1"
+  },
+  {
+   "id": "joke_jk-bicycle",
+   "category": "card",
+   "prompt": "Highly detailed high-resolution pixel art illustration with very small fine pixels and dense intricate detail, like a large hand-made pixel-art poster, not chunky, not low resolution, clean dark outlines, soft many-step shading, deep navy night, warm amber lamplight, muted violet stone, original fantasy setting. A bicycle with two droopy exhausted tyres lying down for a nap. One clear, slightly funny subject, centred and large, simple uncluttered background, bright readable shapes, no text, no letters, no numbers, no logos.",
+   "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, anti-aliasing, mixed pixel sizes, people, characters, gore, blood, characters or art from existing games or films, chunky pixels, low resolution, blocky, jpeg artifacts, real people, celebrity, numbers, digits, readable signs",
+   "seeds": [
+    140033,
+    141033
+   ],
+   "aspect": "4:3 (Standard)",
+   "megapixels": 0.45,
+   "steps": 20,
+   "model": "qwen-image-2.1"
+  },
+  {
+   "id": "joke_jk-legend",
+   "category": "card",
+   "prompt": "Highly detailed high-resolution pixel art illustration with very small fine pixels and dense intricate detail, like a large hand-made pixel-art poster, not chunky, not low resolution, clean dark outlines, soft many-step shading, deep navy night, warm amber lamplight, muted violet stone, original fantasy setting. A confused mapmaker at a party holding a big map with an empty corner where the key should be. One clear, slightly funny subject, centred and large, simple uncluttered background, bright readable shapes, no text, no letters, no numbers, no logos.",
+   "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, anti-aliasing, mixed pixel sizes, people, characters, gore, blood, characters or art from existing games or films, chunky pixels, low resolution, blocky, jpeg artifacts, real people, celebrity, numbers, digits, readable signs",
+   "seeds": [
+    140034,
+    141034
+   ],
+   "aspect": "4:3 (Standard)",
+   "megapixels": 0.45,
+   "steps": 20,
+   "model": "qwen-image-2.1"
+  },
+  {
+   "id": "joke_jk-curtains",
+   "category": "card",
+   "prompt": "Highly detailed high-resolution pixel art illustration with very small fine pixels and dense intricate detail, like a large hand-made pixel-art poster, not chunky, not low resolution, clean dark outlines, soft many-step shading, deep navy night, warm amber lamplight, muted violet stone, original fantasy setting. A person in a cloak drawing curtains on a wall with a giant pencil. One clear, slightly funny subject, centred and large, simple uncluttered background, bright readable shapes, no text, no letters, no numbers, no logos.",
+   "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, anti-aliasing, mixed pixel sizes, people, characters, gore, blood, characters or art from existing games or films, chunky pixels, low resolution, blocky, jpeg artifacts, real people, celebrity, numbers, digits, readable signs",
+   "seeds": [
+    140035,
+    141035
+   ],
+   "aspect": "4:3 (Standard)",
+   "megapixels": 0.45,
+   "steps": 20,
+   "model": "qwen-image-2.1"
+  },
+  {
+   "id": "joke_jk-maths",
+   "category": "card",
+   "prompt": "Highly detailed high-resolution pixel art illustration with very small fine pixels and dense intricate detail, like a large hand-made pixel-art poster, not chunky, not low resolution, clean dark outlines, soft many-step shading, deep navy night, warm amber lamplight, muted violet stone, original fantasy setting. A sad book with a frown, covered in question marks and scribbled sums, crying a small tear. One clear, slightly funny subject, centred and large, simple uncluttered background, bright readable shapes, no text, no letters, no numbers, no logos.",
+   "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, anti-aliasing, mixed pixel sizes, people, characters, gore, blood, characters or art from existing games or films, chunky pixels, low resolution, blocky, jpeg artifacts, real people, celebrity, numbers, digits, readable signs",
+   "seeds": [
+    140036,
+    141036
+   ],
+   "aspect": "4:3 (Standard)",
+   "megapixels": 0.45,
+   "steps": 20,
+   "model": "qwen-image-2.1"
+  },
+  {
+   "id": "joke_jk-dino",
+   "category": "card",
+   "prompt": "Highly detailed high-resolution pixel art illustration with very small fine pixels and dense intricate detail, like a large hand-made pixel-art poster, not chunky, not low resolution, clean dark outlines, soft many-step shading, deep navy night, warm amber lamplight, muted violet stone, original fantasy setting. A green dinosaur fast asleep and snoring loudly with big snore clouds. One clear, slightly funny subject, centred and large, simple uncluttered background, bright readable shapes, no text, no letters, no numbers, no logos.",
+   "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, anti-aliasing, mixed pixel sizes, people, characters, gore, blood, characters or art from existing games or films, chunky pixels, low resolution, blocky, jpeg artifacts, real people, celebrity, numbers, digits, readable signs",
+   "seeds": [
+    140037,
+    141037
+   ],
+   "aspect": "4:3 (Standard)",
+   "megapixels": 0.45,
+   "steps": 20,
+   "model": "qwen-image-2.1"
+  },
+  {
+   "id": "joke_jk-ghost",
+   "category": "card",
+   "prompt": "Highly detailed high-resolution pixel art illustration with very small fine pixels and dense intricate detail, like a large hand-made pixel-art poster, not chunky, not low resolution, clean dark outlines, soft many-step shading, deep navy night, warm amber lamplight, muted violet stone, original fantasy setting. A see-through ghost trying to look innocent while you can see the cookie jar right through its body. One clear, slightly funny subject, centred and large, simple uncluttered background, bright readable shapes, no text, no letters, no numbers, no logos.",
+   "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, anti-aliasing, mixed pixel sizes, people, characters, gore, blood, characters or art from existing games or films, chunky pixels, low resolution, blocky, jpeg artifacts, real people, celebrity, numbers, digits, readable signs",
+   "seeds": [
+    140038,
+    141038
+   ],
+   "aspect": "4:3 (Standard)",
+   "megapixels": 0.45,
+   "steps": 20,
+   "model": "qwen-image-2.1"
+  },
+  {
+   "id": "joke_jk-ocean",
+   "category": "card",
+   "prompt": "Highly detailed high-resolution pixel art illustration with very small fine pixels and dense intricate detail, like a large hand-made pixel-art poster, not chunky, not low resolution, clean dark outlines, soft many-step shading, deep navy night, warm amber lamplight, muted violet stone, original fantasy setting. A friendly sea wave with a hand waving hello at a sandy beach. One clear, slightly funny subject, centred and large, simple uncluttered background, bright readable shapes, no text, no letters, no numbers, no logos.",
+   "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, anti-aliasing, mixed pixel sizes, people, characters, gore, blood, characters or art from existing games or films, chunky pixels, low resolution, blocky, jpeg artifacts, real people, celebrity, numbers, digits, readable signs",
+   "seeds": [
+    140039,
+    141039
+   ],
+   "aspect": "4:3 (Standard)",
+   "megapixels": 0.45,
+   "steps": 20,
+   "model": "qwen-image-2.1"
+  },
+  {
+   "id": "joke_jk-gummy",
+   "category": "card",
+   "prompt": "Highly detailed high-resolution pixel art illustration with very small fine pixels and dense intricate detail, like a large hand-made pixel-art poster, not chunky, not low resolution, clean dark outlines, soft many-step shading, deep navy night, warm amber lamplight, muted violet stone, original fantasy setting. A smiling bear with no teeth made of red jelly, gummy and wobbly. One clear, slightly funny subject, centred and large, simple uncluttered background, bright readable shapes, no text, no letters, no numbers, no logos.",
+   "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, anti-aliasing, mixed pixel sizes, people, characters, gore, blood, characters or art from existing games or films, chunky pixels, low resolution, blocky, jpeg artifacts, real people, celebrity, numbers, digits, readable signs",
+   "seeds": [
+    140040,
+    141040
+   ],
+   "aspect": "4:3 (Standard)",
+   "megapixels": 0.45,
+   "steps": 20,
+   "model": "qwen-image-2.1"
+  },
+  {
+   "id": "joke_jk-lamp",
+   "category": "card",
+   "prompt": "Highly detailed high-resolution pixel art illustration with very small fine pixels and dense intricate detail, like a large hand-made pixel-art poster, not chunky, not low resolution, clean dark outlines, soft many-step shading, deep navy night, warm amber lamplight, muted violet stone, original fantasy setting. A small desk lamp sitting at a school desk with a little backpack, glowing brightly. One clear, slightly funny subject, centred and large, simple uncluttered background, bright readable shapes, no text, no letters, no numbers, no logos.",
+   "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, anti-aliasing, mixed pixel sizes, people, characters, gore, blood, characters or art from existing games or films, chunky pixels, low resolution, blocky, jpeg artifacts, real people, celebrity, numbers, digits, readable signs",
+   "seeds": [
+    140041,
+    141041
+   ],
+   "aspect": "4:3 (Standard)",
+   "megapixels": 0.45,
+   "steps": 20,
+   "model": "qwen-image-2.1"
+  },
+  {
+   "id": "joke_jk-wall",
+   "category": "card",
+   "prompt": "Highly detailed high-resolution pixel art illustration with very small fine pixels and dense intricate detail, like a large hand-made pixel-art poster, not chunky, not low resolution, clean dark outlines, soft many-step shading, deep navy night, warm amber lamplight, muted violet stone, original fantasy setting. Two brick walls with faces meeting and shaking hands at a corner. One clear, slightly funny subject, centred and large, simple uncluttered background, bright readable shapes, no text, no letters, no numbers, no logos.",
+   "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, anti-aliasing, mixed pixel sizes, people, characters, gore, blood, characters or art from existing games or films, chunky pixels, low resolution, blocky, jpeg artifacts, real people, celebrity, numbers, digits, readable signs",
+   "seeds": [
+    140042,
+    141042
+   ],
+   "aspect": "4:3 (Standard)",
+   "megapixels": 0.45,
+   "steps": 20,
+   "model": "qwen-image-2.1"
+  },
+  {
+   "id": "joke_jk-cookie",
+   "category": "card",
+   "prompt": "Highly detailed high-resolution pixel art illustration with very small fine pixels and dense intricate detail, like a large hand-made pixel-art poster, not chunky, not low resolution, clean dark outlines, soft many-step shading, deep navy night, warm amber lamplight, muted violet stone, original fantasy setting. A cracked biscuit sitting in a doctor's waiting room covered in crumbs, looking poorly. One clear, slightly funny subject, centred and large, simple uncluttered background, bright readable shapes, no text, no letters, no numbers, no logos.",
+   "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, anti-aliasing, mixed pixel sizes, people, characters, gore, blood, characters or art from existing games or films, chunky pixels, low resolution, blocky, jpeg artifacts, real people, celebrity, numbers, digits, readable signs",
+   "seeds": [
+    140043,
+    141043
+   ],
+   "aspect": "4:3 (Standard)",
+   "megapixels": 0.45,
+   "steps": 20,
+   "model": "qwen-image-2.1"
+  },
+  {
+   "id": "joke_jk-ring",
+   "category": "card",
+   "prompt": "Highly detailed high-resolution pixel art illustration with very small fine pixels and dense intricate detail, like a large hand-made pixel-art poster, not chunky, not low resolution, clean dark outlines, soft many-step shading, deep navy night, warm amber lamplight, muted violet stone, original fantasy setting. An old telephone ringing loudly with sound rings around it, next to a hand with no ring on its finger. One clear, slightly funny subject, centred and large, simple uncluttered background, bright readable shapes, no text, no letters, no numbers, no logos.",
+   "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, anti-aliasing, mixed pixel sizes, people, characters, gore, blood, characters or art from existing games or films, chunky pixels, low resolution, blocky, jpeg artifacts, real people, celebrity, numbers, digits, readable signs",
+   "seeds": [
+    140044,
+    141044
+   ],
+   "aspect": "4:3 (Standard)",
+   "megapixels": 0.45,
+   "steps": 20,
+   "model": "qwen-image-2.1"
+  },
+  {
+   "id": "joke_jk-stairs",
+   "category": "card",
+   "prompt": "Highly detailed high-resolution pixel art illustration with very small fine pixels and dense intricate detail, like a large hand-made pixel-art poster, not chunky, not low resolution, clean dark outlines, soft many-step shading, deep navy night, warm amber lamplight, muted violet stone, original fantasy setting. A sly wooden staircase in an old library with mischievous eyes, its steps sneaking upwards. One clear, slightly funny subject, centred and large, simple uncluttered background, bright readable shapes, no text, no letters, no numbers, no logos.",
+   "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, anti-aliasing, mixed pixel sizes, people, characters, gore, blood, characters or art from existing games or films, chunky pixels, low resolution, blocky, jpeg artifacts, real people, celebrity, numbers, digits, readable signs",
+   "seeds": [
+    140045,
+    141045
+   ],
+   "aspect": "4:3 (Standard)",
+   "megapixels": 0.45,
+   "steps": 20,
+   "model": "qwen-image-2.1"
+  },
+  {
+   "id": "joke_jk-broom",
+   "category": "card",
+   "prompt": "Highly detailed high-resolution pixel art illustration with very small fine pixels and dense intricate detail, like a large hand-made pixel-art poster, not chunky, not low resolution, clean dark outlines, soft many-step shading, deep navy night, warm amber lamplight, muted violet stone, original fantasy setting. A broom running late down a street, sweeping far too much dust everywhere. One clear, slightly funny subject, centred and large, simple uncluttered background, bright readable shapes, no text, no letters, no numbers, no logos.",
+   "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, anti-aliasing, mixed pixel sizes, people, characters, gore, blood, characters or art from existing games or films, chunky pixels, low resolution, blocky, jpeg artifacts, real people, celebrity, numbers, digits, readable signs",
+   "seeds": [
+    140046,
+    141046
+   ],
+   "aspect": "4:3 (Standard)",
+   "megapixels": 0.45,
+   "steps": 20,
+   "model": "qwen-image-2.1"
+  },
+  {
+   "id": "scene_sc-shop",
+   "category": "vignette",
+   "prompt": "Highly detailed high-resolution pixel art illustration with very small fine pixels and dense intricate detail, like a large hand-made pixel-art poster, not chunky, not low resolution, clean dark outlines, soft many-step shading, deep navy night, warm amber lamplight, muted violet stone, original fantasy setting. A friendly neighbour leaning over a garden fence talking to someone heading out with a shopping basket, cosy street. A wide, warm everyday scene with small simple figures, cosy and a little funny, clear composition, no text, no letters, no numbers, no logos, no readable signs.",
+   "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, anti-aliasing, mixed pixel sizes, people, characters, gore, blood, characters or art from existing games or films, chunky pixels, low resolution, blocky, jpeg artifacts, real people, celebrity, numbers, digits, readable signs",
+   "seeds": [
+    140047,
+    141047
+   ],
+   "aspect": "16:9 (Widescreen)",
+   "megapixels": 0.6,
+   "steps": 24,
+   "model": "qwen-image-2.1"
+  },
+  {
+   "id": "scene_sc-way",
+   "category": "vignette",
+   "prompt": "Highly detailed high-resolution pixel art illustration with very small fine pixels and dense intricate detail, like a large hand-made pixel-art poster, not chunky, not low resolution, clean dark outlines, soft many-step shading, deep navy night, warm amber lamplight, muted violet stone, original fantasy setting. A woman with a broom on her doorstep pointing down a winding old town street, a ferry office far away. A wide, warm everyday scene with small simple figures, cosy and a little funny, clear composition, no text, no letters, no numbers, no logos, no readable signs.",
+   "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, anti-aliasing, mixed pixel sizes, people, characters, gore, blood, characters or art from existing games or films, chunky pixels, low resolution, blocky, jpeg artifacts, real people, celebrity, numbers, digits, readable signs",
+   "seeds": [
+    140048,
+    141048
+   ],
+   "aspect": "16:9 (Widescreen)",
+   "megapixels": 0.6,
+   "steps": 24,
+   "model": "qwen-image-2.1"
+  },
+  {
+   "id": "scene_sc-party",
+   "category": "vignette",
+   "prompt": "Highly detailed high-resolution pixel art illustration with very small fine pixels and dense intricate detail, like a large hand-made pixel-art poster, not chunky, not low resolution, clean dark outlines, soft many-step shading, deep navy night, warm amber lamplight, muted violet stone, original fantasy setting. A garden party with lanterns strung between trees and several people shaking hands. A wide, warm everyday scene with small simple figures, cosy and a little funny, clear composition, no text, no letters, no numbers, no logos, no readable signs.",
+   "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, anti-aliasing, mixed pixel sizes, people, characters, gore, blood, characters or art from existing games or films, chunky pixels, low resolution, blocky, jpeg artifacts, real people, celebrity, numbers, digits, readable signs",
+   "seeds": [
+    140049,
+    141049
+   ],
+   "aspect": "16:9 (Widescreen)",
+   "megapixels": 0.6,
+   "steps": 24,
+   "model": "qwen-image-2.1"
+  },
+  {
+   "id": "scene_sc-voicemail",
+   "category": "vignette",
+   "prompt": "Highly detailed high-resolution pixel art illustration with very small fine pixels and dense intricate detail, like a large hand-made pixel-art poster, not chunky, not low resolution, clean dark outlines, soft many-step shading, deep navy night, warm amber lamplight, muted violet stone, original fantasy setting. A phone on a kitchen table glowing with two waiting messages, no pen in sight. A wide, warm everyday scene with small simple figures, cosy and a little funny, clear composition, no text, no letters, no numbers, no logos, no readable signs.",
+   "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, anti-aliasing, mixed pixel sizes, people, characters, gore, blood, characters or art from existing games or films, chunky pixels, low resolution, blocky, jpeg artifacts, real people, celebrity, numbers, digits, readable signs",
+   "seeds": [
+    140050,
+    141050
+   ],
+   "aspect": "16:9 (Widescreen)",
+   "megapixels": 0.6,
+   "steps": 24,
+   "model": "qwen-image-2.1"
+  },
+  {
+   "id": "scene_sc-tram",
+   "category": "vignette",
+   "prompt": "Highly detailed high-resolution pixel art illustration with very small fine pixels and dense intricate detail, like a large hand-made pixel-art poster, not chunky, not low resolution, clean dark outlines, soft many-step shading, deep navy night, warm amber lamplight, muted violet stone, original fantasy setting. A flickering departure board above a tram platform in an old fantasy city at morning, no readable text. A wide, warm everyday scene with small simple figures, cosy and a little funny, clear composition, no text, no letters, no numbers, no logos, no readable signs.",
+   "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, anti-aliasing, mixed pixel sizes, people, characters, gore, blood, characters or art from existing games or films, chunky pixels, low resolution, blocky, jpeg artifacts, real people, celebrity, numbers, digits, readable signs",
+   "seeds": [
+    140051,
+    141051
+   ],
+   "aspect": "16:9 (Widescreen)",
+   "megapixels": 0.6,
+   "steps": 24,
+   "model": "qwen-image-2.1"
+  },
+  {
+   "id": "scene_sc-recipe",
+   "category": "vignette",
+   "prompt": "Highly detailed high-resolution pixel art illustration with very small fine pixels and dense intricate detail, like a large hand-made pixel-art poster, not chunky, not low resolution, clean dark outlines, soft many-step shading, deep navy night, warm amber lamplight, muted violet stone, original fantasy setting. A grandmother talking while washing up at a cosy kitchen sink, a mixing bowl of oats on the table. A wide, warm everyday scene with small simple figures, cosy and a little funny, clear composition, no text, no letters, no numbers, no logos, no readable signs.",
+   "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, anti-aliasing, mixed pixel sizes, people, characters, gore, blood, characters or art from existing games or films, chunky pixels, low resolution, blocky, jpeg artifacts, real people, celebrity, numbers, digits, readable signs",
+   "seeds": [
+    140052,
+    141052
+   ],
+   "aspect": "16:9 (Widescreen)",
+   "megapixels": 0.6,
+   "steps": 24,
+   "model": "qwen-image-2.1"
+  },
+  {
+   "id": "scene_sc-menu",
+   "category": "vignette",
+   "prompt": "Highly detailed high-resolution pixel art illustration with very small fine pixels and dense intricate detail, like a large hand-made pixel-art poster, not chunky, not low resolution, clean dark outlines, soft many-step shading, deep navy night, warm amber lamplight, muted violet stone, original fantasy setting. A small sunny café terrace with a waiter carrying plates, flowers on the tables. A wide, warm everyday scene with small simple figures, cosy and a little funny, clear composition, no text, no letters, no numbers, no logos, no readable signs.",
+   "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, anti-aliasing, mixed pixel sizes, people, characters, gore, blood, characters or art from existing games or films, chunky pixels, low resolution, blocky, jpeg artifacts, real people, celebrity, numbers, digits, readable signs",
+   "seeds": [
+    140053,
+    141053
+   ],
+   "aspect": "16:9 (Widescreen)",
+   "megapixels": 0.6,
+   "steps": 24,
+   "model": "qwen-image-2.1"
+  },
+  {
+   "id": "scene_sc-dinner",
+   "category": "vignette",
+   "prompt": "Highly detailed high-resolution pixel art illustration with very small fine pixels and dense intricate detail, like a large hand-made pixel-art poster, not chunky, not low resolution, clean dark outlines, soft many-step shading, deep navy night, warm amber lamplight, muted violet stone, original fantasy setting. Friends laughing around a dinner table by candlelight while one tells a joke. A wide, warm everyday scene with small simple figures, cosy and a little funny, clear composition, no text, no letters, no numbers, no logos, no readable signs.",
+   "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, anti-aliasing, mixed pixel sizes, people, characters, gore, blood, characters or art from existing games or films, chunky pixels, low resolution, blocky, jpeg artifacts, real people, celebrity, numbers, digits, readable signs",
+   "seeds": [
+    140054,
+    141054
+   ],
+   "aspect": "16:9 (Widescreen)",
+   "megapixels": 0.6,
+   "steps": 24,
+   "model": "qwen-image-2.1"
+  },
+  {
+   "id": "scene_sc-board",
+   "category": "vignette",
+   "prompt": "Highly detailed high-resolution pixel art illustration with very small fine pixels and dense intricate detail, like a large hand-made pixel-art poster, not chunky, not low resolution, clean dark outlines, soft many-step shading, deep navy night, warm amber lamplight, muted violet stone, original fantasy setting. A teacher rubbing chalk off a blackboard full of squiggles as the school bell rings, no readable text. A wide, warm everyday scene with small simple figures, cosy and a little funny, clear composition, no text, no letters, no numbers, no logos, no readable signs.",
+   "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, anti-aliasing, mixed pixel sizes, people, characters, gore, blood, characters or art from existing games or films, chunky pixels, low resolution, blocky, jpeg artifacts, real people, celebrity, numbers, digits, readable signs",
+   "seeds": [
+    140055,
+    141055
+   ],
+   "aspect": "16:9 (Widescreen)",
+   "megapixels": 0.6,
+   "steps": 24,
+   "model": "qwen-image-2.1"
+  },
+  {
+   "id": "symbol_pi",
+   "category": "symbol",
+   "prompt": "Highly detailed high-resolution pixel art illustration with very small fine pixels and dense intricate detail, like a large hand-made pixel-art poster, not chunky, not low resolution, clean dark outlines, soft many-step shading, deep navy night, warm amber lamplight, muted violet stone, original fantasy setting. A round fruit pie with a golden crust. A single small object, centred, seen from slightly above, on a completely plain flat very dark navy background, no table, no shadow, no scenery, no hands, no text, no letters or numbers written on it.",
+   "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, anti-aliasing, mixed pixel sizes, people, characters, gore, blood, characters or art from existing games or films, chunky pixels, low resolution, blocky, jpeg artifacts, real people, celebrity, numbers, digits, readable signs",
+   "seeds": [
+    140056,
+    141056
+   ],
+   "aspect": "1:1 (Square)",
+   "megapixels": 0.45,
+   "steps": 20,
+   "model": "qwen-image-2.1"
+  },
+  {
+   "id": "symbol_squared",
+   "category": "symbol",
+   "prompt": "Highly detailed high-resolution pixel art illustration with very small fine pixels and dense intricate detail, like a large hand-made pixel-art poster, not chunky, not low resolution, clean dark outlines, soft many-step shading, deep navy night, warm amber lamplight, muted violet stone, original fantasy setting. A white swan swimming. A single small object, centred, seen from slightly above, on a completely plain flat very dark navy background, no table, no shadow, no scenery, no hands, no text, no letters or numbers written on it.",
+   "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, anti-aliasing, mixed pixel sizes, people, characters, gore, blood, characters or art from existing games or films, chunky pixels, low resolution, blocky, jpeg artifacts, real people, celebrity, numbers, digits, readable signs",
+   "seeds": [
+    140057,
+    141057
+   ],
+   "aspect": "1:1 (Square)",
+   "megapixels": 0.45,
+   "steps": 20,
+   "model": "qwen-image-2.1"
+  },
+  {
+   "id": "symbol_cubed",
+   "category": "symbol",
+   "prompt": "Highly detailed high-resolution pixel art illustration with very small fine pixels and dense intricate detail, like a large hand-made pixel-art poster, not chunky, not low resolution, clean dark outlines, soft many-step shading, deep navy night, warm amber lamplight, muted violet stone, original fantasy setting. A small pair of red handcuffs. A single small object, centred, seen from slightly above, on a completely plain flat very dark navy background, no table, no shadow, no scenery, no hands, no text, no letters or numbers written on it.",
+   "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, anti-aliasing, mixed pixel sizes, people, characters, gore, blood, characters or art from existing games or films, chunky pixels, low resolution, blocky, jpeg artifacts, real people, celebrity, numbers, digits, readable signs",
+   "seeds": [
+    140058,
+    141058
+   ],
+   "aspect": "1:1 (Square)",
+   "megapixels": 0.45,
+   "steps": 20,
+   "model": "qwen-image-2.1"
+  },
+  {
+   "id": "symbol_equals",
+   "category": "symbol",
+   "prompt": "Highly detailed high-resolution pixel art illustration with very small fine pixels and dense intricate detail, like a large hand-made pixel-art poster, not chunky, not low resolution, clean dark outlines, soft many-step shading, deep navy night, warm amber lamplight, muted violet stone, original fantasy setting. A small stone bridge over water. A single small object, centred, seen from slightly above, on a completely plain flat very dark navy background, no table, no shadow, no scenery, no hands, no text, no letters or numbers written on it.",
+   "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, anti-aliasing, mixed pixel sizes, people, characters, gore, blood, characters or art from existing games or films, chunky pixels, low resolution, blocky, jpeg artifacts, real people, celebrity, numbers, digits, readable signs",
+   "seeds": [
+    140059,
+    141059
+   ],
+   "aspect": "1:1 (Square)",
+   "megapixels": 0.45,
+   "steps": 20,
+   "model": "qwen-image-2.1"
+  },
+  {
+   "id": "symbol_divide",
+   "category": "symbol",
+   "prompt": "Highly detailed high-resolution pixel art illustration with very small fine pixels and dense intricate detail, like a large hand-made pixel-art poster, not chunky, not low resolution, clean dark outlines, soft many-step shading, deep navy night, warm amber lamplight, muted violet stone, original fantasy setting. A wooden table top seen from the side. A single small object, centred, seen from slightly above, on a completely plain flat very dark navy background, no table, no shadow, no scenery, no hands, no text, no letters or numbers written on it.",
+   "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, anti-aliasing, mixed pixel sizes, people, characters, gore, blood, characters or art from existing games or films, chunky pixels, low resolution, blocky, jpeg artifacts, real people, celebrity, numbers, digits, readable signs",
+   "seeds": [
+    140060,
+    141060
+   ],
+   "aspect": "1:1 (Square)",
+   "megapixels": 0.45,
+   "steps": 20,
+   "model": "qwen-image-2.1"
+  },
+  {
+   "id": "symbol_plus",
+   "category": "symbol",
+   "prompt": "Highly detailed high-resolution pixel art illustration with very small fine pixels and dense intricate detail, like a large hand-made pixel-art poster, not chunky, not low resolution, clean dark outlines, soft many-step shading, deep navy night, warm amber lamplight, muted violet stone, original fantasy setting. A small first aid box. A single small object, centred, seen from slightly above, on a completely plain flat very dark navy background, no table, no shadow, no scenery, no hands, no text, no letters or numbers written on it.",
+   "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, anti-aliasing, mixed pixel sizes, people, characters, gore, blood, characters or art from existing games or films, chunky pixels, low resolution, blocky, jpeg artifacts, real people, celebrity, numbers, digits, readable signs",
+   "seeds": [
+    140061,
+    141061
+   ],
+   "aspect": "1:1 (Square)",
+   "megapixels": 0.45,
+   "steps": 20,
+   "model": "qwen-image-2.1"
+  },
+  {
+   "id": "symbol_root",
+   "category": "symbol",
+   "prompt": "Highly detailed high-resolution pixel art illustration with very small fine pixels and dense intricate detail, like a large hand-made pixel-art poster, not chunky, not low resolution, clean dark outlines, soft many-step shading, deep navy night, warm amber lamplight, muted violet stone, original fantasy setting. A carrot pulled out of the ground with its roots showing. A single small object, centred, seen from slightly above, on a completely plain flat very dark navy background, no table, no shadow, no scenery, no hands, no text, no letters or numbers written on it.",
+   "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, anti-aliasing, mixed pixel sizes, people, characters, gore, blood, characters or art from existing games or films, chunky pixels, low resolution, blocky, jpeg artifacts, real people, celebrity, numbers, digits, readable signs",
+   "seeds": [
+    140062,
+    141062
+   ],
+   "aspect": "1:1 (Square)",
+   "megapixels": 0.45,
+   "steps": 20,
+   "model": "qwen-image-2.1"
+  },
+  {
+   "id": "symbol_half",
+   "category": "symbol",
+   "prompt": "Highly detailed high-resolution pixel art illustration with very small fine pixels and dense intricate detail, like a large hand-made pixel-art poster, not chunky, not low resolution, clean dark outlines, soft many-step shading, deep navy night, warm amber lamplight, muted violet stone, original fantasy setting. Half an apple cut cleanly. A single small object, centred, seen from slightly above, on a completely plain flat very dark navy background, no table, no shadow, no scenery, no hands, no text, no letters or numbers written on it.",
+   "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, anti-aliasing, mixed pixel sizes, people, characters, gore, blood, characters or art from existing games or films, chunky pixels, low resolution, blocky, jpeg artifacts, real people, celebrity, numbers, digits, readable signs",
+   "seeds": [
+    140063,
+    141063
+   ],
+   "aspect": "1:1 (Square)",
+   "megapixels": 0.45,
+   "steps": 20,
+   "model": "qwen-image-2.1"
+  },
+  {
+   "id": "symbol_lambda",
+   "category": "symbol",
+   "prompt": "Highly detailed high-resolution pixel art illustration with very small fine pixels and dense intricate detail, like a large hand-made pixel-art poster, not chunky, not low resolution, clean dark outlines, soft many-step shading, deep navy night, warm amber lamplight, muted violet stone, original fantasy setting. A small lamb. A single small object, centred, seen from slightly above, on a completely plain flat very dark navy background, no table, no shadow, no scenery, no hands, no text, no letters or numbers written on it.",
+   "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, anti-aliasing, mixed pixel sizes, people, characters, gore, blood, characters or art from existing games or films, chunky pixels, low resolution, blocky, jpeg artifacts, real people, celebrity, numbers, digits, readable signs",
+   "seeds": [
+    140064,
+    141064
+   ],
+   "aspect": "1:1 (Square)",
+   "megapixels": 0.45,
+   "steps": 20,
+   "model": "qwen-image-2.1"
+  },
+  {
+   "id": "symbol_rho",
+   "category": "symbol",
+   "prompt": "Highly detailed high-resolution pixel art illustration with very small fine pixels and dense intricate detail, like a large hand-made pixel-art poster, not chunky, not low resolution, clean dark outlines, soft many-step shading, deep navy night, warm amber lamplight, muted violet stone, original fantasy setting. A rowing boat with oars. A single small object, centred, seen from slightly above, on a completely plain flat very dark navy background, no table, no shadow, no scenery, no hands, no text, no letters or numbers written on it.",
+   "negative_prompt": "text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, anti-aliasing, mixed pixel sizes, people, characters, gore, blood, characters or art from existing games or films, chunky pixels, low resolution, blocky, jpeg artifacts, real people, celebrity, numbers, digits, readable signs",
+   "seeds": [
+    140065,
+    141065
+   ],
+   "aspect": "1:1 (Square)",
+   "megapixels": 0.45,
+   "steps": 20,
+   "model": "qwen-image-2.1"
+  }
+ ]
 }

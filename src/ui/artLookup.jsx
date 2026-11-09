@@ -4,7 +4,9 @@ import React from 'react';
 import { DistrictBanner } from './pixel/Scenes.jsx';
 
 const mods = import.meta.glob('../data/art.js', { eager: true });
-const ART = Object.values(mods)[0]?.ART || {};
+const modsNew = import.meta.glob('../data/artNew.js', { eager: true });
+// artNew.js (tools/asset-studio/ship_v3.py) holds later pictures; the same id there replaces the one in art.js.
+const ART = { ...(Object.values(mods)[0]?.ART || {}), ...(Object.values(modsNew)[0]?.ART_NEW || {}) };
 export const artFor = (id) => (id && ART[id]) || null;
 
 // Finds an id whose key starts with one of the prefixes and contains one of the tokens (the art manifest names may vary).
@@ -30,4 +32,13 @@ export function ArtImg({ id, className = '', alt, style }) {
 export function DistrictScene({ id, restored = true, className = '' }) {
   const a = timed('district_' + id);
   return artFor(a) ? <ArtImg id={a} className={className} /> : <DistrictBanner id={id} restored={restored} className={className} />;
+}
+
+// The city seen whole, by the clock (dawn, day, dusk or night, same cut-offs as the map). Nothing is drawn if the picture is not shipped.
+export function VeyraView({ hour, className = '' }) {
+  const h = hour ?? new Date().getHours();
+  const t = h >= 5 && h < 8 ? 'dawn' : h >= 8 && h < 17 ? 'day' : h >= 17 && h < 20 ? 'dusk' : 'night';
+  const id = `veyra_view_${t}`;
+  if (!artFor(id)) return null;
+  return <figure className={`veyra-view ${className}`}><ArtImg id={id} /></figure>;
 }

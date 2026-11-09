@@ -28,7 +28,7 @@ manifest src/data/scenes.js. Before running `paint`: unload LM Studio (one model
 from __future__ import annotations
 
 import argparse
-import json
+import json, os
 import subprocess
 import sys
 import time
@@ -53,9 +53,10 @@ JOBS = HERE / "art-jobs.json"
 
 STEPS = 24
 LOOK = ("Detailed 16-bit pixel art game background, crisp square pixels of one even size, dark outlines, soft many-step shading like a "
-        "hand-painted pixel-art portrait, deep navy shadows, warm amber firelight, muted violet stone, original fantasy setting.")
+        "hand-painted pixel-art portrait, deep teal-black shadows, warm amber firelight, grey-brown stone, neutral natural colour balance, original fantasy setting.")
 NEG = ("text, letters, words, watermark, signature, logo, photo, photorealistic, 3d render, blurry, anti-aliasing, mixed pixel sizes, "
-       "people, characters, gore, blood, characters or art from existing games or films")
+       "people, characters, gore, blood, characters or art from existing games or films, "
+       "purple tint, violet tint, magenta cast, lavender haze, purple colour cast, monochrome purple")
 
 # Code-drawn points are in the code scene's pixels (the guide); the script maps them into the picture.
 SCENES = {
@@ -137,7 +138,7 @@ CHAMBER_DECOR = {
     "bones": ("Either side of the arch, deep wall niches with rows of old skulls stacked neatly and with care, grey stone.", "stone"),
     "shelves": ("Either side of the arch, tall old wooden shelves full of swollen, damp leather ledgers and books, grey stone.", "stone"),
     "water": ("Still black water covers the floor and mirrors the torches, cold blue-grey stone, thin threads of water running down the walls.", "river"),
-    "thrones": ("Either side of the arch, a throne of black stone with a small golden crown resting on its seat, violet-tinted stone.", "violet"),
+    "thrones": ("Either side of the arch, a throne of black stone with a small golden crown resting on its seat, dark grey stone.", "violet"),
     "roots": ("Pale, thick, very old tree roots hang down through the vault and push through the walls, mossy green stone.", "moss"),
     "springs": ("Small round pools of silver water well up from the floor and glow faintly, a thin pale mist, cool grey-blue stone.", "tide"),
 }
@@ -256,6 +257,12 @@ def run_wf(wf, dest: Path, tag):
         for im in out.get("images", []):
             q = urllib.parse.urlencode({"filename": im["filename"], "subfolder": im.get("subfolder", ""), "type": im.get("type", "output")})
             dest.write_bytes(studio.comfy(f"/view?{q}", timeout=120))
+            try:  # take out the model's violet colour cast (docs/ART.md, "Colour cast"); set NO_DECAST=1 to keep the raw picture
+                import colorfix
+                if not os.environ.get("NO_DECAST"):
+                    colorfix.decast_file(dest)
+            except Exception as e:  # noqa: BLE001
+                studio.log("decast skipped", repr(e))
             studio.log("motion", tag, dest.name, f"{time.time() - t0:.0f}s")
             return True
     studio.log("motion NO OUTPUT", tag)
@@ -725,8 +732,8 @@ def stage_compare(sid, old_dir, show=960):
 
 # Fine-pixel look for the map (owner, Nov 8, 2026: the painted map "still looks too pixelated"): ask for small, dense pixels.
 LOOK_FINE = ("Highly detailed high-resolution pixel art illustration with very small fine pixels and dense intricate detail, like a large "
-             "hand-made pixel-art poster, not chunky, not low resolution, clean dark outlines, soft many-step shading, deep navy night, "
-             "warm amber lamplight, muted violet stone, original fantasy setting.")
+             "hand-made pixel-art poster, not chunky, not low resolution, clean dark outlines, soft many-step shading, deep teal-black night, "
+             "warm amber lamplight, grey-brown stone, neutral natural colour balance with true greys and warm browns and no colour cast, original fantasy setting.")
 
 NEG_FINE = NEG + ", chunky pixels, low resolution, blocky, jpeg artifacts"
 SCENES["world_map"]["lit"] = ("Seen from a high bird's-eye view at a steep three-quarter angle, the whole city in frame, every district clearly "
